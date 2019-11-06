@@ -25,6 +25,7 @@ if __name__ == "__main__":
     for dataset_filepath in [
                 'test_data/SHARKdata_datasets/SHARK_Zooplankton_2016_SMHI_version_2019-02-14.zip', 
                 'test_data/SHARKdata_datasets/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
+                'test_data/SHARKdata_datasets/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
                 ]:
         data.add_dataset(dataset_filepath)
     data.add_extra_fields()
@@ -34,9 +35,9 @@ if __name__ == "__main__":
 #     data.translate_species()
 #     data.translate_stations()
 #     data.translate_fields()
-#     data.apply_filters()
+#     data.apply_filter()
     # Format.
-    dwca_format = dwca_generator.DwcaFormatStandard(data, resources, ) 
+    dwca_format = dwca_generator.DwcaFormatStandard(data, resources, )
     dwca_format.create_dwca_parts()
     dwca_format.create_meta_xml()
     dwca_format.create_eml_xml(eml_template = 'templates/epibenthos_nat_eml.xml')

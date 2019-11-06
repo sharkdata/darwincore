@@ -60,8 +60,8 @@ class DwcaFormatStandard(object):
             if event_node_name not in event_control_dict:
                 event_control_dict[event_node_name] = {}
                 event_control_dict[event_node_name]['used_key_list'] = set()
-                event_control_dict[event_node_name]['node_key_name'] = event_nodes[event_node_name]['dwc_key']
-                event_control_dict[event_node_name]['fields'] = self.resources_object.get_fields_for_each_node(event_node_name)
+                event_control_dict[event_node_name]['dwc_key_name'] = event_nodes[event_node_name]['dwc_key_name']
+                event_control_dict[event_node_name]['fields'] = self.resources_object.get_event_node_fields(event_node_name)
         # Process all data rows.
         for target_row in self.target_rows:
             #
@@ -73,7 +73,7 @@ class DwcaFormatStandard(object):
                 # Current row in control dictionary.
                 control_dict = event_control_dict[event_node_name]
                 # Get keys.
-                node_key = target_row.get(control_dict['node_key_name'], '')
+                node_key = target_row.get(control_dict['dwc_key_name'], '')
                 # Create event row.
                 if node_key and (node_key not in control_dict['used_key_list']):
                     control_dict['used_key_list'].add(node_key)
@@ -96,25 +96,19 @@ class DwcaFormatStandard(object):
                     
                     #
                     self.dwca_event.append(event_dict) 
-             
+                
                 parent_node_key = node_key
      
     def create_dwca_occurrence(self):
         """ """
-        # Get node name hierarchy.
-        event_node_names = self.resources_object.get_event_node_names()
         # Get all node info.
         occurrence_nodes = self.resources_object.get_occurrence_nodes()
+        occurrence_node = occurrence_nodes['occurrence']
         # Create control dictionary.
-        occurrence_control_dict = {}
-        for event_node_name in event_node_names:
-            if event_node_name in occurrence_nodes:
-                if event_node_name not in occurrence_control_dict:
-                    occurrence_control_dict[event_node_name] = {}
-                    occurrence_control_dict[event_node_name]['used_key_list'] = set()
-                    occurrence_control_dict[event_node_name]['event_key'] = occurrence_nodes[event_node_name]['dwc_event_key']
-                    occurrence_control_dict[event_node_name]['key_name'] = occurrence_nodes[event_node_name]['dwc_key']
-                    occurrence_control_dict[event_node_name]['fields'] = self.resources_object.get_fields_for_each_node('occurrence')
+        used_key_list = set()
+        dwc_event_key_name = occurrence_node['dwc_event_key']
+        dwc_key_name = occurrence_node['dwc_key_name']
+        occurrence_fields = self.resources_object.get_event_node_fields('occurrence')
         # Process all data rows.
         for target_row in self.target_rows:
             #
@@ -125,68 +119,61 @@ class DwcaFormatStandard(object):
             if scientific_name == '':
                 continue
             #
-            # Iterate over nodes.
-            parent_node_key = ''
-            for event_node_name in event_node_names:
-                # Current row in control dictionary.
-                control_dict = occurrence_control_dict.get(event_node_name, {})
-                if not control_dict:
-                    continue
-                # Get keys.
-                event_key = target_row.get(control_dict['event_key'], '')
-                occurrence_key = target_row.get(control_dict['key_name'], '')
-                # Create event row.
-                if occurrence_key and (occurrence_key not in control_dict['used_key_list']):
-                    control_dict['used_key_list'].add(occurrence_key)
+            # Get keys.
+            dwc_event_key = target_row.get(dwc_event_key_name, '')
+            occurrence_key = target_row.get(dwc_key_name, '')
+            # Create event row.
+            if occurrence_key and (occurrence_key not in used_key_list):
+                used_key_list.add(occurrence_key)
+                #
+                #
+                if scientific_name in self._taxa_lookup_dict:
+                    occurrence_dict = copy.deepcopy(self._taxa_lookup_dict[scientific_name])
+                else:
+                    taxa_dict = dwca_generator.TranslateTaxa().get_translated_aphiaid_and_name(scientific_name)
+                    # Taxa info.
+                    occurrence_dict = {}
                     #
-                    #
-                    if scientific_name in self._taxa_lookup_dict:
-                        occurrence_dict = copy.deepcopy(self._taxa_lookup_dict[scientific_name])
+                    dyntaxa_id = taxa_dict.get('dyntaxa_id', '')
+                    if dyntaxa_id:
+                        occurrence_dict['taxonID'] = 'urn:lsid:dyntaxa.se:Taxon:' + dyntaxa_id
                     else:
-                        taxa_dict = dwca_generator.TranslateTaxa().get_translated_aphiaid_and_name(scientific_name)
-                        # Taxa info.
-                        occurrence_dict = {}
-                        #
-                        dyntaxa_id = taxa_dict.get('dyntaxa_id', '')
-                        if dyntaxa_id:
-                            occurrence_dict['taxonID'] = 'urn:lsid:dyntaxa.se:Taxon:' + dyntaxa_id
-                        else:
-                            occurrence_dict['taxonID'] = ''
-                        #
-                        occurrence_dict['scientificNameID'] = taxa_dict.get('worms_lsid', '')
-    #                     occurrence_dict['worms_scientific_name'] = taxa_dict.get('worms_scientific_name', '')            
-                        occurrence_dict['taxonRank'] = taxa_dict.get('worms_rank', '')
-                        occurrence_dict['kingdom'] = taxa_dict.get('worms_kingdom', '')
-                        occurrence_dict['phylum'] = taxa_dict.get('worms_phylum', '')
-                        occurrence_dict['class'] = taxa_dict.get('worms_class', '')
-                        occurrence_dict['order'] = taxa_dict.get('worms_order', '')
-                        occurrence_dict['family'] = taxa_dict.get('worms_family', '')
-                        occurrence_dict['genus'] = taxa_dict.get('worms_genus', '')
-                        #
-                        self._taxa_lookup_dict[scientific_name] = copy.deepcopy(occurrence_dict)
-                        
-                    for column_name in control_dict['fields']:
-                        occurrence_dict[column_name] = target_row.get(column_name, '')
+                        occurrence_dict['taxonID'] = ''
                     #
+                    occurrence_dict['scientificNameID'] = taxa_dict.get('worms_lsid', '')
+#                     occurrence_dict['worms_scientific_name'] = taxa_dict.get('worms_scientific_name', '')            
+                    occurrence_dict['taxonRank'] = taxa_dict.get('worms_rank', '')
+                    occurrence_dict['kingdom'] = taxa_dict.get('worms_kingdom', '')
+                    occurrence_dict['phylum'] = taxa_dict.get('worms_phylum', '')
+                    occurrence_dict['class'] = taxa_dict.get('worms_class', '')
+                    occurrence_dict['order'] = taxa_dict.get('worms_order', '')
+                    occurrence_dict['family'] = taxa_dict.get('worms_family', '')
+                    occurrence_dict['genus'] = taxa_dict.get('worms_genus', '')
+                    #
+                    self._taxa_lookup_dict[scientific_name] = copy.deepcopy(occurrence_dict)
+                    
+                for occurrence_field in occurrence_fields:
+                    occurrence_dict[occurrence_field] = target_row.get(occurrence_field, '')
+                #
 #                     occurrence_dict['type'] = event_node_name
 #                     occurrence_dict['id'] = node_key
 #                     occurrence_dict['eventID'] = target_row['eventID']
 #                     occurrence_dict['parentEventID'] = parent_node_key
-                    #
-                    
-                    occurrence_dict['id'] = occurrence_key
-                    occurrence_dict['eventID'] = event_key
-                    occurrence_dict['occurrenceID'] = occurrence_key
-                    
-                    
-                    
-    #                 # Add key to dynamicProperties.
-    #                 occurrence_dict['dynamicProperties'] = dwca_occurrence_id
-                    
-                    
-                    
-                    #
-                    self.dwca_occurrence.append(occurrence_dict) 
+                #
+                
+                occurrence_dict['id'] = occurrence_key
+                occurrence_dict['eventID'] = dwc_event_key
+                occurrence_dict['occurrenceID'] = occurrence_key
+                
+                
+                
+#                 # Add key to dynamicProperties.
+#                 occurrence_dict['dynamicProperties'] = dwca_occurrence_id
+                
+                
+                
+                #
+                self.dwca_occurrence.append(occurrence_dict) 
             
             
             
@@ -239,128 +226,142 @@ class DwcaFormatStandard(object):
     def create_dwca_measurementorfact(self):
         """ """
         used_mof_occurrence_key_list = set()
-        used_extra_params_visit_list = set()
-        used_extra_params_sample_list = set()
-        used_extra_params_occurrence_list = set()
- 
-        generated_parameters_key_list = []
-         
+        generated_parameters_key_list = set()
         debug_row_number = 0
+        
+        # Get node name hierarchy.
+        event_node_names = self.resources_object.get_event_node_names()
+        # Get all node info.
+        event_nodes = self.resources_object.get_event_nodes()
+        # Create control dictionary.
+        event_control_dict = {}
+        for event_node_name in event_node_names:
+            if event_node_name not in event_control_dict:
+                event_control_dict[event_node_name] = {}
+                event_control_dict[event_node_name]['dwc_key_name'] = event_nodes[event_node_name]['dwc_key_name']
+                event_control_dict[event_node_name]['dwc_event_key'] = event_nodes[event_node_name].get('dwc_event_key', '')
+                event_control_dict[event_node_name]['used_key_list'] = set()
+                event_control_dict[event_node_name]['used_extra_params_list'] = set()
+                event_control_dict[event_node_name]['emof_extra_params'] = {}
+         
+        for dwc_keys_row in self.resources_object.dwc_keys:
+            if dwc_keys_row.get('dwc_node', '') == 'occurrence':
+                occurrence_dwc_category = dwc_keys_row.get('dwc_category', '')
+                occurrence_dwc_node = dwc_keys_row.get('dwc_node', '')
+                occurrence_dwc_parent_event = dwc_keys_row.get('dwc_parent_event', '')
+                occurrence_dwc_key_name = dwc_keys_row.get('dwc_key_name', '')
+                occurrence_dwc_event_key = dwc_keys_row.get('dwc_event_key', '')
+                occurrence_dwc_key_prefix = dwc_keys_row.get('dwc_key_prefix', '')
+                
+                
+         
+         
+         
          
         for target_row in self.target_rows:
             #
             if target_row.get('remove_row', '') == '<REMOVE>':
                 continue
-             
-            # Keys, both for values from enet and from occurrence.
-            dwca_visit_id = target_row.get('sampling_event_key', '')
-            dwca_sample_id = target_row.get('sample_key', '')
-            dwca_occurrence_id = target_row.get('occurrence_key', '')
-#             dwca_mof_id = target_row.get('occurrence_measurement_key', '')
-            dwca_mof_id = target_row.get('sample_measurement_key', '')
-             
-            # Extra parameters from column values. Visit level.
-            if dwca_visit_id and (dwca_visit_id not in used_extra_params_visit_list):
-                used_extra_params_visit_list.add(dwca_visit_id)
-                 
-                if self.mof_extra_params is None:
-                    self.mof_extra_params = {
-                        'wave_height_m': ('Wave height', 'm'),
-                        'wav_observation_code': ('Wave observation code', ''),
-                        'weather_observation_code': ('Weather observation code', ''),
-                        'wave_exposure_fetch': ('Wave exposure fetch', ''),
-                        'wind_speed_ms': ('Wind speed', 'm/s'),
-                        'wind_direction_code': ('Wind direction code', ''),
-                        'water_level_deviation_m': ('Water level deviation', 'M'),
-                        'water_depth_m': ('Water depth', 'M'),
-                        'secchi_depth_m': ('Secchi depth', 'm'),
-                        'cloud_observation_code': ('Cloud observation code', ''),
-                        'insolation_air': ('Insolation air', ''),
-                        'incubation_radiation': ('Incubation radiation', ''),
-                        'air_temperature_wet_degc': ('Air temperature wet', 'degc'),
-                        'air_temperature_degc': ('Air temperature', 'degc'),
-                        'air_pressure_hpa': ('Air pressure', 'hpa'),
-                        'ice_observation_code': ('Ice observation code', ''),
-                        # Part of key:
-                        'sediment_deposition_code': ('Sediment deposition code', ''),
-                    }
-                 
-                for key, (param, unit) in self.mof_extra_params.items(): 
-                    value = str(target_row.get(key, ''))
-                    if value: 
-                        measurementorfact_dict = {} 
-                        measurementorfact_dict['id'] = dwca_visit_id
-                        measurementorfact_dict['eventID'] = dwca_visit_id
-                        measurementorfact_dict['measurementType'] = param 
-                        measurementorfact_dict['measurementValue'] = value 
-                        measurementorfact_dict['measurementUnit'] = unit 
-                        measurementorfact_dict['measurementDeterminedDate'] = target_row.get('sample_date', '') 
-                        #
-                        self.dwca_measurementorfact.append(measurementorfact_dict) 
-                     
-            # Connect to event, sample. Compare keys and use short keys.
-            event_key = dwca_sample_id
-            if dwca_visit_id == dwca_sample_id:
-                event_key = dwca_visit_id
-            elif dwca_sample_id == dwca_sample_id:
-                event_key = dwca_sample_id
-             
-            # Used if row contains species.
-            occurrence_key = dwca_occurrence_id
-            if dwca_occurrence_id == dwca_sample_id:
-                occurrence_key = ''
- 
-            if dwca_mof_id and (dwca_mof_id not in used_mof_occurrence_key_list):
-                used_mof_occurrence_key_list.add(dwca_mof_id)
-             
-                parameter = target_row.get('parameter', '')
-                value = target_row.get('value', '')
-                unit = target_row.get('unit', '')
-                if parameter:
-                    measurementorfact_dict = {}
-                    measurementorfact_dict['id'] = event_key
-                    measurementorfact_dict['eventID'] = event_key
-                    measurementorfact_dict['occurrenceID'] = occurrence_key
-                    measurementorfact_dict['measurementType'] = parameter
-                    measurementorfact_dict['measurementValue'] = value
-                    measurementorfact_dict['measurementUnit'] = unit
-                    measurementorfact_dict['measurementAccuracy'] = ''
-                    measurementorfact_dict['measurementDeterminedDate'] = target_row.get('analysis_date', '')
-                    measurementorfact_dict['measurementDeterminedBy'] = target_row.get('analysed_by', '')
-                    measurementorfact_dict['measurementMethod'] = target_row.get('analysis_method_code', '') # TODO: method_reference_code
-                    measurementorfact_dict['measurementRemarks'] = target_row.get('variable_comment', '')
+            
+            # Iterate over nodes.
+            parent_node_key = ''
+            for event_node_name in event_node_names:
+                # Current row in control dictionary.
+                control_dict = event_control_dict[event_node_name]
+                # Get keys.
+                event_node_key = target_row.get(control_dict['dwc_key_name'], '')
+                # Create event row.
+                if event_node_key and (event_node_key not in control_dict['used_key_list']):
+                    control_dict['used_key_list'].add(event_node_key)
                     #
-                    self.dwca_measurementorfact.append(measurementorfact_dict)
+                    # Extra parameters connected to events, not occurences.
+                    if event_node_key and (event_node_key not in control_dict['used_extra_params_list']):
+                        control_dict['used_extra_params_list'].add(event_node_key)
+                        
+                        for field_mapping_row in self.resources_object.field_mapping:
+                            if field_mapping_row.get('dwc_node', '') is not event_node_name:
+                                continue
+                            source_field = field_mapping_row.get('source_field', '')
+                            dwc_measurement_type = field_mapping_row.get('dwc_measurement_type', '')
+                            dwc_measurement_unit = field_mapping_row.get('dwc_measurement_unit', '')
+                            if source_field and dwc_measurement_type:
+                                event_control_dict[event_node_name]['emof_extra_params'][source_field] = ( dwc_measurement_type , dwc_measurement_unit )
+                         
+                        for key, (param, unit) in event_control_dict[event_node_name]['emof_extra_params'].items(): 
+                            value = str(target_row.get(key, ''))
+                            if value: 
+                                measurementorfact_dict = {} 
+                                measurementorfact_dict['id'] = event_node_key
+                                measurementorfact_dict['eventID'] = event_node_key
+                                measurementorfact_dict['measurementType'] = param 
+                                measurementorfact_dict['measurementValue'] = value 
+                                measurementorfact_dict['measurementUnit'] = unit 
+                                measurementorfact_dict['measurementDeterminedDate'] = target_row.get('sample_date', '') 
+                                #
+                                self.dwca_measurementorfact.append(measurementorfact_dict) 
+                
+                
+                # Used if row contains species.
+                if event_node_name == occurrence_dwc_parent_event:
+                    dwc_key = target_row.get(occurrence_dwc_key_name, '')
+                    dwc_event_key = target_row.get(occurrence_dwc_event_key, '')
+                    emof_param_unit_id = target_row.get('emof_param_unit_id', '')
+                    
+                    occurrence_key = dwc_key
+                    if dwc_key == dwc_event_key:
+                        occurrence_key = ''
+         
+                    if emof_param_unit_id and (emof_param_unit_id not in used_mof_occurrence_key_list):
+                        used_mof_occurrence_key_list.add(emof_param_unit_id)
                      
-                     
-                     
-                    # Add parameter for size_class.
-                    size_class = target_row.get('size_class', '')
-                    if size_class:
-                        if dwca_occurrence_id not in generated_parameters_key_list:
-                            generated_parameters_key_list.append(dwca_occurrence_id)
+                        parameter = target_row.get('parameter', '')
+                        value = target_row.get('value', '')
+                        unit = target_row.get('unit', '')
+                        if parameter:
+                            measurementorfact_dict = {}
+                            measurementorfact_dict['id'] = dwc_event_key
+                            measurementorfact_dict['eventID'] = dwc_event_key
+                            measurementorfact_dict['occurrenceID'] = occurrence_key
+                            measurementorfact_dict['measurementType'] = parameter
+                            measurementorfact_dict['measurementValue'] = value
+                            measurementorfact_dict['measurementUnit'] = unit
+                            measurementorfact_dict['measurementAccuracy'] = ''
+                            measurementorfact_dict['measurementDeterminedDate'] = target_row.get('measurementDeterminedDate', '')
+                            measurementorfact_dict['measurementDeterminedBy'] = target_row.get('measurementDeterminedBy', '')
+                            measurementorfact_dict['measurementMethod'] = target_row.get('measurementMethod', '') # TODO: method_reference_code
+                            measurementorfact_dict['measurementRemarks'] = target_row.get('measurementRemarks', '')
                             #
-                            measurementorfact_dict_2 = copy.deepcopy(measurementorfact_dict)
-#                             measurementorfact_dict_2['id'] = self.measurementorfact_seq_no
-#                             self.measurementorfact_seq_no += 1
-                            #
-                            measurementorfact_dict_2['measurementType'] = 'SizeClass(HELCOM-PEG)'
-                            measurementorfact_dict_2['measurementValue'] = size_class
-                            measurementorfact_dict_2['measurementUnit'] = ''
-                            #
-                            self.dwca_measurementorfact.append(measurementorfact_dict_2)
-                     
-                     
-            else:
-                if debug_row_number < 100:
-                    try:
-                        print('DEBUG: dwca_mof_id: ' + str(dwca_mof_id))
-                    except Exception as e:
-                        print('DEBUG Exception: ' + str(e))
-                    debug_row_number += 1
-                elif debug_row_number == 100:
-                    print('DEBUG: MAX LIMIT OF 100 LOG ROWS.')
-                    debug_row_number += 1
+                            self.dwca_measurementorfact.append(measurementorfact_dict)
+                             
+                             
+                             
+                            # Add parameter for size_class.
+                            size_class = target_row.get('size_class', '')
+                            if size_class:
+                                if dwc_key not in generated_parameters_key_list:
+                                    generated_parameters_key_list.add(dwc_key)
+                                    #
+                                    measurementorfact_dict_2 = copy.deepcopy(measurementorfact_dict)
+        #                             measurementorfact_dict_2['id'] = self.measurementorfact_seq_no
+        #                             self.measurementorfact_seq_no += 1
+                                    #
+                                    measurementorfact_dict_2['measurementType'] = 'SizeClass(HELCOM-PEG)'
+                                    measurementorfact_dict_2['measurementValue'] = size_class
+                                    measurementorfact_dict_2['measurementUnit'] = ''
+                                    #
+                                    self.dwca_measurementorfact.append(measurementorfact_dict_2)
+                             
+                             
+                    else:
+                        if debug_row_number < 100:
+                            try:
+                                print('DEBUG: dwca_mof_id: ' + str(dwc_key))
+                            except Exception as e:
+                                print('DEBUG Exception: ' + str(e))
+                            debug_row_number += 1
+                        elif debug_row_number == 100:
+                            print('DEBUG: MAX LIMIT OF 100 LOG ROWS.')
+                            debug_row_number += 1
  
  
  
@@ -526,17 +527,17 @@ class DwcaFormatStandard(object):
 #         return key_string
  
     def get_event_columns(self):
-        """ Implementation of abstract method declared in DwcaDatatypeBase. """
+        """ Implementation of abstract method declared in DwcDatatypeBase. """
         
-        return self.resources_object.get_dwca_columns().get('dwca_event_columns', [])
+        return self.resources_object.get_dwc_columns().get('dwc_event_columns', [])
      
     def get_occurrence_columns(self):
-        """ Implementation of abstract method declared in DwcaDatatypeBase. """
+        """ Implementation of abstract method declared in DwcDatatypeBase. """
         
-        return self.resources_object.get_dwca_columns().get('dwca_occurrence_columns', [])
+        return self.resources_object.get_dwc_columns().get('dwc_occurrence_columns', [])
      
     def get_measurementorfact_columns(self):
-        """ Implementation of abstract method declared in DwcaDatatypeBase. """
+        """ Implementation of abstract method declared in DwcDatatypeBase. """
         
-        return self.resources_object.get_dwca_columns().get('dwca_mof_columns', [])
+        return self.resources_object.get_dwc_columns().get('dwc_emof_columns', [])
     
