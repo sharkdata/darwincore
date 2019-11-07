@@ -1,4 +1,5 @@
 
+__version__ = '0.0.0'
 
 from dwca_generator.dwca_utils import singleton
 from dwca_generator.dwca_utils import TranslateTaxa, ZipArchive
