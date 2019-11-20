@@ -23,13 +23,14 @@ if __name__ == "__main__":
     # Data.
     data = dwca_generator.DwcaDataSharkStandard(resources)
     for dataset_filepath in [
-                'test_data/SHARK_Zooplankton_2012_SMHI_version_2019-09-26.zip', 
-                'test_data/SHARK_Zooplankton_2012_UMSC_version_2019-02-14.zip', 
-                'test_data/SHARK_Zooplankton_2013_DEEP_version_2019-02-14.zip', 
+                'test_data/SHARKdata_datasets/SHARK_Zooplankton_2016_SMHI_version_2019-02-14.zip', 
+                'test_data/SHARKdata_datasets/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
+                'test_data/SHARKdata_datasets/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
                 ]:
         data.add_dataset(dataset_filepath)
     data.add_extra_fields()
     data.create_dwca_keys()
+    data.create_dynamic_fields()
     data.map_fields_to_dwc()
     data.cleanup_data()
 #     data.translate_species()
