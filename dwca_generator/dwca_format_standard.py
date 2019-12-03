@@ -5,6 +5,7 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import copy
+import datetime
 
 import dwca_generator
 
@@ -161,7 +162,7 @@ class DwcaFormatStandard(object):
 #                     occurrence_dict['parentEventID'] = parent_node_key
                 #
                 
-                occurrence_dict['id'] = occurrence_key
+                occurrence_dict['id'] = dwc_event_key
                 occurrence_dict['eventID'] = dwc_event_key
                 occurrence_dict['occurrenceID'] = occurrence_key
                 
@@ -355,7 +356,7 @@ class DwcaFormatStandard(object):
                     else:
                         if debug_row_number < 100:
                             try:
-                                print('DEBUG: dwca_mof_id: ' + str(dwc_key))
+                                print('DEBUG Duplicates: emof_param_unit_id: ' + str(emof_param_unit_id))
                             except Exception as e:
                                 print('DEBUG Exception: ' + str(e))
                             debug_row_number += 1
@@ -407,6 +408,61 @@ class DwcaFormatStandard(object):
 # 
 # 
     
+    def extract_metadata(self):
+        """ """
+        latitude_min = 100.0
+        latitude_max = -100.0
+        longitude_min = 100.0
+        longitude_max = -100.0
+        sample_date_min = '9999-99-99'
+        sample_date_max = '0000-00-00'
+        
+        param_unit_list = set()
+        
+        # Iterate over rows.
+        for target_row in self.target_rows:
+            # Don't check filtered rows.
+            if target_row.get('remove_row', '') == '<REMOVE>':
+                continue
+            # Latitude/longitude.
+            latitude = float(target_row.get('decimalLatitude', '100.0'))
+            longitude = float(target_row.get('decimalLongitude', '100.0'))
+            if  latitude != 100.0 and longitude != -100.0:
+                latitude_min = min(latitude_min, latitude)
+                latitude_max = max(latitude_max, latitude)
+                longitude_min = min(longitude_min, longitude)
+                longitude_max = max(longitude_max, longitude)
+            # Sapling date.
+            sample_date = target_row.get('eventDate', '')
+            if  sample_date != '':
+                sample_date_min = min(sample_date_min, sample_date)
+                sample_date_max = max(sample_date_max, sample_date)
+            # Parameters.
+            parameter = target_row.get('parameter', '')
+            unit = target_row.get('unit', '')
+            param_unit = ''
+            if parameter and unit:
+                param_unit = parameter + ' (' + unit + ')'
+            elif parameter:
+                param_unit = parameter
+            if param_unit:
+                param_unit_list.add(param_unit)
+        
+        # Done. 
+        if  latitude_min != 100.0 and latitude_max != -100.0 and \
+            longitude_min != 100.0 and longitude_max != -100.0:
+            
+            self.latitude_min = latitude_min
+            self.latitude_max = latitude_max
+            self.longitude_min = longitude_min
+            self.longitude_max = longitude_max
+        
+        if sample_date_min != '9999-99-99' and sample_date_max != '0000-00-00':
+            self.sample_date_min = sample_date_min
+            self.sample_date_max = sample_date_max
+        
+        self.parameter_list = ', '.join(param_unit_list)
+        
     def create_meta_xml(self):
         """ """
         self.meta_xml_rows = []
@@ -423,18 +479,18 @@ class DwcaFormatStandard(object):
         eml_xml = dwca_generator.DarwinCoreEmlXml()
         self.eml_xml_rows = eml_xml.create_eml_xml(eml_template)
         if len(self.eml_xml_rows) > 1:
-               
+            
             for index, xml_row in enumerate(self.eml_xml_rows):
                 if 'REPLACE-' in xml_row:                    
                     self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-packageId', 'TODO-PACKAGE-ID')
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-pubDate', str(datetime.datetime.today().date()))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-westBoundingCoordinate',  str(metadata_dict.get('longitude_dd_min', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-eastBoundingCoordinate',  str(metadata_dict.get('longitude_dd_max', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-northBoundingCoordinate',  str(metadata_dict.get('latitude_dd_max', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-southBoundingCoordinate',  str(metadata_dict.get('latitude_dd_min', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-beginDate-calendarDate',  str(metadata_dict.get('sample_date_min', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-endDate-calendarDate',  str(metadata_dict.get('sample_date_max', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-Parameters',  str(metadata_dict.get('parameter_list', '')))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-pubDate', str(datetime.datetime.today().date()))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-westBoundingCoordinate',  str(self.longitude_min))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-eastBoundingCoordinate',  str(self.longitude_max))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-northBoundingCoordinate',  str(self.latitude_max))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-southBoundingCoordinate',  str(self.latitude_min))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-beginDate-calendarDate',  str(self.sample_date_min))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-endDate-calendarDate',  str(self.sample_date_max))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-Parameters',  str(self.parameter_list))
     
     def save_to_archive_file(self, dwca_file_path, eml_template, metadata_dict):
         """ """
@@ -486,20 +542,7 @@ class DwcaFormatStandard(object):
             ziparchive.appendZipEntry('meta.xml', ('\r\n'.join(self.meta_xml_rows).encode('utf-8')))
            
 #         # Add eml.xml files to zip.
-#         xml_row_list = dwca_generator.DarwinCoreEmlXml().create_eml_xml(eml_template)
         if len(self.eml_xml_rows) > 1:
-#               
-#             for index, xml_row in enumerate(xml_row_list):
-#                 if 'REPLACE-' in xml_row:                    
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-packageId', 'TODO-PACKAGE-ID')
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-pubDate', str(datetime.datetime.today().date()))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-westBoundingCoordinate',  str(metadata_dict.get('longitude_dd_min', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-eastBoundingCoordinate',  str(metadata_dict.get('longitude_dd_max', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-northBoundingCoordinate',  str(metadata_dict.get('latitude_dd_max', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-southBoundingCoordinate',  str(metadata_dict.get('latitude_dd_min', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-beginDate-calendarDate',  str(metadata_dict.get('sample_date_min', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-endDate-calendarDate',  str(metadata_dict.get('sample_date_max', '')))
-#                     xml_row_list[index] = xml_row_list[index].replace('REPLACE-Parameters',  str(metadata_dict.get('parameter_list', '')))
             #
             eml_document = '\r\n'.join(self.eml_xml_rows).encode('utf-8')
             ziparchive.appendZipEntry('eml.xml', eml_document)
