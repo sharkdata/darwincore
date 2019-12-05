@@ -28,6 +28,44 @@ class DwcaResources():
         self.dwc_occurrence_nodes = None
         self.event_node_fields = None
     
+        self.filter_dict = None
+    
+    
+    
+    
+    def get_filters(self):
+        """ """
+        if not self.filter_dict:
+            self.filter_dict = {}
+            for row in self.filter:
+                field_name = row.get('field_name', '')
+                include_value = row.get('include_value', '')
+                exclude_value = row.get('exclude_value', '')
+                
+                if field_name and include_value:
+                    if not include_value[0] == '#':
+                        if field_name not in self.filter_dict:
+                            self.filter_dict[field_name] = {}
+                        if 'included_values' not in self.filter_dict[field_name]:
+                            self.filter_dict[field_name]['included_values'] = []
+                        self.filter_dict[field_name]['included_values'].append(include_value)
+                
+                if field_name and exclude_value:
+                    if not exclude_value[0] == '#':
+                        if field_name not in self.filter_dict:
+                            self.filter_dict[field_name] = {}
+                        if 'excluded_values' not in self.filter_dict[field_name]:
+                            self.filter_dict[field_name]['excluded_values'] = []
+                        self.filter_dict[field_name]['excluded_values'].append(exclude_value)
+                    
+        return self.filter_dict
+    
+    
+    
+    
+    
+    
+    
     def get_dwc_columns(self):
         """ """
         if not self.dwc_columns_dict:

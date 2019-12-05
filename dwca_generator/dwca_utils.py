@@ -154,7 +154,9 @@ class TranslateTaxa():
          
 #         translate_file_path = pathlib.Path('D:/arnold/4_sharkdata\sharkdata_ftp/resources/species_2018_updated_2018-01-24.txt')
 #         translate_file_path = pathlib.Path('D:/arnold/4_sharkdata\sharkdata_ftp/resources/translate_dyntaxa_to_worms.txt')
-        translate_file_path = pathlib.Path('D:/arnold/42_sharkdata_py3/data_in/resources/translate_dyntaxa_to_worms.txt')
+#         translate_file_path = pathlib.Path('D:/arnold/42_sharkdata_py3/data_in/resources/translate_dyntaxa_to_worms.txt')
+        translate_file_path = pathlib.Path('test_data/resources/translate_dyntaxa_to_worms.txt')
+        
         with translate_file_path.open('r') as translate_file:
             for index, row in enumerate(translate_file):
                 row = [item.strip() for item in row.split('\t')]

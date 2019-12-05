@@ -55,6 +55,9 @@ class DwcaFormatStandard(object):
         event_node_names = self.resources_object.get_event_node_names()
         # Get all node info.
         event_nodes = self.resources_object.get_event_nodes()
+        # Used for dynamicProperties.
+        used_dynamic_field_key_list = self.data_object.get_used_dynamic_field_keys()
+        
         # Create control dictionary.
         event_control_dict = {}
         for event_node_name in event_node_names:
@@ -88,13 +91,12 @@ class DwcaFormatStandard(object):
                     event_dict['eventID'] = node_key
                     event_dict['parentEventID'] = parent_node_key
                     
-                    
-                    
-    #                 # Add key to dynamicProperties.
-    #                 event_dict['dynamicProperties'] = dwca_visit_id
-                    
-                    
-                    
+                    # Add key to dynamicProperties.
+                    for dynamic_field_key in used_dynamic_field_key_list:
+                        if event_node_name + '<->' in dynamic_field_key:
+                            # Remove dwc_node part from key.
+                            new_key = dynamic_field_key.replace(event_node_name + '<->', '')
+                            event_dict[new_key] = target_row.get(dynamic_field_key, '')
                     #
                     self.dwca_event.append(event_dict) 
                 
@@ -105,11 +107,15 @@ class DwcaFormatStandard(object):
         # Get all node info.
         occurrence_nodes = self.resources_object.get_occurrence_nodes()
         occurrence_node = occurrence_nodes['occurrence']
+        # Used for dynamicProperties.
+        used_dynamic_field_key_list = self.data_object.get_used_dynamic_field_keys()
         # Create control dictionary.
         used_key_list = set()
         dwc_event_key_name = occurrence_node['dwc_event_key']
         dwc_key_name = occurrence_node['dwc_key_name']
-        occurrence_fields = self.resources_object.get_event_node_fields('occurrence')
+#         occurrence_fields = self.resources_object.get_event_node_fields('occurrence')
+        occurrence_fields = self.resources_object.get_dwc_columns().get('dwc_occurrence_columns', [])
+        
         # Process all data rows.
         for target_row in self.target_rows:
             #
@@ -127,32 +133,34 @@ class DwcaFormatStandard(object):
             if occurrence_key and (occurrence_key not in used_key_list):
                 used_key_list.add(occurrence_key)
                 #
-                #
-                if scientific_name in self._taxa_lookup_dict:
-                    occurrence_dict = copy.deepcopy(self._taxa_lookup_dict[scientific_name])
-                else:
-                    taxa_dict = dwca_generator.TranslateTaxa().get_translated_aphiaid_and_name(scientific_name)
-                    # Taxa info.
-                    occurrence_dict = {}
-                    #
-                    dyntaxa_id = taxa_dict.get('dyntaxa_id', '')
-                    if dyntaxa_id:
-                        occurrence_dict['taxonID'] = 'urn:lsid:dyntaxa.se:Taxon:' + dyntaxa_id
-                    else:
-                        occurrence_dict['taxonID'] = ''
-                    #
-                    occurrence_dict['scientificNameID'] = taxa_dict.get('worms_lsid', '')
-#                     occurrence_dict['worms_scientific_name'] = taxa_dict.get('worms_scientific_name', '')            
-                    occurrence_dict['taxonRank'] = taxa_dict.get('worms_rank', '')
-                    occurrence_dict['kingdom'] = taxa_dict.get('worms_kingdom', '')
-                    occurrence_dict['phylum'] = taxa_dict.get('worms_phylum', '')
-                    occurrence_dict['class'] = taxa_dict.get('worms_class', '')
-                    occurrence_dict['order'] = taxa_dict.get('worms_order', '')
-                    occurrence_dict['family'] = taxa_dict.get('worms_family', '')
-                    occurrence_dict['genus'] = taxa_dict.get('worms_genus', '')
-                    #
-                    self._taxa_lookup_dict[scientific_name] = copy.deepcopy(occurrence_dict)
-                    
+                occurrence_dict = {}
+                
+                
+#                 if scientific_name in self._taxa_lookup_dict:
+#                     occurrence_dict = copy.deepcopy(self._taxa_lookup_dict[scientific_name])
+#                 else:
+#                     taxa_dict = dwca_generator.TranslateTaxa().get_translated_aphiaid_and_name(scientific_name)
+#                     # Taxa info.
+#                     occurrence_dict = {}
+#                     #
+#                     dyntaxa_id = taxa_dict.get('dyntaxa_id', '')
+#                     if dyntaxa_id:
+#                         occurrence_dict['taxonID'] = 'urn:lsid:dyntaxa.se:Taxon:' + dyntaxa_id
+#                     else:
+#                         occurrence_dict['taxonID'] = ''
+#                     #
+#                     occurrence_dict['scientificNameID'] = taxa_dict.get('worms_lsid', '')
+# #                     occurrence_dict['worms_scientific_name'] = taxa_dict.get('worms_scientific_name', '')            
+#                     occurrence_dict['taxonRank'] = taxa_dict.get('worms_rank', '')
+#                     occurrence_dict['kingdom'] = taxa_dict.get('worms_kingdom', '')
+#                     occurrence_dict['phylum'] = taxa_dict.get('worms_phylum', '')
+#                     occurrence_dict['class'] = taxa_dict.get('worms_class', '')
+#                     occurrence_dict['order'] = taxa_dict.get('worms_order', '')
+#                     occurrence_dict['family'] = taxa_dict.get('worms_family', '')
+#                     occurrence_dict['genus'] = taxa_dict.get('worms_genus', '')
+#                     #
+#                     self._taxa_lookup_dict[scientific_name] = copy.deepcopy(occurrence_dict)
+#                     
                 for occurrence_field in occurrence_fields:
                     occurrence_dict[occurrence_field] = target_row.get(occurrence_field, '')
                 #
@@ -167,12 +175,13 @@ class DwcaFormatStandard(object):
                 occurrence_dict['occurrenceID'] = occurrence_key
                 
                 
-                
-#                 # Add key to dynamicProperties.
-#                 occurrence_dict['dynamicProperties'] = dwca_occurrence_id
-                
-                
-                
+                # Add key to dynamicProperties.
+                for dynamic_field_key in used_dynamic_field_key_list:
+                    if 'occurrence<->' in dynamic_field_key:
+                        # Remove dwc_node part from key.
+                        new_key = dynamic_field_key.replace('occurrence<->', '')
+                        occurrence_dict[new_key] = target_row.get(dynamic_field_key, '')
+                 
                 #
                 self.dwca_occurrence.append(occurrence_dict) 
             
@@ -230,6 +239,8 @@ class DwcaFormatStandard(object):
         generated_parameters_key_list = set()
         debug_row_number = 0
         
+        # Used for dynamicProperties.
+        used_dynamic_field_key_list = self.data_object.get_used_dynamic_field_keys()
         # Get node name hierarchy.
         event_node_names = self.resources_object.get_event_node_names()
         # Get all node info.
@@ -298,8 +309,20 @@ class DwcaFormatStandard(object):
                                 measurementorfact_dict['measurementValue'] = value 
                                 measurementorfact_dict['measurementUnit'] = unit 
                                 measurementorfact_dict['measurementDeterminedDate'] = target_row.get('sample_date', '') 
-                                #
-                                self.dwca_measurementorfact.append(measurementorfact_dict) 
+                                    
+                                    
+                                    
+                        # Add key to dynamicProperties.
+                        for dynamic_field_key in used_dynamic_field_key_list:
+                            if 'emof<->' in dynamic_field_key:
+                                # Remove dwc_node part from key.
+                                new_key = dynamic_field_key.replace('emof<->', '')
+                                measurementorfact_dict[new_key] = target_row.get(dynamic_field_key, '')
+                            
+                            
+                            
+                        #
+                        self.dwca_measurementorfact.append(measurementorfact_dict) 
                 
                 
                 # Used if row contains species.
@@ -332,6 +355,19 @@ class DwcaFormatStandard(object):
                             measurementorfact_dict['measurementMethod'] = target_row.get('measurementMethod', '') # TODO: method_reference_code
                             measurementorfact_dict['measurementRemarks'] = target_row.get('measurementRemarks', '')
                             #
+                                   
+                                    
+                                    
+                            # Add key to dynamicProperties.
+                            for dynamic_field_key in used_dynamic_field_key_list:
+                                if 'emof<->' in dynamic_field_key:
+                                    # Remove dwc_node part from key.
+                                    new_key = dynamic_field_key.replace('emof<->', '')
+                                    measurementorfact_dict[new_key] = target_row.get(dynamic_field_key, '')
+                                    
+                                    
+                                    
+                            #
                             self.dwca_measurementorfact.append(measurementorfact_dict)
                              
                              
@@ -363,50 +399,6 @@ class DwcaFormatStandard(object):
                         elif debug_row_number == 100:
                             print('DEBUG: MAX LIMIT OF 100 LOG ROWS.')
                             debug_row_number += 1
- 
- 
- 
- 
- 
-#     def get_rows(self):
-#         """ """
-#         # Darwin Core Archive parts.
-#         event_content = [] 
-#         occurrence_content = [] 
-#         measurementorfact_content = []
-#           
-# #         # Append headers for Event, Occurrence and Measurementorfact.
-# #         event_content.append('\t'.join(self.get_event_columns()))
-# #         occurrence_content.append('\t'.join(self.get_occurrence_columns())) 
-# #         measurementorfact_content.append('\t'.join(self.get_measurementorfact_columns()))
-#          
-#         # Convert from dictionary to row for each item in the list.
-#         # Event. 
-#         for row_dict in self.dwca_event:
-#             row = []
-#             for column_name in self.get_event_columns():
-#                 row.append(str(row_dict.get(column_name, '')))
-# #             event_content.append('\t'.join(row))
-#             event_content.append(row)
-#         # Occurrence.
-#         for row_dict in self.dwca_occurrence:
-#             row = []
-#             for column_name in self.get_occurrence_columns():
-#                 row.append(str(row_dict.get(column_name, '')))
-# #             occurrence_content.append('\t'.join(row))
-#             occurrence_content.append(row)
-#         # Measurementorfact.
-#         for row_dict in self.dwca_measurementorfact:
-#             row = []
-#             for column_name in self.get_measurementorfact_columns():
-#                 row.append(str(row_dict.get(column_name, '')))
-# #             measurementorfact_content.append('\t'.join(row))
-#             measurementorfact_content.append(row)
-#                  
-#         return event_content, occurrence_content, measurementorfact_content
-# 
-# 
-# 
     
     def extract_metadata(self):
         """ """
@@ -533,54 +525,27 @@ class DwcaFormatStandard(object):
         if len(measurementorfact_content) > 1:
             ziparchive.appendZipEntry('extendedmeasurementorfact.txt', ('\r\n'.join(measurementorfact_content).encode('utf-8')))
         
-        # Add meta.xml files to zip.
-#         xml_row_list = dwca_generator.DarwinCoreMetaXml().create_meta_xml(self.get_event_columns(), 
-#                                                                                self.get_occurrence_columns(), 
-#                                                                                self.get_measurementorfact_columns(),
-#                                                                                )
         if len(self.meta_xml_rows) > 1:
             ziparchive.appendZipEntry('meta.xml', ('\r\n'.join(self.meta_xml_rows).encode('utf-8')))
-           
+        
 #         # Add eml.xml files to zip.
         if len(self.eml_xml_rows) > 1:
             #
             eml_document = '\r\n'.join(self.eml_xml_rows).encode('utf-8')
             ziparchive.appendZipEntry('eml.xml', eml_document)
      
-     
-    # === UTILS: ===
-     
-#     def create_key_string(self, row_dict, key_columns):
-#         """ Util: Generates the key for one row. """
-#         key_string = ''
-#         try:
-#             key_list = [str(row_dict.get(item, '')) for item in key_columns]
-#             key_string = ':'.join(key_list)
-#         except:
-#             key_string = 'ERROR: Failed to generate key-string'
-#         # Replace swedish characters.
-#         key_string = key_string.replace('Å', 'A')
-#         key_string = key_string.replace('Ä', 'A')
-#         key_string = key_string.replace('Ö', 'O')
-#         key_string = key_string.replace('å', 'a')
-#         key_string = key_string.replace('ä', 'a')
-#         key_string = key_string.replace('ö', 'o')
-#         key_string = key_string.replace('ü', 'u')
-#         #
-#         return key_string
- 
     def get_event_columns(self):
         """ Implementation of abstract method declared in DwcDatatypeBase. """
-        
+    
         return self.resources_object.get_dwc_columns().get('dwc_event_columns', [])
      
     def get_occurrence_columns(self):
         """ Implementation of abstract method declared in DwcDatatypeBase. """
-        
+    
         return self.resources_object.get_dwc_columns().get('dwc_occurrence_columns', [])
      
     def get_measurementorfact_columns(self):
         """ Implementation of abstract method declared in DwcDatatypeBase. """
-        
+    
         return self.resources_object.get_dwc_columns().get('dwc_emof_columns', [])
     

@@ -22,6 +22,8 @@ class DwcaDataSharkStandard():
         self.dwc_short_names_exists_dict = {}
         # Field mappning between internal and DwC fields.
         self.dwc_default_mapping = {}
+        # List of keys for dynamic fields.
+        self.used_dynamic_field_key_list = []
     
     def get_data_rows(self):
         """ """
@@ -40,8 +42,22 @@ class DwcaDataSharkStandard():
                         header = row_items
                     else:
                         row_dict = dict(zip(header, row_items))
+                        
+                        # Check filter.
+                        add_row = True
+                        for filter_column_name, filter_dict in self.resources.get_filters().items():
+                            value = row_dict.get(filter_column_name, '')
+                            if value:
+                                included_values = filter_dict.get('included_values', None)
+                                excluded_values = filter_dict.get('excluded_values', None)
+                                if included_values and (value not in included_values):
+                                    add_row = False
+                                if excluded_values and (value in excluded_values):
+                                    add_row = False
+                        
                         # Add to list.
-                        self.row_list.append(row_dict)
+                        if add_row:
+                            self.row_list.append(row_dict)
     
     def cleanup_data(self):
         """ """
@@ -137,29 +153,73 @@ class DwcaDataSharkStandard():
             if dwc_node and dwc_dynamic_field:
                 node_dynfield_key = dwc_node + '<->' + dwc_dynamic_field
                 if node_dynfield_key not in node_dynfield_dict.keys():
-                    node_dynfield_dict[node_dynfield_key] = []
+                    node_dynfield_dict[node_dynfield_key] = {}
+                    node_dynfield_dict[node_dynfield_key]['key_value_list'] = []
+                    node_dynfield_dict[node_dynfield_key]['source_field'] = None # ''
+                    node_dynfield_dict[node_dynfield_key]['source_param_unit'] = None # ('', '')
+        # Loop over list of dynamic fields.
+        for row_dict in self.resources.dwc_dynamic_fields:
+            dwc_node = row_dict.get('dwc_node', '')
+            dwc_dynamic_field = row_dict.get('dwc_dynamic_field', '')
+            node_dynfield_key = dwc_node + '<->' + dwc_dynamic_field
+            dwc_dynamic_key = row_dict.get('dwc_dynamic_key', '')
+            source_field = row_dict.get('source_field', '')
+            source_parameter = row_dict.get('source_parameter', '')
+            source_unit = row_dict.get('source_unit', '')
+            text = row_dict.get('text', '')
+            #
+            node_dynfield_dict[node_dynfield_key]['dwc_dynamic_field'] = dwc_dynamic_field
+            node_dynfield_dict[node_dynfield_key]['node_dynfield_key'] = node_dynfield_key
+            node_dynfield_dict[node_dynfield_key]['dwc_dynamic_key'] = dwc_dynamic_key
+            node_dynfield_dict[node_dynfield_key]['source_parameter'] = source_parameter
+            node_dynfield_dict[node_dynfield_key]['source_unit'] = source_unit
+            #
+            if text:
+                node_dynfield_dict[node_dynfield_key]['key_value_list'].append(dwc_dynamic_key + ': ' + text)
+            elif source_field:
+                node_dynfield_dict[node_dynfield_key]['source_field'] = source_field
+            elif source_parameter:
+                node_dynfield_dict[node_dynfield_key]['source_param_unit'] = (source_parameter, source_unit)
+            
         # Loop over rows.
         for row_dict in self.row_list:
-            # Loop ofer list of dynamic fields.
-            for row_dict in self.resources.dwc_dynamic_fields:
-                dwc_node = row_dict.get('dwc_node', '')
-                dwc_dynamic_field = row_dict.get('dwc_dynamic_field', '')
-                node_dynfield_key = dwc_node + '<->' + dwc_dynamic_field
-                dwc_dynamic_key = row_dict.get('dwc_dynamic_key', '')
-                source_field = row_dict.get('source_field', '')
-                source_parameter = row_dict.get('source_parameter', '')
-                source_unit = row_dict.get('source_unit', '')
-                text = row_dict.get('text', '')
+            
+            for node_dynfield in node_dynfield_dict.values():
+                source_field = ''
+                parameter = ''
+                value = ''
+                unit = ''
+                dwc_dynamic_key = node_dynfield['dwc_dynamic_key']
+                dwc_dynamic_field = node_dynfield['dwc_dynamic_field']
+                node_dynfield_key = node_dynfield['node_dynfield_key']
+                key_value_list = node_dynfield['key_value_list'][:]
                 
-                if text:
-                    node_dynfield_dict[node_dynfield_key].append(dwc_dynamic_key + ': ' + text)
-                elif source_field:
-                    field_value = row_dict.get(source_field, '')
-                    if field_value:
-                        node_dynfield_dict[node_dynfield_key].append(dwc_dynamic_key + ': ' + field_value)
-            
-            
-            
+                if node_dynfield['source_field'] is not None:
+                    source_field = node_dynfield['source_field']
+                    value = row_dict.get(source_field, '')
+                    if value:
+                        key_value_list.append(dwc_dynamic_key + ': ' + value)
+                elif node_dynfield['source_param_unit'] is not None:
+                    (param, unit) = node_dynfield['source_param_unit']
+                    parameter = row_dict.get('parameter', '')
+                    value = row_dict.get('value', '')
+                    unit = row_dict.get('unit', '')
+                    
+                    if ((parameter == node_dynfield['parameter']) and
+                        (unit == node_dynfield['unit']) and
+                        (value)):
+                            key_value_list.append(dwc_dynamic_key + ': ' + value)
+                #
+                dynamic_string = ', '.join(key_value_list)
+                if dynamic_string:
+                    row_dict[node_dynfield_key] = dynamic_string
+                    
+                    if node_dynfield_key not in self.used_dynamic_field_key_list:
+                        self.used_dynamic_field_key_list. append(node_dynfield_key)
+                        
+    def get_used_dynamic_field_keys(self):
+        """ """
+        return self.used_dynamic_field_key_list
             
     def map_fields_to_dwc(self):
         """ """
@@ -185,3 +245,34 @@ class DwcaDataSharkStandard():
         #
         return self.dwc_default_mapping
     
+    def convert_taxa_to_worms(self):
+        """ """
+        taxa_lookup_dict = {}
+        translate_taxa = dwca_generator.TranslateTaxa()
+        translate_taxa.load_translate_taxa('DUMMY') # TODO:
+        # Loop over rows.
+        for row_dict in self.row_list:
+            scientific_name = row_dict.get('scientific_name', '')
+            if scientific_name and (scientific_name in taxa_lookup_dict):
+                taxa_dict = taxa_lookup_dict[scientific_name]
+            else:
+                taxa_dict = translate_taxa.get_translated_aphiaid_and_name(scientific_name)
+                taxa_lookup_dict[scientific_name] = taxa_dict
+            
+            dyntaxa_id = taxa_dict.get('dyntaxa_id', '')
+            if dyntaxa_id:
+                row_dict['taxonID'] = 'urn:lsid:dyntaxa.se:Taxon:' + dyntaxa_id
+            else:
+                row_dict['taxonID'] = ''
+            # 
+            row_dict['scientificNameID'] = taxa_dict.get('worms_lsid', '')
+            row_dict['scientific_name'] = taxa_dict.get('worms_scientific_name', '')
+            row_dict['scientificNameAuthorship'] = taxa_dict.get('worms_authority', '')
+            row_dict['taxonRank'] = taxa_dict.get('worms_rank', '')
+            row_dict['kingdom'] = taxa_dict.get('worms_kingdom', '')
+            row_dict['phylum'] = taxa_dict.get('worms_phylum', '')
+            row_dict['class'] = taxa_dict.get('worms_class', '')
+            row_dict['order'] = taxa_dict.get('worms_order', '')
+            row_dict['family'] = taxa_dict.get('worms_family', '')
+            row_dict['genus'] = taxa_dict.get('worms_genus', '')
+            #

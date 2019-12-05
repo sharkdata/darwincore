@@ -23,9 +23,15 @@ if __name__ == "__main__":
     # Data.
     data = dwca_generator.DwcaDataSharkStandard(resources)
     for dataset_filepath in [
+                'test_data/SHARK_Phytoplankton_2016_SMHI_version_2019-02-22.zip', 
+#                 'test_data/SHARK_Phytoplankton_2016_UMSC_version_2019-02-22.zip', 
+#                 'test_data/SHARK_Phytoplankton_2016_DEEP_version_2019-02-22.zip', 
                 'test_data/SHARK_Zooplankton_2016_SMHI_version_2019-02-14.zip', 
-                'test_data/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
-                'test_data/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zoobenthos_2016_DEEP_version_2019-02-14.zip', 
+                'test_data/SHARK_Zoobenthos_2016_LNU_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zoobenthos_2016_UMSC_version_2019-02-14.zip', 
                 ]:
         data.add_dataset(dataset_filepath)
     data.add_extra_fields()
@@ -33,6 +39,9 @@ if __name__ == "__main__":
     data.create_dynamic_fields()
     data.map_fields_to_dwc()
     data.cleanup_data()
+    
+    data.convert_taxa_to_worms()
+    
 #     data.translate_species()
 #     data.translate_stations()
 #     data.translate_fields()
@@ -42,8 +51,8 @@ if __name__ == "__main__":
     dwca_format.create_dwca_parts()
     dwca_format.extract_metadata()
     dwca_format.create_meta_xml()
-    dwca_format.create_eml_xml(eml_template = 'templates/epibenthos_nat_eml.xml')
-    dwca_format.save_to_archive_file('test_data/TEST.zip', '', '')
+    dwca_format.create_eml_xml(eml_template = 'templates/zoobenthos_nat_eml.xml')
+    dwca_format.save_to_archive_file('test_data/DwC-A_TEST.zip', '', '')
     
     # DwC-A Writer.
 #     dwca_writer = dwca_generator.DwcaWriter(
@@ -167,7 +176,7 @@ if __name__ == "__main__":
 #             out_file_path='D:/arnold/42_sharkdata_py3/test_data/dwca-phytoplankton-jerico-ifcb_TEST.zip', 
 #             )
 #     
-#     
-#     print('')
-#     print('TEST: Finished. ' + str(datetime.datetime.now()))
+     
+    print('')
+    print('TEST: Finished. ' + str(datetime.datetime.now()))
 
