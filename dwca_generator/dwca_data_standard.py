@@ -79,18 +79,12 @@ class DwcaDataSharkStandard():
                 else:
                     row_dict['eventTime'] = event_time + '+01:00'
     
-    def add_extra_fields(self):
-        """ """
-        for row_dict in self.row_list:
-            for key, value in self.resources.get_extra_fields().items():
-                row_dict[key] = value
-    
     def create_dwca_keys(self):
         """ """
         for row_dict in self.row_list:
             
             # Extra keys for the "event.txt" table.
-            for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_event_nodes().items():
+            for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_event_nodes_keys().items():
                 
                 dwc_key_name = dwc_event_node_dict.get('dwc_key_name', '')
                 dwc_key_prefix = dwc_event_node_dict.get('dwc_key_prefix', '')
@@ -114,7 +108,7 @@ class DwcaDataSharkStandard():
                 row_dict[dwc_key_name] = dwc_id_short
             
             # Extra keys for the "occurrence.txt" table.
-            for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_occurrence_nodes().items():
+            for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_occurrence_nodes_keys().items():
                 
                 dwc_key_name = dwc_event_node_dict.get('dwc_key_name', '')
                 dwc_key_prefix = dwc_event_node_dict.get('dwc_key_prefix', '')
@@ -148,47 +142,38 @@ class DwcaDataSharkStandard():
         # Create dict with list for each dwc_event_node/dwc_dynamic_filed pair.
         node_dynfield_dict = {}
         for row_dict in self.resources.dwc_dynamic_fields[:]:
+            dwc_category = row_dict.get('dwc_category', '')
             dwc_event_node = row_dict.get('dwc_event_node', '')
             dwc_dynamic_field = row_dict.get('dwc_dynamic_field', '')
             if dwc_event_node and dwc_dynamic_field:
-                node_dynfield_key = dwc_event_node + '<->' + dwc_dynamic_field
+                node_dynfield_key = dwc_category + '<+>' + dwc_event_node + '<+>' + dwc_dynamic_field
                 if node_dynfield_key not in node_dynfield_dict.keys():
                     node_dynfield_dict[node_dynfield_key] = {}
                     node_dynfield_dict[node_dynfield_key]['key_value_list'] = [] # Used for fix text fields.
                     node_dynfield_dict[node_dynfield_key]['source_field'] = None # ''
-#                     node_dynfield_dict[node_dynfield_key]['source_param_unit'] = None # ('', '')
         # Loop over list of dynamic fields. Store fix text as key/value and column name for later use.
         for row_dict in self.resources.dwc_dynamic_fields:
+            dwc_category = row_dict.get('dwc_category', '')
             dwc_event_node = row_dict.get('dwc_event_node', '')
             dwc_dynamic_field = row_dict.get('dwc_dynamic_field', '')
-            node_dynfield_key = dwc_event_node + '<->' + dwc_dynamic_field
+            node_dynfield_key = dwc_category + '<+>' + dwc_event_node + '<+>' + dwc_dynamic_field
             dwc_dynamic_key = row_dict.get('dwc_dynamic_key', '')
             source_field = row_dict.get('source_field', '')
-#             source_parameter = row_dict.get('source_parameter', '')
-#             source_unit = row_dict.get('source_unit', '')
             text = row_dict.get('text', '')
             #
             node_dynfield_dict[node_dynfield_key]['dwc_dynamic_field'] = dwc_dynamic_field
             node_dynfield_dict[node_dynfield_key]['node_dynfield_key'] = node_dynfield_key
             node_dynfield_dict[node_dynfield_key]['dwc_dynamic_key'] = dwc_dynamic_key
-#             node_dynfield_dict[node_dynfield_key]['source_parameter'] = source_parameter
-#             node_dynfield_dict[node_dynfield_key]['source_unit'] = source_unit
             #
             if text:
                 node_dynfield_dict[node_dynfield_key]['key_value_list'].append(dwc_dynamic_key + ': ' + text)
             elif source_field:
                 node_dynfield_dict[node_dynfield_key]['source_field'] = source_field
-#             elif source_parameter:
-#                 node_dynfield_dict[node_dynfield_key]['source_param_unit'] = (source_parameter, source_unit)
             
         # Loop over rows.
         for row_dict in self.row_list:
-            
             for node_dynfield in node_dynfield_dict.values():
                 source_field = ''
-#                 parameter = ''
-#                 value = ''
-#                 unit = ''
                 dwc_dynamic_key = node_dynfield['dwc_dynamic_key']
                 dwc_dynamic_field = node_dynfield['dwc_dynamic_field']
                 node_dynfield_key = node_dynfield['node_dynfield_key']
@@ -199,16 +184,6 @@ class DwcaDataSharkStandard():
                     value = row_dict.get(source_field, '')
                     if value:
                         key_value_list.append(dwc_dynamic_key + ': ' + value)
-#                 elif node_dynfield['source_param_unit'] is not None:
-#                     (param, unit) = node_dynfield['source_param_unit']
-#                     parameter = row_dict.get('parameter', '')
-#                     value = row_dict.get('value', '')
-#                     unit = row_dict.get('unit', '')
-#                     
-#                     if ((parameter == node_dynfield['parameter']) and
-#                         (unit == node_dynfield['unit']) and
-#                         (value)):
-#                             key_value_list.append(dwc_dynamic_key + ': ' + value)
                 #
                 dynamic_string = ', '.join(key_value_list)
                 if dynamic_string:
@@ -220,28 +195,4 @@ class DwcaDataSharkStandard():
     def get_used_dynamic_field_keys(self):
         """ """
         return self.used_dynamic_field_key_list
-            
-    def map_fields_to_dwc(self):
-        """ """
-        default_mapping = self.get_default_mapping()
-        # Apply on all data rows.
-        for row_dict in self.row_list:
-            try:
-                for dwc_key, shark_key in default_mapping.items():
-                    value = str(row_dict.get(shark_key, ''))
-                    if value:
-                        row_dict[dwc_key] = value
-            except Exception as e:
-                print('DEBUG Exception:', e)
-                raise
-    
-    def get_default_mapping(self):
-        """ """
-        if not self.dwc_default_mapping:
-            self.dwc_default_mapping = {}
-                
-            for key, mapping_dict in self.resources.get_field_mapping().items():
-                self.dwc_default_mapping[key] = mapping_dict.get('source_field', '')
-        #
-        return self.dwc_default_mapping
-    
+

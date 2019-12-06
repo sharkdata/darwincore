@@ -49,6 +49,8 @@ class DwcaSpeciesWorms():
         if not scientific_name:
             scientific_name = source_dict.get('scientific_name', '')
         if not scientific_name:
+            scientific_name = source_dict.get('reported_scientific_name', '')
+        if not scientific_name:
             scientific_name = source_dict.get('scientificName', '')
         #
         if scientific_name:
@@ -56,7 +58,7 @@ class DwcaSpeciesWorms():
                 return self.info_lookup_dict[scientific_name]
             else:
                 taxa_dict = self.get_translated_aphiaid_and_name(scientific_name)
-                self.info_lookup_dict[scientific_name] = taxa_dict
+                self.info_lookup_dict[scientific_name] = result_dict
                 # Link to DynTaxa.
                 dyntaxa_id = taxa_dict.get('dyntaxa_id', '')
                 if dyntaxa_id:

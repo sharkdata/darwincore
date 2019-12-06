@@ -26,7 +26,10 @@ class DwcaContentMapper():
         self.extra_fields_dict = None
         self.dwc_event_nodes = None
         self.dwc_occurrence_nodes = None
+        self.dwc_emof_nodes = None
         self.event_node_fields = None
+        self.occurrence_node_fields = None
+        self.emof_node_fields = None
         self.filter_dict = None
     
     def get_filters(self):
@@ -73,11 +76,11 @@ class DwcaContentMapper():
     
     def get_event_node_names(self):
         """ """
-        self.get_event_nodes()
+        self.get_event_nodes_keys()
         
         return self.dwc_event_nodes.keys()
     
-    def get_event_nodes(self):
+    def get_event_nodes_keys(self):
         """ """
         if not self.dwc_event_nodes:
             self.dwc_event_nodes = {}
@@ -86,6 +89,7 @@ class DwcaContentMapper():
                     dwc_event_node = row_dict.get('dwc_event_node', '')
                     dwc_parent_event = row_dict.get('dwc_parent_event', '')
                     dwc_key_name = row_dict.get('dwc_key_name', '')
+                    dwc_event_key_name = row_dict.get('dwc_event_key_name', '')
                     dwc_key_prefix = row_dict.get('dwc_key_prefix', '')
                      
                     if dwc_event_node:
@@ -95,6 +99,7 @@ class DwcaContentMapper():
                             node_dict['dwc_event_node'] = dwc_event_node
                             node_dict['dwc_parent_event'] = dwc_parent_event
                             node_dict['dwc_key_name'] = dwc_key_name
+                            node_dict['dwc_event_key_name'] = dwc_event_key_name
                             node_dict['dwc_key_prefix'] = dwc_key_prefix
                             node_dict['key_fields'] = []
                             for key in ['key_1', 'key_2', 'key_3', 'key_4', 'key_5', 
@@ -107,7 +112,13 @@ class DwcaContentMapper():
              
         return self.dwc_event_nodes
      
-    def get_occurrence_nodes(self):
+    def get_occurrence_node_names(self):
+        """ """
+        self.get_occurrence_nodes_keys()
+        
+        return self.dwc_occurrence_nodes.keys()
+    
+    def get_occurrence_nodes_keys(self):
         """ """
         if not self.dwc_occurrence_nodes:
             self.dwc_occurrence_nodes = {}
@@ -116,7 +127,7 @@ class DwcaContentMapper():
                     dwc_event_node = row_dict.get('dwc_event_node', '')
                     # dwc_parent_event = row_dict.get('dwc_parent_event', '')
                     dwc_key_name = row_dict.get('dwc_key_name', '')
-                    dwc_event_key = row_dict.get('dwc_event_key', '')
+                    dwc_event_key_name = row_dict.get('dwc_event_key_name', '')
                     dwc_key_prefix = row_dict.get('dwc_key_prefix', '')
                      
                     if dwc_event_node:
@@ -126,7 +137,7 @@ class DwcaContentMapper():
                             node_dict['dwc_event_node'] = dwc_event_node
                             # node_dict['dwc_parent_event'] = dwc_parent_event
                             node_dict['dwc_key_name'] = dwc_key_name
-                            node_dict['dwc_event_key'] = dwc_event_key
+                            node_dict['dwc_event_key_name'] = dwc_event_key_name
                             node_dict['dwc_key_prefix'] = dwc_key_prefix
                             node_dict['key_fields'] = []
                             for key in ['key_1', 'key_2', 'key_3', 'key_4', 'key_5', 
@@ -139,41 +150,91 @@ class DwcaContentMapper():
              
         return self.dwc_occurrence_nodes
     
-    def get_event_node_fields(self, event_node):
+    def get_emof_node_names(self):
         """ """
-        if not self.event_node_fields:
-            self.event_node_fields = {}
-            for row_dict in self.field_mapping:
-                dwc_event_node = row_dict.get('dwc_event_node', '')
-                dwc_field = row_dict.get('dwc_field', )
-                if dwc_field:
-                    if dwc_event_node not in self.event_node_fields:
-                        self.event_node_fields[dwc_event_node] = []
-                    self.event_node_fields[dwc_event_node].append(dwc_field)
-        # 
-        return self.event_node_fields[event_node]
+        self.get_emof_nodes_keys()
+        
+        return self.dwc_emof_nodes.keys()
     
-    def get_field_mapping(self):
+    def get_emof_nodes_keys(self):
         """ """
-        if not self.field_mapping_dict:
-            self.field_mapping_dict = {}
-            for row_dict in self.field_mapping:
-                if 'dwc_field' in row_dict:
-                    self.field_mapping_dict[row_dict['dwc_field']] = row_dict
-        # 
-        return self.field_mapping_dict
+        if not self.dwc_emof_nodes:
+            self.dwc_emof_nodes = {}
+            for row_dict in self.dwc_keys:
+                if row_dict.get('dwc_category', '') == 'emof':
+                    dwc_event_node = row_dict.get('dwc_event_node', '')
+                    # dwc_parent_event = row_dict.get('dwc_parent_event', '')
+                    dwc_key_name = row_dict.get('dwc_key_name', '')
+                    dwc_event_key_name = row_dict.get('dwc_event_key_name', '')
+                    dwc_key_prefix = row_dict.get('dwc_key_prefix', '')
+                      
+                    if dwc_event_node:
+                        if dwc_event_node not in self.dwc_emof_nodes:
+                            self.dwc_emof_nodes[dwc_event_node] = {}
+                            node_dict = self.dwc_emof_nodes[dwc_event_node]
+                            node_dict['dwc_event_node'] = dwc_event_node
+                            # node_dict['dwc_parent_event'] = dwc_parent_event
+                            node_dict['dwc_key_name'] = dwc_key_name
+                            node_dict['dwc_event_key_name'] = dwc_event_key_name
+                            node_dict['dwc_key_prefix'] = dwc_key_prefix
+                            node_dict['key_fields'] = []
+                            for key in ['key_1', 'key_2', 'key_3', 'key_4', 'key_5', 
+                                        'key_6', 'key_7', 'key_8', 'key_9', 'key_10', ]:
+                                value = row_dict.get(key, '')
+                                if value:
+                                    node_dict['key_fields'].append(value)
+                            #    
+                            print(node_dict)
+              
+        return self.dwc_emof_nodes
     
-    def get_extra_fields(self):
-        """ """
-        if not self.extra_fields_dict:
-            self.extra_fields_dict = {}
-            for row_dict in self.field_mapping:
-                dwc_field = row_dict.get('dwc_field', '')
-                text = row_dict.get('text', '')
-                if dwc_field and text:
-                        self.extra_fields_dict[dwc_field] = text
-        # 
-        return self.extra_fields_dict
+#     def get_event_node_fields(self, event_node):
+#         """ """
+#         if not self.event_node_fields:
+#             self.event_node_fields = {}
+#             for row_dict in self.field_mapping:
+#                 dwc_category = row_dict.get('dwc_category', '')
+#                 if dwc_category == 'event':
+#                     dwc_event_node = row_dict.get('dwc_event_node', '')
+#                     dwc_field = row_dict.get('dwc_field', )
+#                     if dwc_field:
+#                         if dwc_event_node not in self.event_node_fields:
+#                             self.event_node_fields[dwc_event_node] = []
+#                         self.event_node_fields[dwc_event_node].append(dwc_field)
+#         # 
+#         return self.event_node_fields[event_node]
+#     
+#     def get_occurrence_node_fields(self, event_node):
+#         """ """
+#         if not self.occurrence_node_fields:
+#             self.occurrence_node_fields = {}
+#             for row_dict in self.field_mapping:
+#                 dwc_category = row_dict.get('dwc_category', '')
+#                 if dwc_category == 'occurrence':
+#                     dwc_event_node = row_dict.get('dwc_event_node', '')
+#                     dwc_field = row_dict.get('dwc_field', )
+#                     if dwc_field:
+#                         if dwc_event_node not in self.occurrence_node_fields:
+#                             self.occurrence_node_fields[dwc_event_node] = []
+#                         self.occurrence_node_fields[dwc_event_node].append(dwc_field)
+#         # 
+#         return self.occurrence_node_fields[event_node]
+#     
+#     def get_emof_node_fields(self, event_node):
+#         """ """
+#         if not self.emof_node_fields:
+#             self.emof_node_fields = {}
+#             for row_dict in self.field_mapping:
+#                 dwc_category = row_dict.get('dwc_category', '')
+#                 if dwc_category == 'emof':
+#                     dwc_event_node = row_dict.get('dwc_event_node', '')
+#                     dwc_field = row_dict.get('dwc_field', )
+#                     if dwc_field:
+#                         if dwc_event_node not in self.emof_node_fields:
+#                             self.emof_node_fields[dwc_event_node] = []
+#                         self.emof_node_fields[dwc_event_node].append(dwc_field)
+#         # 
+#         return self.emof_node_fields[event_node]
     
     def load_from_excel(self, excel_file_path):
         """ """

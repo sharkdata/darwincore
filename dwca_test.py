@@ -26,20 +26,18 @@ if __name__ == "__main__":
     data = dwca_generator.DwcaDataSharkStandard(content_mapper)
     for dataset_filepath in [
                 'test_data/SHARK_Phytoplankton_2016_SMHI_version_2019-02-22.zip', 
-#                 'test_data/SHARK_Phytoplankton_2016_UMSC_version_2019-02-22.zip', 
-#                 'test_data/SHARK_Phytoplankton_2016_DEEP_version_2019-02-22.zip', 
-#                 'test_data/SHARK_Zooplankton_2016_SMHI_version_2019-02-14.zip', 
-#                 'test_data/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
-#                 'test_data/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
-#                 'test_data/SHARK_Zoobenthos_2016_DEEP_version_2019-02-14.zip', 
-#                 'test_data/SHARK_Zoobenthos_2016_LNU_version_2019-02-14.zip', 
-#                 'test_data/SHARK_Zoobenthos_2016_UMSC_version_2019-02-14.zip', 
+                'test_data/SHARK_Phytoplankton_2016_UMSC_version_2019-02-22.zip', 
+                'test_data/SHARK_Phytoplankton_2016_DEEP_version_2019-02-22.zip', 
+                'test_data/SHARK_Zooplankton_2016_SMHI_version_2019-02-14.zip', 
+                'test_data/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
+                'test_data/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
+                'test_data/SHARK_Zoobenthos_2016_DEEP_version_2019-02-14.zip', 
+                'test_data/SHARK_Zoobenthos_2016_LNU_version_2019-02-14.zip', 
+                'test_data/SHARK_Zoobenthos_2016_UMSC_version_2019-02-14.zip', 
                 ]:
         data.add_shark_dataset(dataset_filepath)
-    data.add_extra_fields()
     data.create_dwca_keys()
     data.create_dynamic_fields()
-    data.map_fields_to_dwc()
     data.cleanup_data()
     
     
@@ -107,7 +105,7 @@ if __name__ == "__main__":
     missing_taxa = species_info.get_missing_taxa_list()
     if len(missing_taxa) > 0:
         print('')
-        print('Missing taxa in "translate_dyntaxa_to_worms.txt":')
+        print('Missing taxa in "', species_info.taxa_file_path, '"')
         for taxa in missing_taxa:
             print('- ',taxa)
     
