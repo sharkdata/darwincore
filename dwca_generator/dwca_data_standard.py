@@ -110,6 +110,10 @@ class DwcaDataSharkStandard():
             # Extra keys for the "occurrence.txt" table.
             for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_occurrence_nodes_keys().items():
                 
+                scientific_name = row_dict.get('scientific_name', '')
+                if not scientific_name:
+                    continue
+                #
                 dwc_key_name = dwc_event_node_dict.get('dwc_key_name', '')
                 dwc_key_prefix = dwc_event_node_dict.get('dwc_key_prefix', '')
                 key_list = dwc_event_node_dict.get('key_fields', [])

@@ -166,6 +166,8 @@ class DwcaFormatStandard(object):
             #
             if target_row.get('remove_row', '') == '<REMOVE>':
                 continue
+            if target_row.get('remove_row', '') == '<REMOVE>':
+                continue
             # Iterate over nodes.
             for occurrence_node_name in occurrence_node_names:
                 if occurrence_node_name not in occurrence_control_dict:
@@ -205,7 +207,9 @@ class DwcaFormatStandard(object):
                     taxa_info_dict = self.species_info_object.get_info_as_dwc_dict(source_dict=target_row)
                     occurrence_dict.update(taxa_info_dict)
                     #
-                    self.dwca_occurrence.append(occurrence_dict) 
+                    scientific_name = occurrence_dict.get('scientificName', '')
+                    if scientific_name:
+                        self.dwca_occurrence.append(occurrence_dict)
      
     def create_dwca_measurementorfact(self):
         """ """
@@ -227,11 +231,7 @@ class DwcaFormatStandard(object):
                 emof_control_dict[emof_node_name]['text_from_to_list'] = []
                 emof_control_dict[emof_node_name]['field_from_to_list'] = []
                 emof_control_dict[emof_node_name]['dynamic_field_list'] = []
-
-
                 emof_control_dict[emof_node_name]['emof_extra_params'] = {}
-
-
                 #
                 for field_mapping_row in self.resources_object.field_mapping:
                     dwc_category = field_mapping_row.get('dwc_category', '')
@@ -521,26 +521,27 @@ class DwcaFormatStandard(object):
         param_unit_list = set()
         
         # Iterate over rows.
-        for target_row in self.target_rows:
+        for event_row in self.dwca_event:
+#         for target_row in self.target_rows:
             # Don't check filtered rows.
-            if target_row.get('remove_row', '') == '<REMOVE>':
+            if event_row.get('remove_row', '') == '<REMOVE>':
                 continue
             # Latitude/longitude.
-            latitude = float(target_row.get('decimalLatitude', '100.0'))
-            longitude = float(target_row.get('decimalLongitude', '100.0'))
+            latitude = float(event_row.get('decimalLatitude', '100.0'))
+            longitude = float(event_row.get('decimalLongitude', '100.0'))
             if  latitude != 100.0 and longitude != -100.0:
                 latitude_min = min(latitude_min, latitude)
                 latitude_max = max(latitude_max, latitude)
                 longitude_min = min(longitude_min, longitude)
                 longitude_max = max(longitude_max, longitude)
             # Sapling date.
-            sample_date = target_row.get('eventDate', '')
+            sample_date = event_row.get('eventDate', '')
             if  sample_date != '':
                 sample_date_min = min(sample_date_min, sample_date)
                 sample_date_max = max(sample_date_max, sample_date)
             # Parameters.
-            parameter = target_row.get('parameter', '')
-            unit = target_row.get('unit', '')
+            parameter = event_row.get('parameter', '')
+            unit = event_row.get('unit', '')
             param_unit = ''
             if parameter and unit:
                 param_unit = parameter + ' (' + unit + ')'

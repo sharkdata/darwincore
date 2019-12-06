@@ -26,24 +26,21 @@ if __name__ == "__main__":
     data = dwca_generator.DwcaDataSharkStandard(content_mapper)
     for dataset_filepath in [
                 'test_data/SHARK_Phytoplankton_2016_SMHI_version_2019-02-22.zip', 
-                'test_data/SHARK_Phytoplankton_2016_UMSC_version_2019-02-22.zip', 
-                'test_data/SHARK_Phytoplankton_2016_DEEP_version_2019-02-22.zip', 
+#                 'test_data/SHARK_Phytoplankton_2016_UMSC_version_2019-02-22.zip', 
+#                 'test_data/SHARK_Phytoplankton_2016_DEEP_version_2019-02-22.zip', 
                 'test_data/SHARK_Zooplankton_2016_SMHI_version_2019-02-14.zip', 
-                'test_data/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
-                'test_data/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
-                'test_data/SHARK_Zoobenthos_2016_DEEP_version_2019-02-14.zip', 
-                'test_data/SHARK_Zoobenthos_2016_LNU_version_2019-02-14.zip', 
-                'test_data/SHARK_Zoobenthos_2016_UMSC_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zooplankton_2016_UMSC_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zooplankton_2016_DEEP_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zoobenthos_2016_DEEP_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zoobenthos_2016_LNU_version_2019-02-14.zip', 
+#                 'test_data/SHARK_Zoobenthos_2016_UMSC_version_2019-02-14.zip', 
                 ]:
         data.add_shark_dataset(dataset_filepath)
     data.create_dwca_keys()
     data.create_dynamic_fields()
     data.cleanup_data()
-    
-    
 #     data.translate_stations()
 #     data.translate_fields()
-#     data.apply_filter()
     # Format.
     dwca_format = dwca_generator.DwcaFormatStandard(data, content_mapper, species_info)
     dwca_format.create_dwca_parts()
