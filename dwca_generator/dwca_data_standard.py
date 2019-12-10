@@ -57,6 +57,14 @@ class DwcaDataSharkStandard():
                         
                         # Add to list.
                         if add_row:
+                            # Translate values.
+                            for key in self.resources.get_translate_from_source_keys():
+                                value = row_dict.get(key, '')
+                                if value:
+                                    new_value = self.resources.get_translate_from_source(key, value)
+                                    if value != new_value:
+                                        row_dict[key] = new_value
+                            # Append.
                             self.row_list.append(row_dict)
     
     def cleanup_data(self):

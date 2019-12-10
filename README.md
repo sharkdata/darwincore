@@ -17,26 +17,29 @@ file. The excel file is divided in a set of sheets:
 - **field_mapping** Mapping rules for fields and params/units to the corresponding DwC terms.
 - **dwc_keys** Keys used to group data together at different event types and for occurrences.
 - **dwc_dynamic_fields** There are some dynamic fields in DwC that can be used as key/value lists.
-- **metadata_mapping** Metadata mainly for the EML.XML file describing the whole dataset.
 - **filter** Used to not use specific rows in the input data file. 
+- **translate** Used to translate values. Both "source field" and "dwc field" content can be translated.
+- **metadata_mapping** Metadata mainly for the EML.XML file describing the whole dataset.
 - **README** Short description of the Excel file.
 
 ## Installation
 
 To install the library only. Check the dwca_test.py file for usage examples.
 
-    virtual env venv
-    source venv/bin/activate
+    python -m venv venv
+    source venv/bin/activate # On Linux and macOS.
+    # venv\Scripts\activate # On Windows.
     pip install -m requirements.txt
     pip install git+https://github.com/sharkdata/darwincore
     
     python
-    >>> import dwca_genrator
+    >>> import dwca_generator
 
 ## Development
 
-    virtualenv venv
-    source venv/bin/activate
+    python -m venv venv
+    source venv/bin/activate # On Linux and macOS.
+    # venv\Scripts\activate # On Windows.
     pip install -m requirements.txt
     git clone https://github.com/sharkdata/darwincore.git
     

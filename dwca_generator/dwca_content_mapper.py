@@ -16,14 +16,13 @@ class DwcaContentMapper():
         self.field_mapping = [] 
         self.dwc_keys = [] 
         self.dwc_dynamic_fields = [] 
-        self.dwc_extra_fields = [] 
-        self.metadata_mapping = [] 
         self.filter = [] 
+        self.translate = [] 
+        self.metadata_mapping = [] 
         # Processed content.
         self.dwc_columns_dict = None 
         self.field_mapping_dict = None
         self.measurement_mapping_dict = None
-        self.extra_fields_dict = None
         self.dwc_event_nodes = None
         self.dwc_occurrence_nodes = None
         self.dwc_emof_nodes = None
@@ -31,6 +30,55 @@ class DwcaContentMapper():
         self.occurrence_node_fields = None
         self.emof_node_fields = None
         self.filter_dict = None
+        self.translate_from_source_dict = None
+        self.translate_from_dwc_dict = None
+    
+    def get_translate_from_source(self, source_field, value):
+        """ """
+#         self.load_translate_dict()
+        if self.translate_from_source_dict:
+            if source_field in self.translate_from_source_dict:
+                return self.translate_from_source_dict[source_field].get(value, value)
+        return value
+    
+    def get_translate_from_dwc(self, dwc_field, value):
+        """ """
+#         self.load_translate_dict()
+        if self.translate_from_dwc_dict:
+            if dwc_field in self.translate_from_dwc_dict:
+                return self.translate_from_dwc_dict[dwc_field].get(value, value)
+        return value
+    
+    def get_translate_from_source_keys(self):
+        """ """
+        self.load_translate_dict()
+        return self.translate_from_source_dict.keys()
+    
+    def get_translate_from_dwc_keys(self):
+        """ """
+        self.load_translate_dict()
+        return self.translate_from_dwc_dict.keys()
+    
+    def load_translate_dict(self):
+        """ """
+        if not self.translate_from_source_dict:
+            self.translate_from_source_dict = {}
+            self.translate_from_dwc_dict = {}
+            for row in self.translate:
+                source_field = row.get('source_field', '')
+                dwc_field = row.get('dwc_field', '')
+                from_value = row.get('from_value', '')
+                to_value = row.get('to_value', '')
+                
+                if source_field and from_value:
+                    if source_field not in self.translate_from_source_dict:
+                        self.translate_from_source_dict[source_field] = {}
+                    self.translate_from_source_dict[source_field][from_value] = to_value
+                
+                if dwc_field and from_value:
+                    if dwc_field not in self.translate_from_dwc_dict:
+                        self.translate_from_dwc_dict[dwc_field] = {}
+                    self.translate_from_dwc_dict[dwc_field][from_value] = to_value
     
     def get_filters(self):
         """ """
@@ -256,10 +304,12 @@ class DwcaContentMapper():
                     self._local_read_excel_sheet(worksheet, self.dwc_keys)
                 if sheet_name == 'dwc_dynamic_fields':
                     self._local_read_excel_sheet(worksheet, self.dwc_dynamic_fields)
-                if sheet_name == 'metadata_mapping':
-                    self._local_read_excel_sheet(worksheet, self.metadata_mapping)
                 if sheet_name == 'filter':
                     self._local_read_excel_sheet(worksheet, self.filter)
+                if sheet_name == 'translate':
+                    self._local_read_excel_sheet(worksheet, self.translate)
+                if sheet_name == 'metadata_mapping':
+                    self._local_read_excel_sheet(worksheet, self.metadata_mapping)
         finally:
             if workbook:
                 workbook.close()

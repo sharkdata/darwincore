@@ -124,6 +124,14 @@ class DwcaFormatStandard(object):
                             if value:
                                 event_dict[new_key] = value
                     #
+                    # Translate values.
+                    for key in self.resources_object.get_translate_from_dwc_keys():
+                        value = event_dict.get(key, '')
+                        if value:
+                            new_value = self.resources_object.get_translate_from_dwc(key, value)
+                            if value != new_value:
+                                event_dict[key] = new_value
+                    # Append.
                     self.dwca_event.append(event_dict) 
      
     def create_dwca_occurrence(self):
@@ -209,6 +217,14 @@ class DwcaFormatStandard(object):
                     #
                     scientific_name = occurrence_dict.get('scientificName', '')
                     if scientific_name:
+                        # Translate values.
+                        for key in self.resources_object.get_translate_from_source_keys():
+                            value = occurrence_dict.get(key, '')
+                            if value:
+                                new_value = self.resources_object.get_translate_from_source(key, value)
+                                if value != new_value:
+                                    occurrence_dict[key] = new_value
+                        # Append.
                         self.dwca_occurrence.append(occurrence_dict)
      
     def create_dwca_measurementorfact(self):
@@ -319,8 +335,16 @@ class DwcaFormatStandard(object):
     #                     measurementorfact_dict['measurementDeterminedBy'] = target_row.get('measurementDeterminedBy', '')
     #                     measurementorfact_dict['measurementMethod'] = target_row.get('measurementMethod', '') # TODO: method_reference_code
     #                     measurementorfact_dict['measurementRemarks'] = target_row.get('measurementRemarks', '')
-                    #
-                    self.dwca_measurementorfact.append(emof_dict) 
+    
+                        # Translate values.
+                        for key in self.resources_object.get_translate_from_source_keys():
+                            value = emof_dict.get(key, '')
+                            if value:
+                                new_value = self.resources_object.get_translate_from_source(key, value)
+                                if value != new_value:
+                                    emof_dict[key] = new_value
+                        # Append.
+                        self.dwca_measurementorfact.append(emof_dict) 
                 else: 
                     # Not occurrence.
                     # Get key.
@@ -336,7 +360,15 @@ class DwcaFormatStandard(object):
                                 emof_dict_2['measurementType'] = param 
                                 emof_dict_2['measurementValue'] = value 
                                 emof_dict_2['measurementUnit'] = unit
-                                #
+                                
+                                # Translate values.
+                                for key in self.resources_object.get_translate_from_source_keys():
+                                    value = emof_dict_2.get(key, '')
+                                    if value:
+                                        new_value = self.resources_object.get_translate_from_source(key, value)
+                                        if value != new_value:
+                                            emof_dict_2[key] = new_value
+                                # Append.
                                 self.dwca_measurementorfact.append(emof_dict_2) 
 
         

@@ -19,7 +19,7 @@ if __name__ == "__main__":
     
     # Resource.
     content_mapper = dwca_generator.DwcaContentMapper()
-    content_mapper.load_from_excel('test_data/dwca_matrix_zoobenthos_nat.xlsx')
+    content_mapper.load_from_excel('test_data/resources/dwca_matrix_zoobenthos_nat.xlsx')
     species_info = dwca_generator.DwcaSpeciesWorms(taxa_file_path='test_data/resources/translate_dyntaxa_to_worms.txt')
     
     # Data.
