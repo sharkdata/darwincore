@@ -64,7 +64,7 @@ class DarwinCoreEmlXml():
         """ """
         eml = []
 
-        with pathlib.Path(eml_path).open('r') as eml_file:
+        with pathlib.Path(eml_path).open('r', encoding='cp1252') as eml_file:
             for line in eml_file:
                 eml.append(line.rstrip())
 

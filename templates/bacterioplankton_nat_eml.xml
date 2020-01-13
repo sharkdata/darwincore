@@ -8,12 +8,13 @@
 	system="http://gbif.org" scope="system" xml:lang="eng">
 <dataset>
 	<title xml:lang="eng">
-		SHARK - National Epibenthos monitoring in Sweden since 1992
+		SHARK - Marine bacterioplankton monitoring in Sweden since 1989
 	</title>
 	<creator>
 		<organizationName>
-			Stockholm University, University of Gothenburg, Linnaeus University, 
-			Swedish Agency for Marine and Water Management, Swedish Environmental Protection Agency, 
+			Umeå University, 
+			Swedish Agency for Marine and Water Management, 
+			Swedish Environmental Protection Agency,
 			Swedish Meteorological and Hydrological Institute
 		</organizationName>
 		<address>
@@ -47,16 +48,16 @@
 	<language>eng</language>
 	<abstract>
 		<para>
-			Epibenthos has been nationally monitored in Sweden since 1992. 
-			The monitoring program was initiated by the Swedish Environmental Protection Agency 
-			and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program. 
-			The monitoring is performed by Stockholm University, University of Gothenburg and Linnaeus University. 
+			Bacterioplankton has been nationally monitored in Sweden since 1989. The monitoring program was initiated by the 
+			Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the 
+			responsibility and financing of the program. The monitoring is performed by Umeå University. 
 			The data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
-			The epibenthos monitoring program studies hard and soft bottoms from the surface down to 10-20 meters. 
-			Data is collected in transects or squares with help of divers. 
-			Species abundances are determined directly by the divers or photographs/video are taken and analyzed later. 
-			Field notes are in Swedish. 
-			More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html
+			Bacterioplankton growth rate is an indicator of the nutrient status in aquatic environments. 
+			It is an estimate of the consumption of organic carbon in the ecosystem and therefore closely related to the 
+			biochemical oxygen demand in situ (cf. BOD7). Bacterioplankton growth rate thereby indicates the rate of oxygen consumption 
+			that may lead to oxygen deficiency in the water column when exceeding oxygen supply. Data is collected and anlyzed 
+			according to the HELCOM COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination 
+			(https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf). 
 		</para>
 	</abstract>
 	<keywordSet>
@@ -67,10 +68,10 @@
 	</keywordSet>
 	<intellectualRights>
 		<para>
-		This work is licensed under a
-		<ulink url="http://creativecommons.org/licenses/by/4.0/legalcode">
-			<citetitle>Creative Commons Attribution (CC-BY) 4.0 License</citetitle>
-		</ulink>
+			This work is licensed under a
+			<ulink url="https://creativecommons.org/choose/zero/">
+				<citetitle>Creative Commons Attribution (CC-0) License</citetitle>
+			</ulink>
 		</para>
 	</intellectualRights>
 	<distribution scope="document">
@@ -81,8 +82,8 @@
 	<coverage>
 		<geographicCoverage>
 			<geographicDescription>
-				Data collected within the following marine ecoregions using coordinate system WGS84: 
-				http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379
+				Data is collected within the following marine ecoregion using coordinate system WGS84:
+				http://marineregions.org/mrgid/2401
 			</geographicDescription>
 			<boundingCoordinates>
 				<westBoundingCoordinate>REPLACE-westBoundingCoordinate</westBoundingCoordinate>
@@ -103,27 +104,11 @@
 		</temporalCoverage>
 		<taxonomicCoverage>
 			<generalTaxonomicCoverage>
-				The dataset contains species within the following kingdoms
+				The dataset contains species within the following kingdom
 			</generalTaxonomicCoverage>
 			<taxonomicClassification>
 				<taxonRankName>kingdom</taxonRankName>
-				<taxonRankValue>Animalia</taxonRankValue>
-			</taxonomicClassification>
-			<taxonomicClassification>
-				<taxonRankName>kingdom</taxonRankName>
-				<taxonRankValue>Plantae</taxonRankValue>
-			</taxonomicClassification>
-			<taxonomicClassification>
-				<taxonRankName>kingdom</taxonRankName>
-				<taxonRankValue>Chromista</taxonRankValue>
-			</taxonomicClassification>
-			<taxonomicClassification>
-				<taxonRankName>kingdom</taxonRankName>
 				<taxonRankValue>Bacteria</taxonRankValue>
-			</taxonomicClassification>
-			<taxonomicClassification>
-				<taxonRankName>kingdom</taxonRankName>
-				<taxonRankValue>Protozoa</taxonRankValue>
 			</taxonomicClassification>
 		</taxonomicCoverage>
 	</coverage>
@@ -153,8 +138,9 @@
 		<methodStep>
 			<description>
 				<para>
-					More information about the method is available in Swedish at 
-					https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html
+					Data is collected and analyzed according to the 
+					HELCOM COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination 
+					(https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf).
 				</para>
 			</description>
 		</methodStep>
@@ -162,15 +148,16 @@
 			<studyExtent>
 				<description>
 					<para>
-						The epibenthos monitoring program studies hard and soft bottoms from the surface down to 10-20 meters.
+						It is recommended to take at least 2 samples at different representative depths of the monitored layers of the water column. 
+						Surface layer and deepest layer are prioritised. A sampling frequency of 10 samples per year is perfered for confident annual estimates. 
+						Samples should be distributed in the seasonal curve to provide a good coverage of different levels.
 					</para>
 				</description>
 			</studyExtent>
 			<samplingDescription>
 			<para>
-				Data is collected in transects or squares with help of divers. 
-				Species abundances are determined directly by the divers or photographs/video are taken and analyzed later. 
-				Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, video, photo; 
+				Sampling is performed with a rosette sampler or Niskin bottles attached to a wire.
+				Discipline: Marine biology; Datatype: Bacterioplankton
 				Parameters: REPLACE-Parameters.
 			</para>
 			</samplingDescription>
@@ -180,12 +167,12 @@
 <additionalMetadata>
 	<metadata>
 		<gbif>
-			<dateStamp>2018-01-24T12:47:31.277+01:00</dateStamp>
+			<dateStamp>2020-01-13T12:00:00+01:00</dateStamp>
 			<hierarchyLevel>dataset</hierarchyLevel>
 			<citation>
-				Stockholm University, University of Gothenburg, Linnaeus University, Swedish Agency for Marine and Water Management, 
-				Swedish Environmental Protection Agency and Swedish Meteorological and Hydrological Institute (2017). 
-				National Epibenthos monitoring in Sweden since 1992.
+				Umeå University, Swedish Agency for Marine and Water Management,
+				Swedish Environmental Protection Agency and Swedish Meteorological and Hydrological Institute (2019).
+				Marine bacterioplankton monitoring in Sweden since 1989.
 			</citation>
 		</gbif>
 	</metadata>
