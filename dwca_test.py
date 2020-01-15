@@ -93,7 +93,7 @@ if __name__ == "__main__":
     dwca_format.extract_metadata()
     dwca_format.create_meta_xml()
     dwca_format.create_eml_xml(eml_template = 'templates/bacterioplankton_nat_eml.xml')
-    dwca_format.save_to_archive_file('test_data/DwC-A_Bacterioplankton_TEST.zip', '', '')
+    dwca_format.save_to_archive_file('test_data/SHARK_Bacterioplankton_DwC-A_TEST.zip', '', '')
     
 #         
 #     # Epibenthos NAT.

@@ -162,7 +162,7 @@ class DwcaDataSharkStandard():
                 if node_dynfield_key not in node_dynfield_dict.keys():
                     node_dynfield_dict[node_dynfield_key] = {}
                     node_dynfield_dict[node_dynfield_key]['key_value_list'] = [] # Used for fix text fields.
-                    node_dynfield_dict[node_dynfield_key]['source_field'] = None # ''
+                    node_dynfield_dict[node_dynfield_key]['source_fields_dynamic_fields'] = []
         # Loop over list of dynamic fields. Store fix text as key/value and column name for later use.
         for row_dict in self.resources.dwc_dynamic_fields:
             dwc_category = row_dict.get('dwc_category', '')
@@ -180,22 +180,20 @@ class DwcaDataSharkStandard():
             if text:
                 node_dynfield_dict[node_dynfield_key]['key_value_list'].append(dwc_dynamic_key + ': ' + text)
             elif source_field:
-                node_dynfield_dict[node_dynfield_key]['source_field'] = source_field
+                node_dynfield_dict[node_dynfield_key]['source_fields_dynamic_fields'].append((source_field, dwc_dynamic_key))
             
         # Loop over rows.
         for row_dict in self.row_list:
             for node_dynfield in node_dynfield_dict.values():
                 source_field = ''
-                dwc_dynamic_key = node_dynfield['dwc_dynamic_key']
-                dwc_dynamic_field = node_dynfield['dwc_dynamic_field']
                 node_dynfield_key = node_dynfield['node_dynfield_key']
                 key_value_list = node_dynfield['key_value_list'][:]
                 
-                if node_dynfield['source_field'] is not None:
-                    source_field = node_dynfield['source_field']
-                    value = row_dict.get(source_field, '')
-                    if value:
-                        key_value_list.append(dwc_dynamic_key + ': ' + value)
+                for (source_field, dwc_dynamic_key) in node_dynfield['source_fields_dynamic_fields']:
+                    if source_field:
+                        value = row_dict.get(source_field, '')
+                        if value:
+                            key_value_list.append(dwc_dynamic_key + ': ' + value)
                 #
                 dynamic_string = ', '.join(key_value_list)
                 if dynamic_string:
