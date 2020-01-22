@@ -79,13 +79,13 @@ class DwcaDataSharkStandard():
                 pass
              
             # Time zone info. (+01:00 or +02:00 (DST=Daylight Savings Time) for Sweden. 
-            event_date = row_dict.get('eventDate', '')
-            event_time = row_dict.get('eventTime', '')
-            if (event_time != '') and (event_time != ''):
-                if dwca_generator.is_daylight_savings_time(event_date):
-                    row_dict['eventTime'] = event_time + '+02:00'
+            sample_date = row_dict.get('sample_date', '')
+            sample_time = row_dict.get('sample_time', '')
+            if (sample_date != '') and (sample_time != ''):
+                if dwca_generator.is_daylight_savings_time(sample_date):
+                    row_dict['sample_time'] = sample_time + '+02:00'
                 else:
-                    row_dict['eventTime'] = event_time + '+01:00'
+                    row_dict['sample_time'] = sample_time + '+01:00'
     
     def create_dwca_keys(self):
         """ """

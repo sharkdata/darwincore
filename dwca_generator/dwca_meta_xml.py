@@ -84,6 +84,12 @@ class DarwinCoreMetaXml():
             return 'http://purl.org/dc/terms/references'
         if term == 'type': 
             return 'http://purl.org/dc/terms/type'
+
+        if term == 'measurementTypeID': 
+            return 'http://rs.iobis.org/obis/terms/measurementTypeID'
+        if term == 'measurementUnitID': 
+            return 'http://rs.iobis.org/obis/terms/measurementUnitID'
+        
         else:
             return 'http://rs.tdwg.org/dwc/terms/' + term
     

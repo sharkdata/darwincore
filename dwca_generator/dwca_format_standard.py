@@ -335,7 +335,15 @@ class DwcaFormatStandard(object):
     #                     measurementorfact_dict['measurementDeterminedBy'] = target_row.get('measurementDeterminedBy', '')
     #                     measurementorfact_dict['measurementMethod'] = target_row.get('measurementMethod', '') # TODO: method_reference_code
     #                     measurementorfact_dict['measurementRemarks'] = target_row.get('measurementRemarks', '')
-    
+                                
+                        # Measurement identifiers. NERC vocabular.
+                        if parameter == 'Water depth':
+                            emof_dict['measurementTypeID'] = 'http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/'
+                        if unit == 'm':
+                            emof_dict['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/ULAA/'
+                        elif unit == 'cells/l':
+                            emof_dict['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/UCPL/'
+                                
                         # Translate values.
                         for key in self.resources_object.get_translate_from_source_keys():
                             value = emof_dict.get(key, '')
@@ -360,6 +368,14 @@ class DwcaFormatStandard(object):
                                 emof_dict_2['measurementType'] = param 
                                 emof_dict_2['measurementValue'] = value 
                                 emof_dict_2['measurementUnit'] = unit
+                                
+                                # Measurement identifiers. NERC vocabular.
+                                if param == 'Water depth':
+                                    emof_dict_2['measurementTypeID'] = 'http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/'
+                                if unit == 'm':
+                                    emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/ULAA/'
+                                elif unit == 'cells/l':
+                                    emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/UCPL/'
                                 
                                 # Translate values.
                                 for key in self.resources_object.get_translate_from_source_keys():
