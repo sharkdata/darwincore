@@ -18,7 +18,7 @@ class DwcaContentMapper():
         self.dwc_dynamic_fields = [] 
         self.filter = [] 
         self.translate = [] 
-        self.metadata_mapping = [] 
+        self.eml_metadata = [] 
         # Processed content.
         self.dwc_columns_dict = None 
         self.field_mapping_dict = None
@@ -304,12 +304,12 @@ class DwcaContentMapper():
                     self._local_read_excel_sheet(worksheet, self.dwc_keys)
                 if sheet_name == 'dwc_dynamic_fields':
                     self._local_read_excel_sheet(worksheet, self.dwc_dynamic_fields)
-                if sheet_name == 'filter':
-                    self._local_read_excel_sheet(worksheet, self.filter)
                 if sheet_name == 'translate':
                     self._local_read_excel_sheet(worksheet, self.translate)
-                if sheet_name == 'metadata_mapping':
-                    self._local_read_excel_sheet(worksheet, self.metadata_mapping)
+                if sheet_name == 'eml_metadata':
+                    self._local_read_excel_sheet(worksheet, self.eml_metadata)
+                if sheet_name == 'filter':
+                    self._local_read_excel_sheet(worksheet, self.filter)
         finally:
             if workbook:
                 workbook.close()

@@ -4,6 +4,7 @@
 # Copyright (c) 2019 SMHI, Swedish Meteorological and Hydrological Institute 
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
+import pathlib
 import zipfile
 
 import dwca_generator
@@ -12,8 +13,9 @@ class DwcaDataSharkStandard():
     """ Contains a list of all data rows stored as dictionaries.
         Each row doctionary contains fields both for the internal format and DwC. 
     """
-    def __init__(self, resources):
+    def __init__(self, resources, target_dwca_path='DwC-A_TEST.zip'):
         """ """
+        self.target_dwca_path = pathlib.Path(target_dwca_path)
         # Reference to DwcaResources object. 
         self.resources = resources
         # List ofdictionaries containing all data rows.
@@ -31,41 +33,44 @@ class DwcaDataSharkStandard():
     
     def add_shark_dataset(self, dataset_filepath):
         """ Add data from SHARK zipped files. """
-        header = []
-        # From file in zip to list of rows.
-        with zipfile.ZipFile(dataset_filepath) as z:
-            with z.open('shark_data.txt', 'r') as f:
-                for index, row in enumerate(f):
-                    row = row.decode("cp1252")
-                    row_items = [str(x.strip()) for x in row.split('\t')]
-                    if index == 0:
-                        header = row_items
-                    else:
-                        row_dict = dict(zip(header, row_items))
-                        
-                        # Check filter. Don't add filtered rows.
-                        add_row = True
-                        for filter_column_name, filter_dict in self.resources.get_filters().items():
-                            value = row_dict.get(filter_column_name, '')
-                            if value:
-                                included_values = filter_dict.get('included_values', None)
-                                excluded_values = filter_dict.get('excluded_values', None)
-                                if included_values and (value not in included_values):
-                                    add_row = False
-                                if excluded_values and (value in excluded_values):
-                                    add_row = False
-                        
-                        # Add to list.
-                        if add_row:
-                            # Translate values.
-                            for key in self.resources.get_translate_from_source_keys():
-                                value = row_dict.get(key, '')
+        try:
+            header = []
+            # From file in zip to list of rows.
+            with zipfile.ZipFile(dataset_filepath) as z:
+                with z.open('shark_data.txt', 'r') as f:
+                    for index, row in enumerate(f):
+                        row = row.decode("cp1252")
+                        row_items = [str(x.strip()) for x in row.split('\t')]
+                        if index == 0:
+                            header = row_items
+                        else:
+                            row_dict = dict(zip(header, row_items))
+                            
+                            # Check filter. Don't add filtered rows.
+                            add_row = True
+                            for filter_column_name, filter_dict in self.resources.get_filters().items():
+                                value = row_dict.get(filter_column_name, '')
                                 if value:
-                                    new_value = self.resources.get_translate_from_source(key, value)
-                                    if value != new_value:
-                                        row_dict[key] = new_value
-                            # Append.
-                            self.row_list.append(row_dict)
+                                    included_values = filter_dict.get('included_values', None)
+                                    excluded_values = filter_dict.get('excluded_values', None)
+                                    if included_values and (value not in included_values):
+                                        add_row = False
+                                    if excluded_values and (value in excluded_values):
+                                        add_row = False
+                            
+                            # Add to list.
+                            if add_row:
+                                # Translate values.
+                                for key in self.resources.get_translate_from_source_keys():
+                                    value = row_dict.get(key, '')
+                                    if value:
+                                        new_value = self.resources.get_translate_from_source(key, value)
+                                        if value != new_value:
+                                            row_dict[key] = new_value
+                                # Append.
+                                self.row_list.append(row_dict)
+        except Exception as e:
+            print('Exception: ', str(dataset_filepath), e)
     
     def cleanup_data(self):
         """ """

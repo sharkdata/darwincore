@@ -48,16 +48,17 @@
 	<language>eng</language>
 	<abstract>
 		<para>
-			Bacterioplankton has been nationally monitored in Sweden since 1989. The monitoring program was initiated by the 
-			Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the 
-			responsibility and financing of the program. The monitoring is performed by Umeå University. 
-			The data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
-			Bacterioplankton growth rate is an indicator of the nutrient status in aquatic environments. 
-			It is an estimate of the consumption of organic carbon in the ecosystem and therefore closely related to the 
-			biochemical oxygen demand in situ (cf. BOD7). Bacterioplankton growth rate thereby indicates the rate of oxygen consumption 
-			that may lead to oxygen deficiency in the water column when exceeding oxygen supply. Data is collected and anlyzed 
-			according to the HELCOM COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination 
-			(https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf). 
+			Bacterioplankton has been monitored in Sweden since 1989. The national monitoring program was initiated by the 
+			Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management. 
+			Monitoring is performed by Umeå University. Data is stored in the Swedish Ocean Data Archive (SHARK) database by the 
+			Swedish Meteorological and Hydrological Institute. 
+			Bacterioplankton growth rate is an indicator of nutrient status in aquatic environments. Growth rate is an estimate 
+			of the consumption of organic carbon in the ecosystem and therefore closely related to the in situ biochemical oxygen demand (cf. BOD7). 
+			The growth rate thereby indicates the rate of oxygen consumption that may lead to oxygen deficiency in the water column when exceeding the oxygen supply. 
+			Data is collected and analyzed according to the Helcom COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth 
+			determination (https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf). 
+			Information about the program and the methods are also available in Swedish at 
+			https://www.havochvatten.se/hav/vagledning--lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bakteriell-syrekonsumtion.html
 		</para>
 	</abstract>
 	<keywordSet>

@@ -5,15 +5,17 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import copy
+import pathlib
 import datetime
 
 import dwca_generator
 
 class DwcaFormatStandard(object):
     """ """
-    def __init__(self, data=None, resources=None, species_info=None ):
+    def __init__(self, data=None, resources=None, species_info=None, target_dwca_path='DwC-A_TEST.zip'):
         """ Darwin Core Archive Format base class. """
         
+        self.target_dwca_path = pathlib.Path(target_dwca_path)
         self.data_object = data
         self.resources_object = resources
         self.species_info_object = species_info
@@ -568,9 +570,8 @@ class DwcaFormatStandard(object):
         
         param_unit_list = set()
         
-        # Iterate over rows.
+        # Iterate over event rows.
         for event_row in self.dwca_event:
-#         for target_row in self.target_rows:
             # Don't check filtered rows.
             if event_row.get('remove_row', '') == '<REMOVE>':
                 continue
@@ -582,14 +583,17 @@ class DwcaFormatStandard(object):
                 latitude_max = max(latitude_max, latitude)
                 longitude_min = min(longitude_min, longitude)
                 longitude_max = max(longitude_max, longitude)
-            # Sapling date.
+            # Sampling date.
             sample_date = event_row.get('eventDate', '')
             if  sample_date != '':
                 sample_date_min = min(sample_date_min, sample_date)
                 sample_date_max = max(sample_date_max, sample_date)
-            # Parameters.
-            parameter = event_row.get('parameter', '')
-            unit = event_row.get('unit', '')
+        
+        # Iterate over emof rows.
+        for emof_row in self.dwca_measurementorfact:
+            # Parameters and units.
+            parameter = emof_row.get('measurementType', '')
+            unit = emof_row.get('measurementUnit', '')
             param_unit = ''
             if parameter and unit:
                 param_unit = parameter + ' (' + unit + ')'
@@ -633,7 +637,7 @@ class DwcaFormatStandard(object):
         """ """
         self.eml_xml_rows = []
         
-        eml_xml = dwca_generator.DarwinCoreEmlXml()
+        eml_xml = dwca_generator.DarwinCoreEmlXml(resources = self.resources_object, target_dwca_path=self.target_dwca_path)
         self.eml_xml_rows = eml_xml.create_eml_xml(eml_template)
         if len(self.eml_xml_rows) > 1:
             
@@ -648,6 +652,9 @@ class DwcaFormatStandard(object):
                     self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-beginDate-calendarDate',  str(self.sample_date_min))
                     self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-endDate-calendarDate',  str(self.sample_date_max))
                     self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-Parameters',  str(self.parameter_list))
+                    
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-additionalMetadata-metadata-gbif-dateStamp',  
+                                                                                str(datetime.datetime.now()))
     
     def save_to_archive_file(self, dwca_file_path, eml_template, metadata_dict):
         """ """
