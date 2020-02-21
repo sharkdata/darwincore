@@ -76,13 +76,12 @@ if __name__ == "__main__":
     
 #     for file_path in source_dir_path.glob('**/SHARK_Zooplankton_*.zip'):
     for file_path in source_dir_path.glob('**/SHARK_Zooplankton_2010*.zip'):
-    
-        
-        
         file_path_list.append(str(file_path))
     
+    target_dwca_path = pathlib.Path('test_data/SHARK_Zooplankton_DwC-A_TEST.zip')
+    
     # Data.
-    data = dwca_generator.DwcaDataSharkStandard(content_mapper)
+    data = dwca_generator.DwcaDataSharkStandard(content_mapper, target_dwca_path)
     for dataset_filepath in file_path_list:
         data.add_shark_dataset(dataset_filepath)
     data.create_dwca_keys()
@@ -91,7 +90,7 @@ if __name__ == "__main__":
 #     data.translate_stations()
 #     data.translate_fields()
     # Format.
-    dwca_format = dwca_generator.DwcaFormatStandard(data, content_mapper, species_info)
+    dwca_format = dwca_generator.DwcaFormatStandard(data, content_mapper, species_info, target_dwca_path)
     dwca_format.create_dwca_parts()
     dwca_format.extract_metadata()
     dwca_format.create_meta_xml()
