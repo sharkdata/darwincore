@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding:utf-8 -*-
 #
-# Copyright (c) 2019 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2019-present SMHI, Swedish Meteorological and Hydrological Institute 
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import copy

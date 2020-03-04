@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding:utf-8 -*-
 #
-# Copyright (c) 2019 SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2019-present SMHI, Swedish Meteorological and Hydrological Institute 
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import pathlib
@@ -75,7 +75,7 @@ if __name__ == "__main__":
     
     
 #     for file_path in source_dir_path.glob('**/SHARK_Zooplankton_*.zip'):
-    for file_path in source_dir_path.glob('**/SHARK_Zooplankton_2010*.zip'):
+    for file_path in source_dir_path.glob('**/SHARK_Zooplankton_2016*.zip'):
         file_path_list.append(str(file_path))
     
     target_dwca_path = pathlib.Path('test_data/SHARK_Zooplankton_DwC-A_TEST.zip')
