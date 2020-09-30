@@ -1,0 +1,284 @@
+# 
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: ...
+# Contact: shark@smhi.se
+
+info: 
+    title: DwC-A configurations...
+    yamlFile: dwca_bacterioplankton_nat.yaml
+    description:
+        Used to generate DarwinCore-Archive files from 
+        SHARK zip files.
+
+
+dwcColumns:
+
+    eventColumns:
+        -   dwcTerm: id
+
+        -   dwcTerm: eventID
+
+        -   dwcTerm: parentEventID
+
+        -   dwcTerm: type
+            eventNodes:
+                sampling_event:
+                    text: sampling_event
+                sample:
+                    text: sample
+
+        -   dwcTerm: samplingProtocol
+            eventNodes:
+                sampling_event:
+                    text: sampling_event
+                sample:
+                    text: sample
+
+        -   dwcTerm: sampleSizeValue
+
+        -   dwcTerm: sampleSizeUnit
+
+        -   dwcTerm: samplingEffort
+
+        -   dwcTerm: eventDate
+            eventNodes:
+                sampling_event:
+                    sourceField: visit_date
+                sample:
+                    sourceField: sample_date
+
+        -   dwcTerm: eventTime
+            eventNodes:
+                sampling_event:
+                    sourceField: visit_time
+                sample:
+                    sourceField: sample_time
+
+        # - dwcTerm: startDayOfYear
+        # - dwcTerm: endDayOfYear
+
+        -   dwcTerm: year
+
+        -   dwcTerm: month
+
+        -   dwcTerm: day
+
+        -   dwcTerm: verbatimEventDate
+
+        -   dwcTerm: habitat
+
+        -   dwcTerm: fieldNumber
+
+        -   dwcTerm: fieldNotes
+
+        -   dwcTerm: eventRemarks
+
+        # - dwcTerm: geologicalContextID
+        # - dwcTerm: earliestEonOrLowestEonothem
+        # - dwcTerm: latestEonOrHighestEonothem
+        # - dwcTerm: earliestEraOrLowestErathem
+        # - dwcTerm: latestEraOrHighestErathem
+        # - dwcTerm: earliestPeriodOrLowestSystem
+        # - dwcTerm: latestPeriodOrHighestSystem
+        # - dwcTerm: earliestEpochOrLowestSeries
+        # - dwcTerm: latestEpochOrHighestSeries
+        # - dwcTerm: earliestAgeOrLowestStage
+        # - dwcTerm: latestAgeOrHighestStage
+        # - dwcTerm: lowestBiostratigraphicZone
+        # - dwcTerm: highestBiostratigraphicZone
+        # - dwcTerm: lithostratigraphicTerms
+        # - dwcTerm: group
+        # - dwcTerm: formation
+        # - dwcTerm: member
+        # - dwcTerm: bed
+
+        -   dwcTerm: locationID
+
+        # - dwcTerm: higherGeographyID
+        # - dwcTerm: higherGeography
+        # - dwcTerm: continent
+
+        -   dwcTerm: waterBody
+
+        # - dwcTerm: islandGroup
+        # - dwcTerm: island
+
+        -   dwcTerm: country
+
+        -   dwcTerm: countryCode
+
+        # - dwcTerm: stateProvince
+
+        -   dwcTerm: county
+
+        -   dwcTerm: municipality
+
+        -   dwcTerm: locality
+
+        -   dwcTerm: verbatimLocality
+
+        # - dwcTerm: verbatimElevation
+        # - dwcTerm: minimumElevationInMeters
+        # - dwcTerm: maximumElevationInMeters
+
+        -   dwcTerm: verbatimDepth
+
+        -   dwcTerm: minimumDepthInMeters
+
+        -   dwcTerm: maximumDepthInMeters
+
+        # - dwcTerm: minimumDistanceAboveSurfaceInMeters
+        # - dwcTerm: maximumDistanceAboveSurfaceInMeters
+        # - dwcTerm: locationAccordingTo
+        # - dwcTerm: locationRemarks
+        # - dwcTerm: verbatimCoordinates
+        # - dwcTerm: verbatimLatitude
+        # - dwcTerm: verbatimLongitude
+        # - dwcTerm: verbatimCoordinateSystem
+        # - dwcTerm: verbatimSRS
+
+        -   dwcTerm: decimalLatitude
+
+        -   dwcTerm: decimalLongitude
+
+        -   dwcTerm: geodeticDatum
+
+        -   dwcTerm: coordinateUncertaintyInMeters
+
+        -   dwcTerm: coordinatePrecision
+
+        # - dwcTerm: pointRadiusSpatialFit
+        # - dwcTerm: footprintWKT
+        # - dwcTerm: footprintSRS
+        # - dwcTerm: footprintSpatialFit
+        # - dwcTerm: georeferencedBy
+        # - dwcTerm: georeferencedDate
+        # - dwcTerm: georeferenceProtocol
+        # - dwcTerm: georeferenceSources
+        # - dwcTerm: georeferenceVerificationStatus
+        # - dwcTerm: georeferenceRemarks
+        # - dwcTerm: modified
+        # - dwcTerm: language
+
+        -   dwcTerm: license
+
+        -   dwcTerm: rightsHolder
+
+        -   dwcTerm: accessRights
+
+        -   dwcTerm: bibliographicCitation
+
+        -   dwcTerm: references
+
+        -   dwcTerm: institutionID
+
+        -   dwcTerm: datasetID
+
+        -   dwcTerm: institutionCode
+
+        -   dwcTerm: datasetName
+
+        -   dwcTerm: ownerInstitutionCode
+
+        # - dwcTerm: informationWithheld
+
+        -   dwcTerm: dataGeneralizations
+
+        -   dwcTerm: dynamicProperties
+
+        # Extra:
+        -   dwcTerm: collectionCode
+
+
+    occurrenceColumns:
+
+        -   dwcTerm: TODO
+
+        # - dwcTerm: id
+
+        - eventID
+
+        -   dwcTerm: occurrenceID
+
+        -   dwcTerm: scientificName
+
+        -   dwcTerm: scientificNameAuthorship
+
+        -   dwcTerm: scientificNameID
+
+        -   dwcTerm: taxonID
+
+        -   dwcTerm: identificationQualifier
+
+        -   dwcTerm: sex
+
+        -   dwcTerm: lifeStage
+
+        # - dwcTerm: individualCount
+        # - dwcTerm: organismQuantity
+        # - dwcTerm: organismQuantityType
+
+        -   dwcTerm: occurrenceStatus
+
+        -   dwcTerm: preparations
+
+        -   dwcTerm: associatedMedia
+
+        -   dwcTerm: associatedReferences
+
+        -   dwcTerm: associatedSequences
+
+        -   dwcTerm: taxonRank
+
+        -   dwcTerm: kingdom
+
+        -   dwcTerm: phylum
+
+        -   dwcTerm: class
+
+        -   dwcTerm: order
+
+        -   dwcTerm: family
+
+        -   dwcTerm: genus
+
+        -   dwcTerm: basisOfRecord
+
+        -   dwcTerm: recordedBy
+
+        -   dwcTerm: occurrenceRemarks
+
+        -   dwcTerm: dynamicProperties
+
+    emofColumns:
+
+        # - dwcTerm: id
+
+        -   dwcTerm: eventID
+
+        -   dwcTerm: measurementID
+
+        -   dwcTerm: occurrenceID
+
+        -   dwcTerm: measurementType
+
+        -   dwcTerm: measurementTypeID
+
+        -   dwcTerm: measurementValue
+
+        -   dwcTerm: measurementValueID
+
+        -   dwcTerm: measurementUnit
+
+        -   dwcTerm: measurementUnitID
+
+        -   dwcTerm: measurementAccuracy
+
+        -   dwcTerm: measurementDeterminedDate
+
+        -   dwcTerm: measurementDeterminedBy
+
+        -   dwcTerm: measurementMethod
+
+        -   dwcTerm: measurementRemarks
+

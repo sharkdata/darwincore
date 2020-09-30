@@ -1,0 +1,64 @@
+# 
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: ...
+# Contact: shark@smhi.se
+
+info: 
+    title: DwC-A configurations...
+    yamlFile: source_keys.yaml
+    description:
+        Used to generate DarwinCore-Archive files from 
+        SHARK zip files.
+
+
+sourceKeys:
+
+    -   dwc_category: event
+        dwc_event_node: sampling_event
+        dwc_parent_event: 
+        dwc_key_name: sampling_event_key
+        dwc_key_prefix: EVENT-
+        keys:
+            - station_name
+            - sample_date
+            - sample_time
+
+    -   dwc_category: event
+        dwc_event_node: sample
+        dwc_parent_event: sampling_event
+        dwc_key_name: sample_key
+        dwc_event_key_name: sampling_event_key
+        dwc_key_prefix: SAMPLE-
+        keys: 
+            - shark_sample_id_md5
+            - sample_part_id
+
+    -   dwc_category: occurrence
+        dwc_event_node: sample
+        dwc_key_name: occurrence_key
+        dwc_event_key_name: sample_key
+        dwc_key_prefix: TAXA-
+        keys:
+            - shark_sample_id_md5
+            - sample_part_id
+            - scientific_name
+            - sex_code
+            - dev_stage_code
+            - size_class
+
+    -   dwc_category: emof
+        dwc_event_node: sampling_event
+        dwc_key_name: sampling_event_key
+        dwc_event_key_name: sampling_event_key
+
+    -   dwc_category: emof
+        dwc_event_node: sample
+        dwc_key_name: sample_key
+        dwc_event_key_name: sample_key
+
+    -   dwc_category: emof
+        dwc_event_node: occurrence
+        dwc_key_name: occurrence_key
+        dwc_event_key_name: sample_key
+
+

@@ -1,0 +1,48 @@
+# 
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: ...
+# Contact: shark@smhi.se
+
+info: 
+    title: eml_auto.yaml
+    description:
+        Used to generate DarwinCore-Archive files from 
+        SHARK zip files.
+
+emlHeader:
+    - <eml:eml
+    - xmlns:eml="eml://ecoinformatics.org/eml-2.1.1"
+    - xmlns:dc="http://purl.org/dc/terms/"
+    - xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    - xsi:schemaLocation="eml://ecoinformatics.org/eml-2.1.1 http://rs.gbif.org/schema/eml-gbif-profile/1.1/eml.xsd"
+    - packageId="TODO-packageId"
+    - system="http://gbif.org" scope="system" xml:lang="eng">
+
+emlFooter:
+     - </eml:eml>
+
+dataset: 
+    pubDate: REPLACE-pubDate
+
+    coverage: 
+        geographicCoverage: 
+            boundingCoordinates: 
+                westBoundingCoordinate: REPLACE-westLongitude
+                eastBoundingCoordinate: REPLACE-eastLongitude
+                northBoundingCoordinate: REPLACE-westLatitude
+                southBoundingCoordinate: REPLACE-eastLatitude
+
+        temporalCoverage:
+            rangeOfDates: 
+                beginDate: 
+                    calendarDate: REPLACE-beginDate
+                endDate: 
+                    calendarDate: REPLACE-endDate
+
+        taxonomicCoverage: REPLACE-taxonomicCoverage
+
+additionalMetadata: 
+    metadata: 
+        gbif: 
+            dateStamp: REPLACE-dateStamp
+            hierarchyLevel: REPLACE-hierarchyLevel

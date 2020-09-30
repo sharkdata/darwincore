@@ -1,0 +1,57 @@
+
+# 
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: ...
+# Contact: shark@smhi.se
+
+info: 
+    title: eml_smhi_datacenter.yaml
+    description:
+        Used to generate DarwinCore-Archive files from 
+        SHARK zip files.
+
+dataset: 
+
+    creator: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName: Swedish Meterological and Hydrological Institute (SMHI)
+        positionName: Data manager
+        address: 
+            deliveryPoint: Sven Källfelts gata 15
+            city: Gothenburg
+            postalCode: SE 426 71 Västra Frölunda
+            country: SE
+        electronicMailAddress: shark@smhi.se
+
+    metadataProvider: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName: Swedish Meterological and Hydrological Institute (SMHI)
+        positionName: Data manager
+        address: 
+            deliveryPoint: Sven Källfelts gata 15
+            city: Gothenburg
+            postalCode: SE 426 71 Västra Frölunda
+            country: SE
+        electronicMailAddress: shark@smhi.se
+
+    contact: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName: Swedish Meterological and Hydrological Institute (SMHI)
+        positionName: Data manager
+        address: 
+            deliveryPoint: Sven Källfelts gata 15
+            city: Gothenburg
+            postalCode: SE 426 71 Västra Frölunda
+            country: SE
+        electronicMailAddress: shark@smhi.se
+
+    distribution: 
+        online:
+            url: http://sharkdata.se/
+
