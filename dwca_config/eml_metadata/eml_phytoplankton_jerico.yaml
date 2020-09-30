@@ -1,0 +1,67 @@
+# 
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: ...
+# Contact: shark@smhi.se
+
+# info: 
+#     title: EML content for Bacterioplankton - national.
+#     yamlFile: eml_bacterioplankton_nat.yaml
+#     description:
+#         Used to generate DarwinCore-Archive files from 
+#         SHARK zip files.
+
+additionalMetadata: 
+    metadata: 
+        gbif:
+            citation: 
+                Swedish Meteorological and Hydrological Institute (2016). Microscopy SMHI Tångesund 2016.
+
+dataset: 
+    title: Microscopy SMHI Tångesund 2016
+
+    abstract: 
+        para: 
+            - TBD.
+
+    methods: 
+        methodStep: 
+            description: 
+                para:
+                    - TBD.
+        sampling: 
+            description:
+                TBD.
+
+    coverage: 
+        geographicCoverage: 
+            geographicDescription: 
+                Data collected within the marine ecoregion http://marineregions.org/mrgid/2379, using coordinate system WGS84.
+        taxonomicCoverage: 
+            The dataset contains Phytoplankton
+
+    keywordSet: 
+        keywords: 
+            keyword: 
+                - Samplingevent
+        keywordThesaurus: 
+            "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
+
+    creator: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName: 
+            Swedish Meteorological and Hydrological Institute
+
+    metadataProvider:
+        individualName:
+            givenName: Bengt
+            surName: Karlson
+        positionName: Scientist
+        electronicMailAddress: bengt.karlson@smhi.se
+
+    contact:
+        individualName:
+            givenName: Bengt
+            surName: Karlson
+        electronicMailAddress: bengt.karlson@smhi.se

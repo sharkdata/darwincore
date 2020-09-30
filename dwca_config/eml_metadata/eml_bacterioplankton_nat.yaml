@@ -3,17 +3,21 @@
 # GitHub: ...
 # Contact: shark@smhi.se
 
-info: 
-    title: EML content for Bacterioplankton - national.
-    yamlFile: eml_bacterioplankton_nat.yaml
-    description:
-        Used to generate DarwinCore-Archive files from 
-        SHARK zip files.
+# info: 
+#     title: EML content for Bacterioplankton - national.
+#     yamlFile: eml_bacterioplankton_nat.yaml
+#     description:
+#         Used to generate DarwinCore-Archive files from 
+#         SHARK zip files.
 
 additionalMetadata: 
     metadata: 
         gbif:
-            citation: Umeå University, Swedish Agency for Marine and Water Management, Swedish Environmental Protection Agency and Swedish Meteorological and Hydrological Institute.
+            citation: 
+                Umeå University, 
+                Swedish Agency for Marine and Water Management, 
+                Swedish Environmental Protection Agency and
+                Swedish Meteorological and Hydrological Institute.
 
 dataset: 
     title: SHARK - National marine bacterioplankton monitoring in Sweden since 1989

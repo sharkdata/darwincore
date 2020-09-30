@@ -120,4 +120,4 @@ if __name__ == "__main__":
         dwca_generator = DwcaGenerator(config_file)
         dwca_generator.load_config()
         dwca_generator.load_source_files()
-        # dwca_generator.load_create_eml()
+        dwca_generator.load_create_eml()
