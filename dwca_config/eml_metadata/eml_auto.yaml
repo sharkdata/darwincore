@@ -1,13 +1,7 @@
-# 
-# A part of the DarwinCore-Archive, DwC-A, generator.
-# GitHub: ...
-# Contact: shark@smhi.se
 
-info: 
-    title: eml_auto.yaml
-    description:
-        Used to generate DarwinCore-Archive files from 
-        SHARK zip files.
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+# Contact: shark@smhi.se
 
 emlHeader:
     - <eml:eml

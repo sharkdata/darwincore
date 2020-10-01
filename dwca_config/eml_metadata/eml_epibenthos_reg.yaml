@@ -1,14 +1,7 @@
-# 
-# A part of the DarwinCore-Archive, DwC-A, generator.
-# GitHub: ...
-# Contact: shark@smhi.se
 
-# info: 
-#     title: EML content for Bacterioplankton - national.
-#     yamlFile: eml_bacterioplankton_nat.yaml
-#     description:
-#         Used to generate DarwinCore-Archive files from 
-#         SHARK zip files.
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+# Contact: shark@smhi.se
 
 additionalMetadata: 
     metadata: 
@@ -66,7 +59,6 @@ dataset:
             taxonomicClassification:
                 -   taxonRankName: kingdom
                     taxonRankValue: Animalia
-                    taxonomicClassification:
                 -   taxonRankName: kingdom
                     taxonRankValue: Plantae
                 -   taxonRankName: kingdom

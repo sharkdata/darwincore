@@ -1,15 +1,7 @@
-# 
+
 # A part of the DarwinCore-Archive, DwC-A, generator.
-# GitHub: ...
+# GitHub: https://github.com/sharkdata/darwincore
 # Contact: shark@smhi.se
-
-info: 
-    title: DwC-A configurations...
-    yamlFile: source_keys.yaml
-    description:
-        Used to generate DarwinCore-Archive files from 
-        SHARK zip files.
-
 
 sourceKeys:
 

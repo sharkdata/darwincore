@@ -1,14 +1,7 @@
-# 
-# A part of the DarwinCore-Archive, DwC-A, generator.
-# GitHub: ...
-# Contact: shark@smhi.se
 
-# info: 
-#     title: EML content for Ringedseal - national.
-#     yamlFile: eml_ringedseal_nat.yaml
-#     description:
-#         Used to generate DarwinCore-Archive files from 
-#         SHARK zip files.
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+# Contact: shark@smhi.se
 
 additionalMetadata: 
     metadata: 
