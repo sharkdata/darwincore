@@ -1,0 +1,190 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+dwcaEventColumns:
+    - dwcTerm: id
+    - dwcTerm: eventID
+    - dwcTerm: parentEventID
+    - dwcTerm: type
+    - dwcTerm: samplingProtocol
+    - dwcTerm: sampleSizeValue
+    - dwcTerm: sampleSizeUnit
+    - dwcTerm: samplingEffort
+    - dwcTerm: eventDate
+    - dwcTerm: eventTime
+    - dwcTerm: year
+    - dwcTerm: month
+    - dwcTerm: day
+    - dwcTerm: verbatimEventDate
+    - dwcTerm: habitat
+    - dwcTerm: fieldNumber
+    - dwcTerm: fieldNotes
+    - dwcTerm: eventRemarks
+    - dwcTerm: locationID
+    - dwcTerm: waterBody
+    - dwcTerm: country
+    - dwcTerm: countryCode
+    - dwcTerm: county
+    - dwcTerm: municipality
+    - dwcTerm: locality
+    - dwcTerm: verbatimLocality
+    - dwcTerm: verbatimDepth
+    - dwcTerm: minimumDepthInMeters
+    - dwcTerm: maximumDepthInMeters
+    - dwcTerm: decimalLatitude
+    - dwcTerm: decimalLongitude
+    - dwcTerm: geodeticDatum
+    - dwcTerm: coordinateUncertaintyInMeters
+    - dwcTerm: coordinatePrecision
+    - dwcTerm: license
+    - dwcTerm: rightsHolder
+    - dwcTerm: accessRights
+    - dwcTerm: bibliographicCitation
+    - dwcTerm: references
+    - dwcTerm: institutionID
+    - dwcTerm: datasetID
+    - dwcTerm: institutionCode
+    - dwcTerm: datasetName
+    - dwcTerm: ownerInstitutionCode
+    - dwcTerm: dataGeneralizations
+    - dwcTerm: dynamicProperties
+        # Extra:
+    - dwcTerm: collectionCode
+
+content:
+    -   eventType: sampling_event
+        dwcTerms:
+            eventID:
+                key: sampling_event_key
+            eventDate:
+                source: visit_date
+            decimalLatitude:
+                source: visit_latitude_dd
+            decimalLongitude:
+                source: visit_longitude_dd
+
+    -   eventType: sample
+        dwcTerms:
+            eventID:
+                key: sample_key
+            eventDate:
+                source: visit_date
+            decimalLatitude:
+                source: visit_latitude_dd
+            decimalLongitude:
+                source: visit_longitude_dd
+
+
+xxxxx_dwcaEventColumns:
+    - dwcTerm: id
+    - dwcTerm: eventID
+    - dwcTerm: parentEventID
+    - dwcTerm: type
+            eventNodes:
+                sampling_event:
+                    text: sampling_event
+                sample:
+                    text: sample
+
+    - dwcTerm: samplingProtocol
+            eventNodes:
+                sampling_event:
+                    text: sampling_event
+                sample:
+                    text: sample
+
+    - dwcTerm: sampleSizeValue
+
+    - dwcTerm: sampleSizeUnit
+
+    - dwcTerm: samplingEffort
+
+    - dwcTerm: eventDate
+            eventNodes:
+                sampling_event:
+                    sourceField: visit_date
+                sample:
+                    sourceField: sample_date
+
+    - dwcTerm: eventTime
+            eventNodes:
+                sampling_event:
+                    sourceField: visit_time
+                sample:
+                    sourceField: sample_time
+
+    - dwcTerm: year
+
+    - dwcTerm: month
+
+    - dwcTerm: day
+
+    - dwcTerm: verbatimEventDate
+
+    - dwcTerm: habitat
+
+    - dwcTerm: fieldNumber
+
+    - dwcTerm: fieldNotes
+
+    - dwcTerm: eventRemarks
+
+    - dwcTerm: locationID
+
+    - dwcTerm: waterBody
+
+    - dwcTerm: country
+
+    - dwcTerm: countryCode
+
+    - dwcTerm: county
+
+    - dwcTerm: municipality
+
+    - dwcTerm: locality
+
+    - dwcTerm: verbatimLocality
+
+    - dwcTerm: verbatimDepth
+
+    - dwcTerm: minimumDepthInMeters
+
+    - dwcTerm: maximumDepthInMeters
+
+    - dwcTerm: decimalLatitude
+
+    - dwcTerm: decimalLongitude
+
+    - dwcTerm: geodeticDatum
+
+    - dwcTerm: coordinateUncertaintyInMeters
+
+    - dwcTerm: coordinatePrecision
+
+    - dwcTerm: license
+
+    - dwcTerm: rightsHolder
+
+    - dwcTerm: accessRights
+
+    - dwcTerm: bibliographicCitation
+
+    - dwcTerm: references
+
+    - dwcTerm: institutionID
+
+    - dwcTerm: datasetID
+
+    - dwcTerm: institutionCode
+
+    - dwcTerm: datasetName
+
+    - dwcTerm: ownerInstitutionCode
+
+    - dwcTerm: dataGeneralizations
+
+    - dwcTerm: dynamicProperties
+
+        # Extra:
+    - dwcTerm: collectionCode

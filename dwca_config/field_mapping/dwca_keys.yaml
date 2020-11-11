@@ -1,0 +1,49 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+eventTypeKeys:
+    event:
+    -   eventType: sampling_event
+        parentEventType: 
+        keyName: sampling_event_key
+        keyPrefix: EVENT-
+        keyFields:
+            - station_name
+            - sample_date
+            - sample_time
+
+    -   eventType: sample
+        parentEventType: sampling_event
+        keyName: sample_key
+        eventKeyName: sampling_event_key
+        keyPrefix: SAMPLE-
+        keyFields: 
+            - shark_sample_id_md5
+            - sample_part_id
+
+    occurrence:
+    -   eventType: sample
+        keyName: occurrence_key
+        eventKeyName: sample_key
+        keyPrefix: TAXA-
+        keyFields:
+            - shark_sample_id_md5
+            - sample_part_id
+            - scientific_name
+            - sex_code
+            - dev_stage_code
+            - size_class
+
+    emof:
+    -   eventType: sampling_event
+        keyName: sampling_event_key
+        eventKeyName: sampling_event_key
+
+    -   eventType: sample
+        keyName: sample_key
+        eventKeyName: sample_key
+
+    # -   eventType: occurrence
+    #     keyName: occurrence_key
+    #     eventKeyName: sample_key

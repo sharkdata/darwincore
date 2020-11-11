@@ -1,7 +1,6 @@
 
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
-# Contact: shark@smhi.se
 
 emlHeader:
     - <eml:eml
@@ -23,8 +22,8 @@ dataset:
             boundingCoordinates: 
                 westBoundingCoordinate: REPLACE-westLongitude
                 eastBoundingCoordinate: REPLACE-eastLongitude
-                northBoundingCoordinate: REPLACE-westLatitude
-                southBoundingCoordinate: REPLACE-eastLatitude
+                northBoundingCoordinate: REPLACE-northLatitude
+                southBoundingCoordinate: REPLACE-southLatitude
 
         temporalCoverage:
             rangeOfDates: 
