@@ -10,15 +10,17 @@ info:
         SHARK zip files.
 
 dwcaTarget:
-    directory: data_out
-    file: dwca-smhi-bacterioplankton-nat.xml
+    directory:
+        data_out
+    files: 
+        - dwca-smhi-bacterioplankton-nat.xml
 
-importFileGroups:
-    -   format: SHARK
-        directory: datasets
-        files:
-            - TODO-1.zip
-            - TODO-2.zip
+sourceFiles:
+    directory: 
+        datasets
+    files:
+        - TODO-1.zip
+        - TODO-2.zip
 
 emlDefinitions:
     directory:
@@ -28,31 +30,33 @@ emlDefinitions:
         - eml_auto.yaml
         - eml_bacterioplankton_nat.yaml
 
-dwcTermsAndMapping:
+dwcaKeys:
     directory:
-        dwca_config/fields_and_terms
+        dwca_config/field_mapping
     files:
-        - dwca_terms.yaml
+        - dwca_keys.yaml
+        # - source_keys_bacterioplankton_nat.yaml
+
+fieldMapping:
+    directory:
+        dwca_config/field_mapping
+    files:
+        - dwca_terms_event.yaml
+        - dwca_terms_occurrence.yaml
+        - dwca_terms_emof.yaml
         # - dwca_terms_bacterioplankton.yaml
         # - dwca_terms_bacterioplankton_nat.yaml
 
-sourceKeys:
-    directory:
-        dwca_config/fields_and_terms
-    files:
-        - source_keys.yaml
-        # - source_keys_bacterioplankton_nat.yaml
-
 translate:
     directory:
-        dwca_config/fields_and_terms
+        dwca_config/field_mapping
     files:
         - translate.yaml
         # - translate_bacterioplankton_nat.yaml
         
 filters:
     directory:
-        dwca_config/fields_and_terms
+        dwca_config/field_mapping
     files:
         - filters.yaml
         # - filters_bacterioplankton_nat.yaml
