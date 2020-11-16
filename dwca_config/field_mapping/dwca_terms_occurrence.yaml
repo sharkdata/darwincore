@@ -3,35 +3,35 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 dwcaOccurrenceColumns:
-    # - dwcTerm: id
-    - dwcTerm: eventID
-    - dwcTerm: occurrenceID
-    - dwcTerm: scientificName
-    - dwcTerm: scientificNameAuthorship
-    - dwcTerm: scientificNameID
-    - dwcTerm: taxonID
-    - dwcTerm: identificationQualifier
-    - dwcTerm: sex
-    - dwcTerm: lifeStage
-    # - dwcTerm: individualCount
-    # - dwcTerm: organismQuantity
-    # - dwcTerm: organismQuantityType
-    - dwcTerm: occurrenceStatus
-    - dwcTerm: preparations
-    - dwcTerm: associatedMedia
-    - dwcTerm: associatedReferences
-    - dwcTerm: associatedSequences
-    - dwcTerm: taxonRank
-    - dwcTerm: kingdom
-    - dwcTerm: phylum
-    - dwcTerm: class
-    - dwcTerm: order
-    - dwcTerm: family
-    - dwcTerm: genus
-    - dwcTerm: basisOfRecord
-    - dwcTerm: recordedBy
-    - dwcTerm: occurrenceRemarks
-    - dwcTerm: dynamicProperties
+    # - id
+    - eventID
+    - occurrenceID
+    - scientificName
+    - scientificNameAuthorship
+    - scientificNameID
+    - taxonID
+    - identificationQualifier
+    - sex
+    - lifeStage
+    # - individualCount
+    # - organismQuantity
+    # - organismQuantityType
+    - occurrenceStatus
+    - preparations
+    - associatedMedia
+    - associatedReferences
+    - associatedSequences
+    - taxonRank
+    - kingdom
+    - phylum
+    - class
+    - order
+    - family
+    - genus
+    - basisOfRecord
+    - recordedBy
+    - occurrenceRemarks
+    - dynamicProperties
 
 content:
     -   eventType: sample

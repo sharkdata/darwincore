@@ -3,54 +3,54 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 dwcaEventColumns:
-    - dwcTerm: id
-    - dwcTerm: eventID
-    - dwcTerm: parentEventID
-    - dwcTerm: type
-    - dwcTerm: samplingProtocol
-    - dwcTerm: sampleSizeValue
-    - dwcTerm: sampleSizeUnit
-    - dwcTerm: samplingEffort
-    - dwcTerm: eventDate
-    - dwcTerm: eventTime
-    - dwcTerm: year
-    - dwcTerm: month
-    - dwcTerm: day
-    - dwcTerm: verbatimEventDate
-    - dwcTerm: habitat
-    - dwcTerm: fieldNumber
-    - dwcTerm: fieldNotes
-    - dwcTerm: eventRemarks
-    - dwcTerm: locationID
-    - dwcTerm: waterBody
-    - dwcTerm: country
-    - dwcTerm: countryCode
-    - dwcTerm: county
-    - dwcTerm: municipality
-    - dwcTerm: locality
-    - dwcTerm: verbatimLocality
-    - dwcTerm: verbatimDepth
-    - dwcTerm: minimumDepthInMeters
-    - dwcTerm: maximumDepthInMeters
-    - dwcTerm: decimalLatitude
-    - dwcTerm: decimalLongitude
-    - dwcTerm: geodeticDatum
-    - dwcTerm: coordinateUncertaintyInMeters
-    - dwcTerm: coordinatePrecision
-    - dwcTerm: license
-    - dwcTerm: rightsHolder
-    - dwcTerm: accessRights
-    - dwcTerm: bibliographicCitation
-    - dwcTerm: references
-    - dwcTerm: institutionID
-    - dwcTerm: datasetID
-    - dwcTerm: institutionCode
-    - dwcTerm: datasetName
-    - dwcTerm: ownerInstitutionCode
-    - dwcTerm: dataGeneralizations
-    - dwcTerm: dynamicProperties
-        # Extra:
-    - dwcTerm: collectionCode
+    - id
+    - eventID
+    - parentEventID
+    - type
+    - samplingProtocol
+    - sampleSizeValue
+    - sampleSizeUnit
+    - samplingEffort
+    - eventDate
+    - eventTime
+    - year
+    - month
+    - day
+    - verbatimEventDate
+    - habitat
+    - fieldNumber
+    - fieldNotes
+    - eventRemarks
+    - locationID
+    - waterBody
+    - country
+    - countryCode
+    - county
+    - municipality
+    - locality
+    - verbatimLocality
+    - verbatimDepth
+    - minimumDepthInMeters
+    - maximumDepthInMeters
+    - decimalLatitude
+    - decimalLongitude
+    - geodeticDatum
+    - coordinateUncertaintyInMeters
+    - coordinatePrecision
+    - license
+    - rightsHolder
+    - accessRights
+    - bibliographicCitation
+    - references
+    - institutionID
+    - datasetID
+    - institutionCode
+    - datasetName
+    - ownerInstitutionCode
+    - dataGeneralizations
+    - dynamicProperties
+    # Extra:
+    - collectionCode
 
 content:
     -   eventType: sampling_event

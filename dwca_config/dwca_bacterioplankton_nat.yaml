@@ -13,14 +13,13 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-bacterioplankton-nat.xml
+        - dwca-smhi-bacterioplankton-nat_TEST.zip
 
 sourceFiles:
     directory: 
-        datasets
+        data_in/datasets
     files:
-        - TODO-1.zip
-        - TODO-2.zip
+        - SHARK_Bacterioplankton_ABU_2016_UMSC_Bactabund_version_2020-10-27.zip
 
 emlDefinitions:
     directory:

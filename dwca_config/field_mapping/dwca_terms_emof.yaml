@@ -3,21 +3,21 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 dwcaEmofColumns:
-#   - dwcTerm: id
-    - dwcTerm: eventID
-    - dwcTerm: measurementID
-    - dwcTerm: occurrenceID
-    - dwcTerm: measurementType
-    - dwcTerm: measurementTypeID
-    - dwcTerm: measurementValue
-    - dwcTerm: measurementValueID
-    - dwcTerm: measurementUnit
-    - dwcTerm: measurementUnitID
-    - dwcTerm: measurementAccuracy
-    - dwcTerm: measurementDeterminedDate
-    - dwcTerm: measurementDeterminedBy
-    - dwcTerm: measurementMethod
-    - dwcTerm: measurementRemarks
+#   - id
+    - eventID
+    - measurementID
+    - occurrenceID
+    - measurementType
+    - measurementTypeID
+    - measurementValue
+    - measurementValueID
+    - measurementUnit
+    - measurementUnitID
+    - measurementAccuracy
+    - measurementDeterminedDate
+    - measurementDeterminedBy
+    - measurementMethod
+    - measurementRemarks
 
 content:
     -   eventType: sample
