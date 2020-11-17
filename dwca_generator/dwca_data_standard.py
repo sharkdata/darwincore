@@ -130,7 +130,7 @@ class DwcaDataSharkStandard():
                 #
                 dwc_key_name = dwc_event_node_dict.get('keyName', '')
                 dwc_key_prefix = dwc_event_node_dict.get('keyPrefix', '')
-                key_list = dwc_event_node_dict.get('key_fiekeyFieldslds', [])
+                key_list = dwc_event_node_dict.get('keyFields', [])
                 dwc_id = dwca_generator.create_extra_key(row_dict, key_list)
                 
                 # Used to generate short names.

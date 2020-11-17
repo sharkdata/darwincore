@@ -36,9 +36,8 @@ if __name__ == "__main__":
         dwca_format = dwca_generator.DwcaFormatStandard(source_data, dwca_gen_config, species_info)
         dwca_format.create_dwca_parts()
         # dwca_format.extract_metadata()
-        dwca_format.create_meta_xml()
-        # dwca_format.create_eml_xml(eml_template = 'templates/eml_template.xml')
         dwca_format.create_eml_xml(eml_content)
+        dwca_format.create_meta_xml()
         dwca_format.save_to_archive_file()
 
 

@@ -33,39 +33,40 @@ dwcaOccurrenceColumns:
     - occurrenceRemarks
     - dynamicProperties
 
-content:
+dwcaOccurrenceContent:
     -   eventType: sample
-        # id: 
-        eventID:
-            key: sample_key
-        occurrenceID:
-            key: occurrence_key
-        scientificName:
-            source: scientific_name
-        scientificNameAuthorship:
-            source: scientific_author
-        scientificNameID:
-            source: dyntaxa_id
-        taxonID:
-        identificationQualifier:
-        sex:
-        lifeStage:
-        # individualCount:
-        # organismQuantity:
-        # organismQuantityType:
-        occurrenceStatus:
-        preparations:
-        associatedMedia:
-        associatedReferences:
-        associatedSequences:
-        taxonRank:
-        kingdom:
-        phylum:
-        class:
-        order:
-        family:
-        genus:
-        basisOfRecord:
-        recordedBy:
-        occurrenceRemarks:
-        dynamicProperties:
+        dwcTerms:
+            # id: 
+            eventID:
+                dwcaKey: sample_key
+            occurrenceID:
+                dwcaKey: occurrence_key
+            scientificName:
+                sourceKey: scientific_name
+            scientificNameAuthorship:
+                sourceKey: scientific_author
+            scientificNameID:
+                sourceKey: dyntaxa_id
+            taxonID:
+            identificationQualifier:
+            sex:
+            lifeStage:
+            # individualCount:
+            # organismQuantity:
+            # organismQuantityType:
+            occurrenceStatus:
+            preparations:
+            associatedMedia:
+            associatedReferences:
+            associatedSequences:
+            taxonRank:
+            kingdom:
+            phylum:
+            class:
+            order:
+            family:
+            genus:
+            basisOfRecord:
+            recordedBy:
+            occurrenceRemarks:
+            dynamicProperties:

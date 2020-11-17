@@ -53,6 +53,118 @@ class DwcaFormatStandard(object):
     
     def create_dwca_event(self):
         """ """
+        # Create control dictionary.
+        event_keys = self.dwca_gen_config.dwca_keys["eventTypeKeys"]["event"]
+        event_node_names = [event_dict["eventType"] for event_dict in event_keys]
+        event_control_dict = {}
+        for index, event_node_name in enumerate(event_node_names):
+            event_control_dict[event_node_name] = {}
+            event_control_dict[event_node_name]['used_key_list'] = set() # To avoid duplicates.
+            event_control_dict[event_node_name]['dwc_key_name'] = event_keys[index]['keyName']
+            # event_control_dict[event_node_name]['dwc_event_key_name'] = event_keys[index]['eventKeyName']
+            # event_control_dict[event_node_name]['text_from_to_list'] = []
+            # event_control_dict[event_node_name]['field_from_to_list'] = []
+        
+        # Process all data rows.
+        for target_row in self.target_rows:
+            # Check if marked for removal.
+            if target_row.get('remove_row', '') == '<REMOVE>':
+                continue
+            # Iterate over nodes.
+            for event_node_name in event_node_names:
+                # Current row in control dictionary.
+                control_dict = event_control_dict[event_node_name]
+                # Get keys.
+                node_key = target_row.get(control_dict['dwc_key_name'], '')
+                # parent_node_key = target_row.get(control_dict['dwc_event_key_name'], '')
+                # Create event row.
+                if node_key and (node_key not in control_dict['used_key_list']):
+                    control_dict['used_key_list'].add(node_key)
+                    #
+                    event_dict = {}
+                    # Add basics.
+                    event_dict['type'] = event_node_name
+                    event_dict['id'] = node_key
+                    # event_dict['eventID'] = node_key
+                    # event_dict['parentEventID'] = parent_node_key
+
+                    event_content_list = self.dwca_gen_config.field_mapping["dwcaEventContent"]
+                    for event_content in event_content_list:
+                        if event_node_name != event_content.get("eventType", ""):
+                            continue
+
+                        for term in event_content.get("dwcTerms", []):
+                            # print(term)
+                            # print(event_content["dwcTerms"][term])
+                            term_dict = event_content["dwcTerms"][term]
+                            if "default" in term_dict:
+                                value = term_dict["default"]
+                                if value:
+                                    event_dict[term] = value
+                            #
+                            if "text" in term_dict:
+                                value = term_dict["text"]
+                                if value:
+                                    event_dict[term] = value
+                            elif "sourceKey" in term_dict:
+                                source_key = term_dict["sourceKey"]
+                                value = target_row.get(source_key, '')
+                                if value:
+                                    event_dict[term] = value
+                            elif "dwcaKey" in term_dict:
+                                dwca_key = term_dict["dwcaKey"]
+                                value = target_row.get(dwca_key, '')
+                                if value:
+                                    event_dict[term] = value
+
+                            
+                            elif "dynamic" in term_dict:
+                                source_key = term_dict["dynamic"]
+                                value = target_row.get(source_key, '')
+                                # TODO:
+                                if value:
+                                    event_dict[term] = value
+
+
+                        # event_control_dict[event_node_name]['dynamic_field_list'] = []
+                        # #
+                        # for row_dict in self.resources_object.field_mapping:
+                        #     dwc_category = row_dict.get('dwc_category', '')
+                        #     dwc_event_node = row_dict.get('dwc_event_node', '')
+                        #     if dwc_category == 'event':
+                        #         if dwc_event_node == event_node_name:
+                                    
+                        #             text_field = row_dict.get('text', '')
+                        #             source_field = row_dict.get('source_field', '')
+                        #             dwc_field = row_dict.get('dwc_field', '')
+                        #             if dwc_field:
+                        #                 if text_field:
+                        #                     event_control_dict[event_node_name]['text_from_to_list'].append((text_field, dwc_field))
+                        #                 if source_field:
+                        #                     event_control_dict[event_node_name]['field_from_to_list'].append((source_field, dwc_field))
+
+                        # # Add dynamicProperties.
+                        # for dynamic_field_key in used_dynamic_field_key_list:
+                        #     if 'event<+>' + event_node_name + '<+>' in dynamic_field_key:
+                        #         # Remove dwc_event_node part from key.
+                        #         new_key = dynamic_field_key.replace('event<+>' + event_node_name + '<+>', '')
+                        #         value = target_row.get(dynamic_field_key, '')
+                        #         if value:
+                        #             event_dict[new_key] = value
+                        # #
+                        # # Translate values.
+                        # for key in self.resources_object.get_translate_from_dwc_keys():
+                        #     value = event_dict.get(key, '')
+                        #     if value:
+                        #         new_value = self.resources_object.get_translate_from_dwc(key, value)
+                        #         if value != new_value:
+                        #             event_dict[key] = new_value
+
+                        # Append.
+                        self.dwca_event.append(event_dict) 
+    
+    # def create_dwca_event(self):
+    #     """ """
         # # Get node name hierarchy.
         # event_node_names = self.resources_object.get_event_node_names()
         # # Get all nodes key info.
@@ -135,9 +247,123 @@ class DwcaFormatStandard(object):
         #                         event_dict[key] = new_value
         #             # Append.
         #             self.dwca_event.append(event_dict) 
-     
+    
     def create_dwca_occurrence(self):
         """ """
+        # Create control dictionary.
+        event_keys = self.dwca_gen_config.dwca_keys["eventTypeKeys"]["event"]
+        event_node_names = [event_dict["eventType"] for event_dict in event_keys]
+        occurrence_control_dict = {}
+        for index, event_node_name in enumerate(event_node_names):
+            occurrence_control_dict[event_node_name] = {}
+            occurrence_control_dict[event_node_name]['used_key_list'] = set() # To avoid duplicates.
+            occurrence_control_dict[event_node_name]['dwc_key_name'] = event_keys[index]['keyName']
+        
+        # Process all data rows.
+        for target_row in self.target_rows:
+            # Check if marked for removal.
+            if target_row.get('remove_row', '') == '<REMOVE>':
+                continue
+            # Iterate over nodes.
+            for event_node_name in event_node_names:
+                if event_node_name not in occurrence_control_dict:
+                    continue
+                # Current row in control dictionary.
+                control_dict = occurrence_control_dict[event_node_name]
+                # Get keys.
+                node_key = target_row.get(control_dict['dwc_key_name'], '')
+                # event_node_key = target_row.get(control_dict['dwc_event_key_name'], '')
+                # Create event row.
+                if node_key and (node_key not in control_dict['used_key_list']):
+                    control_dict['used_key_list'].add(node_key)
+                    #
+                    occurrence_dict = {}
+                    # Add basics.
+                    # occurrence_dict['id'] = event_node_key
+                    # occurrence_dict['eventID'] = event_node_key
+                    occurrence_dict['occurrenceID'] = node_key
+
+                    content_list = self.dwca_gen_config.field_mapping["dwcaOccurrenceContent"]
+                    for content in content_list:
+                        if event_node_name != content.get("eventType", ""):
+                            continue
+
+                        for term in content.get("dwcTerms", []):
+                            # print(term)
+                            # print(event_content["dwcTerms"][term])
+                            term_dict = content["dwcTerms"][term]
+                            if not term_dict:
+                                continue
+
+                            if "default" in term_dict:
+                                value = term_dict["default"]
+                                if value:
+                                    occurrence_dict[term] = value
+                            #
+                            if "text" in term_dict:
+                                value = term_dict["text"]
+                                if value:
+                                    occurrence_dict[term] = value
+                            elif "sourceKey" in term_dict:
+                                source_key = term_dict["sourceKey"]
+                                value = target_row.get(source_key, '')
+                                if value:
+                                    occurrence_dict[term] = value
+                            elif "dwcaKey" in term_dict:
+                                dwca_key = term_dict["dwcaKey"]
+                                value = target_row.get(dwca_key, '')
+                                if value:
+                                    occurrence_dict[term] = value
+
+                            
+                            elif "dynamic" in term_dict:
+                                source_key = term_dict["dynamic"]
+                                value = target_row.get(source_key, '')
+                                # TODO:
+                                if value:
+                                    occurrence_dict[term] = value
+
+
+
+                        self.dwca_occurrence.append(occurrence_dict)
+
+
+                    # # Add texts.
+                    # for (from_text, to_dwc_field) in control_dict['text_from_to_list']:
+                    #     if from_text:
+                    #         occurrence_dict[to_dwc_field] = from_text
+                    # # Add fields.
+                    # for (from_field, to_dwc_field) in control_dict['field_from_to_list']:
+                    #     value = target_row.get(from_field, '')
+                    #     if value:
+                    #         occurrence_dict[to_dwc_field] = value
+                    # # Add dynamicProperties.
+                    # for dynamic_field_key in used_dynamic_field_key_list:
+                    #     if 'occurrence<+>' + occurrence_node_name + '<+>' in dynamic_field_key:
+                    #         # Remove dwc_event_node part from key.
+                    #         new_key = dynamic_field_key.replace('occurrence<+>' + occurrence_node_name + '<+>', '')
+                    #         value = target_row.get(dynamic_field_key, '')
+                    #         if value:
+                    #             occurrence_dict[new_key] = value
+                    # # Add taxa info.
+                    # taxa_info_dict = self.species_info_object.get_info_as_dwc_dict(source_dict=target_row)
+                    # occurrence_dict.update(taxa_info_dict)
+                    # #
+                    # scientific_name = occurrence_dict.get('scientificName', '')
+                    # if scientific_name:
+                    #     # Translate values.
+                    #     for key in self.resources_object.get_translate_from_source_keys():
+                    #         value = occurrence_dict.get(key, '')
+                    #         if value:
+                    #             new_value = self.resources_object.get_translate_from_source(key, value)
+                    #             if value != new_value:
+                    #                 occurrence_dict[key] = new_value
+                    #     # Append.
+                    #     self.dwca_occurrence.append(occurrence_dict)
+
+
+    # def create_dwca_occurrence(self):
+    #     """ """
         # # Get node name hierarchy.
         # occurrence_node_names = self.resources_object.get_occurrence_node_names()
         # # Get all nodes key info.
@@ -231,6 +457,186 @@ class DwcaFormatStandard(object):
      
     def create_dwca_measurementorfact(self):
         """ """
+        # Create control dictionary.
+        event_keys = self.dwca_gen_config.dwca_keys["eventTypeKeys"]["event"]
+        event_node_names = [event_dict["eventType"] for event_dict in event_keys]
+        emof_control_dict = {}
+        for index, event_node_name in enumerate(event_node_names):
+            emof_control_dict[event_node_name] = {}
+            emof_control_dict[event_node_name]['used_key_list'] = set() # To avoid duplicates.
+            emof_control_dict[event_node_name]['dwc_key_name'] = event_keys[index]['keyName']
+            emof_control_dict[event_node_name]['dwc_event_key_name'] = event_keys[index]['keyName']
+        
+
+        # return
+
+
+        # Process all data rows.
+        for target_row in self.target_rows:
+            # Check if marked for removal.
+            if target_row.get('remove_row', '') == '<REMOVE>':
+                continue
+            # Iterate over nodes.
+            for event_node_name in event_node_names:
+                if event_node_name not in emof_control_dict:
+                    continue
+                # Current row in control dictionary.
+                control_dict = emof_control_dict[event_node_name]
+                # Get keys.
+                event_node_key = target_row.get(control_dict['dwc_event_key_name'], '')
+                # Create event row.
+#                 if node_key and (node_key not in control_dict['used_key_list']):
+#                     control_dict['used_key_list'].add(node_key)
+                #
+                emof_dict = {}
+                # Add basics.
+                emof_dict['id'] = event_node_key
+                emof_dict['eventID'] = event_node_key
+                
+                content_list = self.dwca_gen_config.field_mapping["dwcaOccurrenceContent"]
+                for content in content_list:
+                    if event_node_name != content.get("eventType", ""):
+                        continue
+                    for term in content.get("dwcTerms", []):
+                        # print(term)
+                        # print(event_content["dwcTerms"][term])
+                        term_dict = content["dwcTerms"][term]
+                        if not term_dict:
+                            continue
+
+                        if "default" in term_dict:
+                            value = term_dict["default"]
+                            if value:
+                                emof_dict[term] = value
+                        #
+                        if "text" in term_dict:
+                            value = term_dict["text"]
+                            if value:
+                                emof_dict[term] = value
+                        elif "sourceKey" in term_dict:
+                            source_key = term_dict["sourceKey"]
+                            value = target_row.get(source_key, '')
+                            if value:
+                                emof_dict[term] = value
+                        elif "dwcaKey" in term_dict:
+                            dwca_key = term_dict["dwcaKey"]
+                            value = target_row.get(dwca_key, '')
+                            if value:
+                                emof_dict[term] = value
+
+                        
+                        elif "dynamic" in term_dict:
+                            source_key = term_dict["dynamic"]
+                            value = target_row.get(source_key, '')
+                            # TODO:
+                            if value:
+                                emof_dict[term] = value
+                
+                # # Add texts.
+                # for (from_text, to_dwc_field) in control_dict['text_from_to_list']:
+                #     if from_text:
+                #         emof_dict[to_dwc_field] = from_text
+                # # Add fields.
+                # for (from_field, to_dwc_field) in control_dict['field_from_to_list']:
+                #     value = target_row.get(from_field, '')
+                #     if value:
+                #         emof_dict[to_dwc_field] = value
+                # # Add dynamicProperties.
+                # for dynamic_field_key in used_dynamic_field_key_list:
+                #     if 'emof<+>' + emof_node_name + '<+>' in dynamic_field_key:
+                #         # Remove dwc_event_node part from key.
+                #         new_key = dynamic_field_key.replace('emof<+>' + emof_node_name + '<+>', '')
+                #         value = target_row.get(dynamic_field_key, '')
+                #         if value:
+                #             emof_dict[new_key] = value
+                
+                            
+                if True:
+                # if event_node_name == 'occurrence':
+                    occurrence_key = target_row.get('occurrence_key', '')
+                    scientific_name = target_row.get('scientific_name', '')
+                    if occurrence_key and scientific_name:
+                        emof_dict['occurrenceID'] = occurrence_key
+                    
+                    parameter = target_row.get('parameter', '')
+                    value = target_row.get('value', '')
+                    unit = target_row.get('unit', '')
+                    if parameter:
+                        emof_dict['measurementType'] = parameter
+                        emof_dict['measurementValue'] = value
+                        emof_dict['measurementUnit'] = unit
+    #                     measurementorfact_dict['measurementAccuracy'] = ''
+    #                     measurementorfact_dict['measurementDeterminedDate'] = target_row.get('measurementDeterminedDate', '')
+    #                     measurementorfact_dict['measurementDeterminedBy'] = target_row.get('measurementDeterminedBy', '')
+    #                     measurementorfact_dict['measurementMethod'] = target_row.get('measurementMethod', '') # TODO: method_reference_code
+    #                     measurementorfact_dict['measurementRemarks'] = target_row.get('measurementRemarks', '')
+                                
+                        # Measurement identifiers. NERC vocabular.
+                        if parameter == 'Water depth':
+                            emof_dict['measurementTypeID'] = 'http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/'
+                        if unit == 'm':
+                            emof_dict['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/ULAA/'
+                        elif unit == 'cells/l':
+                            emof_dict['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/UCPL/'
+                                
+                        # # Translate values.
+                        # for key in self.resources_object.get_translate_from_source_keys():
+                        #     value = emof_dict.get(key, '')
+                        #     if value:
+                        #         new_value = self.resources_object.get_translate_from_source(key, value)
+                        #         if value != new_value:
+                        #             emof_dict[key] = new_value
+                        # Append.
+                        self.dwca_measurementorfact.append(emof_dict) 
+                else: 
+
+
+
+
+                        self.dwca_measurementorfact.append(emof_dict) 
+
+
+
+
+
+                #     # Not occurrence.
+                #     # Get key.
+                #     event_node_key = target_row.get(control_dict['dwc_key_name'], '')
+                #     # Create event row.
+                #     if event_node_key and (event_node_key not in control_dict['used_key_list']):
+                #         control_dict['used_key_list'].add(event_node_key)
+                        
+                #         for key, (param, unit) in emof_control_dict[event_node_name]['emof_extra_params'].items(): 
+                #             value = str(target_row.get(key, ''))
+                #             if value: 
+                #                 emof_dict_2 = dict(emof_dict)
+                #                 emof_dict_2['measurementType'] = param 
+                #                 emof_dict_2['measurementValue'] = value 
+                #                 emof_dict_2['measurementUnit'] = unit
+                                
+                #                 # Measurement identifiers. NERC vocabular.
+                #                 if param == 'Water depth':
+                #                     emof_dict_2['measurementTypeID'] = 'http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/'
+                #                 if unit == 'm':
+                #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/ULAA/'
+                #                 elif unit == 'cells/l':
+                #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/UCPL/'
+                                
+                #                 # Translate values.
+                #                 for key in self.resources_object.get_translate_from_source_keys():
+                #                     value = emof_dict_2.get(key, '')
+                #                     if value:
+                #                         new_value = self.resources_object.get_translate_from_source(key, value)
+                #                         if value != new_value:
+                #                             emof_dict_2[key] = new_value
+                #                 # Append.
+                #                 self.dwca_measurementorfact.append(emof_dict_2)
+
+
+
+
+#     def create_dwca_measurementorfact(self):
+#         """ """
 #         # Get node name hierarchy.
 #         emof_node_names = self.resources_object.get_emof_node_names()
 # #         # Get all nodes key info.

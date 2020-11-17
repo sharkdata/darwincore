@@ -52,25 +52,33 @@ dwcaEventColumns:
     # Extra:
     - collectionCode
 
-content:
+dwcaEventContent:
     -   eventType: sampling_event
         dwcTerms:
             eventID:
-                key: sampling_event_key
+                dwcaKey: sampling_event_key
             eventDate:
-                source: visit_date
+                sourceKey: sample_date
             decimalLatitude:
-                source: visit_latitude_dd
+                sourceKey: sample_latitude_dd
             decimalLongitude:
-                source: visit_longitude_dd
+                sourceKey: sample_longitude_dd
+            country:
+                default: sweden
+#                 text: Sweden
 
     -   eventType: sample
         dwcTerms:
             eventID:
-                key: sample_key
+                dwcaKey: sample_key
+            parentEventID:
+                dwcaKey: sampling_event_key
             eventDate:
-                source: visit_date
+                sourceKey: sample_date
             decimalLatitude:
-                source: visit_latitude_dd
+                sourceKey: sample_latitude_dd
             decimalLongitude:
-                source: visit_longitude_dd
+                sourceKey: sample_longitude_dd
+            country:
+                default: sweden
+                text: Sweden

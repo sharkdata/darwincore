@@ -7,6 +7,7 @@ eventTypeKeys:
     -   eventType: sampling_event
         parentEventType: 
         keyName: sampling_event_key
+        eventKeyName: 
         keyPrefix: EVENT-
         keyFields:
             - station_name
