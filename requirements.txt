@@ -1,3 +1,6 @@
 
 openpyxl
 pytz
+
+pylint
+black

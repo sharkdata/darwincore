@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding:utf-8 -*-
 #
-# Copyright (c) 2020-present SMHI, Swedish Meteorological and Hydrological Institute 
+# Copyright (c) 2020-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import pathlib
@@ -11,7 +11,8 @@ import collections.abc
 
 from dwca_generator import dwca_data_standard
 
-class DwcaGeneratorConfig():
+
+class DwcaGeneratorConfig:
     """ """
 
     def __init__(self, config_file):
@@ -30,10 +31,10 @@ class DwcaGeneratorConfig():
         self.translate = {}
         self.filters = {}
 
-    def create_dwca(self):
-        """ """
-        self.load_config()
-        self.load_source_files()
+    # def create_dwca(self):
+    #     """ """
+    #     self.load_config()
+    #     self.load_source_files()
 
     def load_config(self):
         """ """
@@ -69,7 +70,7 @@ class DwcaGeneratorConfig():
         eml_xml = {}
         eml_xml["dataset"] = eml_dict["dataset"]
         eml_xml["additionalMetadata"] = eml_dict["additionalMetadata"]
-        eml_xml_rows = dict2xml.dict2xml(eml_xml, indent = "    ")
+        eml_xml_rows = dict2xml.dict2xml(eml_xml, indent="    ")
         # Append header and footer.
         xml_rows = []
         for row in eml_dict.get("emlHeader", []):
@@ -79,7 +80,7 @@ class DwcaGeneratorConfig():
             xml_rows.append(row)
         for row in eml_dict.get("emlFooter", []):
             xml_rows.append(row)
-        # 
+        #
         eml_content = "\n".join(xml_rows)
         return eml_content
 
@@ -98,30 +99,30 @@ class DwcaGeneratorConfig():
     #     print(source_file_list)
 
     def get_config_files(self, config_key):
-            """ """
-            print()
-            file_list = []
-            file_path = pathlib.Path()
-            if config_key in self.dwca_config:
-                dwca_keys = self.dwca_config[config_key]
-                if "directory" in dwca_keys:
-                    dir_path = pathlib.Path(file_path, dwca_keys["directory"])
-                if "files" in dwca_keys:
-                    for file_name in dwca_keys["files"]:
-                        file_path = pathlib.Path(dir_path, file_name)
-                        file_list.append(str(file_path))
-            return file_list
+        """ """
+        print()
+        file_list = []
+        file_path = pathlib.Path()
+        if config_key in self.dwca_config:
+            dwca_keys = self.dwca_config[config_key]
+            if "directory" in dwca_keys:
+                dir_path = pathlib.Path(file_path, dwca_keys["directory"])
+            if "files" in dwca_keys:
+                for file_name in dwca_keys["files"]:
+                    file_path = pathlib.Path(dir_path, file_name)
+                    file_list.append(str(file_path))
+        return file_list
 
     def merge_config_yaml_files(self, yaml_file_list):
-            """ Merge configurations as defined in the yaml file list order. """
-            result_dict = {}
-            for file_name in yaml_file_list:
-                file_path = pathlib.Path(file_name)
-                with open(file_path, encoding="utf8") as file:
-                    new_data = yaml.load(file, Loader=yaml.FullLoader)
-                    self.dict_deep_update(result_dict, new_data)
-            # print(result_dict)
-            return result_dict
+        """ Merge configurations as defined in the yaml file list order. """
+        result_dict = {}
+        for file_name in yaml_file_list:
+            file_path = pathlib.Path(file_name)
+            with open(file_path, encoding="utf8") as file:
+                new_data = yaml.load(file, Loader=yaml.FullLoader)
+                self.dict_deep_update(result_dict, new_data)
+        # print(result_dict)
+        return result_dict
 
     def dict_deep_update(self, target, updates):
         """ Recursively updates or extends a dict. """
@@ -133,4 +134,3 @@ class DwcaGeneratorConfig():
             else:
                 target[key] = value
         return target
-
