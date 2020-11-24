@@ -55,30 +55,272 @@ dwcaEventColumns:
 dwcaEventContent:
     -   eventType: sampling_event
         dwcTerms:
+            id:
+                sourceKey: 
             eventID:
-                dwcaKey: sampling_event_key
+                sourceKey: sampling_event_key
+            parentEventID:
+                sourceKey: 
+            type:
+                sourceKey: 
+            samplingProtocol:
+                sourceKey: 
+            sampleSizeValue:
+                sourceKey: 
+            sampleSizeUnit:
+                sourceKey: 
+            samplingEffort:
+                sourceKey: 
             eventDate:
-                sourceKey: sample_date
-            decimalLatitude:
-                sourceKey: sample_latitude_dd
-            decimalLongitude:
-                sourceKey: sample_longitude_dd
+                sourceKeyList: 
+                    - visit_date
+                    - sample_date
+            eventTime:
+                sourceKey: 
+            year:
+                sourceKey: visit_year
+            month:
+                sourceKey: 
+            day:
+                sourceKey: 
+            verbatimEventDate:
+                sourceKey: 
+            habitat:
+                sourceKey: 
+            fieldNumber:
+                sourceKey: 
+            fieldNotes:
+                sourceKey: visit_comment
+            eventRemarks:
+                sourceKey: 
+            locationID:
+                sourceKey: 
+            waterBody:
+                sourceKey: location_sea_basin
             country:
-                default: sweden
-#                 text: Sweden
+                text: Sweden
+            countryCode:
+                text: SE
+            county:
+                sourceKey: location_county
+            municipality:
+                sourceKey: location_municipality
+            locality:
+                sourceKey: 
+            verbatimLocality:
+                sourceKey: station_name
+            verbatimDepth:
+                sourceKey: 
+            minimumDepthInMeters:
+                sourceKey: 
+            maximumDepthInMeters:
+                sourceKey: 
+            decimalLatitude:
+                sourceKeyList: 
+                    - visit_latitude_dd
+                    - sample_latitude_dd
+            decimalLongitude:
+                sourceKeyList: 
+                    - visit_longitude_dd
+                    - sample_longitude_dd
+            geodeticDatum:
+                text: EPSG:4619
+            coordinateUncertaintyInMeters:
+                sourceKey: 
+            coordinatePrecision:
+                sourceKey: 
+            license:
+                sourceKey: 
+            rightsHolder:
+                text: Swedish Agency for Marine and Water Management
+            accessRights:
+                text: CC0
+            bibliographicCitation:
+                sourceKey: 
+            references:
+                sourceKey: 
+            institutionID:
+                sourceKey: 
+            datasetID:
+                sourceKey: dataset_file_name
+            institutionCode:
+                text: Swedish Meteorological and Hydrological Institute
+            datasetName:
+                text: SHARK - National zooplankton monitoring in Sweden since 1979
+            ownerInstitutionCode:
+                text: Swedish Agency for Marine and Water Management
+            dataGeneralizations:
+                sourceKey: 
+            dynamicProperties:
+                dynamic:
+                    -   dynamicKey: SamplingLaboratoryCode
+                        sourceKey: sampling_laboratory_code
+                    -   dynamicKey: SamplingLaboratoryName
+                        sourceKeyList: 
+                            - sampling_laboratory_name_en
+                            - sampling_laboratory_name_sv
+                    -   dynamicKey: SamplingLaboratoryAccreditated
+                        sourceKey: sampling_laboratory_accreditated
+                    -   dynamicKey: MonitoringProgramCode
+                        sourceKey: monitoring_program_code
+                    -   dynamicKey: StationMarking
+                        sourceKey: station_marking
+                    -   dynamicKey: StationExposure
+                        sourceKey: station_exposure
+                    -   dynamicKey: VisitId
+                        sourceKey: visit_id
+                    -   dynamicKey: ExpeditionId
+                        sourceKey: expedition_id
+                    -   dynamicKey: WaterLandStationType
+                        sourceKey: water_land_station_type_code
+                    -   dynamicKey: MonitoringStationType
+                        sourceKey: monitoring_station_type_code
+                    -   dynamicKey: MonitoringPurpose
+                        sourceKey: monitoring_purpose_code
+            # Extra:
+            collectionCode:
+                sourceKey: dataset_name
 
     -   eventType: sample
         dwcTerms:
+            id:
+                sourceKey: 
             eventID:
-                dwcaKey: sample_key
+                sourceKey: sample_key
             parentEventID:
-                dwcaKey: sampling_event_key
+                sourceKey: sampling_event_key
+            type:
+                sourceKey: 
+            samplingProtocol:
+                dynamic: 
+                    -   dynamicKey: MethodReference
+                        sourceKey: method_reference_code
+                    -   dynamicKey: MethodDocumentation
+                        sourceKey: method_documentation
+                    -   dynamicKey: SamplerTypeCode
+                        sourceKey: sampler_type_code
+                    -   dynamicKey: PlanktonSamplingMethod
+                        sourceKey: plankton_sampling_method_code
+            sampleSizeValue:
+                sourceKey: sampled_volume_l
+            sampleSizeUnit:
+                sourceKey: 
+            samplingEffort:
+                dynamic: 
+                    -   dynamicKey: SampledVolume(L)
+                        sourceKey: sampled_volume_l
+                    -   dynamicKey: SamplerArea(cm2)
+                        sourceKey: sampler_area_cm2
+                    -   dynamicKey: WireAngle(deg)
+                        sourceKey: wire_angle_deg
+                    -   dynamicKey: FlowmeterLength(m)
+                        sourceKey: flowmeter_length_m
+                    -   dynamicKey: MeshSize(um)
+                        sourceKey: mesh_size_um
+                    -   dynamicKey: UpperMeshSize(um)
+                        sourceKey: upper_mesh_size_um
+                    -   dynamicKey: LowerMeshSize(um)
+                        sourceKey: lower_mesh_size_um
             eventDate:
-                sourceKey: sample_date
-            decimalLatitude:
-                sourceKey: sample_latitude_dd
-            decimalLongitude:
-                sourceKey: sample_longitude_dd
+                sourceKeyList: 
+                    - sample_date
+                    - visit_date
+            eventTime:
+                sourceKey: sample_time
+            year:
+                sourceKey: 
+            month:
+                sourceKey: 
+            day:
+                sourceKey: 
+            verbatimEventDate:
+                sourceKey: 
+            habitat:
+                sourceKey: 
+            fieldNumber:
+                dynamic: 
+                    -   dynamicKey: PlatformCode
+                        sourceKey: platform_code
+                    -   dynamicKey: VisitYear
+                        sourceKey: visit_year
+                    -   dynamicKey: SampleSeries
+                        sourceKey: sample_series
+                    -   dynamicKey: SampleId
+                        sourceKey: sample_id
+                    -   dynamicKey: SamplePartId
+                        sourceKey: sample_part_id
+                    -   dynamicKey: SamplePartMin(cm)
+                        sourceKey: sample_part_min_cm
+                    -   dynamicKey: SamplePartMax(cm)
+                        sourceKey: sample_part_max_cm
+            fieldNotes:
+                sourceKey: 
+            eventRemarks:
+                sourceKey: sample_comment
+            locationID:
+                sourceKey: 
+            waterBody:
+                sourceKey: 
             country:
-                default: sweden
-                text: Sweden
+                sourceKey: 
+            countryCode:
+                sourceKey: 
+            county:
+                sourceKey: 
+            municipality:
+                sourceKey: 
+            locality:
+                sourceKey: 
+            verbatimLocality:
+                sourceKey: station_name
+            verbatimDepth:
+                sourceKey: 
+            minimumDepthInMeters:
+                sourceKey: sample_min_depth_m
+            maximumDepthInMeters:
+                sourceKey: sample_max_depth_m
+            decimalLatitude:
+                sourceKeyList: 
+                    - sample_latitude_dd
+                    - visit_latitude_dd
+            decimalLongitude:
+                sourceKeyList: 
+                    - sample_longitude_dd
+                    - visit_longitude_dd
+            geodeticDatum:
+                text: EPSG:4619
+            coordinateUncertaintyInMeters:
+                sourceKey: 
+            coordinatePrecision:
+                sourceKey: 
+            license:
+                sourceKey: 
+            rightsHolder:
+                text: Swedish Agency for Marine and Water Management
+            accessRights:
+                text: CC0
+            bibliographicCitation:
+                sourceKey: 
+            references:
+                sourceKey: 
+            institutionID:
+                sourceKey: 
+            datasetID:
+                sourceKey: 
+            institutionCode:
+                sourceKey: 
+            datasetName:
+                sourceKey: 
+            ownerInstitutionCode:
+                sourceKey: 
+            dataGeneralizations:
+                sourceKey: 
+            dynamicProperties:
+                dynamic:
+                    -   dynamicKey: Orderer
+                        sourceKeyList: 
+                            - sample_orderer_name_en
+                            - sample_orderer_name_sv
+            # Extra:
+            collectionCode:
+                sourceKey: dataset_name

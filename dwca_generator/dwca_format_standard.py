@@ -323,21 +323,31 @@ class DwcaFormatStandard(object):
             term_dict = content["dwcTerms"][term]
             if not term_dict:
                 continue
-
+            # Default.
             if "default" in term_dict:
                 value = term_dict["default"]
                 if value:
                     result_dict[term] = value
-            #
+            # Other alternatives, use first found.
             if "text" in term_dict:
                 value = term_dict["text"]
                 if value:
                     result_dict[term] = value
+
             elif "sourceKey" in term_dict:
                 source_key = term_dict["sourceKey"]
                 value = source_row.get(source_key, "")
                 if value:
                     result_dict[term] = value
+
+            elif "sourceKeyList" in term_dict:
+                source_key_list = term_dict["sourceKeyList"]
+                for source_key in source_key_list:
+                    value = source_row.get(source_key, "")
+                    if value:
+                        result_dict[term] = value
+                        break
+
             elif "dwcaKey" in term_dict:
                 dwca_key = term_dict["dwcaKey"]
                 value = source_row.get(dwca_key, "")
@@ -345,45 +355,27 @@ class DwcaFormatStandard(object):
                     result_dict[term] = value
 
             elif "dynamic" in term_dict:
-                source_key = term_dict["dynamic"]
-                value = source_row.get(source_key, "")
-                # TODO:
-                if value:
-                    result_dict[term] = value
-
-                # event_control_dict[event_node_name]['dynamic_field_list'] = []
-                # #
-                # for row_dict in self.resources_object.field_mapping:
-                #     dwc_category = row_dict.get('dwc_category', '')
-                #     dwc_event_node = row_dict.get('dwc_event_node', '')
-                #     if dwc_category == 'event':
-                #         if dwc_event_node == event_node_name:
-
-                #             text_field = row_dict.get('text', '')
-                #             source_field = row_dict.get('source_field', '')
-                #             dwc_field = row_dict.get('dwc_field', '')
-                #             if dwc_field:
-                #                 if text_field:
-                #                     event_control_dict[event_node_name]['text_from_to_list'].append((text_field, dwc_field))
-                #                 if source_field:
-                #                     event_control_dict[event_node_name]['field_from_to_list'].append((source_field, dwc_field))
-
-                # # Add dynamicProperties.
-                # for dynamic_field_key in used_dynamic_field_key_list:
-                #     if 'event<+>' + event_node_name + '<+>' in dynamic_field_key:
-                #         # Remove dwc_event_node part from key.
-                #         new_key = dynamic_field_key.replace('event<+>' + event_node_name + '<+>', '')
-                #         value = source_row.get(dynamic_field_key, '')
-                #         if value:
-                #             event_dict[new_key] = value
-                # #
-                # # Translate values.
-                # for key in self.resources_object.get_translate_from_dwc_keys():
-                #     value = event_dict.get(key, '')
-                #     if value:
-                #         new_value = self.resources_object.get_translate_from_dwc(key, value)
-                #         if value != new_value:
-                #             event_dict[key] = new_value
+                dynamic_list = term_dict["dynamic"]
+                dynamic_content_list = []
+                for dynamic_item in dynamic_list:
+                    if "dynamicKey" in dynamic_item:
+                        dynamic_key = dynamic_item["dynamicKey"]
+                        if "sourceKey" in dynamic_item:
+                            source_key = dynamic_item["sourceKey"]
+                            value = source_row.get(source_key, "")
+                            if value:
+                                content_string = dynamic_key + ": " + value
+                                dynamic_content_list.append(content_string)
+                        elif "sourceKeyList" in dynamic_item:
+                            source_key_list = dynamic_item["sourceKeyList"]
+                            for source_key in source_key_list:
+                                value = source_row.get(source_key, "")
+                                if value:
+                                    content_string = dynamic_key + ": " + value
+                                    dynamic_content_list.append(content_string)
+                                    break
+                if dynamic_content_list:
+                    result_dict[term] = ", ".join(dynamic_content_list)
 
     def extract_metadata(self):
         """ """
@@ -454,6 +446,35 @@ class DwcaFormatStandard(object):
 
         self.parameter_list = ", ".join(param_unit_list)
 
+    def add_metadata_to_eml(self, eml_content_rows):
+        """ """
+        self.eml_xml_rows = eml_content_rows
+        if len(self.eml_xml_rows) > 1:
+            for index, xml_row in enumerate(self.eml_xml_rows):
+                if 'REPLACE-' in xml_row:
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-packageId', 'TODO-PACKAGE-ID')
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-dateStamp', str(datetime.datetime.today().date()))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-pubDate', str(datetime.datetime.today().date()))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-westLongitude', str(self.longitude_min))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-eastLongitude', str(self.longitude_max))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-northLatitude', str(self.latitude_max))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-southLatitude', str(self.latitude_min))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-beginDate', str(self.sample_date_min))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-endDate', str(self.sample_date_max))
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-Parameters', str(self.parameter_list))
+
+                    intellectual_rights = """
+                        This work is licensed under the
+                        <ulink url="https://creativecommons.org/choose/zero/">
+                            <citetitle>Creative Commons Attribution (CC-0)</citetitle>
+                        </ulink>
+                        License.
+                        """
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-intellectualRights', intellectual_rights)
+
+            intellectual_rights
+
+
     def create_meta_xml(self):
         """ """
         self.meta_xml_rows = []
@@ -463,31 +484,6 @@ class DwcaFormatStandard(object):
             self.get_occurrence_columns(),
             self.get_measurementorfact_columns(),
         )
-
-    def create_eml_xml(self, eml_content):
-        """ """
-        self.eml_xml_rows = []
-
-        self.eml_xml_rows = eml_content
-
-        # eml_xml = dwca_generator.DarwinCoreEmlXml(resources = self.resources_object, target_dwca_path=self.target_dwca_path)
-        # self.eml_xml_rows = eml_xml.create_eml_xml(eml_template)
-        # if len(self.eml_xml_rows) > 1:
-
-        #     for index, xml_row in enumerate(self.eml_xml_rows):
-        #         if 'REPLACE-' in xml_row:
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-packageId', 'TODO-PACKAGE-ID')
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-pubDate', str(datetime.datetime.today().date()))
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-westBoundingCoordinate',  str(self.longitude_min))
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-eastBoundingCoordinate',  str(self.longitude_max))
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-northBoundingCoordinate',  str(self.latitude_max))
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-southBoundingCoordinate',  str(self.latitude_min))
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-beginDate-calendarDate',  str(self.sample_date_min))
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-endDate-calendarDate',  str(self.sample_date_max))
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-Parameters',  str(self.parameter_list))
-
-        #             self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-additionalMetadata-metadata-gbif-dateStamp',
-        #                                                                         str(datetime.datetime.now()))
 
     def save_to_archive_file(self):
         """ """
@@ -548,8 +544,8 @@ class DwcaFormatStandard(object):
         #         # Add eml.xml files to zip.
         if len(self.eml_xml_rows) > 1:
             #
-            # eml_document = '\r\n'.join(self.eml_xml_rows).encode('utf-8')
-            eml_document = self.eml_xml_rows.encode("utf-8")
+            eml_document = '\r\n'.join(self.eml_xml_rows).encode('utf-8')
+            # eml_document = self.eml_xml_rows.encode("utf-8")
             ziparchive.appendZipEntry("eml.xml", eml_document)
 
     def get_event_columns(self):

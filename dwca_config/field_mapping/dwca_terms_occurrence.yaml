@@ -50,23 +50,63 @@ dwcaOccurrenceContent:
             taxonID:
             identificationQualifier:
             sex:
+                sourceKey: sex_code
             lifeStage:
+                sourceKey: dev_stage_code
             # individualCount:
             # organismQuantity:
             # organismQuantityType:
             occurrenceStatus:
+                text: present
             preparations:
+                dynamic: 
+                    -   dynamicKey: PreservationMethodCode
+                        sourceKey: preservation_method_code
             associatedMedia:
+                sourceKey: 
             associatedReferences:
+                sourceKey: 
             associatedSequences:
+                sourceKey: 
             taxonRank:
+                sourceKey: 
             kingdom:
+                sourceKey: 
             phylum:
+                sourceKey: 
             class:
+                sourceKey: 
             order:
+                sourceKey: 
             family:
+                sourceKey: 
             genus:
+                sourceKey: 
             basisOfRecord:
+                text: HumanObservation
             recordedBy:
+                sourceKey: 
             occurrenceRemarks:
+                sourceKey: 
             dynamicProperties:
+                dynamic: 
+                    -   dynamicKey: ReportedScientificName
+                        sourceKey: reported_scientific_name
+                    -   dynamicKey: SizeClass
+                        sourceKey: size_class
+                    -   dynamicKey: SizeClassRangeMin
+                        sourceKey: size_class_range_min
+                    -   dynamicKey: SizeClassRangeMax
+                        sourceKey: size_class_range_max
+                    -   dynamicKey: Epibiont
+                        sourceKey: epibiont
+                    -   dynamicKey: Detached
+                        sourceKey: detached
+                    -   dynamicKey: Recruits
+                        sourceKey: recruits
+                    -   dynamicKey: Bitemark
+                        sourceKey: bitemark
+                    -   dynamicKey: DegreeBiofouling
+                        sourceKey: degree_biofouling
+                    -   dynamicKey: TaxonPhoto
+                        sourceKey: taxon_photo

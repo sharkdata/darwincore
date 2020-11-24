@@ -66,6 +66,9 @@ class DwcaGeneratorConfig:
     def generate_eml_content(self):
         """ """
         eml_dict = self.eml_definitions
+
+        # print(eml_dict["dataset"]["intellectualRights"])
+
         # Convert from dictionary to XML rows.
         eml_xml = {}
         eml_xml["dataset"] = eml_dict["dataset"]
@@ -81,8 +84,9 @@ class DwcaGeneratorConfig:
         for row in eml_dict.get("emlFooter", []):
             xml_rows.append(row)
         #
-        eml_content = "\n".join(xml_rows)
-        return eml_content
+        # eml_content = "\n".join(xml_rows)
+        # return eml_content
+        return xml_rows
 
     # def load_source_files(self):
     #     """ """

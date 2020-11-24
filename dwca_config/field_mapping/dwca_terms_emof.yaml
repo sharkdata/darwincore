@@ -20,8 +20,109 @@ dwcaEmofColumns:
     - measurementRemarks
 
 content:
+    -   eventType: sampling_event
+        dwcTerms:
+            eventID:
+                text: ""
+
+            eventID:
+                dwcaKey: 
+            measurementID:
+                dwcaKey: 
+            occurrenceID:
+                dwcaKey: 
+            measurementType:
+                dwcaKey: 
+            measurementTypeID:
+                dwcaKey: 
+            measurementValue:
+                dwcaKey: 
+            measurementValueID:
+                dwcaKey: 
+            measurementUnit:
+                dwcaKey: 
+            measurementUnitID:
+                dwcaKey: 
+            measurementAccuracy:
+                dwcaKey: 
+            measurementDeterminedDate:
+                dwcaKeyList: 
+                    - visit_date
+                    - sample_date
+            measurementDeterminedBy:
+                dwcaKey: 
+            measurementMethod:
+                dwcaKey: 
+            measurementRemarks:
+                dwcaKey: 
+
     -   eventType: sample
         dwcTerms:
             eventID:
                 text: ""
+
+            eventID:
+                dwcaKey: 
+            measurementID:
+                dwcaKey: 
+            occurrenceID:
+                dwcaKey: 
+            measurementType:
+                dwcaKey: 
+            measurementTypeID:
+                dwcaKey: 
+            measurementValue:
+                dwcaKey: 
+            measurementValueID:
+                dwcaKey: 
+            measurementUnit:
+                dwcaKey: 
+            measurementUnitID:
+                dwcaKey: 
+            measurementAccuracy:
+                dwcaKey: 
+            measurementDeterminedDate:
+                dwcaKeyList: 
+                    - sample_date
+                    - visit_date
+            measurementDeterminedBy:
+                dwcaKey: 
+            measurementMethod:
+                dwcaKey: 
+            measurementRemarks:
+                dwcaKey: 
+
+    -   eventType: occurrence
+        dwcTerms:
+            eventID:
+                text: ""
+
+            eventID:
+                dwcaKey: 
+            measurementID:
+                dwcaKey: 
+            occurrenceID:
+                dwcaKey: 
+            measurementType:
+                dwcaKey: 
+            measurementTypeID:
+                dwcaKey: 
+            measurementValue:
+                dwcaKey: 
+            measurementValueID:
+                dwcaKey: 
+            measurementUnit:
+                dwcaKey: 
+            measurementUnitID:
+                dwcaKey: 
+            measurementAccuracy:
+                dwcaKey: 
+            measurementDeterminedDate:
+                dwcaKey: analysis_date
+            measurementDeterminedBy:
+                dwcaKey: 
+            measurementMethod:
+                dwcaKey: 
+            measurementRemarks:
+                dwcaKey: 
 
