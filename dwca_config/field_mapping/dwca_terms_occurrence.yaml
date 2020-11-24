@@ -34,7 +34,7 @@ dwcaOccurrenceColumns:
     - dynamicProperties
 
 dwcaOccurrenceContent:
-    -   eventType: sample
+    -   eventType: occurrence
         dwcTerms:
             # id: 
             eventID:

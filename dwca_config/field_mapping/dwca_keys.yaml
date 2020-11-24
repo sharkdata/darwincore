@@ -24,7 +24,7 @@ eventTypeKeys:
             - sample_part_id
 
     occurrence:
-    -   eventType: sample
+    -   eventType: occurrence
         keyName: occurrence_key
         eventKeyName: sample_key
         keyPrefix: TAXA-
@@ -45,6 +45,6 @@ eventTypeKeys:
         keyName: sample_key
         eventKeyName: sample_key
 
-    # -   eventType: occurrence
-    #     keyName: occurrence_key
-    #     eventKeyName: sample_key
+    -   eventType: occurrence
+        keyName: occurrence_key
+        eventKeyName: sample_key
