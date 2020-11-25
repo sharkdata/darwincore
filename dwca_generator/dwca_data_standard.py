@@ -69,7 +69,7 @@ class DwcaDataSharkStandard:
                                 #         if value != new_value:
                                 #             row_dict[key] = new_value
                                 # Append.
-                                self.row_list.append(row_dict)
+                                self.row_list.append(row_dict.copy())
         except Exception as e:
             print("Exception: ", str(dataset_filepath), e)
 

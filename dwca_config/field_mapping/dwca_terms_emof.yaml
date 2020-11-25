@@ -19,110 +19,167 @@ dwcaEmofColumns:
     - measurementMethod
     - measurementRemarks
 
-content:
+dwcaEmofContent:
     -   eventType: sampling_event
         dwcTerms:
             eventID:
-                text: ""
-
-            eventID:
-                dwcaKey: 
+                dwcaKey: sampling_event_key
             measurementID:
-                dwcaKey: 
-            occurrenceID:
-                dwcaKey: 
+                text: ""
+            occurrenceID: 
+                text: ""
             measurementType:
-                dwcaKey: 
+                sourceKey: 
             measurementTypeID:
-                dwcaKey: 
+                sourceKey: 
             measurementValue:
-                dwcaKey: 
+                sourceKey: 
             measurementValueID:
-                dwcaKey: 
+                sourceKey: 
             measurementUnit:
-                dwcaKey: 
+                sourceKey: 
             measurementUnitID:
-                dwcaKey: 
+                sourceKey: 
             measurementAccuracy:
-                dwcaKey: 
+                sourceKey: 
             measurementDeterminedDate:
-                dwcaKeyList: 
-                    - visit_date
+                sourceKeyList: 
                     - sample_date
+                    - visit_date
             measurementDeterminedBy:
-                dwcaKey: 
+                sourceKey: 
             measurementMethod:
-                dwcaKey: 
+                sourceKey: 
             measurementRemarks:
-                dwcaKey: 
+                sourceKey: 
+
+        extraMeasurements:
+            -   measurementsType: Wave height
+                measurementsUnit: m
+                sourceKey: wave_height_m
+            -   measurementsType: Wave observation code
+                measurementsUnit: 
+                sourceKey: wave_observation_code
+            -   measurementsType: Weather observation code
+                measurementsUnit: 
+                sourceKey: weather_observation_code
+            -   measurementsType: Wave exposure fetch
+                measurementsUnit: 
+                sourceKey: wave_exposure_fetch
+            -   measurementsType: Wind speed
+                measurementsUnit: m/s
+                sourceKey: wind_speed_ms
+            -   measurementsType: Wind direction code
+                measurementsUnit: 
+                sourceKey: wind_direction_code
+            -   measurementsType: Water level deviation
+                measurementsUnit: m
+                sourceKey: water_level_deviation_m
+            -   measurementsType: Water depth
+                measurementsUnit: m
+                sourceKey: water_depth_m
+            -   measurementsType: Secchi depth
+                measurementsUnit: m
+                sourceKey: secchi_depth_m
+            -   measurementsType: Secchi depth quality
+                measurementsUnit: 
+                sourceKey: secchi_depth_quality_flag
+            -   measurementsType: Cloud observation code
+                measurementsUnit: 
+                sourceKey: cloud_observation_code
+            -   measurementsType: Insolation air
+                measurementsUnit: 
+                sourceKey: insolation_air
+            -   measurementsType: Incubation radiation
+                measurementsUnit: 
+                sourceKey: incubation_radiation
+            -   measurementsType: Air temperature wet
+                measurementsUnit: degc
+                sourceKey: air_temperature_wet_degc
+            -   measurementsType: Air temperature
+                measurementsUnit: degc
+                sourceKey: air_temperature_degc
+            -   measurementsType: Air pressure
+                measurementsUnit: hpa
+                sourceKey: air_pressure_hpa
+            -   measurementsType: Ice observation code
+                measurementsUnit: 
+                sourceKey: ice_observation_code
+            -   measurementsType: Sediment deposition code
+                measurementsUnit: 
+                sourceKey: sediment_deposition_code
 
     -   eventType: sample
         dwcTerms:
             eventID:
-                text: ""
-
-            eventID:
-                dwcaKey: 
+                dwcaKey: sampling_event_key
             measurementID:
-                dwcaKey: 
-            occurrenceID:
-                dwcaKey: 
+                text: ""
+            occurrenceID: 
+                text: ""
             measurementType:
-                dwcaKey: 
+                sourceKey: 
             measurementTypeID:
-                dwcaKey: 
+                sourceKey: 
             measurementValue:
-                dwcaKey: 
+                sourceKey: 
             measurementValueID:
-                dwcaKey: 
+                sourceKey: 
             measurementUnit:
-                dwcaKey: 
+                sourceKey: 
             measurementUnitID:
-                dwcaKey: 
+                sourceKey: 
             measurementAccuracy:
-                dwcaKey: 
+                sourceKey: 
             measurementDeterminedDate:
-                dwcaKeyList: 
+                sourceKeyList: 
                     - sample_date
                     - visit_date
             measurementDeterminedBy:
-                dwcaKey: 
+                sourceKey: 
             measurementMethod:
-                dwcaKey: 
+                sourceKey: 
             measurementRemarks:
-                dwcaKey: 
+                sourceKey: 
 
     -   eventType: occurrence
         dwcTerms:
             eventID:
-                text: ""
-
-            eventID:
-                dwcaKey: 
+                dwcaKey: sampling_event_key
             measurementID:
-                dwcaKey: 
-            occurrenceID:
-                dwcaKey: 
+                text: ""
+            occurrenceID: 
+                dwcaKey: occurrence_key
             measurementType:
-                dwcaKey: 
-            measurementTypeID:
-                dwcaKey: 
-            measurementValue:
-                dwcaKey: 
+                sourceKey: parameter
+            measurementTypeID: 
+                sourceKey: 
+            measurementValue: 
+                sourceKey: value
             measurementValueID:
-                dwcaKey: 
+                sourceKey: 
             measurementUnit:
-                dwcaKey: 
+                sourceKey: unit
             measurementUnitID:
-                dwcaKey: 
+                sourceKey: 
             measurementAccuracy:
-                dwcaKey: 
+                sourceKey: 
             measurementDeterminedDate:
-                dwcaKey: analysis_date
+                sourceKey: analysis_date
             measurementDeterminedBy:
-                dwcaKey: 
+                sourceKey: 
             measurementMethod:
-                dwcaKey: 
+                sourceKey: 
             measurementRemarks:
-                dwcaKey: 
+                sourceKey: 
 
+        extraMeasurements:
+            -   measurementsType: SizeClass
+                measurementsUnit: 
+                sourceKey: size_class
+            -   measurementsType: Size minimum
+                measurementsUnit: um
+                sourceKey: size_min_um
+            -   measurementsType: Size maximum
+                measurementsUnit: um
+                sourceKey: size_max_um

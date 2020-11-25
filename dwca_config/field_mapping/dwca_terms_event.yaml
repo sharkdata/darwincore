@@ -221,6 +221,8 @@ dwcaEventContent:
                         sourceKey: upper_mesh_size_um
                     -   dynamicKey: LowerMeshSize(um)
                         sourceKey: lower_mesh_size_um
+                    -   dynamicKey: FactorsInfluencingCode
+                        sourceKey: factors_influencing_code
             eventDate:
                 sourceKeyList: 
                     - sample_date

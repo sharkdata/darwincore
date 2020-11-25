@@ -89,7 +89,7 @@ class DwcaFormatStandard(object):
                         # Add content.
                         self.add_content(event_content, source_row, event_dict)
                         # Append event row content.
-                        self.dwca_event.append(event_dict)
+                        self.dwca_event.append(event_dict.copy())
 
     def create_dwca_occurrence(self):
         """ """
@@ -156,7 +156,7 @@ class DwcaFormatStandard(object):
                         #                 occurrence_dict[key] = new_value
 
                         # Append occurrence row content.
-                        self.dwca_occurrence.append(occurrence_dict)
+                        self.dwca_occurrence.append(occurrence_dict.copy())
 
     def create_dwca_measurementorfact(self):
         """ """
@@ -170,15 +170,11 @@ class DwcaFormatStandard(object):
         emof_control_dict = {}
         for index, dwca_node_name in enumerate(dwca_node_names):
             emof_control_dict[dwca_node_name] = {}
-            emof_control_dict[dwca_node_name][
-                "used_key_list"
-            ] = set()  # To avoid duplicates.
-            emof_control_dict[dwca_node_name]["dwc_key_name"] = emof_keys[index][
-                "keyName"
-            ]
-            emof_control_dict[dwca_node_name]["dwc_event_key_name"] = emof_keys[index][
-                "keyName"
-            ]
+            emof_control_dict[dwca_node_name]["used_key_list"] = set()
+            emof_control_dict[dwca_node_name]["dwc_key_name"] = \
+                                            emof_keys[index]["keyName"]
+            emof_control_dict[dwca_node_name]["dwc_event_key_name"] = \
+                                            emof_keys[index]["eventKeyName"]
 
         # Process all data rows.
         for source_row in self.source_rows:
@@ -187,9 +183,8 @@ class DwcaFormatStandard(object):
                 continue
             # Check for duplicates.
             emof_param_unit_id = source_row.get("emof_param_unit_id", "")
-            if emof_param_unit_id and (
-                emof_param_unit_id not in used_mof_occurrence_key_list
-            ):
+            if emof_param_unit_id and \
+                (emof_param_unit_id not in used_mof_occurrence_key_list):
                 used_mof_occurrence_key_list.add(emof_param_unit_id)
 
                 # Iterate over nodes.
@@ -203,16 +198,13 @@ class DwcaFormatStandard(object):
                         control_dict["dwc_event_key_name"], ""
                     )
                     # Create event row.
-                    #                 if node_key and (node_key not in control_dict['used_key_list']):
-                    #                     control_dict['used_key_list'].add(node_key)
-                    #
                     emof_dict = {}
                     # Add basics.
                     emof_dict["id"] = event_node_key
                     emof_dict["eventID"] = event_node_key
 
                     content_list = self.dwca_gen_config.field_mapping[
-                        "dwcaOccurrenceContent"
+                        "dwcaEmofContent"
                     ]
                     for content in content_list:
                         if dwca_node_name != content.get("eventType", ""):
@@ -221,96 +213,122 @@ class DwcaFormatStandard(object):
                         # Add content.
                         self.add_content(content, source_row, emof_dict)
 
-                        if dwca_node_name == "occurrence":
-                            occurrence_key = source_row.get("occurrence_key", "")
-                            scientific_name = source_row.get("scientific_name", "")
-                            if occurrence_key and scientific_name:
-                                emof_dict["occurrenceID"] = occurrence_key
+                        # Append.
+                        if emof_dict.get("measurementType", ""):
+                            self.dwca_measurementorfact.append(emof_dict.copy())
 
-                            parameter = source_row.get("parameter", "")
-                            value = source_row.get("value", "")
-                            unit = source_row.get("unit", "")
-                            if parameter:
-                                emof_dict["measurementType"] = parameter
-                                emof_dict["measurementValue"] = value
-                                emof_dict["measurementUnit"] = unit
-                                #                     measurementorfact_dict['measurementAccuracy'] = ''
-                                #                     measurementorfact_dict['measurementDeterminedDate'] = source_row.get('measurementDeterminedDate', '')
-                                #                     measurementorfact_dict['measurementDeterminedBy'] = source_row.get('measurementDeterminedBy', '')
-                                #                     measurementorfact_dict['measurementMethod'] = source_row.get('measurementMethod', '') # TODO: method_reference_code
-                                #                     measurementorfact_dict['measurementRemarks'] = source_row.get('measurementRemarks', '')
+                        # Get key.
+                        event_node_key = source_row.get(control_dict['dwc_key_name'], '')
+                        # Create event row.
+                        if event_node_key and (event_node_key not in control_dict['used_key_list']):
+                            control_dict['used_key_list'].add(event_node_key)
 
-                                # Measurement identifiers. NERC vocabular.
-                                if parameter == "Water depth":
-                                    emof_dict[
-                                        "measurementTypeID"
-                                    ] = "http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/"
-                                if unit == "m":
-                                    emof_dict[
-                                        "measurementUnitID"
-                                    ] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
-                                elif unit == "cells/l":
-                                    emof_dict[
-                                        "measurementUnitID"
-                                    ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+                            if "extraMeasurements" in content:
+                                extraMeasurements = content["extraMeasurements"]
+                                for extraMeasurement in extraMeasurements:
 
-                                # # Translate values.
-                                # for key in self.resources_object.get_translate_from_source_keys():
-                                #     value = emof_dict.get(key, '')
-                                #     if value:
-                                #         new_value = self.resources_object.get_translate_from_source(key, value)
-                                #         if value != new_value:
-                                #             emof_dict[key] = new_value
-                                # Append.
-                                self.dwca_measurementorfact.append(emof_dict)
-                        # else:
+                                    param = extraMeasurement.get("measurementsType", "")
+                                    unit = extraMeasurement.get("measurementsUnit", "")
+                                    source_key = extraMeasurement.get("sourceKey", "")
+                                    value = emof_dict.get(source_key, '')
+                                    if param and (value not in [""]):
+                                        emof_dict['measurementType'] = param
+                                        emof_dict['measurementValue'] = value
+                                        emof_dict['measurementUnit'] = unit
 
-                        #     # Not occurrence.
-                        #     # Get key.
-                        #     event_node_key = source_row.get(control_dict['dwc_key_name'], '')
-                        #     # Create event row.
-                        #     if event_node_key and (event_node_key not in control_dict['used_key_list']):
-                        #         control_dict['used_key_list'].add(event_node_key)
+                                        if emof_dict.get("measurementType", ""):
+                                            self.dwca_measurementorfact.append(emof_dict.copy())
 
-                        #         for key, (param, unit) in emof_control_dict[event_node_name]['emof_extra_params'].items():
-                        #             value = str(source_row.get(key, ''))
-                        #             if value:
-                        #                 emof_dict_2 = dict(emof_dict)
-                        #                 emof_dict_2['measurementType'] = param
-                        #                 emof_dict_2['measurementValue'] = value
-                        #                 emof_dict_2['measurementUnit'] = unit
+                        # if dwca_node_name == "occurrence":
+                        #     occurrence_key = source_row.get("occurrence_key", "")
+                        #     scientific_name = source_row.get("scientific_name", "")
+                        #     if occurrence_key and scientific_name:
+                        #         emof_dict["occurrenceID"] = occurrence_key
 
-                        #                 # Measurement identifiers. NERC vocabular.
-                        #                 if param == 'Water depth':
-                        #                     emof_dict_2['measurementTypeID'] = 'http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/'
-                        #                 if unit == 'm':
-                        #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/ULAA/'
-                        #                 elif unit == 'cells/l':
-                        #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/UCPL/'
+                        #     parameter = source_row.get("parameter", "")
+                        #     value = source_row.get("value", "")
+                        #     unit = source_row.get("unit", "")
+                        #     if parameter:
+                        #         emof_dict["measurementType"] = parameter
+                        #         emof_dict["measurementValue"] = value
+                        #         emof_dict["measurementUnit"] = unit
+                        #         #                     measurementorfact_dict['measurementAccuracy'] = ''
+                        #         #                     measurementorfact_dict['measurementDeterminedDate'] = source_row.get('measurementDeterminedDate', '')
+                        #         #                     measurementorfact_dict['measurementDeterminedBy'] = source_row.get('measurementDeterminedBy', '')
+                        #         #                     measurementorfact_dict['measurementMethod'] = source_row.get('measurementMethod', '') # TODO: method_reference_code
+                        #         #                     measurementorfact_dict['measurementRemarks'] = source_row.get('measurementRemarks', '')
 
-                        #                 # Translate values.
-                        #                 for key in self.resources_object.get_translate_from_source_keys():
-                        #                     value = emof_dict_2.get(key, '')
-                        #                     if value:
-                        #                         new_value = self.resources_object.get_translate_from_source(key, value)
-                        #                         if value != new_value:
-                        #                             emof_dict_2[key] = new_value
-                        #                 # Append.
-                        #                 self.dwca_measurementorfact.append(emof_dict_2)
+                        #         # Measurement identifiers. NERC vocabular.
+                        #         if parameter == "Water depth":
+                        #             emof_dict[
+                        #                 "measurementTypeID"
+                        #             ] = "http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/"
+                        #         if unit == "m":
+                        #             emof_dict[
+                        #                 "measurementUnitID"
+                        #             ] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
+                        #         elif unit == "cells/l":
+                        #             emof_dict[
+                        #                 "measurementUnitID"
+                        #             ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
-                else:
-                    # For checking for duplicates.
-                    duplicate_row_number += 1
-                    if duplicate_row_number < 100:
-                        try:
-                            print(
-                                "DEBUG: Duplicates: emof_param_unit_id: "
-                                + str(emof_param_unit_id)
-                            )
-                        except Exception as e:
-                            print("DEBUG: Exception: " + str(e))
-                    elif duplicate_row_number == 100:
-                        print("DEBUG: MAX LIMIT OF 100 LOG ROWS.")
+                        #         # # Translate values.
+                        #         # for key in self.resources_object.get_translate_from_source_keys():
+                        #         #     value = emof_dict.get(key, '')
+                        #         #     if value:
+                        #         #         new_value = self.resources_object.get_translate_from_source(key, value)
+                        #         #         if value != new_value:
+                        #         #             emof_dict[key] = new_value
+                        #         # Append.
+                        #         self.dwca_measurementorfact.append(emof_dict)
+                        # # else:
+
+                        # #     # Not occurrence.
+                        # #     # Get key.
+                        # #     event_node_key = source_row.get(control_dict['dwc_key_name'], '')
+                        # #     # Create event row.
+                        # #     if event_node_key and (event_node_key not in control_dict['used_key_list']):
+                        # #         control_dict['used_key_list'].add(event_node_key)
+
+                        # #         for key, (param, unit) in emof_control_dict[event_node_name]['emof_extra_params'].items():
+                        # #             value = str(source_row.get(key, ''))
+                        # #             if value:
+                        # #                 emof_dict_2 = dict(emof_dict)
+                        # #                 emof_dict_2['measurementType'] = param
+                        # #                 emof_dict_2['measurementValue'] = value
+                        # #                 emof_dict_2['measurementUnit'] = unit
+
+                        # #                 # Measurement identifiers. NERC vocabular.
+                        # #                 if param == 'Water depth':
+                        # #                     emof_dict_2['measurementTypeID'] = 'http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/'
+                        # #                 if unit == 'm':
+                        # #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/ULAA/'
+                        # #                 elif unit == 'cells/l':
+                        # #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/UCPL/'
+
+                        # #                 # Translate values.
+                        # #                 for key in self.resources_object.get_translate_from_source_keys():
+                        # #                     value = emof_dict_2.get(key, '')
+                        # #                     if value:
+                        # #                         new_value = self.resources_object.get_translate_from_source(key, value)
+                        # #                         if value != new_value:
+                        # #                             emof_dict_2[key] = new_value
+                        # #                 # Append.
+                        # #                 self.dwca_measurementorfact.append(emof_dict_2)
+
+            else:
+                # For checking for duplicates.
+                duplicate_row_number += 1
+                if duplicate_row_number < 100:
+                    try:
+                        print(
+                            "DEBUG: Duplicates: emof_param_unit_id: "
+                            + str(emof_param_unit_id)
+                        )
+                    except Exception as e:
+                        print("DEBUG: Exception: " + str(e))
+                elif duplicate_row_number == 100:
+                    print("DEBUG: MAX LIMIT OF 100 LOG ROWS.")
         # Finally.
         if duplicate_row_number > 0:
             print("DEBUG: Number of duplicates found: ", duplicate_row_number)
