@@ -138,6 +138,11 @@ class DwcaFormatStandard(object):
                     for content in content_list:
                         if dwca_node_name != content.get("eventType", ""):
                             continue
+
+                        # Add taxa info.
+                        taxa_info_dict = self.species_info_object.get_info_as_dwc_dict(source_dict=source_row)
+                        source_row.update(taxa_info_dict)
+
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
 

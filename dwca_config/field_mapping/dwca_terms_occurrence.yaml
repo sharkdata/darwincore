@@ -6,10 +6,18 @@ dwcaOccurrenceColumns:
     # - id
     - eventID
     - occurrenceID
+
+    # OLD:
+    # - scientificName
+    # - scientificNameAuthorship
+    # - scientificNameID
+    # - taxonID
+    # NEW:
     - scientificName
-    - scientificNameAuthorship
-    - scientificNameID
+    - taxonConceptID
     - taxonID
+    - acceptedNameUsage
+
     - identificationQualifier
     - sex
     - lifeStage
@@ -19,8 +27,8 @@ dwcaOccurrenceColumns:
     - occurrenceStatus
     - preparations
     - associatedMedia
-    - associatedReferences
-    - associatedSequences
+    # - associatedReferences
+    # - associatedSequences
     - taxonRank
     - kingdom
     - phylum
@@ -41,14 +49,29 @@ dwcaOccurrenceContent:
                 dwcaKey: sample_key
             occurrenceID:
                 dwcaKey: occurrence_key
+
+            # OLD:
+            # scientificName:
+            #     sourceKey: scientific_name
+            # scientificNameAuthorship:
+            #     sourceKey: scientific_author
+            # scientificNameID:
+            #     sourceKey: dyntaxa_id
+            # taxonID:
+            # NEW:
             scientificName:
-                sourceKey: scientific_name
-            scientificNameAuthorship:
-                sourceKey: scientific_author
-            scientificNameID:
-                sourceKey: dyntaxa_id
+                sourceKeyList: 
+                    - reported_scientific_name
+                    - scientific_name
+            taxonConceptID:
+                sourceKey: dyntaxa_lsid
             taxonID:
+               sourceKey: worms_lsid
+            acceptedNameUsage:
+                sourceKey: worms_valid_name
+
             identificationQualifier:
+                sourceKey: species_flag_code
             sex:
                 sourceKey: sex_code
             lifeStage:
@@ -63,35 +86,35 @@ dwcaOccurrenceContent:
                     -   dynamicKey: PreservationMethodCode
                         sourceKey: preservation_method_code
             associatedMedia:
-                sourceKey: 
-            associatedReferences:
-                sourceKey: 
-            associatedSequences:
-                sourceKey: 
+                sourceKey: taxon_photo
+            # associatedReferences:
+            #     sourceKey: 
+            # associatedSequences:
+            #     sourceKey: 
             taxonRank:
-                sourceKey: 
+                sourceKey: worms_rank
             kingdom:
-                sourceKey: 
+                sourceKey: worms_kingdom
             phylum:
-                sourceKey: 
+                sourceKey: worms_phylum
             class:
-                sourceKey: 
+                sourceKey: worms_class
             order:
-                sourceKey: 
+                sourceKey: worms_order
             family:
-                sourceKey: 
+                sourceKey: worms_family
             genus:
-                sourceKey: 
+                sourceKey: worms_genus
             basisOfRecord:
                 text: HumanObservation
             recordedBy:
-                sourceKey: 
+                sourceKey: taxonomist
             occurrenceRemarks:
                 sourceKey: 
             dynamicProperties:
                 dynamic: 
-                    -   dynamicKey: ReportedScientificName
-                        sourceKey: reported_scientific_name
+                    # -   dynamicKey: ReportedScientificName
+                    #     sourceKey: reported_scientific_name
                     -   dynamicKey: SizeClass
                         sourceKey: size_class
                     -   dynamicKey: SizeClassRangeMin
@@ -108,5 +131,3 @@ dwcaOccurrenceContent:
                         sourceKey: bitemark
                     -   dynamicKey: DegreeBiofouling
                         sourceKey: degree_biofouling
-                    -   dynamicKey: TaxonPhoto
-                        sourceKey: taxon_photo

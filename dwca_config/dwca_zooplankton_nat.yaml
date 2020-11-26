@@ -3,8 +3,8 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 info: 
-    title: DwC-A configurations for Bacterioplankton - national.
-    yamlFile: dwca_bacterioplankton_nat.yaml
+    title: DwC-A configurations for zooplankton - national.
+    yamlFile: dwca_zooplankton_nat.yaml
     description:
         Used to generate DarwinCore-Archive files from 
         SHARK zip files.
@@ -13,13 +13,15 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-bacterioplankton-nat_TEST.zip
+        - dwca-smhi-zooplankton-nat_TEST.zip
 
 sourceFiles:
     directory: 
         data_in/datasets
     files:
-        - SHARK_Bacterioplankton_ABU_2016_UMSC_Bactabund_version_2020-10-27.zip
+        - SHARK_Zooplankton_2016_DEEP_version_2020-10-27.zip
+        # - SHARK_Zooplankton_2016_SMHI_version_2020-10-27.zip
+        - SHARK_Zooplankton_2016_UMSC_version_2020-10-27.zip
 
 emlDefinitions:
     directory:
@@ -27,7 +29,7 @@ emlDefinitions:
     files:
         - eml_smhi_datacenter.yaml
         - eml_auto.yaml
-        - eml_bacterioplankton_nat.yaml
+        - eml_zooplankton_nat.yaml
 
 dwcaKeys:
     directory:

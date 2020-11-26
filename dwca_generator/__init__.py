@@ -7,7 +7,7 @@ from dwca_generator.dwca_utils import create_extra_key
 from dwca_generator.dwca_utils import is_daylight_savings_time
 # # 
 # from dwca_generator.dwca_content_mapper import DwcaContentMapper
-# from dwca_generator.dwca_species_worms import DwcaSpeciesWorms
+from dwca_generator.dwca_taxa_worms import DwcaSpeciesWorms
 
 from dwca_generator.dwca_data_standard import DwcaDataSharkStandard
 from dwca_generator.dwca_format_standard import DwcaFormatStandard

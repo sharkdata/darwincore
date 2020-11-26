@@ -28,8 +28,9 @@ class DwcaGeneratorConfig:
         self.eml_definitions = {}
         self.dwca_keys = {}
         self.field_mapping = {}
-        self.translate = {}
-        self.filters = {}
+        self.taxa_worms_file = ""
+        self.translate_file_list = []
+        self.filters_file_list = []
 
     # def create_dwca(self):
     #     """ """
@@ -56,12 +57,13 @@ class DwcaGeneratorConfig:
         # "fieldMapping"
         file_list = self.get_config_files("fieldMapping")
         self.field_mapping = self.merge_config_yaml_files(file_list)
+        # "taxaWorms"
+        file_list = self.get_config_files("taxaWorms")
+        self.taxa_worms_file = file_list[0]
         # "translate"
-        file_list = self.get_config_files("translate")
-        self.translate = self.merge_config_yaml_files(file_list)
+        self.translate_file_list = self.get_config_files("translate")
         # "filters"
-        file_list = self.get_config_files("filters")
-        self.filters = self.merge_config_yaml_files(file_list)
+        self.filters_file_list = self.get_config_files("filters")
 
     def generate_eml_content(self):
         """ """
@@ -104,7 +106,6 @@ class DwcaGeneratorConfig:
 
     def get_config_files(self, config_key):
         """ """
-        print()
         file_list = []
         file_path = pathlib.Path()
         if config_key in self.dwca_config:
