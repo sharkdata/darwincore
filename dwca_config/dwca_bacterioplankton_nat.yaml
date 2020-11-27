@@ -18,8 +18,10 @@ dwcaTarget:
 sourceFiles:
     directory: 
         data_in/datasets
-    files:
-        - SHARK_Bacterioplankton_ABU_2016_UMSC_Bactabund_version_2020-10-27.zip
+    globSearch:
+        SHARK_Bacterioplankton_*_version_*.zip
+    # files:
+    #     - SHARK_Bacterioplankton_ABU_2016_UMSC_Bactabund_version_2020-10-27.zip
 
 emlDefinitions:
     directory:

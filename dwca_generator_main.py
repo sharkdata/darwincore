@@ -10,14 +10,14 @@ if __name__ == "__main__":
     """ """
 
     config_files = [
-        # "dwca_config/dwca_bacterioplankton_nat.yaml",
-        # "dwca_config/dwca_zooplankton_nat.yaml",
+        "dwca_config/dwca_bacterioplankton_nat.yaml",
+        "dwca_config/dwca_zooplankton_nat.yaml",
         "dwca_config/dwca_zoobenthos_nat.yaml",
     ]
 
     for config_file in config_files:
 
-        print("\nProcessing: ", config_file)
+        print("\n\n\n=== Processing: ", config_file)
 
         # Config and EML content.
         dwca_gen_config = dwca_generator.DwcaGeneratorConfig(config_file)
@@ -25,7 +25,7 @@ if __name__ == "__main__":
         eml_content_rows = dwca_gen_config.generate_eml_content()
 
         # Prepare data.
-        print("\n   Preparing data.")
+        print("\n=== Preparing data ===")
         source_data = dwca_generator.DwcaDataSharkStandard(dwca_gen_config)
         for dataset_filepath in dwca_gen_config.source_files:
             source_data.add_shark_dataset(dataset_filepath)
@@ -33,7 +33,7 @@ if __name__ == "__main__":
         source_data.cleanup_data()
 
         # Create and save DwC-A.
-        print("\n   Creating DwC-A. ")
+        print("\n=== Creating DwC-A ===")
         species_info = dwca_generator.DwcaSpeciesWorms(
             taxa_file_path=dwca_gen_config.taxa_worms_file
         )
@@ -53,4 +53,4 @@ if __name__ == "__main__":
             for taxa in missing_taxa_list:
                 print("   - ", taxa)
 
-        print("\n   Finished.")
+        print("\n=== Finished ===")

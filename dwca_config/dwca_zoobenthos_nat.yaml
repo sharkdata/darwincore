@@ -18,28 +18,14 @@ dwcaTarget:
 sourceFiles:
     directory: 
         data_in/datasets
-    files:
-        - SHARK_Zoobenthos_2016_DEEP_ACLST_version_2020-10-27.zip
-        - SHARK_Zoobenthos_2016_DEEP_ACLST_version_2020-10-27.zip
-        - SHARK_Zoobenthos_2016_DEEP_DLST_version_2020-10-27.zip
-        - SHARK_Zoobenthos_2016_DEEP_ILST_version_2020-10-27.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
-        # - SHARK.zip
+    globSearch:
+        SHARK_Zoobenthos_*_version_*.zip
+    # files:
+    #     - SHARK_Zoobenthos_2016_DEEP_ACLST_version_2020-10-27.zip
+    #     - SHARK_Zoobenthos_2016_DEEP_ACLST_version_2020-10-27.zip
+    #     - SHARK_Zoobenthos_2016_DEEP_DLST_version_2020-10-27.zip
+    #     - SHARK_Zoobenthos_2016_DEEP_ILST_version_2020-10-27.zip
+
 
 emlDefinitions:
     directory:

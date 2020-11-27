@@ -18,10 +18,12 @@ dwcaTarget:
 sourceFiles:
     directory: 
         data_in/datasets
-    files:
-        - SHARK_Zooplankton_2016_DEEP_version_2020-10-27.zip
-        # - SHARK_Zooplankton_2016_SMHI_version_2020-10-27.zip
-        - SHARK_Zooplankton_2016_UMSC_version_2020-10-27.zip
+    globSearch:
+        SHARK_Zooplankton_*_version_*.zip
+    # files:
+    #     - SHARK_Zooplankton_2016_DEEP_version_2020-10-27.zip
+    #     # - SHARK_Zooplankton_2016_SMHI_version_2020-10-27.zip
+    #     - SHARK_Zooplankton_2016_UMSC_version_2020-10-27.zip
 
 emlDefinitions:
     directory:

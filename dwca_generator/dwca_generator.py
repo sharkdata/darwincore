@@ -47,7 +47,7 @@ class DwcaGeneratorConfig:
         file_list = self.source_files = self.get_config_files("dwcaTarget")
         self.dwca_target = file_list[0]
         # "sourceFiles"
-        self.source_files = self.get_config_files("sourceFiles")
+        self.source_files = self.load_source_files()
         # "emlDefinitions"
         file_list = self.get_config_files("emlDefinitions")
         self.eml_definitions = self.merge_config_yaml_files(file_list)
@@ -90,19 +90,27 @@ class DwcaGeneratorConfig:
         # return eml_content
         return xml_rows
 
-    # def load_source_files(self):
-    #     """ """
-    #     source_file_list = []
-    #     file_path = pathlib.Path()
-    #     if "sourceFiles" in self.dwca_config:
-    #         source_files = self.dwca_config["sourceFiles"]
-    #         if "directory" in source_files:
-    #             directory_path = pathlib.Path(file_path, source_files["directory"])
-    #         if "files" in source_files:
-    #             for file_name in source_files["files"]:
-    #                 file_path = pathlib.Path(directory_path, file_name)
-    #                 source_file_list.append(str(file_path))
-    #     print(source_file_list)
+    def load_source_files(self):
+        """ """
+        source_file_list = []
+        file_path = pathlib.Path()
+        if "sourceFiles" in self.dwca_config:
+            source_files = self.dwca_config["sourceFiles"]
+            if "directory" in source_files:
+                directory_path = pathlib.Path(file_path, source_files["directory"])
+            if "globSearch" in source_files:
+                globSearch = source_files["globSearch"]
+                for file_path in pathlib.Path(directory_path).glob(globSearch):
+                    if file_path not in source_file_list:
+                        source_file_list.append(str(file_path))
+            if "files" in source_files:
+                for file_name in source_files["files"]:
+                    file_path = pathlib.Path(directory_path, file_name)
+                    if file_path not in source_file_list:
+                        source_file_list.append(str(file_path))
+        print("\nFiles to process: ")
+        print("\n".join(sorted(source_file_list)))
+        return sorted(source_file_list)
 
     def get_config_files(self, config_key):
         """ """
