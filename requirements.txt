@@ -1,6 +1,7 @@
 
 openpyxl
 pytz
+click
 
 pylint
 black
