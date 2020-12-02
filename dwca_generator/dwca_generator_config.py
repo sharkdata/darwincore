@@ -29,8 +29,8 @@ class DwcaGeneratorConfig:
         self.dwca_keys = {}
         self.field_mapping = {}
         self.taxa_worms_file = ""
-        self.translate_file_list = []
-        self.filters_file_list = []
+        self.translate_files = []
+        self.filters_files = []
 
     # def create_dwca(self):
     #     """ """
@@ -61,9 +61,9 @@ class DwcaGeneratorConfig:
         file_list = self.get_config_files("taxaWorms")
         self.taxa_worms_file = file_list[0]
         # "translate"
-        self.translate_file_list = self.get_config_files("translate")
+        self.translate_files = self.get_config_files("translate")
         # "filters"
-        self.filters_file_list = self.get_config_files("filters")
+        self.filters_files = self.get_config_files("filters")
 
     def generate_eml_content(self):
         """ """

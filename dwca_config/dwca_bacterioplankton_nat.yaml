@@ -3,11 +3,9 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 info: 
-    title: DwC-A configurations for Bacterioplankton - national.
-    yamlFile: dwca_bacterioplankton_nat.yaml
+    title: DwC-A configurations for Bacterioplankton - national monitoring
     description:
-        Used to generate DarwinCore-Archive files from 
-        SHARK zip files.
+        Used to generate DarwinCore-Archive files from SHARK zip files.
 
 dwcaTarget:
     directory:

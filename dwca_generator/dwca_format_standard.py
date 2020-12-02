@@ -23,9 +23,9 @@ class DwcaFormatStandard(object):
         self.species_info_object = species_info
         self.worms_info_object = None
         #
-        self._taxa_lookup_dict = {}
-        #
         self.clear()
+        #
+        self.source_rows = self.data_object.get_data_rows()
 
     def clear(self):
         """ """
@@ -33,14 +33,7 @@ class DwcaFormatStandard(object):
         self.dwca_event = []
         self.dwca_occurrence = []
         self.dwca_measurementorfact = []
-
-    def create_dwca_parts(self):
-        """ """
-        self.source_rows = self.data_object.get_data_rows()
-        #
-        self.create_dwca_event()
-        self.create_dwca_occurrence()
-        self.create_dwca_measurementorfact()
+        self._taxa_lookup_dict = {}
 
     def create_dwca_event(self):
         """ """
@@ -140,25 +133,13 @@ class DwcaFormatStandard(object):
                             continue
 
                         # Add taxa info.
-                        taxa_info_dict = self.species_info_object.get_info_as_dwc_dict(source_dict=source_row)
+                        taxa_info_dict = self.species_info_object.get_info_as_dwc_dict(
+                            source_dict=source_row
+                        )
                         source_row.update(taxa_info_dict)
 
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
-
-                        # # Add taxa info.
-                        # taxa_info_dict = self.species_info_object.get_info_as_dwc_dict(source_dict=source_row)
-                        # occurrence_dict.update(taxa_info_dict)
-                        # #
-                        # scientific_name = occurrence_dict.get('scientificName', '')
-                        # if scientific_name:
-                        #     # Translate values.
-                        #     for key in self.resources_object.get_translate_from_source_keys():
-                        #         value = occurrence_dict.get(key, '')
-                        #         if value:
-                        #             new_value = self.resources_object.get_translate_from_source(key, value)
-                        #             if value != new_value:
-                        #                 occurrence_dict[key] = new_value
 
                         # Append occurrence row content.
                         self.dwca_occurrence.append(occurrence_dict.copy())
@@ -176,10 +157,12 @@ class DwcaFormatStandard(object):
         for index, dwca_node_name in enumerate(dwca_node_names):
             emof_control_dict[dwca_node_name] = {}
             emof_control_dict[dwca_node_name]["used_key_list"] = set()
-            emof_control_dict[dwca_node_name]["dwc_key_name"] = \
-                                            emof_keys[index]["keyName"]
-            emof_control_dict[dwca_node_name]["dwc_event_key_name"] = \
-                                            emof_keys[index]["eventKeyName"]
+            emof_control_dict[dwca_node_name]["dwc_key_name"] = emof_keys[index][
+                "keyName"
+            ]
+            emof_control_dict[dwca_node_name]["dwc_event_key_name"] = emof_keys[index][
+                "eventKeyName"
+            ]
 
         # Process all data rows.
         for source_row in self.source_rows:
@@ -188,8 +171,9 @@ class DwcaFormatStandard(object):
                 continue
             # Check for duplicates.
             emof_param_unit_id = source_row.get("emof_param_unit_id", "")
-            if emof_param_unit_id and \
-                (emof_param_unit_id not in used_mof_occurrence_key_list):
+            if emof_param_unit_id and (
+                emof_param_unit_id not in used_mof_occurrence_key_list
+            ):
                 used_mof_occurrence_key_list.add(emof_param_unit_id)
 
                 # Iterate over nodes.
@@ -208,9 +192,7 @@ class DwcaFormatStandard(object):
                     emof_dict["id"] = event_node_key
                     emof_dict["eventID"] = event_node_key
 
-                    content_list = self.dwca_gen_config.field_mapping[
-                        "dwcaEmofContent"
-                    ]
+                    content_list = self.dwca_gen_config.field_mapping["dwcaEmofContent"]
                     for content in content_list:
                         if dwca_node_name != content.get("eventType", ""):
                             continue
@@ -223,10 +205,14 @@ class DwcaFormatStandard(object):
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
                         # Get key.
-                        event_node_key = source_row.get(control_dict['dwc_key_name'], '')
+                        event_node_key = source_row.get(
+                            control_dict["dwc_key_name"], ""
+                        )
                         # Create event row.
-                        if event_node_key and (event_node_key not in control_dict['used_key_list']):
-                            control_dict['used_key_list'].add(event_node_key)
+                        if event_node_key and (
+                            event_node_key not in control_dict["used_key_list"]
+                        ):
+                            control_dict["used_key_list"].add(event_node_key)
 
                             if "extraMeasurements" in content:
                                 extraMeasurements = content["extraMeasurements"]
@@ -235,33 +221,16 @@ class DwcaFormatStandard(object):
                                     param = extraMeasurement.get("measurementsType", "")
                                     unit = extraMeasurement.get("measurementsUnit", "")
                                     source_key = extraMeasurement.get("sourceKey", "")
-                                    value = emof_dict.get(source_key, '')
+                                    value = emof_dict.get(source_key, "")
                                     if param and (value not in [""]):
-                                        emof_dict['measurementType'] = param
-                                        emof_dict['measurementValue'] = value
-                                        emof_dict['measurementUnit'] = unit
+                                        emof_dict["measurementType"] = param
+                                        emof_dict["measurementValue"] = value
+                                        emof_dict["measurementUnit"] = unit
 
                                         if emof_dict.get("measurementType", ""):
-                                            self.dwca_measurementorfact.append(emof_dict.copy())
-
-                        # if dwca_node_name == "occurrence":
-                        #     occurrence_key = source_row.get("occurrence_key", "")
-                        #     scientific_name = source_row.get("scientific_name", "")
-                        #     if occurrence_key and scientific_name:
-                        #         emof_dict["occurrenceID"] = occurrence_key
-
-                        #     parameter = source_row.get("parameter", "")
-                        #     value = source_row.get("value", "")
-                        #     unit = source_row.get("unit", "")
-                        #     if parameter:
-                        #         emof_dict["measurementType"] = parameter
-                        #         emof_dict["measurementValue"] = value
-                        #         emof_dict["measurementUnit"] = unit
-                        #         #                     measurementorfact_dict['measurementAccuracy'] = ''
-                        #         #                     measurementorfact_dict['measurementDeterminedDate'] = source_row.get('measurementDeterminedDate', '')
-                        #         #                     measurementorfact_dict['measurementDeterminedBy'] = source_row.get('measurementDeterminedBy', '')
-                        #         #                     measurementorfact_dict['measurementMethod'] = source_row.get('measurementMethod', '') # TODO: method_reference_code
-                        #         #                     measurementorfact_dict['measurementRemarks'] = source_row.get('measurementRemarks', '')
+                                            self.dwca_measurementorfact.append(
+                                                emof_dict.copy()
+                                            )
 
                         #         # Measurement identifiers. NERC vocabular.
                         #         if parameter == "Water depth":
@@ -276,50 +245,6 @@ class DwcaFormatStandard(object):
                         #             emof_dict[
                         #                 "measurementUnitID"
                         #             ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
-
-                        #         # # Translate values.
-                        #         # for key in self.resources_object.get_translate_from_source_keys():
-                        #         #     value = emof_dict.get(key, '')
-                        #         #     if value:
-                        #         #         new_value = self.resources_object.get_translate_from_source(key, value)
-                        #         #         if value != new_value:
-                        #         #             emof_dict[key] = new_value
-                        #         # Append.
-                        #         self.dwca_measurementorfact.append(emof_dict)
-                        # # else:
-
-                        # #     # Not occurrence.
-                        # #     # Get key.
-                        # #     event_node_key = source_row.get(control_dict['dwc_key_name'], '')
-                        # #     # Create event row.
-                        # #     if event_node_key and (event_node_key not in control_dict['used_key_list']):
-                        # #         control_dict['used_key_list'].add(event_node_key)
-
-                        # #         for key, (param, unit) in emof_control_dict[event_node_name]['emof_extra_params'].items():
-                        # #             value = str(source_row.get(key, ''))
-                        # #             if value:
-                        # #                 emof_dict_2 = dict(emof_dict)
-                        # #                 emof_dict_2['measurementType'] = param
-                        # #                 emof_dict_2['measurementValue'] = value
-                        # #                 emof_dict_2['measurementUnit'] = unit
-
-                        # #                 # Measurement identifiers. NERC vocabular.
-                        # #                 if param == 'Water depth':
-                        # #                     emof_dict_2['measurementTypeID'] = 'http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/'
-                        # #                 if unit == 'm':
-                        # #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/ULAA/'
-                        # #                 elif unit == 'cells/l':
-                        # #                     emof_dict_2['measurementUnitID'] = 'http://vocab.nerc.ac.uk/collection/P06/current/UCPL/'
-
-                        # #                 # Translate values.
-                        # #                 for key in self.resources_object.get_translate_from_source_keys():
-                        # #                     value = emof_dict_2.get(key, '')
-                        # #                     if value:
-                        # #                         new_value = self.resources_object.get_translate_from_source(key, value)
-                        # #                         if value != new_value:
-                        # #                             emof_dict_2[key] = new_value
-                        # #                 # Append.
-                        # #                 self.dwca_measurementorfact.append(emof_dict_2)
 
             else:
                 # For checking for duplicates.
@@ -474,17 +399,37 @@ class DwcaFormatStandard(object):
         self.eml_xml_rows = eml_content_rows
         if len(self.eml_xml_rows) > 1:
             for index, xml_row in enumerate(self.eml_xml_rows):
-                if 'REPLACE-' in xml_row:
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-packageId', 'TODO-PACKAGE-ID')
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-dateStamp', str(datetime.datetime.today().date()))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-pubDate', str(datetime.datetime.today().date()))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-westLongitude', str(self.longitude_min))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-eastLongitude', str(self.longitude_max))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-northLatitude', str(self.latitude_max))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-southLatitude', str(self.latitude_min))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-beginDate', str(self.sample_date_min))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-endDate', str(self.sample_date_max))
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-Parameters', str(self.parameter_list))
+                if "REPLACE-" in xml_row:
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-packageId", "TODO-PACKAGE-ID"
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-dateStamp", str(datetime.datetime.today().date())
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-pubDate", str(datetime.datetime.today().date())
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-westLongitude", str(self.longitude_min)
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-eastLongitude", str(self.longitude_max)
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-northLatitude", str(self.latitude_max)
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-southLatitude", str(self.latitude_min)
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-beginDate", str(self.sample_date_min)
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-endDate", str(self.sample_date_max)
+                    )
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-Parameters", str(self.parameter_list)
+                    )
 
                     intellectual_rights = """
                         This work is licensed under the
@@ -493,10 +438,11 @@ class DwcaFormatStandard(object):
                         </ulink>
                         License.
                         """
-                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace('REPLACE-intellectualRights', intellectual_rights)
+                    self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
+                        "REPLACE-intellectualRights", intellectual_rights
+                    )
 
             intellectual_rights
-
 
     def create_meta_xml(self):
         """ """
@@ -567,19 +513,17 @@ class DwcaFormatStandard(object):
         #         # Add eml.xml files to zip.
         if len(self.eml_xml_rows) > 1:
             #
-            eml_document = '\r\n'.join(self.eml_xml_rows).encode('utf-8')
+            eml_document = "\r\n".join(self.eml_xml_rows).encode("utf-8")
             # eml_document = self.eml_xml_rows.encode("utf-8")
             ziparchive.appendZipEntry("eml.xml", eml_document)
 
     def get_event_columns(self):
         """ Implementation of abstract method declared in DwcDatatypeBase. """
-        # return self.resources_object.get_dwc_columns().get('dwc_event_columns', [])
         event_columns = self.dwca_gen_config.field_mapping.get("dwcaEventColumns", [])
         return event_columns
 
     def get_occurrence_columns(self):
         """ Implementation of abstract method declared in DwcDatatypeBase. """
-        # return self.resources_object.get_dwc_columns().get('dwc_occurrence_columns', [])
         occurrence_columns = self.dwca_gen_config.field_mapping.get(
             "dwcaOccurrenceColumns", []
         )
@@ -587,6 +531,5 @@ class DwcaFormatStandard(object):
 
     def get_measurementorfact_columns(self):
         """ Implementation of abstract method declared in DwcDatatypeBase. """
-        # return self.resources_object.get_dwc_columns().get('dwc_emof_columns', [])
         emof_columns = self.dwca_gen_config.field_mapping.get("dwcaEmofColumns", [])
         return emof_columns

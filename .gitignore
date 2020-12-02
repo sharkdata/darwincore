@@ -1,10 +1,13 @@
 
-# **/*.zip
+**/*.zip
+**/*.xlsx
 **/.svn
 .project
 .pydevproject
 .settings
 test_data/TMP_DarwinCore
+
+**/*OLD*
 
 
 # Byte-compiled / optimized / DLL files

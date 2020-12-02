@@ -1,0 +1,150 @@
+source_field	from_value	to_value	comments
+
+plankton_sampling_method_code	BTH	Bottom to halocline (included)	
+plankton_sampling_method_code	HAU	Haul	
+plankton_sampling_method_code	HTT	Top of halocline to thermocline (included)	
+plankton_sampling_method_code	IND	Integrated sample	
+plankton_sampling_method_code	INP	Integrated sample from photic zone	
+plankton_sampling_method_code	MIX	Mixed surface layer	
+plankton_sampling_method_code	OTH	Other	
+plankton_sampling_method_code	PDD	Pooled sample from distinct depths	
+plankton_sampling_method_code	SEP	Separate depths	
+plankton_sampling_method_code	TTS	Top of thermocline to surface	
+preservation_method_code	ACD	Acidification	
+preservation_method_code	ALU	Alkaline lugol	
+preservation_method_code	BOU	Bouin's fluid	
+preservation_method_code	CHL	Chloroform (=trichloromethane)	
+preservation_method_code	CLU	Acid lugol	
+preservation_method_code	DTR	Dietrick fixative (10% formaldehyde, 28.5% EtOH, 2% glacial acetic acid)	
+preservation_method_code	ETH	Ethanol	
+preservation_method_code	ETHG	Ethanol (95%) with Glycerol (to 90% ethanol content)	
+preservation_method_code	F4B	Fomaldehye - 4% buffered formaldehyde (ph 7-8)	
+preservation_method_code	FET	Formalin - neutral buffered formalin 10% + ethanol	
+preservation_method_code	FOR	Formaldehyde	
+preservation_method_code	HCL	Acidification with HCL	
+preservation_method_code	HNO	Acidification with HNO3	
+preservation_method_code	IMS	Industrial methylated spirits	
+preservation_method_code	ISO	Isopropanol	
+preservation_method_code	LUG	Neutral lugol	
+preservation_method_code	NBF	Formalin - neutral buffered formalin 10%	
+preservation_method_code	NON	No fixation method used	
+lifeStage	AD	AD (Adult)	
+lifeStage	C1	C1 (Copepodite I)	
+lifeStage	C2	C2 (Copepodite II)	
+lifeStage	C3	C3 (Copepodite III)	
+lifeStage	C4	C4 (Copepodite IV)	
+lifeStage	C5	C5 (Copepodite V)	
+lifeStage	C1-C3	C1-C3 (Copepodite I - Copepodite III)	
+lifeStage	C3-C5	C3-C5 (Copepodite III - Copepodite V)	
+lifeStage	C4-C5	C4-C5 (Copepodite IV - Copepodite V)	
+lifeStage	CN	CN (Copepodite, stage not specified)	
+lifeStage	EG	EG (Egg)	
+lifeStage	EM	EM (Embryo)	
+lifeStage	IM	IM (Immature/sub-adult)	
+lifeStage	JV	JV (Juvenile)	
+lifeStage	LV	LV (Larvae)	
+lifeStage	MX	MX (Mixed for pooled specimens)	
+lifeStage	NP	NP (Nauplius)	
+lifeStage	NS	NS (Not specified)	
+			
+sampler_type_code	AD	Anchor dredge	
+sampler_type_code	AGT	Agassiz trawl	
+sampler_type_code	AQSC	Aquascope	
+sampler_type_code	ASK	Askö gravity corer	
+sampler_type_code	ASV	Aerial surveillance	
+sampler_type_code	BC	Box-corer	
+sampler_type_code	BGN	Bongo net	
+sampler_type_code	BO	Boillot dredge	
+sampler_type_code	BOT	Bottom trawl	
+sampler_type_code	BR	Bogorov-Rass net	
+sampler_type_code	CH	Charcot dredge	
+sampler_type_code	CPOD	C-POD	
+sampler_type_code	CM	Camera mounted corer	
+sampler_type_code	DA	Day grab	
+sampler_type_code	DC	Diver-operated corer	
+sampler_type_code	DD	Drilling device	
+sampler_type_code	DIV	Diver collected	
+sampler_type_code	DROP	Drop trap	
+sampler_type_code	DTR	Diving transects	
+sampler_type_code	EK	Ekman grab	
+sampler_type_code	EN	Endoume dredge	
+sampler_type_code	FBW	Ferry box water sampler	
+sampler_type_code	FRAMENET	Frame with net collector for epibenthic samples	
+sampler_type_code	GC	Gravity corer	
+sampler_type_code	GE	Gemini corer	
+sampler_type_code	GFL	Go-Flo seawater sampler	
+sampler_type_code	GIL	Gill net	
+sampler_type_code	GOV	GOV trawl	
+sampler_type_code	GRT	Granton trawl	
+sampler_type_code	GS	Grab sampler	
+sampler_type_code	Gulf3	Gulf III	
+sampler_type_code	Gulf7	Gulf VII	
+sampler_type_code	GX	Gemax corer (for recent gyttja-clays)	
+sampler_type_code	HAN	Collected by hand	
+sampler_type_code	HM	Hamon grab	
+sampler_type_code	HOS	Hose	
+sampler_type_code	HP	Haps corer	
+sampler_type_code	HYB-TPN	Hydro-Bios transparent plastic Nansen sampler	
+sampler_type_code	HYD-MPD	Hydro-Bios Multi Plankton sampler - Midi	
+sampler_type_code	HYD-MPN	Hydro-Bios Multi Plankton sampler - Mini	
+sampler_type_code	HYD-MPX	Hydro-Bios Multi Plankton sampler - Maxi	
+sampler_type_code	IFCB	Imaging Flow Cytobot 	
+sampler_type_code	IW	Ice wedge corer	
+sampler_type_code	JUDAY	Juday net	
+sampler_type_code	KA	Kajak corer	
+sampler_type_code	LM	Limnos sediment corer	
+sampler_type_code	LS	Lister dredge	
+sampler_type_code	LW	Limnos water sampler	
+sampler_type_code	MKS	Modified Knudsen sampler	
+sampler_type_code	MOCNESS	Multiple Opening/ Closing Net and Environmental Sampling System)	
+sampler_type_code	MU	Multi corer	
+sampler_type_code	NAN	Nansen sampler	
+sampler_type_code	NC	Niemistö corer	
+sampler_type_code	ND	Nodules dredge	
+sampler_type_code	NET	Net	
+sampler_type_code	NSK	Niskin bottle	
+sampler_type_code	NT	Naturalists dredge	
+sampler_type_code	NZ	NIOZ core	
+sampler_type_code	OC	Other core device (request code from ICES)	
+sampler_type_code	OD	Other dredge device (request code from ICES)	
+sampler_type_code	OL	Jonasson-Olausen Boxcorer	
+sampler_type_code	OR	Oscor corer (corer for sandy sediments)	
+sampler_type_code	OS	Other grab sampling device (request code from ICES)	
+sampler_type_code	OXS	Oxygen sensor	
+sampler_type_code	PAR	Pair trawl	
+sampler_type_code	PEL	Pelagic trawl	
+sampler_type_code	PHOTO	Photo-based determination	
+sampler_type_code	PMP	Pump	
+sampler_type_code	PRS	Purse seines	
+sampler_type_code	PS	Ponar core sampler	
+sampler_type_code	PT	Petersen grab	
+sampler_type_code	QSM	Quantitative sampling	
+sampler_type_code	RA	Rallier dredge	
+sampler_type_code	RB	Ramberg sampler	
+sampler_type_code	RD	Rock dredge	
+sampler_type_code	RN	Rieneck box corer	
+sampler_type_code	ROS	Rosette sampler	
+sampler_type_code	RU	Ruttner sampler	
+sampler_type_code	RUTA	Ruta	
+sampler_type_code	SC	Scripps box corer	
+sampler_type_code	CTD	CTD sonde	
+sampler_type_code	SCT	Scraping tool	
+sampler_type_code	SHUGG	Special grab with a samling area of 450 cm2	
+sampler_type_code	SL	Selena corer (for recent gyttja-clays)	
+sampler_type_code	SM	Smith McIntyre Grab	
+sampler_type_code	SQR	Area defined square for epibenthic monitoring	
+sampler_type_code	SRN	Seines and ring net	
+sampler_type_code	STR	Snorkling transect	
+sampler_type_code	SUSE_TS	Tube sampler for zooplankton used by SUSE	
+sampler_type_code	UD	Unknown dredge	
+sampler_type_code	US	Usnel corer	
+sampler_type_code	VC	Vibro-corer	
+sampler_type_code	WD	Warren dredge	
+sampler_type_code	VID	Video-based determination of coverage	
+sampler_type_code	VIDEO-NET	A combined net and video-frame used for visual observations	
+sampler_type_code	WAT	Unknown water sampler	
+sampler_type_code	WP-2	WP-2 net	
+sampler_type_code	WP-3	WP-3 net	
+sampler_type_code	VS	Valter core sampler	
+sampler_type_code	VV	Van Veen grab	
+sampler_type_code	HC	Hand corer	

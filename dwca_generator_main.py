@@ -18,7 +18,11 @@ def generate_dwca(config_file):
 
     # Prepare data.
     print("\n=== Preparing data ===")
-    source_data = dwca_generator.DwcaDataSharkStandard(dwca_gen_config)
+    filters = dwca_generator.DwcaFilters(dwca_gen_config.filters_files)
+    translate = dwca_generator.DwcaTranslate(dwca_gen_config.translate_files)
+    source_data = dwca_generator.DwcaDataSharkStandard(
+        dwca_gen_config, filters, translate
+    )
     for dataset_filepath in dwca_gen_config.source_files:
         source_data.add_shark_dataset(dataset_filepath)
     source_data.create_dwca_keys()
@@ -49,13 +53,13 @@ def generate_dwca(config_file):
 
     print("\n=== Finished: ", config_file)
 
-
+# For TEST.
 if __name__ == "__main__":
     """ """
     # Test configs.
     config_files = [
-        "dwca_config/dwca_bacterioplankton_nat.yaml",
-        # "dwca_config/dwca_zooplankton_nat.yaml",
+        # "dwca_config/dwca_bacterioplankton_nat.yaml",
+        "dwca_config/dwca_zooplankton_nat.yaml",
         # "dwca_config/dwca_zoobenthos_nat.yaml",
     ]
     for config_file in config_files:

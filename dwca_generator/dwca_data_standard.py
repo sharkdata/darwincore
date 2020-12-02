@@ -15,10 +15,12 @@ class DwcaDataSharkStandard:
     Each row doctionary contains fields both for the internal format and DwC.
     """
 
-    def __init__(self, dwca_gen_config):
+    def __init__(self, dwca_gen_config, filters, translate):
         """ """
         # Reference to DwcaGenerator object.
         self.dwca_gen_config = dwca_gen_config
+        self.filters = filters
+        self.translate = translate
         # List of dictionaries containing all data rows.
         self.row_list = []
         # Lookup dictionary for keys to avoid duplicates.
@@ -49,25 +51,25 @@ class DwcaDataSharkStandard:
 
                             # Check filter. Don't add filtered rows.
                             add_row = True
-                            # for filter_column_name, filter_dict in self.resources.get_filters().items():
-                            #     value = row_dict.get(filter_column_name, '')
-                            #     if value:
-                            #         included_values = filter_dict.get('included_values', None)
-                            #         excluded_values = filter_dict.get('excluded_values', None)
-                            #         if included_values and (value not in included_values):
-                            #             add_row = False
-                            #         if excluded_values and (value in excluded_values):
-                            #             add_row = False
+                            for filter_column_name, filter_dict in self.filters.get_filters().items():
+                                value = row_dict.get(filter_column_name, '')
+                                if value:
+                                    included_values = filter_dict.get('included_values', None)
+                                    excluded_values = filter_dict.get('excluded_values', None)
+                                    if included_values and (value not in included_values):
+                                        add_row = False
+                                    if excluded_values and (value in excluded_values):
+                                        add_row = False
 
                             # Add to list.
                             if add_row:
                                 # Translate values.
-                                # for key in self.resources.get_translate_from_source_keys():
-                                #     value = row_dict.get(key, '')
-                                #     if value:
-                                #         new_value = self.resources.get_translate_from_source(key, value)
-                                #         if value != new_value:
-                                #             row_dict[key] = new_value
+                                for key in self.translate.get_translate_from_source_keys():
+                                    value = row_dict.get(key, '')
+                                    if value:
+                                        new_value = self.translate.get_translate_from_source(key, value)
+                                        if value != new_value:
+                                            row_dict[key] = new_value
                                 # Append.
                                 self.row_list.append(row_dict.copy())
         except Exception as e:
@@ -245,7 +247,3 @@ class DwcaDataSharkStandard:
 
                     if node_dynfield_key not in self.used_dynamic_field_key_list:
                         self.used_dynamic_field_key_list.append(node_dynfield_key)
-
-    def get_used_dynamic_field_keys(self):
-        """ """
-        return self.used_dynamic_field_key_list
