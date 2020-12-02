@@ -65,6 +65,10 @@ class ZipArchive:
     def __init__(self, zip_file_name):
         """ """
         self._filepathname = pathlib.Path(zip_file_name)
+        parent_dir = pathlib.Path(self._filepathname.parent)
+        if not parent_dir.exists():
+            parent_dir.mkdir()
+
         # Delete old version, if exists.
         if self._filepathname.exists():
             self._filepathname.unlink()  # Unlink = remove.
