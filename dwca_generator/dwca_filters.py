@@ -39,7 +39,7 @@ class DwcaFilters:
             header = []
             if filters_file_path.suffix in [".txt", ".tsv"]:
                 # Stored as text file.
-                with filters_file_path.open("r") as filters_file:
+                with filters_file_path.open("r", encoding="cp1252") as filters_file:
                     for index, row in enumerate(filters_file):
                         row = [item.strip() for item in row.split("\t")]
                         if index == 0:

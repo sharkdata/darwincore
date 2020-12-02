@@ -84,7 +84,7 @@ class DwcaSpeciesWorms:
 
         if translate_file_path.suffix in [".txt", ".tsv"]:
             # Stored as text file.
-            with translate_file_path.open("r") as translate_file:
+            with translate_file_path.open("r", encoding="cp1252") as translate_file:
                 for index, row in enumerate(translate_file):
                     row = [item.strip() for item in row.split("\t")]
                     if index == 0:

@@ -9,7 +9,7 @@ metadata to a DwC-A-file. At the moment only text files embedded in
 zip files for SHARK data are supported.
 
 The extended DwC-A format is used where the event table is in the center 
-of the mandatory star schema and the extendednmeasurementorfact (eMoF) is allowed 
+of the mandatory star schema and the extendedmeasurementorfact (eMoF) is allowed 
 to reference both the event and the occurrence tables.
 
 The mapping between the input data file and DwC-A is controlled by an number
