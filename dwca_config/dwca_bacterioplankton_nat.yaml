@@ -54,10 +54,12 @@ translate:
         data_in/resources
     files:
         - translate.txt
+        - translate_bacterioplankton.txt
 
 filters:
     directory:
         data_in/resources
     files:
         - filters.txt
+        - filters_bacterioplankton.txt
 

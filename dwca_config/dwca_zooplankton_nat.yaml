@@ -62,6 +62,6 @@ filters:
     directory:
         data_in/resources
     files:
-        # - filters.txt
-        - filters_TEST.txt
+        - filters.txt
+        - filters_zooplankton.txt
 

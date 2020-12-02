@@ -1,8 +1,0 @@
-source_field	include_value	exclude_value	comments
-
-scientific_name		Temora longicornis	
-scientific_name		Beroe
-scientific_name		Leuckartiara
-scientific_name		Gnathophausia zoea
-scientific_name		Monstrilla
-scientific_name		Rathkea

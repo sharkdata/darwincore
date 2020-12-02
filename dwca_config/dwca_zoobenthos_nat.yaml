@@ -58,10 +58,11 @@ translate:
         data_in/resources
     files:
         - translate.txt
+        - translate_zoobenthos.txt
 
 filters:
     directory:
         data_in/resources
     files:
         - filters.txt
-
+        - filters_zoobenthos.txt
