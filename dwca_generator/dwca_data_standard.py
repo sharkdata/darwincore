@@ -49,6 +49,11 @@ class DwcaDataSharkStandard:
                         else:
                             row_dict = dict(zip(header, row_items))
 
+                            # Add debug info.
+                            dataset_name = row_dict.get("dataset_name", "")
+                            if dataset_name:
+                                row_dict["debug_info"] = "Dataset" + dataset_name + " Row: " + str(index)
+
                             # Check filter. Don't add filtered rows.
                             add_row = True
                             for filter_column_name, filter_dict in self.filters.get_filters().items():

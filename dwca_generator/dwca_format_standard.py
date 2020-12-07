@@ -252,8 +252,10 @@ class DwcaFormatStandard(object):
                 if duplicate_row_number < 100:
                     try:
                         print(
-                            "DEBUG: Duplicates: emof_param_unit_id: "
-                            + str(emof_param_unit_id)
+                            "DEBUG: Duplicates: ",
+                            source_row.get("debug_info" ""),
+                            " Key for param/unit: ", 
+                            str(emof_param_unit_id)
                         )
                     except Exception as e:
                         print("DEBUG: Exception: " + str(e))
