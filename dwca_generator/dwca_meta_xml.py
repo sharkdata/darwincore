@@ -115,6 +115,8 @@ class DarwinCoreMetaXml:
 
         if term == "measurementTypeID":
             return "http://rs.iobis.org/obis/terms/measurementTypeID"
+        if term == "measurementValueID":
+            return "http://rs.iobis.org/obis/terms/measurementValueID"
         if term == "measurementUnitID":
             return "http://rs.iobis.org/obis/terms/measurementUnitID"
 
