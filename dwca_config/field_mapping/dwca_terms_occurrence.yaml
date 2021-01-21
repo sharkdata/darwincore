@@ -44,7 +44,8 @@ dwcaOccurrenceColumns:
 dwcaOccurrenceContent:
     -   eventType: occurrence
         dwcTerms:
-            # id: 
+            id: 
+                dwcaKey: sample_key
             eventID:
                 dwcaKey: sample_key
             occurrenceID:

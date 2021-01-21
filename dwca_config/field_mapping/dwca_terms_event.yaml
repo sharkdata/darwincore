@@ -56,7 +56,7 @@ dwcaEventContent:
     -   eventType: sampling_event
         dwcTerms:
             id:
-                sourceKey: 
+                sourceKey:  sampling_event_key
             eventID:
                 sourceKey: sampling_event_key
             parentEventID:

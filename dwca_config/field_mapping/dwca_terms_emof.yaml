@@ -3,7 +3,7 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 dwcaEmofColumns:
-#   - id
+    - id
     - eventID
     - measurementID
     - occurrenceID
@@ -22,6 +22,8 @@ dwcaEmofColumns:
 dwcaEmofContent:
     -   eventType: sampling_event
         dwcTerms:
+            id:
+                dwcaKey: sampling_event_key
             eventID:
                 dwcaKey: sampling_event_key
             measurementID:
