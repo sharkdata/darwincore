@@ -6,17 +6,20 @@ additionalMetadata:
     metadata: 
         gbif:
             citation: 
+                Stockholm University, 
                 Swedish Meteorological and Hydrological Institute, 
+                Umeå University, 
+                Gothenburg University,
                 Swedish Agency for Marine and Water Management and 
                 Swedish Environmental Protection Agency (2020). 
-                National phytoplankton monitoring in Sweden since ????.
+                National phytoplankton monitoring in Sweden since 1983.
 
 dataset: 
-    title: SHARK - National phytoplankton monitoring in Sweden since ????
+    title: SHARK - National phytoplankton monitoring in Sweden since 1983
 
     abstract: 
         para: 
-            -   Phytoplankton have been monitored in Sweden since ????. 
+            -   Phytoplankton have been monitored in Sweden since 1983. 
 
     methods: 
         methodStep: 
@@ -48,9 +51,12 @@ dataset:
             givenName: SHARK
             surName: SMHI
         organizationName: 
-            Swedish Meteorological and Hydrological Institute, 
-            Swedish Agency for Marine and Water Management, 
-            Swedish Environmental Protection Agency.
+                Stockholm University, 
+                Swedish Meteorological and Hydrological Institute, 
+                Umeå University, 
+                Gothenburg University,
+                Swedish Agency for Marine and Water Management, 
+                Swedish Environmental Protection Agency     
 
     metadataProvider: 
         individualName: 
