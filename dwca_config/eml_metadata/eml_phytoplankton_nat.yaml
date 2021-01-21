@@ -23,7 +23,7 @@ dataset:
             -   The national monitoring program was initiated by the Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management. 
                 Monitoring is performed by Stockholm University, Swedish Meteorological and Hydrological Institute, Gothenburg University and Umeå University. 
             -   Data are stored in the Swedish Ocean Archive database (SHARK), by the Swedish Meteorological and Hydrological Institute. Data are collected and analyzed according to the 
-                HELCOM COMBINE Manual - Part C Annex C6 Monitoring of phytoplankton species composition, abundance and biomass (https://github.com/sharkdata/darwincore/edit/master/dwca_config/eml_metadata/eml_phytoplankton_nat.yaml) or similar methods. 
+                HELCOM COMBINE Manual - Part C Annex C6 Monitoring of phytoplankton species composition, abundance and biomass (https://www.helcom.fi/wp-content/uploads/2019/08/Guidelines-for-monitoring-phytoplankton-species-composition-abundance-and-biomass.pdf) or similar methods. 
             -   "Mesozooplankton constitute an important part of zooplankton in the pelagic food webs, since these are the organisms representing the link between primary producers (phytoplankton) 
                 and higher trophic levels (zooplanktivorous fish and invertebrates).[...] The sampling of mesozooplankton serves [...] to describe the species composition and the spatial distribution of 
                 mesozooplankton abundance and biomass. (HELCOM COMBINE Manual https://helcom.fi/media/publications/Guidelines-for-monitoring-of-mesozooplankton.pdf). 
@@ -33,7 +33,8 @@ dataset:
         methodStep: 
             description: 
                 para:
-                    -   Data are collected and analyzed according to... 
+                    -    Data are collected and analyzed according to the 
+                HELCOM COMBINE Manual - Part C Annex C6 Monitoring of phytoplankton species composition, abundance and biomass (https://www.helcom.fi/wp-content/uploads/2019/08/Guidelines-for-monitoring-phytoplankton-species-composition-abundance-and-biomass.pdf) or similar methods.
         sampling: 
             description:
                 Samples are taken with... 
