@@ -45,9 +45,23 @@ dataset:
         geographicCoverage: 
             geographicDescription: 
                 "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379"
-        # taxonomicCoverage: 
-        #     phylum: ????
-
+        taxonomicCoverage:  Phylum:
+                            Miozoa
+                            Bacillariophyta
+                            Cryptophyta
+                            Ciliophora
+                            Cyanobacteria
+                            Chlorophyta
+                            Protozoa, phylum incertae sedis
+                            Euglenophyta
+                            Ochrophyta
+                            Haptophyta
+                            Choanozoa
+                            Katablepharidophyta
+                            Telonemia
+                            Amoebozoa
+                            Eukaryota unassigned, phylum incertae sedis
+                            Cercozoa
 
     keywordSet: 
         keywords: 
