@@ -45,6 +45,23 @@ dataset:
             geographicDescription: 
                 "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379"
         taxonomicCoverage: 
+                            Phylum
+                            Annelida
+                            Priapulida
+                            Mollusca
+                            Arthropoda
+                            Nemertea
+                            Cnidaria
+                            Sipuncula
+                            Echinodermata
+                            Nematoda
+                            Porifera
+                            Platyhelminthes
+                            Phoronida
+                            Chordata
+                            Hemichordata
+                            Bryozoa
+                            Xenacoelomorpha
 
     keywordSet: 
         keywords: 
