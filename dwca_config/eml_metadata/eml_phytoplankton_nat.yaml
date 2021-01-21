@@ -9,14 +9,14 @@ additionalMetadata:
                 Swedish Meteorological and Hydrological Institute, 
                 Swedish Agency for Marine and Water Management and 
                 Swedish Environmental Protection Agency (2020). 
-                National phytyoplankton monitoring in Sweden since ????.
+                National phytoplankton monitoring in Sweden since ????.
 
 dataset: 
-    title: SHARK - National phytyoplankton monitoring in Sweden since ????
+    title: SHARK - National phytoplankton monitoring in Sweden since ????
 
     abstract: 
         para: 
-            -   Phytyoplankton have been monitored in Sweden since ????. 
+            -   Phytoplankton have been monitored in Sweden since ????. 
 
     methods: 
         methodStep: 
