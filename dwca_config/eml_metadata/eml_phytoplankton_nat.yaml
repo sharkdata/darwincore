@@ -39,7 +39,7 @@ dataset:
                 HELCOM COMBINE Manual - Part C Annex C6 Monitoring of phytoplankton species composition, abundance and biomass (https://www.helcom.fi/wp-content/uploads/2019/08/Guidelines-for-monitoring-phytoplankton-species-composition-abundance-and-biomass.pdf) or similar methods.
         sampling: 
             description:
-                Samples are taken with... 
+                “For the purpose of quantitative studies in the open sea, the minimum requirement is to take an integrated sample from 0 – 10 m depth using a hose (Lindahl 1986) or by pooling equal amounts of water collected from fixed depths between 0 and 10 m using a water sampler (see Majaneva et al. 2009 for examples). The recommended sampling depths are 0 – 1 m, 2.5 m, 5 m, 7.5 m and 10 m. […] It is recommended to take additional net samples from the water column (e.g. from 0 – 20 m) in order to obtain concentrated phytoplankton samples.” (HELCOM COMBINE Manual https://www.helcom.fi/wp-content/uploads/2019/08/Guidelines-for-monitoring-phytoplankton-species-composition-abundance-and-biomass.pdf) 
 
     coverage: 
         geographicCoverage: 
