@@ -42,7 +42,7 @@ dataset:
     coverage: 
         geographicCoverage: 
             geographicDescription: 
-                "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401"
+                "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379"
         taxonomicCoverage: 
             phylum:Arthropoda, phylum:Protozoa, phylum incertae sedisphylum, phylum:Rotifera, phylum:Chordata, phylum:Mollusca, 
             phylum:Annelida, phylum:Bryozoa, phylum:Chaetognatha, phylum:Echinodermata, phylum:Ciliophora, phylum:Phoronida, 
