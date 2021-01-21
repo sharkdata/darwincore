@@ -22,7 +22,7 @@ dataset:
               Data are stored in the Swedish Ocean Archive (SHARK) database by the Swedish Meteorological and Hydrological Institute (SMHI). 
             - Data are collected and analyzed according to the Helcom COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination or simular methods. 
             - "Bacterioplankton growth rate is an indicator of the nutrient status in aquatic environments. It is an estimate of the consumption of organic carbon in the ecosystem and therefore closely related to the biochemical oxygen demand in situ (cf. BOD7). 
-              Bacterioplankton growth rate thereby indicates the rate of oxygen consumption that may lead to oxygen deficiency in the water column when exceeding oxygen supply." Helcom COMBINE Manual (https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf). 
+              Bacterioplankton growth rate thereby indicates the rate of oxygen consumption that may lead to oxygen deficiency in the water column when exceeding oxygen supply." (Helcom COMBINE Manual https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf). 
             - Information about the program and the methods are also available in Swedish at https://www.havochvatten.se/hav/vagledning--lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bakteriell-syrekonsumtion.html 
 
     methods: 
