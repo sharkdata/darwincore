@@ -1,0 +1,58 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+additionalMetadata: 
+    metadata: 
+        gbif:
+            citation: 
+                Swedish Meteorological and Hydrological Institute, 
+                Swedish Agency for Marine and Water Management and 
+                Swedish Environmental Protection Agency (2020). 
+                National phytyoplankton monitoring in Sweden since ????.
+
+dataset: 
+    title: SHARK - National phytyoplankton monitoring in Sweden since ????
+
+    abstract: 
+        para: 
+            -   Phytyoplankton have been monitored in Sweden since ????. 
+
+    methods: 
+        methodStep: 
+            description: 
+                para:
+                    -   Data are collected and analyzed according to... 
+        sampling: 
+            description:
+                Samples are taken with... 
+
+    coverage: 
+        geographicCoverage: 
+            geographicDescription: 
+                "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401"
+        # taxonomicCoverage: 
+        #     phylum: ????
+
+
+    keywordSet: 
+        keywords: 
+            keyword: 
+                - Samplingevent
+        keywordThesaurus: 
+            "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
+
+
+    creator: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName: 
+            Swedish Meteorological and Hydrological Institute, 
+            Swedish Agency for Marine and Water Management, 
+            Swedish Environmental Protection Agency.
+
+    metadataProvider: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI

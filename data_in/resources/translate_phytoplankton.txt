@@ -1,0 +1,4 @@
+source_field	from_value	to_value	comments
+			
+calculation_method	F	Flowmeter reading	
+calculation_method	H	Haul length	
