@@ -1,0 +1,4 @@
+source_field	include_value	exclude_value	comments
+			
+dataset_name		SHARK_Phytoplankton_2019_SMHI	
+dataset_name		SHARK_Phytoplankton_2018_SMHI	
