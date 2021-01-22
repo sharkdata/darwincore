@@ -54,9 +54,6 @@ dataset:
             givenName: SHARK
             surName: SMHI
         organizationName: 
-            Swedish Museum of Natural History
-            Swedish Agency for Marine and Water Management
-            Swedish Environmental Protection Agency
             Swedish Meteorological and Hydrological Institute
 
     metadataProvider: 
