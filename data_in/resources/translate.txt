@@ -147,4 +147,7 @@ sampler_type_code	WP-2	WP-2 net
 sampler_type_code	WP-3	WP-3 net	
 sampler_type_code	VS	Valter core sampler	
 sampler_type_code	VV	Van Veen grab	
-sampler_type_code	HC	Hand corer	
+sampler_type_code	HC	Hand corer
+
+calculation_method	F	Flowmeter reading	
+calculation_method	H	Haul length	
