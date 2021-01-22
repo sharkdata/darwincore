@@ -62,10 +62,8 @@ dataset:
             givenName: SHARK
             surName: SMHI
         organizationName: 
-            Stockholm University, Umeå University, 
             Swedish Meteorological and Hydrological Institute, 
-            Gothenburg University, Swedish Agency for Marine and Water Management, 
-            Swedish Environmental Protection Agency.
+
 
     metadataProvider: 
         individualName: 
