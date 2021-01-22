@@ -1,0 +1,15 @@
+source_field	include_value	exclude_value	comments
+dataset_name		SHARK_Zooplankton_2018_SLCK_jellyfish
+dataset_name		SHARK_Zooplankton_2019_SLCK_jellyfish
+dataset_name		SHARK_Zooplankton_1979_SUSE
+dataset_name		SHARK_Zooplankton_1980_1989_SUSE
+dataset_name		SHARK_Zooplankton_1990_SUSE
+dataset_name		SHARK_Zooplankton_1991_SUSE
+dataset_name		SHARK_Zooplankton_1992_SUSE
+dataset_name		SHARK_Zooplankton_1993_SUSE
+dataset_name		SHARK_Zooplankton_1994_SUSE
+dataset_name		SHARK_Zooplankton_1995_2000_SUSE_tubesampler
+dataset_name		SHARK_Zooplankton_1995_SUSE
+dataset_name		SHARK_Zooplankton_1998_SUSE
+dataset_name		SHARK_Zooplankton_2007_2014_SLC-K_JELLYFISH
+
