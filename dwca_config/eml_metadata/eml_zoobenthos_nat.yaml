@@ -7,7 +7,7 @@ additionalMetadata:
         gbif:
             citation: 
                 Stockholm University, Gothenburg University, Umeå University, Linnaeus University, 
-                Swedish Agency for Marine and Water Management and Swedish Environmental Protection Agency (2020). 
+                Swedish Agency for Marine and Water Management, Swedish Environmental Protection Agency and Swedish Meterological and Hydrological Institute (2020). 
                 National zoobenthos monitoring in Sweden since 1971.
 
 dataset: 
@@ -75,10 +75,7 @@ dataset:
             givenName: SHARK
             surName: SMHI
         organizationName: 
-            Stockholm University, Gothenburg University, 
-            Umeå University and Linnaeus University, 
-            Swedish Agency for Marine and Water Management, 
-            Swedish Environmental Protection Agency.
+                        Swedish Meterological and Hydrological Institute
 
     metadataProvider: 
         individualName: 
