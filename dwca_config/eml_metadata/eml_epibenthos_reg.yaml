@@ -79,10 +79,7 @@ dataset:
             givenName: SHARK
             surName: SMHI
         organizationName: 
-            Swedish county administration boards, 
-            Swedish municipalities, 
-            Swedish coalitions of water conservation, 
-            Swedish Meteorological and Hydrological Institute et.al.
+            Swedish Meteorological and Hydrological Institute
 
     metadataProvider: 
         individualName: 
