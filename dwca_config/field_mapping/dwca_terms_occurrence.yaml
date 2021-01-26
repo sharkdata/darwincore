@@ -3,19 +3,14 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 dwcaOccurrenceColumns:
-    # - id
+    - id
     - eventID
     - occurrenceID
 
-    # OLD:
-    # - scientificName
-    # - scientificNameAuthorship
-    # - scientificNameID
-    # - taxonID
-    # NEW:
     - scientificName
     - taxonConceptID
-    - taxonID
+    # - taxonID
+    - scientificNameID
     - acceptedNameUsage
 
     - identificationQualifier
@@ -51,23 +46,17 @@ dwcaOccurrenceContent:
             occurrenceID:
                 dwcaKey: occurrence_key
 
-            # OLD:
-            # scientificName:
-            #     sourceKey: scientific_name
-            # scientificNameAuthorship:
-            #     sourceKey: scientific_author
-            # scientificNameID:
-            #     sourceKey: dyntaxa_id
-            # taxonID:
-            # NEW:
             scientificName:
                 sourceKeyList: 
                     - reported_scientific_name
                     - scientific_name
             taxonConceptID:
                 sourceKey: dyntaxa_lsid
-            taxonID:
-               sourceKey: worms_lsid
+            # taxonID:
+            #    sourceKey: worms_lsid
+            scientificNameID:
+               # sourceKey: worms_lsid
+               sourceKey: worms_id
             acceptedNameUsage:
                 sourceKey: worms_valid_name
 

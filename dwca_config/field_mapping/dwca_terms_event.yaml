@@ -184,7 +184,7 @@ dwcaEventContent:
     -   eventType: sample
         dwcTerms:
             id:
-                sourceKey: 
+                sourceKey: sample_key
             eventID:
                 sourceKey: sample_key
             parentEventID:
