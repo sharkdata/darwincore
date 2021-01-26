@@ -63,5 +63,5 @@ filters:
         data_in/resources
     files:
         - filters.txt
-        - filters_zooplankton.txt
+        - filters_zooplankton_nat.txt
 

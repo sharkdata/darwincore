@@ -61,6 +61,7 @@ if __name__ == "__main__":
         # "dwca_config/dwca_bacterioplankton_nat.yaml",
         "dwca_config/dwca_zooplankton_nat.yaml",
         # "dwca_config/dwca_zoobenthos_nat.yaml",
+        # "dwca_config/dwca_phytoplankton_nat.yaml",
     ]
     for config_file in config_files:
         generate_dwca(config_file)

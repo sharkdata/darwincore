@@ -61,5 +61,5 @@ filters:
         data_in/resources
     files:
         - filters.txt
-        - filters_phytoplankton.txt
+        - filters_phytoplankton_nat.txt
 

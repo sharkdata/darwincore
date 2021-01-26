@@ -65,4 +65,4 @@ filters:
         data_in/resources
     files:
         - filters.txt
-        - filters_zoobenthos.txt
+        - filters_zoobenthos_nat.txt
