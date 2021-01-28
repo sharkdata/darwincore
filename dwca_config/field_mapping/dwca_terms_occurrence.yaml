@@ -96,7 +96,7 @@ dwcaOccurrenceContent:
             genus:
                 sourceKey: worms_genus
             basisOfRecord:
-                text: HumanObservation
+                text: MaterialSample
             recordedBy:
                 sourceKey: taxonomist
             occurrenceRemarks:
@@ -121,3 +121,11 @@ dwcaOccurrenceContent:
                         sourceKey: bitemark
                     -   dynamicKey: DegreeBiofouling
                         sourceKey: degree_biofouling
+                    -   dynamicKey: AnalyticalLaboratoryCode
+                        sourceKey: analytical_laboratory_code
+                    -   dynamicKey: AnalyticalLaboratoryName
+                        sourceKeyList: 
+                            - analytical_laboratory_name_en
+                            - analytical_laboratory_name_sv
+                    -   dynamicKey: AnalyticalLaboratoryAccreditated
+                        sourceKey: analytical_laboratory_accreditated

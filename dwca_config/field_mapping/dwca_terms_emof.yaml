@@ -110,6 +110,9 @@ dwcaEmofContent:
             -   measurementsType: Sediment deposition code
                 measurementsUnit: 
                 sourceKey: sediment_deposition_code
+            -   measurementsType: Sediment type
+                measurementsUnit: 
+                sourceKey: sediment_type
 
     -   eventType: sample
         dwcTerms:
@@ -169,11 +172,11 @@ dwcaEmofContent:
             measurementDeterminedDate:
                 sourceKey: analysis_date
             measurementDeterminedBy:
-                sourceKey: 
+                sourceKey: analysed_by
             measurementMethod:
-                sourceKey: 
+                sourceKey: analysis_method_code
             measurementRemarks:
-                sourceKey: 
+                sourceKey: variable_comment
 
         extraMeasurements:
             -   measurementsType: SizeClass
@@ -185,3 +188,27 @@ dwcaEmofContent:
             -   measurementsType: Size maximum
                 measurementsUnit: um
                 sourceKey: size_max_um
+            -   measurementsType: Analysed volume
+                measurementsUnit: cm3
+                sourceKey: analysed_volume_cm3
+            -   measurementsType: Coefficient
+                measurementsUnit: 
+                sourceKey: coefficient
+            -   measurementsType: Magnification
+                measurementsUnit: 
+                sourceKey: magnification
+            -   measurementsType: Sedimentation time
+                measurementsUnit: h
+                sourceKey: sedimentation_time_h
+            -   measurementsType: Sedimentation volume
+                measurementsUnit: ml
+                sourceKey: sedimentation_volume_ml
+            -   measurementsType: Number of portions
+                measurementsUnit: 
+                sourceKey: number_of_portions
+            -   measurementsType: Counted portions
+                measurementsUnit: 
+                sourceKey: counted_portions
+            -   measurementsType: Counter program
+                measurementsUnit: 
+                sourceKey: counter_program

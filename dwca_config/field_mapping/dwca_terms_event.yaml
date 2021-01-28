@@ -201,6 +201,8 @@ dwcaEventContent:
                         sourceKey: sampler_type_code
                     -   dynamicKey: PlanktonSamplingMethod
                         sourceKey: plankton_sampling_method_code
+                    -   dynamicKey: SizeClassReferenceList
+                        sourceKey: size_class_ref_list
             sampleSizeValue:
                 sourceKey: sampled_volume_l
             sampleSizeUnit:
@@ -223,6 +225,8 @@ dwcaEventContent:
                         sourceKey: lower_mesh_size_um
                     -   dynamicKey: FactorsInfluencingCode
                         sourceKey: factors_influencing_code
+                    -   dynamicKey: SampleSplittingCode
+                        sourceKey: sample_splitting_code
             eventDate:
                 sourceKeyList: 
                     - sample_date
