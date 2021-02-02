@@ -86,3 +86,5 @@ dataset_name	SHARK_Phytoplankton_2019_UMSC
 dataset_name	SHARK_Phytoplankton_2019_SMHI
 dataset_name	SHARK_Phytoplankton_2019_DEEP
 dataset_name	SHARK_Phytoplankton_2019_DEEP_SKVVF
+
+parameter		Carbon concentration

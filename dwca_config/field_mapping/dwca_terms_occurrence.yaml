@@ -55,8 +55,8 @@ dwcaOccurrenceContent:
             # taxonID:
             #    sourceKey: worms_lsid
             scientificNameID:
-               # sourceKey: worms_lsid
-               sourceKey: worms_id
+               sourceKey: worms_lsid
+               # sourceKey: worms_id
             acceptedNameUsage:
                 sourceKey: worms_valid_name
 
