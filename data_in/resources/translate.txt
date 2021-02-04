@@ -150,4 +150,13 @@ sampler_type_code	VV	Van Veen grab
 sampler_type_code	HC	Hand corer
 
 calculation_method	F	Flowmeter reading	
-calculation_method	H	Haul length	
+calculation_method	H	Haul length
+
+sex_code	F	Female
+sex_code	H	Hermaphrodite
+sex_code	I	Immature
+sex_code	M	Male
+sex_code	U	Undetermined
+sex_code	X	Mixed
+
+
