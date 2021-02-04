@@ -59,10 +59,10 @@ dwcaEmofContent:
             -   measurementsType: Wave height
                 measurementsUnit: m
                 sourceKey: wave_height_m
-            -   measurementsType: Wave observation code
+            -   measurementsType: Wave observation
                 measurementsUnit: 
                 sourceKey: wave_observation_code
-            -   measurementsType: Weather observation code
+            -   measurementsType: Weather observation
                 measurementsUnit: 
                 sourceKey: weather_observation_code
             -   measurementsType: Wave exposure fetch
@@ -71,7 +71,7 @@ dwcaEmofContent:
             -   measurementsType: Wind speed
                 measurementsUnit: m/s
                 sourceKey: wind_speed_ms
-            -   measurementsType: Wind direction code
+            -   measurementsType: Wind direction
                 measurementsUnit: 
                 sourceKey: wind_direction_code
             -   measurementsType: Water level deviation
@@ -86,7 +86,7 @@ dwcaEmofContent:
             -   measurementsType: Secchi depth quality
                 measurementsUnit: 
                 sourceKey: secchi_depth_quality_flag
-            -   measurementsType: Cloud observation code
+            -   measurementsType: Cloud observation
                 measurementsUnit: 
                 sourceKey: cloud_observation_code
             -   measurementsType: Insolation air
@@ -99,15 +99,15 @@ dwcaEmofContent:
                 measurementsUnit: degc
                 sourceKey: air_temperature_wet_degc
             -   measurementsType: Air temperature
-                measurementsUnit: degc
+                measurementsUnit: degC
                 sourceKey: air_temperature_degc
             -   measurementsType: Air pressure
                 measurementsUnit: hpa
                 sourceKey: air_pressure_hpa
-            -   measurementsType: Ice observation code
+            -   measurementsType: Ice observation
                 measurementsUnit: 
                 sourceKey: ice_observation_code
-            -   measurementsType: Sediment deposition code
+            -   measurementsType: Sediment deposition
                 measurementsUnit: 
                 sourceKey: sediment_deposition_code
             -   measurementsType: Sediment type
@@ -117,7 +117,7 @@ dwcaEmofContent:
     -   eventType: sample
         dwcTerms:
             eventID:
-                dwcaKey: sampling_event_key
+                dwcaKey: sample_key
             measurementID:
                 text: ""
             occurrenceID: 
@@ -147,10 +147,39 @@ dwcaEmofContent:
             measurementRemarks:
                 sourceKey: 
 
+        extraMeasurements:
+            -   measurementsType: Sampled volume
+                measurementsUnit: L
+                sourceKey: sampled_volume_l
+            -   measurementsType: Sampler area
+                measurementsUnit: cm2
+                sourceKey: sampler_area_cm2
+            -   measurementsType: Wire angle
+                measurementsUnit: deg
+                sourceKey: wire_angle_deg
+            -   measurementsType: Flowmeter length
+                measurementsUnit: m
+                sourceKey: flowmeter_length_m
+            -   measurementsType: Mesh size
+                measurementsUnit: um
+                sourceKey: mesh_size_um
+            -   measurementsType: Upper mesh size
+                measurementsUnit: um
+                sourceKey: upper_mesh_size_um
+            -   measurementsType: Lower mesh size
+                measurementsUnit: um
+                sourceKey: lower_mesh_size_um
+            -   measurementsType: Factors influencing
+                measurementsUnit: 
+                sourceKey: factors_influencing_code
+            -   measurementsType: Sample splitting
+                measurementsUnit: 
+                sourceKey: sample_splitting_code
+
     -   eventType: occurrence
         dwcTerms:
             eventID:
-                dwcaKey: sampling_event_key
+                dwcaKey: sample_key
             measurementID:
                 text: ""
             occurrenceID: 
@@ -179,7 +208,7 @@ dwcaEmofContent:
                 sourceKey: variable_comment
 
         extraMeasurements:
-            -   measurementsType: SizeClass
+            -   measurementsType: Size class
                 measurementsUnit: 
                 sourceKey: size_class
             -   measurementsType: Size minimum
@@ -204,10 +233,10 @@ dwcaEmofContent:
                 measurementsUnit: ml
                 sourceKey: sedimentation_volume_ml
             -   measurementsType: Number of portions
-                measurementsUnit: 
+                measurementsUnit: nr
                 sourceKey: number_of_portions
             -   measurementsType: Counted portions
-                measurementsUnit: 
+                measurementsUnit: nr
                 sourceKey: counted_portions
             -   measurementsType: Counter program
                 measurementsUnit: 
