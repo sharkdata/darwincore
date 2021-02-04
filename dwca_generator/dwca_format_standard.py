@@ -14,18 +14,22 @@ import dwca_generator
 class DwcaFormatStandard(object):
     """ """
 
-    def __init__(self, data=None, dwca_gen_config=None, species_info=None):
+    def __init__(self, data, dwca_gen_config, species_info, translate):
         """ Darwin Core Archive Format base class. """
 
         self.target_dwca_path = pathlib.Path(dwca_gen_config.dwca_target)
         self.data_object = data
         self.dwca_gen_config = dwca_gen_config
         self.species_info_object = species_info
+        self.translate = translate
         self.worms_info_object = None
         #
         self.clear()
         #
         self.source_rows = self.data_object.get_data_rows()
+        #
+        self.duplicates_log_file_name = None
+        # self.duplicates_log_file_name = "duplicates_log.txt"
 
     def clear(self):
         """ """
@@ -149,6 +153,10 @@ class DwcaFormatStandard(object):
         # For checking for duplicates.
         used_mof_occurrence_key_list = set()
         duplicate_row_number = 0
+        # Log duplicates to file.
+        duplicates_log = None
+        if self.duplicates_log_file_name:
+            duplicates_log = pathlib.Path(self.duplicates_log_file_name).open("w")
 
         # Create control dictionary.
         emof_keys = self.dwca_gen_config.dwca_keys["eventTypeKeys"]["emof"]
@@ -221,7 +229,7 @@ class DwcaFormatStandard(object):
                                     param = extraMeasurement.get("measurementsType", "")
                                     unit = extraMeasurement.get("measurementsUnit", "")
                                     source_key = extraMeasurement.get("sourceKey", "")
-                                    value = emof_dict.get(source_key, "")
+                                    value = source_row.get(source_key, "")
                                     if param and (value not in [""]):
                                         emof_dict["measurementType"] = param
                                         emof_dict["measurementValue"] = value
@@ -247,26 +255,33 @@ class DwcaFormatStandard(object):
                         #             ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
             else:
-                # For checking for duplicates.
-                duplicate_row_number += 1
-                if duplicate_row_number < 100:
-                    try:
-                        print(
-                            "DEBUG: Duplicates: ",
-                            source_row.get("debug_info" ""),
-                            " Key for param/unit: ", 
-                            str(emof_param_unit_id)
-                        )
-                    except Exception as e:
-                        print("DEBUG: Exception: " + str(e))
-                elif duplicate_row_number == 100:
-                    print("DEBUG: MAX LIMIT OF 100 LOG ROWS.")
+                try:
+                    # For checking for duplicates.
+                    log_message = (
+                        "DEBUG: Duplicates: "
+                        + source_row.get("debug_info" "")
+                        + " Key for param/unit: "
+                        + str(emof_param_unit_id)
+                    )
+                    if duplicates_log:
+                        duplicates_log.write(log_message + "\n")
+                    duplicate_row_number += 1
+                    if duplicate_row_number < 100:
+                        print(log_message)
+                    elif duplicate_row_number == 100:
+                        print("DEBUG: MAX LIMIT OF 100 LOG ROWS.")
+                except Exception as e:
+                    print("DEBUG: Exception-duplicates: " + str(e))
         # Finally.
+        if duplicates_log:
+            duplicates_log.close()
+            duplicates_log = None
         if duplicate_row_number > 0:
             print("DEBUG: Number of duplicates found: ", duplicate_row_number)
 
     def add_content(self, content, source_row, result_dict):
         """ """
+        translate_keys = self.translate.get_translate_from_dwc_keys()
         for term in content.get("dwcTerms", []):
             # print(term)
             # print(content["dwcTerms"][term])
@@ -288,6 +303,8 @@ class DwcaFormatStandard(object):
                 source_key = term_dict["sourceKey"]
                 value = source_row.get(source_key, "")
                 if value:
+                    if term in translate_keys:
+                        value = self.translate.get_translate_from_dwc(term, value)
                     result_dict[term] = value
 
             elif "sourceKeyList" in term_dict:
@@ -295,6 +312,8 @@ class DwcaFormatStandard(object):
                 for source_key in source_key_list:
                     value = source_row.get(source_key, "")
                     if value:
+                        if term in translate_keys:
+                            value = self.translate.get_translate_from_dwc(term, value)
                         result_dict[term] = value
                         break
 
@@ -314,6 +333,10 @@ class DwcaFormatStandard(object):
                             source_key = dynamic_item["sourceKey"]
                             value = source_row.get(source_key, "")
                             if value:
+                                if term in translate_keys:
+                                    value = self.translate.get_translate_from_dwc(
+                                        term, value
+                                    )
                                 content_string = dynamic_key + ": " + value
                                 dynamic_content_list.append(content_string)
                         elif "sourceKeyList" in dynamic_item:
@@ -321,6 +344,10 @@ class DwcaFormatStandard(object):
                             for source_key in source_key_list:
                                 value = source_row.get(source_key, "")
                                 if value:
+                                    if term in translate_keys:
+                                        value = self.translate.get_translate_from_dwc(
+                                            term, value
+                                        )
                                     content_string = dynamic_key + ": " + value
                                     dynamic_content_list.append(content_string)
                                     break

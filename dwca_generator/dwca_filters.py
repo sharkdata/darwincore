@@ -9,6 +9,7 @@ import pathlib
 
 class DwcaFilters:
     """ """
+
     def __init__(self, filters_file_list):
         """ """
         self.filters_file_list = filters_file_list
@@ -51,9 +52,9 @@ class DwcaFilters:
 
     def add_fields_to_dict(self, row_dict):
         """ """
-        source_field = row_dict.get("source_field", "")
-        include_value = row_dict.get("include_value", "")
-        exclude_value = row_dict.get("exclude_value", "")
+        source_field = row_dict.get("source_field", "").strip()
+        include_value = row_dict.get("include_value", "").strip()
+        exclude_value = row_dict.get("exclude_value", "").strip()
         # Included values.
         if source_field and include_value:
             if not include_value[0] == "#":

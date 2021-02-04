@@ -34,7 +34,7 @@ def generate_dwca(config_file):
         taxa_file_path=dwca_gen_config.taxa_worms_file
     )
     dwca_format = dwca_generator.DwcaFormatStandard(
-        source_data, dwca_gen_config, species_info
+        source_data, dwca_gen_config, species_info, translate
     )
     dwca_format.create_dwca_event()
     dwca_format.create_dwca_occurrence()
@@ -58,10 +58,10 @@ if __name__ == "__main__":
     """ """
     # Test configs.
     config_files = [
-        # "dwca_config/dwca_bacterioplankton_nat.yaml",
+        "dwca_config/dwca_bacterioplankton_nat.yaml",
         "dwca_config/dwca_zooplankton_nat.yaml",
-        # "dwca_config/dwca_zoobenthos_nat.yaml",
-        # "dwca_config/dwca_phytoplankton_nat.yaml",
+        "dwca_config/dwca_zoobenthos_nat.yaml",
+        "dwca_config/dwca_phytoplankton_nat.yaml",
     ]
     for config_file in config_files:
         generate_dwca(config_file)
