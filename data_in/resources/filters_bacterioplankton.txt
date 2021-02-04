@@ -1,5 +1,1 @@
 source_field	include_value	exclude_value	comments
-			
-sampler_type_code		MOCNESS	
-sampler_type_code		WP-3	
-sampler_type_code		SUSE-TS	
