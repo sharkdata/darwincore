@@ -130,7 +130,7 @@ dwcaEventContent:
             coordinatePrecision:
                 sourceKey: 
             license:
-                sourceKey: 
+                text: CC0
             rightsHolder:
                 text: Swedish Agency for Marine and Water Management
             accessRights:
@@ -302,7 +302,7 @@ dwcaEventContent:
             coordinatePrecision:
                 sourceKey: 
             license:
-                sourceKey: 
+                text: CC0 
             rightsHolder:
                 text: Swedish Agency for Marine and Water Management
             accessRights:

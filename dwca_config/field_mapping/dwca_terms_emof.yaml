@@ -96,7 +96,7 @@ dwcaEmofContent:
                 measurementsUnit: 
                 sourceKey: incubation_radiation
             -   measurementsType: Air temperature wet
-                measurementsUnit: degc
+                measurementsUnit: degC
                 sourceKey: air_temperature_wet_degc
             -   measurementsType: Air temperature
                 measurementsUnit: degC
@@ -175,6 +175,24 @@ dwcaEmofContent:
             -   measurementsType: Sample splitting
                 measurementsUnit: 
                 sourceKey: sample_splitting_code
+            -   measurementsType: Analysed volume
+                measurementsUnit: cm3
+                sourceKey: analysed_volume_cm3
+            -   measurementsType: Sedimentation time
+                measurementsUnit: h
+                sourceKey: sedimentation_time_h
+            -   measurementsType: Sedimentation volume
+                measurementsUnit: ml
+                sourceKey: sedimentation_volume_ml
+            -   measurementsType: Number of portions
+                measurementsUnit: nr
+                sourceKey: number_of_portions
+            -   measurementsType: Counted portions
+                measurementsUnit: nr
+                sourceKey: counted_portions
+            -   measurementsType: Counter program
+                measurementsUnit: 
+                sourceKey: counter_program
 
     -   eventType: occurrence
         dwcTerms:
@@ -217,27 +235,9 @@ dwcaEmofContent:
             -   measurementsType: Size maximum
                 measurementsUnit: um
                 sourceKey: size_max_um
-            -   measurementsType: Analysed volume
-                measurementsUnit: cm3
-                sourceKey: analysed_volume_cm3
             -   measurementsType: Coefficient
                 measurementsUnit: 
                 sourceKey: coefficient
             -   measurementsType: Magnification
                 measurementsUnit: 
                 sourceKey: magnification
-            -   measurementsType: Sedimentation time
-                measurementsUnit: h
-                sourceKey: sedimentation_time_h
-            -   measurementsType: Sedimentation volume
-                measurementsUnit: ml
-                sourceKey: sedimentation_volume_ml
-            -   measurementsType: Number of portions
-                measurementsUnit: nr
-                sourceKey: number_of_portions
-            -   measurementsType: Counted portions
-                measurementsUnit: nr
-                sourceKey: counted_portions
-            -   measurementsType: Counter program
-                measurementsUnit: 
-                sourceKey: counter_program
