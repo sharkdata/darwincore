@@ -130,7 +130,7 @@ sampler_type_code		RUTA	Ruta
 sampler_type_code		SC	Scripps box corer	
 sampler_type_code		CTD	CTD sonde	
 sampler_type_code		SCT	Scraping tool	
-sampler_type_code		SHUGG	Special grab with a samling area of 450 cm2	
+sampler_type_code		SHUGG	Special grab with a sampling area of 450 cm2	
 sampler_type_code		SL	Selena corer (for recent gyttja-clays)	
 sampler_type_code		SM	Smith McIntyre Grab	
 sampler_type_code		SQR	Area defined square for epibenthic monitoring	

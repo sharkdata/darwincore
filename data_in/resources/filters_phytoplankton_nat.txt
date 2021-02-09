@@ -1,4 +1,4 @@
-source_field	include_value	exclude_value	comments
+source_field	include_value	exclude_value	filter_group_id	comments
 			
 dataset_name	SHARK_Phytoplankton_1983_SUSE
 dataset_name	SHARK_Phytoplankton_1984_SUSE
@@ -88,3 +88,11 @@ dataset_name	SHARK_Phytoplankton_2019_DEEP
 dataset_name	SHARK_Phytoplankton_2019_DEEP_SKVVF
 
 parameter		Carbon concentration
+
+parameter		Biovolume concentration	Param-zero-1
+value		0.0	Param-zero-1
+unit		mm3/l	Param-zero-1
+
+parameter		Biovolume concentration	Param-zero-2
+value		0	Param-zero-2
+unit		mm3/l	Param-zero-2

@@ -1,4 +1,4 @@
-source_field	include_value	exclude_value	comments
+source_field	include_value	exclude_value	filter_group_id	comments
 			
 dataset_name	SHARK_Zoobenthos_1971_2006_SUSE_1
 dataset_name	SHARK_Zoobenthos_1977_2008_KMRS_Alsback
@@ -99,3 +99,59 @@ dataset_name	SHARK_Zoobenthos_2019_LNU
 dataset_name	SHARK_Zoobenthos_2019_DEEP_HAV_Asko
 dataset_name	SHARK_Zoobenthos_2019_DEEP_HAV
 dataset_name	SHARK_Zoobenthos_2019_LNU_HLS
+
+
+sample_latitude_dd		58.99978	Pos-on-land-1
+sample_longitude_dd		17.82975	Pos-on-land-1
+
+sample_latitude_dd		64.668	Pos-on-land-2
+sample_longitude_dd		21.0305	Pos-on-land-2
+
+sample_latitude_dd		64.97667	Pos-on-land-3
+sample_longitude_dd		21.16767	Pos-on-land-3
+
+sample_latitude_dd		64.91667	Pos-on-land-4
+sample_longitude_dd		21.1465	Pos-on-land-4
+
+sample_latitude_dd		57.45	Pos-on-land-5
+sample_longitude_dd		18.21833	Pos-on-land-5
+
+sample_latitude_dd		57.36333	Pos-on-land-6
+sample_longitude_dd		18.36667	Pos-on-land-6
+
+sample_latitude_dd		57.47667	Pos-on-land-7
+sample_longitude_dd		18.36667	Pos-on-land-7
+
+sample_latitude_dd		57.23467	Pos-on-land-8
+sample_longitude_dd		18.28833	Pos-on-land-8
+
+sample_latitude_dd		64.01883	Pos-on-land-9
+sample_longitude_dd		19.84833	Pos-on-land-9
+
+sample_latitude_dd		0	Pos-zero
+sample_longitude_dd		0	Pos-zero
+
+
+parameter		Sediment redox potential	Param-na-1
+value		NA	Param-na-1
+parameter		Sediment water content	Param-na-2
+value		NA	Param-na-2
+
+
+parameter		# counted	Param-zero-1
+value		0	Param-zero-1
+
+parameter		Abundance	Param-zero-2
+value		0.0	Param-zero-2
+
+parameter		Wet weight	Param-zero-3
+value		0.00	Param-zero-3
+
+parameter		Wet weight/area	Param-zero-4
+value		0.0	Param-zero-4
+
+parameter		Dry weight	Param-zero-5
+value		0	Param-zero-5
+
+parameter		Wet weight	Param-zero-6
+value		0	Param-zero-6
