@@ -66,22 +66,28 @@ class DwcaFilters:
         include_value = row_dict.get("include_value", "").strip()
         exclude_value = row_dict.get("exclude_value", "").strip()
         filter_group_id = row_dict.get("filter_group_id", "").strip()
-        # Included values.
-        if source_field and include_value:
-            if not source_field[0] == "#":
-                if source_field not in self.filters_dict:
-                    self.filters_dict[source_field] = {}
-                if "included_values" not in self.filters_dict[source_field]:
-                    self.filters_dict[source_field]["included_values"] = []
-                self.filters_dict[source_field]["included_values"].append(include_value)
-        # Excluded values.
-        if source_field and exclude_value:
-            if not source_field[0] == "#":
-                if source_field not in self.filters_dict:
-                    self.filters_dict[source_field] = {}
-                if "excluded_values" not in self.filters_dict[source_field]:
-                    self.filters_dict[source_field]["excluded_values"] = []
-                self.filters_dict[source_field]["excluded_values"].append(exclude_value)
+
+        if not filter_group_id:
+            # Included values.
+            if source_field and include_value:
+                if not source_field[0] == "#":
+                    if source_field not in self.filters_dict:
+                        self.filters_dict[source_field] = {}
+                    if "included_values" not in self.filters_dict[source_field]:
+                        self.filters_dict[source_field]["included_values"] = []
+                    self.filters_dict[source_field]["included_values"].append(
+                        include_value
+                    )
+            # Excluded values.
+            if source_field and exclude_value:
+                if not source_field[0] == "#":
+                    if source_field not in self.filters_dict:
+                        self.filters_dict[source_field] = {}
+                    if "excluded_values" not in self.filters_dict[source_field]:
+                        self.filters_dict[source_field]["excluded_values"] = []
+                    self.filters_dict[source_field]["excluded_values"].append(
+                        exclude_value
+                    )
 
         # Filter groups. Are used when multiple fields should be checked.
         if source_field and filter_group_id:
@@ -91,6 +97,10 @@ class DwcaFilters:
                 if filter_group_id not in self.filter_exclude_groups_dict:
                     self.filter_exclude_groups_dict[filter_group_id] = {}
                 if include_value:
-                    self.filter_include_groups_dict[filter_group_id][source_field] = include_value
+                    self.filter_include_groups_dict[filter_group_id][
+                        source_field
+                    ] = include_value
                 if exclude_value:
-                    self.filter_exclude_groups_dict[filter_group_id][source_field] = exclude_value
+                    self.filter_exclude_groups_dict[filter_group_id][
+                        source_field
+                    ] = exclude_value

@@ -78,18 +78,20 @@ class DwcaDataSharkStandard:
                                         add_row = False
 
                             # Check combinations of fields.
-                            filter_groups = self.filters.get_filter_include_groups()
-                            for group_key, group_value in filter_groups.items():
-                                for filter_key, filter_value in group_value.items():
-                                    pass # TODO:
+                            
+                            # filter_groups = self.filters.get_filter_include_groups()
+                            # for group_key, group_value in filter_groups.items():
+                            #     for filter_key, filter_value in group_value.items():
+                            #         pass # TODO:
+
                             filter_groups = self.filters.get_filter_exclude_groups()
                             for group_key, group_value in filter_groups.items():
-                                all_in_group_matches = True
+                                number_of_match = 0
                                 for filter_key, filter_value in group_value.items():
                                     value = row_dict.get(filter_key, "")
-                                    if value != filter_value:
-                                        all_in_group_matches = False
-                                if all_in_group_matches == True:
+                                    if str(value) == str(filter_value):
+                                        number_of_match += 1
+                                if number_of_match == len(group_value):
                                     print("DEBUG: Group-exclude: ", row_dict["debug_info"], "   ", group_key, "   ", group_value)
                                     add_row = False
 

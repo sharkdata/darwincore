@@ -104,16 +104,16 @@ dataset_name	SHARK_Zoobenthos_2019_LNU_HLS
 sample_latitude_dd		58.99978	Pos-on-land-1
 sample_longitude_dd		17.82975	Pos-on-land-1
 
-sample_latitude_dd		64.668	Pos-on-land-2
-sample_longitude_dd		21.0305	Pos-on-land-2
+sample_latitude_dd		64.66800	Pos-on-land-2
+sample_longitude_dd		21.03050	Pos-on-land-2
 
 sample_latitude_dd		64.97667	Pos-on-land-3
 sample_longitude_dd		21.16767	Pos-on-land-3
 
 sample_latitude_dd		64.91667	Pos-on-land-4
-sample_longitude_dd		21.1465	Pos-on-land-4
+sample_longitude_dd		21.14650	Pos-on-land-4
 
-sample_latitude_dd		57.45	Pos-on-land-5
+sample_latitude_dd		57.45000	Pos-on-land-5
 sample_longitude_dd		18.21833	Pos-on-land-5
 
 sample_latitude_dd		57.36333	Pos-on-land-6
@@ -130,16 +130,10 @@ sample_longitude_dd		19.84833	Pos-on-land-9
 
 sample_latitude_dd		0	Pos-zero-1
 sample_longitude_dd		0	Pos-zero-1
-
 sample_latitude_dd		0.0	Pos-zero-2
 sample_longitude_dd		0.0	Pos-zero-2
-
-visit_latitude_dd		0	Pos-zero-3
-visit_longitude_dd		0	Pos-zero-3
-
-visit_latitude_dd		0.0	Pos-zero-4
-visit_longitude_dd		0.0	Pos-zero-4
-
+sample_latitude_dd		0.00000	Pos-zero-3
+sample_longitude_dd		00.00000	Pos-zero-3
 
 parameter		Sediment redox potential	Param-na-1
 value		NA	Param-na-1
