@@ -129,7 +129,7 @@ sample_latitude_dd		64.01883	Pos-on-land-9
 sample_longitude_dd		19.84833	Pos-on-land-9
 
 sample_latitude_dd		62.70167	Pos-on-land-10
-sample_longitude_dd		18.06		Pos-on-land-10
+sample_longitude_dd		18.06000	Pos-on-land-10
 
 sample_latitude_dd		0	Pos-zero-1
 sample_longitude_dd		0	Pos-zero-1
