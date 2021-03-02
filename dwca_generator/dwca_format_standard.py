@@ -4,8 +4,8 @@
 # Copyright (c) 2019-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import copy
 import pathlib
+import logging
 import datetime
 
 import dwca_generator
@@ -27,9 +27,6 @@ class DwcaFormatStandard(object):
         self.clear()
         #
         self.source_rows = self.data_object.get_data_rows()
-        #
-        self.duplicates_log_file_name = None
-        # self.duplicates_log_file_name = "duplicates_log.txt"
 
     def clear(self):
         """ """
@@ -150,13 +147,10 @@ class DwcaFormatStandard(object):
 
     def create_dwca_measurementorfact(self):
         """ """
+        logger = logging.getLogger('dwca_generator')
         # For checking for duplicates.
         used_mof_occurrence_key_list = set()
         duplicate_row_number = 0
-        # Log duplicates to file.
-        duplicates_log = None
-        if self.duplicates_log_file_name:
-            duplicates_log = pathlib.Path(self.duplicates_log_file_name).open("w")
 
         # Create control dictionary.
         emof_keys = self.dwca_gen_config.dwca_keys["eventTypeKeys"]["emof"]
@@ -258,26 +252,22 @@ class DwcaFormatStandard(object):
                 try:
                     # For checking for duplicates.
                     log_message = (
-                        "DEBUG: Duplicates: "
+                        "Duplicates: "
                         + source_row.get("debug_info" "")
                         + " Key for param/unit: "
                         + str(emof_param_unit_id)
                     )
-                    if duplicates_log:
-                        duplicates_log.write(log_message + "\n")
                     duplicate_row_number += 1
-                    if duplicate_row_number < 100:
-                        print(log_message)
-                    elif duplicate_row_number == 100:
-                        print("DEBUG: MAX LIMIT OF 100 LOG ROWS.")
+                    logger.error(log_message)
+                    # if duplicate_row_number < 100:
+                    #     logger.error(log_message)
+                    # elif duplicate_row_number == 100:
+                    #     logger.warning("MAX LIMIT OF 100 LOG ROWS.")
                 except Exception as e:
-                    print("DEBUG: Exception-duplicates: " + str(e))
+                    logger.warning("eMoF: Exception-duplicates: " + str(e))
         # Finally.
-        if duplicates_log:
-            duplicates_log.close()
-            duplicates_log = None
         if duplicate_row_number > 0:
-            print("DEBUG: Number of duplicates found: ", duplicate_row_number)
+            logger.warning("eMoF: Number of duplicates found: " + str(duplicate_row_number))
 
     def add_content(self, content, source_row, result_dict):
         """ """
@@ -462,16 +452,14 @@ class DwcaFormatStandard(object):
 
                     intellectual_rights = """
                         This work is licensed under the
-                        <ulink url="https://creativecommons.org/choose/zero/">
-                            <citetitle>Creative Commons Attribution (CC-0)</citetitle>
+                        <ulink url="https://creativecommons.org/publicdomain/zero/1.0/">
+                            <citetitle>CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</citetitle>
                         </ulink>
-                        License.
+                        license.
                         """
                     self.eml_xml_rows[index] = self.eml_xml_rows[index].replace(
                         "REPLACE-intellectualRights", intellectual_rights
                     )
-
-            intellectual_rights
 
     def create_meta_xml(self):
         """ """

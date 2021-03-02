@@ -9,7 +9,7 @@ import yaml
 import dict2xml
 import collections.abc
 
-from dwca_generator import dwca_data_standard
+from dwca_generator import dwca_data_shark
 
 
 class DwcaGeneratorConfig:
@@ -108,8 +108,8 @@ class DwcaGeneratorConfig:
                     file_path = pathlib.Path(directory_path, file_name)
                     if file_path not in source_file_list:
                         source_file_list.append(str(file_path))
-        print("\nFiles to process: ")
-        print("\n".join(sorted(source_file_list)))
+        # print("\nFiles to process: ")
+        # print("\n".join(sorted(source_file_list)))
         return sorted(source_file_list)
 
     def get_config_files(self, config_key):

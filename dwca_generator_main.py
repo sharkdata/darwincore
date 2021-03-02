@@ -4,67 +4,129 @@
 # Copyright (c) 2020-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
+import pathlib
+import logging
 import dwca_generator
 
 
-def generate_dwca(config_file):
+class DwcaGenerator():
     """ """
-    print("\n\n\n=== Processing: ", config_file)
+    def __init__(self):
+        """ """
 
-    # Config and EML content.
-    dwca_gen_config = dwca_generator.DwcaGeneratorConfig(config_file)
-    dwca_gen_config.load_config()
-    eml_content_rows = dwca_gen_config.generate_eml_content()
+    def generate_dwca(self, config_file):
+        """ """
+        # Config and EML content.
+        dwca_gen_config = dwca_generator.DwcaGeneratorConfig(config_file)
+        dwca_gen_config.load_config()
 
-    # Prepare data.
-    print("\n=== Preparing data ===")
-    filters = dwca_generator.DwcaFilters(dwca_gen_config.filters_files)
-    translate = dwca_generator.DwcaTranslate(dwca_gen_config.translate_files)
-    source_data = dwca_generator.DwcaDataSharkStandard(
-        dwca_gen_config, filters, translate
-    )
-    for dataset_filepath in dwca_gen_config.source_files:
-        source_data.add_shark_dataset(dataset_filepath)
-    source_data.create_dwca_keys()
-    source_data.cleanup_data()
+        # Setup logging.
+        log_file_name = dwca_gen_config.dwca_target
+        log_file_name = log_file_name.replace(".zip", "_LOG.txt")
+        self.setup_logging(log_file_name)
+        logger = logging.getLogger('dwca_generator')
 
-    # Create and save DwC-A.
-    print("\n=== Creating DwC-A ===")
-    species_info = dwca_generator.DwcaSpeciesWorms(
-        taxa_file_path=dwca_gen_config.taxa_worms_file
-    )
-    dwca_format = dwca_generator.DwcaFormatStandard(
-        source_data, dwca_gen_config, species_info, translate
-    )
-    dwca_format.create_dwca_event()
-    dwca_format.create_dwca_occurrence()
-    dwca_format.create_dwca_measurementorfact()
-    dwca_format.extract_metadata()
-    dwca_format.add_metadata_to_eml(eml_content_rows)
-    dwca_format.create_meta_xml()
-    dwca_format.save_to_archive_file()
+        logger.info("")
+        logger.info("")
+        logger.info("")
+        logger.info("=== Processing: " + config_file)
 
-    # Print missing taxa.
-    missing_taxa_list = species_info.get_missing_taxa_list()
-    if len(missing_taxa_list) > 0:
-        print("\n   Missing taxa: ")
-        for taxa in missing_taxa_list:
-            print("   - ", taxa)
+        # Prepare EML content.
+        eml_content_rows = dwca_gen_config.generate_eml_content()
 
-    print("\n=== Finished: ", config_file)
+        # Prepare data.
+        logger.info("")
+        logger.info("=== Preparing data ===")
+        filters = dwca_generator.DwcaFilters(dwca_gen_config.filters_files)
+        translate = dwca_generator.DwcaTranslate(dwca_gen_config.translate_files)
+        source_data = dwca_generator.DwcaDataSharkStandard(
+            dwca_gen_config, filters, translate
+        )
+        for dataset_filepath in dwca_gen_config.source_files:
+            source_data.add_shark_dataset(dataset_filepath)
+        source_data.create_dwca_keys()
+        source_data.cleanup_data()
+
+        # Create and save DwC-A.
+        logger.info("")
+        logger.info("=== Creating DwC-A ===")
+        species_info = dwca_generator.DwcaSpeciesWorms(
+            taxa_file_path=dwca_gen_config.taxa_worms_file
+        )
+        dwca_format = dwca_generator.DwcaFormatStandard(
+            source_data, dwca_gen_config, species_info, translate
+        )
+        dwca_format.create_dwca_event()
+        dwca_format.create_dwca_occurrence()
+        dwca_format.create_dwca_measurementorfact()
+        dwca_format.extract_metadata()
+        dwca_format.add_metadata_to_eml(eml_content_rows)
+        dwca_format.create_meta_xml()
+        dwca_format.save_to_archive_file()
+
+        # Print missing taxa.
+        missing_taxa_list = species_info.get_missing_taxa_list()
+        if len(missing_taxa_list) > 0:
+            logger.info("")
+            logger.info("Missing taxa: ")
+            for taxa in missing_taxa_list:
+                logger.warning("   - " + taxa)
+
+        logger.info("")
+        logger.info("=== Finished: " + config_file)
+
+        # Logger test:
+        # logger.debug("debug")
+        # logger.info("info")
+        # logger.warning("warning")
+        # logger.error("error")
+        # logger.critical("critical")
+
+    def setup_logging(self, log_file_name):
+        """ """
+        # Remove old logfile, if exists.
+        logfile_path = pathlib.Path(log_file_name)
+        if logfile_path.exists():
+            logfile_path.unlink()
+        # New logfile, and console logging.
+        logger = logging.getLogger('dwca_generator')
+        logger.setLevel(logging.DEBUG)
+         # Remove old handlers.
+        while logger.hasHandlers():
+            logger.removeHandler(logger.handlers[0])
+        # To file named similar to produced zip file.
+        file_handler = logging.FileHandler(log_file_name)
+        file_handler.setLevel(logging.DEBUG)
+        # Console logging.
+        console_handler = logging.StreamHandler()
+        console_handler.setLevel(logging.DEBUG)
+        # Create formatter and add to the handlers.
+        formatter = logging.Formatter('%(asctime)s %(levelname)s : %(message)s')
+        file_handler.setFormatter(formatter)
+        formatter = logging.Formatter('%(message)s')
+        console_handler.setFormatter(formatter)
+        # Add filter to console to avoid huge error lists.
+        class ConsoleFilter(logging.Filter):
+            def filter(self, record):
+                return record.levelno in [logging.DEBUG, logging.INFO, logging.WARNING]
+        console_handler.addFilter(ConsoleFilter())
+        # Add handlers to the loggers.
+        logger.addHandler(file_handler)
+        logger.addHandler(console_handler)
 
 # For TEST.
 if __name__ == "__main__":
     """ """
     # Test configs.
     config_files = [
-        # "dwca_config/dwca_bacterioplankton_nat.yaml",
-        # "dwca_config/dwca_zooplankton_nat.yaml",
-        # "dwca_config/dwca_zoobenthos_nat.yaml",
-        # "dwca_config/dwca_phytoplankton_nat.yaml",
+        "dwca_config/dwca_bacterioplankton_nat.yaml",
+        "dwca_config/dwca_zooplankton_nat.yaml",
+        "dwca_config/dwca_zoobenthos_nat.yaml",
+        "dwca_config/dwca_phytoplankton_nat.yaml",
 
         "dwca_config\dwca_phytoplankton_reg_recip_proj.yaml",
         "dwca_config/dwca_zoobenthos_reg_recip_proj.yaml",
     ]
+    generator = DwcaGenerator()
     for config_file in config_files:
-        generate_dwca(config_file)
+        generator.generate_dwca(config_file)

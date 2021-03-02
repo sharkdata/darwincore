@@ -5,6 +5,7 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import pathlib
+import logging
 import zipfile
 
 import dwca_generator
@@ -36,6 +37,33 @@ class DwcaDataSharkStandard:
 
     def add_shark_dataset(self, dataset_filepath):
         """ Add data from SHARK zipped files. """
+        logger = logging.getLogger('dwca_generator')
+
+        logger.info("")
+        logger.info("Adding dataset: " + dataset_filepath)
+
+        # Check if data package is marked for production (PROD).
+        status_prod = False
+        try:
+            with zipfile.ZipFile(dataset_filepath) as z:
+                with z.open("processed_data/delivery_note.txt", "r") as f:
+                    for row in f:
+                        row = row.decode("cp1252")
+                        row_items = [str(x.strip()) for x in row.split(":")]
+                        if len(row_items) >=2:
+                            key = row_items[0]
+                            value =row_items[1]
+                            if (key.lower() == "status") and (value.lower() == "prod"):
+                                status_prod = True
+        except Exception as e:
+            logger.warning("EXCEPTION: failed to read ZIP file: " + str(e))
+            logger.error("EXCEPTION: failed to read ZIP file: " + str(e))
+            return
+
+        if not status_prod:
+            logger.info("Package NOT status PROD, skipped: " + dataset_filepath)
+            return
+
         try:
             header = []
             # From file in zip to list of rows.
@@ -77,6 +105,11 @@ class DwcaDataSharkStandard:
                                     if excluded_values and (value in excluded_values):
                                         add_row = False
 
+                                if filter_column_name == "dataset_name":
+                                    if add_row == False:
+                                        logger.info("- Dataset not included based on filters.")
+                                        return
+
                             # Check combinations of fields.
                             
                             # filter_groups = self.filters.get_filter_include_groups()
@@ -92,7 +125,8 @@ class DwcaDataSharkStandard:
                                     if str(value) == str(filter_value):
                                         number_of_match += 1
                                 if number_of_match == len(group_value):
-                                    print("DEBUG: Group-exclude: ", row_dict["debug_info"], "   ", group_key, "   ", group_value)
+                                    msg = row_dict["debug_info"] + "   " + group_key + "   " + str(group_value)
+                                    logger.warning("- DEBUG: Group-exclude: " + msg)
                                     add_row = False
 
                             # Add to list.
@@ -113,7 +147,8 @@ class DwcaDataSharkStandard:
                                 # Append.
                                 self.row_list.append(row_dict.copy())
         except Exception as e:
-            print("Exception: ", str(dataset_filepath), e)
+            msg = str(dataset_filepath) + str(e)
+            logger.warning("Exception: " + msg)
 
     def cleanup_data(self):
         """ """

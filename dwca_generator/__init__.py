@@ -9,7 +9,7 @@ from dwca_generator.dwca_filters import DwcaFilters
 from dwca_generator.dwca_translate import DwcaTranslate
 from dwca_generator.dwca_taxa_worms import DwcaSpeciesWorms
 
-from dwca_generator.dwca_data_standard import DwcaDataSharkStandard
+from dwca_generator.dwca_data_shark import DwcaDataSharkStandard
 from dwca_generator.dwca_format_standard import DwcaFormatStandard
 from dwca_generator.dwca_meta_xml import DarwinCoreMetaXml
 
