@@ -153,53 +153,53 @@ sampler_type_code		HC	Hand corer
 calculation_method		F	Flowmeter reading	
 calculation_method		H	Haul length
 
-sex	F	Female
-sex	H	Hermaphrodite
-sex	I	Immature
-sex	M	Male
-sex	U	Undetermined
-sex	X	Mixed
-	
-analysis_method_code	AAS	Atomic Absorption Spectrometry
-analysis_method_code	CLC	Coulter counter
-analysis_method_code	CNA	Carbon/nitrogen analyser - CHN analyzer
-analysis_method_code	CND	Conductometric analysis
-analysis_method_code	COL	Colourimetric methods
-analysis_method_code	DSV	Dry sieving
-analysis_method_code	FLM	Fluorometric determination
-analysis_method_code	GC-AED	Gas chromotography - atomic emission detection
-analysis_method_code	GC-ECD	Gas chromotography - electron capture detector
-analysis_method_code	GC-EI	Gas chromotography - electron impact ionization
-analysis_method_code	GC-FPD	GC- Flame photometric detector
-analysis_method_code	GC-KAT	Gas chromotography - katharometer
-analysis_method_code	GC-MS	Gas chromotography - mass spectrometry
-analysis_method_code	GC-MSD	Gas chromotography - mass selective detector
-analysis_method_code	GC-NCI	Gas chromotography - negative chemical ionization
-analysis_method_code	GC-PFPD	GC- Pulsed flame photometrc detector
-analysis_method_code	GRS	Gross examination
-analysis_method_code	GRV	Gravimetric
-analysis_method_code	HPLC	High performance liquid chromotography
-analysis_method_code	HPLC-FD	HPLC - fluorescence detector
-analysis_method_code	HPLC-MS	HPLC - mass spectrometry
-analysis_method_code	HPLC-UV	HPLC - UV detector
-analysis_method_code	IMA	Image analysis
-analysis_method_code	IN SITU	in situ method for primary production measurements
-analysis_method_code	INCUBATOR	incubator method for primary production measurements
-analysis_method_code	INCUBAT_BPD	incubator method used to calculate the total primary production at differrent dephts
-analysis_method_code	ISE	Ion selective electrode
-analysis_method_code	LOR	Lorenzen chlorophyll-a assay
-analysis_method_code	MIC-EM	Microscope - electron microscope
-analysis_method_code	MIC-LM	Microscope - light microscope
-analysis_method_code	MIT-TM	Molecular identification technique
-analysis_method_code	MS	Mass spectrometry
-analysis_method_code	OXE	Oxygen electrode
-analysis_method_code	PH	pH electrode
-analysis_method_code	PSA	Particle Size Analyzer
-analysis_method_code	SMD	Smedes method
-analysis_method_code	SPEC	Spectrophotometry
-analysis_method_code	SPEC-IR	Spectrophotometry - infrared
-analysis_method_code	THR	Thermometre / temperature device
-analysis_method_code	TITR	Titreringsmetod
-analysis_method_code	UTM	Utermöhl technique
-analysis_method_code	WINK	Bestämning av löst syre med hjälp av winkler-titrering
-analysis_method_code	WSV	Wet sieving
+sex_code		F	Female
+sex_code		H	Hermaphrodite
+sex_code		I	Immature
+sex_code		M	Male
+sex_code		U	Undetermined
+sex_code		X	Mixed
+
+analysis_method_code		AAS	Atomic Absorption Spectrometry
+analysis_method_code		CLC	Coulter counter
+analysis_method_code		CNA	Carbon/nitrogen analyser - CHN analyzer
+analysis_method_code		CND	Conductometric analysis
+analysis_method_code		COL	Colourimetric methods
+analysis_method_code		DSV	Dry sieving
+analysis_method_code		FLM	Fluorometric determination
+analysis_method_code		GC-AED	Gas chromotography - atomic emission detection
+analysis_method_code		GC-ECD	Gas chromotography - electron capture detector
+analysis_method_code		GC-EI	Gas chromotography - electron impact ionization
+analysis_method_code		GC-FPD	GC- Flame photometric detector
+analysis_method_code		GC-KAT	Gas chromotography - katharometer
+analysis_method_code		GC-MS	Gas chromotography - mass spectrometry
+analysis_method_code		GC-MSD	Gas chromotography - mass selective detector
+analysis_method_code		GC-NCI	Gas chromotography - negative chemical ionization
+analysis_method_code		GC-PFPD	GC- Pulsed flame photometrc detector
+analysis_method_code		GRS	Gross examination
+analysis_method_code		GRV	Gravimetric
+analysis_method_code		HPLC	High performance liquid chromotography
+analysis_method_code		HPLC-FD	HPLC - fluorescence detector
+analysis_method_code		HPLC-MS	HPLC - mass spectrometry
+analysis_method_code		HPLC-UV	HPLC - UV detector
+analysis_method_code		IMA	Image analysis
+analysis_method_code		IN SITU	in situ method for primary production measurements
+analysis_method_code		INCUBATOR	incubator method for primary production measurements
+analysis_method_code		INCUBAT_BPD	incubator method used to calculate the total primary production at differrent dephts
+analysis_method_code		ISE	Ion selective electrode
+analysis_method_code		LOR	Lorenzen chlorophyll-a assay
+analysis_method_code		MIC-EM	Microscope - electron microscope
+analysis_method_code		MIC-LM	Microscope - light microscope
+analysis_method_code		MIT-TM	Molecular identification technique
+analysis_method_code		MS	Mass spectrometry
+analysis_method_code		OXE	Oxygen electrode
+analysis_method_code		PH	pH electrode
+analysis_method_code		PSA	Particle Size Analyzer
+analysis_method_code		SMD	Smedes method
+analysis_method_code		SPEC	Spectrophotometry
+analysis_method_code		SPEC-IR	Spectrophotometry - infrared
+analysis_method_code		THR	Thermometre / temperature device
+analysis_method_code		TITR	Titreringsmetod
+analysis_method_code		UTM	Utermöhl technique
+analysis_method_code		WINK	Bestämning av löst syre med hjälp av winkler-titrering
+analysis_method_code		WSV	Wet sieving
