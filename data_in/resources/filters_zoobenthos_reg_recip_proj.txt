@@ -1,0 +1,164 @@
+source_field	include_value	exclude_value	filter_group_id	comments
+			
+dataset_name		SHARK_Zoobenthos_1971_2006_SUSE_1
+dataset_name		SHARK_Zoobenthos_1977_2008_KMRS_Alsback
+dataset_name		SHARK_Zoobenthos_1971_2006_SUSE_2
+dataset_name		SHARK_Zoobenthos_1971_2006_SUSE_Asko
+dataset_name		SHARK_Zoobenthos_1983_UMSC
+dataset_name		SHARK_Zoobenthos_1983_KMRS
+dataset_name		SHARK_Zoobenthos_1984_UMSC
+dataset_name		SHARK_Zoobenthos_1984_KMRS
+dataset_name		SHARK_Zoobenthos_1985_UMSC
+dataset_name		SHARK_Zoobenthos_1985_KMRS
+dataset_name		SHARK_Zoobenthos_1986_UMSC
+dataset_name		SHARK_Zoobenthos_1986_KMRS
+dataset_name		SHARK_Zoobenthos_1987_UMSC
+dataset_name		SHARK_Zoobenthos_1987_KMRS
+dataset_name		SHARK_Zoobenthos_1988_UMSC
+dataset_name		SHARK_Zoobenthos_1988_KMRS
+dataset_name		SHARK_Zoobenthos_1989_UMSC
+dataset_name		SHARK_Zoobenthos_1989_KMRS
+dataset_name		SHARK_Zoobenthos_1990_1999_UMSC
+dataset_name		SHARK_Zoobenthos_1990_1991_LNU_PMK
+dataset_name		SHARK_Zoobenthos_1990_KMRS
+dataset_name		SHARK_Zoobenthos_1991_KMRS 
+dataset_name		SHARK_Zoobenthos_1992_KMRS
+dataset_name		SHARK_Zoobenthos_1993_KMRS
+dataset_name		SHARK_Zoobenthos_1994_KMRS
+dataset_name		SHARK_Zoobenthos_1995_KMRS
+dataset_name		SHARK_Zoobenthos_1996_KMRS
+dataset_name		SHARK_Zoobenthos_1997_KMRS
+dataset_name		SHARK_Zoobenthos_1998_KMRS
+dataset_name		SHARK_Zoobenthos_1999_KMRS
+dataset_name		SHARK_Zoobenthos_2000_UMSC
+dataset_name		SHARK_Zoobenthos_2000_KMRS
+dataset_name		SHARK_Zoobenthos_2001_UMSC
+dataset_name		SHARK_Zoobenthos_2001_KMRS
+dataset_name		SHARK_Zoobenthos_2002_UMSC
+dataset_name		SHARK_Zoobenthos_2002_KMRS
+dataset_name		SHARK_Zoobenthos_2003_UMSC
+dataset_name		SHARK_Zoobenthos_2003_KMRS
+dataset_name		SHARK_Zoobenthos_2004_UMSC
+dataset_name		SHARK_Zoobenthos_2004_KMRS
+dataset_name		SHARK_Zoobenthos_2005_UMSC
+dataset_name		SHARK_Zoobenthos_2005_KMRS
+dataset_name		SHARK_Zoobenthos_2006_UMSC
+dataset_name		SHARK_Zoobenthos_2006_KMRS
+dataset_name		SHARK_Zoobenthos_2007_UMSC
+dataset_name		SHARK_Zoobenthos_2007_KMRS
+dataset_name		SHARK_Zoobenthos_2007_2008_LNU_Torhamn
+dataset_name		SHARK_Zoobenthos_2008_UMSC
+dataset_name		SHARK_Zoobenthos_2008_NLST
+dataset_name		SHARK_Zoobenthos_2008_KMRS
+dataset_name		SHARK_Zoobenthos_2009_UMSC_Nationella
+dataset_name		SHARK_Zoobenthos_2009_KMRS
+dataset_name		SHARK_Zoobenthos_2010_UMSC
+dataset_name		SHARK_Zoobenthos_2007_2010_SUSE_Nat
+dataset_name		SHARK_Zoobenthos_2011_KMRS_Havstenfjord
+dataset_name		SHARK_Zoobenthos_2011_AQBI_MARMONI
+dataset_name		SHARK_Zoobenthos_2011_UMSC
+dataset_name		SHARK_Zoobenthos_2011_SUSE
+dataset_name		SHARK_Zoobenthos_2011_KMRS
+dataset_name		SHARK_Zoobenthos_2011_KMRS_NAT_extra
+dataset_name		SHARK_Zoobenthos_2012_AQBI_MMSB
+dataset_name		SHARK_Zoobenthos_2012_AQBI_MARMONI
+dataset_name		SHARK_Zoobenthos_2012_SUSE
+dataset_name		SHARK_Zoobenthos_2012_UMSC
+dataset_name		SHARK_Zoobenthos_2012_HAFOK_Ostergotland
+dataset_name		SHARK_Zoobenthos_2012_HAFOK_Orust_Tjorn
+dataset_name		SHARK_Zoobenthos_2013_UMSC
+dataset_name		SHARK_Zoobenthos_2013_DEEP
+dataset_name		SHARK_Zoobenthos_2013_SLC-K
+dataset_name		SHARK_Zoobenthos_2014_UMSC
+dataset_name		SHARK_Zoobenthos_2014_SLC-T
+dataset_name		SHARK_Zoobenthos_2014_DEEP
+dataset_name		SHARK_Zoobenthos_2015_UMSC
+dataset_name		SHARK_Zoobenthos_2015_SLC-T
+dataset_name		SHARK_Zoobenthos_2007_2016_DEEP_Asko
+dataset_name		SHARK_Zoobenthos_2015_DEEP
+dataset_name		SHARK_Zoobenthos_2015_MMAB
+dataset_name		SHARK_Zoobenthos_2016_SLUA
+dataset_name		SHARK_Zoobenthos_2016_SLC-T
+dataset_name		SHARK_Zoobenthos_2016_UMSC
+dataset_name		SHARK_Zoobenthos_2016_LNU
+dataset_name		SHARK_Zoobenthos_2016_DEEP
+dataset_name		SHARK_Zoobenthos_2017_2019_GU
+dataset_name		SHARK_Zoobenthos_2017_UMSC
+dataset_name		SHARK_Zoobenthos_2017_DEEP_Asko
+dataset_name		SHARK_Zoobenthos_2017_DEEP
+dataset_name		SHARK_Zoobenthos_2017_LNU
+dataset_name		SHARK_Zoobenthos_2017_LNU_Kalmar
+dataset_name		SHARK_Zoobenthos_2018_UMSC
+dataset_name		SHARK_Zoobenthos_2018_DEEP_Asko
+dataset_name		SHARK_Zoobenthos_2018_LNU
+dataset_name		SHARK_Zoobenthos_2018_GU
+dataset_name		SHARK_Zoobenthos_2018_DEEP
+dataset_name		SHARK_Zoobenthos_2018_LNU_Kalmar
+dataset_name		SHARK_Zoobenthos_2019_UMSC
+dataset_name		SHARK_Zoobenthos_2019_LNU
+dataset_name		SHARK_Zoobenthos_2019_DEEP_HAV_Asko
+dataset_name		SHARK_Zoobenthos_2019_DEEP_HAV
+dataset_name		SHARK_Zoobenthos_2019_LNU_HLS
+
+
+sample_latitude_dd		58.99978	Pos-on-land-1
+sample_longitude_dd		17.82975	Pos-on-land-1
+
+sample_latitude_dd		64.66800	Pos-on-land-2
+sample_longitude_dd		21.03050	Pos-on-land-2
+
+sample_latitude_dd		64.97667	Pos-on-land-3
+sample_longitude_dd		21.16767	Pos-on-land-3
+
+sample_latitude_dd		64.91667	Pos-on-land-4
+sample_longitude_dd		21.14650	Pos-on-land-4
+
+sample_latitude_dd		57.45000	Pos-on-land-5
+sample_longitude_dd		18.21833	Pos-on-land-5
+
+sample_latitude_dd		57.36333	Pos-on-land-6
+sample_longitude_dd		18.36667	Pos-on-land-6
+
+sample_latitude_dd		57.47667	Pos-on-land-7
+sample_longitude_dd		18.36667	Pos-on-land-7
+
+sample_latitude_dd		57.23467	Pos-on-land-8
+sample_longitude_dd		18.28833	Pos-on-land-8
+
+sample_latitude_dd		64.01883	Pos-on-land-9
+sample_longitude_dd		19.84833	Pos-on-land-9
+
+sample_latitude_dd		62.70167	Pos-on-land-10
+sample_longitude_dd		18.06000	Pos-on-land-10
+
+sample_latitude_dd		0	Pos-zero-1
+sample_longitude_dd		0	Pos-zero-1
+sample_latitude_dd		0.0	Pos-zero-2
+sample_longitude_dd		0.0	Pos-zero-2
+sample_latitude_dd		0.00000	Pos-zero-3
+sample_longitude_dd		00.00000	Pos-zero-3
+
+parameter		Sediment redox potential	Param-na-1
+value		NA	Param-na-1
+parameter		Sediment water content	Param-na-2
+value		NA	Param-na-2
+
+
+parameter		# counted	Param-zero-1
+value		0	Param-zero-1
+
+parameter		Abundance	Param-zero-2
+value		0.0	Param-zero-2
+
+parameter		Wet weight	Param-zero-3
+value		0.00	Param-zero-3
+
+parameter		Wet weight/area	Param-zero-4
+value		0.0	Param-zero-4
+
+parameter		Dry weight	Param-zero-5
+value		0	Param-zero-5
+
+parameter		Wet weight	Param-zero-6
+value		0	Param-zero-6
+		

@@ -58,10 +58,13 @@ if __name__ == "__main__":
     """ """
     # Test configs.
     config_files = [
-        "dwca_config/dwca_bacterioplankton_nat.yaml",
-        "dwca_config/dwca_zooplankton_nat.yaml",
-        "dwca_config/dwca_zoobenthos_nat.yaml",
-        "dwca_config/dwca_phytoplankton_nat.yaml",
+        # "dwca_config/dwca_bacterioplankton_nat.yaml",
+        # "dwca_config/dwca_zooplankton_nat.yaml",
+        # "dwca_config/dwca_zoobenthos_nat.yaml",
+        # "dwca_config/dwca_phytoplankton_nat.yaml",
+
+        "dwca_config\dwca_phytoplankton_reg_recip_proj.yaml",
+        "dwca_config/dwca_zoobenthos_reg_recip_proj.yaml",
     ]
     for config_file in config_files:
         generate_dwca(config_file)
