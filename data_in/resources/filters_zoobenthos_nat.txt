@@ -148,17 +148,47 @@ parameter		# counted	Param-zero-1
 value		0	Param-zero-1
 
 parameter		Abundance	Param-zero-2
-value		0.0	Param-zero-2
+value		0	Param-zero-2
 
-parameter		Wet weight	Param-zero-3
-value		0.00	Param-zero-3
+parameter		Abundance	Param-zero-3
+value		0.0	Param-zero-3
 
 parameter		Wet weight/area	Param-zero-4
-value		0.0	Param-zero-4
+value		0	Param-zero-4
 
-parameter		Dry weight	Param-zero-5
-value		0	Param-zero-5
+parameter		Wet weight/area	Param-zero-5
+value		0.0	Param-zero-5
 
-parameter		Wet weight	Param-zero-6
+parameter		Dry weight	Param-zero-6
 value		0	Param-zero-6
-		
+
+parameter		Dry weight	Param-zero-7
+value		0.0	Param-zero-7
+
+parameter		Wet weight	Param-zero-8
+value		0	Param-zero-8
+
+parameter		Wet weight	Param-zero-9
+value		0.0	Param-zero-9
+
+parameter		Wet weight	Param-zero-10
+value		0.00	Param-zero-10
+
+parameter		H2S smell	Param-H2S-smell-1
+value		1.00	Param-H2S-smell-1
+
+parameter		H2S smell	Param-H2S-smell-2
+value		0.00	Param-H2S-smell-2
+
+parameter		H2S smell	Param-H2S-smell-3
+value		0.5	Param-H2S-smell-3
+
+parameter		H2S smell	Param-H2S-smell-4
+value		1	Param-H2S-smell-4
+
+parameter		H2S smell	Param-H2S-smell-5
+value		0	Param-H2S-smell-5
+
+parameter		H2S smell	Param-H2S-smell-6
+value		Okänt	Param-H2S-smell-6
+

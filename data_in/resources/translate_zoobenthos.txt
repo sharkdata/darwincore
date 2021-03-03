@@ -1,1 +1,12 @@
 source_field	dwc_field	from_value	to_value	comments
+
+value		Ja	Yes	For parameter H2S smell.
+value		Nej	No	For parameter H2S smell.
+value		J	Yes	For parameter H2S smell.
+value		N	No	For parameter H2S smell.
+value		Y	Yes	For parameter H2S smell.
+value		N	No	For parameter H2S smell.
+value		YES	Yes	For parameter H2S smell.
+value		NO	No	For parameter H2S smell.
+
+value		Ja(svag)	Yes	For parameter H2S smell.
