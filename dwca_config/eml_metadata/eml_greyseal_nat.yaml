@@ -9,7 +9,7 @@ additionalMetadata:
                 Swedish Museum of Natural History
                 Swedish Agency for Marine and Water Management
                 Swedish Environmental Protection Agency and 
-                Swedish Meteorological and Hydrological Institute (2020).
+                Swedish Meteorological and Hydrological Institute (2021).
                 National Grey seal monitoring in Sweden since 1989.
 
 dataset: 
@@ -31,7 +31,7 @@ dataset:
                     - Data is collected by counting seals from land, ship or airplane.
         sampling: 
             description:
-                The Swedish Ringed seal monitoring program studies the number of Ringed seals in the Bothnian Bay.
+                The Swedish Grey seal monitoring program studies the number of Grey seals in the seas surrounding Sweden.
 
     coverage: 
         geographicCoverage: 

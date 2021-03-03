@@ -9,7 +9,7 @@ additionalMetadata:
                 Swedish Museum of Natural History
                 Swedish Agency for Marine and Water Management
                 Swedish Environmental Protection Agency and
-                Swedish Meteorological and Hydrological Institute (2017).
+                Swedish Meteorological and Hydrological Institute (2021).
                 National Harbour seal monitoring in Sweden since 1988.
 
 dataset: 
@@ -32,7 +32,7 @@ dataset:
                       https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html
         sampling: 
             description:
-                The Swedish Ringed seal monitoring program studies the number of Ringed seals in the Bothnian Bay.
+                The Swedish Harbour seal monitoring program studies the number of Harbour seals in the seas surrounding Sweden.
 
     coverage: 
         geographicCoverage: 
