@@ -37,8 +37,8 @@ dataset:
     coverage: 
         geographicCoverage: 
             geographicDescription: 
-                "Data is collected within the following marine ecoregions using coordinate system WGS84:"
-                http://marineregions.org/mrgid/4372, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379
+                '"Data is collected within the following marine ecoregions using coordinate system WGS84:"
+                http://marineregions.org/mrgid/4372, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379'
         taxonomicCoverage: 
             The dataset contains the species Phoca vitulina
 
