@@ -16,7 +16,7 @@ class DwcaFilters:
         self.filters_dict = {}
         self.filter_include_groups_dict = {}
         self.filter_exclude_groups_dict = {}
-        self.load_translate()
+        self.load_filters()
 
     def get_filters_from_source(self, source_field, value):
         """ """
@@ -41,7 +41,7 @@ class DwcaFilters:
         """ """
         return self.filter_exclude_groups_dict
 
-    def load_translate(self):
+    def load_filters(self):
         """ """
         self.filters_dict = {}
         #
@@ -50,7 +50,8 @@ class DwcaFilters:
             header = []
             if filters_file_path.suffix in [".txt", ".tsv"]:
                 # Stored as text file.
-                with filters_file_path.open("r", encoding="cp1252") as filters_file:
+                with filters_file_path.open("r", encoding="utf8") as filters_file:
+                # with filters_file_path.open("r", encoding="cp1252") as filters_file:
                     for index, row in enumerate(filters_file):
                         row = [item.strip() for item in row.split("\t")]
                         if index == 0:
