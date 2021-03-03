@@ -22,15 +22,15 @@ dataset:
             - The monitoring is performed by the Swedish Museum of Natural History. 
             - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
             - Monitoring of Ringed seal is performed by counting seals in transects from airplane. 
-            - More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html
+            - 'More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
 
     methods: 
         methodStep: 
             description: 
                 para:
                     - Data is collected by counting seals in transects from airplane.
-                    - More information about the method is available in Swedish at
-                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html
+                    - 'More information about the method is available in Swedish at
+                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
         sampling: 
             description:
                 The Swedish Ringed seal monitoring program studies the number of Ringed seals in the Bothnian Bay.

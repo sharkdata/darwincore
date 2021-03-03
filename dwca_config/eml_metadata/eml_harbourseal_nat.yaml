@@ -22,14 +22,14 @@ dataset:
             - The monitoring is performed by the Swedish Museum of Natural History. 
             - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
             - Monitoring of seals is performed by counting seals from land, ship or airplane. 
-            - More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html
+            - 'More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
 
     methods: 
         methodStep: 
             description: 
                 para:
-                    - More information about the method is available in Swedish at
-                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html
+                    - 'More information about the method is available in Swedish at
+                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
         sampling: 
             description:
                 The Swedish Harbour seal monitoring program studies the number of Harbour seals in the seas surrounding Sweden.

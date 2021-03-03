@@ -22,7 +22,7 @@ dataset:
             - The monitoring is performed by the Swedish Museum of Natural History. 
             - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
             - Monitoring of seals is performed by counting seals from land, ship or airplane. 
-            - More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html
+            - 'More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
 
     methods: 
         methodStep: 
@@ -36,8 +36,8 @@ dataset:
     coverage: 
         geographicCoverage: 
             geographicDescription: 
-                "Data is collected within the following marine ecoregions using coordinate system WGS84:"
-                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379
+                '"Data is collected within the following marine ecoregions using coordinate system WGS84:"
+                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379'
         taxonomicCoverage: 
             The dataset contains the species Halichoerus grypus.
 

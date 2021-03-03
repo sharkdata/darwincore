@@ -108,7 +108,8 @@ class DwcaGenerator():
         # Add filter to console to avoid huge error lists.
         class ConsoleFilter(logging.Filter):
             def filter(self, record):
-                return record.levelno in [logging.DEBUG, logging.INFO, logging.WARNING]
+                return record.levelno in [logging.INFO, logging.WARNING]
+                # return record.levelno in [logging.DEBUG, logging.INFO, logging.WARNING]
         console_handler.addFilter(ConsoleFilter())
         # Add handlers to the loggers.
         logger.addHandler(file_handler)
@@ -126,6 +127,10 @@ if __name__ == "__main__":
 
         "dwca_config\dwca_phytoplankton_reg_recip_proj.yaml",
         "dwca_config/dwca_zoobenthos_reg_recip_proj.yaml",
+
+        "dwca_config/dwca_harbourseal_nat.yaml",
+        "dwca_config/dwca_greyseal_nat.yaml",
+        "dwca_config/dwca_ringedseal_nat.yaml",
     ]
     generator = DwcaGenerator()
     for config_file in config_files:

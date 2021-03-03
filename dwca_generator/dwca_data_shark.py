@@ -126,7 +126,7 @@ class DwcaDataSharkStandard:
                                         number_of_match += 1
                                 if number_of_match == len(group_value):
                                     msg = row_dict["debug_info"] + "   " + group_key + "   " + str(group_value)
-                                    logger.warning("- DEBUG: Group-exclude: " + msg)
+                                    logger.debug("- Group-exclude: " + msg)
                                     add_row = False
 
                             # Add to list.
