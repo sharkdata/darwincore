@@ -109,11 +109,6 @@ class DwcaDataSharkStandard:
                                     if excluded_values and (value in excluded_values):
                                         add_row = False
 
-                                if filter_column_name == "dataset_name":
-                                    if add_row == False:
-                                        logger.info("- Dataset not included based on filters.")
-                                        return
-
                             # Check combinations of fields.
                             
                             # filter_groups = self.filters.get_filter_include_groups()
