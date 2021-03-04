@@ -56,15 +56,18 @@ class DwcaDataSharkStandard:
                             if (key.lower() == "status") and (value.lower() == "prod"):
                                 status_prod = True
         except Exception as e:
-            logger.warning("EXCEPTION: failed to read ZIP file: " + str(e))
-            logger.error("EXCEPTION: failed to read ZIP file: " + str(e))
+            logger.warning(" - EXCEPTION: failed to read ZIP file: " + str(e))
+            logger.error(" - EXCEPTION: failed to read ZIP file: " + str(e))
             return
 
         if not status_prod:
-            logger.info("Package NOT status PROD, skipped: " + dataset_filepath)
+            logger.info(" - Package NOT status PROD, skipped: " + dataset_filepath)
             return
 
         try:
+            counter_rows = 0
+            counter_filtered = 0
+            counter_used = 0
             header = []
             # From file in zip to list of rows.
             with zipfile.ZipFile(dataset_filepath) as z:
@@ -75,6 +78,7 @@ class DwcaDataSharkStandard:
                         if index == 0:
                             header = row_items
                         else:
+                            counter_rows += 1
                             row_dict = dict(zip(header, row_items))
 
                             # Add debug info.
@@ -125,8 +129,8 @@ class DwcaDataSharkStandard:
                                     if str(value) == str(filter_value):
                                         number_of_match += 1
                                 if number_of_match == len(group_value):
-                                    msg = row_dict["debug_info"] + "   " + group_key + "   " + str(group_value)
-                                    logger.debug("- Group-exclude: " + msg)
+                                    # msg = row_dict["debug_info"] + "   " + group_key + "   " + str(group_value)
+                                    # logger.debug(" - Group-exclude: " + msg)
                                     add_row = False
 
                             # Add to list.
@@ -145,7 +149,14 @@ class DwcaDataSharkStandard:
                                         if value != new_value:
                                             row_dict[key] = new_value
                                 # Append.
+                                counter_used += 1
                                 self.row_list.append(row_dict.copy())
+                            else:
+                                counter_filtered += 1
+            #
+            msg = " - Rows used: " + str(counter_used) + "   filtered: " + str(counter_filtered) + "   total: " + str(counter_rows)
+            logger.info(msg)
+
         except Exception as e:
             msg = str(dataset_filepath) + str(e)
             logger.warning("Exception: " + msg)
