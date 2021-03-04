@@ -38,4 +38,4 @@ additionalMetadata:
     metadata: 
         gbif: 
             dateStamp: REPLACE-dateStamp
-            hierarchyLevel: REPLACE-hierarchyLevel
+            hierarchyLevel: dataset
