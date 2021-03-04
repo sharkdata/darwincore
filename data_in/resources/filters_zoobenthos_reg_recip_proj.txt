@@ -161,4 +161,7 @@ value		0	Param-zero-5
 
 parameter		Wet weight	Param-zero-6
 value		0	Param-zero-6
-		
+
+parameter		Wet weight	Param-zero-7
+value		0.0000	Param-zero-7
+
