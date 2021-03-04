@@ -61,4 +61,4 @@ filters:
         data_in/resources
     files:
         - filters.txt
-        # - filters_greyseal.txt
+        - filters_seal.txt

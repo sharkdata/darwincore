@@ -61,4 +61,4 @@ filters:
         data_in/resources
     files:
         - filters.txt
-        # - filters_harbourseal.txt
+        - filters_seal.txt

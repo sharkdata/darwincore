@@ -282,11 +282,15 @@ class DwcaFormatStandard(object):
             if "default" in term_dict:
                 value = term_dict["default"]
                 if value:
+                    if term in translate_keys:
+                        value = self.translate.get_translate_from_dwc(term, value)
                     result_dict[term] = value
             # Other alternatives, use first found.
             if "text" in term_dict:
                 value = term_dict["text"]
                 if value:
+                    if term in translate_keys:
+                        value = self.translate.get_translate_from_dwc(term, value)
                     result_dict[term] = value
 
             elif "sourceKey" in term_dict:
