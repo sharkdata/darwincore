@@ -203,3 +203,93 @@ analysis_method_code		TITR	Titreringsmetod
 analysis_method_code		UTM	Utermöhl technique
 analysis_method_code		WINK	Bestämning av löst syre med hjälp av winkler-titrering
 analysis_method_code		WSV	Wet sieving
+
+weather_observation_code		0	Clear sky (no clouds at all)
+weather_observation_code		1	Partly cloudy (shattered clouds)
+weather_observation_code		2	Cloudy sky with no clear sky visible
+weather_observation_code		3	Sand storm, dust storm eller snow storm
+weather_observation_code		4	Fog or haze
+weather_observation_code		5	Drizzle
+weather_observation_code		6	Rain
+weather_observation_code		7	Snow or rain mixed with snow
+weather_observation_code		8	Hail of rain
+weather_observation_code		9	Not observed
+
+cloud_observation_code		0	No cloud
+cloud_observation_code		1	1/8 or less, but not zero
+cloud_observation_code		2	2/8
+cloud_observation_code		3	3/8
+cloud_observation_code		4	4/8
+cloud_observation_code		5	5/8
+cloud_observation_code		6	6/8
+cloud_observation_code		7	7/8 or more, but not 8/8
+cloud_observation_code		8	8/8
+cloud_observation_code		9	Not observed
+cloud_observation_code		10	Baffling
+
+calculation_method		F	Flowmeter reading
+calculation_method		H	Haul length
+
+fauna_flora_found		N	No
+fauna_flora_found		Y	Yes
+
+ice_observation_code		0	No ice
+ice_observation_code		1	Existing ice, but not identified to type or amount
+ice_observation_code		2	Few icebergs, less than 10
+ice_observation_code		3	Many icebergs, more than 10
+ice_observation_code		4	Very open or open packice (6/10 cover or less) more than 1 nautical mile frome hydrografic station
+ice_observation_code		5	Closed or very closed packice (more than 6/10 cover) more than 1 nautical mile frome hydrografic station
+ice_observation_code		6	Very open or open packice (6/10 cover or less) less than 1 nautical mile frome hydrografic station
+ice_observation_code		7	Closed or very closed packice (more than 6/10 cover) less than 1 nautical mile frome hydrografic station
+ice_observation_code		8	Hydrografic observation in very high concentration of packice, polarice or thick ice (observations done from islands of ice, drift ice, ship surrounded by ice or similar situations)
+ice_observation_code		9	No observations of ice (because of limited visability or that ice is not a parameter for observation)
+
+wave_observation_code		0	Estimated wave height: 0 m
+wave_observation_code		1	Estimated wave height: 0 - 0.1 m
+wave_observation_code		2	Estimated wave height: 0.1 - 0.5 m
+wave_observation_code		3	Estimated wave height: 0.5 - 1.25 m
+wave_observation_code		4	Estimated wave height: 1.25 - 2.5 m
+wave_observation_code		5	Estimated wave height: 2.5 - 4 m
+wave_observation_code		6	Estimated wave height: 4 - 6 m
+wave_observation_code		7	Estimated wave height: 6 - 9 m
+wave_observation_code		8	Estimated wave height: 9 - 14 m
+wave_observation_code		9	Not observed
+
+wind_direction_code		0	Calm
+wind_direction_code		1	5-14 degrees
+wind_direction_code		2	15-24 degrees
+wind_direction_code		3	25-34 degrees
+wind_direction_code		4	35-44 degrees
+wind_direction_code		5	45-54 degrees
+wind_direction_code		6	55-64 degrees
+wind_direction_code		7	65-74 degrees
+wind_direction_code		8	75-84 degrees
+wind_direction_code		9	85-94 degrees
+wind_direction_code		10	95-104 degrees
+wind_direction_code		11	105-114 degrees
+wind_direction_code		12	115-124 degrees
+wind_direction_code		13	125-134 degrees
+wind_direction_code		14	135-144 degrees
+wind_direction_code		15	145-154 degrees
+wind_direction_code		16	155-164 degrees
+wind_direction_code		17	165-174 degrees
+wind_direction_code		18	175-184 degrees
+wind_direction_code		19	185-194 degrees
+wind_direction_code		20	195-204 degrees
+wind_direction_code		21	205-214 degrees
+wind_direction_code		22	215-224 degrees
+wind_direction_code		23	225-234 degrees
+wind_direction_code		24	235-244 degrees
+wind_direction_code		25	245-254 degrees
+wind_direction_code		26	255-264 degrees
+wind_direction_code		27	265-274 degrees
+wind_direction_code		28	275-284 degrees
+wind_direction_code		29	285-294 degrees
+wind_direction_code		30	295-304 degrees
+wind_direction_code		31	305-314 degrees
+wind_direction_code		32	315-324 degrees
+wind_direction_code		33	325-334 degrees
+wind_direction_code		34	335-344 degrees
+wind_direction_code		35	345-354 degrees
+wind_direction_code		36	355-4 degrees
+wind_direction_code		99	Variable
