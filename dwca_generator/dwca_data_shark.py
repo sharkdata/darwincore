@@ -176,6 +176,25 @@ class DwcaDataSharkStandard:
                 else:
                     row_dict["sample_time"] = sample_time + "+01:00"
 
+            # Temporary fixes. Should be done in data.
+            coefficient = row_dict.get("coefficient", "")
+            if coefficient:
+                row_dict["coefficient"] = coefficient.replace(",", ".")
+            #
+            secchi_depth_m = row_dict.get("secchi_depth_m", "")
+            if secchi_depth_m:
+                row_dict["secchi_depth_m"] = secchi_depth_m.replace("-", "")
+            # water_depth_m sample_min_depth_m sample_max_depth_m for ZB.
+            delivery_datatype = water_depth_m = row_dict.get("delivery_datatype", "")
+            if delivery_datatype == "Zoobenthos":
+                water_depth_m = row_dict.get("water_depth_m", "")
+                sample_min_depth_m = row_dict.get("sample_min_depth_m", "")
+                sample_max_depth_m = row_dict.get("sample_max_depth_m", "")
+                if water_depth_m:
+                    if (not sample_min_depth_m) and (not sample_max_depth_m):
+                        row_dict["sample_min_depth_m"] = water_depth_m
+                        row_dict["sample_max_depth_m"] = water_depth_m
+
     def create_dwca_keys(self):
         """ """
         config_dwca_keys = self.dwca_gen_config.dwca_keys
