@@ -1,0 +1,108 @@
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+additionalMetadata: 
+    metadata: 
+        gbif:
+            citation: 
+                Royal Institute of Technology, 
+                Science for Life Laboratory, 
+                Swedish Meteorological and Hydrological Institute, 
+                Umeå University, 
+                Swedish Agency for Marine and Water Management and 
+                Swedish Environmental Protection Agency (2021). 
+                National phytoplankton and bacterioplankton monitoring using DNA barcoding in Sweden since 2013.
+
+dataset: 
+    title: SHARK - National phytoplankton and bacterioplankton monitoring using DNA barcoding in Sweden since 2013
+
+    abstract: 
+        para: 
+            -   Phytolankton and bacterioplankton have been monitored using DNA barcoding (plankton barcoding) in Sweden since 2013. 
+            -   The national monitoring program is financed by the Swedish Environmental Protection Agency and the Swedish Agency for Marine and Water Management. 
+                Monitoring is performed by Swedish Meteorological and Hydrological Institute and Umeå University where the Royal Institute of Technology and the Science for Life Laboratory have processed and analyzed the samples collected. 
+            -   'Data are stored in the Swedish Ocean Archive database (SHARK), by the Swedish Meteorological and Hydrological Institute. Data is collected and analyzed according to the proposed
+                collection of method documentation (undersökningstyp) submitted to the Swedish Agency for Marine and Water Management.'
+            -   '"In short, analysis of phytoplankton and bacterioplankton species composition and relative abundance is carried out for the following purposes
+                - to complement, compare and evaluate DNA barcoding methods with traditional microscopy analyses of marine phytoplankton
+                - to describe temporal trends in phytoplankton and bacterioplankton species composition, phytoplankton and bacterioplankton abundance, as well as the intensity and occurrence of blooms and monitoring of invasive species 
+                - to describe the spatial distribution of phytoplankton and bacterioplankton species 
+                - to identify key phytoplankton and bacterioplankton species (e.g. dominating, harmful, potential non-indigenous and/or invasive species, as well as indicator species) 
+                - to provide basic data for complex ecosystem analyses, food web studies, modelling as well as political and social requirements such as indicators in the frame of the Marine Strategy Framework Directive of the European Union (MSFD; European Union 2008) and the EU Water Framework Directive (WFD; European Union 2000). '
+            -   'Information about the program and the methods are also available in Swedish at https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vaxtplankton.html'
+
+    methods: 
+        methodStep: 
+            description: 
+                para:
+                    -   'Data are collected and analyzed according to the proposed
+                        collection of method documentation (undersökningstyp) submitted to the Swedish Agency for Marine and Water Management.'
+        sampling: 
+            description:
+                'For the purpose of quantitative studies in the open sea, the minimum requirement is to take an integrated sample from 0 to 10 m depth using a hose (Lindahl 1986) or by pooling equal amounts of water collected from fixed depths between 0 and 10 m using a water sampler (see Majaneva et al. 2009 for examples). The recommended sampling depths are 0 � 1 m, 2.5 m, 5 m, 7.5 m and 10 m. [�] It is recommended to take additional net samples from the water column (e.g. from 0 � 20 m) in order to obtain concentrated phytoplankton samples.� (HELCOM COMBINE Manual https://www.helcom.fi/wp-content/uploads/2019/08/Guidelines-for-monitoring-phytoplankton-species-composition-abundance-and-biomass.pdf) '
+
+    coverage: 
+        geographicCoverage: 
+            geographicDescription: 
+                'Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379'
+        # taxonomicCoverage:  Phylum:
+        #                     Miozoa
+        #                     Bacillariophyta
+        #                     Cryptophyta
+        #                     Ciliophora
+        #                     Cyanobacteria
+        #                     Chlorophyta
+        #                     Protozoa, phylum incertae sedis
+        #                     Euglenophyta
+        #                     Ochrophyta
+        #                     Haptophyta
+        #                     Choanozoa
+        #                     Katablepharidophyta
+        #                     Telonemia
+        #                     Amoebozoa
+        #                     Eukaryota unassigned, phylum incertae sedis
+        #                     Cercozoa
+        #                     Acidobacteria
+        #                     Actinobacteria
+        #                     Aquificae
+        #                     Chlorobi
+        #                     Chloroflexi
+        #                     Deferribacteres
+        #                     Elusimicrobia
+        #                     Verrucomicrobia
+        #                     Prokaryota unassigned, phylum incertae sedis
+        #                     Cyanobacteria
+        #                     Proteobacteria
+        #                     Firmicutes
+        #                     Planctomycetes
+        #                     Bacteroidetes
+        #                     Sphingobacteria
+        #                     Fusobacteria
+        #                     Verrucomicrobia
+        #                     Prokaryota unassigned, phylum incertae sedis
+        #                     Lentisphaerae
+        #                     Nitrospirae
+        #                     Spirochaetes
+        #                     Synergistetes
+        #                     Tenericutes
+        #                     Bacteria incertae sedis
+
+    keywordSet: 
+        keywords: 
+            keyword: 
+                - Samplingevent
+        keywordThesaurus: 
+            'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+
+
+    creator: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName:  
+                Swedish Meteorological and Hydrological Institute, 
+               
+    metadataProvider: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
