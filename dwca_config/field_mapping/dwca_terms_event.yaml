@@ -146,7 +146,7 @@ dwcaEventContent:
             institutionCode:
                 text: Swedish Meteorological and Hydrological Institute
             datasetName:
-                sourceKey: 
+                sourceKey: dwc_dataset_name
             ownerInstitutionCode:
                 text: Swedish Agency for Marine and Water Management
             dataGeneralizations:

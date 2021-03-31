@@ -37,7 +37,7 @@ class DwcaDataSharkStandard:
 
     def add_shark_dataset(self, dataset_filepath):
         """ Add data from SHARK zipped files. """
-        logger = logging.getLogger('dwca_generator')
+        logger = logging.getLogger("dwca_generator")
 
         logger.info("")
         logger.info("Adding dataset: " + dataset_filepath)
@@ -50,9 +50,9 @@ class DwcaDataSharkStandard:
                     for row in f:
                         row = row.decode("cp1252")
                         row_items = [str(x.strip()) for x in row.split(":")]
-                        if len(row_items) >=2:
+                        if len(row_items) >= 2:
                             key = row_items[0]
-                            value =row_items[1]
+                            value = row_items[1]
                             if (key.lower() == "status") and (value.lower() == "prod"):
                                 status_prod = True
         except Exception as e:
@@ -110,7 +110,7 @@ class DwcaDataSharkStandard:
                                         add_row = False
 
                             # Check combinations of fields.
-                            
+
                             # filter_groups = self.filters.get_filter_include_groups()
                             # for group_key, group_value in filter_groups.items():
                             #     for filter_key, filter_value in group_value.items():
@@ -127,6 +127,17 @@ class DwcaDataSharkStandard:
                                     # msg = row_dict["debug_info"] + "   " + group_key + "   " + str(group_value)
                                     # logger.debug(" - Group-exclude: " + msg)
                                     add_row = False
+
+                            # Extra filer. Used for empty values.
+                            if add_row:
+                                parameter = row_dict.get("parameter", "")
+                                if parameter in [
+                                    "Sediment redox potential",
+                                    "Sediment water content",
+                                ]:
+                                    value = row_dict.get("value", "")
+                                    if value == "":
+                                        add_row = False
 
                             # Add to list.
                             if add_row:
@@ -149,7 +160,14 @@ class DwcaDataSharkStandard:
                             else:
                                 counter_filtered += 1
             #
-            msg = " - Rows used: " + str(counter_used) + "   filtered: " + str(counter_filtered) + "   total: " + str(counter_rows)
+            msg = (
+                " - Rows used: "
+                + str(counter_used)
+                + "   filtered: "
+                + str(counter_filtered)
+                + "   total: "
+                + str(counter_rows)
+            )
             logger.info(msg)
 
         except Exception as e:
@@ -159,6 +177,43 @@ class DwcaDataSharkStandard:
     def cleanup_data(self):
         """ """
         for row_dict in self.row_list:
+            delivery_datatype = water_depth_m = row_dict.get("delivery_datatype", "")
+            delivery_datatype = delivery_datatype.lower()
+            if delivery_datatype == "bacterioplankton":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - Marine bacterioplankton monitoring in Sweden since 1989"
+            elif delivery_datatype == "phytoplankton":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - Marine phytoplankton monitoring in Sweden since 1983"
+            elif delivery_datatype == "zooplankton":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - Marine zooplankton monitoring in Sweden since 1979"
+            elif delivery_datatype == "zoobenthos":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - Marine zoobenthos monitoring in Sweden since 1971"
+            elif delivery_datatype == "epibenthos":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - Marine Epibenthos monitoring in Sweden since 1992"
+            elif delivery_datatype == "greyseal":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - National Grey seal monitoring in Sweden since 1989"
+            elif delivery_datatype == "harbourseal":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - National Harbour seal monitoring in Sweden since 1988"
+            elif delivery_datatype == "ringedseal":
+                row_dict[
+                    "dwc_dataset_name"
+                ] = "SHARK - National Ringed seal monitoring in Sweden since 1995"
+            else:
+                row_dict["dwc_dataset_name"] = "SHARK (Swedish Ocean Archive)"
+
             try:
                 sample_date_str = str(row_dict["sample_date"])
                 #             row_dict['year'] = sample_date_str[0:4]
@@ -184,9 +239,10 @@ class DwcaDataSharkStandard:
             secchi_depth_m = row_dict.get("secchi_depth_m", "")
             if secchi_depth_m:
                 row_dict["secchi_depth_m"] = secchi_depth_m.replace("-", "")
+
             # water_depth_m sample_min_depth_m sample_max_depth_m for ZB.
-            delivery_datatype = water_depth_m = row_dict.get("delivery_datatype", "")
-            if delivery_datatype == "Zoobenthos":
+            # delivery_datatype = water_depth_m = row_dict.get("delivery_datatype", "")
+            if delivery_datatype == "zoobenthos":
                 water_depth_m = row_dict.get("water_depth_m", "")
                 sample_min_depth_m = row_dict.get("sample_min_depth_m", "")
                 sample_max_depth_m = row_dict.get("sample_max_depth_m", "")
