@@ -24,11 +24,13 @@ def run_dwca_generator_command(row):
     if (row < 0) or (row > len(dwca_configs)):
         print("\n\nERROR: Wrong value. Please try again.\n\n")
         return
+
+    generator = dwca_generator_main.DwcaGenerator()
     if row == 0:
         for config_file in dwca_configs:
-            dwca_generator_main.generate_dwca(config_file)
+            generator.generate_dwca(config_file)
     else:
-        dwca_generator_main.generate_dwca(dwca_configs[row - 1])
+        generator.generate_dwca(dwca_configs[row - 1])
 
 
 if __name__ == "__main__":
