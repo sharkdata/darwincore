@@ -179,40 +179,8 @@ class DwcaDataSharkStandard:
         for row_dict in self.row_list:
             delivery_datatype = water_depth_m = row_dict.get("delivery_datatype", "")
             delivery_datatype = delivery_datatype.lower()
-            if delivery_datatype == "bacterioplankton":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - Marine bacterioplankton monitoring in Sweden since 1989"
-            elif delivery_datatype == "phytoplankton":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - Marine phytoplankton monitoring in Sweden since 1983"
-            elif delivery_datatype == "zooplankton":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - Marine zooplankton monitoring in Sweden since 1979"
-            elif delivery_datatype == "zoobenthos":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - Marine zoobenthos monitoring in Sweden since 1971"
-            elif delivery_datatype == "epibenthos":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - Marine Epibenthos monitoring in Sweden since 1992"
-            elif delivery_datatype == "greyseal":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - National Grey seal monitoring in Sweden since 1989"
-            elif delivery_datatype == "harbourseal":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - National Harbour seal monitoring in Sweden since 1988"
-            elif delivery_datatype == "ringedseal":
-                row_dict[
-                    "dwc_dataset_name"
-                ] = "SHARK - National Ringed seal monitoring in Sweden since 1995"
-            else:
-                row_dict["dwc_dataset_name"] = "SHARK (Swedish Ocean Archive)"
+
+            row_dict["dwc_dataset_name"] = self.dwca_gen_config.eml_definitions["dataset"]["title"]
 
             try:
                 sample_date_str = str(row_dict["sample_date"])
