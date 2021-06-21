@@ -143,3 +143,5 @@ analysis_date		42650
 analysis_date		42651
 analysis_date		2010-09-00
 analysis_date		2011-08-00
+sample_date		2010-09-00
+sample_date		2011-08-00
