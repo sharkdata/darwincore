@@ -135,3 +135,11 @@ value		0.0	Param-zero-13
 
 
 sampled_volume_l		0
+
+analysis_date		42353
+analysis_date		42354
+analysis_date		42355
+analysis_date		42650
+analysis_date		42651
+analysis_date		2010-09-00
+analysis_date		2011-08-00
