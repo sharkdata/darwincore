@@ -57,63 +57,156 @@ dwcaEmofContent:
 
         extraMeasurements:
             -   measurementsType: Wave height
+                measurementTypeID: 
                 measurementsUnit: m
+                measurementsUnitID: 
                 sourceKey: wave_height_m
             -   measurementsType: Wave observation
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: wave_observation_code
             -   measurementsType: Weather observation
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID:  
                 sourceKey: weather_observation_code
             -   measurementsType: Wave exposure fetch
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: wave_exposure_fetch
             -   measurementsType: Wind speed
+                measurementTypeID: 
                 measurementsUnit: m/s
+                measurementsUnitID: 
                 sourceKey: wind_speed_ms
             -   measurementsType: Wind direction
                 measurementsUnit: 
                 sourceKey: wind_direction_code
             -   measurementsType: Water level deviation
+                measurementTypeID: 
                 measurementsUnit: m
+                measurementsUnitID: 
                 sourceKey: water_level_deviation_m
             -   measurementsType: Water depth
+                measurementTypeID: 
                 measurementsUnit: m
+                measurementsUnitID: 
                 sourceKey: water_depth_m
             -   measurementsType: Secchi depth
+                measurementTypeID: 
                 measurementsUnit: m
+                measurementsUnitID: 
                 sourceKey: secchi_depth_m
             -   measurementsType: Secchi depth quality
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: secchi_depth_quality_flag
             -   measurementsType: Cloud observation
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: cloud_observation_code
             -   measurementsType: Insolation air
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: insolation_air
             -   measurementsType: Incubation radiation
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: incubation_radiation
             -   measurementsType: Air temperature wet
+                measurementTypeID: 
                 measurementsUnit: degC
+                measurementsUnitID: 
                 sourceKey: air_temperature_wet_degc
             -   measurementsType: Air temperature
+                measurementTypeID: 
                 measurementsUnit: degC
+                measurementsUnitID: 
                 sourceKey: air_temperature_degc
             -   measurementsType: Air pressure
+                measurementTypeID: 
                 measurementsUnit: hpa
+                measurementsUnitID: 
                 sourceKey: air_pressure_hpa
             -   measurementsType: Ice observation
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: ice_observation_code
             -   measurementsType: Sediment deposition
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: sediment_deposition_code
             -   measurementsType: Sediment type
+                measurementTypeID: 
                 measurementsUnit: 
+                measurementsUnitID: 
                 sourceKey: sediment_type
-
+                
+            -   measurementsType: Sampling laboratory code
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID: 
+                sourceKey: sampling_laboratory_code
+            -   measurementsType: Sampling laboratory name
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKeyList: 
+                    - sampling_laboratory_name_en
+                    - sampling_laboratory_name_sv
+            -   measurementsType: Sampling laboratory accreditated
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: sampling_laboratory_accreditated
+            -   measurementsType: Monitoring program code
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: monitoring_program_code
+            -   measurementsType: Station marking
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: station_marking
+            -   measurementsType: Station exposure
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: station_exposure
+            -   measurementsType: Visit id
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: visit_id
+            -   measurementsType: Expedition id
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: expedition_id
+            -   measurementsType: Water land station type
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: water_land_station_type_code
+            -   measurementsType: Monitoring station type
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: monitoring_station_type_code
+            -   measurementsType: Monitoring purpose
+                measurementTypeID: 
+                measurementsUnit: 
+                measurementsUnitID:
+                sourceKey: monitoring_purpose_code
     -   eventType: sample
         dwcTerms:
             eventID:
@@ -194,6 +287,12 @@ dwcaEmofContent:
                 measurementsUnit: 
                 sourceKey: counter_program
 
+            -   measurementsType: Orderer
+                measurementTypeID: 
+                sourceKeyList: 
+                    - sample_orderer_name_en
+                    - sample_orderer_name_sv
+
     -   eventType: occurrence
         dwcTerms:
             eventID:
@@ -241,3 +340,28 @@ dwcaEmofContent:
             -   measurementsType: Magnification
                 measurementsUnit: 
                 sourceKey: magnification
+
+            -   measurementsType: Size class
+                sourceKey: size_class
+            -   measurementsType: Size class range min
+                sourceKey: size_class_range_min
+            -   measurementsType: Size class range max
+                sourceKey: size_class_range_max
+            -   measurementsType: Epibiont
+                sourceKey: epibiont
+            -   measurementsType: Detached
+                sourceKey: detached
+            -   measurementsType: Recruits
+                sourceKey: recruits
+            -   measurementsType: Bitemark
+                sourceKey: bitemark
+            -   measurementsType: Degree biofouling
+                sourceKey: degree_biofouling
+            -   measurementsType: Analytical laboratory code
+                sourceKey: analytical_laboratory_code
+            -   measurementsType: Analytical laboratory name
+                sourceKeyList: 
+                    - analytical_laboratory_name_en
+                    - analytical_laboratory_name_sv
+            -   measurementsType: Analytical laboratory accreditated
+                sourceKey: analytical_laboratory_accreditated
