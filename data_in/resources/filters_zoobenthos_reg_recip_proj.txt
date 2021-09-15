@@ -174,3 +174,7 @@ sampled_volume_l		0
 
 parameter		No species in sample
 
+analysis_date		43107
+analysis_date		43116
+analysis_date		43117
+analysis_date		43119

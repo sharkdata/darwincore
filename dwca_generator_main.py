@@ -125,7 +125,7 @@ if __name__ == "__main__":
         "dwca_config/dwca_zoobenthos_nat.yaml",
         "dwca_config/dwca_phytoplankton_nat.yaml",
 
-        "dwca_config\dwca_phytoplankton_reg_recip_proj.yaml",
+        "dwca_config/dwca_phytoplankton_reg_recip_proj.yaml",
         "dwca_config/dwca_zoobenthos_reg_recip_proj.yaml",
 
         "dwca_config/dwca_harbourseal_nat.yaml",
