@@ -1,0 +1,75 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+additionalMetadata: 
+    metadata: 
+        gbif:
+            citation: 
+                Swedish Meteorological and Hydrological Institute, 
+                Swedish Food Agency. 
+                Phytoplankton monitoring of biotoxin producing harmful algal blooms since 2000
+
+dataset: 
+    title: SHARK - Phytoplankton monitoring of biotoxin producing harmful algal blooms since 2000
+
+    abstract: 
+        para: 
+            - Biotoxin producing phytoplankton has been monitored in and around Swedish mussel and oyster 
+              farms on the Swedish west coast since 2000. The  monitoring program was initiated and financed 
+              by the Swedish Food Agency. Monitoring is performed by the 
+              Swedish Meteorological and Hydrological Institute (SMHI). 
+            - Data is stored in the Swedish archive for oceanographic data (SHARK) database, curated by SMHI. 
+            - Phytoplankton constitute an important part of of the pelagic food webs. These organisms are 
+              primary producers (phytoplankton) and is the primary food source for zooplankton linking to 
+              higher trophic levels (zooplanktivorous fish and invertebrates). 
+              Biotoxin producing phytoplankton can harm animals, people or the local ecology in a number of differrent ways. 
+            - This monitoring program is focused toward potentially harmful algae. 
+              Sampling provides information to describe species composition and spatial distribution of 
+              biotoxin producing phytoplankton abundance and biomass.  
+            - "Data is collected and analyzed according to the 
+              Helcom COMBINE Manual - Part C Annex C6 Phytoplankton 
+              (https://helcom.fi/wp-content/uploads/2020/01/HELCOM-Guidelines-for-monitoring-of-phytoplankton-species-composition-abundance-and-biomass.pdf) 
+              or similar methods. Seawater samples are collected with a hose that hangs vertically in 
+              the water and then sealed to gather a mixture of water (an integrated sample) from different depths. "
+            - "The phytoplankton in the water is preserved and species that are known to produce harmful toxins (HAB) 
+              are later counted and quantified in the microscope, e.g. harmful dinoflagelletes: Alexandrium spp., 
+              Dinophysis acuminata, Dinophysis acuta, Dinophysis norvegica, Dinophysis dens, Dinophysis rotundata, 
+              Azadinium spinosum, Protoceratium reticulatum and Lingulodinium polyedrum and the diatom Pseudo-nitzschia spp."
+
+    methods: 
+        methodStep: 
+            description: 
+                para:
+                    - 'Data is collected and analyzed according to the 
+                      Helcom COMBINE Manual - Part C Annex C6 Phytoplankton 
+                      (https://helcom.fi/wp-content/uploads/2020/01/HELCOM-Guidelines-for-monitoring-of-phytoplankton-species-composition-abundance-and-biomass.pdf) 
+                      or similar methods.'
+        sampling: 
+            description:
+                'Seawater samples are collected with a hose that hangs vertically in the water and then sealed to gather a mixture of water (an integrated sample) from different depths. The phytoplankton in the water is preserved and species that are known to produce harmful toxins (HAB) are later counted and quantified in the microscope. Discipline: Marine biology; Datatype: Phytoplankton;'
+
+    coverage: 
+        geographicCoverage: 
+            geographicDescription: 
+                'Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379'
+
+    keywordSet: 
+        keywords: 
+            keyword: 
+                - Samplingevent
+        keywordThesaurus: 
+            'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+
+
+    creator: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName:  
+                Swedish Meteorological and Hydrological Institute, 
+               
+    metadataProvider: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI

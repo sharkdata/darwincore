@@ -1,0 +1,71 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+additionalMetadata: 
+    metadata: 
+        gbif:
+            citation: 
+                Swedish Meteorological and Hydrological Institute, 
+                Swedish Environmental Protection Agency. 
+                Seal pathology monitoring using necropsy findings and histopathological findings of dead seals since 2008.
+
+dataset: 
+    title: SHARK - Seal pathology monitoring using necropsy and histopathological findings of dead seals since 2008
+
+    abstract: 
+        para: 
+            - Seal pathology using necropsy and histopathological findings of dead seals has been monitored in and 
+              around Swedish coasts since 2008. The  monitoring program was initiated and financed by the 
+              Swedish Environmental Protection Agency. 
+            - Monitoring is performed by the Swedish Museum of Natural History. 
+            - Data is stored in the Swedish archive for oceanographic data (SHARK) database, curated by SMHI. 
+            - Seals constitute an important part of pelagic food webs as top predators and their health is essential 
+              for maintaining a good ecosystem balance. These organisms are at the highest trophic level and can be 
+              used as proxy for harmful substances since these compounds are stored in the body fat (adipose tissue) 
+              and organs of the animals. 
+            - This monitoring program is focused toward determining the health status of 
+              seal populations via autopsies of animals that are collected and sent to  the Swedish Museum of Natural History. 
+              In addition, the program is also aimed for finding and measuring potentially harmful substances in biota. 
+            - Sampling provides information to describe the cause of death among seals.  
+            - "Data is collected and analyzed according to methods described by the Swedish Environmental Protection Agency 
+              (http://www.naturvardsverket.se/upload/stod-i-miljoarbetet/vagledning/miljoovervakning/handledning/metoder/undersokningstyper/kust-hav/patologi-hos-grasal-vikare-sal-och-knubbsal-ver-1-1-2014-03-19.pdf). 
+              If the exact position of the findings are not known, the position will be stored as the county town of the county in which the seal was found."
+
+    methods: 
+        methodStep: 
+            description: 
+                para:
+                    - "Data is collected and analyzed according to methods described by the Swedish Environmental Protection Agency 
+                      (http://www.naturvardsverket.se/upload/stod-i-miljoarbetet/vagledning/miljoovervakning/handledning/metoder/undersokningstyper/kust-hav/patologi-hos-grasal-vikare-sal-och-knubbsal-ver-1-1-2014-03-19.pdf)."
+
+        sampling: 
+            description:
+                "Dead seals are sent to the Swedish Natural History Museum for autopsy. Necropsy findings and histopathological findings of the dead seals are reported. Discipline: Marine biology;"
+    coverage: 
+        geographicCoverage: 
+            geographicDescription: 
+                '"Data is collected within the following marine ecoregions using coordinate system WGS84:"
+                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379'
+        taxonomicCoverage: 
+            The dataset contains the species Halichoerus grypus.
+
+    keywordSet: 
+        keywords: 
+            keyword: 
+                - Samplingevent
+        keywordThesaurus: 
+            "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
+
+
+    creator: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
+        organizationName: 
+            Swedish Meteorological and Hydrological Institute
+
+    metadataProvider: 
+        individualName: 
+            givenName: SHARK
+            surName: SMHI
