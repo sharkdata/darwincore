@@ -219,6 +219,20 @@ class DwcaDataSharkStandard:
                         row_dict["sample_min_depth_m"] = water_depth_m
                         row_dict["sample_max_depth_m"] = water_depth_m
 
+
+
+            # Fix for ZB with size classes. 
+            if delivery_datatype == "zooplankton":
+                size_class = row_dict.get("size_class", "")
+                size_min_um = row_dict.get("size_min_um", "")
+                size_max_um = row_dict.get("size_max_um", "")
+                if (size_class == ""):
+                    if size_min_um and size_max_um:
+                        size_string = str(size_min_um) + "-" + str(size_max_um)
+                        row_dict["size_class"] = size_string
+
+
+
     def create_dwca_keys(self):
         """ """
         config_dwca_keys = self.dwca_gen_config.dwca_keys
