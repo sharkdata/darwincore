@@ -35,6 +35,8 @@ eventTypeKeys:
             - sex_code
             - dev_stage_code
             - size_class
+            - size_min_um
+            - size_max_um
 
     emof:
     -   eventType: sampling_event
