@@ -1516,9 +1516,9 @@ Isaeidae	2001670	101388	Isaeidae	accepted	101388	Isaeidae	Family	Animalia	Arthro
 Ischnura elegans	208280	890532	Ischnura	accepted	890532	Ischnura	Genus	Animalia	Arthropoda	Insecta	Odonata	Coenagrionidae	Ischnura		urn:lsid:marinespecies.org:taxname:890532
 Ischyrocerus	1009338	101569	Ischyrocerus	accepted	101569	Ischyrocerus	Genus	Animalia	Arthropoda	Malacostraca	Amphipoda	Ischyroceridae	Ischyrocerus		urn:lsid:marinespecies.org:taxname:101569
 Ischyrocerus megacheir	233509	102420	Ischyrocerus megacheir	accepted	102420	Ischyrocerus megacheir	Species	Animalia	Arthropoda	Malacostraca	Amphipoda	Ischyroceridae	Ischyrocerus		urn:lsid:marinespecies.org:taxname:102420
-Isoëtes	1005971	886372	Isoetales	accepted	886372	Isoetales	Order	Plantae	Tracheophyta	Lycopodiopsida	Isoetales				urn:lsid:marinespecies.org:taxname:886372
-Isoëtes echinospora	220532	886372	Isoetales	accepted	886372	Isoetales	Order	Plantae	Tracheophyta	Lycopodiopsida	Isoetales				urn:lsid:marinespecies.org:taxname:886372
-Isoëtes lacustris	221590	886372	Isoetales	accepted	886372	Isoetales	Order	Plantae	Tracheophyta	Lycopodiopsida	Isoetales				urn:lsid:marinespecies.org:taxname:886372
+Isoï¿½tes	1005971	886372	Isoetales	accepted	886372	Isoetales	Order	Plantae	Tracheophyta	Lycopodiopsida	Isoetales				urn:lsid:marinespecies.org:taxname:886372
+Isoï¿½tes echinospora	220532	886372	Isoetales	accepted	886372	Isoetales	Order	Plantae	Tracheophyta	Lycopodiopsida	Isoetales				urn:lsid:marinespecies.org:taxname:886372
+Isoï¿½tes lacustris	221590	886372	Isoetales	accepted	886372	Isoetales	Order	Plantae	Tracheophyta	Lycopodiopsida	Isoetales				urn:lsid:marinespecies.org:taxname:886372
 Isopoda	3000219	1131	Isopoda	accepted	1131	Isopoda	Order	Animalia	Arthropoda	Malacostraca	Isopoda				urn:lsid:marinespecies.org:taxname:1131
 Jaera	1009339	118364	Jaera	accepted	118364	Jaera	Genus	Animalia	Arthropoda	Malacostraca	Isopoda	Janiridae	Jaera		urn:lsid:marinespecies.org:taxname:118364
 Jaera albifrons	233511	118715	Jaera albifrons	alternate representation	264171	Jaera (Jaera) albifrons	Species	Animalia	Arthropoda	Malacostraca	Isopoda	Janiridae	Jaera		urn:lsid:marinespecies.org:taxname:118715
@@ -2361,7 +2361,7 @@ Phyllodocida	3000099	892	Phyllodocida	accepted	892	Phyllodocida	Order	Animalia	A
 Phyllodocidae	2000484	931	Phyllodocidae	accepted	931	Phyllodocidae	Family	Animalia	Annelida	Polychaeta	Phyllodocida	Phyllodocidae			urn:lsid:marinespecies.org:taxname:931
 Phyllophora	1008434	144169	Phyllophora	accepted	144169	Phyllophora	Genus	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Phyllophora		urn:lsid:marinespecies.org:taxname:144169
 Phyllophora crispa	232576	145660	Phyllophora crispa	accepted	145660	Phyllophora crispa	Species	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Phyllophora		urn:lsid:marinespecies.org:taxname:145660
-Phyllophora pseudoceranoïdes	232577	145664	Phyllophora pseudoceranoides	accepted	145664	Phyllophora pseudoceranoides	Species	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Phyllophora		urn:lsid:marinespecies.org:taxname:145664
+Phyllophora pseudoceranoï¿½des	232577	145664	Phyllophora pseudoceranoides	accepted	145664	Phyllophora pseudoceranoides	Species	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae	Phyllophora		urn:lsid:marinespecies.org:taxname:145664
 Phyllophoraceae	2002202	143738	Phyllophoraceae	accepted	143738	Phyllophoraceae	Family	Plantae	Rhodophyta	Florideophyceae	Gigartinales	Phyllophoraceae			urn:lsid:marinespecies.org:taxname:143738
 Phylo kupfferi	227851	130530	Phylo kupfferi	accepted	130530	Phylo kupfferi	Species	Animalia	Annelida	Polychaeta		Orbiniidae	Phylo		urn:lsid:marinespecies.org:taxname:130530
 Phylo norvegica	227852	130531	Phylo norvegicus	accepted	130531	Phylo norvegicus	Species	Animalia	Annelida	Polychaeta		Orbiniidae	Phylo		urn:lsid:marinespecies.org:taxname:130531
@@ -2505,7 +2505,7 @@ Potamogeton compressus	1903	416210	Potamogeton	accepted	416210	Potamogeton	Genus
 Potamogeton crispus	219587	594796	Potamogeton crispus	accepted	594796	Potamogeton crispus	Species	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:594796
 Potamogeton friesii	1904	593118	Potamogeton friesii	accepted	593118	Potamogeton friesii	Species	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:593118
 Potamogeton gramineus	219590	715987	Potamogeton gramineus	accepted	715987	Potamogeton gramineus	Species	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:715987
-Potamogeton gramineus × perfoliatus	223525	715987	Potamogeton gramineus	accepted	715987	Potamogeton gramineus	Species	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:715987
+Potamogeton gramineus ï¿½ perfoliatus	223525	715987	Potamogeton gramineus	accepted	715987	Potamogeton gramineus	Species	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:715987
 Potamogeton lucens	219591	416210	Potamogeton	accepted	416210	Potamogeton	Genus	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:416210
 Potamogeton natans	219592	416210	Potamogeton	accepted	416210	Potamogeton	Genus	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:416210
 Potamogeton obtusifolius	219593	416210	Potamogeton	accepted	416210	Potamogeton	Genus	Plantae	Tracheophyta	Magnoliopsida	Alismatales	Potamogetonaceae	Potamogeton		urn:lsid:marinespecies.org:taxname:416210
@@ -3111,9 +3111,9 @@ Terebellidae	2000534	982	Terebellidae	accepted	982	Terebellidae	Family	Animalia	
 Terebellides stroemi	227496	131573	Terebellides stroemii	accepted	131573	Terebellides stroemii	Species	Animalia	Annelida	Polychaeta	Terebellida	Trichobranchidae	Terebellides		urn:lsid:marinespecies.org:taxname:131573
 Terebratulina retusa	232130	104055	Terebratulina retusa	accepted	104055	Terebratulina retusa	Species	Animalia	Brachiopoda	Rhynchonellata	Terebratulida	Cancellothyrididae	Terebratulina		urn:lsid:marinespecies.org:taxname:104055
 Testudinalia testudinalis	217930	234208	Testudinalia testudinalis	accepted	234208	Testudinalia testudinalis	Species	Animalia	Mollusca	Gastropoda		Lottiidae	Testudinalia		urn:lsid:marinespecies.org:taxname:234208
-Tetraëdriella jovetii	237203	610320	Tetraëdriella jovetti	accepted	610320	Tetraëdriella jovetti	Species	Chromista	Ochrophyta	Xanthophyceae	Mischococcales	Pleurochloridaceae	Tetraëdriella		urn:lsid:marinespecies.org:taxname:610320
-Tetraëdron caudatum	257943	576706	Tetraedron caudatum	accepted	576706	Tetraedron caudatum	Species	Plantae	Chlorophyta	Chlorophyceae	Sphaeropleales	Hydrodictyaceae	Tetraedron		urn:lsid:marinespecies.org:taxname:576706
-Tetraëdron minimum	257945	178956	Tetraedron minimum	accepted	178956	Tetraedron minimum	Species	Plantae	Chlorophyta	Chlorophyceae	Sphaeropleales	Hydrodictyaceae	Tetraedron		urn:lsid:marinespecies.org:taxname:178956
+Tetraï¿½driella jovetii	237203	610320	Tetraï¿½driella jovetti	accepted	610320	Tetraï¿½driella jovetti	Species	Chromista	Ochrophyta	Xanthophyceae	Mischococcales	Pleurochloridaceae	Tetraï¿½driella		urn:lsid:marinespecies.org:taxname:610320
+Tetraï¿½dron caudatum	257943	576706	Tetraedron caudatum	accepted	576706	Tetraedron caudatum	Species	Plantae	Chlorophyta	Chlorophyceae	Sphaeropleales	Hydrodictyaceae	Tetraedron		urn:lsid:marinespecies.org:taxname:576706
+Tetraï¿½dron minimum	257945	178956	Tetraedron minimum	accepted	178956	Tetraedron minimum	Species	Plantae	Chlorophyta	Chlorophyceae	Sphaeropleales	Hydrodictyaceae	Tetraedron		urn:lsid:marinespecies.org:taxname:178956
 Tetraedron triangulare	257947	558727	Tetraedron triangulare	accepted	558727	Tetraedron triangulare	Species	Plantae	Chlorophyta	Chlorophyceae	Sphaeropleales	Hydrodictyaceae	Tetraedron		urn:lsid:marinespecies.org:taxname:558727
 Tetraselmis	1016309	134526	Tetraselmis	accepted	134526	Tetraselmis	Genus	Plantae	Chlorophyta	Chlorodendrophyceae	Chlorodendrales	Chlorodendraceae	Tetraselmis		urn:lsid:marinespecies.org:taxname:134526
 Tetraselmis cordiformis	238991	248171	Tetraselmis cordiformis	accepted	248171	Tetraselmis cordiformis	Species	Plantae	Chlorophyta	Chlorodendrophyceae	Chlorodendrales	Chlorodendraceae	Tetraselmis		urn:lsid:marinespecies.org:taxname:248171
@@ -3311,7 +3311,7 @@ Virgularia mirabilis	217844	128539	Virgularia mirabilis	accepted	128539	Virgular
 Virgularia tuberculata	217845	128540	Virgularia tuberculata	accepted	128540	Virgularia tuberculata	Species	Animalia	Cnidaria	Anthozoa	Pennatulacea	Virgulariidae	Virgularia		urn:lsid:marinespecies.org:taxname:128540
 Vitreolina	1009397	137993	Vitreolina	accepted	137993	Vitreolina	Genus	Animalia	Mollusca	Gastropoda	Littorinimorpha	Eulimidae	Vitreolina		urn:lsid:marinespecies.org:taxname:137993
 Vitreolina philippi	6009393	139903	Vitreolina philippi	accepted	139903	Vitreolina philippi	Species	Animalia	Mollusca	Gastropoda	Littorinimorpha	Eulimidae	Vitreolina		urn:lsid:marinespecies.org:taxname:139903
-Vitreolina philippi sensu Warén	233612	139903	Vitreolina philippi	accepted	139903	Vitreolina philippi	Species	Animalia	Mollusca	Gastropoda	Littorinimorpha	Eulimidae	Vitreolina		urn:lsid:marinespecies.org:taxname:139903
+Vitreolina philippi sensu Warï¿½n	233612	139903	Vitreolina philippi	accepted	139903	Vitreolina philippi	Species	Animalia	Mollusca	Gastropoda	Littorinimorpha	Eulimidae	Vitreolina		urn:lsid:marinespecies.org:taxname:139903
 Woloszynskia	1010622	109492	Woloszynskia	accepted	109492	Woloszynskia	Genus	Chromista	Myzozoa	Dinophyceae	Lophodiniales	Lophodiniaceae	Woloszynskia		urn:lsid:marinespecies.org:taxname:109492
 Woronichinia	1010261	146617	Woronichinia	accepted	146617	Woronichinia	Genus	Bacteria	Cyanobacteria	Cyanophyceae	Chroococcales	Gomphosphaeriaceae	Woronichinia		urn:lsid:marinespecies.org:taxname:146617
 Woronichinia compacta	236862	177484	Woronichinia compacta	accepted	177484	Woronichinia compacta	Species	Bacteria	Cyanobacteria	Cyanophyceae	Chroococcales	Gomphosphaeriaceae	Woronichinia		urn:lsid:marinespecies.org:taxname:177484
@@ -3353,11 +3353,13 @@ Callophyllis laciniata	232559	145262	Callophyllis laciniata	accepted	145262	Call
 Peyssonnelia	1008433	144051	Peyssonnelia	accepted	144051	Peyssonnelia	Genus	Plantae	Rhodophyta	Florideophyceae	Peyssonneliales	Peyssonneliaceae	Peyssonnelia		urn:lsid:marinespecies.org:taxname:144051
 Phymatolithon purpureum	232548	145203	Phymatolithon purpureum	accepted	145203	Phymatolithon purpureum	Species	Plantae	Rhodophyta	Florideophyceae	Corallinales	Hapalidiaceae	Phymatolithon		urn:lsid:marinespecies.org:taxname:145203
 Rhodochorton	1008399	143801	Rhodochorton	accepted	143801	Rhodochorton	Genus	Plantae	Rhodophyta	Florideophyceae		Acrochaetiaceae	Rhodochorton		urn:lsid:marinespecies.org:taxname:143801
-Aegisthus	6033047	115186													
-Evertebrata	6003870	2													
-Oithona similis	239256	106656													
-Tenellia adspersa	218194	141639													
-Nephasoma diaphanes diaphanes	247481	410734													
-Paraeuchaeta	1011371	196874													
-Tubularia larynx	235150	117995													
-Bosmina longirostris	242091	148379													
+
+
+Aegisthus	6033047	115186												urn:lsid:marinespecies.org:taxname:115186
+Evertebrata	6003870	2												urn:lsid:marinespecies.org:taxname:2
+Oithona similis	239256	106656												urn:lsid:marinespecies.org:taxname:106656
+Tenellia adspersa	218194	141639												urn:lsid:marinespecies.org:taxname:141639
+Nephasoma diaphanes diaphanes	247481	410734												urn:lsid:marinespecies.org:taxname:410734
+Paraeuchaeta	1011371	196874												urn:lsid:marinespecies.org:taxname:196874
+Tubularia larynx	235150	117995												urn:lsid:marinespecies.org:taxname:117995
+Bosmina longirostris	242091	148379												urn:lsid:marinespecies.org:taxname:148379
