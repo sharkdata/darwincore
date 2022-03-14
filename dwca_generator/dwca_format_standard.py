@@ -142,6 +142,19 @@ class DwcaFormatStandard(object):
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
 
+
+                        # Add URI path for Aphia-id if numeric.
+                        worms_lsid = occurrence_dict.get("scientificNameID", "")
+                        # print("DEBUG 1", worms_lsid)
+                        try:
+                            worms_lsid_int = int(worms_lsid)
+                            worms_lsid_new = "urn:lsid:marinespecies.org:taxname:" + worms_lsid
+                            occurrence_dict["scientificNameID"] = worms_lsid_new
+                            # print("DEBUG 2", worms_lsid_new)
+                        except:
+                            pass
+
+
                         # Append occurrence row content.
                         self.dwca_occurrence.append(occurrence_dict.copy())
 
@@ -204,6 +217,27 @@ class DwcaFormatStandard(object):
 
                         # Append.
                         if emof_dict.get("measurementType", ""):
+
+
+
+
+
+                            parameter = emof_dict.get("measurementType", "")
+                            unit = emof_dict.get("measurementUnit", "")
+                            # Measurement identifiers. NERC vocabular.
+                            if unit == "m":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
+                            elif unit == "cells/l":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+
+
+
+
+
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
                         # Get key.
@@ -220,34 +254,29 @@ class DwcaFormatStandard(object):
                                 extraMeasurements = content["extraMeasurements"]
                                 for extraMeasurement in extraMeasurements:
 
-                                    param = extraMeasurement.get("measurementsType", "")
-                                    unit = extraMeasurement.get("measurementsUnit", "")
+                                    param = extraMeasurement.get("measurementType", "")
+                                    param_id = extraMeasurement.get("measurementTypeID", "")
+                                    unit = extraMeasurement.get("measurementUnit", "")
+                                    unit_id = extraMeasurement.get("measurementUnitID", "")
                                     source_key = extraMeasurement.get("sourceKey", "")
                                     value = source_row.get(source_key, "")
                                     if param and (value not in [""]):
+                                        if param_id is None:
+                                            param_id = ""
+                                        if unit is None:
+                                            unit = ""
+                                        if unit_id is None:
+                                            unit_id = ""
                                         emof_dict["measurementType"] = param
+                                        emof_dict["measurementTypeID"] = param_id
                                         emof_dict["measurementValue"] = value
                                         emof_dict["measurementUnit"] = unit
+                                        emof_dict["measurementUnitID"] = unit_id
 
                                         if emof_dict.get("measurementType", ""):
                                             self.dwca_measurementorfact.append(
                                                 emof_dict.copy()
                                             )
-
-                        #         # Measurement identifiers. NERC vocabular.
-                        #         if parameter == "Water depth":
-                        #             emof_dict[
-                        #                 "measurementTypeID"
-                        #             ] = "http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/"
-                        #         if unit == "m":
-                        #             emof_dict[
-                        #                 "measurementUnitID"
-                        #             ] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
-                        #         elif unit == "cells/l":
-                        #             emof_dict[
-                        #                 "measurementUnitID"
-                        #             ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
-
             else:
                 try:
                     # For checking for duplicates.

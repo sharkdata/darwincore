@@ -56,63 +56,159 @@ dwcaEmofContent:
                 sourceKey: 
 
         extraMeasurements:
-            -   measurementsType: Wave height
-                measurementsUnit: m
+            -   measurementType: Wave height
+                measurementTypeID: 
+                measurementUnit: m
+                measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
                 sourceKey: wave_height_m
-            -   measurementsType: Wave observation
-                measurementsUnit: 
+            -   measurementType: Wave observation
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: wave_observation_code
-            -   measurementsType: Weather observation
-                measurementsUnit: 
+            -   measurementType: Weather observation
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:  
                 sourceKey: weather_observation_code
-            -   measurementsType: Wave exposure fetch
-                measurementsUnit: 
+            -   measurementType: Wave exposure fetch
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: wave_exposure_fetch
-            -   measurementsType: Wind speed
-                measurementsUnit: m/s
+            -   measurementType: Wind speed
+                measurementTypeID: 
+                measurementUnit: m/s
+                measurementUnitID: 
                 sourceKey: wind_speed_ms
-            -   measurementsType: Wind direction
-                measurementsUnit: 
+            -   measurementType: Wind direction
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
                 sourceKey: wind_direction_code
-            -   measurementsType: Water level deviation
-                measurementsUnit: m
+            -   measurementType: Water level deviation
+                measurementTypeID: 
+                measurementUnit: m
+                measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
                 sourceKey: water_level_deviation_m
-            -   measurementsType: Water depth
-                measurementsUnit: m
+            -   measurementType: Water depth
+                measurementTypeID: 
+                measurementUnit: m
+                measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
                 sourceKey: water_depth_m
-            -   measurementsType: Secchi depth
-                measurementsUnit: m
+            -   measurementType: Secchi depth
+                measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MAXWDIST/"
+                measurementUnit: m
+                measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
                 sourceKey: secchi_depth_m
-            -   measurementsType: Secchi depth quality
-                measurementsUnit: 
+            -   measurementType: Secchi depth quality
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: secchi_depth_quality_flag
-            -   measurementsType: Cloud observation
-                measurementsUnit: 
+            -   measurementType: Cloud observation
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: cloud_observation_code
-            -   measurementsType: Insolation air
-                measurementsUnit: 
+            -   measurementType: Insolation air
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: insolation_air
-            -   measurementsType: Incubation radiation
-                measurementsUnit: 
+            -   measurementType: Incubation radiation
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: incubation_radiation
-            -   measurementsType: Air temperature wet
-                measurementsUnit: degC
+            -   measurementType: Air temperature wet
+                measurementTypeID: 
+                measurementUnit: degC
+                measurementUnitID: 
                 sourceKey: air_temperature_wet_degc
-            -   measurementsType: Air temperature
-                measurementsUnit: degC
+            -   measurementType: Air temperature
+                measurementTypeID: 
+                measurementUnit: degC
+                measurementUnitID: 
                 sourceKey: air_temperature_degc
-            -   measurementsType: Air pressure
-                measurementsUnit: hpa
+            -   measurementType: Air pressure
+                measurementTypeID: 
+                measurementUnit: hpa
+                measurementUnitID: 
                 sourceKey: air_pressure_hpa
-            -   measurementsType: Ice observation
-                measurementsUnit: 
+            -   measurementType: Ice observation
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: ice_observation_code
-            -   measurementsType: Sediment deposition
-                measurementsUnit: 
+            -   measurementType: Sediment deposition
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: sediment_deposition_code
-            -   measurementsType: Sediment type
-                measurementsUnit: 
+            -   measurementType: Sediment type
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
                 sourceKey: sediment_type
+                
+            -   measurementType: Sampling laboratory code
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID: 
+                sourceKey: sampling_laboratory_code
+            -   measurementType: Sampling laboratory name
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKeyList: 
+                    - sampling_laboratory_name_en
+                    - sampling_laboratory_name_sv
+            -   measurementType: Sampling laboratory accredited
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: sampling_laboratory_accreditated
+            -   measurementType: Monitoring program code
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: monitoring_program_code
+            -   measurementType: Station marking
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: station_marking
+            -   measurementType: Station exposure
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: station_exposure
+            -   measurementType: Visit id
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: visit_id
+            -   measurementType: Expedition id
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: expedition_id
+            -   measurementType: Water land station type
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: water_land_station_type_code
+            -   measurementType: Monitoring station type
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: monitoring_station_type_code
+            -   measurementType: Monitoring purpose
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: monitoring_purpose_code
 
     -   eventType: sample
         dwcTerms:
@@ -148,51 +244,110 @@ dwcaEmofContent:
                 sourceKey: 
 
         extraMeasurements:
-            -   measurementsType: Sampled volume
-                measurementsUnit: L
+            -   measurementType: Sampled volume
+                measurementTypeID: 
+                measurementUnit: L
+                measurementUnitID:
                 sourceKey: sampled_volume_l
-            -   measurementsType: Sampler area
-                measurementsUnit: cm2
+            -   measurementType: Sampler area
+                measurementTypeID: http://vocab.nerc.ac.uk/collection/Q01/current/Q0100017/
+                measurementUnit: cm2
+                measurementUnitID:
                 sourceKey: sampler_area_cm2
-            -   measurementsType: Wire angle
-                measurementsUnit: deg
+            -   measurementType: Wire angle
+                measurementTypeID: 
+                measurementUnit: deg
+                measurementUnitID:
                 sourceKey: wire_angle_deg
-            -   measurementsType: Flowmeter length
-                measurementsUnit: m
+            -   measurementType: Flowmeter length
+                measurementTypeID: 
+                measurementUnit: m
+                measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
                 sourceKey: flowmeter_length_m
-            -   measurementsType: Mesh size
-                measurementsUnit: um
+            -   measurementType: Mesh size
+                measurementTypeID: 
+                measurementUnit: um
+                measurementUnitID:
                 sourceKey: mesh_size_um
-            -   measurementsType: Upper mesh size
-                measurementsUnit: um
+            -   measurementType: Upper mesh size
+                measurementTypeID: 
+                measurementUnit: um
+                measurementUnitID:
                 sourceKey: upper_mesh_size_um
-            -   measurementsType: Lower mesh size
-                measurementsUnit: um
+            -   measurementType: Lower mesh size
+                measurementTypeID: 
+                measurementUnit: um
+                measurementUnitID:
                 sourceKey: lower_mesh_size_um
-            -   measurementsType: Factors influencing
-                measurementsUnit: 
+            -   measurementType: Factors influencing
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
                 sourceKey: factors_influencing_code
-            -   measurementsType: Sample splitting
-                measurementsUnit: 
+            -   measurementType: Sample splitting
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
                 sourceKey: sample_splitting_code
-            -   measurementsType: Analysed volume
-                measurementsUnit: cm3
+            -   measurementType: Analysed volume
+                measurementTypeID: 
+                measurementUnit: cm3
+                measurementUnitID:
                 sourceKey: analysed_volume_cm3
-            -   measurementsType: Sedimentation time
-                measurementsUnit: h
+            -   measurementType: Sedimentation time
+                measurementTypeID: 
+                measurementUnit: h
+                measurementUnitID:
                 sourceKey: sedimentation_time_h
-            -   measurementsType: Sedimentation volume
-                measurementsUnit: ml
+            -   measurementType: Sedimentation volume
+                measurementTypeID: 
+                measurementUnit: ml
+                measurementUnitID:
                 sourceKey: sedimentation_volume_ml
-            -   measurementsType: Number of portions
-                measurementsUnit: nr
+            -   measurementType: Number of portions
+                measurementTypeID: 
+                measurementUnit: nr
+                measurementUnitID:
                 sourceKey: number_of_portions
-            -   measurementsType: Counted portions
-                measurementsUnit: nr
+            -   measurementType: Counted portions
+                measurementTypeID: 
+                measurementUnit: nr
+                measurementUnitID:
                 sourceKey: counted_portions
-            -   measurementsType: Counter program
-                measurementsUnit: 
+            -   measurementType: Counter program
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
                 sourceKey: counter_program
+
+            -   measurementType: Orderer
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKeyList: 
+                    - sample_orderer_name_en
+                    - sample_orderer_name_sv
+
+            -   measurementType: Method reference
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: method_reference_code
+            -   measurementType: Method documentation
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: method_documentation
+            -   measurementType: Sampler type
+                measurementTypeID: http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: sampler_type_code
+            -   measurementType: Plankton sampling method
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: plankton_sampling_method_code
 
     -   eventType: occurrence
         dwcTerms:
@@ -226,18 +381,90 @@ dwcaEmofContent:
                 sourceKey: variable_comment
 
         extraMeasurements:
-            -   measurementsType: Size class
-                measurementsUnit: 
+            -   measurementType: Size class
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
                 sourceKey: size_class
-            -   measurementsType: Size minimum
-                measurementsUnit: um
+            -   measurementType: Size minimum
+                measurementTypeID: 
+                measurementUnit: um
+                measurementUnitID:
                 sourceKey: size_min_um
-            -   measurementsType: Size maximum
-                measurementsUnit: um
+            -   measurementType: Size maximum
+                measurementTypeID: 
+                measurementUnit: um
+                measurementUnitID:
                 sourceKey: size_max_um
-            -   measurementsType: Coefficient
-                measurementsUnit: 
+            -   measurementType: Coefficient
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
                 sourceKey: coefficient
-            -   measurementsType: Magnification
-                measurementsUnit: 
+            -   measurementType: Magnification
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
                 sourceKey: magnification
+            -   measurementType: Size class
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: size_class
+            -   measurementType: Size class range min
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: size_class_range_min
+            -   measurementType: Size class range max
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: size_class_range_max
+            -   measurementType: Epibiont
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: epibiont
+            -   measurementType: Detached
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: detached
+            -   measurementType: Recruits
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: recruits
+            -   measurementType: Bitemark
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: bitemark
+            -   measurementType: Degree biofouling
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: degree_biofouling
+            -   measurementType: Analytical laboratory code
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: analytical_laboratory_code
+            -   measurementType: Analytical laboratory name
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKeyList: 
+                    - analytical_laboratory_name_en
+                    - analytical_laboratory_name_sv
+            -   measurementType: Analytical laboratory accredited
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: analytical_laboratory_accreditated
+            -   measurementType: Size class reference list
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: size_class_ref_list
