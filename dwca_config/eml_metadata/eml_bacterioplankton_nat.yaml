@@ -9,26 +9,28 @@ additionalMetadata:
                 Umeå University, 
                 Swedish Agency for Marine and Water Management, 
                 Swedish Environmental Protection Agency and
-                Swedish Meteorological and Hydrological Institute.
+                Swedish Meteorological and Hydrological Institute (2022). SHARK - National marine environmental monitoring of Bacterioplankton in Sweden since 1989
 
 dataset: 
-    title: SHARK - National marine bacterioplankton monitoring in Sweden since 1989
+    title: SHARK - National marine environmental monitoring of Bacterioplankton in Sweden since 1989
 
     abstract: 
         para: 
-            - Bacterioplankton has been monitored in Sweden since 1989. 
-              The national monitoring program was initiated by the Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management. 
-            - Monitoring is performed by Umeå University. 
-              Data are stored in the Swedish Ocean Archive (SHARK) database by the Swedish Meteorological and Hydrological Institute (SMHI). 
-            - 'Data are collected and analyzed according to the HELCOM COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination (https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf) or simular methods.'
-            - '"Bacterioplankton growth rate is an indicator of the nutrient status in aquatic environments. It is an estimate of the consumption of organic carbon in the ecosystem and therefore closely related to the biochemical oxygen demand in situ (cf. BOD7). Bacterioplankton growth rate thereby indicates the rate of oxygen consumption that may lead to oxygen deficiency in the water column when exceeding oxygen supply" (HELCOM COMBINE Manual https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf).' 
-            - 'Information about the program and the methods are also available in Swedish at https://www.havochvatten.se/hav/vagledning--lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bakteriell-syrekonsumtion.html '
+             - >
+                The national monitoring program was initiated by the Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management.    
+            - >
+                Monitoring is performed by Umeå University. Data are stored in the Swedish Ocean Archive (SHARK) by the Swedish Meteorological and Hydrological Institute (SMHI).
+            - >
+                Data should be sampled and analyzed according to the HELCOM COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination (https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf). However, deviations from the manual might occur. Information about the
+                program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/hav/vagledning--lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bakteriell-syrekonsumtion.html
+    
 
-    methods: 
-        methodStep: 
-            description: 
-                para:
-                    - Data are collected and analyzed according to the HELCOM COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination (https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf) or simular methods.
+    methods:
+        methodStep:
+            description:
+                para: >
+                    Data should be sampled and analyzed according to the HELCOM COMBINE Manual - Part C Annex C11 Guidelines concerning bacterioplankton growth determination (https://helcom.fi/media/documents/Manual-for-Marine-Monitoring-in-the-COMBINE-Programme-of-HELCOM_PartC_AnnexC11.pdf). However, deviations from the manual might occur.
+
         sampling: 
             description:
                 '"It is recommended to take at least 2 samples at different representative depths of the monitored layers of the water column. 
@@ -49,15 +51,3 @@ dataset:
         keywordThesaurus: 
             'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
 
-
-    creator: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
-        organizationName: 
-            Swedish Meteorological and Hydrological Institute
-
-    metadataProvider: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
