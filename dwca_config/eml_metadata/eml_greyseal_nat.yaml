@@ -1,62 +1,44 @@
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
-additionalMetadata: 
-    metadata: 
+additionalMetadata:
+    metadata:
         gbif:
-            citation: 
-                Swedish Museum of Natural History
+            citation: Swedish Museum of Natural History
                 Swedish Agency for Marine and Water Management
-                Swedish Environmental Protection Agency and 
-                Swedish Meteorological and Hydrological Institute (2021).
-                National Grey seal monitoring in Sweden since 1989.
+                Swedish Environmental Protection Agency and
+                Swedish Meteorological and Hydrological Institute (2022).
+                SHARK - National environmental monitoring of Grey seal in Sweden since 1989
 
-dataset: 
-    title: SHARK -  National Grey seal monitoring in Sweden since 1989
+dataset:
+    title: SHARK - National environmental monitoring of Grey seal in Sweden since 1989
 
-    abstract: 
-        para: 
-            - Data from the Swedish environmental monitoring program for Grey seal. 
-            - The monitoring program was initiated in 1989 by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program. 
-            - The monitoring is performed by the Swedish Museum of Natural History. 
-            - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
-            - Monitoring of seals is performed by counting seals from land, ship or airplane. 
-            - 'More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
+    abstract:
+        para:
+            - Data from the Swedish environmental monitoring program for Grey seal.
+            - The monitoring program was initiated in 1989 by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program.
+            - The monitoring is performed by the Swedish Museum of Natural History.
+            - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute.
+            - Monitoring of seals is performed by counting seals from land, ship or airplane.
+            - "More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html"
 
-    methods: 
-        methodStep: 
-            description: 
+    methods:
+        methodStep:
+            description:
                 para:
                     - Data is collected by counting seals from land, ship or airplane.
-        sampling: 
-            description:
-                The Swedish Grey seal monitoring program studies the number of Grey seals in the seas surrounding Sweden.
+        sampling:
+            description: The Swedish Grey seal monitoring program studies the number of Grey seals in the seas surrounding Sweden.
 
-    coverage: 
-        geographicCoverage: 
-            geographicDescription: 
+    coverage:
+        geographicCoverage:
+            geographicDescription:
                 '"Data is collected within the following marine ecoregions using coordinate system WGS84:"
                 http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379'
-        taxonomicCoverage: 
-            The dataset contains the species Halichoerus grypus.
+        taxonomicCoverage: The dataset contains the species Halichoerus grypus.
 
-    keywordSet: 
-        keywords: 
-            keyword: 
+    keywordSet:
+        keywords:
+            keyword:
                 - Samplingevent
-        keywordThesaurus: 
-            "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
-
-
-    creator: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
-        organizationName: 
-            Swedish Meteorological and Hydrological Institute
-
-    metadataProvider: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
+        keywordThesaurus: "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"

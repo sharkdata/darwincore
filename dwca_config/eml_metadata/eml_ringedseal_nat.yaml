@@ -1,62 +1,44 @@
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
-additionalMetadata: 
-    metadata: 
+additionalMetadata:
+    metadata:
         gbif:
-            citation: 
-                Swedish Museum of Natural History, 
-                Swedish Agency for Marine and Water Management, 
+            citation: Swedish Museum of Natural History,
+                Swedish Agency for Marine and Water Management,
                 Swedish Environmental Protection Agency and
-                Swedish Meteorological and Hydrological Institute (2021).
-                National Ringed seal monitoring in Sweden since 1995.
+                Swedish Meteorological and Hydrological Institute (2022).
+                SHARK - National environmental monitoring of Ringed seal in Sweden since 1995.
 
-dataset: 
-    title: SHARK -  National Ringed seal monitoring in Sweden since 1995
+dataset:
+    title: SHARK - National environmental monitoring of Ringed seal in Sweden since 1995
 
-    abstract: 
-        para: 
-            - Data from the Swedish environmental monitoring program for Ringed seal. 
-            - The monitoring program was initiated in 1995 by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program. 
-            - The monitoring is performed by the Swedish Museum of Natural History. 
-            - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
-            - Monitoring of Ringed seal is performed by counting seals in transects from airplane. 
-            - 'More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
+    abstract:
+        para:
+            - Data from the Swedish environmental monitoring program for Ringed seal.
+            - The monitoring program was initiated in 1995 by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program.
+            - The monitoring is performed by the Swedish Museum of Natural History.
+            - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute.
+            - Monitoring of Ringed seal is performed by counting seals in transects from airplane.
+            - "More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html"
 
-    methods: 
-        methodStep: 
-            description: 
+    methods:
+        methodStep:
+            description:
                 para:
                     - Data is collected by counting seals in transects from airplane.
-                    - 'More information about the method is available in Swedish at
-                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html'
-        sampling: 
-            description:
-                The Swedish Ringed seal monitoring program studies the number of Ringed seals in the Bothnian Bay.
+                    - "More information about the method is available in Swedish at
+                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html"
+        sampling:
+            description: The Swedish Ringed seal monitoring program studies the number of Ringed seals in the Bothnian Bay.
 
-    coverage: 
-        geographicCoverage: 
-            geographicDescription: 
-                "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401"
+    coverage:
+        geographicCoverage:
+            geographicDescription: "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401"
         taxonomicCoverage: The dataset contains the species Pusa hispida botnica.
 
-    keywordSet: 
-        keywords: 
-            keyword: 
+    keywordSet:
+        keywords:
+            keyword:
                 - Samplingevent
-        keywordThesaurus: 
-            "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
-
-
-    creator: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
-        organizationName: 
-            Swedish Meteorological and Hydrological Institute
-
-    metadataProvider: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
+        keywordThesaurus: "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"

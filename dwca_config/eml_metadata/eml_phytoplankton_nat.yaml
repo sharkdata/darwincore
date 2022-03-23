@@ -11,15 +11,14 @@ additionalMetadata:
                 Gothenburg University,
                 Umeå University, 
                 Swedish Agency for Marine and Water Management and 
-                Swedish Environmental Protection Agency (2020). 
-                National phytoplankton monitoring in Sweden since 1983.
+                Swedish Environmental Protection Agency (2022). 
+                SHARK - National marine environmental monitoring of Phytoplankton in Sweden since 1983.
 
 dataset: 
-    title: SHARK - National phytoplankton monitoring in Sweden since 1983
+    title: SHARK - National marine environmental monitoring of Phytoplankton in Sweden since 1983
 
     abstract: 
         para: 
-            -   Phytolankton have been monitored in Sweden since 1983. 
             -   The national monitoring program was initiated by the Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management. 
                 Monitoring is performed by Stockholm University, Swedish Meteorological and Hydrological Institute, Gothenburg University and Umeå University. 
             -   'Data are stored in the Swedish Ocean Archive database (SHARK), by the Swedish Meteorological and Hydrological Institute. Data are collected and analyzed according to the 
@@ -70,16 +69,3 @@ dataset:
                 - Samplingevent
         keywordThesaurus: 
             'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
-
-
-    creator: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
-        organizationName:  
-                Swedish Meteorological and Hydrological Institute, 
-               
-    metadataProvider: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
