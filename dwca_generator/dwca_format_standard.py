@@ -524,19 +524,19 @@ class DwcaFormatStandard(object):
         for row_dict in self.dwca_event:
             row = []
             for column_name in self.get_event_columns():
-                row.append(str(row_dict.get(column_name, "")))
+                row.append(str(row_dict.get(column_name, "").strip()))
             event_content.append("\t".join(row))
         # Occurrence.
         for row_dict in self.dwca_occurrence:
             row = []
             for column_name in self.get_occurrence_columns():
-                row.append(str(row_dict.get(column_name, "")))
+                row.append(str(row_dict.get(column_name, "").strip()))
             occurrence_content.append("\t".join(row))
         # Measurementorfact.
         for row_dict in self.dwca_measurementorfact:
             row = []
             for column_name in self.get_measurementorfact_columns():
-                row.append(str(row_dict.get(column_name, "")))
+                row.append(str(row_dict.get(column_name, "").strip()))
             measurementorfact_content.append("\t".join(row))
 
         # Create zip archive.
