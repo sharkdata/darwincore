@@ -1,58 +1,33 @@
-
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
-dataset: 
-
-    creator: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
+dataset:
+    creator:
+        individualName:
+            surName: SHARK
         organizationName: Swedish Meterological and Hydrological Institute (SMHI)
         positionName: Data manager
-        address: 
-            deliveryPoint: Sven Källfelts gata 15
-            city: Gothenburg
-            postalCode: SE 426 71 Västra Frölunda
-            country: SE
         electronicMailAddress: shark@smhi.se
 
-    metadataProvider: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
+    metadataProvider:
+        individualName:
+            surName: SHARK
         organizationName: Swedish Meterological and Hydrological Institute (SMHI)
         positionName: Data manager
-        address: 
-            deliveryPoint: Sven Källfelts gata 15
-            city: Gothenburg
-            postalCode: SE 426 71 Västra Frölunda
-            country: SE
         electronicMailAddress: shark@smhi.se
 
-    contact: 
-        individualName: 
-            givenName: SHARK
-            surName: SMHI
+    contact:
+        individualName:
+            surName: SHARK
         organizationName: Swedish Meterological and Hydrological Institute (SMHI)
         positionName: Data manager
-        address: 
-            deliveryPoint: Sven Källfelts gata 15
-            city: Gothenburg
-            postalCode: SE 426 71 Västra Frölunda
-            country: SE
         electronicMailAddress: shark@smhi.se
 
-    distribution: 
+    distribution:
         online:
-            url: 
+            url:
                 - http://sharkdata.se
                 - https://sharkweb.smhi.se
 
     intellectualRights:
-        para:
-            REPLACE-intellectualRights
-
-
-
+        para: REPLACE-intellectualRights
