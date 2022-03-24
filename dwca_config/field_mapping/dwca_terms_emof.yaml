@@ -406,11 +406,6 @@ dwcaEmofContent:
                 measurementUnit: 
                 measurementUnitID:
                 sourceKey: magnification
-            -   measurementType: Size class
-                measurementTypeID: 
-                measurementUnit: 
-                measurementUnitID:
-                sourceKey: size_class
             -   measurementType: Size class range min
                 measurementTypeID: 
                 measurementUnit: 
