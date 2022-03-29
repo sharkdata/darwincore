@@ -227,6 +227,10 @@ cloud_observation_code		8	8/8
 cloud_observation_code		9	Not observed
 cloud_observation_code		10	Baffling
 
+obspoint	L	Observation made from Land
+obspoint	S	Observation made from Ship
+obspoint	A	Observation made from Airplane
+
 calculation_method		F	Flowmeter reading
 calculation_method		H	Haul length
 
