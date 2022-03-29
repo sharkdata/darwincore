@@ -7,6 +7,7 @@
 import pathlib
 import logging
 import zipfile
+import math
 
 import dwca_generator
 
@@ -241,6 +242,52 @@ class DwcaDataSharkStandard:
                     if obspoint == "":
                         row_dict["obspoint"] = sampler_type_code
                 row_dict["sampler_type_code"] = "Observers"
+
+            # Use coordinate_uncertainty_m for some data.
+            if "seal" in delivery_datatype:
+                sample_latitude_dm = row_dict.get("sample_latitude_dm", "")
+                sample_longitude_dm = row_dict.get("sample_longitude_dm", "")
+                latitude = sample_latitude_dm.replace(" ", "").replace(",", ".")
+                longitude = sample_longitude_dm.replace(" ", "").replace(",", ".")
+                latitude = math.floor(float(latitude))
+                longitude = math.floor(float(longitude))
+
+                # County AB or A or B.
+                if ((latitude == 5920) and (longitude == 1801)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County AC.
+                if ((latitude == 6349) and (longitude == 2016)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County BD.
+                if ((latitude == 6535) and (longitude == 2209)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County C.
+                if ((latitude == 5951) and (longitude == 1738)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County D.
+                if ((latitude == 5845) and (longitude == 1701)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County E.
+                if ((latitude == 5824) and (longitude == 1537)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County F.
+                if ((latitude == 5747) and (longitude == 1409)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County H.
+                if ((latitude == 5639) and (longitude == 1621)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County I.
+                if ((latitude == 5738) and (longitude == 1817)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County K.
+                if ((latitude == 5610) and (longitude == 1535)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County X.
+                if ((latitude == 6040) and (longitude == 1709)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
+                # County Y.
+                if ((latitude == 6237) and (longitude == 1756)):
+                    row_dict["coordinate_uncertainty_m"] = "150000"
 
     def create_dwca_keys(self):
         """ """

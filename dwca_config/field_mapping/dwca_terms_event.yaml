@@ -126,7 +126,7 @@ dwcaEventContent:
             geodeticDatum:
                 text: EPSG:4619
             coordinateUncertaintyInMeters:
-                sourceKey: 
+                sourceKey: coordinate_uncertainty_m
             coordinatePrecision:
                 sourceKey: 
             license:
