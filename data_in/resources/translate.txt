@@ -230,10 +230,11 @@ cloud_observation_code		10	Baffling
 obspoint		L	Observation made from Land
 obspoint		S	Observation made from Ship
 obspoint		A	Observation made from Airplane
-obspoint		ASV	Observation made from Airplane
-obspoint		L. S	Observation made from Land, Observation made from Ship
+obspoint		S,L	Observation made from Land, Observation made from Ship
+obspoint		L,S	Observation made from Land, Observation made from Ship
 obspoint		S, L	Observation made from Land, Observation made from Ship
-obspoint		L, S ?	Observation made from Land, Observation made from Ship
+obspoint		L, S	Observation made from Land, Observation made from Ship
+sampler_type_code		ASV	Observation made from Airplane
 
 calculation_method		F	Flowmeter reading
 calculation_method		H	Haul length

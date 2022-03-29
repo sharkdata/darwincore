@@ -349,6 +349,13 @@ dwcaEmofContent:
                 measurementUnitID:
                 sourceKey: plankton_sampling_method_code
 
+            -   measurementType: Observation point
+                measurementTypeID: 
+                measurementUnit: 
+                measurementUnitID:
+                sourceKey: obspoint
+
+
     -   eventType: occurrence
         dwcTerms:
             eventID:
