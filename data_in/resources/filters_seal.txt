@@ -24,3 +24,6 @@ sample_latitude_dd		0.0	Pos-zero-2
 sample_longitude_dd		0.0	Pos-zero-2
 sample_latitude_dd		0.00000	Pos-zero-3
 sample_longitude_dd		00.00000	Pos-zero-3
+
+sample_latitude_dd		57.34864	Pos-remove-1
+sample_longitude_dd		16.38557	Pos-remove-1
