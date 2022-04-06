@@ -403,6 +403,11 @@ dwcaEmofContent:
                 measurementUnit: um
                 measurementUnitID:
                 sourceKey: size_max_um
+            -   measurementType: Cell volume
+                measurementTypeID: 
+                measurementUnit: um3
+                measurementUnitID:
+                sourceKey: reported_cell_volume_um3
             -   measurementType: Coefficient
                 measurementTypeID: 
                 measurementUnit: 
