@@ -15,8 +15,7 @@ dataset:
 
     abstract:
         para:
-            - Data from the Swedish environmental monitoring program for Harbour seal.
-            - The monitoring program was initiated in 1988 by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program.
+            - The national monitoring program was initiated by the Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management.
             - The monitoring is performed by the Swedish Museum of Natural History.
             - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute.
             - Monitoring of seals is performed by counting seals from land, ship or airplane.

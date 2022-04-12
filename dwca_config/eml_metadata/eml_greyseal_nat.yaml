@@ -15,8 +15,7 @@ dataset:
 
     abstract:
         para:
-            - Data from the Swedish environmental monitoring program for Grey seal.
-            - The monitoring program was initiated in 1989 by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program.
+            - The national monitoring program was initiated by the Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management.
             - The monitoring is performed by the Swedish Museum of Natural History.
             - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute.
             - Monitoring of seals is performed by counting seals from land, ship or airplane.
@@ -34,7 +33,7 @@ dataset:
         geographicCoverage:
             geographicDescription:
                 '"Data is collected within the following marine ecoregions using coordinate system WGS84:"
-                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379'
+                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2379'
         taxonomicCoverage: The dataset contains the species Halichoerus grypus.
 
     keywordSet:
