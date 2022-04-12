@@ -54,7 +54,7 @@ class DwcaFormatStandard(object):
         # Process all data rows.
         for source_row in self.source_rows:
             # Check if marked for removal.
-            if source_row.get("remove_row", "") == "<REMOVE>":
+            if source_row.get("remove_row", "") == "REMOVE":
                 continue
             # Iterate over nodes.
             for dwca_node_name in dwca_node_names:
@@ -105,7 +105,7 @@ class DwcaFormatStandard(object):
         # Process all data rows.
         for source_row in self.source_rows:
             # Check if marked for removal.
-            if source_row.get("remove_row", "") == "<REMOVE>":
+            if source_row.get("remove_row", "") == "REMOVE":
                 continue
             # Iterate over nodes.
             for dwca_node_name in dwca_node_names:
@@ -182,7 +182,7 @@ class DwcaFormatStandard(object):
         # Process all data rows.
         for source_row in self.source_rows:
             # Check if marked for removal.
-            if source_row.get("remove_row", "") == "<REMOVE>":
+            if source_row.get("remove_row", "") == "REMOVE":
                 continue
             # Check for duplicates.
             emof_param_unit_id = source_row.get("emof_param_unit_id", "")
@@ -391,16 +391,22 @@ class DwcaFormatStandard(object):
         # Iterate over event rows.
         for event_row in self.dwca_event:
             # Don't check filtered rows.
-            if event_row.get("remove_row", "") == "<REMOVE>":
+            if event_row.get("remove_row", "") == "REMOVE":
                 continue
             # Latitude/longitude.
-            latitude = float(event_row.get("decimalLatitude", "100.0"))
-            longitude = float(event_row.get("decimalLongitude", "100.0"))
-            if latitude != 100.0 and longitude != -100.0:
-                latitude_min = min(latitude_min, latitude)
-                latitude_max = max(latitude_max, latitude)
-                longitude_min = min(longitude_min, longitude)
-                longitude_max = max(longitude_max, longitude)
+            latitude = event_row.get("decimalLatitude", "100.0")
+            longitude = event_row.get("decimalLongitude", "-100.0")
+            try:
+                latitude = float(latitude)
+                longitude = float(longitude)
+                if latitude != 100.0 and longitude != -100.0:
+                    latitude_min = min(latitude_min, latitude)
+                    latitude_max = max(latitude_max, latitude)
+                    longitude_min = min(longitude_min, longitude)
+                    longitude_max = max(longitude_max, longitude)
+            except:
+                # In case of BLANK, etc.
+                pass 
             # Sampling date.
             sample_date = event_row.get("eventDate", "")
             if sample_date != "":
@@ -524,19 +530,31 @@ class DwcaFormatStandard(object):
         for row_dict in self.dwca_event:
             row = []
             for column_name in self.get_event_columns():
-                row.append(str(row_dict.get(column_name, "").strip()))
+                check_value = row_dict.get(column_name, "")
+                if check_value == "BLANK":
+                    row.append("")
+                else:
+                    row.append(str(row_dict.get(column_name, "").strip()))
             event_content.append("\t".join(row))
         # Occurrence.
         for row_dict in self.dwca_occurrence:
             row = []
             for column_name in self.get_occurrence_columns():
-                row.append(str(row_dict.get(column_name, "").strip()))
+                check_value = row_dict.get(column_name, "")
+                if check_value == "BLANK":
+                    row.append("")
+                else:
+                    row.append(str(row_dict.get(column_name, "").strip()))
             occurrence_content.append("\t".join(row))
         # Measurementorfact.
         for row_dict in self.dwca_measurementorfact:
             row = []
             for column_name in self.get_measurementorfact_columns():
-                row.append(str(row_dict.get(column_name, "").strip()))
+                check_value = row_dict.get(column_name, "")
+                if check_value == "BLANK":
+                    row.append("")
+                else:
+                    row.append(str(row_dict.get(column_name, "").strip()))
             measurementorfact_content.append("\t".join(row))
 
         # Create zip archive.

@@ -37,6 +37,9 @@ eventTypeKeys:
             - size_class
             - size_min_um
             - size_max_um
+            - reported_cell_volume_um3
+            - epibiont
+            - recruits
 
     emof:
     -   eventType: sampling_event

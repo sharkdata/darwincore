@@ -107,6 +107,8 @@ dwcaOccurrenceContent:
                 dynamic: 
                     -   dynamicKey: SizeClass
                         sourceKey: size_class
+                    -   dynamicKey: CellVolume(um3)
+                        sourceKey: reported_cell_volume_um3
                     -   dynamicKey: SizeClassRangeMin
                         sourceKey: size_class_range_min
                     -   dynamicKey: SizeClassRangeMax

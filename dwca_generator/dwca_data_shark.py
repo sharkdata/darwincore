@@ -363,6 +363,15 @@ class DwcaDataSharkStandard:
                     dwc_id
                 ]
                 dwc_id_short = dwc_key_prefix + str(seq_no)
+
+                size_class = row_dict.get("size_class", "")
+                if size_class:
+                    dwc_id_short += "-SIZECLASS-" + size_class
+                else:
+                    cell_volume = row_dict.get("reported_cell_volume_um3", "")
+                    if cell_volume:
+                        dwc_id_short += "-CELLVOLUME-" + cell_volume.replace(",", ".")
+
                 row_dict[dwc_key_name] = dwc_id_short
 
             # Extra keys for the "extendedmeasurementorfact.txt" table.
