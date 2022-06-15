@@ -3872,3 +3872,4 @@ Porcellana		106838	Porcellana
 Hirudinida		2041	Hirudinea
 Ruppia spiralis		234030	Ruppia
 Bdelloidea		17968	Bdelloidea
+Navicula capitata var. capitata		172682	Navicula capitata var. capitata	
