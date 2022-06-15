@@ -3867,17 +3867,8 @@ Pectinaria s.lat.		980	Pectinariidae
 Bosmina longispina maritima	233755	106271	Bosmina (Eubosmina) coregoni
 Oikopleura dioica	242109	103407	Oikopleura (Vexillaria) dioica
 
-
-Mysis relicta		120120	Mysis relicta
-Cyclops		149782	Cyclops
-Medusozoa		1267	Cnidaria
 Oncaea		128690	Oncaea
-Gnathostomata		1828	Gnathostomata
-Invertebrata		2	Animalia
-Other		2	Animalia
-Biota		2	Animalia
-Mesocyclops leuckarti		234061	Mesocyclops leuckarti
-Hydrachnidiae		1414	Prostigmata
-Necora puber		107398	Necora puber
 Porcellana		106838	Porcellana
-Luidia sarsi		178639	Luidia sarsi
+Hirudinida		2041	Hirudinea
+Ruppia spiralis		234030	Ruppia
+Bdelloidea		17968	Bdelloidea
