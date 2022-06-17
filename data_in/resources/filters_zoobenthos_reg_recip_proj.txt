@@ -1,5 +1,6 @@
 source_field	include_value	exclude_value	filter_group_id	comments
-			
+
+# National data to be excluded in this export
 dataset_name		SHARK_Zoobenthos_1971_2006_SUSE_1
 dataset_name		SHARK_Zoobenthos_1977_2008_KMRS_Alsback
 dataset_name		SHARK_Zoobenthos_1971_2006_SUSE_2
@@ -19,7 +20,6 @@ dataset_name		SHARK_Zoobenthos_1988_KMRS
 dataset_name		SHARK_Zoobenthos_1989_UMSC
 dataset_name		SHARK_Zoobenthos_1989_KMRS
 dataset_name		SHARK_Zoobenthos_1990_1999_UMSC
-dataset_name		SHARK_Zoobenthos_1990_1991_LNU_PMK
 dataset_name		SHARK_Zoobenthos_1990_KMRS
 dataset_name		SHARK_Zoobenthos_1991_KMRS 
 dataset_name		SHARK_Zoobenthos_1992_KMRS
@@ -46,7 +46,6 @@ dataset_name		SHARK_Zoobenthos_2006_UMSC
 dataset_name		SHARK_Zoobenthos_2006_KMRS
 dataset_name		SHARK_Zoobenthos_2007_UMSC
 dataset_name		SHARK_Zoobenthos_2007_KMRS
-dataset_name		SHARK_Zoobenthos_2007_2008_LNU_Torhamn
 dataset_name		SHARK_Zoobenthos_2008_UMSC
 dataset_name		SHARK_Zoobenthos_2008_NLST
 dataset_name		SHARK_Zoobenthos_2008_KMRS
@@ -54,18 +53,12 @@ dataset_name		SHARK_Zoobenthos_2009_UMSC_Nationella
 dataset_name		SHARK_Zoobenthos_2009_KMRS
 dataset_name		SHARK_Zoobenthos_2010_UMSC
 dataset_name		SHARK_Zoobenthos_2007_2010_SUSE_Nat
-dataset_name		SHARK_Zoobenthos_2011_KMRS_Havstenfjord
-dataset_name		SHARK_Zoobenthos_2011_AQBI_MARMONI
 dataset_name		SHARK_Zoobenthos_2011_UMSC
 dataset_name		SHARK_Zoobenthos_2011_SUSE
 dataset_name		SHARK_Zoobenthos_2011_KMRS
 dataset_name		SHARK_Zoobenthos_2011_KMRS_NAT_extra
-dataset_name		SHARK_Zoobenthos_2012_AQBI_MMSB
-dataset_name		SHARK_Zoobenthos_2012_AQBI_MARMONI
 dataset_name		SHARK_Zoobenthos_2012_SUSE
 dataset_name		SHARK_Zoobenthos_2012_UMSC
-dataset_name		SHARK_Zoobenthos_2012_HAFOK_Ostergotland
-dataset_name		SHARK_Zoobenthos_2012_HAFOK_Orust_Tjorn
 dataset_name		SHARK_Zoobenthos_2013_UMSC
 dataset_name		SHARK_Zoobenthos_2013_DEEP
 dataset_name		SHARK_Zoobenthos_2013_SLC-K
@@ -76,8 +69,6 @@ dataset_name		SHARK_Zoobenthos_2015_UMSC
 dataset_name		SHARK_Zoobenthos_2015_SLC-T
 dataset_name		SHARK_Zoobenthos_2007_2016_DEEP_Asko
 dataset_name		SHARK_Zoobenthos_2015_DEEP
-dataset_name		SHARK_Zoobenthos_2015_MMAB
-dataset_name		SHARK_Zoobenthos_2016_SLUA
 dataset_name		SHARK_Zoobenthos_2016_SLC-T
 dataset_name		SHARK_Zoobenthos_2016_UMSC
 dataset_name		SHARK_Zoobenthos_2016_LNU
@@ -87,49 +78,56 @@ dataset_name		SHARK_Zoobenthos_2017_UMSC
 dataset_name		SHARK_Zoobenthos_2017_DEEP_Asko
 dataset_name		SHARK_Zoobenthos_2017_DEEP
 dataset_name		SHARK_Zoobenthos_2017_LNU
-dataset_name		SHARK_Zoobenthos_2017_LNU_Kalmar
+dataset_name		SHARK_Zoobenthos_2017_2020_SLC-T
 dataset_name		SHARK_Zoobenthos_2018_UMSC
 dataset_name		SHARK_Zoobenthos_2018_DEEP_Asko
 dataset_name		SHARK_Zoobenthos_2018_LNU
 dataset_name		SHARK_Zoobenthos_2018_GU
 dataset_name		SHARK_Zoobenthos_2018_DEEP
-dataset_name		SHARK_Zoobenthos_2018_LNU_Kalmar
 dataset_name		SHARK_Zoobenthos_2019_UMSC
 dataset_name		SHARK_Zoobenthos_2019_LNU
 dataset_name		SHARK_Zoobenthos_2019_DEEP_HAV_Asko
 dataset_name		SHARK_Zoobenthos_2019_DEEP_HAV
-dataset_name		SHARK_Zoobenthos_2019_LNU_HLS
+dataset_name		SHARK_Zoobenthos_2020_UMSC
+dataset_name		SHARK_Zoobenthos_2020_LNU
+dataset_name		SHARK_Zoobenthos_2020_DEEP_HAV_Asko
+dataset_name		SHARK_Zoobenthos_2020_DEEP_HAV
+dataset_name		SHARK_Zoobenthos_2021_UMSC
+dataset_name		SHARK_Zoobenthos_2021_LNU
+dataset_name		SHARK_Zoobenthos_2021_DEEP_Asko
+dataset_name		SHARK_Zoobenthos_2021_DEEP
+dataset_name		SHARK_Zoobenthos_2021_SLC-T
 
 
-sample_latitude_dd		58.99978	Pos-on-land-1
-sample_longitude_dd		17.82975	Pos-on-land-1
-
-sample_latitude_dd		64.66800	Pos-on-land-2
-sample_longitude_dd		21.03050	Pos-on-land-2
-
-sample_latitude_dd		64.97667	Pos-on-land-3
-sample_longitude_dd		21.16767	Pos-on-land-3
-
-sample_latitude_dd		64.91667	Pos-on-land-4
-sample_longitude_dd		21.14650	Pos-on-land-4
-
-sample_latitude_dd		57.45000	Pos-on-land-5
-sample_longitude_dd		18.21833	Pos-on-land-5
-
-sample_latitude_dd		57.36333	Pos-on-land-6
-sample_longitude_dd		18.36667	Pos-on-land-6
-
-sample_latitude_dd		57.47667	Pos-on-land-7
-sample_longitude_dd		18.36667	Pos-on-land-7
-
-sample_latitude_dd		57.23467	Pos-on-land-8
-sample_longitude_dd		18.28833	Pos-on-land-8
-
-sample_latitude_dd		64.01883	Pos-on-land-9
-sample_longitude_dd		19.84833	Pos-on-land-9
-
-sample_latitude_dd		62.70167	Pos-on-land-10
-sample_longitude_dd		18.06000	Pos-on-land-10
+#sample_latitude_dd		58.99978	Pos-on-land-1
+#sample_longitude_dd		17.82975	Pos-on-land-1
+#
+#sample_latitude_dd		64.66800	Pos-on-land-2
+#sample_longitude_dd		21.03050	Pos-on-land-2
+#
+#sample_latitude_dd		64.97667	Pos-on-land-3
+#sample_longitude_dd		21.16767	Pos-on-land-3
+#
+#sample_latitude_dd		64.91667	Pos-on-land-4
+#sample_longitude_dd		21.14650	Pos-on-land-4
+#
+#sample_latitude_dd		57.45000	Pos-on-land-5
+#sample_longitude_dd		18.21833	Pos-on-land-5
+#
+#sample_latitude_dd		57.36333	Pos-on-land-6
+#sample_longitude_dd		18.36667	Pos-on-land-6
+#
+#sample_latitude_dd		57.47667	Pos-on-land-7
+#sample_longitude_dd		18.36667	Pos-on-land-7
+#
+#sample_latitude_dd		57.23467	Pos-on-land-8
+#sample_longitude_dd		18.28833	Pos-on-land-8
+#
+#sample_latitude_dd		64.01883	Pos-on-land-9
+#sample_longitude_dd		19.84833	Pos-on-land-9
+#
+#sample_latitude_dd		62.70167	Pos-on-land-10
+#sample_longitude_dd		18.06000	Pos-on-land-10
 
 sample_latitude_dd		0	Pos-zero-1
 sample_longitude_dd		0	Pos-zero-1
