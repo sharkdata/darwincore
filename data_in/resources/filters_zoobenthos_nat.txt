@@ -110,8 +110,6 @@ dataset_name	SHARK_Zoobenthos_2021_DEEP_Asko
 dataset_name	SHARK_Zoobenthos_2021_DEEP
 dataset_name	SHARK_Zoobenthos_2021_SLC-T
 
-dataset_name	SHARK_Zoobenthos_1979_1997_UMSC_BMP
-dataset_name	SHARK_Zoobenthos_1990_1999_UMSC
 
 
 #sample_latitude_dd		58.99978	Pos-on-land-1
