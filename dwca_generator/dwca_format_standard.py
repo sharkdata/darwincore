@@ -142,25 +142,25 @@ class DwcaFormatStandard(object):
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
 
-
                         # Add URI path for Aphia-id if numeric.
                         worms_lsid = occurrence_dict.get("scientificNameID", "")
                         # print("DEBUG 1", worms_lsid)
                         try:
                             worms_lsid_int = int(worms_lsid)
-                            worms_lsid_new = "urn:lsid:marinespecies.org:taxname:" + worms_lsid
+                            worms_lsid_new = (
+                                "urn:lsid:marinespecies.org:taxname:" + worms_lsid
+                            )
                             occurrence_dict["scientificNameID"] = worms_lsid_new
                             # print("DEBUG 2", worms_lsid_new)
                         except:
                             pass
-
 
                         # Append occurrence row content.
                         self.dwca_occurrence.append(occurrence_dict.copy())
 
     def create_dwca_measurementorfact(self):
         """ """
-        logger = logging.getLogger('dwca_generator')
+        logger = logging.getLogger("dwca_generator")
         # For checking for duplicates.
         used_mof_occurrence_key_list = set()
         duplicate_row_number = 0
@@ -218,13 +218,14 @@ class DwcaFormatStandard(object):
                         # Append.
                         if emof_dict.get("measurementType", ""):
 
-
-
-
-
+                            # Measurement identifiers. NERC vocabular.
                             parameter = emof_dict.get("measurementType", "")
                             unit = emof_dict.get("measurementUnit", "")
-                            # Measurement identifiers. NERC vocabular.
+                            if parameter == "# counted":
+                                emof_dict[
+                                    "measurementTypeID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
+
                             if unit == "m":
                                 emof_dict[
                                     "measurementUnitID"
@@ -233,10 +234,6 @@ class DwcaFormatStandard(object):
                                 emof_dict[
                                     "measurementUnitID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
-
-
-
-
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
@@ -255,9 +252,13 @@ class DwcaFormatStandard(object):
                                 for extraMeasurement in extraMeasurements:
 
                                     param = extraMeasurement.get("measurementType", "")
-                                    param_id = extraMeasurement.get("measurementTypeID", "")
+                                    param_id = extraMeasurement.get(
+                                        "measurementTypeID", ""
+                                    )
                                     unit = extraMeasurement.get("measurementUnit", "")
-                                    unit_id = extraMeasurement.get("measurementUnitID", "")
+                                    unit_id = extraMeasurement.get(
+                                        "measurementUnitID", ""
+                                    )
                                     source_key = extraMeasurement.get("sourceKey", "")
                                     value = source_row.get(source_key, "")
                                     if param and (value not in [""]):
@@ -296,7 +297,9 @@ class DwcaFormatStandard(object):
                     logger.warning("eMoF: Exception-duplicates: " + str(e))
         # Finally.
         if duplicate_row_number > 0:
-            logger.warning("eMoF: Number of duplicates found: " + str(duplicate_row_number))
+            logger.warning(
+                "eMoF: Number of duplicates found: " + str(duplicate_row_number)
+            )
 
     def add_content(self, content, source_row, result_dict):
         """ """
@@ -406,7 +409,7 @@ class DwcaFormatStandard(object):
                     longitude_max = max(longitude_max, longitude)
             except:
                 # In case of BLANK, etc.
-                pass 
+                pass
             # Sampling date.
             sample_date = event_row.get("eventDate", "")
             if sample_date != "":
