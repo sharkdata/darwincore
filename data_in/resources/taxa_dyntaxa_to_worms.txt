@@ -3866,7 +3866,7 @@ Pectinaria s.lat.		980	Pectinariidae
 
 Bosmina longispina maritima	233755	106271	Bosmina (Eubosmina) coregoni
 Oikopleura dioica	242109	103407	Oikopleura (Vexillaria) dioica
-
+Navicula capitata var. capitata		172682	Navicula capitata var. capitata
 
 Mysis relicta		120120	Mysis relicta
 Cyclops		149782	Cyclops
@@ -3881,3 +3881,10 @@ Hydrachnidiae		1414	Prostigmata
 Necora puber		107398	Necora puber
 Porcellana		106838	Porcellana
 Luidia sarsi		178639	Luidia sarsi
+Porcellana		106838	Porcellana
+Hirudinida		2041	Hirudinea
+Ruppia spiralis		234030	Ruppia
+Bdelloidea		17968	Bdelloidea
+
+
+
