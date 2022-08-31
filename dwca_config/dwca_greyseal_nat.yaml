@@ -11,7 +11,7 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-greyseal-nat_TEST.zip
+        - DwCA-SMHI-Greyseal-nat_version_TEST.zip
 
 sourceFiles:
     directory: 
