@@ -22,6 +22,9 @@ eventTypeKeys:
         keyFields: 
             - shark_sample_id_md5
             - sample_part_id
+            - sample_part_min_cm
+            - sample_part_max_cm
+
 
     occurrence:
     -   eventType: occurrence
