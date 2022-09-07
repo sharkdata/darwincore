@@ -35,6 +35,7 @@ eventTypeKeys:
             - sex_code
             - dev_stage_code
             - size_class
+            - species_flag_code
             - size_min_um
             - size_max_um
             - reported_cell_volume_um3
