@@ -82,7 +82,14 @@ dataset_name		SHARK_Phytoplankton_2018_SMHI
 dataset_name		SHARK_Phytoplankton_2019_UMSC
 dataset_name		SHARK_Phytoplankton_2019_SMHI
 dataset_name		SHARK_Phytoplankton_2019_DEEP
-dataset_name		SHARK_Phytoplankton_2019_DEEP_SKVVF
+dataset_name		SHARK_Phytoplankton_2019_DEEP_SKVVF		?
+dataset_name		SHARK_Phytoplankton_2020_UMSC
+dataset_name		SHARK_Phytoplankton_2020_SMHI
+dataset_name		SHARK_Phytoplankton_2020_DEEP
+dataset_name		SHARK_Phytoplankton_2021_UMSC
+dataset_name		SHARK_Phytoplankton_2021_SMHI
+dataset_name		SHARK_Phytoplankton_2021_DEEP
+dataset_name		SHARK_Phytoplankton_2021_SMHI_SLCK
 
 dataset_name		SHARK_Phytoplankton_2015_SMHI_TRANSPAPER
 dataset_name		SHARK_Phytoplankton_2013_SMHI_TRANSPAPER
