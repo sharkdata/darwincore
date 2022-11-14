@@ -6,8 +6,11 @@ parameter		# pups counted on land
 parameter		# counted	Param-zero-1
 value		0	Param-zero-1
 
-parameter		# counted	Param-zero-1
+parameter		# counted	Param-zero-1A
 value		0.0	Param-zero-1A
+
+parameter		Calculated # counted	Param-zero-1B
+value		0.0	Param-zero-1B
 
 parameter		# pups counted on land	Param-zero-2
 value		0	Param-zero-2
