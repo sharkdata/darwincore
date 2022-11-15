@@ -1,64 +1,53 @@
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
-info: 
+info:
     title: DwC-A configurations for Ringedseal - national monitoring
-    description:
-        Used to generate DarwinCore-Archive files from SHARK zip files.
+    description: Used to generate DarwinCore-Archive files from SHARK zip files.
 
 dwcaTarget:
-    directory:
-        data_out
-    files: 
+    directory: data_out
+    files:
         - DwCA-SMHI-Ringedseal-nat_version_TEST.zip
 
 sourceFiles:
-    directory: 
-        data_in/datasets
-    globSearch:
-        SHARK_Ringedseal_*_version_*.zip
+    directory: data_in/datasets
+    globSearch: SHARK_Ringedseal_*_version_*.zip
     # files:
     #     - SHARK_ringedseal_TODO.zip
 
 emlDefinitions:
-    directory:
-        dwca_config/eml_metadata
+    directory: dwca_config/eml_metadata
     files:
         - eml_smhi_datacenter.yaml
         - eml_auto.yaml
         - eml_ringedseal_nat.yaml
 
 dwcaKeys:
-    directory:
-        dwca_config/field_mapping
+    directory: dwca_config/field_mapping
     files:
         - dwca_keys.yaml
 
 fieldMapping:
-    directory:
-        dwca_config/field_mapping
+    directory: dwca_config/field_mapping
     files:
         - dwca_terms_event.yaml
         - dwca_terms_occurrence.yaml
         - dwca_terms_emof.yaml
 
 taxaWorms:
-    directory:
-        data_in/resources
+    directory: data_in/resources
     files:
         - taxa_dyntaxa_to_worms.txt
 
 translate:
-    directory:
-        data_in/resources
+    directory: data_in/resources
     files:
         - translate.txt
-        - translate_seal.txt
+        - translate_ringedseal.txt
 
 filters:
-    directory:
-        data_in/resources
+    directory: data_in/resources
     files:
         - filters.txt
-        - filters_seal.txt
+        - filters_ringedseal.txt
