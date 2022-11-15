@@ -88,6 +88,7 @@ dataset_name	SHARK_Phytoplankton_2020_DEEP
 dataset_name	SHARK_Phytoplankton_2021_UMSC
 dataset_name	SHARK_Phytoplankton_2021_SMHI
 dataset_name	SHARK_Phytoplankton_2021_DEEP
+dataset_name	SHARK_Phytoplankton_2021_SMHI_SLCK
 
 scientific_name		Picoplankton
 parameter		Carbon concentration

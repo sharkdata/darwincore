@@ -11,7 +11,8 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-harbourseal-nat_TEST.zip
+        - DwCA-SMHI-Harbourseal-nat_version_TEST.zip
+
 
 sourceFiles:
     directory: 

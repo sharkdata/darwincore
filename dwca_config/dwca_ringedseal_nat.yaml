@@ -11,7 +11,7 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-ringedseal-nat_TEST.zip
+        - DwCA-SMHI-Ringedseal-nat_version_TEST.zip
 
 sourceFiles:
     directory: 
