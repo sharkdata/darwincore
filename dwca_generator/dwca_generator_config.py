@@ -31,6 +31,9 @@ class DwcaGeneratorConfig:
         self.taxa_worms_file = ""
         self.translate_files = []
         self.filters_files = []
+        self.metadata_source = None
+        self.metadata_template = None
+        self.metadata_target = None
 
     # def create_dwca(self):
     #     """ """
@@ -45,7 +48,7 @@ class DwcaGeneratorConfig:
 
         # "dwcaTarget"
         file_list = self.source_files = self.get_config_files("dwcaTarget")
-        self.dwca_target = file_list[0]
+        self.dwca_target = file_list[0] if len(file_list) > 0 else ""
         # "sourceFiles"
         self.source_files = self.load_source_files()
         # "emlDefinitions"
@@ -59,11 +62,21 @@ class DwcaGeneratorConfig:
         self.field_mapping = self.merge_config_yaml_files(file_list)
         # "taxaWorms"
         file_list = self.get_config_files("taxaWorms")
-        self.taxa_worms_file = file_list[0]
+        self.taxa_worms_file = file_list[0] if len(file_list) > 0 else ""
         # "translate"
         self.translate_files = self.get_config_files("translate")
         # "filters"
         self.filters_files = self.get_config_files("filters")
+        # "metadataSourceFiles"
+        file_list = self.get_config_files("metadataSourceFiles")
+        metadata = self.merge_config_yaml_files(file_list)
+        self.metadata_source = self.cleanup_metadata(metadata)
+        # "metadataTemplate"
+        file_list = self.get_config_files("metadataTemplate")
+        self.metadata_template = file_list[0] if len(file_list) > 0 else ""
+        # "metadataTarget"
+        file_list = self.get_config_files("metadataTarget")
+        self.metadata_target = file_list[0] if len(file_list) > 0 else ""
 
     def generate_eml_content(self):
         """ """
@@ -147,3 +160,28 @@ class DwcaGeneratorConfig:
             else:
                 target[key] = value
         return target
+
+    def cleanup_metadata(self, metadata):
+        """ """
+        new_metadata = self.stripValues(metadata)
+        return new_metadata
+
+    def stripValues(self, data):
+        if isinstance(data, dict):
+            # return {k:self.stripValues(v) for k, v in data.items() if k is not None and v is not None}
+            return {k: self.stripValues(v) for k, v in data.items()}
+        elif isinstance(data, list):
+            # return [self.stripValues(item) for item in data if item is not None]
+            return [self.stripValues(item) for item in data]
+        elif isinstance(data, tuple):
+            # return tuple(self.stripValues(item) for item in data if item is not None)
+            return tuple(self.stripValues(item) for item in data)
+        elif isinstance(data, set):
+            # return {self.stripValues(item) for item in data if item is not None}
+            return {self.stripValues(item) for item in data}
+        else:
+            # return data
+            if isinstance(data, str):
+                return data.strip()
+            else:
+                return data

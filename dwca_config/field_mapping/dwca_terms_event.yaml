@@ -49,7 +49,6 @@ dwcaEventColumns:
     - ownerInstitutionCode
     - dataGeneralizations
     - dynamicProperties
-    # Extra:
     - collectionCode
 
 dwcaEventContent:
@@ -151,9 +150,10 @@ dwcaEventContent:
                 text: Swedish Agency for Marine and Water Management
             dataGeneralizations:
                 sourceKey: 
-            # moved to emof
-            #dynamicProperties:
-            #    dynamic:
+            dynamicProperties:
+               dynamic:
+                   -   dynamicKey: SharkDataset
+                       sourceKey: dataset_name
             #        -   dynamicKey: SamplingLaboratoryCode
             #            sourceKey: sampling_laboratory_code
             #        -   dynamicKey: SamplingLaboratoryName
@@ -180,7 +180,7 @@ dwcaEventContent:
             #            sourceKey: monitoring_purpose_code
             # Extra:
             collectionCode:
-                sourceKey: dataset_name
+                sourceKey: dwc_dataset_name
 
     -   eventType: sample
         dwcTerms:
@@ -304,13 +304,13 @@ dwcaEventContent:
                 sourceKey: 
             dataGeneralizations:
                 sourceKey: 
-            # moved to emof
-            #dynamicProperties:
-            #    dynamic:
+            dynamicProperties:
+               dynamic:
+                   -   dynamicKey: SharkDataset
+                       sourceKey: dataset_name
             #        -   dynamicKey: Orderer
             #            sourceKeyList: 
             #                - sample_orderer_name_en
             #                - sample_orderer_name_sv
-            # Extra:
             collectionCode:
-                sourceKey: dataset_name
+                sourceKey: dwc_dataset_name

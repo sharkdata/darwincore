@@ -51,7 +51,8 @@ taxaWorms:
     directory:
         data_in/resources
     files:
-        - taxa_dyntaxa_to_worms.txt
+        # - taxa_dyntaxa_to_worms.txt
+        - taxa_worms.txt
 
 translate:
     directory:
@@ -66,3 +67,29 @@ filters:
     files:
         - filters.txt
         - filters_zoobenthos_nat.txt
+
+metadataSourceFiles:
+    directory:
+        ../metadata/dcat_ap_se
+    files:
+        - titles.yaml
+        - purpose.yaml
+        - orderer.yaml
+        - methods.yaml
+        - license.yaml
+        - laboratory.yaml
+        - geographic_coverage.yaml
+        - datahost.yaml
+        - keywords.yaml
+
+metadataTemplate:
+    directory:
+        dwca_config/metadata_templates
+    files: 
+        - yame_zoobenthos_nat_template_sv.json
+
+metadataTarget:
+    directory:
+        data_out
+    files: 
+        - yame_zoobenthos_nat_sv.json
