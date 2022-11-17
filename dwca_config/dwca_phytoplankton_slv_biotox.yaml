@@ -47,7 +47,8 @@ taxaWorms:
     directory:
         data_in/resources
     files:
-        - taxa_dyntaxa_to_worms.txt
+        # - taxa_dyntaxa_to_worms.txt
+        - taxa_worms.txt
 
 translate:
     directory:
