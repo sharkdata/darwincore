@@ -1,2 +1,2 @@
 source_field	dwc_field	from_value	to_value	comments
-
+	basisOfRecord	MaterialSample	HumanObservation
