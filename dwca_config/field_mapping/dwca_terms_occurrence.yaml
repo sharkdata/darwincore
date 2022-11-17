@@ -119,6 +119,8 @@ dwcaOccurrenceContent:
                         sourceKey: detached
                     -   dynamicKey: Recruits
                         sourceKey: recruits
+                    -   dynamicKey: SharkDataset
+                        sourceKey: dataset_name
                     #-   dynamicKey: Bitemark
                     #    sourceKey: bitemark
                     #-   dynamicKey: DegreeBiofouling

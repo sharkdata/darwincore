@@ -72,6 +72,37 @@ class DwcaDataSharkStandard:
             header = []
             # From file in zip to list of rows.
             with zipfile.ZipFile(dataset_filepath) as z:
+
+                # Load code translations from zip.
+                translate_codes = {}
+                translate_fields = set()
+                translate_header = []
+                if "translate_codes.txt" in z.namelist():
+                    with z.open("translate_codes.txt", "r") as f:
+                        for index, row in enumerate(f):
+                            row = row.decode("cp1252")
+                            row_items = [str(x.strip()) for x in row.split("\t")]
+                            if index == 0:
+                                translate_header = row_items
+                            else:
+                                counter_rows += 1
+                                row_dict = dict(zip(translate_header, row_items))
+                                # Used parts.
+                                field = row_dict.get("field", "")
+                                public_value = row_dict.get("public_value", "")
+                                code = row_dict.get("code", "")
+                                english = row_dict.get("english", "")
+                                # bodc_nerc = row_dict.get("bodc_nerc", "")
+                                darwincore = row_dict.get("darwincore", "")
+                                # Add key and value.
+                                if field and public_value:
+                                    translate_fields.add(field)
+                                    key = field + "<+>" + public_value
+                                    value = darwincore
+                                    if not value:
+                                        value = code + " (" + english + ")"
+                                    translate_codes[key] = value
+
                 with z.open("shark_data.txt", "r") as f:
                     for index, row in enumerate(f):
                         row = row.decode("cp1252")
@@ -142,6 +173,14 @@ class DwcaDataSharkStandard:
 
                             # Add to list.
                             if add_row:
+                                # Translate from "translate_codes.txt" in zip file.
+                                for key in row_dict.keys():
+                                    if key in translate_fields:
+                                        value = row_dict.get(key, "")
+                                        translate_key = key + "<+>" + value
+                                        new_value = translate_codes.get(translate_key, value)
+                                        row_dict[key] = new_value
+
                                 # Translate values.
                                 for (
                                     key
