@@ -328,6 +328,18 @@ class DwcaDataSharkStandard:
                 if ((latitude == 6237) and (longitude == 1756)):
                     row_dict["coordinate_uncertainty_m"] = "150000"
 
+                # For empty observations use "absent" in occurrenceStatus.
+                # present_absent = "present"
+                if "present_absent" not in row_dict:
+                    row_dict["present_absent"] = "present"
+                if delivery_datatype in ["ringed seal", "ringedseal"]:
+                    parameter = row_dict.get("parameter", "")
+                    value = row_dict.get("value", "")
+                    if parameter in ["# counted", "Calculated # counted", "Abundance"]:
+                        value = float(value)
+                        if value == 0.0:
+                            row_dict["present_absent"] = "absent"
+
     def create_dwca_keys(self):
         """ """
         config_dwca_keys = self.dwca_gen_config.dwca_keys
