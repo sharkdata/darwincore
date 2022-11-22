@@ -1,1 +1,4 @@
 source_field	include_value	exclude_value	filter_group_id	comments
+dataset_name		SHARK_Picoplankton_2019_SMHI_DNA_FCM	
+dataset_name		SHARK_Picoplankton_2019_SMHI_DNA
+dataset_name		SHARK_Picoplankton_2019_UMSC_DNA
