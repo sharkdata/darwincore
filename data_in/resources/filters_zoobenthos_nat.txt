@@ -1,5 +1,6 @@
 source_field	include_value	exclude_value	filter_group_id	comments
 			
+# Reg-recip-proj data to be excluded in this export
 dataset_name	SHARK_Zoobenthos_1971_2006_SUSE_1			
 dataset_name	SHARK_Zoobenthos_1971_2006_SUSE_2			
 dataset_name	SHARK_Zoobenthos_1971_2006_SUSE_Asko			
