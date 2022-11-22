@@ -1,39 +1,39 @@
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
-additionalMetadata: 
-    metadata: 
+additionalMetadata:
+    metadata:
         gbif:
-            citation: 
-                (2022). 
-                SHARK - National marine environmental monitoring of Picoplankton in Sweden since 19XX.
+            citation:
+                Swedish Meteorological and Hydrological Institute, Umeå University, Swedish Agency for Marine and Water Management and
+                Swedish Environmental Protection Agency (2022).
+                SHARK - National and regional marine environmental monitoring of Picoplankton in Sweden since 2002.
 
-dataset: 
-    title: SHARK - National marine environmental monitoring of Picoplankton in Sweden since 19XX
+dataset:
+    title: SHARK - National and regional marine environmental monitoring of Picoplankton in Sweden since 2002
 
-    abstract: 
-        para: 
-            -   
-    methods: 
-        methodStep: 
-            description: 
-                para:
-                    -   
-        sampling: 
+    abstract:
+        para:
+            - The national monitoring program was initiated by the Swedish Environmental Protection Agency and is now financed by the Swedish Agency for Marine and Water Management.
+            - Monitoring is performed by Swedish Meteorological and Hydrological Institute and Umeå University
+            - "Data are stored in the Swedish Ocean Archive database (SHARK), by the Swedish Meteorological and Hydrological Institute. Data should be sampled and analyzed according to MacIsaac E A and Stockner J G 1993. Enumeration of phototrophic picoplankton by autoflourescence microscopy. In Handbook of methods in aquatic microbial ecology. Kemp P F, Sherr B F, Sherr E B, and Cole J J (eds.) Lewis, Boca Raton. pp. 187-197. However, deviations from the manual might occur. Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/overvakning-och-uppfoljning/miljoovervakning/organisation-och-programomraden/miljoovervakningens-programomrade-kust-och-hav/delprogram-fria-vattenmassan.html, and at https://helcom.fi/wp-content/uploads/2020/01/HELCOM-Guidelines-for-monitoring-of-phytoplankton-species-composition-abundance-and-biomass.pdf and https://www.ospar.org/documents?d=35398."
+            -
+    methods:
+        methodStep:
             description:
-               
+                para:
+                    - Data should be sampled and analyzed according to MacIsaac E A and Stockner J G 1993. Enumeration of phototrophic picoplankton by autoflourescence microscopy. In Handbook of methods in aquatic microbial ecology. Kemp P F, Sherr B F, Sherr E B, and Cole J J (eds.) Lewis, Boca Raton. pp. 187-197. However, deviations from the manual might occur.
+        sampling:
+            description:
 
-    coverage: 
-        geographicCoverage: 
-            geographicDescription: 
-                
+    coverage:
+        geographicCoverage:
+            geographicDescription:
+
         # taxonomicCoverage:  Phylum:
-      
 
-    keywordSet: 
-        keywords: 
-            keyword: 
+    keywordSet:
+        keywords:
+            keyword:
                 - Samplingevent
-        keywordThesaurus: 
-            'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
+        keywordThesaurus: "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
