@@ -145,17 +145,18 @@ if __name__ == "__main__":
     """ """
     # Test configs.
     config_files = [
-        # "dwca_config/dwca_bacterioplankton_nat.yaml",
-        # "dwca_config/dwca_zooplankton_nat.yaml",
+        "dwca_config/dwca_bacterioplankton_nat.yaml",
+        "dwca_config/dwca_zooplankton_nat.yaml",
         "dwca_config/dwca_zoobenthos_nat.yaml",
-        # "dwca_config/dwca_phytoplankton_nat.yaml",
-        # # "dwca_config/dwca_phytoplankton_reg_recip_proj.yaml",
-        # # "dwca_config/dwca_zoobenthos_reg_recip_proj.yaml",
-        # "dwca_config/dwca_harbourseal_nat.yaml",
-        # "dwca_config/dwca_greyseal_nat.yaml",
-        # "dwca_config/dwca_ringedseal_nat.yaml",
-        # "dwca_config/dwca_phytoplankton_slv_biotox.yaml",
-        # "dwca_config/dwca_seal_pathology.yaml",
+        "dwca_config/dwca_phytoplankton_nat.yaml",
+        # "dwca_config/dwca_phytoplankton_reg_recip_proj.yaml",
+        # "dwca_config/dwca_zoobenthos_reg_recip_proj.yaml",
+        "dwca_config/dwca_harbourseal_nat.yaml",
+        "dwca_config/dwca_greyseal_nat.yaml",
+        "dwca_config/dwca_ringedseal_nat.yaml",
+        "dwca_config/dwca_phytoplankton_slv_biotox.yaml",
+        "dwca_config/dwca_seal_pathology.yaml",
+        "dwca_config/dwca_picoplankton_nat_reg.yaml",
     ]
     generator = DwcaGenerator()
     for config_file in config_files:
