@@ -1,0 +1,39 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+additionalMetadata: 
+    metadata: 
+        gbif:
+            citation: 
+                (2022). 
+                SHARK - National marine environmental monitoring of Picoplankton in Sweden since 19XX.
+
+dataset: 
+    title: SHARK - National marine environmental monitoring of Picoplankton in Sweden since 19XX
+
+    abstract: 
+        para: 
+            -   
+    methods: 
+        methodStep: 
+            description: 
+                para:
+                    -   
+        sampling: 
+            description:
+               
+
+    coverage: 
+        geographicCoverage: 
+            geographicDescription: 
+                
+        # taxonomicCoverage:  Phylum:
+      
+
+    keywordSet: 
+        keywords: 
+            keyword: 
+                - Samplingevent
+        keywordThesaurus: 
+            'GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml'
