@@ -72,7 +72,8 @@ dwcaOccurrenceContent:
             # organismQuantity:
             # organismQuantityType:
             occurrenceStatus:
-                text: present
+                # text: present
+                sourceKey: present_absent
             preparations:
                 dynamic: 
                     -   dynamicKey: PreservationMethodCode

@@ -1,6 +1,6 @@
 source_field	include_value	exclude_value	filter_group_id	comments
-parameter		# counted	Param-zero-1
-value		0.0	Param-zero-1
+XX_parameter		# counted	Param-zero-1
+XX_value		0.0	Param-zero-1
 
-parameter		Calculated # counted	Param-zero-2
-value		0.0	Param-zero-2
+XX_parameter		Calculated # counted	Param-zero-2
+XX_value		0.0	Param-zero-2
