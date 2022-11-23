@@ -13,6 +13,10 @@ eventTypeKeys:
             - station_name
             - sample_date
             - sample_time
+            - visit_transect_start_latitude_dd
+            - visit_transect_start_longitude_dd
+            # - section_start_latitude_dd
+            # - section_start_longitude_dd
 
     -   eventType: sample
         parentEventType: sampling_event
