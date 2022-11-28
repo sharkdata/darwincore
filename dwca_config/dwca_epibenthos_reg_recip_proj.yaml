@@ -1,0 +1,69 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+info: 
+    title: DwC-A configurations for epibenthos - regional monitoring
+    description:
+        Used to generate DarwinCore-Archive files from SHARK zip files.
+
+dwcaTarget:
+    directory:
+        data_out
+    files: 
+        - dwca-smhi-epibenthos-reg-recip-proj_TEST.zip
+
+sourceFiles:
+    directory: 
+        data_in/datasets
+    globSearch:
+        SHARK_Epibenthos_*_version_*.zip
+    # files:
+    #     - SHARK_Zoobenthos_2016_DEEP_ACLST_version_2020-10-27.zip
+    #     - SHARK_Zoobenthos_2016_DEEP_ACLST_version_2020-10-27.zip
+    #     - SHARK_Zoobenthos_2016_DEEP_DLST_version_2020-10-27.zip
+    #     - SHARK_Zoobenthos_2016_DEEP_ILST_version_2020-10-27.zip
+
+
+emlDefinitions:
+    directory:
+        dwca_config/eml_metadata
+    files:
+        - eml_smhi_datacenter.yaml
+        - eml_auto.yaml
+        - eml_epibenthos_reg_proj.yaml
+
+dwcaKeys:
+    directory:
+        dwca_config/field_mapping
+    files:
+        - dwca_keys.yaml
+
+fieldMapping:
+    directory:
+        dwca_config/field_mapping
+    files:
+        - dwca_terms_event.yaml
+        - dwca_terms_occurrence.yaml
+        - dwca_terms_emof.yaml
+
+taxaWorms:
+    directory:
+        data_in/resources
+    files:
+        # - taxa_dyntaxa_to_worms.txt
+        - taxa_worms.txt
+
+translate:
+    directory:
+        data_in/resources
+    files:
+        - translate.txt
+        - translate_epibenthos.txt
+
+filters:
+    directory:
+        data_in/resources
+    files:
+        - filters.txt
+        - filters_epibenthos_reg_recip_proj.txt
