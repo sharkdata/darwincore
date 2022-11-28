@@ -1,75 +1,68 @@
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
-additionalMetadata: 
-    metadata: 
+additionalMetadata:
+    metadata:
         gbif:
-            citation: 
-                Stockholm University, 
-                University of Gothenburg, 
-                Linnaeus University, 
-                Swedish Agency for Marine and Water Management, 
-                Swedish Environmental Protection Agency and 
-                Swedish Meteorological and Hydrological Institute (2022). 
+            citation: Stockholm University,
+                University of Gothenburg,
+                Linnaeus University,
+                Swedish Agency for Marine and Water Management,
+                Swedish Environmental Protection Agency and
+                Swedish Meteorological and Hydrological Institute (2022).
                 SHARK - National marine environmental monitoring of Epibenthos in Sweden since 1992
 
-dataset: 
+dataset:
     title: SHARK - National marine environmental monitoring of Epibenthos in Sweden since 1992
 
-    abstract: 
-        para:  
-            - The monitoring program was initiated by the Swedish Environmental Protection Agency 
-              and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program. 
-            - The monitoring is performed by Stockholm University, University of Gothenburg and Linnaeus University. 
-            - The data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
-            - The epibenthos monitoring program studies hard and soft bottoms from the surface down to 10-20 meters. 
-            - Data is collected in transects or squares with help of divers. 
-            - Species abundances are determined directly by the divers or photographs/video are taken and analyzed later. 
-            - Field notes are in Swedish. 
+    abstract:
+        para:
+            - The monitoring program was initiated by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program.
+            - The monitoring is performed by Stockholm University, University of Gothenburg and Linnaeus University.
+            - The data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute.
+            - The epibenthos monitoring program studies hard and soft bottoms from the surface down to 10-20 meters.
+            - Data is collected in transects or squares with help of divers.
+            - Species abundances are determined directly by the divers or photographs/video are taken and analyzed later.
+            - Field notes are in Swedish.
             - More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html
 
-    methods: 
-        methodStep: 
-            description: 
+    methods:
+        methodStep:
+            description:
                 para:
-                    - More information about the method is available in Swedish at 
+                    - More information about the method is available in Swedish at
                       https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html
-        sampling: 
+        sampling:
             studyExtent:
                 description:
                     para:
                         - The epibenthos monitoring program studies hard and soft bottoms from the surface down to 10-20 meters.
         samplingDescription:
             para:
-                - Data is collected in transects or squares with help of divers. 
-                - Species abundances are determined directly by the divers or photographs/video are taken and analyzed later. 
+                - Data is collected in transects or squares with help of divers.
+                - Species abundances are determined directly by the divers or photographs/video are taken and analyzed later.
                 - "Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, video, photo; "
 
-    coverage: 
-        geographicCoverage: 
-            geographicDescription: 
-                "Data collected within the following marine ecoregions using coordinate system WGS84: "
-                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379
-        taxonomicCoverage: 
+    coverage:
+        geographicCoverage:
+            geographicDescription: "Data collected within the following marine ecoregions using coordinate system WGS84: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379"
 
-            generalTaxonomicCoverage:
-                The dataset contains species within the following kingdoms
+        taxonomicCoverage:
+            generalTaxonomicCoverage: The dataset contains species within the following kingdoms
             taxonomicClassification:
-                -   taxonRankName: kingdom
-                    taxonRankValue: Animalia
-                -   taxonRankName: kingdom
-                    taxonRankValue: Plantae
-                -   taxonRankName: kingdom
-                    taxonRankValue: Chromista
-                -   taxonRankName: kingdom
-                    taxonRankValue: Bacteria
-                -   taxonRankName: kingdoms
-                    taxonRankValue: Protozoa
+                - taxonRankName: kingdom
+                  taxonRankValue: Animalia
+                - taxonRankName: kingdom
+                  taxonRankValue: Plantae
+                - taxonRankName: kingdom
+                  taxonRankValue: Chromista
+                - taxonRankName: kingdom
+                  taxonRankValue: Bacteria
+                - taxonRankName: kingdoms
+                  taxonRankValue: Protozoa
 
-    keywordSet: 
-        keywords: 
-            keyword: 
+    keywordSet:
+        keywords:
+            keyword:
                 - Samplingevent
-        keywordThesaurus: 
-            "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
+        keywordThesaurus: "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
