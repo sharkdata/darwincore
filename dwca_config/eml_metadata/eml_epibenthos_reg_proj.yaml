@@ -41,15 +41,15 @@ dataset:
                         - The epibenthos monitoring programs studies hard and soft bottoms from the surface down to 10-20 meters.
         samplingDescription:
             para:
-                - Data is collected in transects or squares with help of divers.
+                - "Data is collected in transects or squares with help of divers.
                   Species abundances are determined directly by the divers or photographs/video are taken and analyzed later.
-                  "Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, video, photo;"
+                  Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, video, photo;"
 
     coverage: 
         geographicCoverage: 
             geographicDescription: 
-                "Data collected within the following marine ecoregions using coordinate system WGS84: "
-                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379
+                "Data collected within the following marine ecoregions using coordinate system WGS84:
+                http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379 "
         taxonomicCoverage: 
 
             generalTaxonomicCoverage:
