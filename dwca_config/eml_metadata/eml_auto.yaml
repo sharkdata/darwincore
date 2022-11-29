@@ -32,8 +32,6 @@ dataset:
                 endDate: 
                     calendarDate: REPLACE-endDate
 
-        taxonomicCoverage: REPLACE-taxonomicCoverage
-
 additionalMetadata: 
     metadata: 
         gbif: 
