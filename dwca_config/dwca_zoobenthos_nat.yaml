@@ -68,19 +68,19 @@ filters:
         - filters.txt
         - filters_zoobenthos_nat.txt
 
-metadataSourceFiles:
-    directory:
-        ../metadata/dcat_ap_se
-    files:
-        - titles.yaml
-        - purpose.yaml
-        - orderer.yaml
-        - methods.yaml
-        - license.yaml
-        - laboratory.yaml
-        - geographic_coverage.yaml
-        - datahost.yaml
-        - keywords.yaml
+# metadataSourceFiles:
+#     directory:
+#         ../metadata/dcat_ap_se
+#     files:
+#         - titles.yaml
+#         - purpose.yaml
+#         - orderer.yaml
+#         - methods.yaml
+#         - license.yaml
+#         - laboratory.yaml
+#         - geographic_coverage.yaml
+#         - datahost.yaml
+#         - keywords.yaml
 
 metadataTemplate:
     directory:
