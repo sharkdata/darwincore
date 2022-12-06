@@ -332,6 +332,7 @@ class DwcaDataSharkStandard:
             # present_absent = "present"
             if "present_absent" not in row_dict:
                 row_dict["present_absent"] = "present"
+            #
             if delivery_datatype in ["ringed seal", "ringedseal"]:
                 parameter = row_dict.get("parameter", "")
                 value = row_dict.get("value", "")
@@ -339,6 +340,10 @@ class DwcaDataSharkStandard:
                     value = float(value)
                     if value == 0.0:
                         row_dict["present_absent"] = "absent"
+                        scientific_name = row_dict.get("scientific_name", "")
+                        if scientific_name == "":
+                            row_dict["scientific_name"] = "Pusa hispida"
+            #
             if delivery_datatype in ["picoplankton"]:
                 parameter = row_dict.get("parameter", "")
                 value = row_dict.get("value", "")
@@ -346,6 +351,9 @@ class DwcaDataSharkStandard:
                     value = float(value)
                     if value == 0.0:
                         row_dict["present_absent"] = "absent"
+                        scientific_name = row_dict.get("scientific_name", "")
+                        if scientific_name == "":
+                            row_dict["scientific_name"] = "Biota"
 
     def create_dwca_keys(self):
         """ """
