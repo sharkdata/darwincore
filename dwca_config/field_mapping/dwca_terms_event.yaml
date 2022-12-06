@@ -39,14 +39,14 @@ dwcaEventColumns:
     - license
     - rightsHolder
     - accessRights
-    - bibliographicCitation
-    - references
-    - institutionID
+    #    - bibliographicCitation
+    #    - references
+    #    - institutionID
     #    - datasetID
     - institutionCode
     - datasetName
     - ownerInstitutionCode
-    - dataGeneralizations
+    #    - dataGeneralizations
     - dynamicProperties
 #    - collectionCode
 
@@ -133,20 +133,12 @@ dwcaEventContent:
               text: Swedish Agency for Marine and Water Management
           accessRights:
               text: CC0
-          bibliographicCitation:
-              sourceKey:
-          references:
-              sourceKey:
-          institutionID:
-              sourceKey:
           institutionCode:
               text: Swedish Meteorological and Hydrological Institute
           datasetName:
               sourceKey: dwc_dataset_name
           ownerInstitutionCode:
               text: Swedish Agency for Marine and Water Management
-          dataGeneralizations:
-              sourceKey:
           dynamicProperties:
               dynamic:
                   - dynamicKey: SharkDataset
@@ -282,21 +274,11 @@ dwcaEventContent:
               text: Swedish Agency for Marine and Water Management
           accessRights:
               text: CC0
-          bibliographicCitation:
-              sourceKey:
-          references:
-              sourceKey:
-          institutionID:
-              sourceKey:
-          datasetID:
-              sourceKey:
           institutionCode:
               sourceKey:
           datasetName:
               sourceKey:
           ownerInstitutionCode:
-              sourceKey:
-          dataGeneralizations:
               sourceKey:
           dynamicProperties:
               dynamic:
