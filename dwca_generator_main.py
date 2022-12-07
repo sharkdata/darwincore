@@ -157,6 +157,8 @@ if __name__ == "__main__":
         "dwca_config/dwca_phytoplankton_slv_biotox.yaml",
         "dwca_config/dwca_seal_pathology.yaml",
         "dwca_config/dwca_picoplankton_nat_reg.yaml",
+        "dwca_config/dwca_epibenthos_nat.yaml",
+        "dwca_config/dwca_epibenthos_reg_recip_proj.yaml",
     ]
     generator = DwcaGenerator()
     for config_file in config_files:
