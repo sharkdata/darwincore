@@ -140,6 +140,13 @@ class DwcaFormatStandard(object):
                         )
                         source_row.update(worms_info_dict)
 
+                        # Create LSID for Phytoplankton BVOL data.
+                        bvol_aphia_id = source_row.get("bvol_aphia_id", "")
+                        if bvol_aphia_id:
+                            bvol_aphia_lsid = "https://www.marinespecies.org/aphia.php?p=taxdetails&id=" + bvol_aphia_id
+                            source_row[bvol_aphia_lsid] = bvol_aphia_lsid
+
+
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
 

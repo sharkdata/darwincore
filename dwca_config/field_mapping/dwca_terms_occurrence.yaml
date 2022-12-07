@@ -46,13 +46,16 @@ dwcaOccurrenceContent:
 
           scientificName:
               sourceKeyList:
-                  - reported_scientific_name
+                  - bvol_scientific_name
                   - scientific_name
+                  - reported_scientific_name
           taxonID:
               sourceKey: dyntaxa_lsid
           scientificNameID:
               sourceKeyList:
+                  - bvol_aphia_lsid
                   - worms_lsid
+                  - bvol_aphia_id
                   - worms_id
                   - aphia_id
           acceptedNameUsage:
@@ -102,6 +105,8 @@ dwcaOccurrenceContent:
               sourceKey:
           dynamicProperties:
               dynamic:
+                  - dynamicKey: ReportedScientificName
+                    sourceKey: reported_scientific_name
                   - dynamicKey: SizeClass
                     sourceKey: size_class
                   - dynamicKey: CellVolume(um3)
