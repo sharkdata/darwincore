@@ -2,3 +2,4 @@ source_field	dwc_field	from_value	to_value	comments
 size_min_um		0	>0
 
 bvol_scientific_name		Algae	Biota
+scientific_name		Algae	Biota
