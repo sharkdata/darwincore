@@ -1,3 +1,3 @@
 source_field	dwc_field	from_value	to_value	comments
-scientific_name		Eukaryota ->Eukaryotic picoplankton species incertae sedis
-scientific_name		Eukaryotic picoplankton ->Eukaryotic picoplankton species incertae sedis
+scientific_name		Eukaryota	Eukaryotic picoplankton species incertae sedis
+scientific_name		Eukaryotic picoplankton	Eukaryotic picoplankton species incertae sedis
