@@ -24,14 +24,13 @@ dataset:
             - Data is collected in transects or squares with help of divers.
             - Species abundances are determined directly by the divers or photographs/video are taken and analyzed later.
             - Field notes are in Swedish.
-            - More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html
+            - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/overvakning-och-uppfoljning/miljoovervakning/organisation-och-programomraden/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-ostkust.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-vastkust.html
 
     methods:
         methodStep:
             description:
                 para:
-                    - More information about the method is available in Swedish at
-                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html
+                    - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/overvakning-och-uppfoljning/miljoovervakning/organisation-och-programomraden/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-ostkust.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-vastkust.html
         sampling:
             studyExtent:
                 description:
@@ -41,7 +40,7 @@ dataset:
             para:
                 - Data is collected in transects or squares with help of divers.
                 - Species abundances are determined directly by the divers or photographs/video are taken and analyzed later.
-                - "Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, video, photo; "
+                - "Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, photo; "
 
     coverage:
         geographicCoverage:

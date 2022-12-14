@@ -1,40 +1,36 @@
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
-additionalMetadata: 
-    metadata: 
+additionalMetadata:
+    metadata:
         gbif:
-            citation: 
-                Swedish county administration boards, 
-                Swedish municipalities, 
-                Swedish coalitions of water conservation, 
+            citation: Swedish county administration boards,
+                Swedish municipalities,
+                Swedish coalitions of water conservation,
                 Swedish Meteorological and Hydrological Institute et.al. (2022).
                 SHARK - Regional marine environmental monitoring and monitoring projects of Epibenthos in Sweden since 1994.
 
-dataset: 
+dataset:
     title: SHARK - Regional marine environmental monitoring and monitoring projects of Epibenthos in Sweden since 1994
 
-    abstract: 
-        para: 
-            - The monitoring is financed by the Swedish county administration boards, 
+    abstract:
+        para:
+            - The monitoring is financed by the Swedish county administration boards,
               Swedish municipalities and Swedish coalitions of water conservation.
-            - Recipient control data financed by companies are also included. The data is stored in the database SHARK, 
-              hosted and maintained by the Swedish Meteorological and Hydrological Institute. 
+            - Recipient control data financed by companies are also included. The data is stored in the database SHARK,
+              hosted and maintained by the Swedish Meteorological and Hydrological Institute.
             - The Epibenthos monitoring programs and projects studies hard and soft bottoms from the surface down to 10-20 meters.
             - Data is collected in transects or squares with help of divers.
             - Species abundances are determined directly by the divers or photographs/video are taken and analyzed later.
             - Field notes are in Swedish.
-            - More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/samordning-av-miljoovervakning/regional-miljoovervakning.html and https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html
+            - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/overvakning-och-uppfoljning/miljoovervakning/organisation-och-programomraden/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html, https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-ostkust.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-vastkust.html
 
-    methods: 
-        methodStep: 
-            description: 
+    methods:
+        methodStep:
+            description:
                 para:
-                    - More information about the method is available in Swedish at
-                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html and
-                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/samordning-av-miljoovervakning/regional-miljoovervakning.html
-        sampling: 
+                    - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/overvakning-och-uppfoljning/miljoovervakning/organisation-och-programomraden/miljoovervakningens-programomrade-kust-och-hav/delprogram-vegetationskladda-bottnar.html, https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-ostkust.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/vegetationskladda-bottnar-vastkust.html
+        sampling:
             studyExtent:
                 description:
                     para:
@@ -43,32 +39,29 @@ dataset:
             para:
                 - "Data is collected in transects or squares with help of divers.
                   Species abundances are determined directly by the divers or photographs/video are taken and analyzed later.
-                  Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, video, photo;"
+                  Discipline: Marine biology; Datatype: Epibenthos; Measuring area type: point; Platform class: diver, photo;"
 
-    coverage: 
-        geographicCoverage: 
-            geographicDescription: 
+    coverage:
+        geographicCoverage:
+            geographicDescription:
                 "Data collected within the following marine ecoregions using coordinate system WGS84:
                 http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379 "
-        taxonomicCoverage: 
-
-            generalTaxonomicCoverage:
-                The dataset contains species within the following kingdoms
+        taxonomicCoverage:
+            generalTaxonomicCoverage: The dataset contains species within the following kingdoms
             taxonomicClassification:
-                -   taxonRankName: kingdom
-                    taxonRankValue: Animalia
-                -   taxonRankName: kingdom
-                    taxonRankValue: Plantae
-                -   taxonRankName: kingdom
-                    taxonRankValue: Chromista
-                -   taxonRankName: kingdom
-                    taxonRankValue: Bacteria
-                -   taxonRankName: kingdoms
-                    taxonRankValue: Protozoa
+                - taxonRankName: kingdom
+                  taxonRankValue: Animalia
+                - taxonRankName: kingdom
+                  taxonRankValue: Plantae
+                - taxonRankName: kingdom
+                  taxonRankValue: Chromista
+                - taxonRankName: kingdom
+                  taxonRankValue: Bacteria
+                - taxonRankName: kingdoms
+                  taxonRankValue: Protozoa
 
-    keywordSet: 
-        keywords: 
-            keyword: 
+    keywordSet:
+        keywords:
+            keyword:
                 - Samplingevent
-        keywordThesaurus: 
-            "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
+        keywordThesaurus: "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
