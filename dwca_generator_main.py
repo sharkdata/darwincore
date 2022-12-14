@@ -45,8 +45,9 @@ class DwcaGenerator:
         )
         for dataset_filepath in dwca_gen_config.source_files:
             source_data.add_shark_dataset(dataset_filepath)
-        source_data.create_dwca_keys()
+        # source_data.create_dwca_keys()
         source_data.cleanup_data()
+        source_data.create_dwca_keys()
 
         # Create and save DwC-A.
         logger.info("")
