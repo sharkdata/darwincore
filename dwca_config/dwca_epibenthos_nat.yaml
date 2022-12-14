@@ -37,15 +37,19 @@ dwcaKeys:
     directory:
         dwca_config/field_mapping
     files:
-        - dwca_keys.yaml
+        # - dwca_keys.yaml
+        - dwca_keys_transect.yaml
 
 fieldMapping:
     directory:
         dwca_config/field_mapping
     files:
-        - dwca_terms_event.yaml
-        - dwca_terms_occurrence.yaml
-        - dwca_terms_emof.yaml
+        # - dwca_terms_event.yaml
+        # - dwca_terms_occurrence.yaml
+        # - dwca_terms_emof.yaml
+        - dwca_terms_event_transect.yaml
+        - dwca_terms_occurrence_transect.yaml
+        - dwca_terms_emof_transect.yaml
 
 taxaWorms:
     directory:
