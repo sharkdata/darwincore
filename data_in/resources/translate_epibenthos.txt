@@ -1,3 +1,10 @@
 source_field	dwc_field	from_value	to_value	comments
 
+bitemark		1	Yes	
+bitemark		0	No	
 
+epibiont		1	Yes	
+epibiont		0	No	
+
+detached		1	Yes	
+detached		0	No	
