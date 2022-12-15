@@ -284,6 +284,10 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: SharkDataset
                     sourceKey: dataset_name
+                  - dynamicKey: TransectLength
+                    sourceKey: transect_length_m
+                  - dynamicKey: TransectDirection
+                    sourceKey: transect_direction_deg
           #        -   dynamicKey: Orderer
           #            sourceKeyList:
           #                - sample_orderer_name_en
@@ -377,12 +381,14 @@ dwcaEventContent:
               sourceKey: sample_max_depth_m
           decimalLatitude:
               sourceKeyList:
-                  - sample_latitude_dd
-                  - visit_latitude_dd
+                  - section_start_latitude_dd
+       #           - sample_latitude_dd
+       #           - visit_latitude_dd
           decimalLongitude:
               sourceKeyList:
-                  - sample_longitude_dd
-                  - visit_longitude_dd
+                  - section_start_longitude_dd
+       #           - sample_longitude_dd
+       #           - visit_longitude_dd
           geodeticDatum:
               text: EPSG:4619
           coordinateUncertaintyInMeters:
@@ -405,7 +411,15 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: SharkDataset
                     sourceKey: dataset_name
-          #        -   dynamicKey: Orderer
-          #            sourceKeyList:
-          #                - sample_orderer_name_en
-          #                - sample_orderer_name_sv
+                  - dynamicKey: TransectLength
+                    sourceKey: transect_length_m
+                  - dynamicKey: TransectDirection
+                    sourceKey: transect_direction_deg
+                  - dynamicKey: SectionDistanceStart
+                    sourceKey: section_distance_start_m
+                  - dynamicKey: SectionDistanceEnd
+                    sourceKey: section_distance_end_m
+                  - dynamicKey: SectionStartDepth
+                    sourceKey: section_start_depth_m
+                  - dynamicKey: SectionEndDepth
+                    sourceKey: section_end_depth_m
