@@ -143,6 +143,10 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: SharkDataset
                     sourceKey: dataset_name
+                  - dynamicKey: TransectLength(m)
+                    sourceKey: transect_length_m
+                  - dynamicKey: TransectDirection(degrees)
+                    sourceKey: transect_direction_deg
           #        -   dynamicKey: SamplingLaboratoryCode
           #            sourceKey: sampling_laboratory_code
           #        -   dynamicKey: SamplingLaboratoryName
@@ -167,6 +171,8 @@ dwcaEventContent:
           #            sourceKey: monitoring_station_type_code
           #        -   dynamicKey: MonitoringPurpose
           #            sourceKey: monitoring_purpose_code
+
+
 
     - eventType: sample
       dwcTerms:
@@ -284,6 +290,14 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: SharkDataset
                     sourceKey: dataset_name
+                  - dynamicKey: SectionDistanceStart(m)
+                    sourceKey: section_distance_start_m
+                  - dynamicKey: SectionDistanceEnd(m)
+                    sourceKey: section_distance_end_m
+                  - dynamicKey: SectionStartDepth(m)
+                    sourceKey: section_start_depth_m
+                  - dynamicKey: SectionEndDepth(m)
+                    sourceKey: section_end_depth_m
           #        -   dynamicKey: Orderer
           #            sourceKeyList:
           #                - sample_orderer_name_en

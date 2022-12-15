@@ -28,6 +28,8 @@ eventTypeKeys:
             - sample_part_id
             - sample_part_min_cm
             - sample_part_max_cm
+            - section_distance_start_m
+            - section_distance_end_m
 
 
     occurrence:
