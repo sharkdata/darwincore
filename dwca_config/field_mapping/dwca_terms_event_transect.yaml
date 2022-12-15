@@ -284,9 +284,9 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: SharkDataset
                     sourceKey: dataset_name
-                  - dynamicKey: TransectLength
+                  - dynamicKey: TransectLength(m)
                     sourceKey: transect_length_m
-                  - dynamicKey: TransectDirection
+                  - dynamicKey: TransectDirection(degrees)
                     sourceKey: transect_direction_deg
           #        -   dynamicKey: Orderer
           #            sourceKeyList:
@@ -411,15 +411,15 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: SharkDataset
                     sourceKey: dataset_name
-                  - dynamicKey: TransectLength
+                  - dynamicKey: TransectLength(m)
                     sourceKey: transect_length_m
-                  - dynamicKey: TransectDirection
+                  - dynamicKey: TransectDirection(degrees)
                     sourceKey: transect_direction_deg
-                  - dynamicKey: SectionDistanceStart
+                  - dynamicKey: SectionDistanceStart(m)
                     sourceKey: section_distance_start_m
-                  - dynamicKey: SectionDistanceEnd
+                  - dynamicKey: SectionDistanceEnd(m)
                     sourceKey: section_distance_end_m
-                  - dynamicKey: SectionStartDepth
+                  - dynamicKey: SectionStartDepth(m)
                     sourceKey: section_start_depth_m
-                  - dynamicKey: SectionEndDepth
+                  - dynamicKey: SectionEndDepth(m)
                     sourceKey: section_end_depth_m
