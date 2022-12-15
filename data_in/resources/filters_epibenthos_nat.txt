@@ -1,8 +1,8 @@
-source_field	include_value	exclude_value	exclude_value_dropvideo	exclude_value_other	filter_group_id	comments
+source_field	include_value	exclude_value	exclude_value_vertical_transect	exclude_value_dropvideo	exclude_value_other	filter_group_id	comments
 
 # Reg-recip-proj-dropvideo-other data to be excluded in this export
 
-source_field	include_value	exclude_value	exclude_value_vertical_transect	exclude_value_dropvideo	exclude_value_other	filter_group_id	comments
+
 dataset_name	SHARK_Epibenthos_1992_2018_DEEP_Asko						
 dataset_name	SHARK_Epibenthos_1993_TMBL						
 dataset_name					SHARK_Epibenthos_1994_2015_TOXICO_ZOSTERA		
