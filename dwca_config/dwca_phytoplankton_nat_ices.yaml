@@ -54,13 +54,13 @@ translate:
     directory:
         data_in/resources
     files:
-        - translate.txt
+       # - translate.txt
         - translate_phytoplankton.txt
 
 filters:
     directory:
         data_in/resources
     files:
-        - filters.txt
+        - filters_ices.txt
         - filters_phytoplankton_nat.txt
 

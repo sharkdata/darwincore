@@ -58,14 +58,14 @@ translate:
     directory:
         data_in/resources
     files:
-        - translate.txt
+       # - translate.txt
         - translate_zoobenthos.txt
 
 filters:
     directory:
         data_in/resources
     files:
-        - filters.txt
+        - filters_ices.txt
         - filters_zoobenthos_nat.txt
 
 # metadataSourceFiles:
