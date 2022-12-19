@@ -11,7 +11,7 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-phytoplankton-nat_TEST.zip
+        - dwca-smhi-phytoplankton-nat_ices_TEST.zip
 
 sourceFiles:
     directory: 
