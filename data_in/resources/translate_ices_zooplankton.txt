@@ -1,0 +1,8 @@
+source_field	dwc_field	from_value	to_value	comments
+
+scientific_name		Gnathostomata	Vertebrata
+scientific_name		Invertebrata	Animalia
+scientific_name		Evertebrata	Animalia
+scientific_name		Mesocyclops leuckarti	Mesocyclops leuckarti leuckarti
+scientific_name		Luidia sarsi	Luidia sarsii
+scientific_name		Hydrachnidiae	Hydrachnidia

@@ -1,0 +1,3 @@
+source_field	dwc_field	from_value	to_value	comments
+
+station_name		R 1-13	R 1-3
