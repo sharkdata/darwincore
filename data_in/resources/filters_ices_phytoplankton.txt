@@ -1,0 +1,31 @@
+source_field	include_value	exclude_value	filter_group_id	comments
+
+dataset_name	SHARK_Phytoplankton_2021_SMHI
+dataset_name	SHARK_Phytoplankton_2021_DEEP
+dataset_name	SHARK_Phytoplankton_2021_UMSC
+
+# Phytoplankton species (problems with OSPAR area biovolumes not in ICES HELCOM PEG list)
+scientific_name		Ciliophora
+scientific_name		Strombidium
+scientific_name		Tintinnopsis
+scientific_name		Gymnodinium litoralis
+scientific_name		Tiarina fusus
+scientific_name		Tintinnidae
+scientific_name		Stenosemella
+scientific_name		Helicostomella subulata
+scientific_name		Salpingella acuminata
+scientific_name		Ensiculifera carinata
+scientific_name		Paulinella ovalis
+scientific_name		Eutintinnus
+scientific_name		Acanthostomella norvegica
+scientific_name		Ensiculifera
+scientific_name		Oxytoxum laticeps
+scientific_name		Entomoneis
+
+scientific_name		Unicell	Group-bvol-1
+size_class		29	Group-bvol-1
+
+XXXX_scientific_name		Favella
+XXXX_scientific_name		Didinium nasutum
+XXXX_scientific_name		Mesodinium
+XXXX_scientific_name		Verrucodesmus
