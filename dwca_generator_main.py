@@ -45,8 +45,9 @@ class DwcaGenerator:
         )
         for dataset_filepath in dwca_gen_config.source_files:
             source_data.add_shark_dataset(dataset_filepath)
-        source_data.create_dwca_keys()
+        # source_data.create_dwca_keys()
         source_data.cleanup_data()
+        source_data.create_dwca_keys()
 
         # Create and save DwC-A.
         logger.info("")
@@ -157,6 +158,8 @@ if __name__ == "__main__":
         "dwca_config/dwca_phytoplankton_slv_biotox.yaml",
         "dwca_config/dwca_seal_pathology.yaml",
         "dwca_config/dwca_picoplankton_nat_reg.yaml",
+        "dwca_config/dwca_epibenthos_nat.yaml",
+        "dwca_config/dwca_epibenthos_reg_recip_proj.yaml",
     ]
     generator = DwcaGenerator()
     for config_file in config_files:

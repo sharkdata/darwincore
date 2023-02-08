@@ -343,6 +343,7 @@ class DwcaDataSharkStandard:
                         scientific_name = row_dict.get("scientific_name", "")
                         if scientific_name == "":
                             row_dict["scientific_name"] = "Pusa hispida"
+                            row_dict["aphia_id"] = "159021"
             #
             if delivery_datatype in ["picoplankton"]:
                 parameter = row_dict.get("parameter", "")

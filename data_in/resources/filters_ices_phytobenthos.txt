@@ -1,0 +1,55 @@
+source_field	include_value	exclude_value	comments
+dataset_name	SHARK_Zoobenthos_2021_LNU
+dataset_name	SHARK_Zoobenthos_2021_UMSC
+dataset_name	SHARK_Zoobenthos_2021_DEEP
+dataset_name	SHARK_Zoobenthos_2021_DEEP_Asko
+dataset_name	SHARK_Zoobenthos_2021_SLC-T
+
+dataset_name	SHARK_Zoobenthos_2020_LNU
+dataset_name	SHARK_Zoobenthos_2020_UMSC
+dataset_name	SHARK_Zoobenthos_2020_DEEP_HAV
+dataset_name	SHARK_Zoobenthos_2020_DEEP_HAV_Asko
+
+dataset_name	SHARK_Zoobenthos_2019_LNU
+dataset_name	SHARK_Zoobenthos_2019_UMSC
+dataset_name	SHARK_Zoobenthos_2019_DEEP_HAV
+dataset_name	SHARK_Zoobenthos_2019_DEEP_HAV_Asko
+
+dataset_name	SHARK_Zoobenthos_2018_LNU
+dataset_name	SHARK_Zoobenthos_2018_UMSC
+dataset_name	SHARK_Zoobenthos_2018_DEEP_HAV
+dataset_name	SHARK_Zoobenthos_2018_DEEP_HAV_Asko
+
+dataset_name	SHARK_Zoobenthos_2017_LNU
+dataset_name	SHARK_Zoobenthos_2017_UMSC
+dataset_name	SHARK_Zoobenthos_2017_DEEP_HAV
+dataset_name	SHARK_Zoobenthos_2017_DEEP_HAV_Asko
+
+dataset_name	SHARK_Zoobenthos_2016_LNU
+dataset_name	SHARK_Zoobenthos_2016_UMSC
+dataset_name	SHARK_Zoobenthos_2016_DEEP_HAV
+dataset_name	SHARK_Zoobenthos_2016_SLC-T
+
+dataset_name	SHARK_Zoobenthos_2017_2020_SLC-T
+dataset_name	SHARK_Zoobenthos_2007_2016_DEEP_Asko
+
+station_name		Hökvik1	#RECIP
+station_name		Hökvik2	#RECIP
+station_name		Hökvik3	#RECIP
+station_name		Hökvik4	#RECIP
+station_name		Hökvik5	#RECIP
+
+station_name		Hökvik1-75S	#RECIP
+station_name		Hökvik2-20O	#RECIP
+station_name		Hökvik3-50N	#RECIP
+station_name		Hökvik4-150N	#RECIP
+station_name		Hökvik5-300N	#RECIP
+station_name		Strävliden01	#RECIP
+station_name		Strävliden02	#RECIP
+station_name		Strävliden03	#RECIP
+station_name		Strävliden04	#RECIP
+station_name		Strävliden05	#RECIP
+station_name		Strävliden06	#RECIP
+station_name		Marstrand reningsv01	#RECIP
+station_name		Marstrand reningsv02	#RECIP
+station_name		Marstrand reningsv03	#RECIP

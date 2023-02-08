@@ -11,7 +11,7 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-epibenthos-nat_TEST.zip
+        - dwca-smhi-epibenthos-nat_ices_TEST.zip
 
 sourceFiles:
     directory: 
@@ -62,14 +62,14 @@ translate:
     directory:
         data_in/resources
     files:
-        - translate.txt
+       # - translate.txt
         - translate_epibenthos.txt
 
 filters:
     directory:
         data_in/resources
     files:
-        - filters.txt
+        - filters_ices.txt
         - filters_epibenthos_nat.txt
 
 # metadataSourceFiles:

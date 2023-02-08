@@ -8,10 +8,10 @@ additionalMetadata:
                 Swedish Agency for Marine and Water Management,
                 Swedish Environmental Protection Agency and
                 Swedish Meteorological and Hydrological Institute (2022).
-                SHARK - National environmental monitoring of Ringed seal in Sweden since 1995.
+                SHARK - National marine environmental monitoring of Ringed seal in Sweden since 1995.
 
 dataset:
-    title: SHARK - National environmental monitoring of Ringed seal in Sweden since 1995
+    title: SHARK - National marine environmental monitoring of Ringed seal in Sweden since 1995
 
     abstract:
         para:
@@ -20,22 +20,21 @@ dataset:
             - The monitoring is performed by the Swedish Museum of Natural History.
             - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute.
             - Monitoring of Ringed seal is performed by counting seals in transects from airplane.
-            - "More information is available in Swedish at https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html"
+            - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bestand-av-knubbsal-och-vikaresal.html
 
     methods:
         methodStep:
             description:
                 para:
                     - Data is collected by counting seals in transects from airplane.
-                    - "More information about the method is available in Swedish at
-                      https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html"
+                    - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bestand-av-knubbsal-och-vikaresal.html
         sampling:
             description: The Swedish Ringed seal monitoring program studies the number of Ringed seals in the Bothnian Bay.
 
     coverage:
         geographicCoverage:
             geographicDescription: "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401"
-        taxonomicCoverage: The dataset contains the species Pusa hispida botnica.
+        taxonomicCoverage: The dataset contains the species Pusa hispida
 
     keywordSet:
         keywords:

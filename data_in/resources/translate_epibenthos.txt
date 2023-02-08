@@ -1,3 +1,21 @@
 source_field	dwc_field	from_value	to_value	comments
 
+bitemark		1	Yes	
+bitemark		0	No	
 
+epibiont		1	Yes	
+epibiont		0	No	
+
+detached		1	Yes	
+detached		0	No	
+
+sample_latitude_dd		0	BLANK
+sample_longitude_dd		0	BLANK
+sample_latitude_dd		0.0	BLANK
+sample_longitude_dd		0.0	BLANK
+sample_latitude_dd		0.00	BLANK
+sample_longitude_dd		00.00	BLANK
+sample_latitude_dd		0.0000	BLANK
+sample_longitude_dd		00.0000	BLANK
+sample_latitude_dd		0.00000	BLANK
+sample_longitude_dd		00.00000	BLANK

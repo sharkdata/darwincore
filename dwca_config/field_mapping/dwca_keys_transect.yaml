@@ -13,29 +13,46 @@ eventTypeKeys:
             - station_name
             - sample_date
             - sample_time
-            - visit_transect_start_latitude_dd
-            - visit_transect_start_longitude_dd
+            # - visit_transect_start_latitude_dd
+            # - visit_transect_start_longitude_dd
             # - section_start_latitude_dd
             # - section_start_longitude_dd
 
-    -   eventType: sample
+    -   eventType: transect
         parentEventType: sampling_event
-        keyName: sample_key
+        keyName: transect_key
         eventKeyName: sampling_event_key
-        keyPrefix: SAMPLE-
+        keyPrefix: TRANSECT-
+        keyFields: 
+            - station_name
+            - sample_date
+            - sample_time
+            - visit_transect_start_latitude_dd
+            - visit_transect_start_longitude_dd
+
+    -   eventType: section
+        parentEventType: transect
+        keyName: section_key
+        eventKeyName: transect_key
+        keyPrefix: SECTION-
         keyFields: 
             - shark_sample_id_md5
             - sample_part_id
             - sample_part_min_cm
             - sample_part_max_cm
-            - section_distance_start_m
-            - section_distance_end_m
+            - station_name
+            - sample_date
+            - sample_time
+            - visit_transect_start_latitude_dd
+            - visit_transect_start_longitude_dd
+            - section_start_latitude_dd
+            - section_start_longitude_dd
 
 
     occurrence:
     -   eventType: occurrence
         keyName: occurrence_key
-        eventKeyName: sample_key
+        eventKeyName: section_key
         keyPrefix: TAXA-
         keyFields:
             - shark_sample_id_md5
@@ -56,10 +73,14 @@ eventTypeKeys:
         keyName: sampling_event_key
         eventKeyName: sampling_event_key
 
-    -   eventType: sample
-        keyName: sample_key
-        eventKeyName: sample_key
+    -   eventType: transect
+        keyName: transect_key
+        eventKeyName: transect_key
+
+    -   eventType: section
+        keyName: section_key
+        eventKeyName: section_key
 
     -   eventType: occurrence
         keyName: occurrence_key
-        eventKeyName: sample_key
+        eventKeyName: section_key

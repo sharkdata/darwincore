@@ -38,9 +38,9 @@ dwcaOccurrenceContent:
     - eventType: occurrence
       dwcTerms:
           id:
-              dwcaKey: sample_key
+              dwcaKey: section_key
           eventID:
-              dwcaKey: sample_key
+              dwcaKey: section_key
           occurrenceID:
               dwcaKey: occurrence_key
 
