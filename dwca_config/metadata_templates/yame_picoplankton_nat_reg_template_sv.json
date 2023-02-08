@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "83298680-793f-11ec-b325-b321d72a6051",
+        "fileIdentifier": "1ae8e150-7570-11ed-8384-0d42191c4352",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -22,7 +22,7 @@
     ],
     "identificationInfo": {
         "citation": {
-            "title": "{{ metadata.titles.NAT.zoobenthos.sv }}",
+            "title": "{{ metadata.titles.NAT.picoplankton.sv }}",
             "alternateTitle": "",
             "dates": {
                 "creation": "2022-09-10",
@@ -31,7 +31,7 @@
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
         },
-        "abstract": "{{ metadata.methods.NAT.zoobenthos.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.zoobenthos.sv }}",
+        "abstract": "{{ metadata.methods.NAT.picoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.picoplankton.sv }}",
         "status": "underDevelopment",
         "pointOfContact": {
             "organisationName": "SMHI",
@@ -98,7 +98,8 @@
             },
             "sid_harvest_target": {
                 "keyword": [
-                    "dataportal.se"
+                    "geodata.se",
+                    "data.europa.eu"
                 ],
                 "title": "SID harvest target",
                 "date": "2022-01-17",
@@ -201,7 +202,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.NAT.zoobenthos.sv }}",
+        "lineage": "{{ metadata.orderer.NAT.picoplankton.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {
