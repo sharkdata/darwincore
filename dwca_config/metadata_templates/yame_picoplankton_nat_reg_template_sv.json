@@ -22,7 +22,7 @@
     ],
     "identificationInfo": {
         "citation": {
-            "title": "{{ metadata.titles.NAT.picoplankton.sv }}",
+            "title": "{{ metadata.titles.NAT_REG.picoplankton.sv }}",
             "alternateTitle": "",
             "dates": {
                 "creation": "2022-09-10",
@@ -31,7 +31,7 @@
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
         },
-        "abstract": "{{ metadata.methods.NAT.picoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.picoplankton.sv }}",
+        "abstract": "{{ metadata.methods.NAT_REG.picoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT_REG.picoplankton.sv }}",
         "status": "underDevelopment",
         "pointOfContact": {
             "organisationName": "SMHI",
@@ -202,7 +202,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.NAT.picoplankton.sv }}",
+        "lineage": "{{ metadata.orderer.NAT_REG.picoplankton.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {
