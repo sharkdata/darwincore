@@ -193,9 +193,9 @@
             {
                 "function": "",
                 "protocol": "",
-                "linkage": "YAML LINKAGE URL",
-                "description": "YAML LINKAGE DESCRIPTION",
-                "name": "YAML LINKAGE TITLE"
+                "linkage": "{{ metadata.url_linkage.REG_PROJ.epibenthos.sv.url }}",
+                "description": "{{ metadata.url_linkage.REG_PROJ.epibenthos.sv.description }}",
+                "name": "{{ metadata.url_linkage.REG_PROJ.epibenthos.sv.title }}"
             }
         ]
     },

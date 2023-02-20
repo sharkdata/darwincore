@@ -193,9 +193,9 @@
             {
                 "function": "",
                 "protocol": "",
-                "linkage": "YAML LINKAGE URL",
-                "description": "YAML LINKAGE DESCRIPTION",
-                "name": "YAML LINKAGE TITLE"
+                "linkage": "{{ metadata.url_linkage.NAT.bacterioplankton.sv.url }}",
+                "description": "{{ metadata.url_linkage.NAT.bacterioplankton.sv.description }}",
+                "name": "{{ metadata.url_linkage.NAT.bacterioplankton.sv.title }}"
             }
         ]
     },
