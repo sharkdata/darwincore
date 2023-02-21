@@ -138,7 +138,7 @@
             }
         },
         "extent": {
-            "description": "metadata.geographicCoverage.description.en  metadata.geographicCoverage.balticsea.en",
+            "description": "metadata.geographicCoverage.description.en  metadata.geographicCoverage.balticseaKattegatSkagerrak.en",
             "geographicElement": {
                 "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
                 "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
