@@ -201,7 +201,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.NAT.bacterioplankton.sv }}",
+        "lineage": "{{ metadata.orderer.NAT.default.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {

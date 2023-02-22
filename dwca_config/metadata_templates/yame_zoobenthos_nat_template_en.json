@@ -201,7 +201,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.NAT.zoobenthos.en }}",
+        "lineage": "{{ metadata.orderer.NAT.default.en }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {

@@ -202,7 +202,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.NAT_REG.picoplankton.sv }}",
+        "lineage": "{{ metadata.orderer.NAT_REG.default.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {

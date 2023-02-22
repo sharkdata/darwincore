@@ -201,7 +201,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.NAT.greyseal.sv }}",
+        "lineage": "{{ metadata.orderer.NAT.default.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {

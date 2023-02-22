@@ -201,7 +201,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.REG_RECIP_PROJ.phytoplankton.sv }}",
+        "lineage": "{{ metadata.orderer.REG_RECIP_PROJ.default.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {
