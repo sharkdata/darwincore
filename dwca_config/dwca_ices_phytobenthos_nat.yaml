@@ -62,9 +62,9 @@ translate:
     directory:
         data_in/resources
     files:
-       # - translate.txt
-       # - translate_epibenthos.txt
-         - translate_ices_phytobenthos.txt
+        - translate_ices.txt
+        - translate_ices_stations.txt
+        - translate_ices_phytobenthos.txt
 
 filters:
     directory:

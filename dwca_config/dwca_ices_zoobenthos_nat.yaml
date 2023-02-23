@@ -58,8 +58,8 @@ translate:
     directory:
         data_in/resources
     files:
-       # - translate.txt
-       # - translate_zoobenthos.txt
+        - translate_ices.txt
+        - translate_ices_stations.txt
         - translate_ices_zoobenthos.txt
 
 

@@ -54,9 +54,9 @@ translate:
     directory:
         data_in/resources
     files:
-       # - translate.txt
-       # - translate_phytoplankton.txt
-         - translate_ices_phytoplankton.txt
+        - translate_ices.txt
+        - translate_ices_stations.txt
+        - translate_ices_phytoplankton.txt
 
 filters:
     directory:
