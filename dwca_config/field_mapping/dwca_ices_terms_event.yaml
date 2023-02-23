@@ -130,7 +130,7 @@ dwcaEventContent:
           license:
               text: CC0
           rightsHolder:
-              text: Swedish Agency for Marine and Water Management
+              sourceKey: sampler_orderer_name_en
           accessRights:
               text: CC0
           institutionCode:

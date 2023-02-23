@@ -64,5 +64,5 @@ filters:
     files:
         - filters_ices.txt
        # - filters_phytoplankton_nat.txt
-        - filters_ices_phytobenthos.txt
+        - filters_ices_phytoplankton.txt
 
