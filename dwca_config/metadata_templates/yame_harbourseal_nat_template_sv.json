@@ -43,8 +43,7 @@
             "role": "owner"
         },
         "resourceMaintenance": {
-            "maintenanceAndUpdateFrequency": "asNeeded",
-            "maintenanceNote": "YAML MAINTENANCE"
+            "maintenanceAndUpdateFrequency": "asNeeded"
         },
         "descriptiveKeywords": {
             "initiativ": {
