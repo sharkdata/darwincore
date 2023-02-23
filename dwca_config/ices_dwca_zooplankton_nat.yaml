@@ -11,7 +11,7 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-zooplankton-nat_ices_TEST.zip
+        - ices-dwca-smhi-zooplankton-nat_TEST.zip
 
 sourceFiles:
     directory: 
@@ -57,12 +57,15 @@ translate:
         data_in/resources
     files:
        # - translate.txt
-        - translate_zooplankton.txt
+       # - translate_zooplankton.txt
+        - translate_ices_zooplankton.txt
 
 filters:
     directory:
         data_in/resources
     files:
         - filters_ices.txt
-        - filters_zooplankton_nat.txt
+       # - filters_zooplankton_nat.txt
+        filters_ices_zooplankton.txt
+
 

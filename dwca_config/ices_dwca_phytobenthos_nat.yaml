@@ -3,7 +3,7 @@
 # GitHub: https://github.com/sharkdata/darwincore
 
 info: 
-    title: DwC-A configurations for epibenthos - national monitoring
+    title: DwC-A configurations for phytobenthos - national monitoring
     description:
         Used to generate DarwinCore-Archive files from SHARK zip files.
 
@@ -11,7 +11,7 @@ dwcaTarget:
     directory:
         data_out
     files: 
-        - dwca-smhi-epibenthos-nat_ices_TEST.zip
+        - ices-dwca-smhi-phytobenthos-nat_TEST.zip
 
 sourceFiles:
     directory: 
@@ -63,14 +63,16 @@ translate:
         data_in/resources
     files:
        # - translate.txt
-        - translate_epibenthos.txt
+       # - translate_epibenthos.txt
+         - translate_ices_phytobenthos.txt
 
 filters:
     directory:
         data_in/resources
     files:
         - filters_ices.txt
-        - filters_epibenthos_nat.txt
+       # - filters_epibenthos_nat.txt
+        - filters_ices_phytobenthos.txt
 
 # metadataSourceFiles:
 #     directory:
@@ -86,14 +88,14 @@ filters:
 #         - datahost.yaml
 #         - keywords.yaml
 
-metadataTemplate:
-    directory:
-        dwca_config/metadata_templates
-    files: 
-        - yame_epibenthos_nat_template_sv.json
+#metadataTemplate:
+#    directory:
+#        dwca_config/metadata_templates
+#    files: 
+#        - yame_epibenthos_nat_template_sv.json
 
-metadataTarget:
-    directory:
-        data_out
-    files: 
-        - yame_epibenthos_nat_sv.json
+#metadataTarget:
+#    directory:
+#        data_out
+#    files: 
+#        - yame_epibenthos_nat_sv.json
