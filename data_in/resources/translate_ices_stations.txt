@@ -127,39 +127,13 @@ station_name	6025 SKVALLRAN	6025
 station_name	SB 17B	SB 17b
 station_name	VAE 4B	VAE 4b
 
-# Stationer i Epibenthos
+# Stationer i Phytobenthos
 station_name	ELLÖSE 7	ELLÖSE_7
 station_name	GROGARN	Grogarn
 station_name	HOBURG	Hoburg
 station_name	KRONVALD	Kronvald
 station_name	LACKA	Lacka
 station_name	Wa2	WA2
-
-# stationer i PB SLC-T borde inte behövas längre
-#station_name	Blekeskär	BLEKESKÄR
-#station_name	Brunskär	BRUNSKÄR
-#station_name	Danholmen	DANHOLMEN
-#station_name	Eggskärsfyr	EGGSKÄRSFYR
-#station_name	Grötskär	GRÖTSKÄR
-#station_name	Kråkholmen	KRÅKHOLMEN
-#station_name	Måkholmen	MÅKHOLMEN
-#station_name	Måvholmen	MÅVHOLMEN
-#station_name	Norra Dyngön	NORRA DYNGÖN
-#station_name	Oxskär	OXSKÄR
-#station_name	Ramnered	RAMNERED
-#station_name	Saltskär inre	SALTSKÄR INRE
-#station_name	Sjumannaholmen	SJUMANNAHOLMEN
-#station_name	Skäddeskären	SKÄDDESKÄREN
-#station_name	Slubbersholmen	SLUBBERSHOLMEN
-#station_name	Slängerumpan	SLÄNGERUMPAN
-#station_name	Stora Gråbenskär	STORA GRÅBENSKÄR
-#station_name	Stora Håskär	STORA HÅSKÄR
-#station_name	Stora Lyngön	STORA LYNGÖN
-#station_name	Storön	STORÖN
-#station_name	Södra Styrsö	SÖDRA STYRSÖ
-#station_name	Trinissla	TRINISSLA
-#station_name	Yttre Vannholmen	YTTRE VANNHOLMEN
-#station_name	Ärholmen	ÄRHOLMEN
 
 # stationer zoobenthos SLC_T
 station_name	ASKIMSFJORDEN 7	ASKIMSFJORDEN_7
@@ -282,6 +256,32 @@ station_name	DANAFJORD	Danafjord
 station_name	HAVSTENS FJORD, N BRATTÖN	HAVSTENS FJORD. N BRATTÖN
 station_name	Havstens fjord. N Brattön	HAVSTENS FJORD. N BRATTÖN
 station_name	GULLMARN 1	GULLMARN_1
+
+# stationer i PB SLC-T borde inte behövas längre
+#station_name	Blekeskär	BLEKESKÄR
+#station_name	Brunskär	BRUNSKÄR
+#station_name	Danholmen	DANHOLMEN
+#station_name	Eggskärsfyr	EGGSKÄRSFYR
+#station_name	Grötskär	GRÖTSKÄR
+#station_name	Kråkholmen	KRÅKHOLMEN
+#station_name	Måkholmen	MÅKHOLMEN
+#station_name	Måvholmen	MÅVHOLMEN
+#station_name	Norra Dyngön	NORRA DYNGÖN
+#station_name	Oxskär	OXSKÄR
+#station_name	Ramnered	RAMNERED
+#station_name	Saltskär inre	SALTSKÄR INRE
+#station_name	Sjumannaholmen	SJUMANNAHOLMEN
+#station_name	Skäddeskären	SKÄDDESKÄREN
+#station_name	Slubbersholmen	SLUBBERSHOLMEN
+#station_name	Slängerumpan	SLÄNGERUMPAN
+#station_name	Stora Gråbenskär	STORA GRÅBENSKÄR
+#station_name	Stora Håskär	STORA HÅSKÄR
+#station_name	Stora Lyngön	STORA LYNGÖN
+#station_name	Storön	STORÖN
+#station_name	Södra Styrsö	SÖDRA STYRSÖ
+#station_name	Trinissla	TRINISSLA
+#station_name	Yttre Vannholmen	YTTRE VANNHOLMEN
+#station_name	Ärholmen	ÄRHOLMEN
 
 # stationer i ZB SLC-T borde inte behövas längre
 #station_name	Askimsfjorden_01	ASKIMSFJORDEN_1
