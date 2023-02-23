@@ -1,0 +1,425 @@
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+dwcaEventColumns:
+    - id
+    - eventID
+    - parentEventID
+    - type
+    - samplingProtocol
+    - sampleSizeValue
+    - sampleSizeUnit
+    - samplingEffort
+    - eventDate
+    - eventTime
+    - year
+    - month
+    - day
+    - verbatimEventDate
+    - habitat
+    - fieldNumber
+    - fieldNotes
+    - eventRemarks
+    - locationID
+    - waterBody
+    - country
+    - countryCode
+    - county
+    - municipality
+    - locality
+    - verbatimLocality
+    - verbatimDepth
+    - minimumDepthInMeters
+    - maximumDepthInMeters
+    - decimalLatitude
+    - decimalLongitude
+    - geodeticDatum
+    - coordinateUncertaintyInMeters
+    - coordinatePrecision
+    - license
+    - rightsHolder
+    - accessRights
+    #    - bibliographicCitation
+    #    - references
+    #    - institutionID
+    #    - datasetID
+    - institutionCode
+    - datasetName
+    - ownerInstitutionCode
+    #    - dataGeneralizations
+    - dynamicProperties
+#    - collectionCode
+
+dwcaEventContent:
+    - eventType: sampling_event
+      dwcTerms:
+          id:
+              sourceKey: sampling_event_key
+          eventID:
+              sourceKey: sampling_event_key
+          parentEventID:
+              sourceKey:
+          type:
+              sourceKey:
+          samplingProtocol:
+              sourceKey:
+          sampleSizeValue:
+              sourceKey:
+          sampleSizeUnit:
+              sourceKey:
+          samplingEffort:
+              sourceKey:
+          eventDate:
+              sourceKeyList:
+                  - visit_date
+                  - sample_date
+          eventTime:
+              sourceKey:
+          year:
+              sourceKey: visit_year
+          month:
+              sourceKey:
+          day:
+              sourceKey:
+          verbatimEventDate:
+              sourceKey:
+          habitat:
+              sourceKey:
+          fieldNumber:
+              sourceKey:
+          fieldNotes:
+              sourceKey: visit_comment
+          eventRemarks:
+              sourceKey:
+          locationID:
+              sourceKey:
+          waterBody:
+              sourceKey: location_sea_basin
+          country:
+              text: Sweden
+          countryCode:
+              text: SE
+          county:
+              sourceKey: location_county
+          municipality:
+              sourceKey: location_municipality
+          locality:
+              sourceKey:
+          verbatimLocality:
+              sourceKey: station_name
+          verbatimDepth:
+              sourceKey:
+          minimumDepthInMeters:
+              sourceKey:
+          maximumDepthInMeters:
+              sourceKey:
+          decimalLatitude:
+              sourceKeyList:
+                  - visit_latitude_dd
+                  - sample_latitude_dd
+          decimalLongitude:
+              sourceKeyList:
+                  - visit_longitude_dd
+                  - sample_longitude_dd
+          geodeticDatum:
+              text: EPSG:4619
+          coordinateUncertaintyInMeters:
+              sourceKey: coordinate_uncertainty_m
+          coordinatePrecision:
+              sourceKey:
+          license:
+              text: CC0
+          rightsHolder:
+              text: Swedish Agency for Marine and Water Management
+          accessRights:
+              text: CC0
+          institutionCode:
+              text: Swedish Meteorological and Hydrological Institute
+          datasetName:
+              sourceKey: dwc_dataset_name
+          ownerInstitutionCode:
+              text: Swedish Agency for Marine and Water Management
+          dynamicProperties:
+              dynamic:
+                  - dynamicKey: SharkDataset
+                    sourceKey: dataset_name
+          #        -   dynamicKey: SamplingLaboratoryCode
+          #            sourceKey: sampling_laboratory_code
+          #        -   dynamicKey: SamplingLaboratoryName
+          #            sourceKeyList:
+          #                - sampling_laboratory_name_en
+          #                - sampling_laboratory_name_sv
+          #        -   dynamicKey: SamplingLaboratoryAccredited
+          #            sourceKey: sampling_laboratory_accreditated
+          #        -   dynamicKey: MonitoringProgramCode
+          #            sourceKey: monitoring_program_code
+          #        -   dynamicKey: StationMarking
+          #            sourceKey: station_marking
+          #        -   dynamicKey: StationExposure
+          #            sourceKey: station_exposure
+          #        -   dynamicKey: VisitId
+          #            sourceKey: visit_id
+          #        -   dynamicKey: ExpeditionId
+          #            sourceKey: expedition_id
+          #        -   dynamicKey: WaterLandStationType
+          #            sourceKey: water_land_station_type_code
+          #        -   dynamicKey: MonitoringStationType
+          #            sourceKey: monitoring_station_type_code
+          #        -   dynamicKey: MonitoringPurpose
+          #            sourceKey: monitoring_purpose_code
+
+    - eventType: transect
+      dwcTerms:
+          id:
+              sourceKey: transect_key
+          eventID:
+              sourceKey: transect_key
+          parentEventID:
+              sourceKey: sampling_event_key
+          type:
+              sourceKey:
+          # samplingProtocol:
+          #     dynamic:
+          #         -   dynamicKey: MethodReference
+          #             sourceKey: method_reference_code
+          #         -   dynamicKey: MethodDocumentation
+          #             sourceKey: method_documentation
+          #         -   dynamicKey: SamplerTypeCode
+          #             sourceKey: sampler_type_code
+          #         -   dynamicKey: PlanktonSamplingMethod
+          #             sourceKey: plankton_sampling_method_code
+          #         -   dynamicKey: SizeClassReferenceList
+          #             sourceKey: size_class_ref_list
+          sampleSizeValue:
+              sourceKey: sampled_volume_l
+          sampleSizeUnit:
+              sourceKey:
+          samplingEffort:
+              sourceKey:
+          eventDate:
+              sourceKeyList:
+                  - sample_date
+                  - visit_date
+          eventTime:
+              sourceKey: sample_time
+          year:
+              sourceKey:
+          month:
+              sourceKey:
+          day:
+              sourceKey:
+          verbatimEventDate:
+              sourceKey:
+          habitat:
+              sourceKey:
+          fieldNumber:
+              dynamic:
+                  - dynamicKey: PlatformCode
+                    sourceKey: platform_code
+                  - dynamicKey: VisitYear
+                    sourceKey: visit_year
+                  - dynamicKey: SampleSeries
+                    sourceKey: sample_series
+                  - dynamicKey: SampleId
+                    sourceKey: sample_id
+                  - dynamicKey: SamplePartId
+                    sourceKey: sample_part_id
+                  - dynamicKey: SamplePartMin(cm)
+                    sourceKey: sample_part_min_cm
+                  - dynamicKey: SamplePartMax(cm)
+                    sourceKey: sample_part_max_cm
+          fieldNotes:
+              sourceKey:
+          eventRemarks:
+              sourceKey: sample_comment
+          locationID:
+              sourceKey:
+          waterBody:
+              sourceKey:
+          country:
+              sourceKey:
+          countryCode:
+              sourceKey:
+          county:
+              sourceKey:
+          municipality:
+              sourceKey:
+          locality:
+              sourceKey:
+          verbatimLocality:
+              sourceKey: station_name
+          verbatimDepth:
+              sourceKey:
+          minimumDepthInMeters:
+              sourceKey: sample_min_depth_m
+          maximumDepthInMeters:
+              sourceKey: sample_max_depth_m
+          decimalLatitude:
+              sourceKeyList:
+                  - sample_latitude_dd
+                  - visit_latitude_dd
+          decimalLongitude:
+              sourceKeyList:
+                  - sample_longitude_dd
+                  - visit_longitude_dd
+          geodeticDatum:
+              text: EPSG:4619
+          coordinateUncertaintyInMeters:
+              sourceKey:
+          coordinatePrecision:
+              sourceKey:
+          license:
+              text: CC0
+          rightsHolder:
+              text: Swedish Agency for Marine and Water Management
+          accessRights:
+              text: CC0
+          institutionCode:
+              sourceKey:
+          datasetName:
+              sourceKey:
+          ownerInstitutionCode:
+              sourceKey:
+          dynamicProperties:
+              dynamic:
+                  - dynamicKey: SharkDataset
+                    sourceKey: dataset_name
+                  - dynamicKey: TransectLength(m)
+                    sourceKey: transect_length_m
+                  - dynamicKey: TransectDirection(degrees)
+                    sourceKey: transect_direction_deg
+          #        -   dynamicKey: Orderer
+          #            sourceKeyList:
+          #                - sample_orderer_name_en
+          #                - sample_orderer_name_sv
+
+    - eventType: section
+      dwcTerms:
+          id:
+              sourceKey: section_key
+          eventID:
+              sourceKey: section_key
+          parentEventID:
+              sourceKey: transect_key
+          type:
+              sourceKey:
+          # samplingProtocol:
+          #     dynamic:
+          #         -   dynamicKey: MethodReference
+          #             sourceKey: method_reference_code
+          #         -   dynamicKey: MethodDocumentation
+          #             sourceKey: method_documentation
+          #         -   dynamicKey: SamplerTypeCode
+          #             sourceKey: sampler_type_code
+          #         -   dynamicKey: PlanktonSamplingMethod
+          #             sourceKey: plankton_sampling_method_code
+          #         -   dynamicKey: SizeClassReferenceList
+          #             sourceKey: size_class_ref_list
+          sampleSizeValue:
+              sourceKey: sampled_volume_l
+          sampleSizeUnit:
+              sourceKey:
+          samplingEffort:
+              sourceKey:
+          eventDate:
+              sourceKeyList:
+                  - sample_date
+                  - visit_date
+          eventTime:
+              sourceKey: sample_time
+          year:
+              sourceKey:
+          month:
+              sourceKey:
+          day:
+              sourceKey:
+          verbatimEventDate:
+              sourceKey:
+          habitat:
+              sourceKey:
+          fieldNumber:
+              dynamic:
+                  - dynamicKey: PlatformCode
+                    sourceKey: platform_code
+                  - dynamicKey: VisitYear
+                    sourceKey: visit_year
+                  - dynamicKey: SampleSeries
+                    sourceKey: sample_series
+                  - dynamicKey: SampleId
+                    sourceKey: sample_id
+                  - dynamicKey: SamplePartId
+                    sourceKey: sample_part_id
+                  - dynamicKey: SamplePartMin(cm)
+                    sourceKey: sample_part_min_cm
+                  - dynamicKey: SamplePartMax(cm)
+                    sourceKey: sample_part_max_cm
+          fieldNotes:
+              sourceKey:
+          eventRemarks:
+              sourceKey: sample_comment
+          locationID:
+              sourceKey:
+          waterBody:
+              sourceKey:
+          country:
+              sourceKey:
+          countryCode:
+              sourceKey:
+          county:
+              sourceKey:
+          municipality:
+              sourceKey:
+          locality:
+              sourceKey:
+          verbatimLocality:
+              sourceKey: station_name
+          verbatimDepth:
+              sourceKey:
+          minimumDepthInMeters:
+              sourceKey: sample_min_depth_m
+          maximumDepthInMeters:
+              sourceKey: sample_max_depth_m
+          decimalLatitude:
+              sourceKeyList:
+                  - section_start_latitude_dd
+       #           - sample_latitude_dd
+       #           - visit_latitude_dd
+          decimalLongitude:
+              sourceKeyList:
+                  - section_start_longitude_dd
+       #           - sample_longitude_dd
+       #           - visit_longitude_dd
+          geodeticDatum:
+              text: EPSG:4619
+          coordinateUncertaintyInMeters:
+              sourceKey:
+          coordinatePrecision:
+              sourceKey:
+          license:
+              text: CC0
+          rightsHolder:
+              text: Swedish Agency for Marine and Water Management
+          accessRights:
+              text: CC0
+          institutionCode:
+              sourceKey:
+          datasetName:
+              sourceKey:
+          ownerInstitutionCode:
+              sourceKey:
+          dynamicProperties:
+              dynamic:
+                  - dynamicKey: SharkDataset
+                    sourceKey: dataset_name
+                  - dynamicKey: TransectLength(m)
+                    sourceKey: transect_length_m
+                  - dynamicKey: TransectDirection(degrees)
+                    sourceKey: transect_direction_deg
+                  - dynamicKey: SectionDistanceStart(m)
+                    sourceKey: section_distance_start_m
+                  - dynamicKey: SectionDistanceEnd(m)
+                    sourceKey: section_distance_end_m
+                  - dynamicKey: SectionStartDepth(m)
+                    sourceKey: section_start_depth_m
+                  - dynamicKey: SectionEndDepth(m)
+                    sourceKey: section_end_depth_m

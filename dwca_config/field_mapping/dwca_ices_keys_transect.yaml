@@ -1,0 +1,86 @@
+
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+eventTypeKeys:
+    event:
+    -   eventType: sampling_event
+        parentEventType: 
+        keyName: sampling_event_key
+        eventKeyName: 
+        keyPrefix: EVENT-
+        keyFields:
+            - station_name
+            - sample_date
+            - sample_time
+            # - visit_transect_start_latitude_dd
+            # - visit_transect_start_longitude_dd
+            # - section_start_latitude_dd
+            # - section_start_longitude_dd
+
+    -   eventType: transect
+        parentEventType: sampling_event
+        keyName: transect_key
+        eventKeyName: sampling_event_key
+        keyPrefix: TRANSECT-
+        keyFields: 
+            - station_name
+            - sample_date
+            - sample_time
+            - visit_transect_start_latitude_dd
+            - visit_transect_start_longitude_dd
+
+    -   eventType: section
+        parentEventType: transect
+        keyName: section_key
+        eventKeyName: transect_key
+        keyPrefix: SECTION-
+        keyFields: 
+            - shark_sample_id_md5
+            - sample_part_id
+            - sample_part_min_cm
+            - sample_part_max_cm
+            - station_name
+            - sample_date
+            - sample_time
+            - visit_transect_start_latitude_dd
+            - visit_transect_start_longitude_dd
+            - section_start_latitude_dd
+            - section_start_longitude_dd
+
+
+    occurrence:
+    -   eventType: occurrence
+        keyName: occurrence_key
+        eventKeyName: section_key
+        keyPrefix: TAXA-
+        keyFields:
+            - shark_sample_id_md5
+            - sample_part_id
+            - scientific_name
+            - sex_code
+            - dev_stage_code
+            - size_class
+            - species_flag_code
+            - size_min_um
+            - size_max_um
+            - reported_cell_volume_um3
+            - epibiont
+            - recruits
+
+    emof:
+    -   eventType: sampling_event
+        keyName: sampling_event_key
+        eventKeyName: sampling_event_key
+
+    -   eventType: transect
+        keyName: transect_key
+        eventKeyName: transect_key
+
+    -   eventType: section
+        keyName: section_key
+        eventKeyName: section_key
+
+    -   eventType: occurrence
+        keyName: occurrence_key
+        eventKeyName: section_key

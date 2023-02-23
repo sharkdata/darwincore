@@ -1,0 +1,137 @@
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+dwcaOccurrenceColumns:
+    - id
+    - eventID
+    - occurrenceID
+
+    - scientificName
+    - taxonID
+    - scientificNameID
+    - acceptedNameUsage
+
+    - identificationQualifier
+    - sex
+    - lifeStage
+    # - individualCount
+    # - organismQuantity
+    # - organismQuantityType
+    - occurrenceStatus
+    - preparations
+    - associatedMedia
+    # - associatedReferences
+    # - associatedSequences
+    - taxonRank
+    - kingdom
+    - phylum
+    - class
+    - order
+    - family
+    - genus
+    - basisOfRecord
+    - recordedBy
+    - occurrenceRemarks
+    - dynamicProperties
+
+dwcaOccurrenceContent:
+    - eventType: occurrence
+      dwcTerms:
+          id:
+              dwcaKey: section_key
+          eventID:
+              dwcaKey: section_key
+          occurrenceID:
+              dwcaKey: occurrence_key
+
+          scientificName:
+              sourceKeyList:
+                  - bvol_scientific_name
+                  - scientific_name
+                  - reported_scientific_name
+          taxonID:
+              sourceKey: dyntaxa_lsid
+          scientificNameID:
+              sourceKeyList:
+                  - bvol_aphia_lsid
+                  - worms_lsid
+                  - bvol_aphia_id
+                  - worms_id
+                  - aphia_id
+          acceptedNameUsage:
+              sourceKey: worms_valid_name
+
+          identificationQualifier:
+              sourceKey: species_flag_code
+          sex:
+              sourceKey: sex_code
+          lifeStage:
+              sourceKey: dev_stage_code
+          # individualCount:
+          # organismQuantity:
+          # organismQuantityType:
+          occurrenceStatus:
+              # text: present
+              sourceKey: present_absent
+          preparations:
+              dynamic:
+                  - dynamicKey: PreservationMethodCode
+                    sourceKey: preservation_method_code
+          associatedMedia:
+              sourceKey: taxon_photo
+          # associatedReferences:
+          #     sourceKey:
+          # associatedSequences:
+          #     sourceKey:
+          taxonRank:
+              sourceKey: worms_rank
+          kingdom:
+              sourceKey: worms_kingdom
+          phylum:
+              sourceKey: worms_phylum
+          class:
+              sourceKey: worms_class
+          order:
+              sourceKey: worms_order
+          family:
+              sourceKey: worms_family
+          genus:
+              sourceKey: worms_genus
+          basisOfRecord:
+              text: MaterialSample
+          recordedBy:
+              sourceKey: taxonomist
+          occurrenceRemarks:
+              sourceKey:
+          dynamicProperties:
+              dynamic:
+                  - dynamicKey: ReportedScientificName
+                    sourceKey: reported_scientific_name
+                  - dynamicKey: SizeClass
+                    sourceKey: size_class
+                  - dynamicKey: CellVolume(um3)
+                    sourceKey: reported_cell_volume_um3
+                  - dynamicKey: SizeClassRangeMin
+                    sourceKey: size_class_range_min
+                  - dynamicKey: SizeClassRangeMax
+                    sourceKey: size_class_range_max
+                  - dynamicKey: Epibiont
+                    sourceKey: epibiont
+                  - dynamicKey: Detached
+                    sourceKey: detached
+                  - dynamicKey: Recruits
+                    sourceKey: recruits
+                  - dynamicKey: SharkDataset
+                    sourceKey: dataset_name
+                  #-   dynamicKey: Bitemark
+                  #    sourceKey: bitemark
+                  #-   dynamicKey: DegreeBiofouling
+                  #    sourceKey: degree_biofouling
+                  #-   dynamicKey: AnalyticalLaboratoryCode
+                  #    sourceKey: analytical_laboratory_code
+                  #-   dynamicKey: AnalyticalLaboratoryName
+                  #    sourceKeyList:
+                  #        - analytical_laboratory_name_en
+                  #        - analytical_laboratory_name_sv
+                  #-   dynamicKey: AnalyticalLaboratoryAccredited
+                  #    sourceKey: analytical_laboratory_accreditated
