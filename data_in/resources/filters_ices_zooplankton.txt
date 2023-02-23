@@ -52,6 +52,5 @@ dataset_name	SHARK_Zooplankton_2010_SUSE
 dataset_name	SHARK_Zooplankton_2010_SMHI
 dataset_name	SHARK_Zooplankton_1994_2010_UMSC
 
-
 variable_comment		sack
 dev_stage_code		C3-C5

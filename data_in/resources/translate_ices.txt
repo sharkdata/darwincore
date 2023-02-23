@@ -1,4 +1,5 @@
 source_field	from_value	to_value	comments
+
 sampling_laboratory_name_en	The Sven Lovén Centre for Marine Sciences-Kristineberg	KMFS
 sampling_laboratory_name_en	The Sven Lovén Centre for Marine Sciences-Tjärnö	TMBL
 sampling_laboratory_name_en	Swedish Meteorological and Hydrological Institute	SMHI
@@ -66,7 +67,6 @@ monitoring_program_code	NTL~H	NATL~COMB
 monitoring_program_code	NTL~H2	NATL~COMB
 monitoring_program_code	National~HELCOM	NATL~COMB
 
-
 plankton_sampling_method_code	HAU	IND
 
 platform_code	74	AA15
@@ -89,7 +89,6 @@ platform_code	28	77KF
 platform_code	LY	77LY
 platform_code	18	77SN
 platform_code	34AR	34A3
-
 
 preservation_method_code	ETHG	ETH9GL
 
