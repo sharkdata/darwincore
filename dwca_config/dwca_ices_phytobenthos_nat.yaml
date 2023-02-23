@@ -37,7 +37,7 @@ dwcaKeys:
     directory:
         dwca_config/field_mapping
     files:
-         - dwca_keys.yaml
+         - dwca_ices_keys.yaml
        # - dwca_keys_transect.yaml
 
 fieldMapping:
