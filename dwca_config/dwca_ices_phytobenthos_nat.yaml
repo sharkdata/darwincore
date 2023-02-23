@@ -44,9 +44,9 @@ fieldMapping:
     directory:
         dwca_config/field_mapping
     files:
-         - dwca_terms_event.yaml
-         - dwca_terms_occurrence.yaml
-         - dwca_terms_emof.yaml
+         - dwca_ices_terms_event.yaml
+         - dwca_ices_terms_occurrence.yaml
+         - dwca_ices_terms_emof.yaml
        # - dwca_terms_event_transect.yaml
        # - dwca_terms_occurrence_transect.yaml
        # - dwca_terms_emof_transect.yaml
