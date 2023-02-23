@@ -1,5 +1,0 @@
-source_field	dwc_field	from_value	to_value	comments
-sampler_type_code		RUTA	DIV
-# sampler_type_code	RUTA	SQR	# Tidigare översattes Ruta till SQR men den har ingen area så nu översätter vi till DIV
-
-sampler_type_code		MESHB	DIV
