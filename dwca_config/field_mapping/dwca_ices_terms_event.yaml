@@ -134,11 +134,11 @@ dwcaEventContent:
           accessRights:
               text: CC0
           institutionCode:
-              text: Swedish Meteorological and Hydrological Institute
+              text: "545"
           datasetName:
               sourceKey: dwc_dataset_name
           ownerInstitutionCode:
-              text: Swedish Agency for Marine and Water Management
+              text: SWAM
           dynamicProperties:
               dynamic:
                   - dynamicKey: SharkDataset
@@ -171,8 +171,6 @@ dwcaEventContent:
           #            sourceKey: monitoring_station_type_code
           #        -   dynamicKey: MonitoringPurpose
           #            sourceKey: monitoring_purpose_code
-
-
 
     - eventType: sample
       dwcTerms:
