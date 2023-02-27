@@ -121,8 +121,10 @@ dwcaEventContent:
               sourceKeyList:
                   - visit_longitude_dd
                   - sample_longitude_dd
-          geodeticDatum:
-              text: EPSG:4619
+          geodeticDate:
+              sourceKeyList:
+                  - positioning_system_code
+              # text: EPSG:4619
           coordinateUncertaintyInMeters:
               sourceKey: coordinate_uncertainty_m
           coordinatePrecision:
