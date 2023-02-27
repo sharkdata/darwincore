@@ -33,7 +33,7 @@ dwcaEventColumns:
     - maximumDepthInMeters
     - decimalLatitude
     - decimalLongitude
-    - geodeticDate
+    - geodeticDatum
     - coordinateUncertaintyInMeters
     - coordinatePrecision
     - license
@@ -121,10 +121,8 @@ dwcaEventContent:
               sourceKeyList:
                   - visit_longitude_dd
                   - sample_longitude_dd
-          geodeticDate:
-              sourceKeyList:
-                  - positioning_system_code
-              # text: EPSG:4619
+          geodeticDatum:
+              sourceKey: positioning_system_code # text: EPSG:4619
           coordinateUncertaintyInMeters:
               sourceKey: coordinate_uncertainty_m
           coordinatePrecision:
@@ -268,16 +266,16 @@ dwcaEventContent:
               sourceKeyList:
                   - sample_longitude_dd
                   - visit_longitude_dd
-          geodeticDatum:
-              text: EPSG:4619
+          #         geodeticDatum:
+          #             text: EPSG:4619
           coordinateUncertaintyInMeters:
               sourceKey:
           coordinatePrecision:
               sourceKey:
           license:
               text: CC0
-          rightsHolder:
-              text: Swedish Agency for Marine and Water Management
+          #         rightsHolder:
+          #             text: Swedish Agency for Marine and Water Management
           accessRights:
               text: CC0
           institutionCode:
