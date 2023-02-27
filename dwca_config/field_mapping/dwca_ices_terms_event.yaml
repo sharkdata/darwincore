@@ -33,7 +33,7 @@ dwcaEventColumns:
     - maximumDepthInMeters
     - decimalLatitude
     - decimalLongitude
-    - geodeticDatum
+    - geodeticDate
     - coordinateUncertaintyInMeters
     - coordinatePrecision
     - license
