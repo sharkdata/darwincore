@@ -106,3 +106,8 @@ sediment_deposition_code	4	H
 sediment_deposition_code	2	L
 sediment_deposition_code	3	M
 sediment_deposition_code	1	N
+
+delivery_datatype	Phytoplankton	PP
+delivery_datatype	Zooplankton	ZP
+delivery_datatype	Epibenthos	PB
+delivery_datatype	Zoobenthos	ZB
