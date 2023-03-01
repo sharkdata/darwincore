@@ -12,6 +12,7 @@ dwcaOccurrenceColumns:
     - acceptedNameUsage
 
     - identificationQualifier
+    - sizeClassReferenceList
     - sex
     - lifeStage
     # - individualCount
@@ -63,6 +64,9 @@ dwcaOccurrenceContent:
 
           identificationQualifier:
               sourceKey: species_flag_code
+
+          sizeClassReferenceList:
+              sourceKey: size_class_ref_list_code
           sex:
               sourceKey: sex_code
           lifeStage:
