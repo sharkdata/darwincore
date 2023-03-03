@@ -3,6 +3,8 @@ source_field	from_value	to_value	comments
 unit	g/analysed sample fraction	Grams
 unit	ind/analysed sample fraction	Numbers
 unit	ind/m2	Number per square metre
+unit	ind/l or 100 um pieces/l	Number per litre
+unit	ugC/l	Micrograms per litre
 
 
 #parameter	# counted	Count (in assayed sample) of biological entity specified elsewhere
