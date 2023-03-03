@@ -55,6 +55,7 @@ translate:
         data_in/resources
     files:
         - translate_ices.txt
+        - translate_ices_nerc.txt
         - translate_ices_stations.txt
         - translate_ices_phytoplankton.txt
 

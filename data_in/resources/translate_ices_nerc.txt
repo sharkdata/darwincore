@@ -1,0 +1,16 @@
+source_field	from_value	to_value	comments
+
+unit	g	Grams
+unit	kg	Kilograms
+unit	mg/l	Milligrams per litre
+unit	mg/m3 (ug/l)	Milligrams per cubic metre
+unit	nr/m2	Number per square metre
+
+#parameter	# counted	Count (in assayed sample) of biological entity specified elsewhere
+parameter	Wet weight	Wet weight biomass (in assayed sample) of biological entity specified elsewhere
+parameter	Wet weight/area	Wet weight biomass of biological entity specified elsewhere per unit area of the bed
+parameter	Wet weight/volume	Wet weight biomass of biological entity specified elsewhere per unit volume of the water body
+parameter	Dry weight	Dry weight biomass (in assayed sample) of biological entity specified elsewhere
+parameter	Carbon concentration	Carbon biomass of phytoplankton per unit volume of the water body
+parameter	Biovolume concentration	Wet weight biomass of phytoplankton per unit volume of the water body by optical microscopy and computation by morphometric method
+
