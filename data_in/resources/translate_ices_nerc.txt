@@ -1,10 +1,8 @@
 source_field	from_value	to_value	comments
 
-unit	g	Grams
-unit	kg	Kilograms
-unit	mg/l	Milligrams per litre
-unit	mg/m3 (ug/l)	Milligrams per cubic metre
-unit	nr/m2	Number per square metre
+unit	g/analysed sample fraction	Grams
+unit	ind/analysed sample fraction	Numbers
+unit	ind/m2	Number per square metre
 
 #parameter	# counted	Count (in assayed sample) of biological entity specified elsewhere
 parameter	Wet weight	Wet weight biomass (in assayed sample) of biological entity specified elsewhere
