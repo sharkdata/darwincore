@@ -337,7 +337,7 @@ dwcaEmofContent:
           - sample_orderer_name_en
           - sample_orderer_name_sv
 
-      - measurementType: Method reference
+      - measurementType: Method reference code
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
@@ -347,7 +347,7 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: method_documentation
-      - measurementType: Sampler type
+      - measurementType: Sampler type code
         measurementTypeID: http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/
         measurementUnit:
         measurementUnitID:
