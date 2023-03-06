@@ -23,6 +23,9 @@ sex_code	F	female
 sex_code	M	male
 sex_code	U	indeterminate
 
+sex_code	X	male+female
+sex_code	H	hermaphrodite
+
 dev_stage_code	JV	juvenile
 dev_stage_code	NP	nauplii
 dev_stage_code	AD	adult
@@ -37,4 +40,6 @@ dev_stage_code	EG	egg
 dev_stage_code	IM	immature
 dev_stage_code	LV	larvae
 dev_stage_code	NS	not specified
+
+dev_stage_code	CN	copepodites
 
