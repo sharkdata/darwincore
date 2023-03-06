@@ -40,9 +40,10 @@ analytical_laboratory_name_sv	-	TMBL
 
 #sampler_area_m2		0,04
 
-dev_stage_code	C2	C1
-dev_stage_code	C3	C1
-dev_stage_code	C5	C4
+#tillfälligt borttaget 2023-03-06
+#dev_stage_code	C2	C1	why this translate? STAGE COP2 exists
+#dev_stage_code	C3	C1	why this translate? STAGE COP3 exists
+#dev_stage_code	C5	C4	why this translate? STAGE COP5 exists
 
 monitoring_program_code	O	CEMP
 monitoring_program_code	OSPAR	CEMP
