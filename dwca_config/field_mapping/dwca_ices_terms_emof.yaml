@@ -17,6 +17,7 @@ dwcaEmofColumns:
   - measurementDeterminedBy
   - measurementMethod
   - measurementRemarks
+  - country
 
 dwcaEmofContent:
   - eventType: sampling_event
