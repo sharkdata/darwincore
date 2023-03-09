@@ -64,7 +64,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-          text: Sweden
+        text: "Sweden"
       - measurementType: ICES datatype
         measurementTypeID:
         measurementUnit:
