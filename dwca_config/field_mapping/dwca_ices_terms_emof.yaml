@@ -60,6 +60,16 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: platform_code
+      - measurementType: country
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+          text: Sweden
+      - measurementType: ICES datatype
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: delivery_datatype
       - measurementType: Wave height
         measurementTypeID:
         measurementUnit: m
