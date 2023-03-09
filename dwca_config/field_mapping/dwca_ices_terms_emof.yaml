@@ -53,6 +53,8 @@ dwcaEmofContent:
         sourceKey:
       measurementRemarks:
         sourceKey:
+      country:
+        text: Sweden
 
     extraMeasurements:
       - measurementType: Platform code
@@ -60,10 +62,7 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: platform_code
-      - measurementType: country
-        measurementTypeID: Sweden
-        measurementUnit:
-        measurementUnitID:
+
       - measurementType: ICES datatype
         measurementTypeID:
         measurementUnit:
