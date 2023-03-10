@@ -445,11 +445,6 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: degree_biofouling
-      - measurementType: Analytical laboratory code
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: analytical_laboratory_code
       - measurementType: Analytical laboratory name
         measurementTypeID:
         measurementUnit:
