@@ -1,8 +1,8 @@
 source_field	include_value	exclude_value	filter_group_id	comments
 
-dataset_name	SHARK_Phytoplankton_2021_SMHI
-dataset_name	SHARK_Phytoplankton_2021_DEEP
-dataset_name	SHARK_Phytoplankton_2021_UMSC
+#dataset_name	SHARK_Phytoplankton_2021_SMHI
+#dataset_name	SHARK_Phytoplankton_2021_DEEP
+#dataset_name	SHARK_Phytoplankton_2021_UMSC
 
 # Phytoplankton species (problems with OSPAR area biovolumes not in ICES HELCOM PEG list)
 scientific_name		Ciliophora
