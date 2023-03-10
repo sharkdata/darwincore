@@ -505,7 +505,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKey: stratum_id
+        sourceKey: stratum_code
 
       - measurementType: Trophic type code
         measurementTypeID:
