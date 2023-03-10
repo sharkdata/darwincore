@@ -18,6 +18,10 @@ dwcaEmofColumns:
   - measurementMethod
   - measurementRemarks
   - country
+  - Platform code
+  - ICES datatype
+  - Monitoring program code
+  - Monitoring purpose
 
 dwcaEmofContent:
   - eventType: sampling_event
