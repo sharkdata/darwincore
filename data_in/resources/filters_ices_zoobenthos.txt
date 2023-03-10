@@ -1,10 +1,10 @@
 source_field	include_value	exclude_value	comments
 
-dataset_name	SHARK_Zoobenthos_2021_LNU
-dataset_name	SHARK_Zoobenthos_2021_UMSC
-dataset_name	SHARK_Zoobenthos_2021_DEEP
-dataset_name	SHARK_Zoobenthos_2021_DEEP_Asko
-dataset_name	SHARK_Zoobenthos_2021_SLC-T
+#dataset_name	SHARK_Zoobenthos_2021_LNU
+#dataset_name	SHARK_Zoobenthos_2021_UMSC
+#dataset_name	SHARK_Zoobenthos_2021_DEEP
+#dataset_name	SHARK_Zoobenthos_2021_DEEP_Asko
+#dataset_name	SHARK_Zoobenthos_2021_SLC-T
 
 #dataset_name	SHARK_Zoobenthos_2020_LNU
 #dataset_name	SHARK_Zoobenthos_2020_UMSC
@@ -33,7 +33,7 @@ dataset_name	SHARK_Zoobenthos_2021_SLC-T
 
 #dataset_name	SHARK_Zoobenthos_2017_2020_SLC-T
 #dataset_name	SHARK_Zoobenthos_2007_2016_DEEP_Asko
-dataset_name	SHARK_Zoobenthos_2015_2021_UMSC
+#dataset_name	SHARK_Zoobenthos_2015_2021_UMSC
 
 station_name		Hökvik1	#RECIP
 station_name		Hökvik2	#RECIP
