@@ -154,9 +154,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKeyList:
-          - sampling_laboratory_name_en
-          - sampling_laboratory_name_sv
+        sourceKey: sampling_laboratory_name_en
       - measurementType: Sampling laboratory accredited
         measurementTypeID:
         measurementUnit:
@@ -317,10 +315,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKeyList:
-          - sample_orderer_name_en
-          - sample_orderer_name_sv
-
+        sourceKey: sample_orderer_name_en
       - measurementType: Method reference
         measurementTypeID:
         measurementUnit:
@@ -449,9 +444,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKeyList:
-          - analytical_laboratory_name_en
-          - analytical_laboratory_name_sv
+        sourceKey: analytical_laboratory_name_en
       - measurementType: Analytical laboratory accredited
         measurementTypeID:
         measurementUnit:
