@@ -213,7 +213,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKey: monitoring_purpose_code
+        text: B,E,S,T
       - measurementType: ICES datatype
         measurementTypeID:
         measurementUnit:
