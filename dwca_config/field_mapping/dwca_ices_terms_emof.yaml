@@ -276,7 +276,7 @@ dwcaEmofContent:
         measurementUnit: um
         measurementUnitID:
         sourceKey: upper_mesh_size_um
-      - measurementType: Lower mesh size
+      - measurementType: Mesh size
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/ "
         measurementUnit: um
         measurementUnitID:
