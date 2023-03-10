@@ -1,65 +1,78 @@
-
 # A part of the DarwinCore-Archive, DwC-A, generator.
 # GitHub: https://github.com/sharkdata/darwincore
 
 eventTypeKeys:
-    event:
-    -   eventType: sampling_event
-        parentEventType: 
-        keyName: sampling_event_key
-        eventKeyName: 
-        keyPrefix: EVENT-
-        keyFields:
-            - station_name
-            - sample_date
-            - sample_time
-            - visit_transect_start_latitude_dd
-            - visit_transect_start_longitude_dd
-            # - section_start_latitude_dd
-            # - section_start_longitude_dd
+  event:
+    - eventType: sampling_cruise
+      parentEventType:
+      keyName: sampling_cruise_key
+      eventKeyName:
+      keyPrefix: CRUISE-
+      keyFields:
+        - visit_year
+        - platform_code
+        - samling_date # från erf  borde bli fel med datum plockas bara månaden ut?       month = self._dict.get("SDATE-R91", "YYYYMMDD")[4:6]
+      #key_list.append(month)
+      #       - text: Sweden
+      # - text: "545"
 
-    -   eventType: sample
-        parentEventType: sampling_event
-        keyName: sample_key
-        eventKeyName: sampling_event_key
-        keyPrefix: SAMPLE-
-        keyFields: 
-            - shark_sample_id_md5
-            - sample_part_id
-            - sample_part_min_cm
-            - sample_part_max_cm
-            - section_distance_start_m
-            - section_distance_end_m
+      # - text: SWAM
 
+    - eventType: sampling_event
+      parentEventType:
+      keyName: sampling_event_key
+      eventKeyName:
+      keyPrefix: EVENT-
+      keyFields:
+        - station_name
+        - sample_date
+        - sample_time
+        - visit_transect_start_latitude_dd
+        - visit_transect_start_longitude_dd
+        # - section_start_latitude_dd
+        # - section_start_longitude_dd
 
-    occurrence:
-    -   eventType: occurrence
-        keyName: occurrence_key
-        eventKeyName: sample_key
-        keyPrefix: TAXA-
-        keyFields:
-            - shark_sample_id_md5
-            - sample_part_id
-            - scientific_name
-            - sex_code
-            - dev_stage_code
-            - size_class
-            - species_flag_code
-            - size_min_um
-            - size_max_um
-            - reported_cell_volume_um3
-            - epibiont
-            - recruits
+    - eventType: sample
+      parentEventType: sampling_event
+      keyName: sample_key
+      eventKeyName: sampling_event_key
+      keyPrefix: SAMPLE-
+      keyFields:
+        - shark_sample_id_md5
+        - sample_part_id
+        - sample_part_min_cm
+        - sample_part_max_cm
+        - section_distance_start_m
+        - section_distance_end_m
 
-    emof:
-    -   eventType: sampling_event
-        keyName: sampling_event_key
-        eventKeyName: sampling_event_key
+  occurrence:
+    - eventType: occurrence
+      keyName: occurrence_key
+      eventKeyName: sample_key
+      keyPrefix: TAXA-
+      keyFields:
+        - shark_sample_id_md5
+        - sample_part_id
+        - scientific_name
+        - sex_code
+        - dev_stage_code
+        - size_class
+        - species_flag_code
+        - size_min_um
+        - size_max_um
+        - reported_cell_volume_um3
+        - epibiont
+        - recruits
 
-    -   eventType: sample
-        keyName: sample_key
-        eventKeyName: sample_key
+  emof:
+    - eventType: sampling_event
+      keyName: sampling_event_key
+      eventKeyName: sampling_event_key
 
-    -   eventType: occurrence
-        keyName: occurrence_key
-        eventKeyName: sample_key
+    - eventType: sample
+      keyName: sample_key
+      eventKeyName: sample_key
+
+    - eventType: occurrence
+      keyName: occurrence_key
+      eventKeyName: sample_key

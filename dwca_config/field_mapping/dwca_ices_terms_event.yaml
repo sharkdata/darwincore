@@ -51,6 +51,19 @@ dwcaEventColumns:
 #    - collectionCode
 
 dwcaEventContent:
+    - eventType: sampling_cruise
+      dwcTerms:
+          id:
+              sourceKey: sampling_cruise_key
+          eventID:
+              sourceKey: sampling_cruise_key
+          institutionCode:
+              text: "545"
+          year:
+              sourceKey: visit_year
+          ownerInstitutionCode:
+              text: SWAM
+
     - eventType: sampling_event
       dwcTerms:
           id:
