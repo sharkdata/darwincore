@@ -11,15 +11,10 @@ eventTypeKeys:
       keyFields:
         - visit_year
         - platform_code
-        - samling_date # från erf  borde bli fel med datum plockas bara månaden ut?       month = self._dict.get("SDATE-R91", "YYYYMMDD")[4:6]
-      #key_list.append(month)
-      #       - text: Sweden
-      # - text: "545"
-
-      # - text: SWAM
+        - samling_date
 
     - eventType: sampling_event
-      parentEventType:
+      parentEventType: sampling_cruise
       keyName: sampling_event_key
       eventKeyName:
       keyPrefix: EVENT-
