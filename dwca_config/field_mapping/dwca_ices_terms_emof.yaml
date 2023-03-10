@@ -164,19 +164,11 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: sediment_type
-
-      - measurementType: Sampling laboratory code
+      - measurementType: Sampling laboratory ID
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKey: sampling_laboratory_code
-      - measurementType: Sampling laboratory name
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKeyList:
-          - sampling_laboratory_name_en
-          - sampling_laboratory_name_sv
+        sourceKey: sampling_laboratory_name_en
       - measurementType: Sampling laboratory accredited
         measurementTypeID:
         measurementUnit:
@@ -506,18 +498,11 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: degree_biofouling
-      - measurementType: Analytical laboratory code
+      - measurementType: Analytical laboratory ID
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKey: analytical_laboratory_code
-      - measurementType: Analytical laboratory name
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKeyList:
-          - analytical_laboratory_name_en
-          - analytical_laboratory_name_sv
+        sourceKey: analytical_laboratory_name_en
       - measurementType: Analytical laboratory accredited
         measurementTypeID:
         measurementUnit:
