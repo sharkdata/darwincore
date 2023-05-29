@@ -71,7 +71,7 @@ dwcaEventContent:
           eventID:
               sourceKey: sampling_event_key
           parentEventID:
-              sourceKey:
+              sourceKey: sampling_cruise_key
           type:
               sourceKey:
           samplingProtocol:

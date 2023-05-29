@@ -19,6 +19,7 @@ trophic_type_code	AU	autotrophic
 trophic_type_code	HT	heterotrophic
 trophic_type_code	MX	heterotrophic+autotrophic
 
+
 sex_code	F	female
 sex_code	M	male
 sex_code	U	indeterminate

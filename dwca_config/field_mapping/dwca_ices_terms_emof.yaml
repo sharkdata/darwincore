@@ -18,6 +18,10 @@ dwcaEmofColumns:
   - measurementMethod
   - measurementRemarks
   - country
+  - Platform code
+  - ICES datatype
+  - Monitoring program code
+  - Monitoring purpose
 
 dwcaEmofContent:
   - eventType: sampling_event
@@ -56,19 +60,16 @@ dwcaEmofContent:
         sourceKey:
       country:
         text: Sweden
+      Platform code:
+        sourceKey: platform_code
+      ICES datatype:
+        sourceKey: delivery_datatype
+      Monitoring program code:
+        sourceKey: monitoring_program_code
+      Monitoring purpose:
+        text: B,E,S,T
 
     extraMeasurements:
-      - measurementType: Platform code
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: platform_code
-
-      - measurementType: ICES datatype
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: delivery_datatype
       - measurementType: Wave height
         measurementTypeID:
         measurementUnit: m
@@ -174,11 +175,6 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: sampling_laboratory_accreditated
-      - measurementType: Monitoring program code
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: monitoring_program_code
       - measurementType: Station marking
         measurementTypeID:
         measurementUnit:
@@ -209,11 +205,7 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: monitoring_station_type_code
-      - measurementType: Monitoring purpose
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        text: B,E,S,T
+
       - measurementType: ICES datatype
         measurementTypeID:
         measurementUnit:
@@ -275,17 +267,17 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
         sourceKey: flowmeter_length_m
       - measurementType: Mesh size
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/ "
         measurementUnit: um
         measurementUnitID:
         sourceKey: mesh_size_um
       - measurementType: Upper mesh size
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/ "
         measurementUnit: um
         measurementUnitID:
         sourceKey: upper_mesh_size_um
-      - measurementType: Lower mesh size
-        measurementTypeID:
+      - measurementType: Mesh size
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/ "
         measurementUnit: um
         measurementUnitID:
         sourceKey: lower_mesh_size_um
@@ -513,7 +505,12 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        sourceKey: stratum_id
+        sourceKey: stratum_code
+      - measurementType: Substrate type
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: substrate_code
 
       - measurementType: Trophic type code
         measurementTypeID:
