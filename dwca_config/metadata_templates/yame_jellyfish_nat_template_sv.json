@@ -1,0 +1,226 @@
+{
+    "metadata": {
+        "fileIdentifier": "82deae40-ab92-11ed-b76d-234a2fcfaecf",
+        "language": "swe",
+        "hierarchyLevel": "dataset",
+        "contact": {
+            "organisationName": "SMHI",
+            "phone": "011-4958000",
+            "deliveryPoint": "Folkborgsvägen 17",
+            "city": "Norrköping",
+            "postalCode": "60176",
+            "electronicMailAddress": "dataleveranser@smhi.se",
+            "role": "pointOfContact"
+        },
+        "dateStamp": "2022-06-10",
+        "metadataStandardName": "SS-EN-ISO-19115:2005-NMDP 4.0"
+    },
+    "referenceSystemInfo": [
+        {
+            "code": "EPSG:4326"
+        }
+    ],
+    "identificationInfo": {
+        "citation": {
+            "title": "{{ metadata.titles.NAT.zooplankton.sv }}",
+            "alternateTitle": "",
+            "dates": {
+                "creation": "2022-09-10",
+                "publication": "2022-09-10",
+                "revision": ""
+            },
+            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+        },
+        "abstract": "{{ metadata.methods.NAT.zooplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.zooplankton.sv }}",
+        "status": "underDevelopment",
+        "pointOfContact": {
+            "organisationName": "SMHI",
+            "phone": "011-495 8000",
+            "deliveryPoint": "Folkborgsvägen 1",
+            "city": "Norrköping",
+            "postalCode": "601 76",
+            "electronicMailAddress": "shark@smhi.se",
+            "role": "owner"
+        },
+        "resourceMaintenance": {
+            "maintenanceAndUpdateFrequency": "asNeeded"
+        },
+        "descriptiveKeywords": {
+            "initiativ": {
+                "keyword": [
+                    "Öppna data"
+                ],
+                "title": "Initiativ",
+                "date": "2017-01-01",
+                "dateType": "publication"
+            },
+            "gcmd": {
+                "keyword": [
+                    "Oceans > Marine Environment Monitoring",
+                    "Oceans > Marine Biology"
+                ],
+                "title": "GCMD - Science keywords",
+                "date": "2008-02-05",
+                "dateType": "publication"
+            },
+            "gemet": {
+                "keyword": [],
+                "title": "GEMET - INSPIRE themes, version 1.0",
+                "date": "2008-06-01",
+                "dateType": "publication"
+            },
+            "wmo": {
+                "keyword": [
+                    "oceanography"
+                ],
+                "title": "WMO_CategoryCode",
+                "date": "2010-01-01",
+                "dateType": "publication"
+            },
+            "sid_category": {
+                "keyword": [],
+                "title": "SID Category",
+                "date": "2018-10-02",
+                "dateType": "publication"
+            },
+            "sid_datatype": {
+                "keyword": [],
+                "title": "SID Datatype",
+                "date": "2018-10-02",
+                "dateType": "publication"
+            },
+            "sid_parameter": {
+                "keyword": [],
+                "title": "SID Parameter",
+                "date": "2012-09-04",
+                "dateType": "publication"
+            },
+            "sid_harvest_target": {
+                "keyword": [
+                    "dataportal.se"
+                ],
+                "title": "SID harvest target",
+                "date": "2022-01-17",
+                "dateType": "publication"
+            },
+            "service_class": {
+                "keyword": [],
+                "title": "Tjänsteklassificering",
+                "date": "2008-12-03",
+                "dateType": "publication"
+            },
+            "priority_dataset": {
+                "keyword": [],
+                "title": "INSPIRE priority data set",
+                "date": "2018-04-04",
+                "dateType": "publication"
+            },
+            "topic_category": {
+                "keyword": [],
+                "title": "Ämnesområde",
+                "date": "2018-01-01",
+                "dateType": "publication"
+            }
+        },
+        "resourceConstraints": {
+            "useLimitation": [],
+            "legalConstraints": {
+                "useConstraints": {
+                    "restrictionCode": "otherRestrictions",
+                    "anchor": "CC01.0",
+                    "text": ""
+                },
+                "accessConstraints": {
+                    "restrictionCode": "otherRestrictions",
+                    "anchor": "InnehallerPersonUppgifterIckeKansliga"
+                }
+            }
+        },
+        "extent": {
+            "description": "metadata.geographicCoverage.description.sv    metadata.geographicCoverage.balticsea.sv",
+            "geographicElement": {
+                "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
+                "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
+                "southBoundLatitude": "{{ metadata_auto.latitude_min }}",
+                "northBoundLatitude": "{{ metadata_auto.latitude_max }}"
+            },
+            "temporalElement": {
+                "beginPosition": "{{ metadata_auto.sample_date_min }}",
+                "endPosition": "{{ metadata_auto.sample_date_max }}"
+            },
+            "verticalElement": {
+                "minimumValue": "",
+                "maximumValue": "",
+                "verticalCRS": ""
+            }
+        },
+        "dataset": {
+            "spatialRepresentationType": "textTable",
+            "spatialResolution": {
+                "distance": "",
+                "uom": ""
+            },
+            "language": "eng",
+            "characterSet": "utf8",
+            "topicCategory": [
+                "biota",
+                "oceans"
+            ]
+        },
+        "service": {
+            "serviceType": "",
+            "operatesOn": []
+        }
+    },
+    "distributionInfo": {
+        "distributionFormat": [
+            {
+                "name": "text/csv",
+                "version": "not applicable"
+            }
+        ],
+        "distributorContact": {
+            "organisationName": "SMHI",
+            "phone": "011-495 8000",
+            "deliveryPoint": "Folkborgsvägen 1",
+            "city": "Norrköping",
+            "postalCode": "601 76",
+            "electronicMailAddress": "shark@smhi.se",
+            "role": "distributor"
+        },
+        "distributorTransferOptions": [
+            {
+                "function": "",
+                "protocol": "",
+                "linkage": "{{ metadata.url_linkage.NAT.zooplankton.sv.url }}",
+                "description": "{{ metadata.url_linkage.NAT.zooplankton.sv.description }}",
+                "name": "{{ metadata.url_linkage.NAT.zooplankton.sv.title }}"
+            }
+        ]
+    },
+    "dataQualityInfo": {
+        "scope": "dataset",
+        "lineage": "{{ metadata.orderer.NAT.default.sv }}",
+        "domainConsistency": {
+            "conformanceResult": {
+                "specification": {
+                    "title": "",
+                    "reference": "",
+                    "date": "",
+                    "dateType": ""
+                },
+                "explanation": "",
+                "pass": ""
+            }
+        },
+        "completenessOmission": {
+            "nameOfMeasure": "",
+            "quantitativeResult": {
+                "valueType": "",
+                "valueUnit": "",
+                "actualValue": "",
+                "plannedValue": ""
+            }
+        }
+    }
+}
