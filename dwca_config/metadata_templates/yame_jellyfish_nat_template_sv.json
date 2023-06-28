@@ -22,7 +22,7 @@
     ],
     "identificationInfo": {
         "citation": {
-            "title": "{{ metadata.titles.NAT.zooplankton.sv }}",
+            "title": "{{ metadata.titles.NAT.jellyfish.sv }}",
             "alternateTitle": "",
             "dates": {
                 "creation": "2022-09-10",
@@ -31,7 +31,7 @@
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
         },
-        "abstract": "{{ metadata.methods.NAT.zooplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.zooplankton.sv }}",
+        "abstract": "{{ metadata.methods.NAT.jellyfish.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.jellyfish.sv }}",
         "status": "underDevelopment",
         "pointOfContact": {
             "organisationName": "SMHI",
@@ -192,9 +192,9 @@
             {
                 "function": "",
                 "protocol": "",
-                "linkage": "{{ metadata.url_linkage.NAT.zooplankton.sv.url }}",
-                "description": "{{ metadata.url_linkage.NAT.zooplankton.sv.description }}",
-                "name": "{{ metadata.url_linkage.NAT.zooplankton.sv.title }}"
+                "linkage": "{{ metadata.url_linkage.NAT.jellyfish.sv.url }}",
+                "description": "{{ metadata.url_linkage.NAT.jellyfish.sv.description }}",
+                "name": "{{ metadata.url_linkage.NAT.jellyfish.sv.title }}"
             }
         ]
     },
