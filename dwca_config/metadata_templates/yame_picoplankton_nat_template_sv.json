@@ -1,13 +1,13 @@
 {
     "metadata": {
         "fileIdentifier": "1ae8e150-7570-11ed-8384-0d42191c4352",
-        "language": "eng",
+        "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
             "organisationName": "SMHI",
             "phone": "011-4958000",
-            "deliveryPoint": "Folkborgsv\u00e4gen 17",
-            "city": "Norrk\u00f6ping",
+            "deliveryPoint": "Folkborgsvägen 17",
+            "city": "Norrköping",
             "postalCode": "60176",
             "electronicMailAddress": "dataleveranser@smhi.se",
             "role": "pointOfContact"
@@ -27,7 +27,7 @@
             "dates": {
                 "creation": "2022-09-10",
                 "publication": "2022-09-10",
-                "revision": ""
+                "revision": "{{metadata_auto.revision_date}}"
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
         },
@@ -38,20 +38,20 @@
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",
-            "deliveryPoint": "Folkborgsv\u00e4gen 1",
-            "city": "Norrk\u00f6ping",
+            "deliveryPoint": "Folkborgsvägen 1",
+            "city": "Norrköping",
             "postalCode": "601 76",
             "electronicMailAddress": "shark@smhi.se",
             "role": "owner"
         },
         "resourceMaintenance": {
             "maintenanceAndUpdateFrequency": "asNeeded",
-            "maintenanceNote": "YAML MAINTENANCE"
+            "maintenanceNote": ""
         },
         "descriptiveKeywords": {
             "initiativ": {
                 "keyword": [
-                    "\u00d6ppna data"
+                    "Öppna data"
                 ],
                 "title": "Initiativ",
                 "date": "2017-01-01",
@@ -109,7 +109,7 @@
             },
             "service_class": {
                 "keyword": [],
-                "title": "Tj\u00e4nsteklassificering",
+                "title": "Tjänsteklassificering",
                 "date": "2008-12-03",
                 "dateType": "publication"
             },
@@ -121,7 +121,7 @@
             },
             "topic_category": {
                 "keyword": [],
-                "title": "\u00c4mnesomr\u00e5de",
+                "title": "Ämnesområde",
                 "date": "2018-01-01",
                 "dateType": "publication"
             }
@@ -186,8 +186,8 @@
         "distributorContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",
-            "deliveryPoint": "Folkborgsv\u00e4gen 1",
-            "city": "Norrk\u00f6ping",
+            "deliveryPoint": "Folkborgsvägen 1",
+            "city": "Norrköping",
             "postalCode": "601 76",
             "electronicMailAddress": "shark@smhi.se",
             "role": "distributor"

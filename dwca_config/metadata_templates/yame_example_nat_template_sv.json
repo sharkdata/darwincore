@@ -27,7 +27,7 @@
             "dates": {
                 "creation": "2022-09-10",
                 "publication": "2022-09-10",
-                "revision": ""
+                "revision": "{{metadata_auto.revision_date}}"
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
         },
@@ -44,7 +44,7 @@
         },
         "resourceMaintenance": {
             "maintenanceAndUpdateFrequency": "asNeeded",
-            "maintenanceNote": "YAML MAINTENANCE"
+            "maintenanceNote": ""
         },
         "descriptiveKeywords": {
             "initiativ": {
