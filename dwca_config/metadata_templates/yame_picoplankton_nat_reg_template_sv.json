@@ -190,13 +190,12 @@
             "role": "distributor"
         },
         "distributorTransferOptions": [
-            {
+            {% for transfer_option in metadata.url_linkage.NAT_REG.picoplankton.sv %}
+                {"name": "{{ transfer_option.title[:] }}",
+                "linkage": "{{ transfer_option.url[:]}}",
+                "description": "{{ transfer_option.description[:] }}",
                 "function": "",
-                "protocol": "",
-                "linkage": "{{ metadata.url_linkage.NAT_REG.picoplankton.sv.url }}",
-                "description": "{{ metadata.url_linkage.NAT_REG.picoplankton.sv.description }}",
-                "name": "{{ metadata.url_linkage.NAT_REG.picoplankton.sv.title }}"
-            }
+                "protocol": ""}{% if not loop.last %},{% endif %}{% endfor %}
         ]
     },
     "dataQualityInfo": {

@@ -137,7 +137,7 @@
             }
         },
         "extent": {
-            "description": "metadata.geographicCoverage.description.sv    metadata.geographicCoverage.balticseaSkagerrak.sv",
+            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaSkagerrak.sv}}",
             "geographicElement": {
                 "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
                 "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
@@ -189,13 +189,12 @@
             "role": "distributor"
         },
         "distributorTransferOptions": [
-            {
+            {% for transfer_option in metadata.url_linkage.NAT.greyseal.sv %}
+                {"name": "{{ transfer_option.title[:] }}",
+                "linkage": "{{ transfer_option.url[:]}}",
+                "description": "{{ transfer_option.description[:] }}",
                 "function": "",
-                "protocol": "",
-                "linkage": "{{ metadata.url_linkage.NAT.greyseal.sv.url }}",
-                "description": "{{ metadata.url_linkage.NAT.greyseal.sv.description }}",
-                "name": "{{ metadata.url_linkage.NAT.greyseal.sv.title }}"
-            }
+                "protocol": ""}{% if not loop.last %},{% endif %}{% endfor %}
         ]
     },
     "dataQualityInfo": {

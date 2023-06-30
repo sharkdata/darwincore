@@ -64,3 +64,30 @@ filters:
     files:
         - filters.txt
         - filters_seal.txt
+
+metadataSourceFiles:
+    directory:
+        ../metadata/dcat_ap_se
+    files:
+        - titles.yaml
+        - purpose.yaml
+        - orderer.yaml
+        - methods.yaml
+        - license.yaml
+        - laboratory.yaml
+        - geographic_coverage.yaml
+        - datahost.yaml
+        - keywords.yaml
+        - url_linkage.yaml
+
+metadataTemplate:
+    directory:
+        dwca_config/metadata_templates
+    files: 
+        - yame_harbourseal_nat_template_sv.json
+
+metadataTarget:
+    directory:
+        data_out
+    files: 
+        - yame_harbourseal_nat_sv.json
