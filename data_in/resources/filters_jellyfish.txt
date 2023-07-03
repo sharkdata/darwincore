@@ -1,4 +1,4 @@
 source_field	include_value	exclude_value	comments
-sampler_type_code	WP-2
+sampler_type_code	WP-3
 
-variable_comment		sack
+#variable_comment		sack
