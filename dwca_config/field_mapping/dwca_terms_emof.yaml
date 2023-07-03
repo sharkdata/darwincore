@@ -256,7 +256,7 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
         sourceKey: flowmeter_length_m
       - measurementType: Mesh size
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/"
         measurementUnit: um
         measurementUnitID:
         sourceKey: mesh_size_um
