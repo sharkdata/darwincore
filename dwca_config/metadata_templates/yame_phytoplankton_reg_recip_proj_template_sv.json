@@ -27,7 +27,7 @@
             "dates": {
                 "creation": "2022-09-10",
                 "publication": "2022-09-10",
-                "revision": ""
+                "revision": "{{metadata_auto.revision_date}}"
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
         },
@@ -137,7 +137,7 @@
             }
         },
         "extent": {
-            "description": "metadata.geographicCoverage.description.sv    metadata.geographicCoverage.balticseaKattegatSkagerrak.sv",
+            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaKattegatSkagerrak.sv}}",
             "geographicElement": {
                 "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
                 "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
@@ -189,13 +189,12 @@
             "role": "distributor"
         },
         "distributorTransferOptions": [
-            {
+            {% for transfer_option in metadata.url_linkage.REG_RECIP_PROJ.phytoplankton.sv %}
+                {"name": "{{ transfer_option.title[:] }}",
+                "linkage": "{{ transfer_option.url[:]}}",
+                "description": "{{ transfer_option.description[:] }}",
                 "function": "",
-                "protocol": "",
-                "linkage": "{{ metadata.url_linkage.REG_RECIP_PROJ.phytoplankton.sv.url }}",
-                "description": "{{ metadata.url_linkage.REG_RECIP_PROJ.phytoplankton.sv.description }}",
-                "name": "{{ metadata.url_linkage.REG_RECIP_PROJ.phytoplankton.sv.title }}"
-            }
+                "protocol": ""}{% if not loop.last %},{% endif %}{% endfor %}
         ]
     },
     "dataQualityInfo": {

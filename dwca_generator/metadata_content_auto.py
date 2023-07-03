@@ -28,6 +28,8 @@ class MetadataContentAuto(object):
         sample_date_max = "0000-00-00"
         param_unit_list = set()
 
+        self.revision_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+
         # Iterate over event rows.
         for event_row in self.dwca_event:
             # Don't check filtered rows.

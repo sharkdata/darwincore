@@ -67,3 +67,30 @@ filters:
     files:
         - filters.txt
         - filters_epibenthos_reg_recip_proj.txt
+
+metadataSourceFiles:
+    directory:
+        ../metadata/dcat_ap_se
+    files:
+        - titles.yaml
+        - purpose.yaml
+        - orderer.yaml
+        - methods.yaml
+        - license.yaml
+        - laboratory.yaml
+        - geographic_coverage.yaml
+        - datahost.yaml
+        - keywords.yaml
+        - url_linkage.yaml
+
+metadataTemplate:
+    directory:
+        dwca_config/metadata_templates
+    files: 
+        - yame_epibenthos_reg_recip_proj_template_sv.json
+
+metadataTarget:
+    directory:
+        data_out
+    files: 
+        - yame_epibenthos_reg_recip_proj_sv.json

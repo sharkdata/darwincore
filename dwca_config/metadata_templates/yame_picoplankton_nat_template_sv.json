@@ -1,7 +1,7 @@
 {
     "metadata": {
-        "fileIdentifier": "83298680-793f-11ec-b325-b321d72a6051",
-        "language": "eng",
+        "fileIdentifier": "1ae8e150-7570-11ed-8384-0d42191c4352",
+        "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
             "organisationName": "SMHI",
@@ -22,16 +22,18 @@
     ],
     "identificationInfo": {
         "citation": {
-            "title": "{{ metadata.titles.NAT.zoobenthos.en }}",
+            "title": "{{ metadata.titles.NAT.picoplankton.sv }}",
             "alternateTitle": "",
             "dates": {
                 "creation": "2022-09-10",
                 "publication": "2022-09-10",
-                "revision": ""
+                "revision": "{{metadata_auto.revision_date}}"
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
         },
-        "abstract": "{{ metadata.methods.NAT.zoobenthos.en }}\n{{ metadata.purpose.description.en }}\n{{ metadata.datahost.description.en }}\n{{ metadata.laboratory.NAT.zoobenthos.en }}",
+        "abstract": [
+            "{{ metadata.methods.NAT.picoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.picoplankton.sv }}"
+        ],
         "status": "underDevelopment",
         "pointOfContact": {
             "organisationName": "SMHI",
@@ -43,7 +45,8 @@
             "role": "owner"
         },
         "resourceMaintenance": {
-            "maintenanceAndUpdateFrequency": "asNeeded"
+            "maintenanceAndUpdateFrequency": "asNeeded",
+            "maintenanceNote": ""
         },
         "descriptiveKeywords": {
             "initiativ": {
@@ -97,6 +100,7 @@
             },
             "sid_harvest_target": {
                 "keyword": [
+                    "geodata.se",
                     "data.europa.eu"
                 ],
                 "title": "SID harvest target",
@@ -137,7 +141,7 @@
             }
         },
         "extent": {
-            "description": "metadata.geographicCoverage.description.en  metadata.geographicCoverage.balticseaKattegatSkagerrak.en",
+            "description": "{{ metadata.geographicCoverage.description.sv }} {{ metadata.geographicCoverage.balticsea.sv }}",
             "geographicElement": {
                 "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
                 "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
@@ -189,18 +193,19 @@
             "role": "distributor"
         },
         "distributorTransferOptions": [
-            {
+            {% for transfer_option in metadata.url_linkage.NAT.picoplankton.sv %}
+                {"name": "{{ transfer_option.title[:] }}",
+                "linkage": "{{ transfer_option.url[:]}}",
+                "description": "{{ transfer_option.description[:] }}",
                 "function": "",
-                "protocol": "",
-                "linkage": "{{ metadata.url_linkage.NAT.zoobenthos.en.url }}",
-                "description": "{{ metadata.url_linkage.NAT.zoobenthos.en.description }}",
-                "name": "{{ metadata.url_linkage.NAT.zoobenthos.en.title }}"
-            }
+                "protocol": ""}{% if not loop.last %},{% endif %}{% endfor %}
         ]
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.NAT.default.en }}",
+        "lineage": [
+            "{{ metadata.orderer.NAT.picoplankton.sv }}"
+        ],
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {
