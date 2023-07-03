@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "82deae40-ab92-11ed-b76d-234a2fcfaecf",
+        "fileIdentifier": "6350955a-7a5c-4648-ac2c-1835dce1f442",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -25,8 +25,8 @@
             "title": "{{ metadata.titles.NAT.jellyfish.sv }}",
             "alternateTitle": "",
             "dates": {
-                "creation": "2022-09-10",
-                "publication": "2022-09-10",
+                "creation": "2023-07-03",
+                "publication": "2023-07-03",
                 "revision": ""
             },
             "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
