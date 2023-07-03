@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "6350955a-7a5c-4648-ac2c-1835dce1f442",
+        "fileIdentifier": "6b131990-5f11-4142-9539-59b59f891925",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2023-07-03",
                 "revision": ""
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+            "identifier": "https://opendata-catalog.smhi.se/md/6b131990-5f11-4142-9539-59b59f891925"
         },
         "abstract": "{{ metadata.methods.NAT.jellyfish.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.jellyfish.sv }}",
         "status": "underDevelopment",

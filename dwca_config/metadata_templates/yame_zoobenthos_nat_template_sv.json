@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "83298680-793f-11ec-b325-b321d72a6051",
+        "fileIdentifier": "d3ffd969-898a-43b6-af51-1817a41f91b3",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+            "identifier": "https://opendata-catalog.smhi.se/md/d3ffd969-898a-43b6-af51-1817a41f91b3"
         },
         "abstract": "{{ metadata.methods.NAT.zoobenthos.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.zoobenthos.sv }}",
         "status": "underDevelopment",

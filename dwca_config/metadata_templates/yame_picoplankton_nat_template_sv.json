@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "1ae8e150-7570-11ed-8384-0d42191c4352",
+        "fileIdentifier": "9d401958-4726-4a0c-b248-5218995f5e9d",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+            "identifier": "https://opendata-catalog.smhi.se/md/9d401958-4726-4a0c-b248-5218995f5e9d"
         },
         "abstract": [
             "{{ metadata.methods.NAT.picoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.picoplankton.sv }}"

@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+            "identifier": "https://opendata-catalog.smhi.se/md/e4857210-2dd8-11ed-84f0-5b3e6bab28c1"
         },
         "abstract": "{{ metadata.methods.NAT.bacterioplankton.sv }} {{ metadata.purpose.description.sv }} {{ metadata.datahost.description.sv }} {{ metadata.laboratory.NAT.bacterioplankton.sv }}",
         "status": "underDevelopment",

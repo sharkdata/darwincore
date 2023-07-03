@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "494a5810-ab91-11ed-b76d-234a2fcfaecf",
+        "fileIdentifier": "0c0f6ee9-dd2a-4ec4-a7a2-39806d18995a",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+            "identifier": "https://opendata-catalog.smhi.se/md/0c0f6ee9-dd2a-4ec4-a7a2-39806d18995a"
         },
         "abstract": "{{ metadata.methods.NAT.epibenthos.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.epibenthos.sv }}",
         "status": "underDevelopment",

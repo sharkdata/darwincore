@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "92747100-ab88-11ed-b76d-234a2fcfaecf",
+        "fileIdentifier": "76698d34-f686-4d7c-b5f2-e69cba9105ba",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+            "identifier": "https://opendata-catalog.smhi.se/md/76698d34-f686-4d7c-b5f2-e69cba9105ba"
         },
         "abstract": "{{ metadata.methods.NAT.phytoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.phytoplankton.sv }}",
         "status": "underDevelopment",

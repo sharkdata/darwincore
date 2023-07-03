@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "82deae40-ab92-11ed-b76d-234a2fcfaecf",
+        "fileIdentifier": "e19d5237-286c-499e-94aa-b3d9c5d27c5e",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/83298680-793f-11ec-b325-b321d72a6051"
+            "identifier": "https://opendata-catalog.smhi.se/md/e19d5237-286c-499e-94aa-b3d9c5d27c5e"
         },
         "abstract": "{{ metadata.methods.NAT.zooplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.zooplankton.sv }}",
         "status": "underDevelopment",
