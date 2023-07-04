@@ -237,6 +237,26 @@ class DwcaFormatStandard(object):
                                 emof_dict[
                                     "measurementTypeID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01"
+                            if parameter == "Carbon content":
+                                emof_dict[
+                                    "measurementTypeID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/MDMAP010/"
+                            if parameter == "Length mean":
+                                emof_dict[
+                                    "measurementTypeID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
+                            if parameter == "Length":
+                                emof_dict[
+                                    "measurementTypeID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
+                            if parameter == "Wet weight":
+                                emof_dict[
+                                    "measurementTypeID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OWETBM01"
+                            if parameter == "Wet weight/volume":
+                                emof_dict[
+                                    "measurementTypeID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
 
                             if unit == "m":
                                 emof_dict[
