@@ -68,16 +68,21 @@ class DwcaGenerator:
         dwca_measurementorfact = dwca_format.dwca_measurementorfact
         metadata_content.extract_metadata(dwca_event, dwca_measurementorfact)
 
-
-
-
         # Metadata DarwinCore EML.
+        logger.info("")
+        logger.info("=== Adding metadata for eml files ===")
         metadata_eml = dwca_generator.MetadataDwcaEml()
         metadata_eml.add_metadata_to_eml(eml_content_rows, metadata_content)
 
-
         # Metadata SMHI YAME.
         metadata_smhi_yame = dwca_generator.MetadataSmhiYame(dwca_gen_config)
+        logger.info("")
+        logger.info("=== Adding metadata for SMHI YAME ===")
+        if metadata_smhi_yame.metadata_target == "":
+            logger.info('yame metadata not created, no target')
+        else:
+            logger.info(f'yame metadata target {metadata_smhi_yame.metadata_target}')
+            logger.info(f'template {metadata_smhi_yame.metadata_template}')
         metadata_smhi_yame.add_metadata(metadata_content)
         metadata_smhi_yame.save_to_file()
 
