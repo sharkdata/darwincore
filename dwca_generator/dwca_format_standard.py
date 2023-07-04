@@ -233,6 +233,10 @@ class DwcaFormatStandard(object):
                                 emof_dict[
                                     "measurementTypeID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
+                            if parameter == "Abundance":
+                                emof_dict[
+                                    "measurementTypeID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01"
 
                             if unit == "m":
                                 emof_dict[
