@@ -236,12 +236,12 @@ dwcaEmofContent:
 
     extraMeasurements:
       - measurementType: Sampled volume
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLWBSMP/"
         measurementUnit: L
         measurementUnitID:
         sourceKey: sampled_volume_l
       - measurementType: Sampler area
-        measurementTypeID: http://vocab.nerc.ac.uk/collection/Q01/current/Q0100017/
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100017/"
         measurementUnit: cm2
         measurementUnitID:
         sourceKey: sampler_area_cm2
@@ -322,12 +322,12 @@ dwcaEmofContent:
         measurementUnitID:
         sourceKey: method_reference_code
       - measurementType: Method documentation
-        measurementTypeID:
+        measurementTypeID: "https://vocab.nerc.ac.uk/collection/Q01/current/Q0100003/" 
         measurementUnit:
         measurementUnitID:
         sourceKey: method_documentation
       - measurementType: Sampler type
-        measurementTypeID: http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/"
         measurementUnit:
         measurementUnitID:
         sourceKey: sampler_type_code
