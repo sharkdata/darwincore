@@ -137,7 +137,7 @@
             }
         },
         "extent": {
-            "description": "{{metadata.geographicCoverage.description.s}} {{metadata.geographicCoverage.skagerrak.sv}}",
+            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.skagerrak.sv}}",
             "geographicElement": {
                 "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
                 "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
