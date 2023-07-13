@@ -90,6 +90,13 @@ dataset_name	SHARK_Phytoplankton_2021_SMHI
 dataset_name	SHARK_Phytoplankton_2021_DEEP
 dataset_name	SHARK_Phytoplankton_2021_SMHI_SLCK
 
+# New datasets for export, prepared July 2023
+
+dataset_name	SHARK_Phytoplankton_2022_SMHI
+dataset_name	SHARK_Phytoplankton_2022_MEDINS
+dataset_name	SHARK_Phytoplankton_2022_UMSC
+dataset_name	SHARK_Phytoplankton_2022_DEEP
+
 scientific_name		Picoplankton
 parameter		Carbon concentration
 
