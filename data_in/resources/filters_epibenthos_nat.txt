@@ -146,7 +146,7 @@ dataset_name		SHARK_Epibenthos_2011_OLST_Idefjorden
 dataset_name		SHARK_Epibenthos_2011_OLST_Maseskar					
 dataset_name		SHARK_Epibenthos_2011_OLST_Soteskar					
 dataset_name		SHARK_Epibenthos_2011_SVVAEK					
-dataset_name		SHARK_Epibenthos_2011_SVVAEK_BalticSea2020					
+#dataset_name		SHARK_Epibenthos_2011_SVVAEK_BalticSea2020					Borttaget paket pga omleverans
 dataset_name		SHARK_Epibenthos_2011_SVVAEK_HanKom					
 dataset_name		SHARK_Epibenthos_2011_SVVAEK_Nacka					
 dataset_name	SHARK_Epibenthos_2011_UGMET_Kattegatt						
@@ -162,9 +162,9 @@ dataset_name		SHARK_Epibenthos_2012_HAFOK_Ostergotland
 dataset_name	SHARK_Epibenthos_2012_LNU						
 dataset_name		SHARK_Epibenthos_2012_LNU_Blekinge					
 dataset_name		SHARK_Epibenthos_2012_NATVAT					
-dataset_name		SHARK_Epibenthos_2012_SVVAEK_Bjornofjarden					
+#dataset_name		SHARK_Epibenthos_2012_SVVAEK_Bjornofjarden					Borttaget paket pga omleverans
 dataset_name		SHARK_Epibenthos_2012_SVVAEK_ELST					
-dataset_name		SHARK_Epibenthos_2012_SVVAEK_Fjallsviksviken					
+#dataset_name		SHARK_Epibenthos_2012_SVVAEK_Fjallsviksviken					Borttaget paket pga omleverans
 dataset_name		SHARK_Epibenthos_2012_SVVAEK_Hanobukten					
 dataset_name		SHARK_Epibenthos_2012_SVVAEK_LVVF					
 dataset_name		SHARK_Epibenthos_2012_SVVAEK_NOhalsingland					
@@ -182,8 +182,8 @@ dataset_name		SHARK_Epibenthos_2013_LNU_KALMAR
 dataset_name		SHARK_Epibenthos_2013_OLST_Bratten					
 dataset_name	SHARK_Epibenthos_2013_SLC-T_Kattegatt						
 dataset_name			SHARK_Epibenthos_2013_SLC-T_Skagerack				
-dataset_name		SHARK_Epibenthos_2013_SVVAEK_Bjornofjarden					
-dataset_name		SHARK_Epibenthos_2013_SVVAEK_Fjallsviksviken					
+#dataset_name		SHARK_Epibenthos_2013_SVVAEK_Bjornofjarden					Borttaget paket pga omleverans
+#dataset_name		SHARK_Epibenthos_2013_SVVAEK_Fjallsviksviken					Borttaget paket pga omleverans
 dataset_name		SHARK_Epibenthos_2013_SVVAEK_Hanobukten					
 dataset_name		SHARK_Epibenthos_2013_SVVAEK_Skarposundet					
 dataset_name					SHARK_Epibenthos_2013_WATERS		
@@ -347,3 +347,5 @@ dataset_name	SHARK_Epibenthos_2022_SLC-T
 dataset_name		SHARK_Epibenthos_2022_SVVAEK_ABLST					
 dataset_name		SHARK_Epibenthos_2022_SVVAEK_XLST					
 dataset_name				SHARK_Epibenthos_2022_TYRENS_XLST_dropvideo			
+dataset_name		SHARK_Epibenthos_2011-2022_SVVAEK_Bjornofjarden				
+dataset_name		SHARK_Epibenthos_2011-2022_SVVAEK_Fjallsviksviken				
