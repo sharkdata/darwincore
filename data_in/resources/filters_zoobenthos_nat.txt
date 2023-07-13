@@ -235,8 +235,8 @@ dataset_name		SHARK_Zoobenthos_2013_PELA_YNR_Vasternorrland
 dataset_name	SHARK_Zoobenthos_2013_SLC-K			
 dataset_name		SHARK_Zoobenthos_2013_TOXICO		
 dataset_name		SHARK_Zoobenthos_2013_TOXICO_NVSKK		
-dataset_name		SHARK_Zoobenthos_2013_UMSC_Boliden		
-dataset_name		SHARK_Zoobenthos_2013_UMSC_SSAB		
+#dataset_name		SHARK_Zoobenthos_2013_UMSC_Boliden		Borttaget paket pga omleverans
+#dataset_name		SHARK_Zoobenthos_2013_UMSC_SSAB		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2014_BDLST_Kalix		
 dataset_name		SHARK_Zoobenthos_2014_BDLST_Pitea		
 dataset_name	SHARK_Zoobenthos_2014_DEEP			
@@ -256,7 +256,7 @@ dataset_name		SHARK_Zoobenthos_2014_PELA_YNR_Vasternorrland
 dataset_name	SHARK_Zoobenthos_2014_SLC-T			
 dataset_name		SHARK_Zoobenthos_2014_TOXICO		
 dataset_name		SHARK_Zoobenthos_2014_TOXICO_NVSKK		
-dataset_name		SHARK_Zoobenthos_2014_UMSC_SSAB		
+#dataset_name		SHARK_Zoobenthos_2014_UMSC_SSAB		Borttaget paket pga omleverans
 dataset_name	SHARK_Zoobenthos_2015_2021_UMSC			
 dataset_name		SHARK_Zoobenthos_2015_2021_UMSC_Boliden		
 dataset_name		SHARK_Zoobenthos_2015_2021_UMSC_REG		
@@ -279,8 +279,8 @@ dataset_name		SHARK_Zoobenthos_2015_PELA_YNR_Kopmanholmen
 dataset_name		SHARK_Zoobenthos_2015_PELA_YNR_Vasternorrland		
 dataset_name	SHARK_Zoobenthos_2015_SLC-T			
 dataset_name		SHARK_Zoobenthos_2015_TOXICO_NVSKK		
-dataset_name		SHARK_Zoobenthos_2015_UMSC_SSAB		
-dataset_name		SHARK_Zoobenthos_2015_UMSC_YLST		
+#dataset_name		SHARK_Zoobenthos_2015_UMSC_SSAB		Borttaget paket pga omleverans
+#dataset_name		SHARK_Zoobenthos_2015_UMSC_YLST		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2016_BDLST_Pitea		
 dataset_name	SHARK_Zoobenthos_2016_DEEP			
 dataset_name		SHARK_Zoobenthos_2016_DEEP_ACLST		
@@ -307,7 +307,7 @@ dataset_name	SHARK_Zoobenthos_2016_SLC-T
 dataset_name		SHARK_Zoobenthos_2016_SLUA		
 dataset_name		SHARK_Zoobenthos_2016_SLUA_Forsmark		
 dataset_name		SHARK_Zoobenthos_2016_TOXICO_NVSKK		
-dataset_name		SHARK_Zoobenthos_2016_UMSC_SSAB		
+#dataset_name		SHARK_Zoobenthos_2016_UMSC_SSAB		Borttaget paket pga omleverans
 dataset_name	SHARK_Zoobenthos_2017_2020_SLC-T			
 dataset_name		SHARK_Zoobenthos_2017_BDLST_Pitea		
 dataset_name	SHARK_Zoobenthos_2017_DEEP			
@@ -333,7 +333,7 @@ dataset_name		SHARK_Zoobenthos_2017_SLUA_Forsmark
 dataset_name		SHARK_Zoobenthos_2017_SWECO_NKS		
 dataset_name		SHARK_Zoobenthos_2017_TOXICO_NVSKK		
 dataset_name		SHARK_Zoobenthos_2017_UMSC_HAV_ADB		
-dataset_name		SHARK_Zoobenthos_2017_UMSC_SSAB		
+#dataset_name		SHARK_Zoobenthos_2017_UMSC_SSAB		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2018_2019_UMSC_BDLST		
 dataset_name	SHARK_Zoobenthos_2018_DEEP			
 dataset_name		SHARK_Zoobenthos_2018_DEEP_ABLST		
@@ -355,13 +355,13 @@ dataset_name		SHARK_Zoobenthos_2018_PAG_NLST_Kungsbackanatur
 dataset_name		SHARK_Zoobenthos_2018_PAG_NLST_Stora_Middelgrund_Rode_Morups		
 dataset_name		SHARK_Zoobenthos_2018_PELA_GVVF		
 dataset_name		SHARK_Zoobenthos_2018_PELA_STV		
-dataset_name		SHARK_Zoobenthos_2018_SLC-T_Bratten		
+#dataset_name		SHARK_Zoobenthos_2018_SLC-T_Bratten		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2018_SLUA_BDLST		
 dataset_name		SHARK_Zoobenthos_2018_SLUA_Forsmark		
 dataset_name		SHARK_Zoobenthos_2018_SWECO_NKS		
 dataset_name		SHARK_Zoobenthos_2018_TOXICO_NVSKK		
-dataset_name		SHARK_Zoobenthos_2018_UMSC_SSAB		
-dataset_name		SHARK_Zoobenthos_2018_UMSC_YLST		
+#dataset_name		SHARK_Zoobenthos_2018_UMSC_SSAB		Borttaget paket pga omleverans
+#dataset_name		SHARK_Zoobenthos_2018_UMSC_YLST		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2019_DEEP_ABLST		
 dataset_name		SHARK_Zoobenthos_2019_DEEP_DOX		
 dataset_name		SHARK_Zoobenthos_2019_DEEP_ELST		
@@ -388,7 +388,7 @@ dataset_name		SHARK_Zoobenthos_2019_PAG_NLST_Halland_6
 dataset_name		SHARK_Zoobenthos_2019_PAG_NLST_HallandsKVK		
 dataset_name		SHARK_Zoobenthos_2019_PELA_ACLST		
 dataset_name		SHARK_Zoobenthos_2019_PELA_BDLST		
-dataset_name		SHARK_Zoobenthos_2019_SLC-T_Bratten		
+#dataset_name		SHARK_Zoobenthos_2019_SLC-T_Bratten		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2019_SLUA_FORS		
 dataset_name		SHARK_Zoobenthos_2019_SWECO_YLST		
 dataset_name		SHARK_Zoobenthos_2020_2021_MEDINS		
@@ -412,10 +412,10 @@ dataset_name		SHARK_Zoobenthos_2020_PAG_NLST_6
 dataset_name		SHARK_Zoobenthos_2020_PAG_NLST_7		
 dataset_name		SHARK_Zoobenthos_2020_PAG_NLST_9		
 dataset_name		SHARK_Zoobenthos_2020_PAG_NVSKK		
-dataset_name		SHARK_Zoobenthos_2020_SLC-T_Bratten		
+#dataset_name		SHARK_Zoobenthos_2020_SLC-T_Bratten		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2020_SLUA_FORS		
 dataset_name		SHARK_Zoobenthos_2020_SWECO_YLST		
-dataset_name		SHARK_Zoobenthos_2020_UMSC_SSAB		
+#dataset_name		SHARK_Zoobenthos_2020_UMSC_SSAB		Borttaget paket pga omleverans
 dataset_name	SHARK_Zoobenthos_2021_DEEP			
 dataset_name		SHARK_Zoobenthos_2021_DEEP_ABLST		
 dataset_name	SHARK_Zoobenthos_2021_DEEP_Asko			
@@ -439,7 +439,7 @@ dataset_name		SHARK_Zoobenthos_2021_PAG_NLST_5
 dataset_name		SHARK_Zoobenthos_2021_PAG_NLST_6		
 dataset_name		SHARK_Zoobenthos_2021_PAG_NVSKK		
 dataset_name	SHARK_Zoobenthos_2021_SLC-T			
-dataset_name		SHARK_Zoobenthos_2021_SLC-T_Bratten		
+#dataset_name		SHARK_Zoobenthos_2021_SLC-T_Bratten		Borttaget paket pga omleverans
 dataset_name		SHARK_Zoobenthos_2021_SLUA_FORS		
 dataset_name		SHARK_Zoobenthos_2022_PAG		
 dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_1		
@@ -447,6 +447,37 @@ dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_2
 dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_3		
 dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_4		
 dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_5		
+
+# New datasets for export, prepared July 2023
+
+dataset_name	SHARK_Zoobenthos_2022_DEEP_Asko			
+#dataset_name				
+#dataset_name				
+#dataset_name				
+#dataset_name				
+dataset_name	SHARK_Zoobenthos_2022_UMSC_Hoga_Kusten			
+dataset_name	SHARK_Zoobenthos_2022_UMSC			
+dataset_name		SHARK_Zoobenthos_2022_UMSC_BOLIDEN			
+dataset_name		SHARK_Zoobenthos_2022_UMSC_BDLST_YLST_CLST_XLST_ACLST			
+dataset_name		SHARK_Zoobenthos_2004-2022_UMSC_SSAB			
+dataset_name		SHARK_Zoobenthos_1999-2013_UMSC_BOLIDEN			
+dataset_name	SHARK_Zoobenthos_2022_LNU			
+dataset_name		SHARK_Zoobenthos_2022_LNU_HLST			
+dataset_name		SHARK_Zoobenthos_2022_LNU_KLKK			
+dataset_name		SHARK_Zoobenthos_2022_LNU_BKVF			
+dataset_name	SHARK_Zoobenthos_2022_SLC-T			
+dataset_name		SHARK_Zoobenthos_2018_2022_SLC-T_Bratten		
+dataset_name		SHARK_Zoobenthos_2012_PAG_VAG		
+dataset_name		SHARK_Zoobenthos_2022_PAG_NVSKK		
+dataset_name		SHARK_Zoobenthos_2022_MEDINS_NLST		
+dataset_name		SHARK_Zoobenthos_2022_MEDINS_MLST		
+dataset_name		SHARK_Zoobenthos_2022_MEDINS_SCAP		
+dataset_name		SHARK_Zoobenthos_2022_MEDINS_SVAB		
+dataset_name		SHARK_Zoobenthos_2006_2007_PAG_NLST_VAG_ESGV_epifauna		
+dataset_name		SHARK_Zoobenthos_2006_2012_PAG_NLST_VAG_ESGV_infauna		
+
+
+
 
 
 #sample_latitude_dd		58.99978	Pos-on-land-1
