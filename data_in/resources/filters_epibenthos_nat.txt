@@ -1,7 +1,7 @@
 source_field	include_value	exclude_value	exclude_value_vertical_transect	exclude_value_dropvideo	exclude_value_other	filter_group_id	comments
 
 # Reg-recip-proj-dropvideo-other data to be excluded in this export
-
+# Datasets for export, prepared Dec 2022
 
 dataset_name	SHARK_Epibenthos_1992_2018_DEEP_Asko						
 dataset_name	SHARK_Epibenthos_1993_TMBL						
@@ -331,3 +331,19 @@ dataset_name				SHARK_Epibenthos_2018_MMAB_Askims_fjord
 dataset_name				SHARK_Epibenthos_2018_MMAB_Branno_Styrso			
 dataset_name				SHARK_Epibenthos_2018_MMAB_Stora_Amundo_Billdals_Skargard			
 dataset_name					SHARK_Epibenthos_2018_TOXICON		
+
+# New datasets for export, prepared July 2023
+
+dataset_name	SHARK_Epibenthos_2022_DEEP_Asko_MB						
+dataset_name	SHARK_Epibenthos_2022_DEEP_Asko						
+dataset_name	SHARK_Epibenthos_2022_DEEP_Singo						
+dataset_name		SHARK_Epibenthos_2022_DEEP_Sodermanland					
+dataset_name		SHARK_Epibenthos_2022_DEEP_Uppsala					
+dataset_name		SHARK_Epibenthos_2022_LNU_BKVF					
+dataset_name	SHARK_Epibenthos_2022_LNU						
+dataset_name					SHARK_Epibenthos_2022_NATVAT_ABLST		
+dataset_name		SHARK_Epibenthos_2022_NIRAS					
+dataset_name	SHARK_Epibenthos_2022_SLC-T						
+dataset_name		SHARK_Epibenthos_2022_SVVAEK_ABLST					
+dataset_name		SHARK_Epibenthos_2022_SVVAEK_XLST					
+dataset_name				SHARK_Epibenthos_2022_TYRENS_XLST_dropvideo			
