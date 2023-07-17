@@ -302,3 +302,5 @@ wind_direction_code		34	335-344 degrees
 wind_direction_code		35	345-354 degrees
 wind_direction_code		36	355-4 degrees
 wind_direction_code		99	Variable
+
+platform_code		77!C	ZZ99
