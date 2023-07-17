@@ -172,3 +172,5 @@ analysis_date		2010-09-00
 analysis_date		2011-08-00
 sample_date		2010-09-00
 sample_date		2011-08-00
+
+coefficient		0		kopplat till parameter Count class
