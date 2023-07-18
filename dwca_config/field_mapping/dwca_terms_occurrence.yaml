@@ -53,8 +53,8 @@ dwcaOccurrenceContent:
               sourceKey: dyntaxa_lsid
           scientificNameID:
               sourceKeyList:
-                  - bvol_aphia_lsid
-                  - worms_lsid
+#                  - bvol_aphia_lsid    # felaktigt LSID, detta är URL
+                  - worms_lsid          # korrekt LSID
                   - bvol_aphia_id
                   - worms_id
                   - aphia_id
