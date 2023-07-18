@@ -3,5 +3,3 @@ size_min_um		0	>0
 
 bvol_scientific_name		Algae	Biota
 scientific_name		Algae	Biota
-
-aphia_id		103987	601409	Aphia ID deleted due to duplicate and replaced
