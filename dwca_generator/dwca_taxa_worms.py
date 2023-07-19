@@ -79,4 +79,5 @@ class TaxaWorms:
                             info_dict["worms_family"] = row_dict.get("family", "")
                             info_dict["worms_genus"] = row_dict.get("genus", "")
                             info_dict["worms_classification"] = row_dict.get("classification", "")
+                            info_dict["lsid"] = row_dict.get("lsid", "") ## MH lägger till LSID
                             self.taxa_worms_dict[aphia_id] = info_dict
