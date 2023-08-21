@@ -123,17 +123,17 @@ dwcaEmofContent:
       - measurementType: Air temperature wet
         measurementTypeID:
         measurementUnit: degC
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
         sourceKey: air_temperature_wet_degc
       - measurementType: Air temperature
         measurementTypeID:
         measurementUnit: degC
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
         sourceKey: air_temperature_degc
       - measurementType: Air pressure
         measurementTypeID:
         measurementUnit: hpa
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
         sourceKey: air_pressure_hpa
       - measurementType: Ice observation
         measurementTypeID:
@@ -243,12 +243,12 @@ dwcaEmofContent:
       - measurementType: Sampler area
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100017/"
         measurementUnit: cm2
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/SQCM/"
         sourceKey: sampler_area_cm2
       - measurementType: Wire angle
         measurementTypeID:
         measurementUnit: deg
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"
         sourceKey: wire_angle_deg
       - measurementType: Flowmeter length
         measurementTypeID:
@@ -258,17 +258,17 @@ dwcaEmofContent:
       - measurementType: Mesh size
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/"
         measurementUnit: um
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: mesh_size_um
       - measurementType: Upper mesh size
         measurementTypeID:
         measurementUnit: um
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: upper_mesh_size_um
       - measurementType: Lower mesh size
         measurementTypeID:
         measurementUnit: um
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: lower_mesh_size_um
       - measurementType: Factors influencing
         measurementTypeID:
@@ -283,17 +283,17 @@ dwcaEmofContent:
       - measurementType: Analysed volume
         measurementTypeID:
         measurementUnit: cm3
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVCC/"
         sourceKey: analysed_volume_cm3
       - measurementType: Sedimentation time
         measurementTypeID:
         measurementUnit: h
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UHOR/"
         sourceKey: sedimentation_time_h
       - measurementType: Sedimentation volume
         measurementTypeID:
         measurementUnit: ml
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
         sourceKey: sedimentation_volume_ml
       - measurementType: Number of portions
         measurementTypeID:
@@ -383,12 +383,12 @@ dwcaEmofContent:
       - measurementType: Size minimum
         measurementTypeID:
         measurementUnit: um
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: size_min_um
       - measurementType: Size maximum
         measurementTypeID:
         measurementUnit: um
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: size_max_um
       - measurementType: Cell volume
         measurementTypeID:

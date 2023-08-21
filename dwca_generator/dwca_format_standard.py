@@ -289,6 +289,18 @@ class DwcaFormatStandard(object):
                                 emof_dict[
                                     "measurementUnitID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
+                            if unit == "cm2":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/SQCM/"
+                            if unit == "cm3":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/VVCC/"
+                            if unit == "h":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UHOR/"
                             if unit == "hpa":
                                 emof_dict[
                                     "measurementUnitID"
