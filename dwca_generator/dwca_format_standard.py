@@ -262,6 +262,30 @@ class DwcaFormatStandard(object):
                                 emof_dict[
                                     "measurementUnitID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
+                            if unit == "L":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
+                            if unit == "m/s":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UVAA/"
+                            if unit == "ml":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
+                            if unit == "ugC/l":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
+                            if unit == "um3":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
+                            if unit == "ind/l":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
                             elif unit == "cells/l":
                                 emof_dict[
                                     "measurementUnitID"

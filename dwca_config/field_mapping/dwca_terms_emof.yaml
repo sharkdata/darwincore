@@ -78,7 +78,7 @@ dwcaEmofContent:
       - measurementType: Wind speed
         measurementTypeID:
         measurementUnit: m/s
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UVAA/"
         sourceKey: wind_speed_ms
       - measurementType: Wind direction
         measurementTypeID:
@@ -238,7 +238,7 @@ dwcaEmofContent:
       - measurementType: Sampled volume
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLWBSMP/"
         measurementUnit: L
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
         sourceKey: sampled_volume_l
       - measurementType: Sampler area
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100017/"
@@ -311,7 +311,7 @@ dwcaEmofContent:
         measurementUnitID:
         sourceKey: counter_program
 
-      - measurementType: Orderer
+      - measurementType: Orderer of data collection
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
@@ -393,14 +393,14 @@ dwcaEmofContent:
       - measurementType: Cell volume
         measurementTypeID:
         measurementUnit: um3
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
         sourceKey: reported_cell_volume_um3
-      - measurementType: Coefficient
+      - measurementType: Coefficient for calculation of abundance
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
         sourceKey: coefficient
-      - measurementType: Magnification
+      - measurementType: Microscope magnification
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
