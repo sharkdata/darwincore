@@ -226,7 +226,8 @@ class DwcaFormatStandard(object):
                         # Append.
                         if emof_dict.get("measurementType", ""):
 
-                            # Measurement identifiers. NERC vocabular.
+                            # Measurement identifiers. NERC vocabular. 
+                            # nerc codes found at https://vocab.nerc.ac.uk/collection/P01/current/
                             parameter = emof_dict.get("measurementType", "")
                             unit = emof_dict.get("measurementUnit", "")
                             if parameter == "# counted":
@@ -258,10 +259,24 @@ class DwcaFormatStandard(object):
                                     "measurementTypeID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
 
+                            #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
+
+                            if unit == "um":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
+                            if unit == "mm":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"
                             if unit == "m":
                                 emof_dict[
                                     "measurementUnitID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
+                            if unit == "g":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/"
                             if unit == "L":
                                 emof_dict[
                                     "measurementUnitID"
@@ -274,6 +289,14 @@ class DwcaFormatStandard(object):
                                 emof_dict[
                                     "measurementUnitID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
+                            if unit == "hpa":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
+                            if unit == "g/m3":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UGMC/"
                             if unit == "ugC/l":
                                 emof_dict[
                                     "measurementUnitID"
@@ -286,6 +309,22 @@ class DwcaFormatStandard(object):
                                 emof_dict[
                                     "measurementUnitID"
                                 ] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+                            if unit == "ind/m3":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/"
+                            if unit == "ug/m3":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/MCUG/"
+                            if unit == "deg":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"
+                            if unit == "degC":
+                                emof_dict[
+                                    "measurementUnitID"
+                                ] = "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
                             elif unit == "cells/l":
                                 emof_dict[
                                     "measurementUnitID"
