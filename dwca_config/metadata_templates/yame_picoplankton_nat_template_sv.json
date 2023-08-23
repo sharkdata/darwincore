@@ -99,8 +99,7 @@
             },
             "sid_harvest_target": {
                 "keyword": [
-                    "geodata.se",
-                    "data.europa.eu"
+                    "dataportal.se"
                 ],
                 "title": "SID harvest target",
                 "date": "2022-01-17",
