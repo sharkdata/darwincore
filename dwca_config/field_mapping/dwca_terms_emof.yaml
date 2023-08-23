@@ -91,7 +91,7 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
         sourceKey: water_level_deviation_m
       - measurementType: Water depth
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MBANZZZZ/"
         measurementUnit: m
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
         sourceKey: water_depth_m
