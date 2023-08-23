@@ -230,34 +230,27 @@ class DwcaFormatStandard(object):
                             # nerc codes found at https://vocab.nerc.ac.uk/collection/P01/current/
                             parameter = emof_dict.get("measurementType", "")
                             unit = emof_dict.get("measurementUnit", "")
+
                             if parameter == "# counted":
-                                emof_dict[
-                                    "measurementTypeID"
-                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
-                            if parameter == "Abundance":
-                                emof_dict[
-                                    "measurementTypeID"
-                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01"
-                            if parameter == "Carbon content":
-                                emof_dict[
-                                    "measurementTypeID"
-                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/MDMAP010/"
-                            if parameter == "Length mean":
-                                emof_dict[
-                                    "measurementTypeID"
-                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
-                            if parameter == "Length":
-                                emof_dict[
-                                    "measurementTypeID"
-                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
-                            if parameter == "Wet weight":
-                                emof_dict[
-                                    "measurementTypeID"
-                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/OWETBM01"
-                            if parameter == "Wet weight/volume":
-                                emof_dict[
-                                    "measurementTypeID"
-                                ] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
+
+                            elif parameter == "Abundance":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01"
+
+                            elif parameter == "Carbon content":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/MDMAP010/"
+
+                            elif parameter == "Length mean":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
+
+                            elif parameter == "Length":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
+
+                            elif parameter == "Wet weight":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OWETBM01"
+
+                            elif parameter == "Wet weight/volume":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
 
@@ -265,75 +258,75 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnit"] = "Micrometres (microns)"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
 
-                            if unit == "mm":
+                            elif unit == "mm":
                                 emof_dict["measurementUnit"] = "Millimetres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"
 
-                            if unit == "m":
+                            elif unit == "m":
                                 emof_dict["measurementUnit"] = "Metres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
 
-                            if unit == "g":
+                            elif unit == "g":
                                 emof_dict["measurementUnit"] = "Grams"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/"
 
-                            if unit == "L":
+                            elif unit == "L":
                                 emof_dict["measurementUnit"] = "Litres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
 
-                            if unit == "m/s":
+                            elif unit == "m/s":
                                 emof_dict["measurementUnit"] = "Metres per second"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UVAA/"
 
-                            if unit == "ml":
+                            elif unit == "ml":
                                 emof_dict["measurementUnit"] = "Millilitres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
 
-                            if unit == "cm2":
+                            elif unit == "cm2":
                                 emof_dict["measurementUnit"] = "Square centimetres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/SQCM/"
 
-                            if unit == "cm3":
+                            elif unit == "cm3":
                                 emof_dict["measurementUnit"] = "Cubic centimetres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/VVCC/"
 
-                            if unit == "h":
+                            elif unit == "h":
                                 emof_dict["measurementUnit"] = "Hours"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UHOR/"
 
-                            if unit == "hpa":
+                            elif unit == "hpa":
                                 emof_dict["measurementUnit"] = "Hectopascals"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
 
-                            if unit == "g/m3":
+                            elif unit == "g/m3":
                                 emof_dict["measurementUnit"] = "Grams per cubic metre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UGMC/"
 
-                            if unit == "ugC/l":
+                            elif unit == "ugC/l":
                                 emof_dict["measurementUnit"] = "Micrograms per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
 
-                            if unit == "um3":
+                            elif unit == "um3":
                                 emof_dict["measurementUnit"] = "Cubic micrometres (microns)"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
 
-                            if unit == "ind/l":
+                            elif unit == "ind/l":
                                 emof_dict["measurementUnit"] = "Number per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
-                            if unit == "ind/m3":
+                            elif unit == "ind/m3":
                                 emof_dict["measurementUnit"] = "Number per cubic metre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/"
 
-                            if unit == "ug/m3":
+                            elif unit == "ug/m3":
                                 emof_dict["measurementUnit"] = "Micrograms per cubic metre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/MCUG/"
 
-                            if unit == "deg":
+                            elif unit == "deg":
                                 emof_dict["measurementUnit"] = "Degrees"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"
 
-                            if unit == "degC":
+                            elif unit == "degC":
                                 emof_dict["measurementUnit"] = "Degrees Celsius"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
 
