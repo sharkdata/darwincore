@@ -311,11 +311,6 @@ dwcaEmofContent:
         measurementUnitID:
         sourceKey: counter_program
 
-      - measurementType: Orderer of data collection
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: sample_orderer_name_en
       - measurementType: Method reference
         measurementTypeID:
         measurementUnit:
