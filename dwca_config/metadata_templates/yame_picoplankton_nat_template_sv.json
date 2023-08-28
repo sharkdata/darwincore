@@ -31,9 +31,9 @@
             },
             "identifier": "https://opendata-catalog.smhi.se/md/9d401958-4726-4a0c-b248-5218995f5e9d"
         },
-        "abstract": 
+        "abstract":
             "{{ metadata.methods.NAT.picoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.picoplankton.sv }}",
-        "status": "underDevelopment",
+        "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",

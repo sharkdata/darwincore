@@ -32,7 +32,7 @@
             "identifier": "https://opendata-catalog.smhi.se/md/14f2105e-e4e0-401a-89f5-cf9296b56bce"
         },
         "abstract": "{{ metadata.methods.REG_PROJ.epibenthos.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.REG_PROJ.epibenthos.sv }}",
-        "status": "underDevelopment",
+        "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",

@@ -32,7 +32,7 @@
             "identifier": "https://opendata-catalog.smhi.se/md/d6dec663-7223-4bcd-94e7-959cc4d90c42"
         },
         "abstract": "{{ metadata.methods.REG_RECIP_PROJ.zoobenthos.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.REG_RECIP_PROJ.zoobenthos.sv }}",
-        "status": "underDevelopment",
+        "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",

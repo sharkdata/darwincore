@@ -32,7 +32,7 @@
             "identifier": "https://opendata-catalog.smhi.se/md/7ef11fb7-63fa-4926-8532-90da492a0e33"
         },
         "abstract": "{{ metadata.methods.REG_RECIP_PROJ.phytoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.REG_RECIP_PROJ.phytoplankton.sv }}",
-        "status": "underDevelopment",
+        "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",

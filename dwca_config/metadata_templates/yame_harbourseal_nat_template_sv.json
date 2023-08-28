@@ -32,7 +32,7 @@
             "identifier": "https://opendata-catalog.smhi.se/md/596630b2-5fc2-4a12-8beb-e82d72836317"
         },
         "abstract": "{{ metadata.methods.NAT.harbourseal.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.harbourseal.sv }}",
-        "status": "underDevelopment",
+        "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",

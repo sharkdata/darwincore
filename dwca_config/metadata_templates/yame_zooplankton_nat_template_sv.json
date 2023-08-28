@@ -32,7 +32,7 @@
             "identifier": "https://opendata-catalog.smhi.se/md/e19d5237-286c-499e-94aa-b3d9c5d27c5e"
         },
         "abstract": "{{ metadata.methods.NAT.zooplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.zooplankton.sv }}",
-        "status": "underDevelopment",
+        "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",

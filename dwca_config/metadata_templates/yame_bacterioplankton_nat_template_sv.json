@@ -32,7 +32,7 @@
             "identifier": "https://opendata-catalog.smhi.se/md/e4857210-2dd8-11ed-84f0-5b3e6bab28c1"
         },
         "abstract": "{{ metadata.methods.NAT.bacterioplankton.sv }} {{ metadata.purpose.description.sv }} {{ metadata.datahost.description.sv }} {{ metadata.laboratory.NAT.bacterioplankton.sv }}",
-        "status": "underDevelopment",
+        "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
             "phone": "011-495 8000",
