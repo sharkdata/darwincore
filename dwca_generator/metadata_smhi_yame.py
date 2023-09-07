@@ -12,16 +12,19 @@ import jinja2
 
 class MetadataSmhiYame(object):
     """ """
-
-    def __init__(self, dwca_gen_config):
+    def __init__(self, source, template, target):
+    # def __init__(self, dwca_gen_config):
         """ """
-        self.dwca_gen_config = dwca_gen_config
+        # self.dwca_gen_config = dwca_gen_config
         self.content_rows = []
         # self.cleanup_metadata(self.dwca_gen_config.metadata)
 
-        self.metadata_source = self.dwca_gen_config.metadata_source
-        self.metadata_template = self.dwca_gen_config.metadata_template
-        self.metadata_target = self.dwca_gen_config.metadata_target
+        # self.metadata_source = self.dwca_gen_config.metadata_source
+        # self.metadata_template = self.dwca_gen_config.metadata_template
+        # self.metadata_target = self.dwca_gen_config.metadata_target
+        self.metadata_source = source
+        self.metadata_template = template
+        self.metadata_target = target
 
     def add_metadata(self, metadata_content_auto):
         """ """
@@ -32,7 +35,7 @@ class MetadataSmhiYame(object):
             # template_file = "yame_zoobenthos_nat_template_en.json"
             template = environment.get_template(metadata_template_path.name)
             outputText = template.render(
-                metadata=self.dwca_gen_config.metadata_source, metadata_auto=metadata_content_auto
+                metadata=self.metadata_source, metadata_auto=metadata_content_auto
             )
             self.content_rows = outputText
         else:

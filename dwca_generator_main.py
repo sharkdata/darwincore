@@ -33,7 +33,13 @@ class DwcaGenerator:
         logger.info("=== Processing: " + config_file)
 
         # Prepare EML content.
-        eml_content_rows = dwca_gen_config.generate_eml_content()
+        eml = False
+        if len(dwca_gen_config.eml_definitions.keys()) > 0:
+            eml_content_rows = dwca_gen_config.generate_eml_content()
+            eml = True
+        else:
+            logger.info("")
+            logger.info("=== no eml definitions ===")
 
         # Prepare data.
         logger.info("")
@@ -72,10 +78,12 @@ class DwcaGenerator:
         logger.info("")
         logger.info("=== Adding metadata for eml files ===")
         metadata_eml = dwca_generator.MetadataDwcaEml()
-        metadata_eml.add_metadata_to_eml(eml_content_rows, metadata_content)
+        if eml:
+            metadata_eml.add_metadata_to_eml(eml_content_rows, metadata_content)
 
         # Metadata SMHI YAME.
-        metadata_smhi_yame = dwca_generator.MetadataSmhiYame(dwca_gen_config)
+        # metadata_smhi_yame = dwca_generator.MetadataSmhiYame(dwca_gen_config)
+        metadata_smhi_yame = dwca_generator.MetadataSmhiYame(dwca_gen_config.metadata_source, dwca_gen_config.metadata_template, dwca_gen_config.metadata_target)
         logger.info("")
         logger.info("=== Adding metadata for SMHI YAME ===")
         if metadata_smhi_yame.metadata_target == "":

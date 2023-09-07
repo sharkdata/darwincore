@@ -23,7 +23,7 @@ def post_to_yame_prod(filepath):
     print(response.text)
 
 if __name__ == "__main__":
-    """kör detta för att posta nya yame json metadatafiler till prod"""
+    """kör detta för att posta yame json metadatafiler till en befintlig metadatapost i yamr"""
 
     # TODO: make this similar to dwca_generator_cli to let the user choose files to upload from a list.
 
@@ -31,6 +31,6 @@ if __name__ == "__main__":
     # .glob("yame_*.json")
     # fär att köra endast en vald skriv t.ex.
     # .glob("yame_pico*nat*.json")
-    for file_path in pathlib.Path("data_out").glob("yame_pico*.json"):
+    for file_path in pathlib.Path("data_out").glob("yame_physical*.json"):
         print(file_path)
         post_to_yame_prod(file_path)
