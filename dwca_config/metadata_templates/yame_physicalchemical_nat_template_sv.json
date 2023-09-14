@@ -144,7 +144,7 @@
             }
         },
         "extent": {
-            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaKattegatSkagerrak.sv}}",
+            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaSkagerrakNorthseaNorwegianseaNorthernnorthatlantic.sv}}",
             "geographicElement": {
                 "westBoundLongitude": "OBS LÄGG TILL DETTA MANUELLT",
                 "eastBoundLongitude": "OBS LÄGG TILL DETTA MANUELLT",
