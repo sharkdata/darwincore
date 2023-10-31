@@ -249,13 +249,13 @@ class DwcaFormatStandard(object):
                             elif parameter == "Wet weight":
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OWETBM01"
 
-                            elif parameter == "Wet weight/volume":
+                            elif parameter == "Wet weight per volume":
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
 
                             if unit == "um":
-                                emof_dict["measurementUnit"] = "Micrometres (microns)"
+                                emof_dict["measurementUnit"] = "Micrometres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
 
                             elif unit == "mm":
@@ -307,7 +307,7 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
 
                             elif unit == "um3":
-                                emof_dict["measurementUnit"] = "Cubic micrometres (microns)"
+                                emof_dict["measurementUnit"] = "Cubic micrometres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
 
                             elif unit == "ind/l":

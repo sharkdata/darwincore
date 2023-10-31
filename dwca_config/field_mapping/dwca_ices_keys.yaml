@@ -13,11 +13,11 @@ eventTypeKeys:
         - platform_code
         - samling_date
 
-    - eventType: sampling_event
+    - eventType: Sampling event
       parentEventType: cruise
       keyName: sampling_event_key
       eventKeyName:
-      keyPrefix: EVENT-
+      keyPrefix: SAMPLING_EVENT-
       keyFields:
         - station_name
         - sample_date
@@ -28,7 +28,7 @@ eventTypeKeys:
         # - section_start_longitude_dd
 
     - eventType: sample
-      parentEventType: sampling_event
+      parentEventType: Sampling event
       keyName: sample_key
       eventKeyName: sampling_event_key
       keyPrefix: SAMPLE-
@@ -60,7 +60,7 @@ eventTypeKeys:
         - recruits
 
   emof:
-    - eventType: sampling_event
+    - eventType: Sampling event
       keyName: sampling_event_key
       eventKeyName: sampling_event_key
 
