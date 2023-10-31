@@ -257,17 +257,17 @@ dwcaEmofContent:
         sourceKey: flowmeter_length_m
       - measurementType: Mesh size
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/"
-        measurementUnit: Micrometres (microns)
+        measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: mesh_size_um
       - measurementType: Upper mesh size
         measurementTypeID:
-        measurementUnit: Micrometres (microns)
+        measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: upper_mesh_size_um
       - measurementType: Lower mesh size
         measurementTypeID:
-        measurementUnit: Micrometres (microns)
+        measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: lower_mesh_size_um
       - measurementType: Factors influencing
@@ -377,17 +377,17 @@ dwcaEmofContent:
         sourceKey: size_class
       - measurementType: Size minimum
         measurementTypeID:
-        measurementUnit: Micrometres (microns)
+        measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: size_min_um
       - measurementType: Size maximum
         measurementTypeID:
-        measurementUnit: Micrometres (microns)
+        measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: size_max_um
       - measurementType: Cell volume
         measurementTypeID:
-        measurementUnit: Cubic micrometres (microns)
+        measurementUnit: Cubic micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
         sourceKey: reported_cell_volume_um3
       - measurementType: Coefficient for calculation of abundance

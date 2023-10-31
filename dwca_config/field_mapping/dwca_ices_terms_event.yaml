@@ -41,7 +41,7 @@ dwcaEventColumns:
     - accessRights
     #    - bibliographicCitation
     #    - references
-    #    - institutionID
+    - institutionID
     #    - datasetID
     - institutionCode
     - datasetName
@@ -51,18 +51,20 @@ dwcaEventColumns:
 #    - collectionCode
 
 dwcaEventContent:
-    - eventType: sampling_cruise
+    - eventType: cruise
       dwcTerms:
           id:
-              sourceKey: sampling_cruise_key
+              sourceKey: cruise_key
           eventID:
-              sourceKey: sampling_cruise_key
+              sourceKey: cruise_key
           institutionCode:
+              text: Swedish Meteorological and Hydrological Institute
+          institutionID:
               text: "545"
           year:
               sourceKey: visit_year
           ownerInstitutionCode:
-              text: SWAM
+              text: Swedish Agency for Marine and Water Management
 
     - eventType: sampling_event
       dwcTerms:
@@ -71,7 +73,7 @@ dwcaEventContent:
           eventID:
               sourceKey: sampling_event_key
           parentEventID:
-              sourceKey: sampling_cruise_key
+              sourceKey: cruise_key
           type:
               sourceKey:
           samplingProtocol:
@@ -135,7 +137,7 @@ dwcaEventContent:
                   - visit_longitude_dd
                   - sample_longitude_dd
           geodeticDatum:
-              sourceKey: positioning_system_code # text: EPSG:4619
+              text: EPSG:4619 #sourceKey: positioning_system_code 
           coordinateUncertaintyInMeters:
               sourceKey: coordinate_uncertainty_m
           coordinatePrecision:
@@ -143,15 +145,17 @@ dwcaEventContent:
           license:
               text: CC0
           rightsHolder:
-              sourceKey: sample_orderer_name_en
+              text: Swedish Agency for Marine and Water Management #sourceKey: sample_orderer_name_en
           accessRights:
               text: CC0
           institutionCode:
-              text: "545"
+              text: Swedish Meteorological and Hydrological Institute
+          institutionID:
+              text: "545" #"https://edmo.seadatanet.org/report/545"
           datasetName:
               sourceKey: dwc_dataset_name
           ownerInstitutionCode:
-              text: SWAM
+              text: Swedish Agency for Marine and Water Management #SWAM
           dynamicProperties:
               dynamic:
                   - dynamicKey: SharkDataset
@@ -233,7 +237,7 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: PlatformCode
                     sourceKey: platform_code
-                  - dynamicKey: VisitYear
+                  - dynamicKey: year #VisitYear
                     sourceKey: visit_year
                   - dynamicKey: SampleSeries
                     sourceKey: sample_series
@@ -279,16 +283,16 @@ dwcaEventContent:
               sourceKeyList:
                   - sample_longitude_dd
                   - visit_longitude_dd
-          #         geodeticDatum:
-          #             text: EPSG:4619
+          geodeticDatum:
+              text: EPSG:4619
           coordinateUncertaintyInMeters:
               sourceKey:
           coordinatePrecision:
               sourceKey:
           license:
               text: CC0
-          #          rightsHolder:
-          #              sourceKey: sample_orderer_name_en
+          rightsHolder:
+              text: Swedish Agency for Marine and Water Management #sourceKey: sample_orderer_name_en
           accessRights:
               text: CC0
           institutionCode:

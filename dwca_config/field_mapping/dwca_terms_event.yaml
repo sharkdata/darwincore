@@ -41,7 +41,7 @@ dwcaEventColumns:
     - accessRights
     #    - bibliographicCitation
     #    - references
-    #    - institutionID
+    - institutionID
     #    - datasetID
     - institutionCode
     - datasetName
@@ -135,6 +135,8 @@ dwcaEventContent:
               text: CC0
           institutionCode:
               text: Swedish Meteorological and Hydrological Institute
+          institutionID:
+              text: "https://edmo.seadatanet.org/report/545"
           datasetName:
               sourceKey: dwc_dataset_name
           ownerInstitutionCode:
@@ -171,8 +173,6 @@ dwcaEventContent:
           #            sourceKey: monitoring_station_type_code
           #        -   dynamicKey: MonitoringPurpose
           #            sourceKey: monitoring_purpose_code
-
-
 
     - eventType: sample
       dwcTerms:
@@ -222,7 +222,7 @@ dwcaEventContent:
               dynamic:
                   - dynamicKey: PlatformCode
                     sourceKey: platform_code
-                  - dynamicKey: VisitYear
+                  - dynamicKey: year #VisitYear
                     sourceKey: visit_year
                   - dynamicKey: SampleSeries
                     sourceKey: sample_series

@@ -3,9 +3,9 @@
 
 eventTypeKeys:
   event:
-    - eventType: sampling_cruise
+    - eventType: cruise
       parentEventType:
-      keyName: sampling_cruise_key
+      keyName: cruise_key
       eventKeyName:
       keyPrefix: CRUISE-
       keyFields:
@@ -14,7 +14,7 @@ eventTypeKeys:
         - samling_date
 
     - eventType: sampling_event
-      parentEventType: sampling_cruise
+      parentEventType: cruise
       keyName: sampling_event_key
       eventKeyName:
       keyPrefix: EVENT-
