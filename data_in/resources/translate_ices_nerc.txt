@@ -1,9 +1,9 @@
 source_field	from_value	to_value	comments
 
 #unit	g/analysed sample fraction	Grams
-#unit	ind/analysed sample fraction	Numbers
-#unit	ind/m2	Number per square metre
-#unit	ind/l or 100 um pieces/l	Number per litre
+#unit	ind/analysed sample fraction	Numbers	överväg ändra till Cell eller Enhet eller annat istället för Number. Okay enligt EMODNET
+#unit	ind/m2	Number per square metre	Numbers	överväg ändra till Cell eller Enhet eller annat istället för Number. Okay enligt EMODNET
+#unit	ind/l or 100 um pieces/l	Number per litre	Numbers	överväg ändra till Cell eller Enhet eller annat istället för Number. Okay enligt EMODNET
 #unit	ugC/l	Micrograms per litre
 
 

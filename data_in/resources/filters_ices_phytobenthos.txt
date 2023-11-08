@@ -20,3 +20,8 @@ station_name		Strävliden06	#RECIP
 station_name		Marstrand reningsv01	#RECIP
 station_name		Marstrand reningsv02	#RECIP
 station_name		Marstrand reningsv03	#RECIP
+
+#resubmission of 2021 data, new md5 values
+shark_sample_id_md5		991459d5dcc6f08675f70b801f274752
+shark_sample_id_md5		d0ea9156c5932019382d43938f549caf
+shark_sample_id_md5		e1066867b2684b24d93ea1f1feeda846

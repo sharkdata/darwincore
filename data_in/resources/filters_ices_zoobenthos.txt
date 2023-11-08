@@ -55,3 +55,8 @@ station_name		Strävliden06	#RECIP
 station_name		Marstrand reningsv01	#RECIP
 station_name		Marstrand reningsv02	#RECIP
 station_name		Marstrand reningsv03	#RECIP
+station_name		MARSTRAND RENINGSV 1	#RECIP
+station_name		MARSTRAND RENINGSV 2	#RECIP
+station_name		MARSTRAND RENINGSV 3	#RECIP
+station_name		MARSTRAND RENINGSV 4	#RECIP
+station_name		MARSTRAND RENINGSV 5	#RECIP

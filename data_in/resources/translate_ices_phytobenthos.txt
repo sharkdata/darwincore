@@ -1,5 +1,12 @@
 source_field	dwc_field	from_value	to_value	comments
-sampler_type_code		RUTA	DIV
+sampler_type_code		RUTA	MB
+sampler_type_code		Ruta	MB
 # sampler_type_code	RUTA	SQR	# Tidigare översattes Ruta till SQR men den har ingen area så nu översätter vi till DIV
 
-sampler_type_code		MESHB	DIV
+sampler_type_code		MESHB	MB
+
+# translates due to thar translate_all_columns does not work in SHARKadm
+sampler_type_code		RamSkrap	FRAMENET
+sampler_type_code		Mesh bag	MB
+sampler_area_m2		-9	
+sampler_area_m2		999	

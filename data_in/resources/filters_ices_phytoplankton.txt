@@ -21,6 +21,50 @@ scientific_name		Acanthostomella norvegica
 scientific_name		Ensiculifera
 scientific_name		Oxytoxum laticeps
 scientific_name		Entomoneis
+scientific_name		Corethron hystrix
+scientific_name		Pterosperma vanhoeffenii
+scientific_name		Protoperidinium ovatum
+scientific_name		Bacterosira
+
+scientific_name		Dinobryon sertularia	grp-2
+size_class		4	grp-2
+
+scientific_name		Gyrodinium spirale	grp-3
+size_class		9	grp-3
+
+scientific_name		Gyrodinium fusiforme	grp-4
+size_class		5	grp-4
+scientific_name		Gyrodinium fusiforme	grp-5
+size_class		6	grp-5
+
+scientific_name		Gyrosigma	grp-6
+size_class		5	grp-6
+
+scientific_name		Tripos	grp-7
+size_class		2	grp-7
+scientific_name		Tripos	grp-8
+size_class		3	grp-8
+scientific_name		Tripos	grp-9
+size_class		4	grp-9
+scientific_name		Tripos	grp-10
+size_class		5	grp-10
+scientific_name		Tripos	grp-16
+size_class		11	grp-16
+
+scientific_name		Skeletonema	grp-11
+size_class		12	grp-11
+
+scientific_name		Rhabdonema	grp-12
+size_class		3	grp-12
+
+scientific_name		Protoperidinium ovatum	grp-13
+size_class		1	grp-13
+
+scientific_name		Proboscia alata	grp-14
+size_class		9	grp-14
+
+scientific_name		Navicula	grp-15
+size_class		10	grp-15
 
 scientific_name		Unicell	Group-bvol-1
 size_class		29	Group-bvol-1

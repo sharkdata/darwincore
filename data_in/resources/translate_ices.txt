@@ -6,7 +6,7 @@ sampling_laboratory_name_en	Swedish Meteorological and Hydrological Institute	SM
 sampling_laboratory_name_en	Stockholm University Department of Ecology Environment and Plant Sciences	SUSE
 sampling_laboratory_name_en	Linnaeus University	UCKS
 sampling_laboratory_name_en	Umeå University	UMSC
-sampling_laboratory_name_en	-	TMBL
+sampling_laboratory_name_en	-	TMBL	Den här är farlig
 
 sampling_laboratory_name_sv	The Sven Lovén Centre for Marine Sciences-Kristineberg	KMFS
 sampling_laboratory_name_sv	The Sven Lovén Centre for Marine Sciences-Tjärnö	TMBL
@@ -14,7 +14,7 @@ sampling_laboratory_name_sv	Swedish Meteorological and Hydrological Institute	SM
 sampling_laboratory_name_sv	Stockholm University Department of Ecology Environment and Plant Sciences	SUSE
 sampling_laboratory_name_sv	Linnaeus University	UCKS
 sampling_laboratory_name_sv	Umeå University	UMSC
-sampling_laboratory_name_sv	-	TMBL
+sampling_laboratory_name_sv	-	TMBL	Den här är farlig
 
 analytical_laboratory_name_en	National Marine Fisheries Research Institute (NMFRI)	MIRG
 analytical_laboratory_name_en	Swedish Meteorological and Hydrological Institute	SMHI
@@ -25,7 +25,7 @@ analytical_laboratory_name_en	FITO-Lab	SFIP
 analytical_laboratory_name_en	Linnaeus University	UCKS
 analytical_laboratory_name_en	Umeå University	UMSC
 analytical_laboratory_name_en	WEAQ AB	WEAQ
-analytical_laboratory_name_en	-	TMBL
+analytical_laboratory_name_en	-	TMBL	Den här är farlig
 
 analytical_laboratory_name_sv	National Marine Fisheries Research Institute (NMFRI)	MIRG
 analytical_laboratory_name_sv	Swedish Meteorological and Hydrological Institute	SMHI
@@ -36,7 +36,7 @@ analytical_laboratory_name_sv	FITO-Lab	SFIP
 analytical_laboratory_name_sv	Linnaeus University	UCKS
 analytical_laboratory_name_sv	Umeå University	UMSC
 analytical_laboratory_name_sv	WEAQ AB	WEAQ
-analytical_laboratory_name_sv	-	TMBL
+analytical_laboratory_name_sv	-	TMBL	Den här är farlig
 
 #sampler_area_m2		0,04
 
