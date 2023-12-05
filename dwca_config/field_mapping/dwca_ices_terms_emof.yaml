@@ -26,6 +26,8 @@ dwcaEmofColumns:
 dwcaEmofContent:
   - eventType: cruise
     dwcTerms:
+      id:
+        dwcaKey: cruise_key
       eventID:
         dwcaKey: cruise_key
       measurementID:
