@@ -214,7 +214,7 @@ dwcaEventContent:
           sampleSizeValue:
               sourceKey: sampled_volume_l
           sampleSizeUnit:
-              sourceKey:
+              text: Litres
           samplingEffort:
               sourceKey:
           eventDate:
