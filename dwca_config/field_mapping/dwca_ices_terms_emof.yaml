@@ -60,7 +60,6 @@ dwcaEmofContent:
         sourceKey:
 
     extraMeasurements:
-    dwcTerms:
       - measurementType: Country performing sampling
         measurementTypeID:
         measurementUnit:
