@@ -60,11 +60,16 @@ dwcaEmofContent:
         sourceKey:
 
     extraMeasurements:
-      - measurementType: Year
-        measurementTypeID: "url"
-        measurementUnit:  test2
-        measurementUnitID: "url"
-        sourceKey: visit_year
+      - measurementType: Country performing sampling
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        text: "77"
+      - measurementType: Platform code
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: platform_code
 
   - eventType: Sampling event
     dwcTerms:
@@ -112,6 +117,21 @@ dwcaEmofContent:
         text: B,E,S,T
 
     extraMeasurements:
+      - measurementType: ICES datatype
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: delivery_datatype
+      - measurementType: Monitoring program code
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: monitoring_program_code
+      - measurementType: Monitoring purpose
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        text: B,E,S,T
       - measurementType: Wave height
         measurementTypeID:
         measurementUnit: Metres
