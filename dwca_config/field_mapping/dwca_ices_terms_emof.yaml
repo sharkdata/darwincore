@@ -64,7 +64,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        text: "77"
+          text: "77"
       - measurementType: Platform code
         measurementTypeID:
         measurementUnit:
@@ -131,7 +131,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-        text: "B,E,S,T"
+          text: "B,E,S,T"
       - measurementType: Wave height
         measurementTypeID:
         measurementUnit: Metres
