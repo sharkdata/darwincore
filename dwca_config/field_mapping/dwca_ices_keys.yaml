@@ -60,6 +60,10 @@ eventTypeKeys:
         - recruits
 
   emof:
+    - eventType: cruise
+      keyName: cruise_key
+      eventKeyName: cruise_key
+
     - eventType: Sampling event
       keyName: sampling_event_key
       eventKeyName: sampling_event_key
