@@ -17,11 +17,11 @@ dwcaEmofColumns:
   - measurementDeterminedBy
   - measurementMethod
   - measurementRemarks
-  - country
-  - Platform code
-  - ICES datatype
-  - Monitoring program code
-  - Monitoring purpose
+#  - country
+#  - Platform code
+#  - ICES datatype
+#  - Monitoring program code
+#  - Monitoring purpose
 
 dwcaEmofContent:
   - eventType: cruise
@@ -324,7 +324,7 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
         sourceKey: flowmeter_length_m
       - measurementType: Mesh size
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE1/"
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100015/"
         measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: mesh_size_um

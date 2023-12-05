@@ -22,8 +22,8 @@ dwcaEventColumns:
     - eventRemarks
     - locationID
     - waterBody
-    - country
-    - countryCode
+#    - country
+#    - countryCode
     - county
     - municipality
     - locality
@@ -110,10 +110,10 @@ dwcaEventContent:
               sourceKey:
           waterBody:
               sourceKey: location_sea_basin
-          country:
-              text: Sweden
-          countryCode:
-              text: SE
+#          country:
+#              text: Sweden
+#          countryCode:
+#              text: SE
           county:
               sourceKey: location_county
           municipality:
