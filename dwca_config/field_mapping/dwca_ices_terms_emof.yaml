@@ -60,11 +60,12 @@ dwcaEmofContent:
         sourceKey:
 
     extraMeasurements:
+    dwcTerms:
       - measurementType: Country performing sampling
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-          text: "77"
+        text: "77"
       - measurementType: Platform code
         measurementTypeID:
         measurementUnit:
