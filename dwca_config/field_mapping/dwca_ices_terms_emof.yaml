@@ -24,6 +24,46 @@ dwcaEmofColumns:
   - Monitoring purpose
 
 dwcaEmofContent:
+  - eventType: cruise
+    dwcTerms:
+      eventID:
+        dwcaKey: cruise_key
+      measurementID:
+        text: ""
+      occurrenceID:
+        text: ""
+      measurementType:
+        sourceKey:
+      measurementTypeID:
+        sourceKey:
+      measurementValue:
+        sourceKey:
+      measurementValueID:
+        sourceKey:
+      measurementUnit:
+        sourceKey:
+      measurementUnitID:
+        sourceKey:
+      measurementAccuracy:
+        sourceKey:
+      measurementDeterminedDate:
+        sourceKeyList:
+          - sample_date
+          - visit_date
+      measurementDeterminedBy:
+        sourceKey:
+      measurementMethod:
+        sourceKey:
+      measurementRemarks:
+        sourceKey:
+
+    extraMeasurements:
+      - measurementType: Year
+        measurementTypeID:
+        measurementUnit: 
+        measurementUnitID: ""
+        sourceKey: visit_year
+
   - eventType: Sampling event
     dwcTerms:
       id:
