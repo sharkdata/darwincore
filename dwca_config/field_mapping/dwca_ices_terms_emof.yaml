@@ -61,9 +61,9 @@ dwcaEmofContent:
 
     extraMeasurements:
       - measurementType: Year
-        measurementTypeID:
-        measurementUnit: 
-        measurementUnitID: ""
+        measurementTypeID: "url"
+        measurementUnit:  test2
+        measurementUnitID: "url"
         sourceKey: visit_year
 
   - eventType: Sampling event
