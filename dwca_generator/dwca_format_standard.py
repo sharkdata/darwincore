@@ -360,6 +360,8 @@ class DwcaFormatStandard(object):
                                     )
                                     source_key = extraMeasurement.get("sourceKey", "")
                                     value = source_row.get(source_key, "")
+                                    if 'text' in extraMeasurement.keys():
+                                        value = extraMeasurement.get("text","")
                                     if param and (value not in [""]):
                                         if param_id is None:
                                             param_id = ""

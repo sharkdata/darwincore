@@ -131,7 +131,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
-          text: "B,E,S,T"
+        text: "B,E,S,T" #monitoring_purpose_code
       - measurementType: Wave height
         measurementTypeID:
         measurementUnit: Metres
