@@ -1,5 +1,10 @@
 source_field	include_value	exclude_value	filter_group_id	comments
 
+dataset_name	SHARK_Phytoplankton_2022_SMHI
+dataset_name	SHARK_Phytoplankton_2022_DEEP
+dataset_name	SHARK_Phytoplankton_2022_UMSC
+dataset_name	SHARK_Phytoplankton_2022_MEDINS
+
 #dataset_name	SHARK_Phytoplankton_2021_SMHI
 #dataset_name	SHARK_Phytoplankton_2021_DEEP
 #dataset_name	SHARK_Phytoplankton_2021_UMSC
