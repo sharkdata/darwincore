@@ -167,7 +167,7 @@ dwcaEmofContent:
         measurementUnit: Metres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
         sourceKey: water_level_deviation_m
-      - measurementType: Water depth
+      - measurementType: Sea-floor depth
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MBANZZZZ/"
         measurementUnit: Metres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
@@ -227,7 +227,7 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: sediment_type
-      - measurementType: Sampling laboratory name #ID
+      - measurementType: Sampling laboratory ID #ID
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
@@ -323,7 +323,7 @@ dwcaEmofContent:
         measurementUnit: Metres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
         sourceKey: flowmeter_length_m
-      - measurementType: Mesh size
+      - measurementType: Sampling net mesh size #Mesh size
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100015/"
         measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
@@ -378,7 +378,6 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: counter_program
-
       - measurementType: Orderer
         measurementTypeID:
         measurementUnit:
@@ -386,7 +385,6 @@ dwcaEmofContent:
         sourceKeyList:
           - sample_orderer_name_en
           - sample_orderer_name_sv
-
       - measurementType: Method reference code
         measurementTypeID:
         measurementUnit:
@@ -407,43 +405,36 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: plankton_sampling_method_code
-
       - measurementType: Observation point
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
         sourceKey: obspoint
-
       - measurementType: Calculation method
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
         sourceKey: calculation_method
-
       - measurementType: Sediment deposition code
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
         sourceKey: sediment_deposition_code
-
       - measurementType: Quality flag
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
         sourceKey: quality_flag
-
       - measurementType: Storage method code
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
         sourceKey: storage_method_code
-
       - measurementType: Preservation method code
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
         sourceKey: preservation_method_code
-
       - measurementType: Analysis method code
         measurementTypeID:
         measurementUnit:
@@ -547,7 +538,7 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: degree_biofouling
-      - measurementType: Analytical laboratory name #ID
+      - measurementType: Analytical laboratory ID #ID
         measurementTypeID:
         measurementUnit:
         measurementUnitID:
