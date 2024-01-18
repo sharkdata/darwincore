@@ -4,6 +4,19 @@
 
 eventTypeKeys:
     event:
+    -   eventType: dataset_event
+        parentEventType: 
+        keyName: dataset_event_key
+        eventKeyName: 
+        keyPrefix: DATASET_EVENT-
+        keyFields:
+            - sampling_laboratory_name_en
+            - sampling_laboratory_accreditated
+            - monitoring_program_code
+            - monitoring_purpose_code
+            - monitoring_station_type_code
+
+
     -   eventType: sampling_event
         parentEventType: 
         keyName: sampling_event_key
@@ -52,6 +65,10 @@ eventTypeKeys:
             - recruits
 
     emof:
+    -   eventType: dataset_event
+        keyName: dataset_event_key
+        eventKeyName: dataset_event_key
+
     -   eventType: sampling_event
         keyName: sampling_event_key
         eventKeyName: sampling_event_key

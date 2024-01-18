@@ -51,6 +51,23 @@ dwcaEventColumns:
 #    - collectionCode
 
 dwcaEventContent:
+    - eventType: dataset_event
+      dwcTerms:
+          id:
+              sourceKey: dataset_event_key
+          eventID:
+              sourceKey: dataset_event_key
+          eventDate:
+              sourceKeyList:
+                  - visit_date
+                  - sample_date
+          eventTime:
+              sourceKey:
+          year:
+              sourceKey: visit_year
+
+
+
     - eventType: sampling_event
       dwcTerms:
           id:
@@ -58,7 +75,7 @@ dwcaEventContent:
           eventID:
               sourceKey: sampling_event_key
           parentEventID:
-              sourceKey:
+              sourceKey: dataset_event_key
           type:
               sourceKey:
           samplingProtocol:

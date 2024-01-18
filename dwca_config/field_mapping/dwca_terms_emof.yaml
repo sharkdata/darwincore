@@ -19,6 +19,69 @@ dwcaEmofColumns:
   - measurementRemarks
 
 dwcaEmofContent:
+  - eventType: dataset_event
+    dwcTerms:
+      id:
+        dwcaKey: dataset_event_key
+      eventID:
+        dwcaKey: dataset_event_key
+      measurementID:
+        text: ""
+      occurrenceID:
+        text: ""
+      measurementType:
+        sourceKey:
+      measurementTypeID:
+        sourceKey:
+      measurementValue:
+        sourceKey:
+      measurementValueID:
+        sourceKey:
+      measurementUnit:
+        sourceKey:
+      measurementUnitID:
+        sourceKey:
+      measurementAccuracy:
+        sourceKey:
+      measurementDeterminedDate:
+        sourceKeyList:
+          - sample_date
+          - visit_date
+      measurementDeterminedBy:
+        sourceKey:
+      measurementMethod:
+        sourceKey:
+      measurementRemarks:
+        sourceKey:
+
+    extraMeasurements:
+      - measurementType: Sampling laboratory name
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: sampling_laboratory_name_en
+      - measurementType: Sampling laboratory accredited
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: sampling_laboratory_accreditated
+      - measurementType: Monitoring program code
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: monitoring_program_code
+      - measurementType: Monitoring station type
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: monitoring_station_type_code
+      - measurementType: Monitoring purpose
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: monitoring_purpose_code
+
+
   - eventType: sampling_event
     dwcTerms:
       id:
@@ -150,21 +213,21 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: sediment_type
-      - measurementType: Sampling laboratory name
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: sampling_laboratory_name_en
-      - measurementType: Sampling laboratory accredited
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: sampling_laboratory_accreditated
-      - measurementType: Monitoring program code
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: monitoring_program_code
+#      - measurementType: Sampling laboratory name
+#        measurementTypeID:
+#        measurementUnit:
+#        measurementUnitID:
+#        sourceKey: sampling_laboratory_name_en
+#      - measurementType: Sampling laboratory accredited
+#        measurementTypeID:
+#        measurementUnit:
+#        measurementUnitID:
+#        sourceKey: sampling_laboratory_accreditated
+#      - measurementType: Monitoring program code
+#        measurementTypeID:
+#        measurementUnit:
+#        measurementUnitID:
+#        sourceKey: monitoring_program_code
       - measurementType: Station marking
         measurementTypeID:
         measurementUnit:
@@ -190,16 +253,16 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: water_land_station_type_code
-      - measurementType: Monitoring station type
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: monitoring_station_type_code
-      - measurementType: Monitoring purpose
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: monitoring_purpose_code
+#      - measurementType: Monitoring station type
+#       measurementTypeID:
+#        measurementUnit:
+#        measurementUnitID:
+#        sourceKey: monitoring_station_type_code
+#      - measurementType: Monitoring purpose
+#        measurementTypeID:
+#        measurementUnit:
+#        measurementUnitID:
+#        sourceKey: monitoring_purpose_code
 
   - eventType: sample
     dwcTerms:
@@ -297,12 +360,12 @@ dwcaEmofContent:
         sourceKey: sedimentation_volume_ml
       - measurementType: Number of portions
         measurementTypeID:
-        measurementUnit: nr
+        measurementUnit: Number
         measurementUnitID:
         sourceKey: number_of_portions
       - measurementType: Counted portions
         measurementTypeID:
-        measurementUnit: nr
+        measurementUnit: Number
         measurementUnitID:
         sourceKey: counted_portions
       - measurementType: Counter program
