@@ -65,6 +65,20 @@ dwcaEventContent:
               sourceKey:
           year:
               sourceKey: visit_year
+          license:
+              text: CC0
+          rightsHolder:
+              text: Swedish Agency for Marine and Water Management
+          accessRights:
+              text: CC0
+          institutionCode:
+              text: Swedish Meteorological and Hydrological Institute
+          institutionID:
+              text: "https://edmo.seadatanet.org/report/545"
+          datasetName:
+              sourceKey: dwc_dataset_name
+          ownerInstitutionCode:
+              text: Swedish Agency for Marine and Water Management
 
 
 
@@ -144,20 +158,6 @@ dwcaEventContent:
               sourceKey: coordinate_uncertainty_m
           coordinatePrecision:
               sourceKey:
-          license:
-              text: CC0
-          rightsHolder:
-              text: Swedish Agency for Marine and Water Management
-          accessRights:
-              text: CC0
-          institutionCode:
-              text: Swedish Meteorological and Hydrological Institute
-          institutionID:
-              text: "https://edmo.seadatanet.org/report/545"
-          datasetName:
-              sourceKey: dwc_dataset_name
-          ownerInstitutionCode:
-              text: Swedish Agency for Marine and Water Management
           dynamicProperties:
               dynamic:
                   - dynamicKey: SharkDataset

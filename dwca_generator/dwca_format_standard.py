@@ -345,6 +345,12 @@ class DwcaFormatStandard(object):
                             elif unit == "nr":
                                 emof_dict["measurementUnit"] = "Number"
 
+                            elif unit == "Detection minutes/day":
+                                emof_dict["measurementUnit"] = "Minutes per day"
+
+                            elif unit == "%":
+                                emof_dict["measurementUnit"] = "Percent"
+
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
                         # Get key.
