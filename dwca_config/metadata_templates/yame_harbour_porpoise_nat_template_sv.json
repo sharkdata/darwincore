@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "INSERT_NEW",
+        "fileIdentifier": "c54c0621-0a0f-42bc-8855-4e25f63fbd57",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/c4a67335-ad22-4d79-9175-62d54d55409f"
+            "identifier": "https://opendata-catalog.smhi.se/md/c54c0621-0a0f-42bc-8855-4e25f63fbd57"
         },
         "abstract": "{{ metadata.methods.NAT.harbourporpoise.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.harbourporpoise.sv }}",
         "status": "onGoing",
