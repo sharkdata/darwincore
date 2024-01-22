@@ -8,7 +8,7 @@ info:
 dwcaTarget:
     directory: data_out
     files:
-        - DwCA-SMHI-Harbour-Porpoise-nat_version_TEST.zip
+        - dwca-smhi-harbour-porpoise-nat_version_TEST.zip
 
 sourceFiles:
     directory: data_in/datasets
