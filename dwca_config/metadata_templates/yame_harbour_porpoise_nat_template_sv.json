@@ -189,7 +189,7 @@
             "role": "distributor"
         },
         "distributorTransferOptions": [
-            {% for transfer_option in metadata.url_linkage.NAT.ringedseal.sv %}
+            {% for transfer_option in metadata.url_linkage.NAT.harbourporpoise.sv %}
                 {"name": "{{ transfer_option.title[:] }}",
                 "linkage": "{{ transfer_option.url[:]}}",
                 "description": "{{ transfer_option.description[:] }}",
