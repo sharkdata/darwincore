@@ -5,36 +5,35 @@ additionalMetadata:
     metadata:
         gbif:
             citation: Swedish Museum of Natural History,
-                Swedish Agency for Marine and Water Management,
-                Swedish Environmental Protection Agency and
-                Swedish Meteorological and Hydrological Institute (2022).
-                SHARK - National marine environmental monitoring of Ringed seal in Sweden since 1995.
+                Swedish Agency for Marine and Water Management and
+                Swedish Meteorological and Hydrological Institute (2024).
+                SHARK - National marine environmental monitoring of Harbour propoise in Sweden since 2015.
 
 dataset:
-    title: SHARK - National marine environmental monitoring of Ringed seal in Sweden since 1995
+    title: SHARK - National marine environmental monitoring of Harbour propoise in Sweden since 2015
 
     abstract:
         para:
-            - Data from the Swedish environmental monitoring program for Ringed seal.
-            - The monitoring program was initiated in 1995 by the Swedish Environmental Protection Agency and later the Swedish Agency for Marine and Water Management took over the responsibility and financing of the program.
+            - Data from the Swedish environmental monitoring program for Harbour porpoise.
+            - The monitoring program was initiated in 2015 by the Swedish Agency for Marine and Water Management who have the responsibility and financing of the program.
             - The monitoring is performed by the Swedish Museum of Natural History.
             - Data is stored in the database SHARK, hosted and maintained by the Swedish Meteorological and Hydrological Institute.
-            - Monitoring of Ringed seal is performed by counting seals in transects from airplane.
-            - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bestand-av-knubbsal-och-vikaresal.html
+            - Monitoring of Harbour porpoise is performed by registration of sound using loggers.
+            - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/overvakning-och-uppfoljning/miljoovervakning/marin-miljoovervakning/tumlare.html
 
     methods:
         methodStep:
             description:
                 para:
-                    - Data is collected by counting seals in transects from airplane.
-                    - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/hav/samordning--fakta/miljoovervakning/miljoovervakningens-programomrade-kust-och-hav/delprogram-sal-och-havsorn.html,https://www.havochvatten.se/vagledning-foreskrifter-och-lagar/vagledningar/ovriga-vagledningar/undersokningstyper-for-miljoovervakning/undersokningstyper/bestand-av-knubbsal-och-vikaresal.html
+                    - 
+                    - Information about the program and the methods are available in Swedish at the website of Swedish Agency for Marine and Water Management, https://www.havochvatten.se/overvakning-och-uppfoljning/miljoovervakning/marin-miljoovervakning/tumlare.html
         sampling:
-            description: The Swedish Ringed seal monitoring program studies the number of Ringed seals in the Bothnian Bay.
+            description: 
 
     coverage:
         geographicCoverage:
-            geographicDescription: "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401"
-        taxonomicCoverage: The dataset contains the species Pusa hispida
+            geographicDescription: "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379"
+        taxonomicCoverage: The dataset contains the species Phocoena phocoena
 
     keywordSet:
         keywords:

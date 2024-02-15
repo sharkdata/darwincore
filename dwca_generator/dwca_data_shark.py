@@ -355,6 +355,17 @@ class DwcaDataSharkStandard:
                         scientific_name = row_dict.get("scientific_name", "")
                         if scientific_name == "":
                             row_dict["scientific_name"] = "Biota"
+            #
+            if "porpoise" in delivery_datatype: # Harbour porpoise
+                parameter = row_dict.get("parameter", "")
+                value = row_dict.get("value", "")
+                if parameter in ["Detection positive minutes per day", "Detection positive days per month"]:
+                    value = float(value)
+                    if value == 0.0:
+                        row_dict["present_absent"] = "absent"
+                        scientific_name = row_dict.get("scientific_name", "")
+                        if scientific_name == "":
+                            row_dict["scientific_name"] = "Phocoena phocoena"
 
     def create_dwca_keys(self):
         """ """
