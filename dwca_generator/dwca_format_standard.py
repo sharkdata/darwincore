@@ -257,6 +257,9 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementType"] = "Wet weight per volume"
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
 
+                            elif parameter == "Wet weight/area":
+                                emof_dict["measurementType"] = "Wet weight per area"
+
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
 
                             if unit == "um":
@@ -350,6 +353,12 @@ class DwcaFormatStandard(object):
 
                             elif unit == "%":
                                 emof_dict["measurementUnit"] = "Percent"
+
+                            elif unit == "mg/m2":
+                                emof_dict["measurementUnit"] = "Milligrams per square metre"
+
+                            elif unit == "mg/m3":
+                                emof_dict["measurementUnit"] = "Milligrams per cubic metre"
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
