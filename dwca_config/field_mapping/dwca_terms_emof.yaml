@@ -411,6 +411,8 @@ dwcaEmofContent:
         measurementUnitID:
         sourceKey: obspoint
 
+
+
   - eventType: occurrence
     dwcTerms:
       eventID:
@@ -523,3 +525,105 @@ dwcaEmofContent:
         measurementUnit:
         measurementUnitID:
         sourceKey: size_class_ref_list
+
+#SealPathology
+      - measurementType: Age
+        measurementTypeID:
+        measurementUnit: Years
+        measurementUnitID:
+        sourceKey: age_years
+      - measurementType: Body length
+        measurementTypeID:
+        measurementUnit: Centimetres
+        measurementUnitID:
+        sourceKey: body_length_cm
+      - measurementType: Body weight
+        measurementTypeID:
+        measurementUnit: Kilograms
+        measurementUnitID:
+        sourceKey: body_weight_kg
+      - measurementType: Blubber thickness
+        measurementTypeID:
+        measurementUnit: Centimetres
+        measurementUnitID:
+        sourceKey: blubber_thickness_cm
+      - measurementType: Autolysis class
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: autolysis_class
+      - measurementType: Regional skin changes
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: regional_skin_changes_class
+      - measurementType: Claw lesions
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: claw_lesions_class
+      - measurementType: Parodontitis
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: parodontitis_class
+      - measurementType: Cronic cholangiohepatitis
+        measurementTypeID:
+        measurementUnit: Yes/No
+        measurementUnitID:
+        sourceKey: cronic_cholangiohepatitis_y_n
+      - measurementType: Intestinal ulcer
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: intestinal_ulcer_class
+      - measurementType: Pneumonia
+        measurementTypeID:
+        measurementUnit: Yes/No
+        measurementUnitID:
+        sourceKey: pneumonia_y_n
+      - measurementType: Arteriosclerosis
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: arteriosclerosis_class
+      - measurementType: Adreno cort hyperplasia
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: adreno_cort_hyperplasia_class
+      - measurementType: Kidney glomerular change
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: kidney_glomerular_change_class
+      - measurementType: Kidney tubular hyperplasia
+        measurementTypeID:
+        measurementUnit: Class
+        measurementUnitID:
+        sourceKey: kidney_tubular_hyperplasia_class
+      - measurementType: Uterus pregnant
+        measurementTypeID:
+        measurementUnit: Yes/No
+        measurementUnitID:
+        sourceKey: uterus_pregnant_y_n
+      - measurementType: Uterus stenosis occlusion
+        measurementTypeID:
+        measurementUnit: Yes/No
+        measurementUnitID:
+        sourceKey: uterus_stenosis_occlusion_y_n
+      - measurementType: Uterus tumour
+        measurementTypeID:
+        measurementUnit: Yes/No
+        measurementUnitID:
+        sourceKey: uterus_tumour_y_n
+      - measurementType: Cause of death
+        measurementTypeID:
+        measurementUnit: 
+        measurementUnitID:
+        sourceKey: cause_of_death
+      - measurementType: Finding circumstances
+        measurementTypeID:
+        measurementUnit: 
+        measurementUnitID:
+        sourceKey: finding_circumstances

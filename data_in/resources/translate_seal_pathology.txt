@@ -1,1 +1,37 @@
 source_field	dwc_field	from_value	to_value	comments
+
+	sampleSizeUnit	Litres		
+
+sampling_laboratory_name_en		-		
+sampling_laboratory_name_sv		-		
+
+finding_circumstances		FD	Found dead
+finding_circumstances		FA	Found alive
+finding_circumstances		FG	Fishing gear
+finding_circumstances		FO	Found other
+finding_circumstances		LH	Legal hunt
+finding_circumstances		LH?		
+
+cronic_cholangiohepatitis_y_n		Y	Yes
+cronic_cholangiohepatitis_y_n		N	No
+cronic_cholangiohepatitis_y_n		1	Yes
+cronic_cholangiohepatitis_y_n		0	No
+pneumonia_y_n		Y	Yes
+pneumonia_y_n		N	No
+pneumonia_y_n		1	Yes
+pneumonia_y_n		0	No
+uterus_pregnant_y_n		Y	Yes
+uterus_pregnant_y_n		N	No
+uterus_pregnant_y_n		1	Yes
+uterus_pregnant_y_n		0	No
+uterus_stenosis_occlusion_y_n		Y	Yes
+uterus_stenosis_occlusion_y_n		N	No
+uterus_stenosis_occlusion_y_n		1	Yes
+uterus_stenosis_occlusion_y_n		0	No
+uterus_tumour_y_n		Y	Yes
+uterus_tumour_y_n		N	No
+uterus_tumour_y_n		1	Yes
+uterus_tumour_y_n		0	No
+uterus_tumour_y_n		1?		
+
+age_years		ej		

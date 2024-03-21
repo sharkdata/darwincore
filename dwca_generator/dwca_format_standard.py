@@ -319,11 +319,11 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
 
                             elif unit == "ind/l":
-                                emof_dict["measurementUnit"] = "Individ per litre"
+                                emof_dict["measurementUnit"] = "Individual per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
                             elif unit == "ind/m3":
-                                emof_dict["measurementUnit"] = "Individ per cubic metre"
+                                emof_dict["measurementUnit"] = "Individual per cubic metre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/"
 
                             elif unit == "ug/m3":
@@ -343,7 +343,7 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
                             elif unit == "ind/analysed sample fraction":
-                                emof_dict["measurementUnit"] = "Individ per analysed sample fraction"
+                                emof_dict["measurementUnit"] = "Individual per analysed sample fraction"
 
                             elif unit == "nr":
                                 emof_dict["measurementUnit"] = "Number"
@@ -359,6 +359,9 @@ class DwcaFormatStandard(object):
 
                             elif unit == "mg/m3":
                                 emof_dict["measurementUnit"] = "Milligrams per cubic metre"
+
+                            elif unit == "ind":
+                                emof_dict["measurementUnit"] = "Individual"
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
