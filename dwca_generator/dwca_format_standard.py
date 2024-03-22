@@ -260,6 +260,7 @@ class DwcaFormatStandard(object):
                             elif parameter == "Wet weight/area":
                                 emof_dict["measurementType"] = "Wet weight per area"
 
+
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
 
                             if unit == "um":
@@ -325,6 +326,9 @@ class DwcaFormatStandard(object):
                             elif unit == "ind/m3":
                                 emof_dict["measurementUnit"] = "Individual per cubic metre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/"
+
+                            elif unit == "ind/m2":
+                                emof_dict["measurementUnit"] = "Individual per square metre"
 
                             elif unit == "ug/m3":
                                 emof_dict["measurementUnit"] = "Micrograms per cubic metre"

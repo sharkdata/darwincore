@@ -3,9 +3,6 @@ source_field	include_value	exclude_value	filter_group_id	comments
 
 variable_comment		sack
 
-parameter		Abundance	Abund-unit-1
-unit		ind/m2	Abund-unit-1
-
 parameter		Carbon content	Carbon-fraction-1
 unit		ug/analysed sample fraction	Carbon-fraction-1
 

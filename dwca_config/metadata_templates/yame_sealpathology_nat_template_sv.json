@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "NEED A NEW UNIQUE IDENTIFIER",
+        "fileIdentifier": "9e79d199-0fe1-4ffb-a70d-2a06f1dc6a8c",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -29,7 +29,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/NEED A NEW UNIQUE IDENTIFIER"
+            "identifier": "https://opendata-catalog.smhi.se/md/9e79d199-0fe1-4ffb-a70d-2a06f1dc6a8c"
         },
         "abstract": "{{ metadata.methods.NAT.sealpathology.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.NAT.sealpathology.sv }}",
         "status": "underDevelopment",

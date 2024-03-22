@@ -4,3 +4,4 @@ size_min_um		0	>0
 
 sampler_type_code		WP2	WP-2 net
 #sampler_type_code		WP-2 net	WP-2
+
