@@ -530,23 +530,23 @@ dwcaEmofContent:
       - measurementType: Age
         measurementTypeID:
         measurementUnit: Years
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UYRS/"
         sourceKey: age_years
       - measurementType: Body length
         measurementTypeID:
         measurementUnit: Centimetres
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULCM/"
         sourceKey: body_length_cm
       - measurementType: Body weight
         measurementTypeID:
         measurementUnit: Kilograms
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/KGXX/"
         sourceKey: body_weight_kg
       - measurementType: Blubber thickness
         measurementTypeID:
-        measurementUnit: Centimetres
-        measurementUnitID:
-        sourceKey: blubber_thickness_cm
+        measurementUnit: Millimetres
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"
+        sourceKey: blubber_thickness_mm
       - measurementType: Autolysis class
         measurementTypeID:
         measurementUnit: Class
@@ -554,14 +554,14 @@ dwcaEmofContent:
         sourceKey: autolysis_class
       - measurementType: Regional skin changes
         measurementTypeID:
-        measurementUnit: Class
+        measurementUnit: Yes/No
         measurementUnitID:
-        sourceKey: regional_skin_changes_class
+        sourceKey: regional_skin_changes_y_n
       - measurementType: Claw lesions
         measurementTypeID:
-        measurementUnit: Class
+        measurementUnit: Yes/No
         measurementUnitID:
-        sourceKey: claw_lesions_class
+        sourceKey: claw_lesions_y_n
       - measurementType: Parodontitis
         measurementTypeID:
         measurementUnit: Class
