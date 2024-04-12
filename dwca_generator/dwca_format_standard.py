@@ -81,8 +81,13 @@ class DwcaFormatStandard(object):
                             continue
                         # Add content.
                         self.add_content(event_content, source_row, event_dict)
+
+                        # Check if sampleSizeValue is empty and if so make sampleSizeUnit empty too
+                    if not event_dict.get("sampleSizeValue"):
+                       event_dict["sampleSizeUnit"] = ""
+
                         # Append event row content.
-                        self.dwca_event.append(event_dict.copy())
+                    self.dwca_event.append(event_dict.copy())
 
     def create_dwca_occurrence(self):
         """ """
