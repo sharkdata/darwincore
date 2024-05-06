@@ -369,14 +369,14 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
         sourceKey: sedimentation_volume_ml
       - measurementType: Number of portions
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementTypeID: 
         measurementUnit: Not applicable
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: number_of_portions
       - measurementType: Counted portions
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementTypeID: 
         measurementUnit: Not applicable
-        measurementUnitID:
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: counted_portions
       - measurementType: Counter program
         measurementTypeID:
