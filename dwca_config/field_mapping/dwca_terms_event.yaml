@@ -135,9 +135,9 @@ dwcaEventContent:
           municipality:
               sourceKey: location_municipality
           locality:
-              sourceKey:
-          verbatimLocality:
               sourceKey: station_name
+          verbatimLocality:
+              sourceKey: reported_station_name
           verbatimDepth:
               sourceKey:
           minimumDepthInMeters:
@@ -268,9 +268,9 @@ dwcaEventContent:
           municipality:
               sourceKey:
           locality:
-              sourceKey:
-          verbatimLocality:
               sourceKey: station_name
+          verbatimLocality:
+              sourceKey: reported_station_name
           verbatimDepth:
               sourceKey:
           minimumDepthInMeters:

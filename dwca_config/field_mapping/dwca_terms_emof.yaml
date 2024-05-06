@@ -369,13 +369,13 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
         sourceKey: sedimentation_volume_ml
       - measurementType: Number of portions
-        measurementTypeID:
-        measurementUnit: Number
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnit: Not applicable
         measurementUnitID:
         sourceKey: number_of_portions
       - measurementType: Counted portions
-        measurementTypeID:
-        measurementUnit: Number
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnit: Not applicable
         measurementUnitID:
         sourceKey: counted_portions
       - measurementType: Counter program
@@ -528,22 +528,22 @@ dwcaEmofContent:
 
 #SealPathology
       - measurementType: Age
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/AGEBENTX/"
         measurementUnit: Years
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UYRS/"
         sourceKey: age_years
       - measurementType: Body length
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
         measurementUnit: Centimetres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULCM/"
         sourceKey: body_length_cm
       - measurementType: Body weight
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SPWGXX01/"
         measurementUnit: Kilograms
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/KGXX/"
         sourceKey: body_weight_kg
       - measurementType: Blubber thickness
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/BBTHBEXX/"
         measurementUnit: Millimetres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"
         sourceKey: blubber_thickness_mm
@@ -618,7 +618,7 @@ dwcaEmofContent:
         measurementUnitID:
         sourceKey: uterus_tumour_y_n
       - measurementType: Cause of death
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/DEACBEXX/"
         measurementUnit: 
         measurementUnitID:
         sourceKey: cause_of_death

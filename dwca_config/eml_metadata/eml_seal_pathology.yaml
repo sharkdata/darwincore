@@ -4,10 +4,10 @@
 additionalMetadata:
     metadata:
         gbif:
-            citation: Swedish Museum of Natural History, Swedish Environmental Protection Agency and Swedish Meteorological and Hydrological Institute (2022). SHARK - National environmental monitoring of Seal pathology in Sweden since 2008
+            citation: Swedish Museum of Natural History, Swedish Environmental Protection Agency and Swedish Meteorological and Hydrological Institute (2024). SHARK - National marine environmental monitoring of Seal pathology in Sweden
 
 dataset:
-    title: SHARK - National environmental monitoring of Seal pathology in Sweden since 2008
+    title: SHARK - National marine environmental monitoring of Seal pathology in Sweden
 
     abstract:
         para:

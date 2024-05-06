@@ -86,6 +86,91 @@ class DwcaFormatStandard(object):
                     if not event_dict.get("sampleSizeValue"):
                        event_dict["sampleSizeUnit"] = ""
 
+                        # Seal Pathology area fix using obis.org/maptool moving position from county capital to position in water and with individual uncertainty radius m
+                    if event_dict.get("verbatimLocality") == "BD" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "BD Norrbotten County"
+                        event_dict["latitude"] = "65.45"
+                        event_dict["decimalLongitude"] = "22.93"
+                        event_dict["coordinateUncertaintyInMeters"] = "85550"
+
+                    if event_dict.get("verbatimLocality") == "AC" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "AC Västerbotten County"
+                        event_dict["decimalLatitude"] = "63.97"
+                        event_dict["decimalLongitude"] = "20.94"
+                        event_dict["coordinateUncertaintyInMeters"] = "134320"
+
+                    if event_dict.get("verbatimLocality") == "Y" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "Y Västernorrland County"
+                        event_dict["decimalLatitude"] = "62.78"
+                        event_dict["decimalLongitude"] = "18.40"
+                        event_dict["coordinateUncertaintyInMeters"] = "103490"
+
+                    if event_dict.get("verbatimLocality") in ["X", "x"] and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "X Gävleborg County"
+                        event_dict["decimalLatitude"] = "61.37"
+                        event_dict["decimalLongitude"] = "17.36"
+                        event_dict["coordinateUncertaintyInMeters"] = "104510"
+
+                    if event_dict.get("verbatimLocality") == "C" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "C Uppsala County"
+                        event_dict["decimalLatitude"] = "60.52"
+                        event_dict["decimalLongitude"] = "18.20"
+                        event_dict["coordinateUncertaintyInMeters"] = "69370"
+
+                    if event_dict.get("verbatimLocality") == "AB" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "AB Stockholm County"
+                        event_dict["decimalLatitude"] = "59.31"
+                        event_dict["decimalLongitude"] = "18.91"
+                        event_dict["coordinateUncertaintyInMeters"] = "141270"
+
+                    if event_dict.get("verbatimLocality") == "D" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "D Södermanland County"
+                        event_dict["decimalLatitude"] = "58.70"
+                        event_dict["decimalLongitude"] = "17.38"
+                        event_dict["coordinateUncertaintyInMeters"] = "48200"
+
+                    if event_dict.get("verbatimLocality") == "E" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "E Östergötland County"
+                        event_dict["decimalLatitude"] = "58.32"
+                        event_dict["decimalLongitude"] = "17.02"
+                        event_dict["coordinateUncertaintyInMeters"] = "65330"
+
+                    if event_dict.get("verbatimLocality") == "H" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "H Kalmar County"
+                        event_dict["decimalLatitude"] = "56.95"
+                        event_dict["decimalLongitude"] = "16.56"
+                        event_dict["coordinateUncertaintyInMeters"] = "138750"
+
+                    if event_dict.get("verbatimLocality") == "I" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "I Gotland County"
+                        event_dict["decimalLatitude"] = "57.64"
+                        event_dict["decimalLongitude"] = "18.84"
+                        event_dict["coordinateUncertaintyInMeters"] = "121390"
+
+                    if event_dict.get("verbatimLocality") == "K" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "K Blekinge County"
+                        event_dict["decimalLatitude"] = "56.02"
+                        event_dict["decimalLongitude"] = "15.40"
+                        event_dict["coordinateUncertaintyInMeters"] = "64370"
+
+                    if event_dict.get("verbatimLocality") == "M" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "M Skåne County"
+                        event_dict["decimalLatitude"] = "55.67"
+                        event_dict["decimalLongitude"] = "12.99"
+                        event_dict["coordinateUncertaintyInMeters"] = "122710"
+
+                    if event_dict.get("verbatimLocality") == "N" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "N Halland County"
+                        event_dict["decimalLatitude"] = "56.99"
+                        event_dict["decimalLongitude"] = "12.20"
+                        event_dict["coordinateUncertaintyInMeters"] = "84390"
+
+                    if event_dict.get("verbatimLocality") == "O" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "O Västra Götaland County"
+                        event_dict["decimalLatitude"] = "58.25"
+                        event_dict["decimalLongitude"] = "11.31"
+                        event_dict["coordinateUncertaintyInMeters"] = "107450"
+
                         # Append event row content.
                     self.dwca_event.append(event_dict.copy())
 
@@ -369,8 +454,9 @@ class DwcaFormatStandard(object):
                             elif unit == "mg/m3":
                                 emof_dict["measurementUnit"] = "Milligrams per cubic metre"
 
-                            elif unit == "ind":
-                                emof_dict["measurementUnit"] = "Individual"
+                            elif unit == "ind": #measurementType Count with ind as unit in SHARK
+                                emof_dict["measurementUnit"] = "Dimensionless"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 

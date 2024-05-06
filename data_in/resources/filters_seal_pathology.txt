@@ -1,1 +1,3 @@
 source_field	include_value	exclude_value	filter_group_id	comments
+
+shark_sample_id_md5		364768f88de5f22c0e415150eddee722		unknown year

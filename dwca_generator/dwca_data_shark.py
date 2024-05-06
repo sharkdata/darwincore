@@ -271,8 +271,8 @@ class DwcaDataSharkStandard:
                         size_string = str(size_min_um) + "-" + str(size_max_um)
                         row_dict["size_class"] = size_string
 
-            # Add sampler_type_code for Seal. Sometimes also use "obspoint".
-            if "seal" in delivery_datatype:
+            # Add sampler_type_code for Seal. Sometimes also use "obspoint". But not if sealpathology
+            if "seal" in delivery_datatype and "pathology" not in delivery_datatype:
                 sampler_type_code = row_dict.get("sampler_type_code", "")
                 if sampler_type_code == "":
                     pass
