@@ -139,10 +139,10 @@
         "extent": {
             "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaKattegatSkagerrak.sv}}",
             "geographicElement": {
-                "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
-                "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
-                "southBoundLatitude": "{{ metadata_auto.latitude_min }}",
-                "northBoundLatitude": "{{ metadata_auto.latitude_max }}"
+                "westBoundLongitude": "10.5935", 
+                "eastBoundLongitude": "24.1775",
+                "southBoundLatitude": "55.1371",
+                "northBoundLatitude": "65.9072"
             },
             "temporalElement": {
                 "beginPosition": "{{ metadata_auto.sample_date_min }}",
