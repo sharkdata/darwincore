@@ -11,6 +11,7 @@ dwcaOccurrenceColumns:
     - verbatimIdentification
     - acceptedNameUsage
     - identificationQualifier
+    - scientificNameAuthorship
     - sex
     - lifeStage
     # - individualCount
@@ -64,6 +65,8 @@ dwcaOccurrenceContent:
 
           identificationQualifier:
               sourceKey: species_flag_code
+          scientificNameAuthorship:
+              sourceKey: worms_authority
           sex:
               sourceKey: sex_code
           lifeStage:
