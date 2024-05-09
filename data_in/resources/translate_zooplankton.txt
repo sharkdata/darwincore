@@ -1,5 +1,12 @@
 source_field	dwc_field	from_value	to_value	comments
 
+scientific_name		Other	Biota
+scientific_name		Evertebrata	Animalia
+scientific_name		Fish	Pisces
+
+aphia_id		146421	103357
+
+
 size_min_um		0	>0
 
 sampler_type_code		WP2	WP-2 net

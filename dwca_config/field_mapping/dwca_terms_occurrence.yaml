@@ -5,12 +5,11 @@ dwcaOccurrenceColumns:
     - id
     - eventID
     - occurrenceID
-
     - scientificName
     - taxonID
     - scientificNameID
+    - verbatimIdentification
     - acceptedNameUsage
-
     - identificationQualifier
     - sex
     - lifeStage
@@ -51,6 +50,8 @@ dwcaOccurrenceContent:
                   - reported_scientific_name
           taxonID:
               sourceKey: dyntaxa_lsid
+          verbatimIdentification:
+              sourceKey: reported_scientific_name
           scientificNameID:
               sourceKeyList:
 #                  - bvol_aphia_lsid    # felaktigt LSID, detta är URL

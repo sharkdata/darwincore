@@ -56,8 +56,8 @@ dwcaEmofContent:
 
       extraMeasurements:
           - measurementType: Wave height
-            measurementTypeID:
-            measurementUnit: m
+            measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/GAVGEV01/"
+            measurementUnit: Metres
             measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
             sourceKey: wave_height_m
           - measurementType: Wave observation
@@ -76,12 +76,12 @@ dwcaEmofContent:
             measurementUnitID:
             sourceKey: wave_exposure_fetch
           - measurementType: Wind speed
-            measurementTypeID:
+            measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/EWSBZZ01/"
             measurementUnit: m/s
             measurementUnitID:
             sourceKey: wind_speed_ms
           - measurementType: Wind direction
-            measurementTypeID:
+            measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01/"
             measurementUnit:
             measurementUnitID:
             sourceKey: wind_direction_code
