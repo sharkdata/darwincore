@@ -347,6 +347,18 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementType"] = "Wet weight per volume"
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
 
+                            elif parameter == "Cover":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/PCOV7736/"
+
+                            elif parameter == "Dry weight":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SPDWXX01/"
+
+                            elif parameter == "Salinity":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01/"
+
+                            elif parameter == "Temperature":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
+
                             elif parameter == "Wet weight/area":
                                 emof_dict["measurementType"] = "Wet weight per area"
 
@@ -432,6 +444,10 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnit"] = "Degrees Celsius"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
 
+                            elif unit == "C":
+                                emof_dict["measurementUnit"] = "Degrees Celsius"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
+
                             elif unit == "cells/l":
                                 emof_dict["measurementUnit"] = "Cell per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
@@ -447,6 +463,7 @@ class DwcaFormatStandard(object):
 
                             elif unit == "%":
                                 emof_dict["measurementUnit"] = "Percent"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPCT/"
 
                             elif unit == "mg/m2":
                                 emof_dict["measurementUnit"] = "Milligrams per square metre"
@@ -457,6 +474,12 @@ class DwcaFormatStandard(object):
                             elif unit == "ind": #measurementType Count with ind as unit in SHARK
                                 emof_dict["measurementUnit"] = "Dimensionless"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+
+
+                            if parameter == "Salinity" and unit == "":
+                                emof_dict["measurementUnit"] = "Dimensionless"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 

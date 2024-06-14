@@ -230,13 +230,13 @@ dwcaEmofContent:
 #        sourceKey: monitoring_program_code
       - measurementType: Station marking
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: station_marking
       - measurementType: Station exposure
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: station_exposure
       - measurementType: Visit id
         measurementTypeID:
@@ -507,8 +507,8 @@ dwcaEmofContent:
         sourceKey: bitemark
       - measurementType: Degree biofouling
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: degree_biofouling
       - measurementType: Analytical laboratory name
         measurementTypeID:
