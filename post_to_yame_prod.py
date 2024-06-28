@@ -6,7 +6,9 @@
 
 import requests
 import json
-import pathlib
+from pathlib import Path
+
+DATA_OUT = Path(__file__).parent / 'data_out'
 
 def post_to_yame_prod(filepath):
 
@@ -31,6 +33,6 @@ if __name__ == "__main__":
     # .glob("yame_*.json")
     # fär att köra endast en vald skriv t.ex.
     # .glob("yame_pico*nat*.json")
-    for file_path in pathlib.Path("data_out").glob("yame_physical*.json"):
+    for file_path in DATA_OUT.glob("yame_greyseal*.json"):
         print(file_path)
         post_to_yame_prod(file_path)
