@@ -171,6 +171,81 @@ class DwcaFormatStandard(object):
                         event_dict["decimalLongitude"] = "11.31"
                         event_dict["coordinateUncertaintyInMeters"] = "107450"
 
+                    #Greyseal fix fix using obis.org/maptool moving position from county capital to position in water and with individual uncertainty radius m
+
+                    if event_dict.get("decimalLatitude") == "58.40333" and event_dict.get("decimalLongitude") == "15.62167" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "E Östergötland County"
+                        event_dict["decimalLatitude"] = "58.32"
+                        event_dict["decimalLongitude"] = "17.02"
+                        event_dict["coordinateUncertaintyInMeters"] = "65330"
+
+                    if event_dict.get("decimalLatitude") == "58.76167" and event_dict.get("decimalLongitude") == "17.02333" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "D Södermanland County"
+                        event_dict["decimalLatitude"] = "58.70"
+                        event_dict["decimalLongitude"] = "17.38"
+                        event_dict["coordinateUncertaintyInMeters"] = "48200"
+
+                    if event_dict.get("decimalLatitude") == "59.33833" and event_dict.get("decimalLongitude") == "18.01667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "AB Stockholm County"
+                        event_dict["decimalLatitude"] = "59.31"
+                        event_dict["decimalLongitude"] = "18.91"
+                        event_dict["coordinateUncertaintyInMeters"] = "141270"
+
+                    if event_dict.get("decimalLatitude") == "59.85833" and event_dict.get("decimalLongitude") == "17.64500" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "C Uppsala County"
+                        event_dict["decimalLatitude"] = "60.52"
+                        event_dict["decimalLongitude"] = "18.20"
+                        event_dict["coordinateUncertaintyInMeters"] = "69370"
+
+                    if event_dict.get("decimalLatitude") == "60.67500" and event_dict.get("decimalLongitude") == "17.15000" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "X Gävleborg County"
+                        event_dict["decimalLatitude"] = "61.37"
+                        event_dict["decimalLongitude"] = "17.36"
+                        event_dict["coordinateUncertaintyInMeters"] = "104510"
+
+                    if event_dict.get("decimalLatitude") == "62.63000" and event_dict.get("decimalLongitude") == "17.93667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "Y Västernorrland County"
+                        event_dict["decimalLatitude"] = "62.78"
+                        event_dict["decimalLongitude"] = "18.40"
+                        event_dict["coordinateUncertaintyInMeters"] = "103490"
+
+                    if event_dict.get("decimalLatitude") == "63.83167" and event_dict.get("decimalLongitude") == "20.26667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "AC Västerbotten County"
+                        event_dict["decimalLatitude"] = "63.97"
+                        event_dict["decimalLongitude"] = "20.94"
+                        event_dict["coordinateUncertaintyInMeters"] = "134320"
+
+                    if event_dict.get("decimalLatitude") == "65.58333" and event_dict.get("decimalLongitude") == "22.16333" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "BD Norrbotten County"
+                        event_dict["latitude"] = "65.45"
+                        event_dict["decimalLongitude"] = "22.93"
+                        event_dict["coordinateUncertaintyInMeters"] = "85550"
+
+                    if event_dict.get("decimalLatitude") == "57.64167" and event_dict.get("decimalLongitude") == "18.29667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "I Gotland County"
+                        event_dict["decimalLatitude"] = "57.64"
+                        event_dict["decimalLongitude"] = "18.84"
+                        event_dict["coordinateUncertaintyInMeters"] = "121390"
+
+                    if event_dict.get("decimalLatitude") == "56.66167" and event_dict.get("decimalLongitude") == "16.36000" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "H Kalmar County"
+                        event_dict["decimalLatitude"] = "56.95"
+                        event_dict["decimalLongitude"] = "16.56"
+                        event_dict["coordinateUncertaintyInMeters"] = "138750"
+
+                    if event_dict.get("decimalLatitude") == "56.20000" and event_dict.get("decimalLongitude") == "15.95000" and "SHARK_GreySeal" in event_dict.get("dynamicProperties") or event_dict.get("decimalLatitude") == "56.16667" and event_dict.get("decimalLongitude") == "15.58500" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "K Blekinge County"
+                        event_dict["decimalLatitude"] = "56.02"
+                        event_dict["decimalLongitude"] = "15.40"
+                        event_dict["coordinateUncertaintyInMeters"] = "64370"
+
+                    if event_dict.get("decimalLatitude") == "55.40000" and event_dict.get("decimalLongitude") == "12.91667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
+                        event_dict["locality"] = "M Skåne County"
+                        event_dict["decimalLatitude"] = "55.67"
+                        event_dict["decimalLongitude"] = "12.99"
+                        event_dict["coordinateUncertaintyInMeters"] = "122710"
+
+        
                         # Append event row content.
                     self.dwca_event.append(event_dict.copy())
 
@@ -359,8 +434,20 @@ class DwcaFormatStandard(object):
                             elif parameter == "Temperature":
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
 
+                            elif parameter == "Air temperature":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/OD1/current/AIRTEMP/"
+
+                            elif parameter == "Air pressure":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P02/current/CAPH/"
+
                             elif parameter == "Wet weight/area":
                                 emof_dict["measurementType"] = "Wet weight per area"
+
+                            elif parameter == "Cell volume":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/CVOLZZ01/"
+
+                            elif parameter == "Biovolume concentration":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/CVOLUKNB/"
 
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
@@ -408,6 +495,9 @@ class DwcaFormatStandard(object):
                             elif unit == "hpa":
                                 emof_dict["measurementUnit"] = "Hectopascals"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
+
+                            elif unit == "mm3/l":
+                                emof_dict["measurementUnit"] = "Cubic millimetres per litre"
 
                             elif unit == "g/m3":
                                 emof_dict["measurementUnit"] = "Grams per cubic metre"

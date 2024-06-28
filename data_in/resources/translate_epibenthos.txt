@@ -1,5 +1,29 @@
 source_field	dwc_field	from_value	to_value	comments
 
+#translate_to_worms ändrar inte namnet, lägger endast till aphia ID
+	scientificName	Bonnemaisonia hamifera/Spermothamnion repens	Rhodymeniophycidae
+	scientificName	Spermothamnion/Bonnemaisonia	Rhodymeniophycidae
+	scientificName	Chara globularis/virgata	Chara
+	scientificName	Chara aspera var. aspera f. subinermis	Chara aspera
+	scientificName	Ranunculus peltatus subsp. peltatus	Ranunculus peltatus
+	scientificName	Ranunculus peltatus ssp. peltatus	Ranunculus peltatus
+	scientificName	Potamogeton gramineus × perfoliatus	Potamogeton
+	scientificName	Potamogeton gramineus x perfoliatus	Potamogeton
+	scientificName	Potamogeton berchtoldii/pusillus	Potamogeton
+	scientificName	Zannichellia palustris var. palustris	Zannichellia palustris
+	scientificName	Nitella flexilis/opaca	Nitella
+	scientificName	Sagittaria natans x sagittifolia	Sagittaria
+	scientificName	Protoctista	Biota
+	scientificName	Algae	Biota
+	scientificName	Ulva procera/prolifera	Ulva
+	scientificName	Ulva compressa/intestinalis	Ulva
+	scientificName	Ectocarpus/Pylaiella	Ectocarpales
+	scientificName	Coccotylus/Phyllophora	Phyllophoraceae
+	scientificName	Hirudinida	Clitellata
+	scientificName	Polysiphonia brodiaei	Polysiphonia brodiei
+
+
+
 bitemark		1	Yes	
 bitemark		0	No	
 

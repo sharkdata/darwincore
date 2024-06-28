@@ -407,8 +407,8 @@ dwcaEmofContent:
 
       - measurementType: Observation point
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: obspoint
 
 
@@ -461,7 +461,7 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: size_max_um
       - measurementType: Cell volume
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/CVOLZZ01/"
         measurementUnit: Cubic micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
         sourceKey: reported_cell_volume_um3

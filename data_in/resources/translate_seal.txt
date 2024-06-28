@@ -12,3 +12,8 @@ sample_latitude_dd		0.0000	BLANK
 sample_longitude_dd		00.0000	BLANK
 sample_latitude_dd		0.00000	BLANK
 sample_longitude_dd		00.00000	BLANK
+
+sampling_laboratory_name_en		-		
+sampling_laboratory_name_sv		-		
+analytical_laboratory_name_en		-		
+analytical_laboratory_name_en		-		
