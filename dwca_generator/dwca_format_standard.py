@@ -9,7 +9,7 @@ import logging
 import datetime
 
 import dwca_generator
-
+#import pandas as pd
 
 class DwcaFormatStandard(object):
     """ """
@@ -314,6 +314,19 @@ class DwcaFormatStandard(object):
 
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
+                        
+                        # Add missing AphiaID for phytoplankton (because not in NOMP-bvol list)
+                        if "SHARK_Phytoplankton" in occurrence_dict.get("dynamicProperties"):
+                            dict_missing = {}
+                            with open("C:/Python/DV_export/darwincore/data_in/resources/add_aphia_id_phytoplankton.txt") as f:
+                                for line in f:
+                                  (key, val) = line.split("\t")
+                                  dict_missing[key] = val
+                            for missing_taxa_id, ID in dict_missing.items():
+                                if occurrence_dict.get("scientificName","") == missing_taxa_id:
+                                  occurrence_dict["scientificNameID"] = ID
+
+
 
                         # Add URI path for Aphia-id if numeric.
                         worms_lsid = occurrence_dict.get("scientificNameID", "")
