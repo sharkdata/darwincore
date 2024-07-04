@@ -10,7 +10,7 @@ from pathlib import Path
 
 DATA_OUT = Path(__file__).parent / 'data_out'
 
-def post_to_yame_prod(filepath):
+def put_to_yamr_prod(filepath):
 
     with open(filepath, encoding='utf-8') as f:
         metadata_file = json.load(f)
@@ -35,4 +35,4 @@ if __name__ == "__main__":
     # .glob("yame_pico*nat*.json")
     for file_path in DATA_OUT.glob("yame_greyseal*.json"):
         print(file_path)
-        post_to_yame_prod(file_path)
+        put_to_yamr_prod(file_path)
