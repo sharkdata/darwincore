@@ -16,9 +16,7 @@
         "metadataStandardName": "SS-EN-ISO-19115:2005-NMDP 4.0"
     },
     "referenceSystemInfo": [
-        {
-            "code": "EPSG:4326"
-        }
+        "EPSG:4326"
     ],
     "identificationInfo": {
         "citation": {
@@ -125,16 +123,9 @@
         "resourceConstraints": {
             "useLimitation": [],
             "legalConstraints": {
-                "useConstraints": {
-                    "restrictionCode": "otherRestrictions",
-                    "anchor": "CC01.0",
-                    "text": ""
-                },
-                "accessConstraints": {
-                    "restrictionCode": "otherRestrictions",
-                    "anchor": "InnehallerPersonUppgifterIckeKansliga"
-                }
-            }
+                "useConstraints": "I och med att du laddar ned data så accepterar du följande licensvillkor, https://www.smhi.se/data/oppna-data/villkor-for-anvandning-1.30622. Ange om möjligt SMHI som källa.",
+                "accessConstraints": "IngenBegransning"
+              }
         },
         "extent": {
             "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticproperKattegatSkagerrak.sv}}",
