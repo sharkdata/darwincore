@@ -1,5 +1,22 @@
 source_field	dwc_field	from_value	to_value	comments
 size_min_um		0	>0
 
+# deleted in WoRMS, duplicate
+	scientificNameID	103987	601409
+
 bvol_scientific_name		Algae	Biota
-scientific_name		Algae	Biota
+
+	scientificName	Algae	Biota
+	scientificName	Unicells_and_flagellates	Unicells and flagellates
+	scientificName	Vanella	Vannella
+	scientificName	Dinoflagellate	Dinophyceae
+	scientificName	Haptophyceae	Coccolithophyceae
+	scientificName	Heliocostomella subulata	Helicostomella subulata
+	scientificName	Unicells and flagellates	Biota
+	scientificName	Unicell	Biota
+	scientificName	Gonyaulax digitalis	Gonyaulax digitale
+	scientificName	Dictyocha speculum	Octactis speculum
+	scientificName	Scrippsiella trochoidea	Scrippsiella acuminata
+	scientificName	Thalassiosira angustelineata	Thalassiosira anguste-lineata
+	scientificName	Bacterosira constricta	Thalassiosira constricta
+	scientificName	Gymnodinium simplex	Protodinium simplex

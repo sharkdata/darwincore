@@ -1,5 +1,6 @@
 source_field	include_value	exclude_value	filter_group_id	comments
-			
+
+# REMOVE NAT data       	
 dataset_name		SHARK_Phytoplankton_1983_SUSE
 dataset_name		SHARK_Phytoplankton_1984_SUSE
 dataset_name		SHARK_Phytoplankton_1985_SUSE
@@ -90,7 +91,15 @@ dataset_name		SHARK_Phytoplankton_2021_UMSC
 dataset_name		SHARK_Phytoplankton_2021_SMHI
 dataset_name		SHARK_Phytoplankton_2021_DEEP
 dataset_name		SHARK_Phytoplankton_2021_SMHI_SLCK
+dataset_name		SHARK_Phytoplankton_2022_SMHI
+dataset_name		SHARK_Phytoplankton_2022_MEDINS
+dataset_name		SHARK_Phytoplankton_2022_UMSC
+dataset_name		SHARK_Phytoplankton_2022_DEEP
+dataset_name		SHARK_Phytoplankton_2023_SMHI
+dataset_name		SHARK_Phytoplankton_2023_UMSC
+dataset_name		SHARK_Phytoplankton_2023_DEEP
 
+#REMOVE Ferrybox data
 dataset_name		SHARK_Phytoplankton_2015_SMHI_TRANSPAPER
 dataset_name		SHARK_Phytoplankton_2013_SMHI_TRANSPAPER
 dataset_name		SHARK_Phytoplankton_2017_SMHI_WEAQ_TRANSPAPER
@@ -102,12 +111,18 @@ dataset_name		SHARK_Phytoplankton_2017_SMHI_ColorFantasy
 dataset_name		SHARK_Phytoplankton_2019_SMHI_ColorFantasy
 dataset_name		SHARK_Phytoplankton_2020_SMHI_ColorFantasy
 dataset_name		SHARK_Phytoplankton_2021_SMHI_ColorFantasy
+dataset_name		SHARK_Phytoplankton_2022_SMHI_ColorFantasy
+dataset_name		SHARK_Phytoplankton_2023_SMHI_ColorFantasy
 dataset_name		SHARK_Phytoplankton_2010_SMHI_Ferrybox
-dataset_name		SHARK_Phytoplankton_2016_SMHI_JERICO
-dataset_name		SHARK_Phytoplankton_2016_SMHI_JERICO_IFCB
-dataset_name		SHARK_Phytoplankton_2019_SMHI_DNA
-dataset_name		SHARK_Phytoplankton_2019_UMSC_DNA
 
+#REMOVE IFCB data
+#dataset_name		SHARK_Phytoplankton_2016_SMHI_JERICO
+dataset_name		SHARK_Phytoplankton_2016_SMHI_JERICO_IFCB
+
+#dataset_name		SHARK_Phytoplankton_2019_SMHI_DNA
+#dataset_name		SHARK_Phytoplankton_2019_UMSC_DNA
+
+#REMOVE SLV data
 dataset_name		SHARK_Phytoplankton_2000-2004_SMHI_SLV_biotox
 dataset_name		SHARK_Phytoplankton_2004-2006_SMHI_SLV_biotox
 dataset_name		SHARK_Phytoplankton_2007-2009_SMHI_SLV_biotox
@@ -123,20 +138,18 @@ dataset_name		SHARK_Phytoplankton_2018_SMHI_SLV_biotox
 dataset_name		SHARK_Phytoplankton_2019_SMHI_SLV_biotox
 dataset_name		SHARK_Phytoplankton_2020_SMHI_SLV_biotox
 dataset_name		SHARK_Phytoplankton_2021_SMHI_SLV_biotox
-
-# New datasets for export, prepared July 2023
-
-dataset_name		SHARK_Phytoplankton_2022_SMHI
-dataset_name		SHARK_Phytoplankton_2022_MEDINS
-dataset_name		SHARK_Phytoplankton_2022_UMSC
-dataset_name		SHARK_Phytoplankton_2022_DEEP
-
-dataset_name		SHARK_Phytoplankton_2022_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2022_SLCK		Microzooplankton
 dataset_name		SHARK_Phytoplankton_2022_SMHI_SLV_biotox
+dataset_name		SHARK_Phytoplankton_2022_SMHI_SLV_KALKOM
+dataset_name		SHARK_Phytoplankton_2023_SMHI_SLV_biotox
 
+#REMOVE microzooplankton
+dataset_name		SHARK_Phytoplankton_2018_2021_SLCK	
+dataset_name		SHARK_Phytoplankton_2022_SLCK		
+dataset_name		SHARK_Phytoplankton_2023_SLCK_SMHI	
+dataset_name		SHARK_Phytoplankton_2023_SLCK	
 
-
+#REMOVE 2024 data
+dataset_name		SHARK_Phytoplankton_2024_SWECO_NLST	
 
 
 
@@ -174,3 +187,5 @@ sample_date		2010-09-00
 sample_date		2011-08-00
 
 coefficient		0		kopplat till parameter Count class
+
+analysed_volume_cm3		0

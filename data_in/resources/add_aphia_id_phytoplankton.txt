@@ -1,0 +1,53 @@
+scientific_name	AphiaID
+Dinophysis hastata	109627
+Polykrikos	109485
+Apocalathium	1359178
+Euglenophyceae	19539
+Gymnodinium lohmannii	109809
+Lauderia	149134
+Odontella	148963
+Fragilaria striatula	157458
+Micromonas	134533
+Woloszynskia	109492
+Apedinella spinifera	248098
+Salpingella	183566
+Gonyaulax catenata	233365
+Tabellaria	149333
+Prasinophyceae	17329
+Chrysochromulina parva	571998
+Bacillariales	149001
+Peridiniella	109543
+Eupodiscales	149660
+Planktolyngbya subtilis	146678
+Amphiprora paludosa	149514
+Pedinella hexacostata	375676
+Pedinellales	160597
+Dinophyta	21005
+Eutetramorus	601613
+Chlorophyta	801
+Surirella linearis	176076
+Pseudo-nitzschia fraudulenta	246606
+Chaetoceros radians	149293
+Planctonema	162715
+Gymnodinium splendens	109832
+Pseudo-nitzschia seriata	149152
+Pseudo-nitzschia delicatissima	149153
+Oblea rotunda	110155
+Diplopsalis	109515
+Gymnodinium elongatum	109791
+Ceratium fusus	109951
+Cymbomonas	134527
+Rhaphoneis amphiceros	149066
+Vanella	120566
+Dictyosphaerium	178623
+Goniochloris	600926
+Coscinodiscophyceae	148900
+Ceratoneis closterium	163932
+Rhizomonas setigera	118071
+Staurodesmus dejectus	578386
+Scrippsiella	109545
+Biota	12
+Coccolithophyceae	592906
+Dinophyceae	19542
+Heliocostomella subulata	240437
+Vannella	120566

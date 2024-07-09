@@ -189,12 +189,12 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
         sourceKey: air_temperature_wet_degc
       - measurementType: Air temperature
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/CDTA/"
         measurementUnit: Degrees Celsius
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
         sourceKey: air_temperature_degc
       - measurementType: Air pressure
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/CAPH/"
         measurementUnit: Hectopascals
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
         sourceKey: air_pressure_hpa
