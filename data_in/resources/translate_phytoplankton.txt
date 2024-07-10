@@ -1,11 +1,13 @@
 source_field	dwc_field	from_value	to_value	comments
 size_min_um		0	>0
 
-# deleted in WoRMS, duplicate
+# deleted in WoRMS
 	scientificNameID	103987	601409
+	scientificNameID	389491	118074
 
 bvol_scientific_name		Algae	Biota
 
+#NAT
 	scientificName	Algae	Biota
 	scientificName	Unicells_and_flagellates	Unicells and flagellates
 	scientificName	Vanella	Vannella
@@ -20,3 +22,29 @@ bvol_scientific_name		Algae	Biota
 	scientificName	Thalassiosira angustelineata	Thalassiosira anguste-lineata
 	scientificName	Bacterosira constricta	Thalassiosira constricta
 	scientificName	Gymnodinium simplex	Protodinium simplex
+
+#REG RECIP PROJ
+	scientificName	Gyrodinium sp.	Gyrodinium
+	scientificName	Actinocylus octonarius	Actinocyclus octonarius
+	scientificName	Dictyosphaerium ehrenberg	Dictyosphaerium ehrenbergianum
+	scientificName	Scuticociliate	Scuticociliatia
+	scientificName	Thallassiosiraceae	Thalassiosiraceae
+	scientificName	Chrysidiastrum caudatum	Chrysidiastrum catenatum
+	scientificName	Chrysoflagellat	Chrysophyceae
+	scientificName	Mouegotia	Mougeotia
+	scientificName	Flagellates species incertae sedis	Flagellates
+	scientificName	Unicells and flagellates species incertae sedis	Biota
+	scientificName	Unicells species incertae sedis	Biota
+	scientificName	Prostomes	Prostomatea
+	scientificName	Fragilaria ulna var. ulna	Fragilaria ulna
+	scientificName	Proboscia alata var. indica	Proboscia alata f. indica
+	scientificName	Spathulodinium pseudonoctiluca	Spatulodinium pseudonoctiluca
+	scientificName	Peridiniella catenat	Peridiniella catenata
+	scientificName	Telonema antarcticum	Telonema antarctica
+	scientificName	Rhizosolenia setigera f, pungens	Rhizosolenia setigera
+	scientificName	Phalachroma rotundatum	Phalacroma rotundatum
+	scientificName	Chaetoceros cf. seiracanthus	Chaetoceros seiracanthus
+	scientificName	Prasinophyceae (Micromonadophyceae)	Prasinophyceae
+	scientificName	Strobilidium spiralis	Strobilidium spiralis
+
+

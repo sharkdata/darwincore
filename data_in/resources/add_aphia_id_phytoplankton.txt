@@ -1,53 +1,295 @@
 scientific_name	AphiaID
-Dinophysis hastata	109627
-Polykrikos	109485
-Apocalathium	1359178
-Euglenophyceae	19539
-Gymnodinium lohmannii	109809
-Lauderia	149134
-Odontella	148963
-Fragilaria striatula	157458
-Micromonas	134533
-Woloszynskia	109492
-Apedinella spinifera	248098
-Salpingella	183566
-Gonyaulax catenata	233365
-Tabellaria	149333
-Prasinophyceae	17329
-Chrysochromulina parva	571998
-Bacillariales	149001
-Peridiniella	109543
-Eupodiscales	149660
-Planktolyngbya subtilis	146678
+Acanthocorbis asymmetrica	105543
+Achnanthes brevipes	149387
+Achnanthes longipes	156533
+Achnanthes minutissima	163582
+Actinocyclus octonarius	149164
+Actinomonas	369319
 Amphiprora paludosa	149514
+Anabaena solitaria	578207
+Ankyra	572079
+Apedinella spinifera	248098
+Aphanizomenon balticum	625384
+Apocalathium	1359178
+Asterionella	148953
+Aulacoseira italica var. tenuissima	179317
+Bacillariales	149001
+Balanion	292899
+Bicosta	105505
+Biecheleria halophila	626298
+Biota	12
+Bitrichia	578212
+Bitrichia chodatii	578213
+Bitrichia phaseolus	620901
+Botryococcus braunii	248104
+Cafeteria	103989
+Caloneis	149488
+Calycomonas wulffii	160549
+Centritractus	163946
+Centritractus belonophorus	610306
+Ceratium bucephalum	196820
+Ceratium furcoides	573683
+Ceratium fusus	109951
+Ceratium minutum	109969
+Ceratoneis closterium	163932
+Chaetoceros seiracanthus	163118
+Chaetoceros cinctus	149622
+Chaetoceros radians	149293
+Chaetoceros seriacanthus	616463
+Chlamydocapsa	178928
+Chlamydocapsa planctonica	178930
+Chlamydomonadales	732333
+Chlorophyta	801
+Chrysidiastrum	248109
+Chrysidiastrum catenatum	571996
+Chrysochromulina parva	571998
+Chrysococcus cordiformis	610225
+Chrysolykos	571999
+Chrysolykos planctonicus	572000
+Chrysolykos skujae	578264
+Chrysophyceae	146230
+Cladopyxis	109509
+Closterium limneticum	611029
+Coccolithales	493821
+Coccolithophyceae	592906
+Comasiella arcuata	578364
+Corethron	149109
+Corethron criophilum	149110
+Corethron pennatum	341496
+Corymbellus	162518
+Corymbellus aureus	162519
+Coscinodiscophyceae	148900
+Craticula cuspidata	163907
+Crucigenia	178617
+Crucigeniella	172484
+Cyclotrichium	341295
+Cylindrotheca	149003
+Cymatopleura	149007
+Cymbomonas	134527
+Desmarella	105532
+Desmatractum	601041
+Desmidium	592884
+Desmodesmus quadricauda	622762
+Diatomophyceae	478546
+Dictyosphaerium	178623
+Dictyosphaerium ehrenbergianum	178625
+Dimorphococcus lunatus	577831
+Dinobryon suecicum var. longispinum	686238
+Dinophyceae	19542
+Dinophysis hastata	109627
+Dinophyta	21005
+Diplopsalis	109515
+Diplopsalis acuta	573687
+Ebria	118014
+Entomoneis paludosa	163646
+Epipyxis	248119
+Epithemia	149026
+Euastrum	577667
+Eudorina	390664
+Euglena allorgei	615687
+Euglena hemichromata	163457
+Euglenophyceae	19539
+Eupodiscales	149660
+Eutetramorus	601613
+Favella ehrenbergii	235761
+Flagellates	146222
+Fragilaria fasciculata	176292
+Fragilaria gaillonii	617736
+Fragilaria nanana	624948
+Fragilaria striatula	157458
+Fragilaria tenera	609814
+Fragilaria ulna	149029
+Fragilaria ulna var. acus	176208
+Fragilariopsis	149313
+Glenodinium pilula	571649
+Glochidinium penardiforme	838142
+Gomphonema	149553
+Goniochloris	600926
+Goniochloris contorta	610067
+Goniochloris fallax	610068
+Gonyaulacales	109391
+Gonyaulax catenata	233365
+Grammatophora	149335
+Guinardia	149111
+Gymnodinium abbreviatum	109777
+Gymnodinium elongatum	109791
+Gymnodinium helveticum	109804
+Gymnodinium lebourae	109808
+Gymnodinium lohmannii	109809
+Gymnodinium pygmaeum	109825
+Gymnodinium rhomboides	109826
+Gymnodinium splendens	109832
+Gymnodinium uberrimum	109834
+Gyrodinium	109476
+Gyrodinium aciculatum	232901
+Gyrodinium corallinum	232922
+Gyrodinium estuariale	109852
+Gyromitus	572042
+Gyromitus cordiformis	572043
+Gyrosigma tenuissimum	157069
+Hannaea arcus	180342
+Haslea crucigera	172588
+Helicostomella	172434
+Heliocostomella subulata	240437
+Heterocapsa arctica	233607
+Kathablepharis remigera	119081
+Keratococcus suecicus	652973
+Kofoidinium	109499
+Koliella longiseta f. longiseta	1415759
+Kolkwitziella acuta	109583
+Korshikoviella	447748
+Korshikoviella limnetica	447749
+Lacrymaria	179314
+Lauderia	149134
+Leegaardiella	101179
+Leegaardiella sol	101207
+Lennoxia	450723
+Lepocinclis	163401
+Lepocinclis spirogyroides	576887
+Lingulodinium	231799
+Lohmanniella	101180
+Lyngbya	146538
+Mallomonas tonsurata	572057
+Mamiella	134531
+Meringosphaera	115075
+Micractinium	163478
+Microcystis reinboldii	177399
+Micromonas	134533
+Mougeotia	248137
+Naiadinium polonicum	841289
+Navicula directa	149467
+Navicula distans	149143
+Nephrocytium	578354
+Nephroselmis pyriformis	134541
+Nephroselmis rotunda	134542
+Noctiluca	109500
+Oblea	109542
+Oblea rotunda	110155
+Octactis	369960
+Odontella	148963
+Odontella regia	149094
+Oedogonium	577723
+Oocystis elliptica	248142
+Ophiocytium	577733
+Ophiocytium capitatum	610078
+Oscillatoria	146549
+Oxytoxum scolopax	110115
+Parafavella	196836
+Parvicorbicula	105518
+Parvodinium umbonatum	837535
+Pediastrum	160561
+Pediastrum privum	613416
 Pedinella hexacostata	375676
 Pedinellales	160597
-Dinophyta	21005
-Eutetramorus	601613
-Chlorophyta	801
-Surirella linearis	176076
-Pseudo-nitzschia fraudulenta	246606
-Chaetoceros radians	149293
+Penium	600844
+Pentapharsodinium	109504
+Peridiniella	109543
+Peridiniella catenata	110156
+Peridiniopsis	109544
+Peridiniopsis cunningtonii	233628
+Peridiniopsis elpatiewskyi	110161
+Peridiniopsis penardiforme	615598
+Peridinium bipes	110181
+Peridinium umbonatum	110196
+Peridinium willei	110198
+Phalacroma rotundatum	156505
+Plagioselmis lacustris	641580
 Planctonema	162715
-Gymnodinium splendens	109832
-Pseudo-nitzschia seriata	149152
+Planktolyngbya subtilis	146678
+Pleurasiga reynoldsii	105601
+Polykrikos	109485
+Porosira	148980
+Prasinophyceae	17329
+Prasinophyceae (Micromonadophyceae)	17329
+Proboscia alata f. indica	983150
+Pronoctiluca	109487
+Prorocentrum redfieldii	110310
+Prostomatea	425487
+Protaspis	601293
+Protoperidinium oceanicum	110240
+Protoperidinium quarnerense	110250
+Pseudobodo	103990
+Pseudobodo tremulans	104015
+Pseudodifflugia	520952
+Pseudogoniochloris tripus	627304
+Pseudokephyrion entzii	625499
+Pseudo-nitzschia americana	478556
 Pseudo-nitzschia delicatissima	149153
-Oblea rotunda	110155
-Diplopsalis	109515
-Gymnodinium elongatum	109791
-Ceratium fusus	109951
-Cymbomonas	134527
+Pseudo-nitzschia fraudulenta	246606
+Pseudo-nitzschia seriata	149152
+Pseudo-nitzschia subfraudulenta	418221
+Pseudostaurastrum	178957
+Ptychocylis urnula	345883
+Pyramimonas disomata	495333
+Pyrophacus	109555
+Quadrigula korsikovii	578519
+Quadrigula pfitzeri	578353
+Rhabdonema arcuatum	157076
+Rhabdonema minutum	175790
 Rhaphoneis amphiceros	149066
-Vanella	120566
-Dictyosphaerium	178623
-Goniochloris	600926
-Coscinodiscophyceae	148900
-Ceratoneis closterium	163932
+Rhizomonas	118025
 Rhizomonas setigera	118071
-Staurodesmus dejectus	578386
+Rhizosolenia eriensis	163521
+Rhizosolenia hebetata f, semispina	967945
+Rhizosolenia robusta	149311
+Rhizosolenia setigera	149115
+Rhodomonas lens	248153
+Rhoicosphenia	149391
+Rhopalodia gibba	149566
+Rhynchobodo	1731875
+Roperia	403852
+Salpingella	183566
+Scenedesmus dimorphus	164079
+Scenedesmus ecornis	248158
 Scrippsiella	109545
-Biota	12
-Coccolithophyceae	592906
-Dinophyceae	19542
-Heliocostomella subulata	240437
+Scrippsiella faeroense	163452
+Scuticociliatia	414712
+Spatulodinium pseudonoctiluca	109923
+Staurastrum pingue	609209
+Staurastrum tetracerum	577905
+Staurodesmus dejectus	578386
+Staurodesmus mamillatus	661136
+Staurosira berolinensis	665170
+Stephanodiscus hantzschii var. pusillus	163414
+Stephanopyxis	149630
+Stichogloea	410033
+Stichogloea doederleinii	572086
+Strobilidium epacrum	427382
+Strobilidium sphaericum	578585
+Strobilidium spiralis	101236
+Strobilidium spiralis	101236
+Strombidinopsis	101198
+Strombidium chlorophilum	595215
+Strombidium vestitum	101342
+Surirella linearis	176076
+Synchaeta	134958
+Synedra acus	149188
+Synedra delicatissima var. angustissima	176213
+Tabellaria	149333
+Tabellaria flocculosa var. geniculata	680061
+Tabularia	956059
+Telonema antarctica	118074
+Tetraedriella jovetii	610320
+Tetraselmis	134526
+Thalassionema	149092
+Thalassiosira conferta	549221
+Thalassiosiraceae	148904
+Thalassiothrix	157081
+Tontonia	101196
+Treubaria setigera	576716
+Tryblionella apiculata	176393
+Ulnaria	416120
+Ulnaria ulna	447744
+Ulnaria ulna var. acus	674837
+Urosolenia longiseta	163520
+Vanella	120566
 Vannella	120566
+Warnowia	109491
+Warnowia polyphemus	233144
+Willea	248174
+Woloszynskia	109492
+Xanthidium antilopaeum	577683
+Zoomastigophora	24
+Zygabikodinium lenticulatum	110177
+Zygnema	578376
+Zygnematales	162693

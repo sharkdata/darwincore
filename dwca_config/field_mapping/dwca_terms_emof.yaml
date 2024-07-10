@@ -378,7 +378,7 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: counted_portions
-      - measurementType: Counter program
+      - measurementType: Counter software
         measurementTypeID:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
@@ -446,7 +446,7 @@ dwcaEmofContent:
 
     extraMeasurements:
       - measurementType: Size class
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL15/"
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: size_class
@@ -524,7 +524,7 @@ dwcaEmofContent:
         measurementTypeID:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
-        sourceKey: size_class_ref_list
+        sourceKey: size_class_ref_list_code
 
 #SealPathology
       - measurementType: Age

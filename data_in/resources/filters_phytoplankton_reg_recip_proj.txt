@@ -187,5 +187,6 @@ sample_date		2010-09-00
 sample_date		2011-08-00
 
 coefficient		0		kopplat till parameter Count class
+coefficient		0.0		kopplat till parameter Count class
 
-analysed_volume_cm3		0
+sedimentation_volume_ml		0

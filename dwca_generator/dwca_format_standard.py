@@ -533,6 +533,10 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnit"] = "Individual per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
+                            elif unit == "ind/l or 100 um pieces/l":
+                                emof_dict["measurementUnit"] = "Individual per litre or 100 micrometre pieces per litre"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+
                             elif unit == "ind/m3":
                                 emof_dict["measurementUnit"] = "Individual per cubic metre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/"
