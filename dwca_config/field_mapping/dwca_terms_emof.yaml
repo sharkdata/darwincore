@@ -81,6 +81,40 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: monitoring_purpose_code
 
+      - measurementType: Prefilter pore size
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: pre_filter_size
+      - measurementType: Training set annotated by
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: training_set_annotated_by
+      - measurementType: Classifier created by
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: classifier_created_by
+      - measurementType: Classifier used
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: classifier_used
+      - measurementType: IFCB identification number
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: ifcb_number
+      - measurementType: Training set
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: training_set
+
+
+
+
 
   - eventType: sampling_event
     dwcTerms:
@@ -118,6 +152,28 @@ dwcaEmofContent:
         sourceKey:
 
     extraMeasurements:
+      - measurementType: Method reference
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: method_reference_code
+      - measurementType: Method documentation
+        measurementTypeID: "https://vocab.nerc.ac.uk/collection/Q01/current/Q0100003/" 
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: method_documentation
+      - measurementType: Sampler type
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/"
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: sampler_type_code
+        
+      - measurementType: Plankton sampling method
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: plankton_sampling_method_code
+
       - measurementType: Wave height
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/GAVGEV01/"
         measurementUnit: Metres
@@ -274,6 +330,7 @@ dwcaEmofContent:
 #        measurementUnitID:
 #        sourceKey: monitoring_purpose_code
 
+
   - eventType: sample
     dwcTerms:
       eventID:
@@ -354,7 +411,7 @@ dwcaEmofContent:
         measurementUnitID:
         sourceKey: sample_splitting_code
       - measurementType: Analysed volume
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLXXXXX/"
         measurementUnit: Cubic centimetres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVCC/"
         sourceKey: analysed_volume_cm3
@@ -384,32 +441,22 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: counter_program
 
-      - measurementType: Method reference
-        measurementTypeID:
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
-        sourceKey: method_reference_code
-      - measurementType: Method documentation
-        measurementTypeID: "https://vocab.nerc.ac.uk/collection/Q01/current/Q0100003/" 
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
-        sourceKey: method_documentation
-      - measurementType: Sampler type
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/"
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
-        sourceKey: sampler_type_code
-      - measurementType: Plankton sampling method
-        measurementTypeID:
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
-        sourceKey: plankton_sampling_method_code
-
       - measurementType: Observation point
         measurementTypeID:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: obspoint
+
+      - measurementType: Analytical laboratory name
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: analytical_laboratory_name_en
+      - measurementType: Analytical laboratory accredited
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: analytical_laboratory_accreditated
 
 
 
@@ -510,16 +557,6 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: degree_biofouling
-      - measurementType: Analytical laboratory name
-        measurementTypeID:
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
-        sourceKey: analytical_laboratory_name_en
-      - measurementType: Analytical laboratory accredited
-        measurementTypeID:
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
-        sourceKey: analytical_laboratory_accreditated
       - measurementType: Size class reference list
         measurementTypeID:
         measurementUnit: Not applicable
@@ -627,3 +664,30 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: finding_circumstances
+
+      - measurementType: Classifier taxon name
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: classifier_taxon_name
+      - measurementType: Classifier probability of detection
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: classifier_probability_of_detection
+      - measurementType: Classifier precision
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: classifier_precision
+      - measurementType: Classifier missing
+        measurementTypeID:
+        measurementUnit: Fraction
+        measurementUnitID:
+        sourceKey: classifier_missing
+      - measurementType: Date of manual quality control
+        measurementTypeID:
+        measurementUnit:
+        measurementUnitID:
+        sourceKey: manual_qc_date
+
