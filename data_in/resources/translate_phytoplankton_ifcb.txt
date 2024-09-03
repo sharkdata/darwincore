@@ -3,3 +3,8 @@ size_min_um		0	>0
 
 bvol_scientific_name		Algae	Biota
 scientific_name		Algae	Biota
+
+	scientificName	Snowella/Woronichinia	Cyanophyceae
+	scientificName	Cylindrotheca closterium/Nitzschia longissima	Bacillariaceae
+	scientificName	Leptocylindrus danicus/Leptocylindrus minimus	Leptocylindrus
+

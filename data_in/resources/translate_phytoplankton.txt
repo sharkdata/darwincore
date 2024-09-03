@@ -47,4 +47,8 @@ bvol_scientific_name		Algae	Biota
 	scientificName	Prasinophyceae (Micromonadophyceae)	Prasinophyceae
 	scientificName	Strobilidium spiralis	Strobilidium spiralis
 
+### IFCB
+
+	scientificName	Snowella/Woronichinia	Cyanophyceae
+
 

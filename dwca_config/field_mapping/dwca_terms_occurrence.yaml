@@ -32,6 +32,7 @@ dwcaOccurrenceColumns:
     - basisOfRecord
     - recordedBy
     - occurrenceRemarks
+    - identificationVerificationStatus
     - dynamicProperties
 
 dwcaOccurrenceContent:
@@ -107,10 +108,14 @@ dwcaOccurrenceContent:
               sourceKey: taxonomist
           occurrenceRemarks:
               sourceKey:
+          identificationVerificationStatus:
+              sourceKey: image_verification
           dynamicProperties:
               dynamic:
                   - dynamicKey: ReportedScientificName
                     sourceKey: reported_scientific_name
+                  - dynamicKey: Trophic type
+                    sourceKey: trophic_type_code
                   - dynamicKey: SizeClass
                     sourceKey: size_class
                   - dynamicKey: CellVolume(um3)

@@ -86,6 +86,10 @@ class DwcaFormatStandard(object):
                     if not event_dict.get("sampleSizeValue"):
                        event_dict["sampleSizeUnit"] = ""
 
+                        # IFCB sample vol unit fix litres to millilitres
+                    if "IFCB" in event_dict.get("dynamicProperties", "") and event_dict.get("sampleSizeValue"):
+                        event_dict["sampleSizeUnit"] = "Millilitres"
+
                         # Seal Pathology area fix using obis.org/maptool moving position from county capital to position in water and with individual uncertainty radius m
                     if event_dict.get("verbatimLocality") == "BD" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
                         event_dict["locality"] = "BD Norrbotten County"
@@ -245,7 +249,10 @@ class DwcaFormatStandard(object):
                         event_dict["decimalLongitude"] = "12.99"
                         event_dict["coordinateUncertaintyInMeters"] = "122710"
 
-        
+                    
+
+
+
                         # Append event row content.
                     self.dwca_event.append(event_dict.copy())
 
@@ -413,15 +420,18 @@ class DwcaFormatStandard(object):
                             # nerc codes found at https://vocab.nerc.ac.uk/collection/P01/current/
                             parameter = emof_dict.get("measurementType", "")
                             unit = emof_dict.get("measurementUnit", "")
+                            measurement_method = emof_dict.get("measurementMethod", "")
 
                             if parameter == "# counted":
                                 emof_dict["measurementType"] = "Count"
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
 
-                            elif parameter == "Abundance":
+                            elif parameter == "Abundance" or parameter == "Bacterial abundance" or parameter =="Bacterial concentration":
+                                emof_dict["measurementType"] = "Abundance"                                
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01"
 
-                            elif parameter == "Carbon content":
+                            elif parameter == "Carbon content" or parameter == "Carbon concentration":
+                                emof_dict["measurementType"] = "Carbon content"
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/MDMAP010/"
 
                             elif parameter == "Length mean":
@@ -461,11 +471,36 @@ class DwcaFormatStandard(object):
                             elif parameter == "Wet weight/area":
                                 emof_dict["measurementType"] = "Wet weight per area"
 
-                            elif parameter == "Cell volume":
+                            elif parameter == "Cell volume" or parameter == "Bacterial cell volume":
+                                emof_dict["measurementType"] = "Cell volume"
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/CVOLZZ01/"
 
                             elif parameter == "Biovolume concentration":
                                 emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/CVOLUKNB/"
+
+                            elif parameter == "Bacterial cell carbon content":
+                                emof_dict["measurementType"] = "Cell carbon content"
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/MAOCCB11/"
+
+                            elif parameter == "Bacterial carbon production":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P02/current/UPTH/"
+
+                            elif parameter == "3H thymidine uptake":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P09/current/UPTH/"
+
+                            elif parameter == "Bacterial production":
+                                emof_dict["measurementType"] = "Bacterial growth"
+                                emof_dict["measurementTypeID"] = "https://vocab.nerc.ac.uk/collection/P02/current/GREF/"
+
+                            elif parameter == "Unclassified Regions Of Interest - # counted":
+                                emof_dict["measurementType"] = "Unclassified Regions Of Interest - Count"
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600008/"
+
+                            elif parameter == "Unclassified Regions Of Interest - Abundance":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600002/"
+
+                            elif parameter == "Unclassified Regions Of Interest - Volume":
+                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600025/"
 
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
@@ -514,7 +549,7 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnit"] = "Hectopascals"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
 
-                            elif unit == "mm3/l":
+                            elif unit == "mm3/l" or unit == "mm3/L":
                                 emof_dict["measurementUnit"] = "Cubic millimetres per litre"
 
                             elif unit == "g/m3":
@@ -529,12 +564,20 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnit"] = "Cubic micrometres"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
 
+                            elif unit == "um3/cell":
+                                emof_dict["measurementUnit"] = "Cubic micrometres per cell"
+
                             elif unit == "ind/l":
                                 emof_dict["measurementUnit"] = "Individual per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
-                            elif unit == "ind/l or 100 um pieces/l":
+                            elif unit == "ind/l or 100 um pieces/l" and measurement_method != "Image analysis":
                                 emof_dict["measurementUnit"] = "Individual per litre or 100 micrometre pieces per litre"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+
+                            #IFCB
+                            elif unit == "ind/l or 100 um pieces/l" and measurement_method == "Image analysis":
+                                emof_dict["measurementUnit"] = "Individual per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
                             elif unit == "ind/m3":
@@ -564,8 +607,26 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnit"] = "Cell per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
-                            elif unit == "ind/analysed sample fraction":
+                            elif unit == "cells/l/d":
+                                emof_dict["measurementUnit"] = "Cells per litre per day"
+
+                            elif unit == "ug/L/24h":
+                                emof_dict["measurementUnit"] = "Micrograms per litre per day"
+
+                            elif unit == "mole/cm3/h":
+                                emof_dict["measurementUnit"] = "Moles per cubic centimetre per hour"
+
+                            elif unit == "cells/ml":
+                                emof_dict["measurementUnit"] = "Cell per millilitre"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCML/"
+
+                            elif unit == "ind/analysed sample fraction" and measurement_method != "Image analysis":
                                 emof_dict["measurementUnit"] = "Individual per analysed sample fraction"
+
+                            #IFCB
+                            elif unit == "ind/analysed sample fraction" and measurement_method == "Image analysis":
+                                emof_dict["measurementUnit"] = "Dimensionless"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
 
                             elif unit == "nr":
                                 emof_dict["measurementUnit"] = "Number"
@@ -583,9 +644,23 @@ class DwcaFormatStandard(object):
                             elif unit == "mg/m3":
                                 emof_dict["measurementUnit"] = "Milligrams per cubic metre"
 
+                            elif unit == "fg C/cell":
+                                emof_dict["measurementUnit"] = "Femtograms per cell"
+
                             elif unit == "ind": #measurementType Count with ind as unit in SHARK
                                 emof_dict["measurementUnit"] = "Dimensionless"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+
+                            elif unit == "ROI/analysed sample": 
+                                emof_dict["measurementUnit"] = "Dimensionless"
+                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+
+                            elif unit == "ROI/L": 
+                                emof_dict["measurementUnit"] = "Regions Of Interest per litre"
+
+
+
+
 
 
                             if parameter == "Salinity" and unit == "":

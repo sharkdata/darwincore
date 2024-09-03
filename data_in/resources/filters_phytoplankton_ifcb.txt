@@ -1,146 +1,5 @@
 source_field	include_value	exclude_value	filter_group_id	comments
-			
-dataset_name		SHARK_Phytoplankton_1983_SUSE
-dataset_name		SHARK_Phytoplankton_1984_SUSE
-dataset_name		SHARK_Phytoplankton_1985_SUSE
-dataset_name		SHARK_Phytoplankton_1986_1997_KMRS
-dataset_name		SHARK_Phytoplankton_1986_SUSE
-dataset_name		SHARK_Phytoplankton_1986_2007_SMHI_natdata_planktondb
-dataset_name		SHARK_Phytoplankton_1987_SUSE
-dataset_name		SHARK_Phytoplankton_1988_SUSE
-dataset_name		SHARK_Phytoplankton_1989_SUSE
-dataset_name		SHARK_Phytoplankton_1990_SUSE
-dataset_name		SHARK_Phytoplankton_1991_SUSE
-dataset_name		SHARK_Phytoplankton_1992_SUSE
-dataset_name		SHARK_Phytoplankton_1993_SUSE
-dataset_name		SHARK_Phytoplankton_1994_SUSE
-dataset_name		SHARK_Phytoplankton_1994_1996_SMHI_Anholt
-dataset_name		SHARK_Phytoplankton_1995_SUSE
-dataset_name		SHARK_Phytoplankton_1995_2001_UMSC
-dataset_name		SHARK_Phytoplankton_1996_SUSE
-dataset_name		SHARK_Phytoplankton_1997_SMHI_Anholt
-dataset_name		SHARK_Phytoplankton_1997_SUSE
-dataset_name		SHARK_Phytoplankton_1998_SUSE
-dataset_name		SHARK_Phytoplankton_1999_SUSE
-dataset_name		SHARK_Phytoplankton_2000_SMHI_Anholt
-dataset_name		SHARK_Phytoplankton_2000_SUSE
-dataset_name		SHARK_Phytoplankton_2001_SMHI_A17
-dataset_name		SHARK_Phytoplankton_2001_SUSE
-dataset_name		SHARK_Phytoplankton_2002_SMHI
-dataset_name		SHARK_Phytoplankton_2002_SUSE
-dataset_name		SHARK_Phytoplankton_2002_UMSC
-dataset_name		SHARK_Phytoplankton_2003_SUSE
-dataset_name		SHARK_Phytoplankton_2003_SMHI_Slaggo
-dataset_name		SHARK_Phytoplankton_2003_SMHI_A17
-dataset_name		SHARK_Phytoplankton_2003_SMHI
-dataset_name		SHARK_Phytoplankton_2003_UMSC
-dataset_name		SHARK_Phytoplankton_2004_SUSE
-dataset_name		SHARK_Phytoplankton_2004_SMHI
-dataset_name		SHARK_Phytoplankton_2004_UMSC
-dataset_name		SHARK_Phytoplankton_2005_SMHI
-dataset_name		SHARK_Phytoplankton_2005_SUSE
-dataset_name		SHARK_Phytoplankton_2005_UMSC
-dataset_name		SHARK_Phytoplankton_2006_SUSE
-dataset_name		SHARK_Phytoplankton_2006_SMHI
-dataset_name		SHARK_Phytoplankton_2006_UMSC
-dataset_name		SHARK_Phytoplankton_2007_UMSC
-dataset_name		SHARK_Phytoplankton_2007_SUSE
-dataset_name		SHARK_Phytoplankton_2007_SMHI
-dataset_name		SHARK_Phytoplankton_2008_SUSE
-dataset_name		SHARK_Phytoplankton_2008_SMHI
-dataset_name		SHARK_Phytoplankton_2008_UMSC
-dataset_name		SHARK_Phytoplankton_2009_SMHI
-dataset_name		SHARK_Phytoplankton_2009_SUSE
-dataset_name		SHARK_Phytoplankton_2009_UMSC
-dataset_name		SHARK_Phytoplankton_2010_UMSC
-dataset_name		SHARK_Phytoplankton_2010_SMHI
-dataset_name		SHARK_Phytoplankton_2010_SUSE
-dataset_name		SHARK_Phytoplankton_2011_SUSE
-dataset_name		SHARK_Phytoplankton_2011_SMHI
-dataset_name		SHARK_Phytoplankton_2011_UMSC
-dataset_name		SHARK_Phytoplankton_2012_UMSC
-dataset_name		SHARK_Phytoplankton_2012_SMHI
-dataset_name		SHARK_Phytoplankton_2012_SUSE
-dataset_name		SHARK_Phytoplankton_2013_SMHI
-dataset_name		SHARK_Phytoplankton_2013_DEEP
-dataset_name		SHARK_Phytoplankton_2013_UMSC
-dataset_name		SHARK_Phytoplankton_2014_DEEP
-dataset_name		SHARK_Phytoplankton_2014_SMHI
-dataset_name		SHARK_Phytoplankton_2014_UMSC
-dataset_name		SHARK_Phytoplankton_2015_DEEP
-dataset_name		SHARK_Phytoplankton_2015_SMHI
-dataset_name		SHARK_Phytoplankton_2015_UMSC
-dataset_name		SHARK_Phytoplankton_2016_DEEP
-dataset_name		SHARK_Phytoplankton_2016_SMHI
-dataset_name		SHARK_Phytoplankton_2016_UMSC
-dataset_name		SHARK_Phytoplankton_2017_SMHI
-dataset_name		SHARK_Phytoplankton_2017_DEEP
-dataset_name		SHARK_Phytoplankton_2017_UMSC
-dataset_name		SHARK_Phytoplankton_2018_UMSC
-dataset_name		SHARK_Phytoplankton_2018_DEEP
-dataset_name		SHARK_Phytoplankton_2018_SMHI
-dataset_name		SHARK_Phytoplankton_2019_UMSC
-dataset_name		SHARK_Phytoplankton_2019_SMHI
-dataset_name		SHARK_Phytoplankton_2019_DEEP
-dataset_name		SHARK_Phytoplankton_2019_DEEP_SKVVF		?
-dataset_name		SHARK_Phytoplankton_2020_UMSC
-dataset_name		SHARK_Phytoplankton_2020_SMHI
-dataset_name		SHARK_Phytoplankton_2020_DEEP
-dataset_name		SHARK_Phytoplankton_2021_UMSC
-dataset_name		SHARK_Phytoplankton_2021_SMHI
-dataset_name		SHARK_Phytoplankton_2021_DEEP
-dataset_name		SHARK_Phytoplankton_2021_SMHI_SLCK
 
-dataset_name		SHARK_Phytoplankton_2015_SMHI_TRANSPAPER
-dataset_name		SHARK_Phytoplankton_2013_SMHI_TRANSPAPER
-dataset_name		SHARK_Phytoplankton_2017_SMHI_WEAQ_TRANSPAPER
-dataset_name		SHARK_Phytoplankton_2020_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2015_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2018_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2011_NIVA_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2017_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2019_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2020_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2021_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2010_SMHI_Ferrybox
-dataset_name		SHARK_Phytoplankton_2016_SMHI_JERICO
-dataset_name		SHARK_Phytoplankton_2016_SMHI_JERICO_IFCB
-dataset_name		SHARK_Phytoplankton_2019_SMHI_DNA
-dataset_name		SHARK_Phytoplankton_2019_UMSC_DNA
-
-dataset_name		SHARK_Phytoplankton_2000-2004_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2004-2006_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2007-2009_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2010_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2011_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2012_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2013_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2014_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2015_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2016_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2017_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2018_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2019_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2020_SMHI_SLV_biotox
-dataset_name		SHARK_Phytoplankton_2021_SMHI_SLV_biotox
-
-# New datasets for export, prepared July 2023
-
-dataset_name		SHARK_Phytoplankton_2022_SMHI
-dataset_name		SHARK_Phytoplankton_2022_MEDINS
-dataset_name		SHARK_Phytoplankton_2022_UMSC
-dataset_name		SHARK_Phytoplankton_2022_DEEP
-
-dataset_name		SHARK_Phytoplankton_2022_SMHI_ColorFantasy
-dataset_name		SHARK_Phytoplankton_2022_SLCK		Microzooplankton
-dataset_name		SHARK_Phytoplankton_2022_SMHI_SLV_biotox
-
-
-
-
-
-
-parameter		Carbon concentration
 
 parameter		Biovolume concentration	Param-zero-1
 value		0.0	Param-zero-1
@@ -159,18 +18,10 @@ value		0	Param-zero-12
 parameter		Abundance	Param-zero-13
 value		0.0	Param-zero-13
 
+parameter		Carbon concentration	Param-zero-14
+value		0	Param-zero-14
 
 
 sampled_volume_l		0
-
-analysis_date		42353
-analysis_date		42354
-analysis_date		42355
-analysis_date		42650
-analysis_date		42651
-analysis_date		2010-09-00
-analysis_date		2011-08-00
-sample_date		2010-09-00
-sample_date		2011-08-00
 
 coefficient		0		kopplat till parameter Count class

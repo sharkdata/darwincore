@@ -83,34 +83,26 @@ dwcaEmofContent:
 
       - measurementType: Prefilter pore size
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: pre_filter_size
+        measurementUnit: Micrometres
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
+        sourceKey: pre_filter_size_um
       - measurementType: Training set annotated by
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: training_set_annotated_by
-      - measurementType: Classifier created by
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: classifier_created_by
-      - measurementType: Classifier used
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: classifier_used
       - measurementType: IFCB identification number
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: ifcb_number
       - measurementType: Training set
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: training_set
+
+
 
 
 
@@ -158,16 +150,16 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: method_reference_code
       - measurementType: Method documentation
-        measurementTypeID: "https://vocab.nerc.ac.uk/collection/Q01/current/Q0100003/" 
+        measurementTypeID: "https://vocab.nerc.ac.uk/collection/P01/current/DSSPMT01/" 
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: method_documentation
       - measurementType: Sampler type
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100002/"
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/"
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: sampler_type_code
-        
+
       - measurementType: Plankton sampling method
         measurementTypeID:
         measurementUnit: Not applicable
@@ -370,8 +362,13 @@ dwcaEmofContent:
         measurementUnit: Litres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
         sourceKey: sampled_volume_l
+      - measurementType: Sampled volume
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLWBSMP/"
+        measurementUnit: Millilitres
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
+        sourceKey: sampled_volume_ml
       - measurementType: Sampler area
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/Q01/current/Q0100017/"
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MTHAREA1/"
         measurementUnit: Square centimetres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/SQCM/"
         sourceKey: sampler_area_cm2
@@ -458,6 +455,71 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: analytical_laboratory_accreditated
 
+      - measurementType: pH total scale FerryBox
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/S06/current/S0600277/"
+        measurementUnit: 
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUPH/"
+        sourceKey: ph_fb
+      - measurementType: Chlorophyll fluorescence FerryBox
+        measurementTypeID:
+        measurementUnit: Micrograms per litre
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
+        sourceKey: chl_flu2_ug_l_fb
+      - measurementType: Colored dissolved organic matter FerryBox
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/OG1/current/CDOM/"
+        measurementUnit: Parts per billion
+        measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPPB/"
+        sourceKey: cdom_ppb_fb
+      - measurementType: Phycoerythrin fluorescence FerryBox
+        measurementTypeID:
+        measurementUnit: Micrograms per litre
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
+        sourceKey: phyer_ug_l_fb
+      - measurementType: Phycocyanin fluorescence FerryBox
+        measurementTypeID:
+        measurementUnit: Micrograms per litre
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
+        sourceKey: phycy_ug_l_fb
+      - measurementType: Waterflow FerryBox
+        measurementTypeID:
+        measurementUnit: Litres per minute
+        measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/ULPM/"
+        sourceKey: waterflow_l_min_fb
+      - measurementType: Turbidity FerryBox
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P25/current/TURB/"
+        measurementUnit: Nephelometric turbidity units
+        measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/USTU/"
+        sourceKey: turb_ntu_fb
+      - measurementType: Partial pressure carbon dioxide FerryBox
+        measurementTypeID:
+        measurementUnit: Parts per million
+        measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPPM/"
+        sourceKey: pco2_ppm_fb
+      - measurementType: Water temperature FerryBox
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
+        measurementUnit: Degrees Celsius
+        measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
+        sourceKey: water_temp_deg_c_fb
+      - measurementType: Practical salinity FerryBox
+        measurementTypeID: "https://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01/"
+        measurementUnit: "Dimensionless"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+        sourceKey: psal_psu_fb
+      - measurementType: Oxygen saturation FerryBox
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P09/current/OSAT/"
+        measurementUnit: Percent
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPCT/"
+        sourceKey: osat_percent_fb
+      - measurementType: Dissolved oxygen FerryBox
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P09/current/DOX1/"
+        measurementUnit: Millilitres per litre
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMLL/"
+        sourceKey: doxy_ml_l_fb
+      - measurementType: Classifier created by
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: classifier_created_by
 
 
   - eventType: occurrence
@@ -667,27 +729,22 @@ dwcaEmofContent:
 
       - measurementType: Classifier taxon name
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: classifier_taxon_name
-      - measurementType: Classifier probability of detection
+      - measurementType: Classifier F1 score model accuracy
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: classifier_probability_of_detection
-      - measurementType: Classifier precision
-        measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
-        sourceKey: classifier_precision
-      - measurementType: Classifier missing
-        measurementTypeID:
-        measurementUnit: Fraction
-        measurementUnitID:
-        sourceKey: classifier_missing
+        measurementUnit: Percent
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPCT/"
+        sourceKey: classifier_f1_score_percent
       - measurementType: Date of manual quality control
         measurementTypeID:
-        measurementUnit:
-        measurementUnitID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: manual_qc_date
+      - measurementType: Classifier used
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: classifier_used
 
