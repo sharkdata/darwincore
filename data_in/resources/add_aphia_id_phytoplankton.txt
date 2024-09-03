@@ -62,6 +62,7 @@ Coscinodiscophyceae	148900
 Craticula cuspidata	163907
 Crucigenia	178617
 Crucigeniella	172484
+Cyanophyceae	146542
 Cyclotrichium	341295
 Cylindrotheca	149003
 Cymatopleura	149007
@@ -257,7 +258,7 @@ Stichogloea doederleinii	572086
 Strobilidium epacrum	427382
 Strobilidium sphaericum	578585
 Strobilidium spiralis	101236
-Strobilidium spiralis	101236
+Strobilidiumï¿½spiralis	101236
 Strombidinopsis	101198
 Strombidium chlorophilum	595215
 Strombidium vestitum	101342
@@ -293,3 +294,4 @@ Zoomastigophora	24
 Zygabikodinium lenticulatum	110177
 Zygnema	578376
 Zygnematales	162693
+Mesodinium major	1476503
