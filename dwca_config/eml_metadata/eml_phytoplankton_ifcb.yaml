@@ -4,14 +4,11 @@
 additionalMetadata:
     metadata:
         gbif:
-            citation: Swedish county administration boards,
-                Swedish municipalities,
-                Swedish coalitions of water conservation,
-                and Swedish Meteorological and Hydrological Institute et.al.(2023).
-                SHARK - Regional marine environmental monitoring, recipient control and monitoring projects of Phytoplankton in Sweden since 1985.
+            citation: Swedish Meteorological and Hydrological Institute (2024).
+                SHARK - Phyto- and Microzooplankton Data Collected by Imaging FlowCytobots (IFCB) in Swedish and Adjacent Waters
 
 dataset:
-    title: SHARK - Phyto- and Microzooplankton Data from Imaging FlowCytobot (IFCB) from Sweden
+    title: SHARK - Phyto- and Microzooplankton Data Collected by Imaging FlowCytobots (IFCB) in Swedish and Adjacent Waters
 
     abstract:
         para:
@@ -30,32 +27,17 @@ dataset:
         methodStep:
             description:
                 para:
-                    - "Data are collected and analyzed according to the
-                      HELCOM COMBINE Manual - Part C Annex C6 Monitoring of phytoplankton species composition,
-                      abundance and biomass (https://www.helcom.fi/wp-content/uploads/2019/08/Guidelines-for-monitoring-phytoplankton-species-composition-abundance-and-biomass.pdf) or similar methods."
+                    - "Monitoring is performed by Swedish Meteorological and Hydrological Institute.
+                       Data is collected and analyzed using the instrument Imaging FlowCytobot (IFCB). The IFCB uses flow cytometry technology and video to detects particles in a water sample. Images are automatically analysed using software and particles are classified and assigned a taxon name as well as a volume.
+                       The analysis is performed using following methods: https://github.com/hsosik/ifcb-analysis, https://github.com/kudelalab/PSD, https://github.com/EuropeanIFCBGroup/iRfcb"
+
         sampling:
-            description: "For the purpose of quantitative studies in the open sea, the minimum requirement is to take an integrated sample from 0 to 10 m depth using a hose (Lindahl 1986) or by pooling equal amounts of water collected from fixed depths between 0 and 10 m using a water sampler (see Majaneva et al. 2009 for examples). The recommended sampling depths are 0 � 1 m, 2.5 m, 5 m, 7.5 m and 10 m. [�] It is recommended to take additional net samples from the water column (e.g. from 0 to 20 m) in order to obtain concentrated phytoplankton samples. (HELCOM COMBINE Manual https://www.helcom.fi/wp-content/uploads/2019/08/Guidelines-for-monitoring-phytoplankton-species-composition-abundance-and-biomass.pdf) "
+            description: "Sampling is performed using shipboard flowthrough system (e.g. FerryBox) where the IFCB is connected as an addon instrument. Sampling is also performed at specific locations with the IFCB submerged in the water."
 
     coverage:
         geographicCoverage:
-            geographicDescription: "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379"
-        # taxonomicCoverage:  Phylum:
-        #                     Miozoa
-        #                     Bacillariophyta
-        #                     Cryptophyta
-        #                     Ciliophora
-        #                     Cyanobacteria
-        #                     Chlorophyta
-        #                     Protozoa, phylum incertae sedis
-        #                     Euglenophyta
-        #                     Ochrophyta
-        #                     Haptophyta
-        #                     Choanozoa
-        #                     Katablepharidophyta
-        #                     Telonemia
-        #                     Amoebozoa
-        #                     Eukaryota unassigned, phylum incertae sedis
-        #                     Cercozoa
+            geographicDescription: "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379, http://marineregions.org/mrgid/2350"
+
 
     keywordSet:
         keywords:

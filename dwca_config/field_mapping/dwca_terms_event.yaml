@@ -294,11 +294,11 @@ dwcaEventContent:
           coordinatePrecision:
               sourceKey:
           license:
-              text: CC0
+              text: 
           rightsHolder:
-              text: Swedish Agency for Marine and Water Management
+              text: 
           accessRights:
-              text: CC0
+              text: 
           institutionCode:
               sourceKey:
           datasetName:

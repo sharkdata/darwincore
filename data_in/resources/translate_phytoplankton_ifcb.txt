@@ -7,4 +7,20 @@ scientific_name		Algae	Biota
 	scientificName	Snowella/Woronichinia	Cyanophyceae
 	scientificName	Cylindrotheca closterium/Nitzschia longissima	Bacillariaceae
 	scientificName	Leptocylindrus danicus/Leptocylindrus minimus	Leptocylindrus
+	scientificName	Gyrosigma/Pleurosigma	Pleurosigmataceae
+	scientificName	Heterocapsa/Azadinium	Peridiniphycidae
+	scientificName	Rhizosolenia/Pseudosolenia	Rhizosoleniaceae
+
+	locality	TÃ¥ngesund	Tångesund
+	verbatimLocality	TÃ¥ngesund	Tångesund
+
+trophic_type_code		AU	Autotrophic
+trophic_type_code		HT	Heterotrophic
+trophic_type_code		MX	Mixotrophic
+trophic_type_code		NS	Not specified
+
+analysis_method_code		IMA-SW	Image analysis - software
+analysis_method_code		IMA	Image analysis - manual
+analysis_method_code		Image analysis	Image analysis - manual
+
 

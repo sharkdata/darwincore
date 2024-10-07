@@ -81,26 +81,6 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: monitoring_purpose_code
 
-      - measurementType: Prefilter pore size
-        measurementTypeID:
-        measurementUnit: Micrometres
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
-        sourceKey: pre_filter_size_um
-      - measurementType: Training set annotated by
-        measurementTypeID:
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
-        sourceKey: training_set_annotated_by
-      - measurementType: IFCB identification number
-        measurementTypeID:
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
-        sourceKey: ifcb_number
-      - measurementType: Training set
-        measurementTypeID:
-        measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
-        sourceKey: training_set
 
 
 
@@ -311,16 +291,37 @@ dwcaEmofContent:
         measurementUnit: Date
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P02/current/AYMD/"
         sourceKey: visit_logger_enddate
+
+      - measurementType: Prefilter pore size
+        measurementTypeID:
+        measurementUnit: Micrometres
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
+        sourceKey: pre_filter_size_um
+      - measurementType: Training set annotated by
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: training_set_annotated_by
+      - measurementType: Instrument identification number
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: instrument_number
+      - measurementType: Training set
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: training_set
 #      - measurementType: Monitoring station type
 #       measurementTypeID:
 #        measurementUnit:
 #        measurementUnitID:
 #        sourceKey: monitoring_station_type_code
-#      - measurementType: Monitoring purpose
-#        measurementTypeID:
-#        measurementUnit:
-#        measurementUnitID:
-#        sourceKey: monitoring_purpose_code
+      - measurementType: Sampling platform code
+        measurementTypeID: "https://vocab.nerc.ac.uk/collection/V12/current/C17/"
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: platform_code
 
 
   - eventType: sample
@@ -455,27 +456,27 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: analytical_laboratory_accreditated
 
-      - measurementType: pH total scale FerryBox
+      - measurementType: pH total scale
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/S06/current/S0600277/"
         measurementUnit: 
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUPH/"
         sourceKey: ph_fb
-      - measurementType: Chlorophyll fluorescence FerryBox
+      - measurementType: Chlorophyll fluorescence
         measurementTypeID:
         measurementUnit: Micrograms per litre
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
         sourceKey: chl_flu2_ug_l_fb
-      - measurementType: Colored dissolved organic matter FerryBox
+      - measurementType: Colored dissolved organic matter
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/OG1/current/CDOM/"
         measurementUnit: Parts per billion
         measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPPB/"
         sourceKey: cdom_ppb_fb
-      - measurementType: Phycoerythrin fluorescence FerryBox
+      - measurementType: Phycoerythrin fluorescence
         measurementTypeID:
         measurementUnit: Micrograms per litre
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
         sourceKey: phyer_ug_l_fb
-      - measurementType: Phycocyanin fluorescence FerryBox
+      - measurementType: Phycocyanin fluorescence
         measurementTypeID:
         measurementUnit: Micrograms per litre
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
@@ -485,32 +486,32 @@ dwcaEmofContent:
         measurementUnit: Litres per minute
         measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/ULPM/"
         sourceKey: waterflow_l_min_fb
-      - measurementType: Turbidity FerryBox
+      - measurementType: Turbidity 
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P25/current/TURB/"
         measurementUnit: Nephelometric turbidity units
         measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/USTU/"
         sourceKey: turb_ntu_fb
-      - measurementType: Partial pressure carbon dioxide FerryBox
+      - measurementType: Partial pressure carbon dioxide
         measurementTypeID:
         measurementUnit: Parts per million
         measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPPM/"
         sourceKey: pco2_ppm_fb
-      - measurementType: Water temperature FerryBox
+      - measurementType: Water temperature
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
         measurementUnit: Degrees Celsius
         measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
         sourceKey: water_temp_deg_c_fb
-      - measurementType: Practical salinity FerryBox
+      - measurementType: Practical salinity
         measurementTypeID: "https://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01/"
         measurementUnit: "Dimensionless"
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
         sourceKey: psal_psu_fb
-      - measurementType: Oxygen saturation FerryBox
+      - measurementType: Oxygen saturation
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P09/current/OSAT/"
         measurementUnit: Percent
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPCT/"
         sourceKey: osat_percent_fb
-      - measurementType: Dissolved oxygen FerryBox
+      - measurementType: Dissolved oxygen
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P09/current/DOX1/"
         measurementUnit: Millilitres per litre
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMLL/"
@@ -520,6 +521,13 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: classifier_created_by
+      - measurementType: Quality flag
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: quality_flag
+
+
 
 
   - eventType: occurrence
@@ -624,6 +632,11 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: size_class_ref_list_code
+      - measurementType: Trophic type
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P21/current/MS10997/"
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: trophic_type_code
 
 #SealPathology
       - measurementType: Age
