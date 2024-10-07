@@ -13,6 +13,7 @@ Aphanizomenon balticum	625384
 Apocalathium	1359178
 Asterionella	148953
 Aulacoseira italica var. tenuissima	179317
+Bacillariaceae	149002
 Bacillariales	149001
 Balanion	292899
 Bicosta	105505
@@ -147,6 +148,7 @@ Leegaardiella sol	101207
 Lennoxia	450723
 Lepocinclis	163401
 Lepocinclis spirogyroides	576887
+Leptocylindrus	149038
 Lingulodinium	231799
 Lohmanniella	101180
 Lyngbya	146538
@@ -190,6 +192,7 @@ Peridiniopsis	109544
 Peridiniopsis cunningtonii	233628
 Peridiniopsis elpatiewskyi	110161
 Peridiniopsis penardiforme	615598
+Peridiniphycidae	493845
 Peridinium bipes	110181
 Peridinium umbonatum	110196
 Peridinium willei	110198
@@ -197,6 +200,7 @@ Phalacroma rotundatum	156505
 Plagioselmis lacustris	641580
 Planctonema	162715
 Planktolyngbya subtilis	146678
+Pleurosigmataceae	149032
 Pleurasiga reynoldsii	105601
 Polykrikos	109485
 Porosira	148980
@@ -234,6 +238,7 @@ Rhizosolenia eriensis	163521
 Rhizosolenia hebetata f, semispina	967945
 Rhizosolenia robusta	149311
 Rhizosolenia setigera	149115
+Rhizosoleniaceae	149068
 Rhodomonas lens	248153
 Rhoicosphenia	149391
 Rhopalodia gibba	149566
