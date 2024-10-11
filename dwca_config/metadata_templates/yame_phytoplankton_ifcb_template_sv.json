@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "7ef11fb7-63fa-4926-8532-90da492a0e33",
+        "fileIdentifier": "FIXA NYTT",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -20,7 +20,7 @@
     ],
     "identificationInfo": {
         "citation": {
-            "title": "{{ metadata.titles.REG_RECIP_PROJ.phytoplankton.sv }}",
+            "title": "{{ metadata.titles.PROJ.IFCB.sv }}",
             "alternateTitle": "",
             "dates": {
                 "creation": "2022-09-10",
@@ -29,7 +29,7 @@
             },
             "identifier": "https://opendata-catalog.smhi.se/md/7ef11fb7-63fa-4926-8532-90da492a0e33"
         },
-        "abstract": "{{ metadata.methods.REG_RECIP_PROJ.phytoplankton.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.REG_RECIP_PROJ.phytoplankton.sv }}",
+        "abstract": "{{ metadata.methods.PROJ.IFCB.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.PROJ.IFCB.sv }}",
         "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
@@ -128,7 +128,7 @@
               }
         },
         "extent": {
-            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaKattegatSkagerrak.sv}}",
+            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaKattegatSkagerrakNorthsea.sv}}",
             "geographicElement": {
                 "westBoundLongitude": "{{ metadata_auto.longitude_min }}",
                 "eastBoundLongitude": "{{ metadata_auto.longitude_max }}",
@@ -180,7 +180,7 @@
             "role": "distributor"
         },
         "distributorTransferOptions": [
-            {% for transfer_option in metadata.url_linkage.REG_RECIP_PROJ.phytoplankton.sv %}
+            {% for transfer_option in metadata.url_linkage.PROJ.IFCB.sv %}
                 {"name": "{{ transfer_option.title[:] }}",
                 "linkage": "{{ transfer_option.url[:]}}",
                 "description": "{{ transfer_option.description[:] }}",
@@ -190,7 +190,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.REG_RECIP_PROJ.default.sv }}",
+        "lineage": "{{ metadata.orderer.PROJ.IFCB.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {

@@ -421,6 +421,9 @@ class DwcaFormatStandard(object):
                             parameter = emof_dict.get("measurementType", "")
                             unit = emof_dict.get("measurementUnit", "")
                             measurement_method = emof_dict.get("measurementMethod", "")
+                            
+
+                            
 
                             if parameter == "# counted":
                                 emof_dict["measurementType"] = "Count"
@@ -571,12 +574,13 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementUnit"] = "Individual per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
-                            elif unit == "ind/l or 100 um pieces/l" and measurement_method != "Image analysis":
+                            #Phytoplankton
+                            elif unit == "ind/l or 100 um pieces/l" and measurement_method not in ["Image analysis", "IMA-SW", "IMA", "Image analysis - software", "Image analysis - manual"]:
                                 emof_dict["measurementUnit"] = "Individual per litre or 100 micrometre pieces per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
                             #IFCB
-                            elif unit == "ind/l or 100 um pieces/l" and measurement_method == "Image analysis":
+                            elif unit == "ind/l or 100 um pieces/l" and measurement_method in ["Image analysis", "IMA-SW", "IMA", "Image analysis - software", "Image analysis - manual"]:
                                 emof_dict["measurementUnit"] = "Individual per litre"
                                 emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 
@@ -657,8 +661,6 @@ class DwcaFormatStandard(object):
 
                             elif unit == "ROI/L": 
                                 emof_dict["measurementUnit"] = "Regions Of Interest per litre"
-
-
 
 
 

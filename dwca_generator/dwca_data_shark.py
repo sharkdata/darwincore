@@ -43,7 +43,7 @@ class DwcaDataSharkStandard:
         logger.info("")
         logger.info("Adding dataset: " + dataset_filepath)
 
-        # Check if data package is marked for production (PROD).
+        # Check if data package is marked for production (PROD). THIS IS BYPASSED BY MH "or value.lower() == "test" "
         status_prod = False
         try:
             with zipfile.ZipFile(dataset_filepath) as z:
@@ -54,7 +54,7 @@ class DwcaDataSharkStandard:
                         if len(row_items) >= 2:
                             key = row_items[0]
                             value = row_items[1]
-                            if (key.lower() == "status") and (value.lower() == "prod"):
+                            if (key.lower() == "status") and (value.lower() == "prod" or value.lower() == "test"): 
                                 status_prod = True
         except Exception as e:
             logger.warning(" - EXCEPTION: failed to read ZIP file: " + str(e))
@@ -366,6 +366,7 @@ class DwcaDataSharkStandard:
                         scientific_name = row_dict.get("scientific_name", "")
                         if scientific_name == "":
                             row_dict["scientific_name"] = "Phocoena phocoena"
+            
 
     def create_dwca_keys(self):
         """ """
