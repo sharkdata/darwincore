@@ -727,13 +727,13 @@ class DwcaFormatStandard(object):
                                         elif param == "Imaging instrument name" and value == "IFCB":
                                             emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/L22/current/TOOL1588/"
 
-                                        elif param == "Trophictype" and value == "Mixotrophic":
+                                        elif param == "Trophic type" and value == "Mixotrophic":
                                             emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S1314/"
 
-                                        elif param == "Trophictype" and value == "Heterotrophic":
+                                        elif param == "Trophic type" and value == "Heterotrophic":
                                             emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S1312/"
 
-                                        elif param == "Trophictype" and value == "Autotrophic":
+                                        elif param == "Trophic type" and value == "Autotrophic":
                                             emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S135/"
 
                                         elif param == "Sampling platform" and value == "77SE":
