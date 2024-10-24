@@ -11,6 +11,9 @@ scientific_name		Algae	Biota
 	scientificName	Heterocapsa/Azadinium	Peridiniphycidae
 	scientificName	Rhizosolenia/Pseudosolenia	Rhizosoleniaceae
 
+	scientificName	Apocalathium	Scrippsiella
+	scientificNameID	urn:lsid:marinespecies.org:taxname:1359178	urn:lsid:marinespecies.org:taxname:109545
+
 	locality	TÃ¥ngesund	Tångesund
 	verbatimLocality	TÃ¥ngesund	Tångesund
 

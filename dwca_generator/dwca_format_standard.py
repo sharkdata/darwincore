@@ -332,6 +332,10 @@ class DwcaFormatStandard(object):
                             for missing_taxa_id, ID in dict_missing.items():
                                 if occurrence_dict.get("scientificName","") == missing_taxa_id:
                                   occurrence_dict["scientificNameID"] = ID
+
+                        # IFCB fix
+                        if "IFCB" in occurrence_dict.get("dynamicProperties") and occurrence_dict.get("basisOfRecord", "") == "MaterialSample":
+                            occurrence_dict["basisOfRecord"] = "MachineObservation"
                         
                        # Phytoplankton fix
                         if all(
@@ -497,13 +501,13 @@ class DwcaFormatStandard(object):
 
                             elif parameter == "Unclassified Regions Of Interest - # counted":
                                 emof_dict["measurementType"] = "Unclassified Regions Of Interest - Count"
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600008/"
+                            #    emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600008/"
 
-                            elif parameter == "Unclassified Regions Of Interest - Abundance":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600002/"
+                            #elif parameter == "Unclassified Regions Of Interest - Abundance":
+                            #    emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600002/"
 
-                            elif parameter == "Unclassified Regions Of Interest - Volume":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600025/"
+                            #elif parameter == "Unclassified Regions Of Interest - Volume":
+                            #    emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600025/"
 
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
@@ -696,6 +700,8 @@ class DwcaFormatStandard(object):
                                     )
                                     source_key = extraMeasurement.get("sourceKey", "")
                                     value = source_row.get(source_key, "")
+                                    value_id = extraMeasurement.get("measurementValueID", "")
+
                                     if 'text' in extraMeasurement.keys():
                                         value = extraMeasurement.get("text","")
                                     if param and (value not in [""]):
@@ -710,6 +716,50 @@ class DwcaFormatStandard(object):
                                         emof_dict["measurementValue"] = value
                                         emof_dict["measurementUnit"] = unit
                                         emof_dict["measurementUnitID"] = unit_id
+                                        emof_dict["measurementValueID"] = value_id
+
+                                        if param == "Sampling laboratory name" and value == "Swedish Meteorological and Hydrological Institute":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/B75/current/ORG02043/"
+
+                                        elif param == "Analytical laboratory name" and value == "Swedish Meteorological and Hydrological Institute":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/B75/current/ORG02043/"
+
+                                        elif param == "Imaging instrument name" and value == "IFCB":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/L22/current/TOOL1588/"
+
+                                        elif param == "Trophictype" and value == "Mixotrophic":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S1314/"
+
+                                        elif param == "Trophictype" and value == "Heterotrophic":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S1312/"
+
+                                        elif param == "Trophictype" and value == "Autotrophic":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S135/"
+
+                                        elif param == "Sampling platform" and value == "77SE":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77SE/"
+
+                                        elif param == "Sampling platform" and value == "77AR":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77AR/"
+
+                                        elif param == "Sampling platform" and value == "34AR":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/34AR/"
+
+                                        elif param == "Sampling platform" and value == "77KB":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77KB/"
+
+                                        elif param == "Sampling platform" and value == "77KC":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77KC/"
+
+                                        elif param == "Sampling platform" and value == "77NE":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77NE/"
+
+                                        elif param == "Sampling platform" and value == "77SN":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77SN/"
+
+                                        elif param == "Quality flag" and value in ["Blank", "E,", "S", "B", "<", ">", "R", "M", "Z"]:
+                                            emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
+
 
                                         if emof_dict.get("measurementType", ""):
                                             self.dwca_measurementorfact.append(

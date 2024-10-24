@@ -80,11 +80,11 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: monitoring_purpose_code
-
-
-
-
-
+      - measurementType: Imaging instrument name
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/"
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: image_instrument_name
 
 
 
@@ -293,7 +293,7 @@ dwcaEmofContent:
         sourceKey: visit_logger_enddate
 
       - measurementType: Prefilter pore size
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/PRSZSPUP/"
         measurementUnit: Micrometres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
         sourceKey: pre_filter_size_um
@@ -302,7 +302,7 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: training_set_annotated_by
-      - measurementType: Instrument identification number
+      - measurementType: Imaging instrument identification number
         measurementTypeID:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
@@ -317,8 +317,8 @@ dwcaEmofContent:
 #        measurementUnit:
 #        measurementUnitID:
 #        sourceKey: monitoring_station_type_code
-      - measurementType: Sampling platform code
-        measurementTypeID: "https://vocab.nerc.ac.uk/collection/V12/current/C17/"
+      - measurementType: Sampling platform
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/NMSPPF01/"
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: platform_code
@@ -363,8 +363,8 @@ dwcaEmofContent:
         measurementUnit: Litres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
         sourceKey: sampled_volume_l
-      - measurementType: Sampled volume
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLWBSMP/"
+      - measurementType: Volume of sample
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLXXXXX/"
         measurementUnit: Millilitres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
         sourceKey: sampled_volume_ml
@@ -462,7 +462,7 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUPH/"
         sourceKey: ph_fb
       - measurementType: Chlorophyll fluorescence
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/CPHLMOD2/"
         measurementUnit: Micrograms per litre
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
         sourceKey: chl_flu2_ug_l_fb
@@ -472,12 +472,12 @@ dwcaEmofContent:
         measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPPB/"
         sourceKey: cdom_ppb_fb
       - measurementType: Phycoerythrin fluorescence
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/PHYCSPP5/"
         measurementUnit: Micrograms per litre
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
         sourceKey: phyer_ug_l_fb
       - measurementType: Phycocyanin fluorescence
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/PHYCSPP6/"
         measurementUnit: Micrograms per litre
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
         sourceKey: phycy_ug_l_fb
