@@ -69,7 +69,7 @@ class DwcaFormatStandard(object):
                     event_dict = {}
                     # Add basics.
                     event_dict["id"] = node_key
-                    event_dict["type"] = dwca_node_name
+                    event_dict["eventType"] = dwca_node_name
                     # event_dict['eventID'] = node_key
                     # event_dict['parentEventID'] = parent_node_key
 
@@ -501,13 +501,13 @@ class DwcaFormatStandard(object):
 
                             elif parameter == "Unclassified Regions Of Interest - # counted":
                                 emof_dict["measurementType"] = "Unclassified Regions Of Interest - Count"
-                            #    emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600008/"
+                            #    emof_dict["measurementTypeID"] = 
 
                             #elif parameter == "Unclassified Regions Of Interest - Abundance":
-                            #    emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600002/"
+                            #    emof_dict["measurementTypeID"] = 
 
                             #elif parameter == "Unclassified Regions Of Interest - Volume":
-                            #    emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/S06/current/S0600025/"
+                            #    emof_dict["measurementTypeID"] = 
 
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
@@ -719,10 +719,10 @@ class DwcaFormatStandard(object):
                                         emof_dict["measurementValueID"] = value_id
 
                                         if param == "Sampling laboratory name" and value == "Swedish Meteorological and Hydrological Institute":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/B75/current/ORG02043/"
+                                            emof_dict["measurementValueID"] = "https://edmo.seadatanet.org/report/545"
 
                                         elif param == "Analytical laboratory name" and value == "Swedish Meteorological and Hydrological Institute":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/B75/current/ORG02043/"
+                                            emof_dict["measurementValueID"] = "https://edmo.seadatanet.org/report/545"
 
                                         elif param == "Imaging instrument name" and value == "IFCB":
                                             emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/L22/current/TOOL1588/"
@@ -757,6 +757,12 @@ class DwcaFormatStandard(object):
                                         elif param == "Sampling platform" and value == "77SN":
                                             emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77SN/"
 
+                                        elif param in ["Sampling laboratory accredited", "Analytical laboratory accredited"] and value == "No":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/GBX/current/TX000020/"
+
+                                        elif param in ["Sampling laboratory accredited", "Analytical laboratory accredited"] and value == "Yes":
+                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/GBX/current/TX000019/"
+                                        
                                         elif param == "Quality flag" and value in ["Blank", "E,", "S", "B", "<", ">", "R", "M", "Z"]:
                                             emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
 

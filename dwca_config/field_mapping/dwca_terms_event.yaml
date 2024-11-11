@@ -5,7 +5,7 @@ dwcaEventColumns:
     - id
     - eventID
     - parentEventID
-    - type
+    - eventType
     - samplingProtocol
     - sampleSizeValue
     - sampleSizeUnit
@@ -90,7 +90,7 @@ dwcaEventContent:
               sourceKey: sampling_event_key
           parentEventID:
               sourceKey: dataset_event_key
-          type:
+          eventType:
               sourceKey:
           samplingProtocol:
               sourceKey:
@@ -153,7 +153,7 @@ dwcaEventContent:
                   - visit_longitude_dd
                   - sample_longitude_dd
           geodeticDatum:
-              text: EPSG:4619
+              text: EPSG:4326 #WGS84
           coordinateUncertaintyInMeters:
               sourceKey: coordinate_uncertainty_m
           coordinatePrecision:

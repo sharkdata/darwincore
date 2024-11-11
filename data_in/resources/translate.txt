@@ -308,4 +308,9 @@ platform_code		77!C	ZZ99
 sampling_laboratory_name_en		-		
 sampling_laboratory_name_sv		-		
 analytical_laboratory_name_en		-		
-analytical_laboratory_name_en		-	
+analytical_laboratory_name_sv		-		
+
+sampling_laboratory_accreditated		N	No	
+sampling_laboratory_accreditated		Y	Yes	
+analytical_laboratory_accreditated		N	No	
+analytical_laboratory_accreditated		Y	Yes	

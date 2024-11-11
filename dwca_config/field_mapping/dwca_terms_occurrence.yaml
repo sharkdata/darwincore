@@ -33,6 +33,8 @@ dwcaOccurrenceColumns:
     - recordedBy
     - occurrenceRemarks
     - identificationVerificationStatus
+    - identifiedBy
+    - identificationReferences
     - dynamicProperties
 
 dwcaOccurrenceContent:
@@ -53,7 +55,9 @@ dwcaOccurrenceContent:
           taxonID:
               sourceKey: dyntaxa_lsid
           verbatimIdentification:
-              sourceKey: reported_scientific_name
+              sourceKeyList: 
+                  - reported_scientific_name
+                  - classifier_taxon_name
           scientificNameID:
               sourceKeyList:
 #                  - bvol_aphia_lsid    # felaktigt LSID, detta är URL
@@ -65,7 +69,9 @@ dwcaOccurrenceContent:
               sourceKey: worms_valid_name
 
           identificationQualifier:
-              sourceKey: species_flag_code
+              sourceKeyList: 
+                 - species_flag_code
+                 - reported_scientific_name_species_flag
           scientificNameAuthorship:
               sourceKey: worms_authority
           sex:
@@ -109,7 +115,11 @@ dwcaOccurrenceContent:
           occurrenceRemarks:
               sourceKey:
           identificationVerificationStatus:
-              sourceKey: image_verification
+              sourceKey: image_verification_status
+          identifiedBy:
+              sourceKey: image_verified_by
+          identificationReferences:
+              sourceKey: classification_program_image
           dynamicProperties:
               dynamic:
                   - dynamicKey: ReportedScientificName

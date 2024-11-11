@@ -358,7 +358,7 @@ dwcaEmofContent:
         sourceKey:
 
     extraMeasurements:
-      - measurementType: Sampled volume
+      - measurementType: Volume of sample
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLWBSMP/"
         measurementUnit: Litres
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
@@ -457,7 +457,7 @@ dwcaEmofContent:
         sourceKey: analytical_laboratory_accreditated
 
       - measurementType: pH total scale
-        measurementTypeID: "http://vocab.nerc.ac.uk/collection/S06/current/S0600277/"
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/PHXXSP02/"
         measurementUnit: 
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUPH/"
         sourceKey: ph_fb
@@ -526,6 +526,11 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
         sourceKey: quality_flag
+      - measurementType: Imaging instrument flag
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        sourceKey: image_instrument_flag
 
 
 
