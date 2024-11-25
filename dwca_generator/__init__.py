@@ -1,5 +1,7 @@
 __version__ = "0.0.0"
 
+from pathlib import Path
+
 # from dwca_generator.dwca_utils import singleton
 from dwca_generator.dwca_utils import ZipArchive
 from dwca_generator.dwca_utils import create_extra_key
@@ -18,3 +20,5 @@ from dwca_generator.metadata_dwca_eml import MetadataDwcaEml
 from dwca_generator.metadata_smhi_yame import MetadataSmhiYame
 
 from dwca_generator.dwca_generator_config import DwcaGeneratorConfig
+
+PROJECT_ROOT = Path(__file__).parent.parent

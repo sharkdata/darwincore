@@ -4,12 +4,15 @@
 # Copyright (c) 2019-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import pathlib
 import logging
-import zipfile
 import math
+import re
+import zipfile
+from os import PathLike
 
 import dwca_generator
+
+_delivery_note_pattern = re.compile(r"^processed_data[/\\]delivery_note\.txt$")
 
 
 class DwcaDataSharkStandard:
@@ -41,21 +44,32 @@ class DwcaDataSharkStandard:
         logger = logging.getLogger("dwca_generator")
 
         logger.info("")
-        logger.info("Adding dataset: " + dataset_filepath)
+        if isinstance(dataset_filepath, (str, PathLike)):
+            logger.info("Adding dataset: " + dataset_filepath)
 
         # Check if data package is marked for production (PROD). THIS IS BYPASSED BY MH "or value.lower() == "test" "
         status_prod = False
+
+
+
         try:
             with zipfile.ZipFile(dataset_filepath) as z:
-                with z.open("processed_data/delivery_note.txt", "r") as f:
-                    for row in f:
-                        row = row.decode("cp1252")
-                        row_items = [str(x.strip()) for x in row.split(":")]
-                        if len(row_items) >= 2:
-                            key = row_items[0]
-                            value = row_items[1]
-                            if (key.lower() == "status") and (value.lower() == "prod" or value.lower() == "test"): 
-                                status_prod = True
+                # Find delivery note in zip file without knowing platform
+                delivery_note_path = None
+                for path in z.namelist():
+                    if _delivery_note_pattern.match(path):
+                        delivery_note_path = path
+
+                if delivery_note_path:
+                    with z.open(delivery_note_path, "r") as f:
+                        for row in f:
+                            row = row.decode("cp1252")
+                            row_items = [str(x.strip()) for x in row.split(":")]
+                            if len(row_items) >= 2:
+                                key = row_items[0]
+                                value = row_items[1]
+                                if (key.lower() == "status") and (value.lower() == "prod" or value.lower() == "test"):
+                                    status_prod = True
         except Exception as e:
             logger.warning(" - EXCEPTION: failed to read ZIP file: " + str(e))
             logger.error(" - EXCEPTION: failed to read ZIP file: " + str(e))
