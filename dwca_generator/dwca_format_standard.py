@@ -325,13 +325,17 @@ class DwcaFormatStandard(object):
                         # Add missing AphiaID for phytoplankton (because not in NOMP-bvol list)
                         if "SHARK_Phytoplankton" in occurrence_dict.get("dynamicProperties") and occurrence_dict.get("scientificNameID", "") == "":
                             dict_missing = {}
-                            with open("C:/Python/DV_export/darwincore/data_in/resources/add_aphia_id_phytoplankton.txt") as f:
+                            aphia_ids = (
+                                    dwca_generator.PROJECT_ROOT /
+                                    "data_in/resources/add_aphia_id_phytoplankton.txt"
+                            )
+                            with aphia_ids.open() as f:
                                 for line in f:
                                   (key, val) = line.split("\t")
                                   dict_missing[key] = val
                             for missing_taxa_id, ID in dict_missing.items():
                                 if occurrence_dict.get("scientificName","") == missing_taxa_id:
-                                  occurrence_dict["scientificNameID"] = ID
+                                    occurrence_dict["scientificNameID"] = ID
 
                         # IFCB fix
                         if "IFCB" in occurrence_dict.get("dynamicProperties") and occurrence_dict.get("basisOfRecord", "") == "MaterialSample":
