@@ -86,11 +86,7 @@ class DwcaFormatStandard(object):
                     if not event_dict.get("sampleSizeValue"):
                        event_dict["sampleSizeUnit"] = ""
 
-                        # IFCB sample vol unit fix litres to millilitres
-                    if "IFCB" in event_dict.get("dynamicProperties", "") and event_dict.get("sampleSizeValue"):
-                        event_dict["sampleSizeUnit"] = "Millilitres"
-
-                        # Seal Pathology area fix using obis.org/maptool moving position from county capital to position in water and with individual uncertainty radius m
+                    # Seal Pathology area fix using obis.org/maptool moving position from county capital to position in water and with individual uncertainty radius m
                     if event_dict.get("verbatimLocality") == "BD" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
                         event_dict["locality"] = "BD Norrbotten County"
                         event_dict["latitude"] = "65.45"
