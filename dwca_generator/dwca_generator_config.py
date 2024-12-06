@@ -5,11 +5,16 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import pathlib
+from collections import namedtuple
+
 import yaml
 import dict2xml
 import collections.abc
 
-from dwca_generator import dwca_data_shark
+from dwca_generator.dwca_utils import config_with_suffix
+
+
+FileWithPrefix = namedtuple("FileWithPrefix", ("file", "prefix"))
 
 
 class DwcaGeneratorConfig:
@@ -58,7 +63,7 @@ class DwcaGeneratorConfig:
         file_list = self.get_config_files("dwcaKeys")
         self.dwca_keys = self.merge_config_yaml_files(file_list)
         # "fieldMapping"
-        file_list = self.get_config_files("fieldMapping")
+        file_list = self.get_config_files("fieldMapping", include_prefix=True)
         self.field_mapping = self.merge_config_yaml_files(file_list)
         # "taxaWorms"
         file_list = self.get_config_files("taxaWorms")
@@ -125,29 +130,44 @@ class DwcaGeneratorConfig:
         # print("\n".join(sorted(source_file_list)))
         return sorted(source_file_list)
 
-    def get_config_files(self, config_key):
+    def get_config_files(self, config_key, include_prefix=False) -> list[str] | list[FileWithPrefix]:
         """ """
         file_list = []
-        file_path = pathlib.Path()
         if config_key in self.dwca_config:
             dwca_keys = self.dwca_config[config_key]
+
+            dir_path = pathlib.Path()
             if "directory" in dwca_keys:
-                dir_path = pathlib.Path(file_path, dwca_keys["directory"])
+                dir_path /= dwca_keys["directory"]
+
             if "files" in dwca_keys:
-                for file_name in dwca_keys["files"]:
-                    file_path = pathlib.Path(dir_path, file_name)
-                    file_list.append(str(file_path))
+                for config_file in dwca_keys["files"]:
+                    if isinstance(config_file, str):
+                        suffix = None
+                    else:
+                        config_file, suffix = config_file
+
+                    config_file = str(dir_path / config_file)
+
+                    if include_prefix:
+                        config_file = FileWithPrefix(config_file, suffix)
+                    file_list.append(config_file)
         return file_list
 
-    def merge_config_yaml_files(self, yaml_file_list):
+    def merge_config_yaml_files(self, yaml_file_list: list[str] | list[FileWithPrefix]):
         """ Merge configurations as defined in the yaml file list order. """
         result_dict = {}
         for file_name in yaml_file_list:
+            if isinstance(file_name, FileWithPrefix):
+                file_name, suffix = file_name
+            else:
+                suffix = None
             file_path = pathlib.Path(file_name)
             with open(file_path, encoding="utf8") as file:
                 new_data = yaml.load(file, Loader=yaml.FullLoader)
-                self.dict_deep_update(result_dict, new_data)
-        # print(result_dict)
+                new_data = config_with_suffix(new_data, suffix)
+                result_dict |= new_data
+
         return result_dict
 
     def dict_deep_update(self, target, updates):
@@ -185,3 +205,4 @@ class DwcaGeneratorConfig:
                 return data.strip()
             else:
                 return data
+

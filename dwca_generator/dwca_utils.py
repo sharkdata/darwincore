@@ -97,3 +97,29 @@ class ZipArchive:
         finally:
             if ziparchive:
                 ziparchive.close()
+
+
+def config_with_suffix(config, suffix):
+    """
+    Replace values with values of prefixed key
+
+    Finds keys with given prefix on any level and replaces same key without prefix on same
+    level.
+    """
+    if not suffix:
+        return config
+    match config:
+        case [*element] if all(isinstance(element, str) for element in config):
+            return config
+        case list():
+            return [config_with_suffix(element, suffix) for element in config]
+        case dict():
+            for suffix_key in [key for key in config.keys() if key.endswith(suffix)]:
+                key = suffix_key.replace(suffix, "")
+                config[key] = config.pop(suffix_key)
+            return {
+                key: config_with_suffix(value, suffix)
+                for key, value in config.items()
+            }
+        case _:
+            return config

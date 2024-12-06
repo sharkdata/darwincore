@@ -219,6 +219,8 @@ dwcaEventContent:
                   - sampled_volume_ml
           sampleSizeUnit:
               text: Litres
+          sampleSizeUnit_IFCB:
+              text: Millilitres
           samplingEffort:
               sourceKey:
           eventDate:
