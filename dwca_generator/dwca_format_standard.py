@@ -333,10 +333,6 @@ class DwcaFormatStandard(object):
                                 if occurrence_dict.get("scientificName","") == missing_taxa_id:
                                     occurrence_dict["scientificNameID"] = ID
 
-                        # IFCB fix
-                        if "IFCB" in occurrence_dict.get("dynamicProperties") and occurrence_dict.get("basisOfRecord", "") == "MaterialSample":
-                            occurrence_dict["basisOfRecord"] = "MachineObservation"
-                        
                        # Phytoplankton fix
                         if all(
                             key in occurrence_dict and "SHARK_Phytoplankton" in occurrence_dict.get("dynamicProperties", "")
