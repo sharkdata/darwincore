@@ -110,6 +110,8 @@ dwcaOccurrenceContent:
               sourceKey: worms_genus
           basisOfRecord:
               text: MaterialSample
+          basisOfRecord_IFCB:
+              text: MachineObservation
           recordedBy:
               sourceKey: taxonomist
           occurrenceRemarks:
