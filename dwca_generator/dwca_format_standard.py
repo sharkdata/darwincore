@@ -500,14 +500,13 @@ class DwcaFormatStandard(object):
                                 emof_dict["measurementTypeID"] = "https://vocab.nerc.ac.uk/collection/P02/current/GREF/"
 
                             elif parameter == "Unclassified Regions Of Interest - # counted":
-                                emof_dict["measurementType"] = "Unclassified Regions Of Interest - Count"
-                            #    emof_dict["measurementTypeID"] = 
+                                emof_dict["measurementType"] = "Total number of unidentified shapes in image regions of interest (ROIs)"
 
-                            #elif parameter == "Unclassified Regions Of Interest - Abundance":
-                            #    emof_dict["measurementTypeID"] = 
+                            elif parameter == "Unclassified Regions Of Interest - Abundance":
+                                emof_dict["measurementType"] = "Total abundance of unidentified shapes in image regions of interest (ROIs)"
 
-                            #elif parameter == "Unclassified Regions Of Interest - Volume":
-                            #    emof_dict["measurementTypeID"] = 
+                            elif parameter == "Unclassified Regions Of Interest - Volume":
+                                emof_dict["measurementType"] = "Total volume of unidentified shapes in image regions of interest (ROIs)"
 
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
@@ -724,7 +723,7 @@ class DwcaFormatStandard(object):
                                         elif param == "Analytical laboratory name" and value == "Swedish Meteorological and Hydrological Institute":
                                             emof_dict["measurementValueID"] = "https://edmo.seadatanet.org/report/545"
 
-                                        elif param == "Imaging instrument name" and value == "IFCB":
+                                        elif (param == "Imaging instrument name" or param == "Sampler type") and value == "IFCB":
                                             emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/L22/current/TOOL1588/"
 
                                         elif param == "Trophic type" and value == "Mixotrophic":

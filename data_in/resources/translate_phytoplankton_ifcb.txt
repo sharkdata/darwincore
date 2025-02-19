@@ -27,3 +27,5 @@ analysis_method_code		IMA	Image analysis - manual
 analysis_method_code		Image analysis	Image analysis - manual
 
 monitoring_program_code		PROJ	Project data
+
+platform_code		77SE	RV Svea

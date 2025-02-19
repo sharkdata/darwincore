@@ -105,7 +105,9 @@ dwcaEventContent:
                   - visit_date
                   - sample_date
           eventTime:
-              sourceKey:
+              sourceKey: 
+          eventTime_IFCB:
+              sourceKey: sample_time
           year:
               sourceKey: visit_year
           month:
@@ -255,6 +257,16 @@ dwcaEventContent:
                     sourceKey: sample_part_min_cm
                   - dynamicKey: SamplePartMax(cm)
                     sourceKey: sample_part_max_cm
+          fieldNumber_IFCB:
+              dynamic:
+                  - dynamicKey: PlatformCode
+                    sourceKey: platform_code
+                  - dynamicKey: SampleSeries
+                    sourceKey: sample_series
+                  - dynamicKey: SampleId
+                    sourceKey: sample_id
+                  - dynamicKey: SamplePartId
+                    sourceKey: sample_part_id
           fieldNotes:
               sourceKey:
           eventRemarks:
@@ -290,7 +302,9 @@ dwcaEventContent:
                   - sample_longitude_dd
                   - visit_longitude_dd
           geodeticDatum:
-              text: EPSG:4619
+              text: EPSG:4619 #SWEREF99
+          geodeticDatum_IFCB:
+              text: EPSG:4326 #WGS84
           coordinateUncertaintyInMeters:
               sourceKey:
           coordinatePrecision:

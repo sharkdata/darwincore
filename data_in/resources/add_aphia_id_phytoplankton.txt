@@ -300,3 +300,5 @@ Zygabikodinium lenticulatum	110177
 Zygnema	578376
 Zygnematales	162693
 Mesodinium major	1476503
+Chaetoceros peruvianum	178185
+Blixaea quinquecornis	1360848

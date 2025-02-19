@@ -383,15 +383,16 @@ class DwcaDataSharkStandard:
 
             # Fixes for IFCB clean up
             dataset_name = row_dict.get("dataset_name", "")
-            if "classifier_taxon_name" in row_dict and "IFCB" in dataset_name:
+            if "classifier_taxon_name" in row_dict and any(x in dataset_name for x in ["IFCB", "Plankton Imaging", "PlanktonImaging"]):
                 row_dict["reported_scientific_name_xx"] = row_dict.pop("reported_scientific_name") # verbatimIdentification
                 row_dict["species_flag_code_xx"] = row_dict.pop("species_flag_code") # identificationQualifier
                 row_dict["coefficient_xx"] = row_dict.pop("coefficient") # remove possibility
+                
+                station_name = row_dict.get("station_name", "")
+                sampler_type_code = row_dict.get("sampler_type_code", "")
+                if any(name in station_name for name in ["Tangesund", "Tångesund", "TÃ¥ngesund"]) and sampler_type_code == "":
+                    row_dict["sampler_type_code"] = "IFCB"   
 
-#            if "IFCB" in dataset_name: 
-#                for row_dict in self.row_list:
-#                    if row_dict.get("species_flag_code") and row_dict.get("classifier_taxon_name"):
-#                        row_dict["species_flag_code"] = f"{row_dict['species_flag_code']} {row_dict['classifier_taxon_name']}"
 
     def create_dwca_keys(self):
         """ """
