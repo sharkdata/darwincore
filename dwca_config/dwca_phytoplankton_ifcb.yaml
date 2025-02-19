@@ -41,7 +41,8 @@ fieldMapping:
     files:
         -   - dwca_terms_event.yaml
             - _IFCB
-        - dwca_terms_occurrence.yaml
+        -   - dwca_terms_occurrence.yaml
+            - _IFCB
         -   - dwca_terms_emof.yaml
             - _IFCB
 
