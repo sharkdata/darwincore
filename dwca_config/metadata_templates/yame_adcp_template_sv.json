@@ -12,7 +12,7 @@
             "electronicMailAddress": "dataleveranser@smhi.se",
             "role": "pointOfContact"
         },
-        "dateStamp": "2024-11-14",
+        "dateStamp": "2025-02-19",
         "metadataStandardName": "SS-EN-ISO-19115:2005-NMDP 4.0"
     },
     "referenceSystemInfo": [
@@ -23,8 +23,8 @@
             "title": "{{ metadata.titles.NAT.ADCP.sv }}",
             "alternateTitle": "",
             "dates": {
-                "creation": "2024-11-14",
-                "publication": "2024-11-14",
+                "creation": "2025-02-19",
+                "publication": "2025-02-19",
                 "revision": "{{metadata_auto.revision_date}}"
             },
             "identifier": "https://opendata-catalog.smhi.se/md/ce89ba58-f397-47a4-8493-8b5c711fd1ab"
@@ -130,16 +130,16 @@
               }
         },
         "extent": {
-            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.skagerrak.sv}}",
+            "description": "{{metadata.geographicCoverage.description.sv}} {{metadata.geographicCoverage.balticseaKattegatSkagerrak.sv}}",
             "geographicElement": {
-                "westBoundLongitude": "OBS LÄGG TILL DETTA MANUELLT",
-                "eastBoundLongitude": "OBS LÄGG TILL DETTA MANUELLT",
-                "southBoundLatitude": "OBS LÄGG TILL DETTA MANUELLT",
-                "northBoundLatitude": "OBS LÄGG TILL DETTA MANUELLT"
+                "westBoundLongitude": "4.5",
+                "eastBoundLongitude": "30.0",
+                "southBoundLatitude": "53.9",
+                "northBoundLatitude": "66.0"
             },
             "temporalElement": {
-                "beginPosition": "OBS LÄGG TILL DETTA MANUELLT",
-                "endPosition": "OBS LÄGG TILL DETTA MANUELLT"
+                "beginPosition": "2022-01-01",
+                "endPosition": "2025-02-19"
             },
             "verticalElement": {
                 "minimumValue": "",
@@ -156,7 +156,6 @@
             "language": "eng",
             "characterSet": "utf8",
             "topicCategory": [
-                "biota",
                 "oceans"
             ]
         },
