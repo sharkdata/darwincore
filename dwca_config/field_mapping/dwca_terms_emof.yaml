@@ -499,9 +499,9 @@ dwcaEmofContent:
         sourceKey: turb_ntu_fb
       - measurementType: Partial pressure carbon dioxide
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/PCO2XXXX/"
-        measurementUnit: Parts per million
-        measurementUnitID: "https://vocab.nerc.ac.uk/collection/P06/current/UPPM/"
-        sourceKey: pco2_ppm_fb
+        measurementUnit: Microatmospheres
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UATM/"
+        sourceKey: pco2_uatm_fb
       - measurementType: Water temperature
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
         measurementUnit: Degrees Celsius
