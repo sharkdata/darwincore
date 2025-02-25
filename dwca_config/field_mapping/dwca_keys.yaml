@@ -38,6 +38,7 @@ eventTypeKeys:
         keyPrefix: SAMPLE-
         keyFields: 
             - shark_sample_id_md5
+            - shark_sample_md5
             - sample_part_id
             - sample_part_min_cm
             - sample_part_max_cm
@@ -52,6 +53,7 @@ eventTypeKeys:
         keyPrefix: TAXA-
         keyFields:
             - shark_sample_id_md5
+            - shark_sample_md5
             - sample_part_id
             - scientific_name
             - sex_code
