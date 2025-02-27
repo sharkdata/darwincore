@@ -319,7 +319,7 @@ class DwcaFormatStandard(object):
                         self.add_content(content, source_row, occurrence_dict)
                         
                         # Add missing AphiaID for phytoplankton (because not in NOMP-bvol list)
-                        if "SHARK_Phytoplankton" in occurrence_dict.get("dynamicProperties") and occurrence_dict.get("scientificNameID", "") == "":
+                        if any(keyword_aphia_id in occurrence_dict.get("dynamicProperties", "") for keyword_aphia_id in ["SHARK_Phytoplankton", "SHARK_PlanktonImaging"]) and occurrence_dict.get("scientificNameID", "") == "":
                             dict_missing = {}
                             aphia_ids = (
                                     dwca_generator.PROJECT_ROOT /
