@@ -302,5 +302,4 @@ Zygnematales	162693
 Mesodinium major	1476503
 Chaetoceros peruvianum	178185
 Blixaea quinquecornis	1360848
-Cyanophyceae	146542
-Bacillariaceae	149002
+Pleurosigmataceae	149032
