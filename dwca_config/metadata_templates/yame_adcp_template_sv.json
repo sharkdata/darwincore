@@ -95,6 +95,7 @@
             },
             "sid_parameter": {
                 "keyword": [
+                    "Havsmiljö",
                     "Strömhastighet",
                     "Strömriktning"
                 ],

@@ -76,19 +76,26 @@
                 "dateType": "publication"
             },
             "sid_category": {
-                "keyword": [],
+                "keyword": [
+                    "Oceanografi",
+                    "Marinbiologi"
+                ],
                 "title": "SID Category",
                 "date": "2018-10-02",
                 "dateType": "publication"
             },
             "sid_datatype": {
-                "keyword": [],
+                "keyword": [
+                    "Observation"
+                ],
                 "title": "SID Datatype",
                 "date": "2018-10-02",
                 "dateType": "publication"
             },
             "sid_parameter": {
-                "keyword": [],
+                "keyword": [
+                    "Havsmiljö"
+                ],
                 "title": "SID Parameter",
                 "date": "2012-09-04",
                 "dateType": "publication"
