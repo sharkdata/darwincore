@@ -95,7 +95,8 @@
             "sid_parameter": {
                 "keyword": [
                     "Havsmiljö",
-                    "Plankton"
+                    "Plankton",
+                    "Bakterier"
                 ],
                 "title": "SID Parameter",
                 "date": "2012-09-04",

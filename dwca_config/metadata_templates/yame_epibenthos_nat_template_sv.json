@@ -94,7 +94,9 @@
             },
             "sid_parameter": {
                 "keyword": [
-                    "Havsmiljö"
+                    "Havsmiljö",
+                    "Bottenvegetation",
+                    "Bottenfauna"
                 ],
                 "title": "SID Parameter",
                 "date": "2012-09-04",
