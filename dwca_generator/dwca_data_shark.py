@@ -10,6 +10,8 @@ import re
 import zipfile
 from os import PathLike
 
+
+
 import dwca_generator
 
 _delivery_note_pattern = re.compile(r"^processed_data[/\\]delivery_note\.txt$")
@@ -398,12 +400,12 @@ class DwcaDataSharkStandard:
         """ """
         config_dwca_keys = self.dwca_gen_config.dwca_keys
         for row_dict in self.row_list:
+            delivery_datatype = row_dict.get("delivery_datatype")
+
             # Extra keys for the "event.txt" table.
             # for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_event_nodes_keys().items():
             for dwc_event_node_dict in config_dwca_keys["eventTypeKeys"]["event"]:
-
                 dwc_key_name = dwc_event_node_dict.get("keyName", "")
-                dwc_key_prefix = dwc_event_node_dict.get("keyPrefix", "")
                 key_list = dwc_event_node_dict.get("keyFields", [])
                 dwc_id = dwca_generator.create_extra_key(row_dict, key_list)
 
@@ -415,22 +417,23 @@ class DwcaDataSharkStandard:
 
                 if (
                     dwc_id
-                    not in self.dwc_short_names_exists_dict[dwc_key_name][
-                        "short_ids"
-                    ].keys()
+                    not in self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"]
                 ):
-                    seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"]
-                    seq_no += 1
+                    seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] + 1
                     self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] = seq_no
-                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
-                        dwc_id
-                    ] = seq_no
-                #
-                seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
-                    dwc_id
-                ]
-                dwc_id_short = dwc_key_prefix + str(seq_no)
-                row_dict[dwc_key_name] = dwc_id_short
+                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][dwc_id] = seq_no
+
+                seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][dwc_id]
+
+                # Get value from row depending on the delivery datatype
+                event_key = dwc_event_node_dict.get(
+                    "deliveryTypeValueField", {}).get(delivery_datatype)
+                if event_value := row_dict.get(event_key):
+                    row_dict[dwc_key_name] = event_value
+                else:
+                    dwc_key_prefix = dwc_event_node_dict.get("keyPrefix", "")
+                    dwc_id_short = dwc_key_prefix + str(seq_no)
+                    row_dict[dwc_key_name] = dwc_id_short
 
             # Extra keys for the "occurrence.txt" table.
             # for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_occurrence_nodes_keys().items():
@@ -441,7 +444,6 @@ class DwcaDataSharkStandard:
                     continue
                 #
                 dwc_key_name = dwc_event_node_dict.get("keyName", "")
-                dwc_key_prefix = dwc_event_node_dict.get("keyPrefix", "")
                 key_list = dwc_event_node_dict.get("keyFields", [])
                 dwc_id = dwca_generator.create_extra_key(row_dict, key_list)
 
@@ -450,34 +452,30 @@ class DwcaDataSharkStandard:
                     self.dwc_short_names_exists_dict[dwc_key_name] = {}
                     self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] = 0
                     self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"] = {}
-
                 if (
                     dwc_id
-                    not in self.dwc_short_names_exists_dict[dwc_key_name][
-                        "short_ids"
-                    ].keys()
+                    not in self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"]
                 ):
-                    seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"]
-                    seq_no += 1
+                    seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] + 1
                     self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] = seq_no
-                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
-                        dwc_id
-                    ] = seq_no
-                #
-                seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
-                    dwc_id
-                ]
-                dwc_id_short = dwc_key_prefix + str(seq_no)
+                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][dwc_id] = seq_no
 
-                size_class = row_dict.get("size_class", "")
-                if size_class:
-                    dwc_id_short += "-SIZECLASS-" + size_class
+                # Get value from row depending on the delivery datatype
+                occurence_key = dwc_event_node_dict.get(
+                    "deliveryTypeValueField", {}).get(delivery_datatype)
+                if occurence_value := row_dict.get(occurence_key):
+                    row_dict[dwc_key_name] = occurence_value
                 else:
-                    cell_volume = row_dict.get("reported_cell_volume_um3", "")
-                    if cell_volume:
-                        dwc_id_short += "-CELLVOLUME-" + cell_volume.replace(",", ".")
+                    dwc_key_prefix = dwc_event_node_dict.get("keyPrefix", "")
+                    seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
+                        dwc_id]
 
-                row_dict[dwc_key_name] = dwc_id_short
+                    dwc_id_short = dwc_key_prefix + str(seq_no)
+                    if size_class := row_dict.get("size_class", ""):
+                        dwc_id_short += "-SIZECLASS-" + size_class
+                    elif cell_volume := row_dict.get("reported_cell_volume_um3", ""):
+                        dwc_id_short += "-CELLVOLUME-" + cell_volume.replace(",", ".")
+                    row_dict[dwc_key_name] = dwc_id_short
 
             # Extra keys for the "extendedmeasurementorfact.txt" table.
             parameter = row_dict.get("parameter", "")
