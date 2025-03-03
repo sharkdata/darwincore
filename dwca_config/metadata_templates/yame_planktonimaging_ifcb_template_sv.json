@@ -1,6 +1,6 @@
 {
     "metadata": {
-        "fileIdentifier": "FIXA NYTT",
+        "fileIdentifier": "8acc6d5e-f05e-4d18-b764-e7fe8d310ebf",
         "language": "swe",
         "hierarchyLevel": "dataset",
         "contact": {
@@ -27,7 +27,7 @@
                 "publication": "2022-09-10",
                 "revision": "{{metadata_auto.revision_date}}"
             },
-            "identifier": "https://opendata-catalog.smhi.se/md/7ef11fb7-63fa-4926-8532-90da492a0e33"
+            "identifier": "https://opendata-catalog.smhi.se/md/8acc6d5e-f05e-4d18-b764-e7fe8d310ebf"
         },
         "abstract": "{{ metadata.methods.PROJ.IFCB.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.PROJ.IFCB.sv }}",
         "status": "onGoing",

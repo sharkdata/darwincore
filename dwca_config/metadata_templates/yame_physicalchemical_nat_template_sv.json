@@ -84,8 +84,7 @@
             },
             "sid_category": {
                 "keyword": [
-                    "Oceanografi",
-                    "Marinbiologi"
+                    "Oceanografi"
                 ],
                 "title": "SID Category",
                 "date": "2018-10-02",
@@ -109,6 +108,7 @@
                     "Svavelväte",
                     "pH",
                     "Alkalinitet",
+                    "Humus",
                     "Klorofyll",
                     "Siktdjup"
                 ],
