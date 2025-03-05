@@ -146,7 +146,7 @@
         "resourceConstraints": {
             "useLimitation": [],
             "legalConstraints": {
-                "useConstraints": "I och med att du laddar ned data så accepterar du följande licensvillkor, https://www.smhi.se/data/oppna-data/villkor-for-anvandning-1.30622. Ange om möjligt SMHI som källa.",
+                "useConstraints": "I och med att du laddar ned data så accepterar du följande licensvillkor, https://www.smhi.se/data/om-smhis-data/villkor-for-anvandning. Ange om möjligt SMHI som källa.",
                 "accessConstraints": "IngenBegransning"
               }
         },
