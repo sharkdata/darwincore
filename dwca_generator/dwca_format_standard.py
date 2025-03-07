@@ -302,7 +302,7 @@ class DwcaFormatStandard(object):
                         aphia_id = source_row.get("aphia_id", "")
                         scientific_name = source_row.get("scientific_name", "")
 
-                        # Try to add missing AphiaID from add_aphia_id_phytoplankton.txt
+                        # Try to add missing AphiaID from add_aphia_id_taxon.txt
                         if not aphia_id:
                             aphia_id = aphia_id_mapping.get(scientific_name, "")
 
@@ -1084,7 +1084,7 @@ class DwcaFormatStandard(object):
 def _read_aphia_id_mapping() -> dict[str, str]:
     aphipa_id_file_path = (
             dwca_generator.PROJECT_ROOT
-            / "data_in/resources/add_aphia_id_phytoplankton.txt"
+            / "data_in/resources/add_aphia_id_taxon.txt"
     )
     with aphipa_id_file_path.open() as aphia_id_file:
         additional_aphia_id = {

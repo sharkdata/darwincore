@@ -5,7 +5,7 @@ from tests import fixtures
 
 
 def test_aphia_id_is_added_for_phytoplankton():
-    # Given phytoplankton names from add_aphia_id_phytoplankton.txt
+    # Given phytoplankton names from add_aphia_id_taxon.txt
     phytoplankton_names = [
         {"scientificName": "Eupodiscales"},
         {"scientificName": "Ebria"},
