@@ -303,3 +303,11 @@ Mesodinium major	1476503
 Chaetoceros peruvianum	178185
 Blixaea quinquecornis	1360848
 Pleurosigmataceae	149032
+Octactis speculum	1310442
+Gonyaulax spinifera	845296
+Blixaea quinquecornis	1360848
+Dolichospermum	603709
+Actinocyclus	196347
+Heterocapsa	1741213
+Azadinium caudatum var. margalefii	846290
+

@@ -4,14 +4,14 @@ size_min_um		0	>0
 bvol_scientific_name		Algae	Biota
 scientific_name		Algae	Biota
 
-	scientificName	Snowella/Woronichinia	Cyanophyceae
-	scientificName	Cylindrotheca closterium/Nitzschia longissima	Bacillariaceae
-	scientificName	Leptocylindrus danicus/Leptocylindrus minimus	Leptocylindrus
-	scientificName	Gyrosigma/Pleurosigma	Pleurosigmataceae
-	scientificName	Heterocapsa/Azadinium	Peridiniphycidae
-	scientificName	Rhizosolenia/Pseudosolenia	Rhizosoleniaceae
+scientific_name		Snowella/Woronichinia	Cyanophyceae
+scientific_name		Cylindrotheca closterium/Nitzschia longissima	Bacillariaceae
+scientific_name		Leptocylindrus danicus/Leptocylindrus minimus	Leptocylindrus
+scientific_name		Gyrosigma/Pleurosigma	Pleurosigmataceae
+scientific_name		Heterocapsa/Azadinium	Peridiniphycidae
+scientific_name		Rhizosolenia/Pseudosolenia	Rhizosoleniaceae
 
-	scientificName	Apocalathium	Scrippsiella
+scientific_name		Apocalathium	Scrippsiella
 	scientificNameID	urn:lsid:marinespecies.org:taxname:1359178	urn:lsid:marinespecies.org:taxname:109545
 
 	locality	TÃ¥ngesund	Tångesund

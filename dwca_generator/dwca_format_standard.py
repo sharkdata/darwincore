@@ -6,7 +6,7 @@
 
 import pathlib
 import logging
-import datetime
+import csv
 
 import dwca_generator
 #import pandas as pd
@@ -245,10 +245,6 @@ class DwcaFormatStandard(object):
                         event_dict["decimalLongitude"] = "12.99"
                         event_dict["coordinateUncertaintyInMeters"] = "122710"
 
-                    
-
-
-
                         # Append event row content.
                     self.dwca_event.append(event_dict.copy())
 
@@ -268,6 +264,8 @@ class DwcaFormatStandard(object):
             occurrence_control_dict[dwca_node_name]["dwc_key_name"] = occurrence_keys[
                 index
             ]["keyName"]
+
+        aphia_id_mapping = _read_aphia_id_mapping()
 
         # Process all data rows.
         for source_row in self.source_rows:
@@ -303,6 +301,11 @@ class DwcaFormatStandard(object):
                         # Add taxa info.
                         aphia_id = source_row.get("aphia_id", "")
                         scientific_name = source_row.get("scientific_name", "")
+
+                        # Try to add missing AphiaID from add_aphia_id_phytoplankton.txt
+                        if not aphia_id:
+                            aphia_id = aphia_id_mapping.get(scientific_name, "")
+
                         worms_info_dict = self.worms_info_object.get_worms_info(
                             aphia_id, scientific_name
                         )
@@ -314,24 +317,8 @@ class DwcaFormatStandard(object):
                             bvol_aphia_lsid = "https://www.marinespecies.org/aphia.php?p=taxdetails&id=" + bvol_aphia_id
                             source_row["bvol_aphia_lsid"] = bvol_aphia_lsid
 
-
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
-                        
-                        # Add missing AphiaID for phytoplankton (because not in NOMP-bvol list)
-                        if any(keyword_aphia_id in occurrence_dict.get("dynamicProperties", "") for keyword_aphia_id in ["SHARK_Phytoplankton", "SHARK_PlanktonImaging"]) and occurrence_dict.get("scientificNameID", "") == "":
-                            dict_missing = {}
-                            aphia_ids = (
-                                    dwca_generator.PROJECT_ROOT /
-                                    "data_in/resources/add_aphia_id_phytoplankton.txt"
-                            )
-                            with aphia_ids.open() as f:
-                                for line in f:
-                                  (key, val) = line.split("\t")
-                                  dict_missing[key] = val
-                            for missing_taxa_id, ID in dict_missing.items():
-                                if occurrence_dict.get("scientificName","") == missing_taxa_id:
-                                    occurrence_dict["scientificNameID"] = ID
 
                        # Phytoplankton fix
                         if all(
@@ -1092,3 +1079,16 @@ class DwcaFormatStandard(object):
         """ Implementation of abstract method declared in DwcDatatypeBase. """
         emof_columns = self.dwca_gen_config.field_mapping.get("dwcaEmofColumns", [])
         return emof_columns
+
+
+def _read_aphia_id_mapping() -> dict[str, str]:
+    aphipa_id_file_path = (
+            dwca_generator.PROJECT_ROOT
+            / "data_in/resources/add_aphia_id_phytoplankton.txt"
+    )
+    with aphipa_id_file_path.open() as aphia_id_file:
+        additional_aphia_id = {
+            row["scientific_name"]: row["AphiaID"]
+            for row in csv.DictReader(aphia_id_file, delimiter="\t")
+        }
+    return additional_aphia_id
