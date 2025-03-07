@@ -8,47 +8,49 @@ size_min_um		0	>0
 bvol_scientific_name		Algae	Biota
 
 #NAT
-	scientificName	Algae	Biota
-	scientificName	Unicells_and_flagellates	Unicells and flagellates
-	scientificName	Vanella	Vannella
-	scientificName	Dinoflagellate	Dinophyceae
-	scientificName	Haptophyceae	Coccolithophyceae
-	scientificName	Heliocostomella subulata	Helicostomella subulata
+scientific_name		Algae	Biota
+scientific_name		Unicells_and_flagellates	Biota
+scientific_name		Vanella	Vannella
+scientific_name		Dinoflagellate	Dinophyceae
+scientific_name		Haptophyceae	Coccolithophyceae
+scientific_name		Heliocostomella subulata	Helicostomella subulata
+scientific_name		Unicells and flagellates	Biota
 	scientificName	Unicells and flagellates	Biota
+scientific_name		Unicell	Biota
 	scientificName	Unicell	Biota
-	scientificName	Gonyaulax digitalis	Gonyaulax digitale
-	scientificName	Dictyocha speculum	Octactis speculum
-	scientificName	Scrippsiella trochoidea	Scrippsiella acuminata
-	scientificName	Thalassiosira angustelineata	Thalassiosira anguste-lineata
-	scientificName	Bacterosira constricta	Thalassiosira constricta
-	scientificName	Gymnodinium simplex	Protodinium simplex
+scientific_name		Gonyaulax digitalis	Gonyaulax digitale
+scientific_name		Dictyocha speculum	Octactis speculum
+scientific_name		Scrippsiella trochoidea	Scrippsiella acuminata
+scientific_name		Thalassiosira angustelineata	Thalassiosira anguste-lineata
+scientific_name		Bacterosira constricta	Thalassiosira constricta
+scientific_name		Gymnodinium simplex	Protodinium simplex
 
 #REG RECIP PROJ
-	scientificName	Gyrodinium sp.	Gyrodinium
-	scientificName	Actinocylus octonarius	Actinocyclus octonarius
-	scientificName	Dictyosphaerium ehrenberg	Dictyosphaerium ehrenbergianum
-	scientificName	Scuticociliate	Scuticociliatia
-	scientificName	Thallassiosiraceae	Thalassiosiraceae
-	scientificName	Chrysidiastrum caudatum	Chrysidiastrum catenatum
-	scientificName	Chrysoflagellat	Chrysophyceae
-	scientificName	Mouegotia	Mougeotia
-	scientificName	Flagellates species incertae sedis	Flagellates
-	scientificName	Unicells and flagellates species incertae sedis	Biota
-	scientificName	Unicells species incertae sedis	Biota
-	scientificName	Prostomes	Prostomatea
-	scientificName	Fragilaria ulna var. ulna	Fragilaria ulna
-	scientificName	Proboscia alata var. indica	Proboscia alata f. indica
-	scientificName	Spathulodinium pseudonoctiluca	Spatulodinium pseudonoctiluca
-	scientificName	Peridiniella catenat	Peridiniella catenata
-	scientificName	Telonema antarcticum	Telonema antarctica
-	scientificName	Rhizosolenia setigera f, pungens	Rhizosolenia setigera
-	scientificName	Phalachroma rotundatum	Phalacroma rotundatum
-	scientificName	Chaetoceros cf. seiracanthus	Chaetoceros seiracanthus
-	scientificName	Prasinophyceae (Micromonadophyceae)	Prasinophyceae
-	scientificName	Strobilidium spiralis	Strobilidium spiralis
+scientific_name		Gyrodinium sp.	Gyrodinium
+scientific_name		Actinocylus octonarius	Actinocyclus octonarius
+scientific_name		Dictyosphaerium ehrenberg	Dictyosphaerium ehrenbergianum
+scientific_name		Scuticociliate	Scuticociliatia
+scientific_name		Thallassiosiraceae	Thalassiosiraceae
+scientific_name		Chrysidiastrum caudatum	Chrysidiastrum catenatum
+scientific_name		Chrysoflagellat	Chrysophyceae
+scientific_name		Mouegotia	Mougeotia
+scientific_name		Flagellates species incertae sedis	Flagellates
+scientific_name		Unicells and flagellates species incertae sedis	Biota
+scientific_name		Unicells species incertae sedis	Biota
+scientific_name		Prostomes	Prostomatea
+scientific_name		Fragilaria ulna var. ulna	Fragilaria ulna
+scientific_name		Proboscia alata var. indica	Proboscia alata f. indica
+scientific_name		Spathulodinium pseudonoctiluca	Spatulodinium pseudonoctiluca
+scientific_name		Peridiniella catenat	Peridiniella catenata
+scientific_name		Telonema antarcticum	Telonema antarctica
+scientific_name		Rhizosolenia setigera f, pungens	Rhizosolenia setigera
+scientific_name		Phalachroma rotundatum	Phalacroma rotundatum
+scientific_name		Chaetoceros cf. seiracanthus	Chaetoceros seiracanthus
+scientific_name		Prasinophyceae (Micromonadophyceae)	Prasinophyceae
+scientific_name		Strobilidium spiralis	Strobilidium spiralis
 
 ### IFCB
 
-	scientificName	Snowella/Woronichinia	Cyanophyceae
+scientific_name			Snowella/Woronichinia	Cyanophyceae
 
 
