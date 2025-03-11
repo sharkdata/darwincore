@@ -4,12 +4,17 @@
 # Copyright (c) 2019-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import pathlib
+from pathlib import Path
 import logging
+import yaml
 import csv
 
 import dwca_generator
-#import pandas as pd
+
+
+UNIT_TO_UNIT_ID_PATH = Path("data_in/resources/unit_to_unit_id.yaml")
+PARAMETER_TO_PARAMETER_ID_PATH = Path("data_in/resources/parameter_to_parameter_id.yaml")
+
 
 class DwcaFormatStandard(object):
     """ """
@@ -17,7 +22,7 @@ class DwcaFormatStandard(object):
     def __init__(self, data, dwca_gen_config, worms_info, translate):
         """ Darwin Core Archive Format base class. """
 
-        self.target_dwca_path = pathlib.Path(dwca_gen_config.dwca_target)
+        self.target_dwca_path = Path(dwca_gen_config.dwca_target)
         self.data_object = data
         self.dwca_gen_config = dwca_gen_config
         self.worms_info_object = worms_info
@@ -26,6 +31,11 @@ class DwcaFormatStandard(object):
         self.clear()
         #
         self.source_rows = self.data_object.get_data_rows()
+
+        with UNIT_TO_UNIT_ID_PATH.open() as unit_to_unit_id_file:
+           self._measurement_unit_id_by_unit = yaml.safe_load(unit_to_unit_id_file)
+        with PARAMETER_TO_PARAMETER_ID_PATH.open() as parameter_to_parameter_id_file:
+           self._measurement_type_id_by_type = yaml.safe_load(parameter_to_parameter_id_file)
 
     def clear(self):
         """ """
@@ -402,259 +412,24 @@ class DwcaFormatStandard(object):
 
                         # Append.
                         if emof_dict.get("measurementType", ""):
-
                             # Measurement identifiers. NERC vocabular. 
                             # nerc codes found at https://vocab.nerc.ac.uk/collection/P01/current/
                             parameter = emof_dict.get("measurementType", "")
                             unit = emof_dict.get("measurementUnit", "")
                             measurement_method = emof_dict.get("measurementMethod", "")
-                            
-
-                            
-
-                            if parameter == "# counted":
-                                emof_dict["measurementType"] = "Count"
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
-
-                            elif parameter == "Abundance" or parameter == "Bacterial abundance" or parameter =="Bacterial concentration":
-                                emof_dict["measurementType"] = "Abundance"                                
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01"
-
-                            elif parameter == "Carbon content" or parameter == "Carbon concentration":
-                                emof_dict["measurementType"] = "Carbon content"
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/MDMAP010/"
-
-                            elif parameter == "Length mean":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
-
-                            elif parameter == "Length":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
-
-                            elif parameter == "Wet weight":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/OWETBM01"
-
-                            elif parameter == "Wet weight per volume":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
-
-                            elif parameter == "Wet weight/volume":
-                                emof_dict["measurementType"] = "Wet weight per volume"
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
-
-                            elif parameter == "Cover":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/PCOV7736/"
-
-                            elif parameter == "Dry weight":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/SPDWXX01/"
-
-                            elif parameter == "Salinity":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01/"
-
-                            elif parameter == "Temperature":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
-
-                            elif parameter == "Air temperature":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/OD1/current/AIRTEMP/"
-
-                            elif parameter == "Air pressure":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P02/current/CAPH/"
-
-                            elif parameter == "Wet weight/area":
-                                emof_dict["measurementType"] = "Wet weight per area"
-
-                            elif parameter == "Cell volume" or parameter == "Bacterial cell volume":
-                                emof_dict["measurementType"] = "Cell volume"
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/CVOLZZ01/"
-
-                            elif parameter == "Biovolume concentration":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/CVOLUKNB/"
-
-                            elif parameter == "Bacterial cell carbon content":
-                                emof_dict["measurementType"] = "Cell carbon content"
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P01/current/MAOCCB11/"
-
-                            elif parameter == "Bacterial carbon production":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P02/current/UPTH/"
-
-                            elif parameter == "3H thymidine uptake":
-                                emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/P09/current/UPTH/"
-
-                            elif parameter == "Bacterial production":
-                                emof_dict["measurementType"] = "Bacterial growth"
-                                emof_dict["measurementTypeID"] = "https://vocab.nerc.ac.uk/collection/P02/current/GREF/"
-
-                            elif parameter == "Unclassified Regions Of Interest - # counted":
-                                emof_dict["measurementType"] = "Total number of unidentified shapes in image regions of interest (ROIs)"
-
-                            elif parameter == "Unclassified Regions Of Interest - Abundance":
-                                emof_dict["measurementType"] = "Total abundance of unidentified shapes in image regions of interest (ROIs)"
-
-                            elif parameter == "Unclassified Regions Of Interest - Volume":
-                                emof_dict["measurementType"] = "Total volume of unidentified shapes in image regions of interest (ROIs)"
-
 
                             #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
-
-                            if unit == "um":
-                                emof_dict["measurementUnit"] = "Micrometres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
-
-                            elif unit == "mm":
-                                emof_dict["measurementUnit"] = "Millimetres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"
-
-                            elif unit == "m":
-                                emof_dict["measurementUnit"] = "Metres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
-
-                            elif unit == "g":
-                                emof_dict["measurementUnit"] = "Grams"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/"
-
-                            elif unit == "L":
-                                emof_dict["measurementUnit"] = "Litres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
-
-                            elif unit == "m/s":
-                                emof_dict["measurementUnit"] = "Metres per second"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UVAA/"
-
-                            elif unit == "ml":
-                                emof_dict["measurementUnit"] = "Millilitres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
-
-                            elif unit == "cm2":
-                                emof_dict["measurementUnit"] = "Square centimetres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/SQCM/"
-
-                            elif unit == "cm3":
-                                emof_dict["measurementUnit"] = "Cubic centimetres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/VVCC/"
-
-                            elif unit == "h":
-                                emof_dict["measurementUnit"] = "Hours"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UHOR/"
-
-                            elif unit == "hpa":
-                                emof_dict["measurementUnit"] = "Hectopascals"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
-
-                            elif unit == "mm3/l" or unit == "mm3/L":
-                                emof_dict["measurementUnit"] = "Cubic millimetres per litre"
-
-                            elif unit == "g/m3":
-                                emof_dict["measurementUnit"] = "Grams per cubic metre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UGMC/"
-
-                            elif unit == "ugC/l":
-                                emof_dict["measurementUnit"] = "Micrograms per litre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
-
-                            elif unit == "um3":
-                                emof_dict["measurementUnit"] = "Cubic micrometres"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
-
-                            elif unit == "um3/cell":
-                                emof_dict["measurementUnit"] = "Cubic micrometres per cell"
-
-                            elif unit == "ind/l":
-                                emof_dict["measurementUnit"] = "Individual per litre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
-
-                            #Phytoplankton
-                            elif unit == "ind/l or 100 um pieces/l" and measurement_method not in ["Image analysis", "IMA-SW", "IMA", "Image analysis - software", "Image analysis - manual"]:
-                                emof_dict["measurementUnit"] = "Individual per litre or 100 micrometre pieces per litre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
-
-                            #IFCB
-                            elif unit == "ind/l or 100 um pieces/l" and measurement_method in ["Image analysis", "IMA-SW", "IMA", "Image analysis - software", "Image analysis - manual"]:
-                                emof_dict["measurementUnit"] = "Individual per litre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
-
-                            elif unit == "ind/m3":
-                                emof_dict["measurementUnit"] = "Individual per cubic metre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/"
-
-                            elif unit == "ind/m2":
-                                emof_dict["measurementUnit"] = "Individual per square metre"
-
-                            elif unit == "ug/m3":
-                                emof_dict["measurementUnit"] = "Micrograms per cubic metre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/MCUG/"
-
-                            elif unit == "deg":
-                                emof_dict["measurementUnit"] = "Degrees"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"
-
-                            elif unit == "degC":
-                                emof_dict["measurementUnit"] = "Degrees Celsius"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
-
-                            elif unit == "C":
-                                emof_dict["measurementUnit"] = "Degrees Celsius"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
-
-                            elif unit == "cells/l":
-                                emof_dict["measurementUnit"] = "Cell per litre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
-
-                            elif unit == "cells/l/d":
-                                emof_dict["measurementUnit"] = "Cells per litre per day"
-
-                            elif unit == "ug/L/24h":
-                                emof_dict["measurementUnit"] = "Micrograms per litre per day"
-
-                            elif unit == "mole/cm3/h":
-                                emof_dict["measurementUnit"] = "Moles per cubic centimetre per hour"
-
-                            elif unit == "cells/ml":
-                                emof_dict["measurementUnit"] = "Cell per millilitre"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UCML/"
-
-                            elif unit == "ind/analysed sample fraction" and measurement_method != "Image analysis":
+                            if unit == "ind/analysed sample fraction" and measurement_method != "Image analysis":
                                 emof_dict["measurementUnit"] = "Individual per analysed sample fraction"
-
-                            #IFCB
-                            elif unit == "ind/analysed sample fraction" and measurement_method == "Image analysis":
-                                emof_dict["measurementUnit"] = "Dimensionless"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
-
-                            elif unit == "nr":
-                                emof_dict["measurementUnit"] = "Number"
-
-                            elif unit == "Detection minutes/day":
-                                emof_dict["measurementUnit"] = "Minutes per day"
-
-                            elif unit == "%":
-                                emof_dict["measurementUnit"] = "Percent"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UPCT/"
-
-                            elif unit == "mg/m2":
-                                emof_dict["measurementUnit"] = "Milligrams per square metre"
-
-                            elif unit == "mg/m3":
-                                emof_dict["measurementUnit"] = "Milligrams per cubic metre"
-
-                            elif unit == "fg C/cell":
-                                emof_dict["measurementUnit"] = "Femtograms per cell"
-
-                            elif unit == "ind": #measurementType Count with ind as unit in SHARK
-                                emof_dict["measurementUnit"] = "Dimensionless"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
-
-                            elif unit == "ROI/analysed sample": 
-                                emof_dict["measurementUnit"] = "Dimensionless"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
-
-                            elif unit == "ROI/L": 
-                                emof_dict["measurementUnit"] = "Regions Of Interest per litre"
-
-
-
 
                             if parameter == "Salinity" and unit == "":
                                 emof_dict["measurementUnit"] = "Dimensionless"
-                                emof_dict["measurementUnitID"] = "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
 
+                            if measurement_unit_id := self._measurement_unit_id_by_unit.get(emof_dict.get("measurementUnit")):
+                                emof_dict["measurementUnitID"] = measurement_unit_id
+
+                            if measurement_type_id := self._measurement_type_id_by_type.get(emof_dict.get("measurementType")):
+                                emof_dict["measurementTypeID"] = measurement_type_id
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 

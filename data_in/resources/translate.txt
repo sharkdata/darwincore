@@ -303,7 +303,7 @@ wind_direction_code		35	345-354 degrees
 wind_direction_code		36	355-4 degrees
 wind_direction_code		99	Variable
 
-platform_code		77!C	ZZ99
+platform_code		77!C	ZZ99Abundance
 
 sampling_laboratory_name_en		-		
 sampling_laboratory_name_sv		-		
@@ -313,4 +313,57 @@ analytical_laboratory_name_sv		-
 sampling_laboratory_accreditated		N	No	
 sampling_laboratory_accreditated		Y	Yes	
 analytical_laboratory_accreditated		N	No	
-analytical_laboratory_accreditated		Y	Yes	
+analytical_laboratory_accreditated		Y	Yes
+
+unit		%	Percent
+unit		C	Degrees Celsius
+unit		Detection minutes/day	Minutes per day
+unit		L	Litres
+unit		ROI/L	Regions Of Interest per litre
+unit		ROI/analysed sample	Dimensionless
+unit		cells/l	Cell per litre
+unit		cells/l/d	Cells per litre per day
+unit		cells/ml	Cell per millilitre
+unit		cm2	Square centimetres
+unit		cm3	Cubic centimetres
+unit		deg	Degrees
+unit		degC	Degrees Celsius
+unit		fg C/cell	Femtograms per cell
+unit		g	Grams
+unit		g/m3	Grams per cubic metre
+unit		h	Hours
+unit		hpa	Hectopascals
+unit		ind	Dimensionless
+unit		ind/l	Individual per litre
+unit		ind/m2	Individual per square metre
+unit		ind/m3	Individual per cubic metre
+unit		m/s	Metres per second
+unit		mg/m2	Milligrams per square metre
+unit		mg/m3	Milligrams per cubic metre
+unit		ml	Millilitres
+unit		mm	Millimetres
+unit		mm3/L	Cubic millimetres per litre
+unit		mm3/l	Cubic millimetres per litre
+unit		mole/cm3/h	Moles per cubic centimetre per hour
+unit		nr	Number
+unit		ug/L/24h	Micrograms per litre per day
+unit		ug/m3	Micrograms per cubic metre
+unit		ugC/l	Micrograms per litre
+unit		um	Metres
+unit		um	Micrometres
+unit		um3	Cubic micrometres
+unit		um3/cell	Cubic micrometres per cell
+
+parameter		# counted	Count
+parameter		Bacterial abundance	Abundance
+parameter		Bacterial cell carbon content	Cell carbon content
+parameter		Bacterial cell volume	Cell volume
+parameter		Bacterial concentration	Abundance
+parameter		Bacterial production	Bacterial growth
+parameter		Carbon concentration	Carbon content
+parameter		Unclassified Regions Of Interest - # counted	Total number of unidentified shapes in image regions of interest (ROIs)
+parameter		Unclassified Regions Of Interest - Abundance	Total abundance of unidentified shapes in image regions of interest (ROIs)
+parameter		Unclassified Regions Of Interest - Volume	Total volume of unidentified shapes in image regions of interest (ROIs)
+parameter		Wet weight/area	Wet weight per area
+parameter		Wet weight/volume	Wet weight per volume
+parameter		Wet weight/volume	Wet weight per volume
