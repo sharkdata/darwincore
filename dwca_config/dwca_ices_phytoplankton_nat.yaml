@@ -31,13 +31,13 @@ emlDefinitions:
 
 dwcaKeys:
     directory:
-        dwca_config/field_mapping
+        dwca_config/field_mapping/dwca_ices
     files:
         - dwca_ices_keys.yaml
 
 fieldMapping:
     directory:
-        dwca_config/field_mapping
+        dwca_config/field_mapping/dwca_ices
     files:
          - dwca_ices_terms_event.yaml
          - dwca_ices_terms_occurrence.yaml
@@ -52,7 +52,7 @@ taxaWorms:
 
 translate:
     directory:
-        data_in/resources
+        data_in/resources/dwca_ices
     files:
         - translate_ices.txt
         - translate_ices_nerc.txt
@@ -61,7 +61,7 @@ translate:
 
 filters:
     directory:
-        data_in/resources
+        data_in/resources/dwca_ices
     files:
         - filters_ices.txt
        # - filters_phytoplankton_nat.txt
