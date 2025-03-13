@@ -38,9 +38,17 @@ if __name__ == "__main__":
 
     get_datatype_for_id = {id: datatype for datatype, id in fileID_datatype_match.items()}
 
-    yame_id_list = [fileID_datatype_match[datatype] for datatype in ["greyseal_nat"]]
+    yame_id_list = [fileID_datatype_match[datatype] for datatype in ["planktonimaging_ifcb"]]
+
+# phytoplankton_reg_recip_proj
+# phytoplankton_nat
+# adcp_nat
 
     for id in yame_id_list:
         print(f"post {get_datatype_for_id.get(id, 'unkown datatype with id:')} {id}")
 
     post_to_yamr_prod(yame_id_list)
+
+
+# publicera metadatapost. det här är steg 2 av 2 för att posta till öppna data
+# skördningen verkar ske någon minut över heltimma - HH:03 kanske

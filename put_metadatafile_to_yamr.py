@@ -17,6 +17,8 @@ def put_to_yamr_prod(filepath):
 
     yame_id = metadata_file["metadata"]["fileIdentifier"]
 
+# YAMR TEST https://sid-metadata-tst.smhi.se/yamr/apipri/
+# YAMR PROD https://sid-metadata.smhi.se/yamr/apipri/
     headers = {
         'Content-Type': 'application/json',
     }
@@ -34,6 +36,9 @@ def compare_yamr_to_local(local_file_path):
     headers = {
         'Content-Type': 'application/json',
     }
+
+# YAMR TEST https://sid-metadata-tst.smhi.se/yamr/apipri/
+# YAMR PROD https://sid-metadata.smhi.se/yamr/apipri/
 
     print(f"get yame ID {yame_id} from yamr prod")
     response = requests.get(url=f"https://sid-metadata.smhi.se/yamr/apipri/{yame_id}", headers=headers)
@@ -80,8 +85,13 @@ if __name__ == "__main__":
     # .glob("yame_*.json")
     # fär att köra endast en vald skriv t.ex.
     # .glob("yame_pico*nat*.json")
-    for file_path in DATA_OUT.glob("yame_greyseal*.json"):
+    for file_path in DATA_OUT.glob("yame_planktonimaging*.json"):
         print(file_path)
         compare_yamr_to_local(file_path)
         put_to_yamr_prod(file_path)
         
+# yame_phytoplankton*reg*.json
+# yame_phytoplankton*nat*.json
+# yame_adcp*.json
+
+# det här är steg 1 (av 2) för att posta till öppna data

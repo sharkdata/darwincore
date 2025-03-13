@@ -32,9 +32,11 @@ if __name__ == "__main__":
 
     get_datatype_for_id = {id: datatype for datatype, id in fileID_datatype_match.items()}
 
-    yame_id_list = ["e19d5237-286c-499e-94aa-b3d9c5d27c5e", "e4857210-2dd8-11ed-84f0-5b3e6bab28c1", "2124a8b6-2f07-415c-ba55-fb16afc5f1fc", "c4a67335-ad22-4d79-9175-62d54d55409f"]
+    yame_id_list = ["ce89ba58-f397-47a4-8493-8b5c711fd1ab", "e19d5237-286c-499e-94aa-b3d9c5d27c5e", "e4857210-2dd8-11ed-84f0-5b3e6bab28c1", "2124a8b6-2f07-415c-ba55-fb16afc5f1fc", "c4a67335-ad22-4d79-9175-62d54d55409f"]
 
     # for id in yame_id_list:
-    id = "83298680-793f-11ec-b325-b321d72a6051"
+    id = "ce89ba58-f397-47a4-8493-8b5c711fd1ab"
     print(f"post {get_datatype_for_id.get(id, 'unkown datatype with id:')} {id}")
     post_to_yame_prod([id])
+
+    # den här koden är inaktuell efter 2024-04-22
