@@ -69,5 +69,11 @@ filters:
         - filters_ices.txt
        # - filters_zooplankton_nat.txt
 
+transform:
+    directory:
+        dwca_config/transform
+    files:
+        - transform.yaml
+
 
 

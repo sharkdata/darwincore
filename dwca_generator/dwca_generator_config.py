@@ -36,6 +36,7 @@ class DwcaGeneratorConfig:
         self.taxa_worms_file = ""
         self.translate_files = []
         self.filters_files = []
+        self.transform_files = []
         self.metadata_source = None
         self.metadata_template = None
         self.metadata_target = None
@@ -72,6 +73,7 @@ class DwcaGeneratorConfig:
         self.translate_files = self.get_config_files("translate")
         # "filters"
         self.filters_files = self.get_config_files("filters")
+        self.transform_files = self.get_config_files("transform")
         # "metadataSourceFiles"
         file_list = self.get_config_files("metadataSourceFiles")
         metadata = self.merge_config_yaml_files(file_list)
@@ -118,7 +120,9 @@ class DwcaGeneratorConfig:
                 directory_path = pathlib.Path(file_path, source_files["directory"])
             if "globSearch" in source_files:
                 globSearch = source_files["globSearch"]
-                for file_path in pathlib.Path(directory_path).glob(globSearch):
+                for file_path in pathlib.Path(directory_path).glob(
+                    globSearch, case_sensitive=False
+                ):
                     if file_path not in source_file_list:
                         source_file_list.append(str(file_path))
             if "files" in source_files:
@@ -130,7 +134,9 @@ class DwcaGeneratorConfig:
         # print("\n".join(sorted(source_file_list)))
         return sorted(source_file_list)
 
-    def get_config_files(self, config_key, include_prefix=False) -> list[str] | list[FileWithPrefix]:
+    def get_config_files(
+        self, config_key, include_prefix=False
+    ) -> list[str] | list[FileWithPrefix]:
         """ """
         file_list = []
         if config_key in self.dwca_config:
@@ -155,7 +161,7 @@ class DwcaGeneratorConfig:
         return file_list
 
     def merge_config_yaml_files(self, yaml_file_list: list[str] | list[FileWithPrefix]):
-        """ Merge configurations as defined in the yaml file list order. """
+        """Merge configurations as defined in the yaml file list order."""
         result_dict = {}
         for file_name in yaml_file_list:
             if isinstance(file_name, FileWithPrefix):
@@ -171,7 +177,7 @@ class DwcaGeneratorConfig:
         return result_dict
 
     def dict_deep_update(self, target, updates):
-        """ Recursively updates or extends a dict. """
+        """Recursively updates or extends a dict."""
         for key, value in updates.items():
             if value == "REMOVE":
                 del target[key]
@@ -205,4 +211,3 @@ class DwcaGeneratorConfig:
                 return data.strip()
             else:
                 return data
-

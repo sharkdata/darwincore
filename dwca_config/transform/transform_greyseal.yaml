@@ -1,0 +1,104 @@
+- if:
+      decimalLatitude: "58.40333"
+      decimalLongitude: "15.62167"
+  then:
+    locality: "E Östergötland County"
+    decimalLatitude: "58.32"
+    decimalLongitude: "17.02"
+    coordinateUncertaintyInMeters: "65330"
+- if:
+    decimalLatitude: "58.76167"
+    decimalLongitude: "17.02333"
+  then:
+    locality: "D Södermanland County"
+    decimalLatitude: "58.70"
+    decimalLongitude: "17.38"
+    coordinateUncertaintyInMeters: "48200"
+- if:
+    decimalLatitude: "59.33833"
+    decimalLongitude: "18.01667"
+  then:
+    locality: "AB Stockholm County"
+    decimalLatitude: "59.31"
+    decimalLongitude: "18.91"
+    coordinateUncertaintyInMeters: "141270"
+- if:
+    decimalLatitude: "59.85833"
+    decimalLongitude: "17.64500"
+  then:
+    locality: "C Uppsala County"
+    decimalLatitude: "60.52"
+    decimalLongitude: "18.20"
+    coordinateUncertaintyInMeters: "69370"
+- if:
+    decimalLatitude: "60.67500"
+    decimalLongitude: "17.15000"
+  then:
+    locality: "X Gävleborg County"
+    decimalLatitude: "61.37"
+    decimalLongitude: "17.36"
+    coordinateUncertaintyInMeters: "104510"
+- if:
+    decimalLatitude: "62.63000"
+    decimalLongitude: "17.93667"
+  then:
+    locality: "Y Västernorrland County"
+    decimalLatitude: "62.78"
+    decimalLongitude: "18.40"
+    coordinateUncertaintyInMeters: "103490"
+- if:
+    decimalLatitude: "63.83167"
+    decimalLongitude: "20.26667"
+  then:
+    locality: "AC Västerbotten County"
+    decimalLatitude: "63.97"
+    decimalLongitude: "20.94"
+    coordinateUncertaintyInMeters: "134320"
+- if:
+    decimalLatitude:  "65.58333"
+    decimalLongitude: "22.16333"
+  then:
+    locality: "BD Norrbotten County"
+    latitude: "65.45"
+    decimalLongitude: "22.93"
+    coordinateUncertaintyInMeters: "85550"
+- if:
+    decimalLatitude: "57.64167"
+    decimalLongitude: "18.29667"
+  then:
+    locality: "I Gotland County"
+    decimalLatitude: "57.64"
+    decimalLongitude: "18.84"
+    coordinateUncertaintyInMeters: "121390"
+- if:
+    decimalLatitude: "56.66167"
+    decimalLongitude: "16.36000"
+  then:
+    locality: "H Kalmar County"
+    decimalLatitude: "56.95"
+    decimalLongitude: "16.56"
+    coordinateUncertaintyInMeters: "138750"
+- if:
+    decimalLatitude: "56.20000"
+    decimalLongitude: "15.95000"
+  then:
+    locality: "K Blekinge County"
+    decimalLatitude: "56.02"
+    decimalLongitude: "15.40"
+    coordinateUncertaintyInMeters: "64370"
+- if:
+    decimalLatitude: "56.16667"
+    decimalLongitude: "15.58500"
+  then:
+    locality: "K Blekinge County"
+    decimalLatitude: "56.02"
+    decimalLongitude: "15.40"
+    coordinateUncertaintyInMeters: "64370"
+- if:
+    decimalLatitude: "55.40000"
+    decimalLongitude: "12.91667"
+  then:
+    locality: "M Skåne County"
+    decimalLatitude: "55.67"
+    decimalLongitude: "12.99"
+    coordinateUncertaintyInMeters: "122710"

@@ -6,36 +6,28 @@
 
 from pathlib import Path
 import logging
-import yaml
 import csv
 
 import dwca_generator
-
-
-UNIT_TO_UNIT_ID_PATH = Path("data_in/resources/unit_to_unit_id.yaml")
-PARAMETER_TO_PARAMETER_ID_PATH = Path("data_in/resources/parameter_to_parameter_id.yaml")
+from dwca_generator.dwca_transform_data import DwcaTransformData
 
 
 class DwcaFormatStandard(object):
     """ """
 
-    def __init__(self, data, dwca_gen_config, worms_info, translate):
-        """ Darwin Core Archive Format base class. """
+    def __init__(
+        self, data, dwca_gen_config, worms_info, translate, transform: DwcaTransformData
+    ):
+        """Darwin Core Archive Format base class."""
 
         self.target_dwca_path = Path(dwca_gen_config.dwca_target)
         self.data_object = data
         self.dwca_gen_config = dwca_gen_config
         self.worms_info_object = worms_info
         self.translate = translate
-       #
+        self.transform = transform
         self.clear()
-        #
         self.source_rows = self.data_object.get_data_rows()
-
-        with UNIT_TO_UNIT_ID_PATH.open() as unit_to_unit_id_file:
-           self._measurement_unit_id_by_unit = yaml.safe_load(unit_to_unit_id_file)
-        with PARAMETER_TO_PARAMETER_ID_PATH.open() as parameter_to_parameter_id_file:
-           self._measurement_type_id_by_type = yaml.safe_load(parameter_to_parameter_id_file)
 
     def clear(self):
         """ """
@@ -53,9 +45,9 @@ class DwcaFormatStandard(object):
         event_control_dict = {}
         for index, dwca_node_name in enumerate(dwca_node_names):
             event_control_dict[dwca_node_name] = {}
-            event_control_dict[dwca_node_name][
-                "used_key_list"
-            ] = set()  # To avoid duplicates.
+            event_control_dict[dwca_node_name]["used_key_list"] = (
+                set()
+            )  # To avoid duplicates.
             event_control_dict[dwca_node_name]["dwc_key_name"] = event_keys[index][
                 "keyName"
             ]
@@ -94,166 +86,7 @@ class DwcaFormatStandard(object):
 
                         # Check if sampleSizeValue is empty and if so make sampleSizeUnit empty too
                     if not event_dict.get("sampleSizeValue"):
-                       event_dict["sampleSizeUnit"] = ""
-
-                    # Seal Pathology area fix using obis.org/maptool moving position from county capital to position in water and with individual uncertainty radius m
-                    if event_dict.get("verbatimLocality") == "BD" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "BD Norrbotten County"
-                        event_dict["latitude"] = "65.45"
-                        event_dict["decimalLongitude"] = "22.93"
-                        event_dict["coordinateUncertaintyInMeters"] = "85550"
-
-                    if event_dict.get("verbatimLocality") == "AC" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "AC Västerbotten County"
-                        event_dict["decimalLatitude"] = "63.97"
-                        event_dict["decimalLongitude"] = "20.94"
-                        event_dict["coordinateUncertaintyInMeters"] = "134320"
-
-                    if event_dict.get("verbatimLocality") == "Y" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "Y Västernorrland County"
-                        event_dict["decimalLatitude"] = "62.78"
-                        event_dict["decimalLongitude"] = "18.40"
-                        event_dict["coordinateUncertaintyInMeters"] = "103490"
-
-                    if event_dict.get("verbatimLocality") in ["X", "x"] and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "X Gävleborg County"
-                        event_dict["decimalLatitude"] = "61.37"
-                        event_dict["decimalLongitude"] = "17.36"
-                        event_dict["coordinateUncertaintyInMeters"] = "104510"
-
-                    if event_dict.get("verbatimLocality") == "C" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "C Uppsala County"
-                        event_dict["decimalLatitude"] = "60.52"
-                        event_dict["decimalLongitude"] = "18.20"
-                        event_dict["coordinateUncertaintyInMeters"] = "69370"
-
-                    if event_dict.get("verbatimLocality") == "AB" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "AB Stockholm County"
-                        event_dict["decimalLatitude"] = "59.31"
-                        event_dict["decimalLongitude"] = "18.91"
-                        event_dict["coordinateUncertaintyInMeters"] = "141270"
-
-                    if event_dict.get("verbatimLocality") == "D" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "D Södermanland County"
-                        event_dict["decimalLatitude"] = "58.70"
-                        event_dict["decimalLongitude"] = "17.38"
-                        event_dict["coordinateUncertaintyInMeters"] = "48200"
-
-                    if event_dict.get("verbatimLocality") == "E" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "E Östergötland County"
-                        event_dict["decimalLatitude"] = "58.32"
-                        event_dict["decimalLongitude"] = "17.02"
-                        event_dict["coordinateUncertaintyInMeters"] = "65330"
-
-                    if event_dict.get("verbatimLocality") == "H" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "H Kalmar County"
-                        event_dict["decimalLatitude"] = "56.95"
-                        event_dict["decimalLongitude"] = "16.56"
-                        event_dict["coordinateUncertaintyInMeters"] = "138750"
-
-                    if event_dict.get("verbatimLocality") == "I" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "I Gotland County"
-                        event_dict["decimalLatitude"] = "57.64"
-                        event_dict["decimalLongitude"] = "18.84"
-                        event_dict["coordinateUncertaintyInMeters"] = "121390"
-
-                    if event_dict.get("verbatimLocality") == "K" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "K Blekinge County"
-                        event_dict["decimalLatitude"] = "56.02"
-                        event_dict["decimalLongitude"] = "15.40"
-                        event_dict["coordinateUncertaintyInMeters"] = "64370"
-
-                    if event_dict.get("verbatimLocality") == "M" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "M Skåne County"
-                        event_dict["decimalLatitude"] = "55.67"
-                        event_dict["decimalLongitude"] = "12.99"
-                        event_dict["coordinateUncertaintyInMeters"] = "122710"
-
-                    if event_dict.get("verbatimLocality") == "N" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "N Halland County"
-                        event_dict["decimalLatitude"] = "56.99"
-                        event_dict["decimalLongitude"] = "12.20"
-                        event_dict["coordinateUncertaintyInMeters"] = "84390"
-
-                    if event_dict.get("verbatimLocality") == "O" and "SHARK_SealPathology" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "O Västra Götaland County"
-                        event_dict["decimalLatitude"] = "58.25"
-                        event_dict["decimalLongitude"] = "11.31"
-                        event_dict["coordinateUncertaintyInMeters"] = "107450"
-
-                    #Greyseal fix fix using obis.org/maptool moving position from county capital to position in water and with individual uncertainty radius m
-
-                    if event_dict.get("decimalLatitude") == "58.40333" and event_dict.get("decimalLongitude") == "15.62167" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "E Östergötland County"
-                        event_dict["decimalLatitude"] = "58.32"
-                        event_dict["decimalLongitude"] = "17.02"
-                        event_dict["coordinateUncertaintyInMeters"] = "65330"
-
-                    if event_dict.get("decimalLatitude") == "58.76167" and event_dict.get("decimalLongitude") == "17.02333" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "D Södermanland County"
-                        event_dict["decimalLatitude"] = "58.70"
-                        event_dict["decimalLongitude"] = "17.38"
-                        event_dict["coordinateUncertaintyInMeters"] = "48200"
-
-                    if event_dict.get("decimalLatitude") == "59.33833" and event_dict.get("decimalLongitude") == "18.01667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "AB Stockholm County"
-                        event_dict["decimalLatitude"] = "59.31"
-                        event_dict["decimalLongitude"] = "18.91"
-                        event_dict["coordinateUncertaintyInMeters"] = "141270"
-
-                    if event_dict.get("decimalLatitude") == "59.85833" and event_dict.get("decimalLongitude") == "17.64500" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "C Uppsala County"
-                        event_dict["decimalLatitude"] = "60.52"
-                        event_dict["decimalLongitude"] = "18.20"
-                        event_dict["coordinateUncertaintyInMeters"] = "69370"
-
-                    if event_dict.get("decimalLatitude") == "60.67500" and event_dict.get("decimalLongitude") == "17.15000" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "X Gävleborg County"
-                        event_dict["decimalLatitude"] = "61.37"
-                        event_dict["decimalLongitude"] = "17.36"
-                        event_dict["coordinateUncertaintyInMeters"] = "104510"
-
-                    if event_dict.get("decimalLatitude") == "62.63000" and event_dict.get("decimalLongitude") == "17.93667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "Y Västernorrland County"
-                        event_dict["decimalLatitude"] = "62.78"
-                        event_dict["decimalLongitude"] = "18.40"
-                        event_dict["coordinateUncertaintyInMeters"] = "103490"
-
-                    if event_dict.get("decimalLatitude") == "63.83167" and event_dict.get("decimalLongitude") == "20.26667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "AC Västerbotten County"
-                        event_dict["decimalLatitude"] = "63.97"
-                        event_dict["decimalLongitude"] = "20.94"
-                        event_dict["coordinateUncertaintyInMeters"] = "134320"
-
-                    if event_dict.get("decimalLatitude") == "65.58333" and event_dict.get("decimalLongitude") == "22.16333" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "BD Norrbotten County"
-                        event_dict["latitude"] = "65.45"
-                        event_dict["decimalLongitude"] = "22.93"
-                        event_dict["coordinateUncertaintyInMeters"] = "85550"
-
-                    if event_dict.get("decimalLatitude") == "57.64167" and event_dict.get("decimalLongitude") == "18.29667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "I Gotland County"
-                        event_dict["decimalLatitude"] = "57.64"
-                        event_dict["decimalLongitude"] = "18.84"
-                        event_dict["coordinateUncertaintyInMeters"] = "121390"
-
-                    if event_dict.get("decimalLatitude") == "56.66167" and event_dict.get("decimalLongitude") == "16.36000" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "H Kalmar County"
-                        event_dict["decimalLatitude"] = "56.95"
-                        event_dict["decimalLongitude"] = "16.56"
-                        event_dict["coordinateUncertaintyInMeters"] = "138750"
-
-                    if event_dict.get("decimalLatitude") == "56.20000" and event_dict.get("decimalLongitude") == "15.95000" and "SHARK_GreySeal" in event_dict.get("dynamicProperties") or event_dict.get("decimalLatitude") == "56.16667" and event_dict.get("decimalLongitude") == "15.58500" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "K Blekinge County"
-                        event_dict["decimalLatitude"] = "56.02"
-                        event_dict["decimalLongitude"] = "15.40"
-                        event_dict["coordinateUncertaintyInMeters"] = "64370"
-
-                    if event_dict.get("decimalLatitude") == "55.40000" and event_dict.get("decimalLongitude") == "12.91667" and "SHARK_GreySeal" in event_dict.get("dynamicProperties"):
-                        event_dict["locality"] = "M Skåne County"
-                        event_dict["decimalLatitude"] = "55.67"
-                        event_dict["decimalLongitude"] = "12.99"
-                        event_dict["coordinateUncertaintyInMeters"] = "122710"
+                        event_dict["sampleSizeUnit"] = ""
 
                         # Append event row content.
                     self.dwca_event.append(event_dict.copy())
@@ -268,9 +101,9 @@ class DwcaFormatStandard(object):
         occurrence_control_dict = {}
         for index, dwca_node_name in enumerate(dwca_node_names):
             occurrence_control_dict[dwca_node_name] = {}
-            occurrence_control_dict[dwca_node_name][
-                "used_key_list"
-            ] = set()  # To avoid duplicates.
+            occurrence_control_dict[dwca_node_name]["used_key_list"] = (
+                set()
+            )  # To avoid duplicates.
             occurrence_control_dict[dwca_node_name]["dwc_key_name"] = occurrence_keys[
                 index
             ]["keyName"]
@@ -324,31 +157,42 @@ class DwcaFormatStandard(object):
                         # Create LSID for Phytoplankton BVOL data.
                         bvol_aphia_id = source_row.get("bvol_aphia_id", "")
                         if bvol_aphia_id:
-                            bvol_aphia_lsid = "https://www.marinespecies.org/aphia.php?p=taxdetails&id=" + bvol_aphia_id
+                            bvol_aphia_lsid = (
+                                "https://www.marinespecies.org/aphia.php?p=taxdetails&id="
+                                + bvol_aphia_id
+                            )
                             source_row["bvol_aphia_lsid"] = bvol_aphia_lsid
 
                         # Add content.
                         self.add_content(content, source_row, occurrence_dict)
 
-                       # Phytoplankton fix
-                        if all(
-                            key in occurrence_dict and "SHARK_Phytoplankton" in occurrence_dict.get("dynamicProperties", "")
-                            for key in ("dynamicProperties", "scientificName", "verbatimIdentification", "scientificNameID")
-                        ) and occurrence_dict.get("scientificName") == "Bacillariophyceae" and occurrence_dict.get("verbatimIdentification") == "Pennales" and "1304629" in occurrence_dict.get("scientificNameID", ""):
+                        # Phytoplankton fix
+                        if (
+                            all(
+                                key in occurrence_dict
+                                and "SHARK_Phytoplankton"
+                                in occurrence_dict.get("dynamicProperties", "")
+                                for key in (
+                                    "dynamicProperties",
+                                    "scientificName",
+                                    "verbatimIdentification",
+                                    "scientificNameID",
+                                )
+                            )
+                            and occurrence_dict.get("scientificName")
+                            == "Bacillariophyceae"
+                            and occurrence_dict.get("verbatimIdentification")
+                            == "Pennales"
+                            and "1304629" in occurrence_dict.get("scientificNameID", "")
+                        ):
                             occurrence_dict["scientificName"] = "Pennales"
 
-                        # Add URI path for Aphia-id if numeric.
                         worms_lsid = occurrence_dict.get("scientificNameID", "")
-                        # print("DEBUG 1", worms_lsid)
-                        try:
-                            worms_lsid_int = int(worms_lsid)
+                        if worms_lsid.isnumeric():
                             worms_lsid_new = (
                                 "urn:lsid:marinespecies.org:taxname:" + worms_lsid
                             )
                             occurrence_dict["scientificNameID"] = worms_lsid_new
-                            # print("DEBUG 2", worms_lsid_new)
-                        except:
-                            pass
 
                         # Append occurrence row content.
                         self.dwca_occurrence.append(occurrence_dict.copy())
@@ -412,24 +256,19 @@ class DwcaFormatStandard(object):
 
                         # Append.
                         if emof_dict.get("measurementType", ""):
-                            # Measurement identifiers. NERC vocabular. 
+                            # Measurement identifiers. NERC vocabular.
                             # nerc codes found at https://vocab.nerc.ac.uk/collection/P01/current/
-                            parameter = emof_dict.get("measurementType", "")
                             unit = emof_dict.get("measurementUnit", "")
                             measurement_method = emof_dict.get("measurementMethod", "")
 
-                            #nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
-                            if unit == "ind/analysed sample fraction" and measurement_method != "Image analysis":
-                                emof_dict["measurementUnit"] = "Individual per analysed sample fraction"
-
-                            if parameter == "Salinity" and unit == "":
-                                emof_dict["measurementUnit"] = "Dimensionless"
-
-                            if measurement_unit_id := self._measurement_unit_id_by_unit.get(emof_dict.get("measurementUnit")):
-                                emof_dict["measurementUnitID"] = measurement_unit_id
-
-                            if measurement_type_id := self._measurement_type_id_by_type.get(emof_dict.get("measurementType")):
-                                emof_dict["measurementTypeID"] = measurement_type_id
+                            # nerc codes found at https://vocab.nerc.ac.uk/collection/P06/current/
+                            if (
+                                unit == "ind/analysed sample fraction"
+                                and measurement_method != "Image analysis"
+                            ):
+                                emof_dict["measurementUnit"] = (
+                                    "Individual per analysed sample fraction"
+                                )
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
@@ -446,7 +285,6 @@ class DwcaFormatStandard(object):
                             if "extraMeasurements" in content:
                                 extraMeasurements = content["extraMeasurements"]
                                 for extraMeasurement in extraMeasurements:
-
                                     param = extraMeasurement.get("measurementType", "")
                                     param_id = extraMeasurement.get(
                                         "measurementTypeID", ""
@@ -457,10 +295,12 @@ class DwcaFormatStandard(object):
                                     )
                                     source_key = extraMeasurement.get("sourceKey", "")
                                     value = source_row.get(source_key, "")
-                                    value_id = extraMeasurement.get("measurementValueID", "")
+                                    value_id = extraMeasurement.get(
+                                        "measurementValueID", ""
+                                    )
 
-                                    if 'text' in extraMeasurement.keys():
-                                        value = extraMeasurement.get("text","")
+                                    if "text" in extraMeasurement.keys():
+                                        value = extraMeasurement.get("text", "")
                                     if param and (value not in [""]):
                                         if param_id is None:
                                             param_id = ""
@@ -475,54 +315,150 @@ class DwcaFormatStandard(object):
                                         emof_dict["measurementUnitID"] = unit_id
                                         emof_dict["measurementValueID"] = value_id
 
-                                        if param == "Sampling laboratory name" and value == "Swedish Meteorological and Hydrological Institute":
-                                            emof_dict["measurementValueID"] = "https://edmo.seadatanet.org/report/545"
+                                        if (
+                                            param == "Sampling laboratory name"
+                                            and value
+                                            == "Swedish Meteorological and Hydrological Institute"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "https://edmo.seadatanet.org/report/545"
+                                            )
 
-                                        elif param == "Analytical laboratory name" and value == "Swedish Meteorological and Hydrological Institute":
-                                            emof_dict["measurementValueID"] = "https://edmo.seadatanet.org/report/545"
+                                        elif (
+                                            param == "Analytical laboratory name"
+                                            and value
+                                            == "Swedish Meteorological and Hydrological Institute"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "https://edmo.seadatanet.org/report/545"
+                                            )
 
-                                        elif (param == "Imaging instrument name" or param == "Sampler type") and value == "IFCB":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/L22/current/TOOL1588/"
+                                        elif (
+                                            param == "Imaging instrument name"
+                                            or param == "Sampler type"
+                                        ) and value == "IFCB":
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/L22/current/TOOL1588/"
+                                            )
 
-                                        elif param == "Trophic type" and value == "Mixotrophic":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S1314/"
+                                        elif (
+                                            param == "Trophic type"
+                                            and value == "Mixotrophic"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/S13/current/S1314/"
+                                            )
 
-                                        elif param == "Trophic type" and value == "Heterotrophic":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S1312/"
+                                        elif (
+                                            param == "Trophic type"
+                                            and value == "Heterotrophic"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/S13/current/S1312/"
+                                            )
 
-                                        elif param == "Trophic type" and value == "Autotrophic":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/S13/current/S135/"
+                                        elif (
+                                            param == "Trophic type"
+                                            and value == "Autotrophic"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/S13/current/S135/"
+                                            )
 
-                                        elif param == "Sampling platform" and value == "77SE":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77SE/"
+                                        elif (
+                                            param == "Sampling platform"
+                                            and value == "77SE"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/C17/current/77SE/"
+                                            )
 
-                                        elif param == "Sampling platform" and value == "77AR":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77AR/"
+                                        elif (
+                                            param == "Sampling platform"
+                                            and value == "77AR"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/C17/current/77AR/"
+                                            )
 
-                                        elif param == "Sampling platform" and value == "34AR":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/34AR/"
+                                        elif (
+                                            param == "Sampling platform"
+                                            and value == "34AR"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/C17/current/34AR/"
+                                            )
 
-                                        elif param == "Sampling platform" and value == "77KB":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77KB/"
+                                        elif (
+                                            param == "Sampling platform"
+                                            and value == "77KB"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/C17/current/77KB/"
+                                            )
 
-                                        elif param == "Sampling platform" and value == "77KC":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77KC/"
+                                        elif (
+                                            param == "Sampling platform"
+                                            and value == "77KC"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/C17/current/77KC/"
+                                            )
 
-                                        elif param == "Sampling platform" and value == "77NE":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77NE/"
+                                        elif (
+                                            param == "Sampling platform"
+                                            and value == "77NE"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/C17/current/77NE/"
+                                            )
 
-                                        elif param == "Sampling platform" and value == "77SN":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/C17/current/77SN/"
+                                        elif (
+                                            param == "Sampling platform"
+                                            and value == "77SN"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/C17/current/77SN/"
+                                            )
 
-                                        elif param in ["Sampling laboratory accredited", "Analytical laboratory accredited"] and value == "No":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/GBX/current/TX000020/"
+                                        elif (
+                                            param
+                                            in [
+                                                "Sampling laboratory accredited",
+                                                "Analytical laboratory accredited",
+                                            ]
+                                            and value == "No"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/GBX/current/TX000020/"
+                                            )
 
-                                        elif param in ["Sampling laboratory accredited", "Analytical laboratory accredited"] and value == "Yes":
-                                            emof_dict["measurementValueID"] = "http://vocab.nerc.ac.uk/collection/GBX/current/TX000019/"
-                                        
-                                        elif param == "Quality flag" and value in ["Blank", "E,", "S", "B", "<", ">", "R", "M", "Z"]:
-                                            emof_dict["measurementTypeID"] = "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
+                                        elif (
+                                            param
+                                            in [
+                                                "Sampling laboratory accredited",
+                                                "Analytical laboratory accredited",
+                                            ]
+                                            and value == "Yes"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/GBX/current/TX000019/"
+                                            )
 
+                                        elif param == "Quality flag" and value in [
+                                            "Blank",
+                                            "E,",
+                                            "S",
+                                            "B",
+                                            "<",
+                                            ">",
+                                            "R",
+                                            "M",
+                                            "Z",
+                                        ]:
+                                            emof_dict["measurementTypeID"] = (
+                                                "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
+                                            )
 
                                         if emof_dict.get("measurementType", ""):
                                             self.dwca_measurementorfact.append(
@@ -533,7 +469,7 @@ class DwcaFormatStandard(object):
                     # For checking for duplicates.
                     log_message = (
                         "Duplicates: "
-                        + source_row.get("debug_info" "")
+                        + source_row.get("debug_info")
                         + " Key for param/unit: "
                         + str(emof_param_unit_id)
                     )
@@ -629,6 +565,7 @@ class DwcaFormatStandard(object):
                                     break
                 if dynamic_content_list:
                     result_dict[term] = ", ".join(dynamic_content_list)
+        self.transform.transform_row(result_dict)
 
     # def extract_metadata(self):
     #     """ """
@@ -839,27 +776,26 @@ class DwcaFormatStandard(object):
             ziparchive.appendZipEntry("eml.xml", eml_document)
 
     def get_event_columns(self):
-        """ Implementation of abstract method declared in DwcDatatypeBase. """
+        """Implementation of abstract method declared in DwcDatatypeBase."""
         event_columns = self.dwca_gen_config.field_mapping.get("dwcaEventColumns", [])
         return event_columns
 
     def get_occurrence_columns(self):
-        """ Implementation of abstract method declared in DwcDatatypeBase. """
+        """Implementation of abstract method declared in DwcDatatypeBase."""
         occurrence_columns = self.dwca_gen_config.field_mapping.get(
             "dwcaOccurrenceColumns", []
         )
         return occurrence_columns
 
     def get_measurementorfact_columns(self):
-        """ Implementation of abstract method declared in DwcDatatypeBase. """
+        """Implementation of abstract method declared in DwcDatatypeBase."""
         emof_columns = self.dwca_gen_config.field_mapping.get("dwcaEmofColumns", [])
         return emof_columns
 
 
 def _read_aphia_id_mapping() -> dict[str, str]:
     aphipa_id_file_path = (
-            dwca_generator.PROJECT_ROOT
-            / "data_in/resources/add_aphia_id_taxon.txt"
+        dwca_generator.PROJECT_ROOT / "data_in/resources/add_aphia_id_taxon.txt"
     )
     with aphipa_id_file_path.open() as aphia_id_file:
         additional_aphia_id = {
