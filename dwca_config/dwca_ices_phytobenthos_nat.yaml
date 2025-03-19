@@ -75,6 +75,12 @@ filters:
        # - filters_epibenthos_nat.txt
         - filters_ices_phytobenthos.txt
 
+transform:
+    directory:
+        dwca_config/transform
+    files:
+        - transform.yaml
+
 # metadataSourceFiles:
 #     directory:
 #         ../metadata/dcat_ap_se

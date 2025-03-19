@@ -1,0 +1,182 @@
+# Measurement Unit ID
+- if:
+    measurementUnit: "Cell per litre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+- if:
+    measurementUnit: "Cell per millilitre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UCML/"
+- if:
+    measurementUnit: "Cubic centimetres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVCC/"
+- if:
+    measurementUnit: "Cubic micrometres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMCU/"
+- if:
+    measurementUnit: "Degrees"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UAAA/"
+- if:
+    measurementUnit: "Degrees Celsius"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
+- if:
+    measurementUnit: "Dimensionless"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+- if:
+    measurementUnit: "Grams"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/"
+- if:
+    measurementUnit: "Grams per cubic metre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGMC/"
+- if:
+    measurementUnit: "Hectopascals"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/HPAX/"
+- if:
+    measurementUnit: "Hours"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UHOR/"
+- if:
+    measurementUnit: "Individual per cubic metre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPMM/"
+- if:
+    measurementUnit: "Individual per litre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+- if:
+    measurementUnit: "Individual per litre or 100 micrometre pieces per litre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
+- if:
+    measurementUnit: "Litres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
+- if:
+    measurementUnit: "Metres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULAA/"
+- if:
+    measurementUnit: "Metres per second"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UVAA/"
+- if:
+    measurementUnit: "Micrograms per cubic metre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/MCUG/"
+- if:
+    measurementUnit: "Micrograms per litre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGPL/"
+- if:
+    measurementUnit: "Micrometres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMIC/"
+- if:
+    measurementUnit: "Millimetres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UXMM/"
+- if:
+    measurementUnit: "Millilitres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/VVML/"
+- if:
+    measurementUnit: "Percent"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPCT/"
+- if:
+    measurementUnit: "Square centimetres"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/SQCM/"
+
+# Measurement Type ID
+- if:
+    measurementType: "Bacterial carbon production"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/UPTH/"
+- if:
+    measurementType: "Bacterial growth"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/P02/current/GREF/"
+- if:
+    measurementType: "3H thymidine uptake"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P09/current/UPTH/"
+- if:
+    measurementType: "Cell carbon content"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MAOCCB11/"
+- if:
+    measurementType: "Biovolume concentration"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/CVOLUKNB/"
+- if:
+    measurementType: "Cell volume"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/CVOLZZ01/"
+- if:
+    measurementType: "Air pressure"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/CAPH/"
+- if:
+    measurementType: "Air temperature"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/OD1/current/AIRTEMP/"
+- if:
+    measurementType: "Temperature"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
+- if:
+    measurementType: "Salinity"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01/"
+- if:
+    measurementType: "Dry weight"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SPDWXX01/"
+- if:
+    measurementType: "Cover"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/PCOV7736/"
+- if:
+    measurementType: "Wet weight per volume"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL04"
+- if:
+    measurementType: "Wet weight"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OWETBM01"
+- if:
+    measurementType: "Length"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
+- if:
+    measurementType: "Length mean"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OBSINDLX/"
+- if:
+    measurementType: "Carbon content"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MDMAP010/"
+- if:
+    measurementType: "Abundance"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL01"
+- if:
+    measurementType: "Count"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
+- if:
+    measurementType: "Salinity"
+    measurementUnit: ""
+  then:
+    measurementUnit: "Dimensionless"
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+

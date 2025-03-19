@@ -7,6 +7,7 @@
 import pathlib
 import logging
 import dwca_generator
+from dwca_generator.dwca_transform_data import DwcaTransformData
 
 
 class DwcaGenerator:
@@ -55,6 +56,8 @@ class DwcaGenerator:
         source_data.cleanup_data()
         source_data.create_dwca_keys()
 
+        transform = DwcaTransformData(dwca_gen_config.transform_files)
+
         # Create and save DwC-A.
         logger.info("")
         logger.info("=== Creating DwC-A ===")
@@ -62,7 +65,11 @@ class DwcaGenerator:
             taxa_file_path=dwca_gen_config.taxa_worms_file
         )
         dwca_format = dwca_generator.DwcaFormatStandard(
-            source_data, dwca_gen_config, species_info, translate
+            source_data,
+            dwca_gen_config,
+            species_info,
+            translate,
+            transform,
         )
         dwca_format.create_dwca_event()
         dwca_format.create_dwca_occurrence()
@@ -83,17 +90,20 @@ class DwcaGenerator:
 
         # Metadata SMHI YAME.
         # metadata_smhi_yame = dwca_generator.MetadataSmhiYame(dwca_gen_config)
-        metadata_smhi_yame = dwca_generator.MetadataSmhiYame(dwca_gen_config.metadata_source, dwca_gen_config.metadata_template, dwca_gen_config.metadata_target)
+        metadata_smhi_yame = dwca_generator.MetadataSmhiYame(
+            dwca_gen_config.metadata_source,
+            dwca_gen_config.metadata_template,
+            dwca_gen_config.metadata_target,
+        )
         logger.info("")
         logger.info("=== Adding metadata for SMHI YAME ===")
         if metadata_smhi_yame.metadata_target == "":
-            logger.info('yame metadata not created, no target')
+            logger.info("yame metadata not created, no target")
         else:
-            logger.info(f'yame metadata target {metadata_smhi_yame.metadata_target}')
-            logger.info(f'template {metadata_smhi_yame.metadata_template}')
+            logger.info(f"yame metadata target {metadata_smhi_yame.metadata_target}")
+            logger.info(f"template {metadata_smhi_yame.metadata_template}")
         metadata_smhi_yame.add_metadata(metadata_content)
         metadata_smhi_yame.save_to_file()
-
 
         # The meta.xml description file for DwC-A.
         dwca_format.create_meta_xml()
@@ -142,6 +152,7 @@ class DwcaGenerator:
         file_handler.setFormatter(formatter)
         formatter = logging.Formatter("%(message)s")
         console_handler.setFormatter(formatter)
+
         # Add filter to console to avoid huge error lists.
         class ConsoleFilter(logging.Filter):
             def filter(self, record):

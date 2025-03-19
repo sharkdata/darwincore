@@ -64,3 +64,8 @@ filters:
         - filters.txt
         - filters_phytoplankton_slv_biotox.txt
 
+transform:
+    directory:
+        dwca_config/transform
+    files:
+        - transform.yaml

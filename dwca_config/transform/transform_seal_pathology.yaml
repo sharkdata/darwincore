@@ -1,0 +1,105 @@
+- if:
+    verbatimLocality: "E"
+  then:
+    locality: "E Östergötland County"
+    decimalLatitude: "58.32"
+    decimalLongitude: "17.02"
+    coordinateUncertaintyInMeters: "65330"
+- if:
+    verbatimLocality: "H"
+  then:
+    locality: "H Kalmar County"
+    decimalLatitude: "56.95"
+    decimalLongitude: "16.56"
+    coordinateUncertaintyInMeters: "138750"
+- if:
+    verbatimLocality: "x"
+  then:
+    locality: "X Gävleborg County"
+    decimalLatitude: "61.37"
+    decimalLongitude: "17.36"
+    coordinateUncertaintyInMeters: "104510"
+- if:
+    verbatimLocality: "X"
+  then:
+    locality: "X Gävleborg County"
+    decimalLatitude: "61.37"
+    decimalLongitude: "17.36"
+    coordinateUncertaintyInMeters: "104510"
+- if:
+    verbatimLocality: "I"
+  then:
+    locality: "I Gotland County"
+    decimalLatitude: "57.64"
+    decimalLongitude: "18.84"
+    coordinateUncertaintyInMeters: "121390"
+- if:
+    verbatimLocality: "M"
+  then:
+    locality: "M Skåne County"
+    decimalLatitude: "55.67"
+    decimalLongitude: "12.99"
+    coordinateUncertaintyInMeters: "122710"
+- if:
+    verbatimLocality: "AB"
+  then:
+    locality: "AB Stockholm County"
+    decimalLatitude: "59.31"
+    decimalLongitude: "18.91"
+    coordinateUncertaintyInMeters: "141270"
+- if:
+    verbatimLocality: "C"
+  then:
+   locality: "C Uppsala County"
+   decimalLatitude: "60.52"
+   decimalLongitude: "18.20"
+   coordinateUncertaintyInMeters: "69370"
+- if:
+    verbatimLocality: "K"
+  then:
+   locality: "K Blekinge County"
+   decimalLatitude: "56.02"
+   decimalLongitude: "15.40"
+   coordinateUncertaintyInMeters: "64370"
+- if:
+    verbatimLocality: "AC"
+  then:
+    locality: "AC Västerbotten County"
+    decimalLatitude: "63.97"
+    decimalLongitude: "20.94"
+    coordinateUncertaintyInMeters: "134320"
+- if:
+    verbatimLocality: "BD"
+  then:
+    locality: "BD Norrbotten County"
+    decimalLatitude: "65.45"
+    decimalLongitude: "22.93"
+    coordinateUncertaintyInMeters: "85550"
+- if:
+    verbatimLocality: "D"
+  then:
+    locality: "D Södermanland County"
+    decimalLatitude: "58.70"
+    decimalLongitude: "17.38"
+    coordinateUncertaintyInMeters: "48200"
+- if:
+    verbatimLocality: "Y"
+  then:
+    locality: "Y Västernorrland County"
+    decimalLatitude: "62.78"
+    decimalLongitude: "18.40"
+    coordinateUncertaintyInMeters: "103490"
+- if:
+    verbatimLocality: "N"
+  then:
+    locality: "N Halland County"
+    decimalLatitude: "56.99"
+    decimalLongitude: "12.20"
+    coordinateUncertaintyInMeters: "84390"
+- if:
+    verbatimLocality: "O"
+  then:
+    locality: "O Västra Götaland County"
+    decimalLatitude: "58.25"
+    decimalLongitude: "11.31"
+    coordinateUncertaintyInMeters: "107450"

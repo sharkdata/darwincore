@@ -66,6 +66,12 @@ filters:
         - filters.txt
         - filters_jellyfish_nat.txt
 
+transform:
+    directory:
+        dwca_config/transform
+    files:
+        - transform.yaml
+
 metadataSourceFiles:
     directory:
         ../metadata/dcat_ap_se

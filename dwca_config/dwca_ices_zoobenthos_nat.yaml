@@ -72,6 +72,12 @@ filters:
        # - filters_zoobenthos_nat.txt
         - filters_ices_zoobenthos.txt
 
+transform:
+    directory:
+        dwca_config/transform
+    files:
+        - transform.yaml
+
 # metadataSourceFiles:
 #     directory:
 #         ../metadata/dcat_ap_se
