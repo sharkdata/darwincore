@@ -2,7 +2,9 @@ import os
 from unittest.mock import MagicMock
 
 import dwca_generator
+from dwca_generator import TaxaWorms
 from tests import fixtures
+from dwca_generator import PROJECT_ROOT
 
 
 def test_aphia_id_is_added_for_phytoplankton():
@@ -10,10 +12,10 @@ def test_aphia_id_is_added_for_phytoplankton():
 
     # Given phytoplankton names from add_aphia_id_taxon.txt
     phytoplankton_names = [
-        {"scientificName": "Eupodiscales"},
-        {"scientificName": "Ebria"},
-        {"scientificName": "Cylindrotheca"},
-        {"scientificName": "Cladopyxis"},
+        {"scientific_name": "Eupodiscales"},
+        {"scientific_name": "Ebria"},
+        {"scientific_name": "Cylindrotheca"},
+        {"scientific_name": "Cladopyxis"},
     ]
 
     # Given shark data using given names
@@ -34,7 +36,8 @@ def test_aphia_id_is_added_for_phytoplankton():
                             }
                         ]
                     },
-                    "scientificName": {"sourceKey": "scientificName"},
+                    "scientificName": {"sourceKey": "scientific_name"},
+                    "scientificNameID": {"sourceKey": "aphia_id"}
                 },
             }
         ],
@@ -50,8 +53,9 @@ def test_aphia_id_is_added_for_phytoplankton():
         }
     }
 
+    taxa_worms = TaxaWorms(PROJECT_ROOT / "data_in/resources/taxa_worms.txt")
     dwca_format = dwca_generator.DwcaFormatStandard(
-        given_shark_data, mock_config, MagicMock(), MagicMock()
+        given_shark_data, mock_config, taxa_worms, MagicMock(), MagicMock()
     )
 
     # Given there is no dwca_occurence
