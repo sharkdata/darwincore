@@ -67,3 +67,8 @@ filters:
        # - filters_phytoplankton_nat.txt
         - filters_ices_phytoplankton.txt
 
+transform:
+    directory:
+        dwca_config/transform
+    files:
+        - transform.yaml

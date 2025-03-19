@@ -64,6 +64,12 @@ filters:
         - filters.txt
         - filters_seal_pathology.txt
 
+transform:
+    directory:
+        dwca_config/transform
+    files:
+        - transform.yaml
+        - transform_seal_pathology.yaml
 
 metadataSourceFiles:
     directory:

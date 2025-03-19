@@ -1,3 +1,4 @@
+import os
 from unittest.mock import MagicMock
 
 import dwca_generator
@@ -5,6 +6,8 @@ from tests import fixtures
 
 
 def test_aphia_id_is_added_for_phytoplankton():
+    os.chdir("/home/k000840/code/oceanografi/darwincore")
+
     # Given phytoplankton names from add_aphia_id_taxon.txt
     phytoplankton_names = [
         {"scientificName": "Eupodiscales"},
@@ -53,6 +56,8 @@ def test_aphia_id_is_added_for_phytoplankton():
 
     # Given there is no dwca_occurence
     assert len(dwca_format.dwca_occurrence) == 0
+
+    # When creating a dwca occurrence
     dwca_format.create_dwca_occurrence()
 
     # Then a dwa_occurence has been added for each event_id
