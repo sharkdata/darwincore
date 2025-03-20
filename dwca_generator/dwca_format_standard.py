@@ -4,11 +4,12 @@
 # Copyright (c) 2019-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-from pathlib import Path
-import logging
 import csv
+import logging
+from pathlib import Path
 
 import dwca_generator
+from dwca_generator import dwca_meta_xml, dwca_utils
 from dwca_generator.dwca_transform_data import DwcaTransformData
 
 
@@ -84,7 +85,8 @@ class DwcaFormatStandard(object):
                         # Add content.
                         self.add_content(event_content, source_row, event_dict)
 
-                        # Check if sampleSizeValue is empty and if so make sampleSizeUnit empty too
+                        # Check if sampleSizeValue is empty and if so make sampleSizeUnit
+                        # empty too
                     if not event_dict.get("sampleSizeValue"):
                         event_dict["sampleSizeUnit"] = ""
 
@@ -273,9 +275,7 @@ class DwcaFormatStandard(object):
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
                         # Get key.
-                        event_node_key = source_row.get(
-                            control_dict["dwc_key_name"], ""
-                        )
+                        event_node_key = source_row.get(control_dict["dwc_key_name"], "")
                         # Create event row.
                         if event_node_key and (
                             event_node_key not in control_dict["used_key_list"]
@@ -318,7 +318,8 @@ class DwcaFormatStandard(object):
                                         if (
                                             param == "Sampling laboratory name"
                                             and value
-                                            == "Swedish Meteorological and Hydrological Institute"
+                                            == "Swedish Meteorological and Hydrological "
+                                            "Institute"
                                         ):
                                             emof_dict["measurementValueID"] = (
                                                 "https://edmo.seadatanet.org/report/545"
@@ -327,7 +328,8 @@ class DwcaFormatStandard(object):
                                         elif (
                                             param == "Analytical laboratory name"
                                             and value
-                                            == "Swedish Meteorological and Hydrological Institute"
+                                            == "Swedish Meteorological and Hydrological "
+                                            "Institute"
                                         ):
                                             emof_dict["measurementValueID"] = (
                                                 "https://edmo.seadatanet.org/report/545"
@@ -682,7 +684,9 @@ class DwcaFormatStandard(object):
     #                 intellectual_rights = """
     #                     This work is licensed under the
     #                     <ulink url="https://creativecommons.org/publicdomain/zero/1.0/">
-    #                         <citetitle>CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</citetitle>
+    #                         <citetitle>
+    #                             CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+    #                         </citetitle>
     #                     </ulink>
     #                     license.
     #                     """
@@ -693,7 +697,7 @@ class DwcaFormatStandard(object):
     def create_meta_xml(self):
         """ """
         self.meta_xml_rows = []
-        meta_xml = dwca_generator.DarwinCoreMetaXml()
+        meta_xml = dwca_meta_xml.DarwinCoreMetaXml()
         self.meta_xml_rows = meta_xml.create_meta_xml(
             self.get_event_columns(),
             self.get_occurrence_columns(),
@@ -711,9 +715,7 @@ class DwcaFormatStandard(object):
         event_columns = self.get_event_columns()
         event_content.append("\t".join(event_columns))
         occurrence_content.append("\t".join(self.get_occurrence_columns()))
-        measurementorfact_content.append(
-            "\t".join(self.get_measurementorfact_columns())
-        )
+        measurementorfact_content.append("\t".join(self.get_measurementorfact_columns()))
 
         # Convert from dictionary to row for each item in the list.
         # Event.
@@ -748,7 +750,7 @@ class DwcaFormatStandard(object):
             measurementorfact_content.append("\t".join(row))
 
         # Create zip archive.
-        ziparchive = dwca_generator.ZipArchive(self.target_dwca_path)
+        ziparchive = dwca_utils.ZipArchive(self.target_dwca_path)
         if len(event_content) > 1:
             ziparchive.appendZipEntry(
                 "event.txt", ("\r\n".join(event_content).encode("utf-8"))

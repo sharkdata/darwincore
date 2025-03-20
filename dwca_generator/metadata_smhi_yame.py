@@ -5,6 +5,7 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import pathlib
+
 import jinja2
 
 # import slugify
@@ -12,8 +13,9 @@ import jinja2
 
 class MetadataSmhiYame(object):
     """ """
+
     def __init__(self, source, template, target):
-    # def __init__(self, dwca_gen_config):
+        # def __init__(self, dwca_gen_config):
         """ """
         # self.dwca_gen_config = dwca_gen_config
         self.content_rows = []
@@ -65,7 +67,8 @@ class MetadataSmhiYame(object):
 
     def stripValues(self, data):
         if isinstance(data, dict):
-            # return {k:self.stripValues(v) for k, v in data.items() if k is not None and v is not None}
+            # return {k:self.stripValues(v) for k, v in data.items()
+            # if k is not None and v is not None}
             return {k: self.stripValues(v) for k, v in data.items()}
         elif isinstance(data, list):
             # return [self.stripValues(item) for item in data if item is not None]

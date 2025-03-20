@@ -10,9 +10,7 @@ import re
 import zipfile
 from os import PathLike
 
-
-
-import dwca_generator
+from dwca_generator import dwca_utils
 
 _delivery_note_pattern = re.compile(r"^processed_data[/\\]delivery_note\.txt$")
 
@@ -42,17 +40,16 @@ class DwcaDataSharkStandard:
         return self.row_list
 
     def add_shark_dataset(self, dataset_filepath):
-        """ Add data from SHARK zipped files. """
+        """Add data from SHARK zipped files."""
         logger = logging.getLogger("dwca_generator")
 
         logger.info("")
         if isinstance(dataset_filepath, (str, PathLike)):
             logger.info("Adding dataset: " + dataset_filepath)
 
-        # Check if data package is marked for production (PROD). THIS IS BYPASSED BY MH "or value.lower() == "test" "
+        # Check if data package is marked for production (PROD).
+        # THIS IS BYPASSED BY MH "or value.lower() == "test" "
         status_prod = False
-
-
 
         try:
             with zipfile.ZipFile(dataset_filepath) as z:
@@ -70,7 +67,9 @@ class DwcaDataSharkStandard:
                             if len(row_items) >= 2:
                                 key = row_items[0]
                                 value = row_items[1]
-                                if (key.lower() == "status") and (value.lower() == "prod" or value.lower() == "test"):
+                                if (key.lower() == "status") and (
+                                    value.lower() == "prod" or value.lower() == "test"
+                                ):
                                     status_prod = True
         except Exception as e:
             logger.warning(" - EXCEPTION: failed to read ZIP file: " + str(e))
@@ -88,7 +87,6 @@ class DwcaDataSharkStandard:
             header = []
             # From file in zip to list of rows.
             with zipfile.ZipFile(dataset_filepath) as z:
-
                 # Load code translations from zip.
                 translate_codes = {}
                 translate_fields = set()
@@ -150,9 +148,7 @@ class DwcaDataSharkStandard:
                                     excluded_values = filter_dict.get(
                                         "excluded_values", None
                                     )
-                                    if included_values and (
-                                        value not in included_values
-                                    ):
+                                    if included_values and (value not in included_values):
                                         add_row = False
                                     if excluded_values and (value in excluded_values):
                                         add_row = False
@@ -172,7 +168,10 @@ class DwcaDataSharkStandard:
                                     if str(value) == str(filter_value):
                                         number_of_match += 1
                                 if number_of_match == len(group_value):
-                                    # msg = row_dict["debug_info"] + "   " + group_key + "   " + str(group_value)
+                                    # msg = (
+                                    #    row_dict["debug_info"] + "   " + group_key +
+                                    #     "   " + str(group_value)
+                                    # )
                                     # logger.debug(" - Group-exclude: " + msg)
                                     add_row = False
 
@@ -194,7 +193,9 @@ class DwcaDataSharkStandard:
                                     if key in translate_fields:
                                         value = row_dict.get(key, "")
                                         translate_key = key + "<+>" + value
-                                        new_value = translate_codes.get(translate_key, value)
+                                        new_value = translate_codes.get(
+                                            translate_key, value
+                                        )
                                         row_dict[key] = new_value
 
                                 # Translate values.
@@ -245,14 +246,14 @@ class DwcaDataSharkStandard:
                 #             row_dict['year'] = sample_date_str[0:4]
                 row_dict["month"] = sample_date_str[5:7]
                 row_dict["day"] = sample_date_str[8:10]
-            except:
+            except Exception:
                 pass
 
             # Time zone info. (+01:00 or +02:00 (DST=Daylight Savings Time) for Sweden.
             sample_date = row_dict.get("sample_date", "")
             sample_time = row_dict.get("sample_time", "")
             if (sample_date != "") and (sample_time != ""):
-                if dwca_generator.is_daylight_savings_time(sample_date):
+                if dwca_utils.is_daylight_savings_time(sample_date):
                     row_dict["sample_time"] = sample_time + "+02:00"
                 else:
                     row_dict["sample_time"] = sample_time + "+01:00"
@@ -287,7 +288,8 @@ class DwcaDataSharkStandard:
                         size_string = str(size_min_um) + "-" + str(size_max_um)
                         row_dict["size_class"] = size_string
 
-            # Add sampler_type_code for Seal. Sometimes also use "obspoint". But not if sealpathology
+            # Add sampler_type_code for Seal. Sometimes also use "obspoint". But not if
+            # sealpathology
             if "seal" in delivery_datatype and "pathology" not in delivery_datatype:
                 sampler_type_code = row_dict.get("sampler_type_code", "")
                 if sampler_type_code == "":
@@ -308,40 +310,40 @@ class DwcaDataSharkStandard:
                 longitude = math.floor(float(longitude))
 
                 # County AB or A or B.
-                if ((latitude == 5920) and (longitude == 1801)):
+                if (latitude == 5920) and (longitude == 1801):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County AC.
-                if ((latitude == 6349) and (longitude == 2016)):
+                if (latitude == 6349) and (longitude == 2016):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County BD.
-                if ((latitude == 6535) and (longitude == 2209)):
+                if (latitude == 6535) and (longitude == 2209):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County C.
-                if ((latitude == 5951) and (longitude == 1738)):
+                if (latitude == 5951) and (longitude == 1738):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County D.
-                if ((latitude == 5845) and (longitude == 1701)):
+                if (latitude == 5845) and (longitude == 1701):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County E.
-                if ((latitude == 5824) and (longitude == 1537)):
+                if (latitude == 5824) and (longitude == 1537):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County F.
-                if ((latitude == 5747) and (longitude == 1409)):
+                if (latitude == 5747) and (longitude == 1409):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County H.
-                if ((latitude == 5639) and (longitude == 1621)):
+                if (latitude == 5639) and (longitude == 1621):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County I.
-                if ((latitude == 5738) and (longitude == 1817)):
+                if (latitude == 5738) and (longitude == 1817):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County K.
-                if ((latitude == 5610) and (longitude == 1535)):
+                if (latitude == 5610) and (longitude == 1535):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County X.
-                if ((latitude == 6040) and (longitude == 1709)):
+                if (latitude == 6040) and (longitude == 1709):
                     row_dict["coordinate_uncertainty_m"] = "150000"
                 # County Y.
-                if ((latitude == 6237) and (longitude == 1756)):
+                if (latitude == 6237) and (longitude == 1756):
                     row_dict["coordinate_uncertainty_m"] = "150000"
 
             # For empty observations use "absent" in occurrenceStatus.
@@ -364,7 +366,12 @@ class DwcaDataSharkStandard:
             if delivery_datatype in ["picoplankton"]:
                 parameter = row_dict.get("parameter", "")
                 value = row_dict.get("value", "")
-                if parameter in ["# counted", "Abundance", "Biovolume concentration", "Carbon concentration"]:
+                if parameter in [
+                    "# counted",
+                    "Abundance",
+                    "Biovolume concentration",
+                    "Carbon concentration",
+                ]:
                     value = float(value)
                     if value == 0.0:
                         row_dict["present_absent"] = "absent"
@@ -372,10 +379,13 @@ class DwcaDataSharkStandard:
                         if scientific_name == "":
                             row_dict["scientific_name"] = "Biota"
             #
-            if "porpoise" in delivery_datatype: # Harbour porpoise
+            if "porpoise" in delivery_datatype:  # Harbour porpoise
                 parameter = row_dict.get("parameter", "")
                 value = row_dict.get("value", "")
-                if parameter in ["Detection positive minutes per day", "Detection positive days per month"]:
+                if parameter in [
+                    "Detection positive minutes per day",
+                    "Detection positive days per month",
+                ]:
                     value = float(value)
                     if value == 0.0:
                         row_dict["present_absent"] = "absent"
@@ -385,16 +395,29 @@ class DwcaDataSharkStandard:
 
             # Fixes for IFCB clean up
             dataset_name = row_dict.get("dataset_name", "")
-            if "classifier_taxon_name" in row_dict and any(x in dataset_name for x in ["IFCB", "Plankton Imaging", "PlanktonImaging"]):
-                row_dict["reported_scientific_name_xx"] = row_dict.pop("reported_scientific_name") # verbatimIdentification
-                row_dict["species_flag_code_xx"] = row_dict.pop("species_flag_code") # identificationQualifier
-                row_dict["coefficient_xx"] = row_dict.pop("coefficient") # remove possibility
-                
+            if "classifier_taxon_name" in row_dict and any(
+                x in dataset_name for x in ["IFCB", "Plankton Imaging", "PlanktonImaging"]
+            ):
+                row_dict["reported_scientific_name_xx"] = row_dict.pop(
+                    "reported_scientific_name"
+                )  # verbatimIdentification
+                row_dict["species_flag_code_xx"] = row_dict.pop(
+                    "species_flag_code"
+                )  # identificationQualifier
+                row_dict["coefficient_xx"] = row_dict.pop(
+                    "coefficient"
+                )  # remove possibility
+
                 station_name = row_dict.get("station_name", "")
                 sampler_type_code = row_dict.get("sampler_type_code", "")
-                if any(name in station_name for name in ["Tangesund", "Tångesund", "TÃ¥ngesund"]) and sampler_type_code == "":
-                    row_dict["sampler_type_code"] = "IFCB"   
-
+                if (
+                    any(
+                        name in station_name
+                        for name in ["Tangesund", "Tångesund", "TÃ¥ngesund"]
+                    )
+                    and sampler_type_code == ""
+                ):
+                    row_dict["sampler_type_code"] = "IFCB"
 
     def create_dwca_keys(self):
         """ """
@@ -403,11 +426,12 @@ class DwcaDataSharkStandard:
             delivery_datatype = row_dict.get("delivery_datatype")
 
             # Extra keys for the "event.txt" table.
-            # for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_event_nodes_keys().items():
+            # for _dwc_event_node_name, dwc_event_node_dict in
+            # self.resources.get_event_nodes_keys().items():
             for dwc_event_node_dict in config_dwca_keys["eventTypeKeys"]["event"]:
                 dwc_key_name = dwc_event_node_dict.get("keyName", "")
                 key_list = dwc_event_node_dict.get("keyFields", [])
-                dwc_id = dwca_generator.create_extra_key(row_dict, key_list)
+                dwc_id = dwca_utils.create_extra_key(row_dict, key_list)
 
                 # Used to generate short names.
                 if dwc_key_name not in self.dwc_short_names_exists_dict:
@@ -421,13 +445,18 @@ class DwcaDataSharkStandard:
                 ):
                     seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] + 1
                     self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] = seq_no
-                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][dwc_id] = seq_no
+                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
+                        dwc_id
+                    ] = seq_no
 
-                seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][dwc_id]
+                seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
+                    dwc_id
+                ]
 
                 # Get value from row depending on the delivery datatype
-                event_key = dwc_event_node_dict.get(
-                    "deliveryTypeValueField", {}).get(delivery_datatype)
+                event_key = dwc_event_node_dict.get("deliveryTypeValueField", {}).get(
+                    delivery_datatype
+                )
                 if event_value := row_dict.get(event_key):
                     row_dict[dwc_key_name] = event_value
                 else:
@@ -436,16 +465,16 @@ class DwcaDataSharkStandard:
                     row_dict[dwc_key_name] = dwc_id_short
 
             # Extra keys for the "occurrence.txt" table.
-            # for _dwc_event_node_name, dwc_event_node_dict in self.resources.get_occurrence_nodes_keys().items():
+            # for _dwc_event_node_name, dwc_event_node_dict in
+            # self.resources.get_occurrence_nodes_keys().items():
             for dwc_event_node_dict in config_dwca_keys["eventTypeKeys"]["occurrence"]:
-
                 scientific_name = row_dict.get("scientific_name", "")
                 if not scientific_name:
                     continue
                 #
                 dwc_key_name = dwc_event_node_dict.get("keyName", "")
                 key_list = dwc_event_node_dict.get("keyFields", [])
-                dwc_id = dwca_generator.create_extra_key(row_dict, key_list)
+                dwc_id = dwca_utils.create_extra_key(row_dict, key_list)
 
                 # Used to generate short names.
                 if dwc_key_name not in self.dwc_short_names_exists_dict:
@@ -458,17 +487,21 @@ class DwcaDataSharkStandard:
                 ):
                     seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] + 1
                     self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] = seq_no
-                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][dwc_id] = seq_no
+                    self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
+                        dwc_id
+                    ] = seq_no
 
                 # Get value from row depending on the delivery datatype
-                occurence_key = dwc_event_node_dict.get(
-                    "deliveryTypeValueField", {}).get(delivery_datatype)
+                occurence_key = dwc_event_node_dict.get("deliveryTypeValueField", {}).get(
+                    delivery_datatype
+                )
                 if occurence_value := row_dict.get(occurence_key):
                     row_dict[dwc_key_name] = occurence_value
                 else:
                     dwc_key_prefix = dwc_event_node_dict.get("keyPrefix", "")
                     seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"][
-                        dwc_id]
+                        dwc_id
+                    ]
 
                     dwc_id_short = dwc_key_prefix + str(seq_no)
                     if size_class := row_dict.get("size_class", ""):

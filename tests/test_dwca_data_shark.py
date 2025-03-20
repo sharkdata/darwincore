@@ -1,5 +1,5 @@
-import dwca_generator
 from dwca_generator import dwca_filters, dwca_translate
+from dwca_generator.dwca_data_shark import DwcaDataSharkStandard
 from tests import fixtures
 
 
@@ -22,9 +22,7 @@ def test_add_shark_dataset_windows_zip_file():
     # Given a DwcaDataSharkStandard object
     given_filters = dwca_filters.DwcaFilters([])
     given_translate = dwca_translate.DwcaTranslate([])
-    shark_data = dwca_generator.DwcaDataSharkStandard(
-        None, given_filters, given_translate
-    )
+    shark_data = DwcaDataSharkStandard(None, given_filters, given_translate)
 
     # When adding the shark data zip file to the DwcaDataSharkStandard object
     shark_data.add_shark_dataset(given_windows_zip_file)
@@ -53,9 +51,7 @@ def test_add_shark_dataset_posix_zip_file():
     # Given a DwcaDataSharkStandard object
     given_filters = dwca_filters.DwcaFilters([])
     given_translate = dwca_translate.DwcaTranslate([])
-    shark_data = dwca_generator.DwcaDataSharkStandard(
-        None, given_filters, given_translate
-    )
+    shark_data = DwcaDataSharkStandard(None, given_filters, given_translate)
 
     # When adding the shark data zip file to the DwcaDataSharkStandard object
     shark_data.add_shark_dataset(given_windows_zip_file)

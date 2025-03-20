@@ -2,8 +2,8 @@ import csv
 import io
 import zipfile
 
-import dwca_generator
 from dwca_generator import dwca_filters, dwca_translate
+from dwca_generator.dwca_data_shark import DwcaDataSharkStandard
 
 
 def data_rows_as_csv(data):
@@ -52,7 +52,7 @@ def given_dwca_shark_standard_data(value_list: list[dict]):
     windows_zip_file = given_posix_shark_zip(shark_csv)
 
     # Given a DwcaDataSharkStandard object
-    shark_data = dwca_generator.DwcaDataSharkStandard(
+    shark_data = DwcaDataSharkStandard(
         None, dwca_filters.DwcaFilters([]), dwca_translate.DwcaTranslate([])
     )
     shark_data.add_shark_dataset(windows_zip_file)

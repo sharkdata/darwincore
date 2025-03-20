@@ -5,7 +5,9 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import pathlib
+
 import click
+
 import dwca_generator_main
 
 global dwca_configs

@@ -1,15 +1,12 @@
-import os
 from unittest.mock import MagicMock
 
-import dwca_generator
-from dwca_generator import TaxaWorms
-from tests import fixtures
 from dwca_generator import PROJECT_ROOT
+from dwca_generator.dwca_format_standard import DwcaFormatStandard
+from dwca_generator.dwca_taxa_worms import TaxaWorms
+from tests import fixtures
 
 
 def test_aphia_id_is_added_for_phytoplankton():
-    os.chdir("/home/k000840/code/oceanografi/darwincore")
-
     # Given phytoplankton names from add_aphia_id_taxon.txt
     phytoplankton_names = [
         {"scientific_name": "Eupodiscales"},
@@ -37,7 +34,7 @@ def test_aphia_id_is_added_for_phytoplankton():
                         ]
                     },
                     "scientificName": {"sourceKey": "scientific_name"},
-                    "scientificNameID": {"sourceKey": "aphia_id"}
+                    "scientificNameID": {"sourceKey": "aphia_id"},
                 },
             }
         ],
@@ -54,7 +51,7 @@ def test_aphia_id_is_added_for_phytoplankton():
     }
 
     taxa_worms = TaxaWorms(PROJECT_ROOT / "data_in/resources/taxa_worms.txt")
-    dwca_format = dwca_generator.DwcaFormatStandard(
+    dwca_format = DwcaFormatStandard(
         given_shark_data, mock_config, taxa_worms, MagicMock(), MagicMock()
     )
 

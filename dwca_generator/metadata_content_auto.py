@@ -4,11 +4,8 @@
 # Copyright (c) 2022-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import pathlib
-import logging
 import datetime
 
-import dwca_generator
 
 class MetadataContentAuto(object):
     """ """
@@ -28,7 +25,7 @@ class MetadataContentAuto(object):
         sample_date_max = "0000-00-00"
         param_unit_list = set()
 
-        self.revision_date = datetime.datetime.utcnow().strftime('%Y-%m-%d')
+        self.revision_date = datetime.datetime.utcnow().strftime("%Y-%m-%d")
 
         # Iterate over event rows.
         for event_row in self.dwca_event:
@@ -46,7 +43,7 @@ class MetadataContentAuto(object):
                     latitude_max = max(latitude_max, latitude)
                     longitude_min = min(longitude_min, longitude)
                     longitude_max = max(longitude_max, longitude)
-            except:
+            except Exception:
                 # In case of BLANK, etc.
                 pass
             # Sampling date.
@@ -82,7 +79,6 @@ class MetadataContentAuto(object):
             and longitude_min != 100.0
             and longitude_max != -100.0
         ):
-
             self.latitude_min = latitude_min
             self.latitude_max = latitude_max
             self.longitude_min = longitude_min

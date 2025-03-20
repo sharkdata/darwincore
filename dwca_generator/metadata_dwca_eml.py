@@ -4,11 +4,8 @@
 # Copyright (c) 2022-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import pathlib
-import logging
 import datetime
 
-import dwca_generator
 
 class MetadataDwcaEml(object):
     """ """
@@ -57,7 +54,9 @@ class MetadataDwcaEml(object):
                     intellectual_rights = """
                         This work is licensed under the
                         <ulink url="https://creativecommons.org/publicdomain/zero/1.0/">
-                            <citetitle>CC0 1.0 Universal (CC0 1.0) Public Domain Dedication</citetitle>
+                            <citetitle>
+                                CC0 1.0 Universal (CC0 1.0) Public Domain Dedication
+                            </citetitle>
                         </ulink>
                         license.
                         """
