@@ -1,6 +1,6 @@
 import pytest
 
-from dwca_generator.dwca_utils import config_with_suffix
+from darwincore.dwca_generator.dwca_utils import config_with_suffix
 
 
 @pytest.mark.parametrize(

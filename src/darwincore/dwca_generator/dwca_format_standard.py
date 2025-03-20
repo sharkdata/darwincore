@@ -8,9 +8,9 @@ import csv
 import logging
 from pathlib import Path
 
-import dwca_generator
-from dwca_generator import dwca_meta_xml, dwca_utils
-from dwca_generator.dwca_transform_data import DwcaTransformData
+import darwincore
+from darwincore.dwca_generator import dwca_meta_xml, dwca_utils
+from darwincore.dwca_generator.dwca_transform_data import DwcaTransformData
 
 
 class DwcaFormatStandard(object):
@@ -796,9 +796,7 @@ class DwcaFormatStandard(object):
 
 
 def _read_aphia_id_mapping() -> dict[str, str]:
-    aphipa_id_file_path = (
-        dwca_generator.PROJECT_ROOT / "data_in/resources/add_aphia_id_taxon.txt"
-    )
+    aphipa_id_file_path = darwincore.DATA_IN_PATH / "resources/add_aphia_id_taxon.txt"
     with aphipa_id_file_path.open() as aphia_id_file:
         additional_aphia_id = {
             row["scientific_name"]: row["AphiaID"]

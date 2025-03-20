@@ -5,11 +5,10 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import json
-from pathlib import Path
 
 import requests
 
-DATA_OUT = Path(__file__).parent / "data_out"
+from darwincore import DWCA_CONFIG_PATH
 
 
 def post_to_yamr_prod(yame_id_list):
@@ -30,8 +29,8 @@ def post_to_yamr_prod(yame_id_list):
     print(response.text)
 
 
-if __name__ == "__main__":
-    """kör detta för att posta från yame test till yamr prod """
+def main():
+    """kör detta för att posta från yame test till yamr prod"""
 
     # TODO: make this similar to dwca_generator_cli to let the user choose files to upload
     #  from a list.
@@ -45,11 +44,8 @@ if __name__ == "__main__":
     # - Innan man ser detta i geonetwork prod eller på www.smhi.se så måste ovanstående
     # jobb ha körts igen.
 
-    with open(
-        Path(__file__).parent
-        / "dwca_config/metadata_templates/fileID_datatype_match.json",
-        encoding="utf-8",
-    ) as f:
+    datatype_map_path = DWCA_CONFIG_PATH / "metadata_templates/fileID_datatype_match.json"
+    with datatype_map_path.open(encoding="utf-8") as f:
         fileID_datatype_match = json.load(f)
 
     get_datatype_for_id = {id: datatype for datatype, id in fileID_datatype_match.items()}
@@ -67,6 +63,9 @@ if __name__ == "__main__":
 
     post_to_yamr_prod(yame_id_list)
 
+    # publicera metadatapost. det här är steg 2 av 2 för att posta till öppna data
+    # skördningen verkar ske någon minut över heltimma - HH:03 kanske
 
-# publicera metadatapost. det här är steg 2 av 2 för att posta till öppna data
-# skördningen verkar ske någon minut över heltimma - HH:03 kanske
+
+if __name__ == "__main__":
+    main()

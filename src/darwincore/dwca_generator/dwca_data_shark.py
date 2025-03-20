@@ -10,7 +10,7 @@ import re
 import zipfile
 from os import PathLike
 
-from dwca_generator import dwca_utils
+from darwincore.dwca_generator import dwca_utils
 
 _delivery_note_pattern = re.compile(r"^processed_data[/\\]delivery_note\.txt$")
 

@@ -7,16 +7,16 @@
 import logging
 import pathlib
 
-from dwca_generator.dwca_data_shark import DwcaDataSharkStandard
-from dwca_generator.dwca_filters import DwcaFilters
-from dwca_generator.dwca_format_standard import DwcaFormatStandard
-from dwca_generator.dwca_generator_config import DwcaGeneratorConfig
-from dwca_generator.dwca_taxa_worms import TaxaWorms
-from dwca_generator.dwca_transform_data import DwcaTransformData
-from dwca_generator.dwca_translate import DwcaTranslate
-from dwca_generator.metadata_content_auto import MetadataContentAuto
-from dwca_generator.metadata_dwca_eml import MetadataDwcaEml
-from dwca_generator.metadata_smhi_yame import MetadataSmhiYame
+from darwincore.dwca_generator.dwca_data_shark import DwcaDataSharkStandard
+from darwincore.dwca_generator.dwca_filters import DwcaFilters
+from darwincore.dwca_generator.dwca_format_standard import DwcaFormatStandard
+from darwincore.dwca_generator.dwca_generator_config import DwcaGeneratorConfig
+from darwincore.dwca_generator.dwca_taxa_worms import TaxaWorms
+from darwincore.dwca_generator.dwca_transform_data import DwcaTransformData
+from darwincore.dwca_generator.dwca_translate import DwcaTranslate
+from darwincore.dwca_generator.metadata_content_auto import MetadataContentAuto
+from darwincore.dwca_generator.metadata_dwca_eml import MetadataDwcaEml
+from darwincore.dwca_generator.metadata_smhi_yame import MetadataSmhiYame
 
 
 class DwcaGenerator:
@@ -170,9 +170,7 @@ class DwcaGenerator:
         logger.addHandler(console_handler)
 
 
-# For TEST.
-if __name__ == "__main__":
-    """ """
+def main():
     # Test configs.
     config_files = [
         "dwca_config/dwca_bacterioplankton_nat.yaml",
@@ -197,3 +195,7 @@ if __name__ == "__main__":
         generator.generate_dwca(config_file)
 
     print("=== Finished. ===")
+
+
+if __name__ == "__main__":
+    main()

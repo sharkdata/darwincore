@@ -5,11 +5,10 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import json
-from pathlib import Path
 
 import requests
 
-DATA_OUT = Path(__file__).parent / "data_out"
+from darwincore import DATA_OUT_PATH
 
 
 def put_to_yamr_prod(filepath):
@@ -56,7 +55,9 @@ def compare_yamr_to_local(local_file_path):
     compare_json(metadata_file, yamr_metadata["item"]["data"])
 
     # Spara data till en JSON-fil
-    with open(DATA_OUT / f"respone_{yame_id}.json", "w", encoding="utf-8") as json_file:
+    with open(
+        DATA_OUT_PATH / f"respone_{yame_id}.json", "w", encoding="utf-8"
+    ) as json_file:
         json.dump(yamr_metadata["item"]["data"], json_file, ensure_ascii=False, indent=4)
 
 
@@ -84,7 +85,7 @@ def compare_json(json1, json2, path=""):
             print(f"Difference at {path}: {json1} != {json2}")
 
 
-if __name__ == "__main__":
+def main():
     """kör detta för att posta yame json metadatafiler till en befintlig metadatapost i
     yamr."""
 
@@ -95,13 +96,17 @@ if __name__ == "__main__":
     # .glob("yame_*.json")
     # fär att köra endast en vald skriv t.ex.
     # .glob("yame_pico*nat*.json")
-    for file_path in DATA_OUT.glob("yame_planktonimaging*.json"):
+    for file_path in DATA_OUT_PATH.glob("yame_planktonimaging*.json"):
         print(file_path)
         compare_yamr_to_local(file_path)
         put_to_yamr_prod(file_path)
 
-# yame_phytoplankton*reg*.json
-# yame_phytoplankton*nat*.json
-# yame_adcp*.json
+    # yame_phytoplankton*reg*.json
+    # yame_phytoplankton*nat*.json
+    # yame_adcp*.json
 
-# det här är steg 1 (av 2) för att posta till öppna data
+    # det här är steg 1 (av 2) för att posta till öppna data
+
+
+if __name__ == "__main__":
+    main()

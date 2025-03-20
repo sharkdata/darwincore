@@ -18,7 +18,7 @@ Darwincore is installed using uv. Follow instructions on https://docs.astral.sh/
 
 With uv, you can run darwincore directly without installing first.
 ```bash
-$ uv run dwca_generator_main.py 
+$ uv run dwca-generato-main 
 ```
 
 ### Virtual environment
@@ -48,28 +48,35 @@ Before running darwincore, add zipped datasets to the directory `data_in/dataset
 ### darwincor-generator-main
 Run all configurations:
 ```bash
-$ uv run dwca_generator_main.py
+$ uv run dwca-generator-main
 ```
 
 ### darwincore-generator-cli
 Cli to choose which configuration to run.
 ```bash
-$ uv run dwca_generator_cli.py
+$ uv run dwca-generator-cli
 ```
 
-## Testing
+### put-metadatafile-to-yamr
+Post yame json metadata files to existing metadata record in yamr.
+
+```bash
+$ uv put-metadatafile-to-yamr
+```
+
+### publish-to-yamr
+Post from yame test to yamr prod.
+```bash
+$ uv run publish-to-yamr
+```
+
+## Development
+### Testing
 Run all tests:
 ```bash
 $ uv run pytest
 ```
 
-To run pytest in the virtual environment you must have run the above command at least once. From withing the virtual
-environment you can then run:
-```bash
-(darwincore) $ pytest
-```
-
-## Development
 ### Adding dependencies
 Add project dependencies:
 ```bash
@@ -116,6 +123,7 @@ flag in git.
 ```bash
 $ git commit --no-verify
 ```
+
 ## Contact
 
 shark@smhi.se

@@ -1,5 +1,5 @@
-from dwca_generator import dwca_filters, dwca_translate
-from dwca_generator.dwca_data_shark import DwcaDataSharkStandard
+from darwincore.dwca_generator import dwca_filters, dwca_translate
+from darwincore.dwca_generator.dwca_data_shark import DwcaDataSharkStandard
 from tests import fixtures
 
 

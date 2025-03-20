@@ -8,7 +8,7 @@ import pathlib
 
 import click
 
-import dwca_generator_main
+from darwincore import dwca_generator_main
 
 global dwca_configs
 
@@ -35,8 +35,7 @@ def run_dwca_generator_command(row):
         generator.generate_dwca(dwca_configs[row - 1])
 
 
-if __name__ == "__main__":
-    """ """
+def main():
     global dwca_configs
     dwca_configs = []
     for file_path in pathlib.Path("dwca_config").glob("dwca_*.yaml"):
@@ -52,3 +51,7 @@ if __name__ == "__main__":
     print("")
     # Execute command.
     run_dwca_generator_command()
+
+
+if __name__ == "__main__":
+    main()

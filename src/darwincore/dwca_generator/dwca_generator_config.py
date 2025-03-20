@@ -11,7 +11,7 @@ from collections import namedtuple
 import dict2xml
 import yaml
 
-from dwca_generator.dwca_utils import config_with_suffix
+from darwincore.dwca_generator.dwca_utils import config_with_suffix
 
 FileWithPrefix = namedtuple("FileWithPrefix", ("file", "prefix"))
 

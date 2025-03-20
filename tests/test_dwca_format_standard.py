@@ -1,8 +1,8 @@
 from unittest.mock import MagicMock
 
-from dwca_generator import PROJECT_ROOT
-from dwca_generator.dwca_format_standard import DwcaFormatStandard
-from dwca_generator.dwca_taxa_worms import TaxaWorms
+from darwincore import DATA_IN_PATH
+from darwincore.dwca_generator.dwca_format_standard import DwcaFormatStandard
+from darwincore.dwca_generator.dwca_taxa_worms import TaxaWorms
 from tests import fixtures
 
 
@@ -50,7 +50,7 @@ def test_aphia_id_is_added_for_phytoplankton():
         }
     }
 
-    taxa_worms = TaxaWorms(PROJECT_ROOT / "data_in/resources/taxa_worms.txt")
+    taxa_worms = TaxaWorms(DATA_IN_PATH / "resources/taxa_worms.txt")
     dwca_format = DwcaFormatStandard(
         given_shark_data, mock_config, taxa_worms, MagicMock(), MagicMock()
     )
