@@ -100,7 +100,7 @@
 - if:
     measurementType: "Bacterial carbon production"
   then:
-    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/UPTH/"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/BPRDCVXX/"
 - if:
     measurementType: "Bacterial growth"
   then:
@@ -108,7 +108,7 @@
 - if:
     measurementType: "3H thymidine uptake"
   then:
-    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P09/current/UPTH/"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/UPTHXXXX/"
 - if:
     measurementType: "Cell carbon content"
   then:
@@ -124,11 +124,11 @@
 - if:
     measurementType: "Air pressure"
   then:
-    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/CAPH/"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/CAPHZZ01/"
 - if:
     measurementType: "Air temperature"
   then:
-    measurementTypeID: "http://vocab.nerc.ac.uk/collection/OD1/current/AIRTEMP/"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/CTMPZZ01/"
 - if:
     measurementType: "Temperature"
   then:
