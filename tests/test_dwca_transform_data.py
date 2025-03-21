@@ -1,7 +1,7 @@
 import pytest
 import yaml
 
-from dwca_generator.dwca_transform_data import DwcaTransformData
+from darwincore.dwca_generator.dwca_transform_data import DwcaTransformData
 
 
 @pytest.mark.parametrize(

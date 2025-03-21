@@ -4,44 +4,50 @@
 # Copyright (c) 2020-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import requests
 import json
-from pathlib import Path
 
-DATA_OUT = Path(__file__).parent / 'data_out'
+import requests
+
+from darwincore import DATA_OUT_PATH
+
 
 def put_to_yamr_prod(filepath):
-
-    with open(filepath, encoding='utf-8') as f:
+    with open(filepath, encoding="utf-8") as f:
         metadata_file = json.load(f)
 
     yame_id = metadata_file["metadata"]["fileIdentifier"]
 
-# YAMR TEST https://sid-metadata-tst.smhi.se/yamr/apipri/
-# YAMR PROD https://sid-metadata.smhi.se/yamr/apipri/
+    # YAMR TEST https://sid-metadata-tst.smhi.se/yamr/apipri/
+    # YAMR PROD https://sid-metadata.smhi.se/yamr/apipri/
     headers = {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
     }
     print(f"updating {filepath} with yame ID {yame_id} in yame prod")
-    response = requests.put(f"https://sid-metadata.smhi.se/yamr/apipri/{yame_id}", headers=headers, json=metadata_file)
+    response = requests.put(
+        f"https://sid-metadata.smhi.se/yamr/apipri/{yame_id}",
+        headers=headers,
+        json=metadata_file,
+    )
     print(response.text)
 
-def compare_yamr_to_local(local_file_path):
 
-    with open(local_file_path, encoding='utf-8') as f:
+def compare_yamr_to_local(local_file_path):
+    with open(local_file_path, encoding="utf-8") as f:
         metadata_file = json.load(f)
 
     yame_id = metadata_file["metadata"]["fileIdentifier"]
 
     headers = {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
     }
 
-# YAMR TEST https://sid-metadata-tst.smhi.se/yamr/apipri/
-# YAMR PROD https://sid-metadata.smhi.se/yamr/apipri/
+    # YAMR TEST https://sid-metadata-tst.smhi.se/yamr/apipri/
+    # YAMR PROD https://sid-metadata.smhi.se/yamr/apipri/
 
     print(f"get yame ID {yame_id} from yamr prod")
-    response = requests.get(url=f"https://sid-metadata.smhi.se/yamr/apipri/{yame_id}", headers=headers)
+    response = requests.get(
+        url=f"https://sid-metadata.smhi.se/yamr/apipri/{yame_id}", headers=headers
+    )
 
     # Hämta JSON-data från svaret
     yamr_metadata = response.json()
@@ -49,7 +55,9 @@ def compare_yamr_to_local(local_file_path):
     compare_json(metadata_file, yamr_metadata["item"]["data"])
 
     # Spara data till en JSON-fil
-    with open(DATA_OUT / f'respone_{yame_id}.json', 'w', encoding="utf-8") as json_file:
+    with open(
+        DATA_OUT_PATH / f"respone_{yame_id}.json", "w", encoding="utf-8"
+    ) as json_file:
         json.dump(yamr_metadata["item"]["data"], json_file, ensure_ascii=False, indent=4)
 
 
@@ -76,22 +84,29 @@ def compare_json(json1, json2, path=""):
         if json1 != json2:
             print(f"Difference at {path}: {json1} != {json2}")
 
-if __name__ == "__main__":
-    """kör detta för att posta yame json metadatafiler till en befintlig metadatapost i yamr"""
 
-    # TODO: make this similar to dwca_generator_cli to let the user choose files to upload from a list.
+def main():
+    """kör detta för att posta yame json metadatafiler till en befintlig metadatapost i
+    yamr."""
+
+    # TODO: make this similar to dwca_generator_cli to let the user choose files to upload
+    #  from a list.
 
     # OBS för att köra alla yame json filer i mappen data_out skriv
     # .glob("yame_*.json")
     # fär att köra endast en vald skriv t.ex.
     # .glob("yame_pico*nat*.json")
-    for file_path in DATA_OUT.glob("yame_planktonimaging*.json"):
+    for file_path in DATA_OUT_PATH.glob("yame_planktonimaging*.json"):
         print(file_path)
         compare_yamr_to_local(file_path)
         put_to_yamr_prod(file_path)
-        
-# yame_phytoplankton*reg*.json
-# yame_phytoplankton*nat*.json
-# yame_adcp*.json
 
-# det här är steg 1 (av 2) för att posta till öppna data
+    # yame_phytoplankton*reg*.json
+    # yame_phytoplankton*nat*.json
+    # yame_adcp*.json
+
+    # det här är steg 1 (av 2) för att posta till öppna data
+
+
+if __name__ == "__main__":
+    main()

@@ -4,10 +4,11 @@
 # Copyright (c) 2019-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import pathlib
-import zipfile
-import time
 import datetime
+import pathlib
+import time
+import zipfile
+
 import pytz
 
 
@@ -27,14 +28,15 @@ def create_extra_key(row_dict, key_list):
     """ """
     key_string = ""
     try:
-        #            key_list = [str(row_dict.get(item, '')) for item in key_columns if row_dict.get(item, False)]
+        # key_list = [str(row_dict.get(item, ''))
+        # for item in key_columns if row_dict.get(item, False)]
         value_list = []
         for key in key_list:
             value = str(row_dict.get(key, ""))
             if value:
                 value_list.append(key + ":" + value.replace(",", "."))
         key_string = ",".join(value_list)
-    except:
+    except Exception:
         key_string = "ERROR: Failed to generate key-string"
     # Replace swedish characters.
     key_string = key_string.replace("Å", "A")
@@ -49,13 +51,13 @@ def create_extra_key(row_dict, key_list):
 
 
 def is_daylight_savings_time(date_str, zone_name="Europe/Stockholm"):
-    """ Returns True if DST=Daylight Savings Time. """
+    """Returns True if DST=Daylight Savings Time."""
     try:
         localtime = pytz.timezone(zone_name)
         datetime_date = datetime.datetime.strptime(date_str, "%Y-%m-%d")
         localized_date = localtime.localize(datetime_date)
         return bool(localized_date.dst())
-    except:
+    except Exception:
         return False
 
 
@@ -109,7 +111,7 @@ def config_with_suffix(config, suffix):
     if not suffix:
         return config
     match config:
-        case [*element] if all(isinstance(element, str) for element in config):
+        case [*_] if all(isinstance(element, str) for element in config):
             return config
         case list():
             return [config_with_suffix(element, suffix) for element in config]
@@ -118,8 +120,7 @@ def config_with_suffix(config, suffix):
                 key = suffix_key.replace(suffix, "")
                 config[key] = config.pop(suffix_key)
             return {
-                key: config_with_suffix(value, suffix)
-                for key, value in config.items()
+                key: config_with_suffix(value, suffix) for key, value in config.items()
             }
         case _:
             return config

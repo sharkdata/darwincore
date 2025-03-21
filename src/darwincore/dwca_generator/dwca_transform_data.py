@@ -14,7 +14,9 @@ class DwcaTransformData:
         for config_path in self._config_file_list:
             config_path = Path(config_path)
             if config_path.exists() and config_path.suffix == ".yaml":
-                if config := yaml.load(config_path.read_text(encoding="utf-8"), yaml.BaseLoader):
+                if config := yaml.load(
+                    config_path.read_text(encoding="utf-8"), yaml.BaseLoader
+                ):
                     config_map = {str(c["if"]): c for c in config}
                     self._config |= config_map
 

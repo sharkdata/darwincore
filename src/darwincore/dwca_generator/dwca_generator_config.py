@@ -4,15 +4,14 @@
 # Copyright (c) 2020-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
+import collections.abc
 import pathlib
 from collections import namedtuple
 
-import yaml
 import dict2xml
-import collections.abc
+import yaml
 
-from dwca_generator.dwca_utils import config_with_suffix
-
+from darwincore.dwca_generator.dwca_utils import config_with_suffix
 
 FileWithPrefix = namedtuple("FileWithPrefix", ("file", "prefix"))
 
@@ -194,7 +193,8 @@ class DwcaGeneratorConfig:
 
     def stripValues(self, data):
         if isinstance(data, dict):
-            # return {k:self.stripValues(v) for k, v in data.items() if k is not None and v is not None}
+            # return {k:self.stripValues(v) for k, v in data.items()
+            # if k is not None and v is not None}
             return {k: self.stripValues(v) for k, v in data.items()}
         elif isinstance(data, list):
             # return [self.stripValues(item) for item in data if item is not None]

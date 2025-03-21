@@ -4,10 +4,19 @@
 # Copyright (c) 2020-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
-import pathlib
 import logging
-import dwca_generator
-from dwca_generator.dwca_transform_data import DwcaTransformData
+import pathlib
+
+from darwincore.dwca_generator.dwca_data_shark import DwcaDataSharkStandard
+from darwincore.dwca_generator.dwca_filters import DwcaFilters
+from darwincore.dwca_generator.dwca_format_standard import DwcaFormatStandard
+from darwincore.dwca_generator.dwca_generator_config import DwcaGeneratorConfig
+from darwincore.dwca_generator.dwca_taxa_worms import TaxaWorms
+from darwincore.dwca_generator.dwca_transform_data import DwcaTransformData
+from darwincore.dwca_generator.dwca_translate import DwcaTranslate
+from darwincore.dwca_generator.metadata_content_auto import MetadataContentAuto
+from darwincore.dwca_generator.metadata_dwca_eml import MetadataDwcaEml
+from darwincore.dwca_generator.metadata_smhi_yame import MetadataSmhiYame
 
 
 class DwcaGenerator:
@@ -19,7 +28,7 @@ class DwcaGenerator:
     def generate_dwca(self, config_file):
         """ """
         # Config and EML content.
-        dwca_gen_config = dwca_generator.DwcaGeneratorConfig(config_file)
+        dwca_gen_config = DwcaGeneratorConfig(config_file)
         dwca_gen_config.load_config()
 
         # Setup logging.
@@ -45,11 +54,9 @@ class DwcaGenerator:
         # Prepare data.
         logger.info("")
         logger.info("=== Preparing data ===")
-        filters = dwca_generator.DwcaFilters(dwca_gen_config.filters_files)
-        translate = dwca_generator.DwcaTranslate(dwca_gen_config.translate_files)
-        source_data = dwca_generator.DwcaDataSharkStandard(
-            dwca_gen_config, filters, translate
-        )
+        filters = DwcaFilters(dwca_gen_config.filters_files)
+        translate = DwcaTranslate(dwca_gen_config.translate_files)
+        source_data = DwcaDataSharkStandard(dwca_gen_config, filters, translate)
         for dataset_filepath in dwca_gen_config.source_files:
             source_data.add_shark_dataset(dataset_filepath)
         # source_data.create_dwca_keys()
@@ -61,10 +68,8 @@ class DwcaGenerator:
         # Create and save DwC-A.
         logger.info("")
         logger.info("=== Creating DwC-A ===")
-        species_info = dwca_generator.TaxaWorms(
-            taxa_file_path=dwca_gen_config.taxa_worms_file
-        )
-        dwca_format = dwca_generator.DwcaFormatStandard(
+        species_info = TaxaWorms(taxa_file_path=dwca_gen_config.taxa_worms_file)
+        dwca_format = DwcaFormatStandard(
             source_data,
             dwca_gen_config,
             species_info,
@@ -76,7 +81,7 @@ class DwcaGenerator:
         dwca_format.create_dwca_measurementorfact()
 
         # Metadata.
-        metadata_content = dwca_generator.MetadataContentAuto()
+        metadata_content = MetadataContentAuto()
         dwca_event = dwca_format.dwca_event
         dwca_measurementorfact = dwca_format.dwca_measurementorfact
         metadata_content.extract_metadata(dwca_event, dwca_measurementorfact)
@@ -84,13 +89,13 @@ class DwcaGenerator:
         # Metadata DarwinCore EML.
         logger.info("")
         logger.info("=== Adding metadata for eml files ===")
-        metadata_eml = dwca_generator.MetadataDwcaEml()
+        metadata_eml = MetadataDwcaEml()
         if eml:
             metadata_eml.add_metadata_to_eml(eml_content_rows, metadata_content)
 
         # Metadata SMHI YAME.
         # metadata_smhi_yame = dwca_generator.MetadataSmhiYame(dwca_gen_config)
-        metadata_smhi_yame = dwca_generator.MetadataSmhiYame(
+        metadata_smhi_yame = MetadataSmhiYame(
             dwca_gen_config.metadata_source,
             dwca_gen_config.metadata_template,
             dwca_gen_config.metadata_target,
@@ -165,9 +170,7 @@ class DwcaGenerator:
         logger.addHandler(console_handler)
 
 
-# For TEST.
-if __name__ == "__main__":
-    """ """
+def main():
     # Test configs.
     config_files = [
         "dwca_config/dwca_bacterioplankton_nat.yaml",
@@ -192,3 +195,7 @@ if __name__ == "__main__":
         generator.generate_dwca(config_file)
 
     print("=== Finished. ===")
+
+
+if __name__ == "__main__":
+    main()

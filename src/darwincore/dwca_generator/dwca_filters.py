@@ -51,7 +51,7 @@ class DwcaFilters:
             if filters_file_path.suffix in [".txt", ".tsv"]:
                 # Stored as text file.
                 with filters_file_path.open("r", encoding="utf8") as filters_file:
-                # with filters_file_path.open("r", encoding="cp1252") as filters_file:
+                    # with filters_file_path.open("r", encoding="cp1252") as filters_file:
                     for index, row in enumerate(filters_file):
                         row = [item.strip() for item in row.split("\t")]
                         if index == 0:
@@ -98,10 +98,10 @@ class DwcaFilters:
                 if filter_group_id not in self.filter_exclude_groups_dict:
                     self.filter_exclude_groups_dict[filter_group_id] = {}
                 if include_value:
-                    self.filter_include_groups_dict[filter_group_id][
-                        source_field
-                    ] = include_value
+                    self.filter_include_groups_dict[filter_group_id][source_field] = (
+                        include_value
+                    )
                 if exclude_value:
-                    self.filter_exclude_groups_dict[filter_group_id][
-                        source_field
-                    ] = exclude_value
+                    self.filter_exclude_groups_dict[filter_group_id][source_field] = (
+                        exclude_value
+                    )

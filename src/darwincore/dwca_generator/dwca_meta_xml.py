@@ -23,7 +23,9 @@ class DarwinCoreMetaXml:
 
         # Core = Event.
         xml.append(
-            '  <core encoding="UTF-8" fieldsTerminatedBy="\\t" linesTerminatedBy="\\r\\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.tdwg.org/dwc/terms/Event">'
+            '  <core encoding="UTF-8" fieldsTerminatedBy="\\t" '
+            'linesTerminatedBy="\\r\\n" fieldsEnclosedBy="" ignoreHeaderLines="1" '
+            'rowType="http://rs.tdwg.org/dwc/terms/Event">'
         )
         xml.append("    <files>")
         xml.append("      <location>event.txt</location>")
@@ -47,7 +49,9 @@ class DarwinCoreMetaXml:
 
         # Extension = Occurrence.
         xml.append(
-            '  <extension encoding="UTF-8" fieldsTerminatedBy="\\t" linesTerminatedBy="\\r\\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.tdwg.org/dwc/terms/Occurrence">'
+            '  <extension encoding="UTF-8" fieldsTerminatedBy="\\t" '
+            'linesTerminatedBy="\\r\\n" fieldsEnclosedBy="" ignoreHeaderLines="1" '
+            'rowType="http://rs.tdwg.org/dwc/terms/Occurrence">'
         )
         xml.append("    <files>")
         xml.append("      <location>occurrence.txt</location>")
@@ -71,7 +75,9 @@ class DarwinCoreMetaXml:
 
         # Extension = ExtendedMeasurementOrFact.
         xml.append(
-            '  <extension encoding="UTF-8" fieldsTerminatedBy="\\t" linesTerminatedBy="\\r\\n" fieldsEnclosedBy="" ignoreHeaderLines="1" rowType="http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact">'
+            '  <extension encoding="UTF-8" fieldsTerminatedBy="\\t" '
+            'linesTerminatedBy="\\r\\n" fieldsEnclosedBy="" ignoreHeaderLines="1" '
+            'rowType="http://rs.iobis.org/obis/terms/ExtendedMeasurementOrFact">'
         )
         xml.append("    <files>")
         xml.append("      <location>extendedmeasurementorfact.txt</location>")
@@ -99,7 +105,7 @@ class DarwinCoreMetaXml:
         return xml
 
     def get_dwc_term_url(self, term):
-        """ Used locally. """
+        """Used locally."""
         if term == "license":
             return "http://purl.org/dc/terms/license"
         if term == "rightsHolder":
