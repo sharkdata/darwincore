@@ -1,2 +1,3 @@
 source_field	dwc_field	from_value	to_value	comments
 	basisOfRecord	MaterialSample	HumanObservation
+sampling_laboratory_name_en			Swedish Museum of Natural History

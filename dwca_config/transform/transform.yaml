@@ -56,6 +56,10 @@
   then:
     measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UCPL/"
 - if:
+    measurementUnit: "Individual per square kilometre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/NPKM/"
+- if:
     measurementUnit: "Litres"
   then:
     measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/ULIT/"
@@ -179,4 +183,3 @@
   then:
     measurementUnit: "Dimensionless"
     measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
-

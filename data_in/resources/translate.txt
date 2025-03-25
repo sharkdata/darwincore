@@ -303,7 +303,7 @@ wind_direction_code		35	345-354 degrees
 wind_direction_code		36	355-4 degrees
 wind_direction_code		99	Variable
 
-platform_code		77!C	ZZ99Abundance
+platform_code		77!C	ZZ99
 
 sampling_laboratory_name_en		-		
 sampling_laboratory_name_sv		-		
@@ -337,6 +337,7 @@ unit		ind	Dimensionless
 unit		ind/l	Individual per litre
 unit		ind/m2	Individual per square metre
 unit		ind/m3	Individual per cubic metre
+unit		ind/km2	Individual per square kilometre
 unit		m/s	Metres per second
 unit		mg/m2	Milligrams per square metre
 unit		mg/m3	Milligrams per cubic metre
@@ -366,4 +367,4 @@ parameter		Unclassified Regions Of Interest - Abundance	Total abundance of unide
 parameter		Unclassified Regions Of Interest - Volume	Total volume of unidentified shapes in image regions of interest (ROIs)
 parameter		Wet weight/area	Wet weight per area
 parameter		Wet weight/volume	Wet weight per volume
-parameter		Wet weight/volume	Wet weight per volume
+parameter		Calculated # counted	Calculated count
