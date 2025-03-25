@@ -302,7 +302,7 @@ class DwcaDataSharkStandard:
 
             # ringed seal coeff fix
             if isinstance(delivery_datatype, str) and "ringed" in delivery_datatype:
-                if "coefficient" in row_dict and row_dict["coefficient"]:  
+                if row_dict.get("coefficient"): 
                     del row_dict["coefficient"]  # Completely remove "coefficient"
 
             # Use coordinate_uncertainty_m for some data.
@@ -359,7 +359,12 @@ class DwcaDataSharkStandard:
             if delivery_datatype in ["ringed seal", "ringedseal"]:
                 parameter = row_dict.get("parameter", "")
                 value = row_dict.get("value", "")
-                if parameter in ["# counted", "Calculated # counted", "Abundance", "Calculated count"]:
+                if parameter in [
+                    "# counted",
+                    "Calculated # counted",
+                    "Abundance",
+                    "Calculated count",
+                ]:
                     value = float(value)
                     if value == 0.0:
                         row_dict["present_absent"] = "absent"
@@ -448,9 +453,10 @@ class DwcaDataSharkStandard:
                     dwc_id
                     not in self.dwc_short_names_exists_dict[dwc_key_name]["short_ids"]
                 ):
-                    #import pathlib
-                    #fil = pathlib.Path("filepath\DV_export\darwincore\data_out\dwc_id.txt")
-                    #with fil.open("a") as open_file:
+                    # import pathlib
+                    # fil = pathlib.Path(
+                    # "filepath\DV_export\darwincore\data_out\dwc_id.txt")
+                    # with fil.open("a") as open_file:
                     #    open_file.write(dwc_id + "\n")
                     seq_no = self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] + 1
                     self.dwc_short_names_exists_dict[dwc_key_name]["seq_no"] = seq_no
