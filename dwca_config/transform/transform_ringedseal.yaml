@@ -1,0 +1,15 @@
+- if:
+      verbatimIdentification: ""
+      occurrenceStatus: "absent"
+      scientificName: "Pusa hispida"
+  then:
+    verbatimIdentification: "Pusa hispida"
+- if:
+    measurementType: "Abundance"
+    measurementUnit: "Individual per square kilometre"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/RSALLDNS/"
+- if:
+    measurementType: "Calculated count"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"

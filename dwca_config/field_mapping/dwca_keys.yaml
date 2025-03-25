@@ -11,10 +11,10 @@ eventTypeKeys:
         keyPrefix: DATASET_EVENT-
         keyFields:
             - sampling_laboratory_name_en
-            - sampling_laboratory_accreditated
-            - monitoring_program_code
-            - monitoring_purpose_code
-            - monitoring_station_type_code
+#            - sampling_laboratory_accreditated
+#            - monitoring_program_code
+#            - monitoring_purpose_code
+#            - monitoring_station_type_code
 
 
     -   eventType: sampling_event

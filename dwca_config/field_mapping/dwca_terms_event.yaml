@@ -58,13 +58,13 @@ dwcaEventContent:
           eventID:
               sourceKey: dataset_event_key
           eventDate:
-              sourceKeyList:
-                  - visit_date
-                  - sample_date
+#              sourceKeyList:
+#                  - visit_date
+#                  - sample_date
           eventTime:
               sourceKey:
           year:
-              sourceKey: visit_year
+#              sourceKey: visit_year
           license:
               text: CC0
           rightsHolder:
@@ -79,8 +79,10 @@ dwcaEventContent:
               sourceKey: dwc_dataset_name
           ownerInstitutionCode:
               text: Swedish Agency for Marine and Water Management
-
-
+          dynamicProperties:
+              dynamic:
+                  - dynamicKey: SamplingLaboratory
+                    sourceKey: sampling_laboratory_name_en
 
     - eventType: sampling_event
       dwcTerms:
@@ -302,7 +304,7 @@ dwcaEventContent:
                   - sample_longitude_dd
                   - visit_longitude_dd
           geodeticDatum:
-              text: EPSG:4619 #SWEREF99
+              text: EPSG:4326 #WGS84
           geodeticDatum_IFCB:
               text: EPSG:4326 #WGS84
           coordinateUncertaintyInMeters:

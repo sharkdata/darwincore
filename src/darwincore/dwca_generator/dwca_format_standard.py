@@ -334,6 +334,40 @@ class DwcaFormatStandard(object):
                                             emof_dict["measurementValueID"] = (
                                                 "https://edmo.seadatanet.org/report/545"
                                             )
+                                        elif (
+                                            param == "Sampling laboratory name"
+                                            and value
+                                            == "Swedish Museum of Natural History"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "https://edmo.seadatanet.org/report/614"
+                                            )
+
+                                        elif (
+                                            param == "Analytical laboratory name"
+                                            and value
+                                            == "Swedish Museum of Natural History"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "https://edmo.seadatanet.org/report/614"
+                                            )
+                                        elif (
+                                            param == "Sampling laboratory name"
+                                            and value
+                                            == "Swedish Environmental Protection Agency"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "https://edmo.seadatanet.org/report/1353"
+                                            )
+
+                                        elif (
+                                            param == "Analytical laboratory name"
+                                            and value
+                                            == "Swedish Environmental Protection Agency"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "https://edmo.seadatanet.org/report/1353"
+                                            )
 
                                         elif (
                                             param == "Imaging instrument name"
@@ -445,6 +479,13 @@ class DwcaFormatStandard(object):
                                         ):
                                             emof_dict["measurementValueID"] = (
                                                 "http://vocab.nerc.ac.uk/collection/GBX/current/TX000019/"
+                                            )
+                                        elif (
+                                            param == "Observation point"
+                                            and value == "Observation made from Airplane"
+                                        ):
+                                            emof_dict["measurementValueID"] = (
+                                                "https://vocab.nerc.ac.uk/collection/L06/current/62/"
                                             )
 
                                         elif param == "Quality flag" and value in [
