@@ -302,7 +302,7 @@ class DwcaDataSharkStandard:
 
             # ringed seal coeff fix
             if isinstance(delivery_datatype, str) and "ringed" in delivery_datatype:
-                if row_dict.get("coefficient"): 
+                if row_dict.get("coefficient"):
                     del row_dict["coefficient"]  # Completely remove "coefficient"
 
             # Use coordinate_uncertainty_m for some data.
