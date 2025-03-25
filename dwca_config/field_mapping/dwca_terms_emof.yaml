@@ -44,10 +44,12 @@ dwcaEmofContent:
       measurementAccuracy:
         sourceKey:
       measurementDeterminedDate:
-        sourceKeyList:
-          - sample_date
-          - visit_date
+#        sourceKeyList:
+#          - sample_date
+#          - visit_date
       measurementDeterminedDate_IFCB:
+        sourceKey:
+      measurementDeterminedDate_SEAL:
         sourceKey:
       measurementDeterminedBy:
         sourceKey:
@@ -70,22 +72,22 @@ dwcaEmofContent:
       - measurementType: Monitoring program code
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: monitoring_program_code
       - measurementType: Monitoring station type
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: monitoring_station_type_code
       - measurementType: Monitoring purpose
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: monitoring_purpose_code
       - measurementType: Imaging instrument name
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/NMANINST/"
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: image_instrument_name
 
 
@@ -120,6 +122,8 @@ dwcaEmofContent:
           - visit_date
       measurementDeterminedDate_IFCB:
         sourceKey:
+      measurementDeterminedDate_SEAL:
+        sourceKey:
       measurementDeterminedBy:
         sourceKey:
       measurementMethod:
@@ -131,12 +135,12 @@ dwcaEmofContent:
       - measurementType: Method reference
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: method_reference_code
       - measurementType: Method documentation
         measurementTypeID: "https://vocab.nerc.ac.uk/collection/P01/current/DSSPMT01/" 
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: method_documentation
       - measurementType: Sampler type
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/NMSPINST/"
@@ -147,7 +151,7 @@ dwcaEmofContent:
       - measurementType: Plankton sampling method
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: plankton_sampling_method_code
 
       - measurementType: Wave height
@@ -198,7 +202,7 @@ dwcaEmofContent:
       - measurementType: Secchi depth quality
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: secchi_depth_quality_flag
       - measurementType: Cloud observation
         measurementTypeID:
@@ -243,7 +247,7 @@ dwcaEmofContent:
       - measurementType: Sediment type
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: sediment_type
 #      - measurementType: Sampling laboratory name
 #        measurementTypeID:
@@ -263,27 +267,27 @@ dwcaEmofContent:
       - measurementType: Station marking
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: station_marking
       - measurementType: Station exposure
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: station_exposure
       - measurementType: Visit id
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: visit_id
       - measurementType: Expedition id
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: expedition_id
       - measurementType: Water land station type
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: water_land_station_type_code
       - measurementType: Logger deployment start date
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/STRT8601/"
@@ -355,6 +359,8 @@ dwcaEmofContent:
           - sample_date
           - visit_date
       measurementDeterminedDate_IFCB:
+        sourceKey:
+      measurementDeterminedDate_SEAL:
         sourceKey:
       measurementDeterminedBy:
         sourceKey:
@@ -432,34 +438,34 @@ dwcaEmofContent:
       - measurementType: Number of portions
         measurementTypeID: 
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: number_of_portions
       - measurementType: Counted portions
         measurementTypeID: 
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: counted_portions
       - measurementType: Counter software
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: counter_program
 
       - measurementType: Observation point
-        measurementTypeID:
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/TCSPPF01/"
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: obspoint
 
       - measurementType: Analytical laboratory name
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: analytical_laboratory_name_en
       - measurementType: Analytical laboratory accredited
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: analytical_laboratory_accreditated
 
       - measurementType: pH total scale
@@ -525,17 +531,17 @@ dwcaEmofContent:
       - measurementType: Classifier created by
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: classifier_created_by
       - measurementType: Quality flag
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: quality_flag
       - measurementType: Imaging instrument flag
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: image_instrument_flag
 
 
@@ -567,6 +573,8 @@ dwcaEmofContent:
         sourceKey: analysis_date
       measurementDeterminedDate_IFCB:
         sourceKey:
+      measurementDeterminedDate_SEAL:
+        sourceKey:
       measurementDeterminedBy:
         sourceKey: analysed_by
       measurementMethod:
@@ -578,7 +586,7 @@ dwcaEmofContent:
       - measurementType: Size class
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL15/"
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: size_class
       - measurementType: Size minimum
         measurementTypeID:
@@ -598,7 +606,7 @@ dwcaEmofContent:
       - measurementType: Coefficient for calculation of abundance
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: coefficient
       - measurementType: Microscope magnification
         measurementTypeID:
@@ -618,37 +626,37 @@ dwcaEmofContent:
       - measurementType: Epibiont
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: epibiont
       - measurementType: Detached
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: detached
       - measurementType: Recruits
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: recruits
       - measurementType: Bitemark
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: bitemark
       - measurementType: Degree biofouling
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: degree_biofouling
       - measurementType: Size class reference list
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: size_class_ref_list_code
       - measurementType: Trophic type
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/CTROPH01/"
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: trophic_type_code
 
 #SealPathology
@@ -745,12 +753,12 @@ dwcaEmofContent:
       - measurementType: Cause of death
         measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/DEACBEXX/"
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: cause_of_death
       - measurementType: Finding circumstances
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: finding_circumstances
 
 
@@ -762,11 +770,11 @@ dwcaEmofContent:
       - measurementType: Date of manual quality control
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: manual_qc_date
       - measurementType: Classifier used
         measurementTypeID:
         measurementUnit: Not applicable
-        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: classifier_used
 
