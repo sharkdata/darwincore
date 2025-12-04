@@ -6,14 +6,17 @@
 
 import collections.abc
 import pathlib
+import re
 from collections import namedtuple
 
 import dict2xml
 import yaml
+from shark_metadata import config_lookup
 
 from darwincore.dwca_generator.dwca_utils import config_with_suffix
 
 FileWithPrefix = namedtuple("FileWithPrefix", ("file", "prefix"))
+LOOKUP_PATTERN = re.compile(r"(LOOKUP(?:-\w+)+)")
 
 
 class DwcaGeneratorConfig:
@@ -87,6 +90,7 @@ class DwcaGeneratorConfig:
     def generate_eml_content(self):
         """ """
         eml_dict = self.eml_definitions
+        eml_dict = get_keys_from_sharkmetadata(eml_dict)
 
         # print(eml_dict["dataset"]["intellectualRights"])
 
@@ -211,3 +215,20 @@ class DwcaGeneratorConfig:
                 return data.strip()
             else:
                 return data
+
+
+def get_keys_from_sharkmetadata(item: dict | list | str):
+    match item:
+        case dict():
+            return {k: get_keys_from_sharkmetadata(v) for k, v in item.items()}
+        case list():
+            return [get_keys_from_sharkmetadata(element) for element in item]
+        case s if isinstance(s, str) and s.startswith("LOOKUP-"):
+            lookup_keys = LOOKUP_PATTERN.findall(item)
+            looked_up_value = " ".join(
+                config_lookup.get_reference(lookup_key.strip("LOOKUP-"))
+                for lookup_key in lookup_keys
+            )
+            return looked_up_value
+        case _:
+            return item

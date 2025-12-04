@@ -3,7 +3,6 @@
 #
 # Copyright (c) 2020-present SMHI, Swedish Meteorological and Hydrological Institute
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
-
 import logging
 import pathlib
 
