@@ -2,6 +2,8 @@ source_field	include_value	exclude_value	filter_group_id	comments
 parameter		Total # counted on land
 parameter		Total # counted in water
 parameter		# pups counted on land
+parameter		Calculated # counted
+parameter		Calculated count
 
 parameter		# counted	Param-zero-1
 value		0	Param-zero-1

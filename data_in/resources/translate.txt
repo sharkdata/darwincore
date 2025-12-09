@@ -341,6 +341,7 @@ unit		ind/km2	Individual per square kilometre
 unit		m/s	Metres per second
 unit		mg/m2	Milligrams per square metre
 unit		mg/m3	Milligrams per cubic metre
+unit		mg/l	Milligrams per litre
 unit		ml	Millilitres
 unit		mm	Millimetres
 unit		mm3/L	Cubic millimetres per litre
@@ -354,6 +355,15 @@ unit		um	Metres
 unit		um	Micrometres
 unit		um3	Cubic micrometres
 unit		um3/cell	Cubic micrometres per cell
+unit		mV	Millivolts
+unit		g wet weight/m2	Grams per square metre
+unit		% ww	Percent wet weight
+unit		% dw	Percent dry weight
+unit		g/analysed sample fraction	Grams per analysed sample fraction
+unit		index/sample	Not applicable
+unit		mg/kg dried sediment	Milligrams per kilo dried sediment
+unit		Rock Color Chart	Dimensionless
+
 
 parameter		# counted	Count
 parameter		Bacterial abundance	Abundance
@@ -368,3 +378,8 @@ parameter		Unclassified Regions Of Interest - Volume	Total volume of unidentifie
 parameter		Wet weight/area	Wet weight per area
 parameter		Wet weight/volume	Wet weight per volume
 parameter		Calculated # counted	Calculated count
+parameter		BQIm	Benthic Quality Index (BQIm)
+parameter		Factors influencing	Factors influencing the sampling
+parameter		H2S smell	Hydrogen sulfide (H2S) smell in sample
+
+quality_flag		F	

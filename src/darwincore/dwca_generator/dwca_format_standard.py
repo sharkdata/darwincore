@@ -269,7 +269,7 @@ class DwcaFormatStandard(object):
                                 and measurement_method != "Image analysis"
                             ):
                                 emof_dict["measurementUnit"] = (
-                                    "Individual per analysed sample fraction"
+                                    "Dimensionless"
                                 )
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
@@ -400,62 +400,54 @@ class DwcaFormatStandard(object):
                                             emof_dict["measurementValueID"] = (
                                                 "http://vocab.nerc.ac.uk/collection/S13/current/S135/"
                                             )
-
                                         elif (
-                                            param == "Sampling platform"
-                                            and value == "77SE"
+                                            param == "Sampler type"
+                                            and value == "Van Veen grab"
                                         ):
                                             emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/C17/current/77SE/"
+                                                "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0653/"
                                             )
-
                                         elif (
-                                            param == "Sampling platform"
-                                            and value == "77AR"
+                                            param == "Sampler type"
+                                            and value == "Smith McIntyre Grab"
                                         ):
                                             emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/C17/current/77AR/"
+                                                "http://vocab.nerc.ac.uk/collection/L22/current/TOOL0962/"
                                             )
 
-                                        elif (
-                                            param == "Sampling platform"
-                                            and value == "34AR"
-                                        ):
-                                            emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/C17/current/34AR/"
-                                            )
-
-                                        elif (
-                                            param == "Sampling platform"
-                                            and value == "77KB"
-                                        ):
-                                            emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/C17/current/77KB/"
-                                            )
-
-                                        elif (
-                                            param == "Sampling platform"
-                                            and value == "77KC"
-                                        ):
-                                            emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/C17/current/77KC/"
-                                            )
-
-                                        elif (
-                                            param == "Sampling platform"
-                                            and value == "77NE"
-                                        ):
-                                            emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/C17/current/77NE/"
-                                            )
-
-                                        elif (
-                                            param == "Sampling platform"
-                                            and value == "77SN"
-                                        ):
-                                            emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/C17/current/77SN/"
-                                            )
+                                        elif param == "Sampling platform":
+                                            mapping = {
+                                                "77SE": "http://vocab.nerc.ac.uk/collection/C17/current/77SE/",
+                                                "77AR": "http://vocab.nerc.ac.uk/collection/C17/current/77AR/",
+                                                "34AR": "http://vocab.nerc.ac.uk/collection/C17/current/34AR/",
+                                                "77KB": "http://vocab.nerc.ac.uk/collection/C17/current/77KB/",
+                                                "77KC": "http://vocab.nerc.ac.uk/collection/C17/current/77KC/",
+                                                "77NE": "http://vocab.nerc.ac.uk/collection/C17/current/77NE/",
+                                                "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
+                                                "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
+                                                "77UR": "http://vocab.nerc.ac.uk/collection/C17/current/77UR/",
+                                                "77FY": "http://vocab.nerc.ac.uk/collection/C17/current/77FY/",
+                                                "77SU": "http://vocab.nerc.ac.uk/collection/C17/current/77SU/",
+                                                "77LT": "http://vocab.nerc.ac.uk/collection/C17/current/77LT/",
+                                                "77LA": "http://vocab.nerc.ac.uk/collection/C17/current/77LA/",
+                                                "77K5": "http://vocab.nerc.ac.uk/collection/C17/current/77K5/",
+                                                "77TH": "http://vocab.nerc.ac.uk/collection/C17/current/77TH/",
+                                                "77NC": "http://vocab.nerc.ac.uk/collection/C17/current/77NC/",
+                                                "77K4": "http://vocab.nerc.ac.uk/collection/C17/current/77K4/",
+                                                "77KA": "http://vocab.nerc.ac.uk/collection/C17/current/77KA/",
+                                                "77LY": "http://vocab.nerc.ac.uk/collection/C17/current/77LY/",
+                                                "77VA": "http://vocab.nerc.ac.uk/collection/C17/current/77VA/",
+                                                "77SK": "http://vocab.nerc.ac.uk/collection/C17/current/77SK/",
+                                                "77SH": "http://vocab.nerc.ac.uk/collection/C17/current/77SH/",
+                                                "77XV": "http://vocab.nerc.ac.uk/collection/C17/current/77XV/",
+                                                "77ST": "http://vocab.nerc.ac.uk/collection/C17/current/77ST/",
+                                                "77VS": "http://vocab.nerc.ac.uk/collection/C17/current/77VS/",
+                                                "77WX": "http://vocab.nerc.ac.uk/collection/C17/current/77WX/",
+                                                "774D": "http://vocab.nerc.ac.uk/collection/C17/current/774D/",
+                                            }
+    
+                                            if value in mapping:
+                                                emof_dict["measurementValueID"] = mapping[value]
 
                                         elif (
                                             param
@@ -499,7 +491,7 @@ class DwcaFormatStandard(object):
                                             "M",
                                             "Z",
                                         ]:
-                                            emof_dict["measurementTypeID"] = (
+                                            emof_dict["measurementValueID"] = (
                                                 "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
                                             )
 

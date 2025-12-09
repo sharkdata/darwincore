@@ -99,6 +99,19 @@
     measurementUnit: "Square centimetres"
   then:
     measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/SQCM/"
+- if:
+    measurementUnit: "Millivolts"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUMV/"
+- if:
+    measurementUnit: "Grams per square metre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGMS/"
+- if:
+    measurementUnit: "Milligrams per litre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMGL/"
+
 
 # Measurement Type ID
 - if:
@@ -183,3 +196,11 @@
   then:
     measurementUnit: "Dimensionless"
     measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+- if:
+    measurementType: "Lower mesh size"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE2/"
+- if:
+    measurementType: "Upper mesh size"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MSHSIZE3/"

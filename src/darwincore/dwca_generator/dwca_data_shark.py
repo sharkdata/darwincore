@@ -267,18 +267,16 @@ class DwcaDataSharkStandard:
             if secchi_depth_m:
                 row_dict["secchi_depth_m"] = secchi_depth_m.replace("-", "")
 
-            # water_depth_m sample_min_depth_m sample_max_depth_m for ZB.
-            # delivery_datatype = water_depth_m = row_dict.get("delivery_datatype", "")
+            # NPORT and CPORT fix when not reported in ZB
             if delivery_datatype == "zoobenthos":
-                water_depth_m = row_dict.get("water_depth_m", "")
-                sample_min_depth_m = row_dict.get("sample_min_depth_m", "")
-                sample_max_depth_m = row_dict.get("sample_max_depth_m", "")
-                if water_depth_m:
-                    if (not sample_min_depth_m) and (not sample_max_depth_m):
-                        row_dict["sample_min_depth_m"] = water_depth_m
-                        row_dict["sample_max_depth_m"] = water_depth_m
+                number_of_portions = row_dict.get("number_of_portions", "")
+                counted_portions = row_dict.get("counted_portions", "")
 
-            # Fix for ZB with size classes.
+                if not number_of_portions and not counted_portions:
+                    row_dict["number_of_portions"] = "1"
+                    row_dict["counted_portions"] = "1"
+
+            # Fix for ZP with size classes.
             if delivery_datatype == "zooplankton":
                 size_class = row_dict.get("size_class", "")
                 size_min_um = row_dict.get("size_min_um", "")

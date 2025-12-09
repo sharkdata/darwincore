@@ -1,6 +1,6 @@
 source_field	include_value	exclude_value	filter_group_id	comments
-			
-# Reg-recip-proj data to be excluded in this export
+				
+# Reg-recip-proj data to be excluded in this export				
 dataset_name	SHARK_Zoobenthos_1971_2006_SUSE_1			
 dataset_name	SHARK_Zoobenthos_1971_2006_SUSE_2			
 dataset_name	SHARK_Zoobenthos_1971_2006_SUSE_Asko			
@@ -142,7 +142,7 @@ dataset_name		SHARK_Zoobenthos_2008_HBGMILJO
 dataset_name		SHARK_Zoobenthos_2008_ILST		
 dataset_name	SHARK_Zoobenthos_2008_KMRS			
 dataset_name		SHARK_Zoobenthos_2008_LNU_Vastervik		
-dataset_name	SHARK_Zoobenthos_2008_NLST			
+dataset_name		SHARK_Zoobenthos_2008_NLST		
 dataset_name		SHARK_Zoobenthos_2008_PAG_NLST_Halland		
 dataset_name		SHARK_Zoobenthos_2008_PAG_NLST_Kungsbacka		
 dataset_name		SHARK_Zoobenthos_2008_SVVAEK_Namndo		
@@ -447,24 +447,20 @@ dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_2
 dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_3		
 dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_4		
 dataset_name		SHARK_Zoobenthos_2022_PAG_NLST_5		
-
-# New datasets for export, prepared July 2023
-
-dataset_name	SHARK_Zoobenthos_2022_DEEP_Asko			
-#dataset_name				
-#dataset_name				
-#dataset_name				
-#dataset_name				
+				
+# New datasets for export, prepared July 2023				
+				
+dataset_name	SHARK_Zoobenthos_2022_DEEP_Asko					
 dataset_name	SHARK_Zoobenthos_2022_UMSC_Hoga_Kusten			
 dataset_name	SHARK_Zoobenthos_2022_UMSC			
-dataset_name		SHARK_Zoobenthos_2022_UMSC_BOLIDEN			
-dataset_name		SHARK_Zoobenthos_2022_UMSC_BDLST_YLST_CLST_XLST_ACLST			
-dataset_name		SHARK_Zoobenthos_2004-2022_UMSC_SSAB			
-dataset_name		SHARK_Zoobenthos_1999-2013_UMSC_BOLIDEN			
+dataset_name		SHARK_Zoobenthos_2022_UMSC_BOLIDEN		
+dataset_name		SHARK_Zoobenthos_2022_UMSC_BDLST_YLST_CLST_XLST_ACLST		
+dataset_name		SHARK_Zoobenthos_2004-2022_UMSC_SSAB		
+dataset_name		SHARK_Zoobenthos_1999-2013_UMSC_BOLIDEN		
 dataset_name	SHARK_Zoobenthos_2022_LNU			
-dataset_name		SHARK_Zoobenthos_2022_LNU_HLST			
-dataset_name		SHARK_Zoobenthos_2022_LNU_KLKK			
-dataset_name		SHARK_Zoobenthos_2022_LNU_BKVF			
+dataset_name		SHARK_Zoobenthos_2022_LNU_HLST		
+dataset_name		SHARK_Zoobenthos_2022_LNU_KLKK		
+dataset_name		SHARK_Zoobenthos_2022_LNU_BKVF		
 dataset_name	SHARK_Zoobenthos_2022_SLC-T			
 dataset_name		SHARK_Zoobenthos_2018_2022_SLC-T_Bratten		
 dataset_name		SHARK_Zoobenthos_2012_PAG_VAG		
@@ -475,99 +471,137 @@ dataset_name		SHARK_Zoobenthos_2022_MEDINS_SCAP
 dataset_name		SHARK_Zoobenthos_2022_MEDINS_SVAB		
 dataset_name		SHARK_Zoobenthos_2006_2007_PAG_NLST_VAG_ESGV_epifauna		
 dataset_name		SHARK_Zoobenthos_2006_2012_PAG_NLST_VAG_ESGV_infauna		
+				
+#New datasets prepared April 2025				
+			
+dataset_name		SHARK_Zoobenthos_2022_PELA_GVVF		
+dataset_name		SHARK_Zoobenthos_2022_NATVAT		
+dataset_name		SHARK_Zoobenthos_2023_PAG_NLST_1		
+dataset_name		SHARK_Zoobenthos_2023_PAG_NLST_2		
+dataset_name		SHARK_Zoobenthos_2023_PAG_NLST_3		
+dataset_name		SHARK_Zoobenthos_2022_SLUA_FORS		
+dataset_name		SHARK_Zoobenthos_2023_MEDINS_NLST		
+dataset_name		SHARK_Zoobenthos_2023_MEDINS_LVVVF		
+dataset_name		SHARK_Zoobenthos_2023_MEDINS_IFNHR		
+dataset_name		SHARK_Zoobenthos_2012_PAG_NLST		
+dataset_name	SHARK_Zoobenthos_2023_SLC-T			
+dataset_name		SHARK_Zoobenthos_2023_PAG_NVSKK		
+dataset_name	SHARK_Zoobenthos_2023_UMSC			
+dataset_name		SHARK_Zoobenthos_2023_UMSC_BDLST_YLST_CLST_XLST_ACLST		
+dataset_name		SHARK_Zoobenthos_2023_UMSC_BOLIDEN		
+dataset_name		SHARK_Zoobenthos_2023_UMSC_Hoga_Kusten		
+dataset_name		SHARK_Zoobenthos_2023_NATVAT		
+dataset_name	SHARK_Zoobenthos_2023_DEEP			
+dataset_name		SHARK_Zoobenthos_2023_DEEP_ABLST		
+dataset_name	SHARK_Zoobenthos_2023_LNU_NAT			
+dataset_name		SHARK_Zoobenthos_2023_LNU_BLK		
+dataset_name		SHARK_Zoobenthos_2023_LNU_HLS		
+dataset_name		SHARK_Zoobenthos_2023_LNU_HNO		
+dataset_name		SHARK_Zoobenthos_2023_LNU_KAL		
+dataset_name		SHARK_Zoobenthos_2023_LNU_VHRK		
+dataset_name	SHARK_Zoobenthos_2023_DEEP_Asko			
+dataset_name		SHARK_Zoobenthos_2023_DEEP_ILST		
+dataset_name		SHARK_Zoobenthos_2023_DEEP_ELST		
+dataset_name		SHARK_Zoobenthos_2022_NIRAS_OVVF		
+dataset_name		SHARK_Zoobenthos_2023_NIRAS_OVVF		
+dataset_name		SHARK_Zoobenthos_2024_PAG_NLST_1		
+dataset_name		SHARK_Zoobenthos_2024_PAG_NLST_2		
+dataset_name		SHARK_Zoobenthos_2024_PAG_NLST_3		
+dataset_name		SHARK_Zoobenthos_2024_PAG_NLST_4		
+dataset_name		SHARK_Zoobenthos_2024_PAG_NLST_5		
+dataset_name		SHARK_Zoobenthos_2024_DEEP_ABLST_Namdo		
+dataset_name		SHARK_Zoobenthos_2024_AMK_SVVF			
 
+				
+#sample_latitude_dd		58.99978	Pos-on-land-1	
+#sample_longitude_dd		17.82975	Pos-on-land-1	
+#				
+#sample_latitude_dd		64.66800	Pos-on-land-2	
+#sample_longitude_dd		21.03050	Pos-on-land-2	
+#				
+#sample_latitude_dd		64.97667	Pos-on-land-3	
+#sample_longitude_dd		21.16767	Pos-on-land-3	
+#				
+#sample_latitude_dd		64.91667	Pos-on-land-4	
+#sample_longitude_dd		21.14650	Pos-on-land-4	
+#				
+#sample_latitude_dd		57.45000	Pos-on-land-5	
+#sample_longitude_dd		18.21833	Pos-on-land-5	
+#				
+#sample_latitude_dd		57.36333	Pos-on-land-6	
+#sample_longitude_dd		18.36667	Pos-on-land-6	
+#				
+#sample_latitude_dd		57.47667	Pos-on-land-7	
+#sample_longitude_dd		18.36667	Pos-on-land-7	
+#				
+#sample_latitude_dd		57.23467	Pos-on-land-8	
+#sample_longitude_dd		18.28833	Pos-on-land-8	
+#				
+#sample_latitude_dd		64.01883	Pos-on-land-9	
+#sample_longitude_dd		19.84833	Pos-on-land-9	
+#				
+sample_latitude_dd		62.70167	Pos-on-land-10	
+sample_longitude_dd		18.06000	Pos-on-land-10	
+				
+sample_latitude_dd		0	Pos-zero-1	
+sample_longitude_dd		0	Pos-zero-1	
+sample_latitude_dd		0.0	Pos-zero-2	
+sample_longitude_dd		0.0	Pos-zero-2	
+sample_latitude_dd		0.00000	Pos-zero-3	
+sample_longitude_dd		00.00000	Pos-zero-3	
+				
+parameter		Sediment redox potential	Param-na-1	
+value		NA	Param-na-1	
+parameter		Sediment water content	Param-na-2	
+value		NA	Param-na-2	
+				
+				
+parameter		# counted	Param-zero-1	
+value		0	Param-zero-1	
+				
+parameter		Abundance	Param-zero-2	
+value		0	Param-zero-2	
+				
+parameter		Abundance	Param-zero-3	
+value		0.0	Param-zero-3	
+				
+parameter		Wet weight/area	Param-zero-4	
+value		0	Param-zero-4	
+				
+parameter		Wet weight/area	Param-zero-5	
+value		0.0	Param-zero-5	
+				
+parameter		Dry weight	Param-zero-6	
+value		0	Param-zero-6	
+				
+parameter		Dry weight	Param-zero-7	
+value		0.0	Param-zero-7	
+				
+parameter		Wet weight	Param-zero-8	
+value		0	Param-zero-8	
+				
+parameter		Wet weight	Param-zero-9	
+value		0.0	Param-zero-9	
+				
+parameter		Wet weight	Param-zero-10	
+value		0.00	Param-zero-10	
+				
+parameter		H2S smell	Param-H2S-smell-1	
+value		1.00	Param-H2S-smell-1	
+				
+parameter		H2S smell	Param-H2S-smell-2	
+value		0.00	Param-H2S-smell-2	
+				
+parameter		H2S smell	Param-H2S-smell-3	
+value		0.5	Param-H2S-smell-3	
+				
+parameter		H2S smell	Param-H2S-smell-4	
+value		1	Param-H2S-smell-4	
+				
+parameter		H2S smell	Param-H2S-smell-5	
+value		0	Param-H2S-smell-5	
+				
+parameter		H2S smell	Param-H2S-smell-6	
+value		Okänt	Param-H2S-smell-6	
 
-
-
-
-#sample_latitude_dd		58.99978	Pos-on-land-1
-#sample_longitude_dd		17.82975	Pos-on-land-1
-#
-#sample_latitude_dd		64.66800	Pos-on-land-2
-#sample_longitude_dd		21.03050	Pos-on-land-2
-#
-#sample_latitude_dd		64.97667	Pos-on-land-3
-#sample_longitude_dd		21.16767	Pos-on-land-3
-#
-#sample_latitude_dd		64.91667	Pos-on-land-4
-#sample_longitude_dd		21.14650	Pos-on-land-4
-#
-#sample_latitude_dd		57.45000	Pos-on-land-5
-#sample_longitude_dd		18.21833	Pos-on-land-5
-#
-#sample_latitude_dd		57.36333	Pos-on-land-6
-#sample_longitude_dd		18.36667	Pos-on-land-6
-#
-#sample_latitude_dd		57.47667	Pos-on-land-7
-#sample_longitude_dd		18.36667	Pos-on-land-7
-#
-#sample_latitude_dd		57.23467	Pos-on-land-8
-#sample_longitude_dd		18.28833	Pos-on-land-8
-#
-#sample_latitude_dd		64.01883	Pos-on-land-9
-#sample_longitude_dd		19.84833	Pos-on-land-9
-#
-sample_latitude_dd		62.70167	Pos-on-land-10
-sample_longitude_dd		18.06000	Pos-on-land-10
-
-sample_latitude_dd		0	Pos-zero-1
-sample_longitude_dd		0	Pos-zero-1
-sample_latitude_dd		0.0	Pos-zero-2
-sample_longitude_dd		0.0	Pos-zero-2
-sample_latitude_dd		0.00000	Pos-zero-3
-sample_longitude_dd		00.00000	Pos-zero-3
-
-parameter		Sediment redox potential	Param-na-1
-value		NA	Param-na-1
-parameter		Sediment water content	Param-na-2
-value		NA	Param-na-2
-
-
-parameter		# counted	Param-zero-1
-value		0	Param-zero-1
-
-parameter		Abundance	Param-zero-2
-value		0	Param-zero-2
-
-parameter		Abundance	Param-zero-3
-value		0.0	Param-zero-3
-
-parameter		Wet weight/area	Param-zero-4
-value		0	Param-zero-4
-
-parameter		Wet weight/area	Param-zero-5
-value		0.0	Param-zero-5
-
-parameter		Dry weight	Param-zero-6
-value		0	Param-zero-6
-
-parameter		Dry weight	Param-zero-7
-value		0.0	Param-zero-7
-
-parameter		Wet weight	Param-zero-8
-value		0	Param-zero-8
-
-parameter		Wet weight	Param-zero-9
-value		0.0	Param-zero-9
-
-parameter		Wet weight	Param-zero-10
-value		0.00	Param-zero-10
-
-parameter		H2S smell	Param-H2S-smell-1
-value		1.00	Param-H2S-smell-1
-
-parameter		H2S smell	Param-H2S-smell-2
-value		0.00	Param-H2S-smell-2
-
-parameter		H2S smell	Param-H2S-smell-3
-value		0.5	Param-H2S-smell-3
-
-parameter		H2S smell	Param-H2S-smell-4
-value		1	Param-H2S-smell-4
-
-parameter		H2S smell	Param-H2S-smell-5
-value		0	Param-H2S-smell-5
-
-parameter		H2S smell	Param-H2S-smell-6
-value		Okänt	Param-H2S-smell-6
-
+parameter		No species in sample

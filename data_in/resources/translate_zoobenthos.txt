@@ -10,3 +10,11 @@ value		YES	Yes	For parameter H2S smell.
 value		NO	No	For parameter H2S smell.
 
 value		Ja(svag)	Yes	For parameter H2S smell.
+
+
+sampling_laboratory_name_en		-	Unknown
+
+factors_influencing_code		NP	Sampling precision - no anchor/buoy used
+
+	measurementType	Volume of sample	Volume of sediment sample
+	measurementType	Count	Count in analysed sample fraction

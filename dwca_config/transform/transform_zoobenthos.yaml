@@ -1,0 +1,98 @@
+- if:
+    measurementType: "Bottom water dissolved oxygen"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/DOXYZZXX/"
+- if:
+    measurementType: "Bottom water oxygen saturation"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OXYSZZ01/"
+- if:
+    measurementType: "Bottom water salinity"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/P01/current/PSLTZZ01/"
+- if:
+    measurementType: "Bottom water salinity"
+    measurementUnit: ""
+  then:
+    measurementUnit: "Dimensionless"
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+- if:
+    measurementType: "Bottom water temperature"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
+- if:
+    measurementType: "Redox potential"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/RPOTPRTX/"
+- if:
+    measurementType: "Wet weight per area"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL05/"
+- if:
+    measurementType: "Volume of sample"
+  then:
+    measurementType: "Volume of sediment sample"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/VOLSEDSM/"
+- if:
+    measurementUnit: "Not applicable"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+- if:
+    measurementType: "Loss on ignition"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/STOMLIBS/"
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPCT/"
+- if:
+    measurementType: "Sediment type"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SEDTYCAT/"
+- if:
+    measurementType: "Sediment water content"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/WCWTDRXX/"
+- if:
+    measurementType: "Sediment colour code"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MUCOLSED/"
+- if:
+    measurementUnit: "Individual per square metre"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPMS/"
+- if:
+    measurementType: "Sediment phosphorus content"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/MPPSP012/"
+- if:
+    measurementType: "Sediment nitrogen content"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/C59CX030/"
+- if:
+    measurementType: "Wet weight"
+    measurementUnit: "Grams per analysed sample fraction"
+  then:
+    measurementType: "Wet weight in analysed sample fraction"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OWETBM01"
+    measurementUnit: "Grams"
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/"
+- if:
+    measurementUnit: "Individual per analysed sample fraction"
+  then:
+    measurementUnit: "Dimensionless"
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+- if:
+    measurementUnit: "Dimensionless"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+- if:
+    measurementType: "Count in analysed sample fraction"
+  then:
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/OCOUNT01/"
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+- if:
+    measurementType: "Dry weight"
+    measurementUnit: "Grams per analysed sample fraction"
+  then:
+    measurementType: "Dry weight in analysed sample fraction"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SPDWXX01/"
+    measurementUnit: "Grams"
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UGRM/"

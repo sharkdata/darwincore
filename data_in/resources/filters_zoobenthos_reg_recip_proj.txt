@@ -142,7 +142,7 @@ dataset_name	SHARK_Zoobenthos_2008_HBGMILJO
 dataset_name	SHARK_Zoobenthos_2008_ILST			
 dataset_name		SHARK_Zoobenthos_2008_KMRS		
 dataset_name	SHARK_Zoobenthos_2008_LNU_Vastervik			
-dataset_name		SHARK_Zoobenthos_2008_NLST		
+dataset_name	SHARK_Zoobenthos_2008_NLST			
 dataset_name	SHARK_Zoobenthos_2008_PAG_NLST_Halland			
 dataset_name	SHARK_Zoobenthos_2008_PAG_NLST_Kungsbacka			
 dataset_name	SHARK_Zoobenthos_2008_SVVAEK_Namndo			
@@ -452,10 +452,6 @@ dataset_name	SHARK_Zoobenthos_2022_PAG_NLST_5
 # New datasets for export, prepared July 2023
 
 dataset_name		SHARK_Zoobenthos_2022_DEEP_Asko		
-#dataset_name				
-#dataset_name				
-#dataset_name				
-#dataset_name				
 dataset_name		SHARK_Zoobenthos_2022_UMSC_Hoga_Kusten		
 dataset_name		SHARK_Zoobenthos_2022_UMSC		
 dataset_name	SHARK_Zoobenthos_2022_UMSC_BOLIDEN			
@@ -476,6 +472,47 @@ dataset_name	SHARK_Zoobenthos_2022_MEDINS_SCAP
 dataset_name	SHARK_Zoobenthos_2022_MEDINS_SVAB			
 dataset_name		SHARK_Zoobenthos_2006_2007_PAG_NLST_VAG_ESGV_epifauna		
 dataset_name		SHARK_Zoobenthos_2006_2012_PAG_NLST_VAG_ESGV_infauna		
+
+				
+#New datasets prepared April 2025				
+			
+dataset_name	SHARK_Zoobenthos_2022_PELA_GVVF			
+dataset_name	SHARK_Zoobenthos_2022_NATVAT			
+dataset_name	SHARK_Zoobenthos_2023_PAG_NLST_1			
+dataset_name	SHARK_Zoobenthos_2023_PAG_NLST_2			
+dataset_name	SHARK_Zoobenthos_2023_PAG_NLST_3			
+dataset_name	SHARK_Zoobenthos_2022_SLUA_FORS			
+dataset_name	SHARK_Zoobenthos_2023_MEDINS_NLST			
+dataset_name	SHARK_Zoobenthos_2023_MEDINS_LVVVF			
+dataset_name	SHARK_Zoobenthos_2023_MEDINS_IFNHR			
+dataset_name	SHARK_Zoobenthos_2012_PAG_NLST			
+dataset_name		SHARK_Zoobenthos_2023_SLC-T		
+dataset_name	SHARK_Zoobenthos_2023_PAG_NVSKK			
+dataset_name		SHARK_Zoobenthos_2023_UMSC		
+dataset_name	SHARK_Zoobenthos_2023_UMSC_BDLST_YLST_CLST_XLST_ACLST			
+dataset_name	SHARK_Zoobenthos_2023_UMSC_BOLIDEN			
+dataset_name	SHARK_Zoobenthos_2023_UMSC_Hoga_Kusten			
+dataset_name	SHARK_Zoobenthos_2023_NATVAT			
+dataset_name		SHARK_Zoobenthos_2023_DEEP		
+dataset_name	SHARK_Zoobenthos_2023_DEEP_ABLST			
+dataset_name		SHARK_Zoobenthos_2023_LNU_NAT		
+dataset_name	SHARK_Zoobenthos_2023_LNU_BLK			
+dataset_name	SHARK_Zoobenthos_2023_LNU_HLS			
+dataset_name	SHARK_Zoobenthos_2023_LNU_HNO			
+dataset_name	SHARK_Zoobenthos_2023_LNU_KAL			
+dataset_name	SHARK_Zoobenthos_2023_LNU_VHRK			
+dataset_name		SHARK_Zoobenthos_2023_DEEP_Asko		
+dataset_name	SHARK_Zoobenthos_2023_DEEP_ILST			
+dataset_name	SHARK_Zoobenthos_2023_DEEP_ELST			
+dataset_name	SHARK_Zoobenthos_2022_NIRAS_OVVF			
+dataset_name	SHARK_Zoobenthos_2023_NIRAS_OVVF			
+dataset_name	SHARK_Zoobenthos_2024_PAG_NLST_1			
+dataset_name	SHARK_Zoobenthos_2024_PAG_NLST_2			
+dataset_name	SHARK_Zoobenthos_2024_PAG_NLST_3			
+dataset_name	SHARK_Zoobenthos_2024_PAG_NLST_4			
+dataset_name	SHARK_Zoobenthos_2024_PAG_NLST_5			
+dataset_name	SHARK_Zoobenthos_2024_DEEP_ABLST_Namdo			
+dataset_name	SHARK_Zoobenthos_2024_AMK_SVVF			
 
 #sample_latitude_dd		58.99978	Pos-on-land-1
 #sample_longitude_dd		17.82975	Pos-on-land-1
@@ -549,6 +586,7 @@ value		Okänt	Param-H2S-smell-1
 sampled_volume_l		0
 
 parameter		No species in sample
+parameter		Non-quantified observation
 
 analysis_date		43107
 analysis_date		43116

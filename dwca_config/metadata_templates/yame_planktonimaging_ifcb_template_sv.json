@@ -20,7 +20,7 @@
     ],
     "identificationInfo": {
         "citation": {
-            "title": "{{ metadata.titles.PROJ.IFCB.sv }}",
+            "title": "{{ metadata.titles.PROJ.planktonimaging.sv }}",
             "alternateTitle": "",
             "dates": {
                 "creation": "2022-09-10",
@@ -29,7 +29,7 @@
             },
             "identifier": "https://opendata-catalog.smhi.se/md/8acc6d5e-f05e-4d18-b764-e7fe8d310ebf"
         },
-        "abstract": "{{ metadata.methods.PROJ.IFCB.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.PROJ.IFCB.sv }}",
+        "abstract": "{{ metadata.methods.PROJ.planktonimaging.sv }}\n{{ metadata.purpose.description.sv }}\n{{ metadata.datahost.description.sv }}\n{{ metadata.laboratory.PROJ.planktonimaging.sv }}",
         "status": "onGoing",
         "pointOfContact": {
             "organisationName": "SMHI",
@@ -191,7 +191,7 @@
             "role": "distributor"
         },
         "distributorTransferOptions": [
-            {% for transfer_option in metadata.url_linkage.PROJ.IFCB.sv %}
+            {% for transfer_option in metadata.url_linkage.PROJ.planktonimaging.sv %}
                 {"name": "{{ transfer_option.title[:] }}",
                 "linkage": "{{ transfer_option.url[:]}}",
                 "description": "{{ transfer_option.description[:] }}",
@@ -201,7 +201,7 @@
     },
     "dataQualityInfo": {
         "scope": "dataset",
-        "lineage": "{{ metadata.orderer.PROJ.IFCB.sv }}",
+        "lineage": "{{ metadata.orderer.PROJ.planktonimaging.sv }}",
         "domainConsistency": {
             "conformanceResult": {
                 "specification": {

@@ -3,6 +3,8 @@ Acanthocorbis asymmetrica	105543
 Achnanthes brevipes	149387
 Achnanthes longipes	156533
 Achnanthes minutissima	163582
+Acidostoma laticorne	1513127
+Actinocyclus	196347
 Actinocyclus octonarius	149164
 Actinomonas	369319
 Amphiprora paludosa	149514
@@ -12,16 +14,20 @@ Apedinella spinifera	248098
 Aphanizomenon balticum	625384
 Apocalathium	1359178
 Asterionella	148953
+Atylus swammerdami	488966
 Aulacoseira italica var. tenuissima	179317
+Azadinium caudatum var. margalefii	846290
 Bacillariaceae	149002
 Bacillariales	149001
 Balanion	292899
+Balcis philippi	137978
 Bicosta	105505
 Biecheleria halophila	626298
 Biota	12
 Bitrichia	578212
 Bitrichia chodatii	578213
 Bitrichia phaseolus	620901
+Blixaea quinquecornis	1360848
 Botryococcus braunii	248104
 Cafeteria	103989
 Caloneis	149488
@@ -33,10 +39,13 @@ Ceratium furcoides	573683
 Ceratium fusus	109951
 Ceratium minutum	109969
 Ceratoneis closterium	163932
-Chaetoceros seiracanthus	163118
 Chaetoceros cinctus	149622
+Chaetoceros peruvianum	178185
 Chaetoceros radians	149293
+Chaetoceros seiracanthus	163118
 Chaetoceros seriacanthus	616463
+Chironomus anthracinus	146802
+Chironomus riparius	146802
 Chlamydocapsa	178928
 Chlamydocapsa planctonica	178930
 Chlamydomonadales	732333
@@ -49,11 +58,14 @@ Chrysolykos	571999
 Chrysolykos planctonicus	572000
 Chrysolykos skujae	578264
 Chrysophyceae	146230
+Cirratulus filiformis	129937
 Cladopyxis	109509
 Closterium limneticum	611029
 Coccolithales	493821
 Coccolithophyceae	592906
 Comasiella arcuata	578364
+Conchoecia elegans	127782
+Corbula gibba	378492
 Corethron	149109
 Corethron criophilum	149110
 Corethron pennatum	341496
@@ -73,6 +85,7 @@ Desmatractum	601041
 Desmidium	592884
 Desmodesmus quadricauda	622762
 Diatomophyceae	478546
+Dicrotendipes	1754713
 Dictyosphaerium	178623
 Dictyosphaerium ehrenbergianum	178625
 Dimorphococcus lunatus	577831
@@ -82,6 +95,7 @@ Dinophysis hastata	109627
 Dinophyta	21005
 Diplopsalis	109515
 Diplopsalis acuta	573687
+Dolichospermum	603709
 Ebria	118014
 Entomoneis paludosa	163646
 Epipyxis	248119
@@ -111,6 +125,7 @@ Goniochloris contorta	610067
 Goniochloris fallax	610068
 Gonyaulacales	109391
 Gonyaulax catenata	233365
+Gonyaulax spinifera	845296
 Grammatophora	149335
 Guinardia	149111
 Gymnodinium abbreviatum	109777
@@ -133,7 +148,9 @@ Hannaea arcus	180342
 Haslea crucigera	172588
 Helicostomella	172434
 Heliocostomella subulata	240437
+Heterocapsa	1741213
 Heterocapsa arctica	233607
+Heterotanais oerstedi	136466
 Kathablepharis remigera	119081
 Keratococcus suecicus	652973
 Kofoidinium	109499
@@ -145,21 +162,34 @@ Lacrymaria	179314
 Lauderia	149134
 Leegaardiella	101179
 Leegaardiella sol	101207
+Lekanesphaera hookeri hookeri	118953
 Lennoxia	450723
+Lepidostoma hirtum	593209
 Lepocinclis	163401
 Lepocinclis spirogyroides	576887
 Leptocylindrus	149038
+Leucon (Leucon) nasica	110618
+Leucon acutirostris	110615
+Leucon nasica	110618
+Leucon pallidus	110609
+Limoniini	150935
 Lingulodinium	231799
+Liocarcinus depurator	1750291
+Liocarcinus navigator	1752525
 Lohmanniella	101180
+Lumbrineris impatiens	1491000
 Lyngbya	146538
+Macropipus dupurator	1750291
 Mallomonas tonsurata	572057
 Mamiella	134531
 Meringosphaera	115075
+Mesodinium major	1476503
 Micractinium	163478
 Microcystis reinboldii	177399
 Micromonas	134533
 Mougeotia	248137
 Naiadinium polonicum	841289
+Nassarius reticulatus	876821
 Navicula directa	149467
 Navicula distans	149143
 Nephrocytium	578354
@@ -169,6 +199,7 @@ Noctiluca	109500
 Oblea	109542
 Oblea rotunda	110155
 Octactis	369960
+Octactis speculum	1310442
 Odontella	148963
 Odontella regia	149094
 Oedogonium	577723
@@ -200,8 +231,9 @@ Phalacroma rotundatum	156505
 Plagioselmis lacustris	641580
 Planctonema	162715
 Planktolyngbya subtilis	146678
-Pleurosigmataceae	149032
 Pleurasiga reynoldsii	105601
+Pleurosigmataceae	149032
+Polybius holsatus	1748246
 Polykrikos	109485
 Porosira	148980
 Prasinophyceae	17329
@@ -215,6 +247,7 @@ Protoperidinium oceanicum	110240
 Protoperidinium quarnerense	110250
 Pseudobodo	103990
 Pseudobodo tremulans	104015
+Pseudocuma similis	110628
 Pseudodifflugia	520952
 Pseudogoniochloris tripus	627304
 Pseudokephyrion entzii	625499
@@ -225,6 +258,7 @@ Pseudo-nitzschia seriata	149152
 Pseudo-nitzschia subfraudulenta	418221
 Pseudostaurastrum	178957
 Ptychocylis urnula	345883
+Pycnogonum littorale	239867
 Pyramimonas disomata	495333
 Pyrophacus	109555
 Quadrigula korsikovii	578519
@@ -247,10 +281,14 @@ Roperia	403852
 Salpingella	183566
 Scenedesmus dimorphus	164079
 Scenedesmus ecornis	248158
+Scoletoma impatiens	1491000
 Scrippsiella	109545
 Scrippsiella faeroense	163452
 Scuticociliatia	414712
 Spatulodinium pseudonoctiluca	109923
+Spiophanes kröyeri	131188
+Spiophanes kroeyeri	131188
+Spiophanes kroyeri	131188
 Staurastrum pingue	609209
 Staurastrum tetracerum	577905
 Staurodesmus dejectus	578386
@@ -284,12 +322,16 @@ Thalassiothrix	157081
 Tontonia	101196
 Treubaria setigera	576716
 Tryblionella apiculata	176393
+Turitella communis	1381415
+Turritella communis	1381415
 Ulnaria	416120
 Ulnaria ulna	447744
 Ulnaria ulna var. acus	674837
 Urosolenia longiseta	163520
 Vanella	120566
 Vannella	120566
+Varicorbula gibba	378492
+Vitreolina philippi sensu Warén	139903
 Warnowia	109491
 Warnowia polyphemus	233144
 Willea	248174
@@ -299,15 +341,54 @@ Zoomastigophora	24
 Zygabikodinium lenticulatum	110177
 Zygnema	578376
 Zygnematales	162693
-Mesodinium major	1476503
-Chaetoceros peruvianum	178185
-Blixaea quinquecornis	1360848
-Pleurosigmataceae	149032
-Octactis speculum	1310442
-Gonyaulax spinifera	845296
-Blixaea quinquecornis	1360848
-Dolichospermum	603709
-Actinocyclus	196347
-Heterocapsa	1741213
-Azadinium caudatum var. margalefii	846290
+Polybius depurator	1750291
+Scoletoma laurentiana	1491000
+Discoconchoecia elegans	127782
+Turritellinella tricarinata	1381415
+Tritia reticulata	876821
+Vitreolina incurva	139899
+Nototropis swammerdamei	488966
+Aphelochaeta filiformis	129937
+Polybius navigator	1752525
+Pycnogonum litorale	239867
+Acidostoma laticornis	1513127
+Heterotanais oerstedii	136466
+Sigara dorsalis	504151
+Pacifoculodes pallidus	423630
+Brychius	1489410
+Caenis horaria	593169
+Molanna	205486
+Cyrnus flavidus	878583
+Limnephilus rhombicus	160263
+Molanna angustata	205486
+Limnephilus marmoratus	160263
+Limnephilus politus	160263
+Phryganea grandis	593202
+Caenis robusta	593169
+Limnephilus flavicornis	160263
+Ischnura elegans	890532
+Cyrnus trimaculatus	878583
+Caenis luctuosa	593169
+Caenis rivulorum	593169
+Oecetis ochracea	593207
+Orthetrum cancellatum	404099
+Cyrnus insolutus	878583
+Setodes argentipunctellus	203922
+Heptagenia sulphurea	593157
+Oecetis lacustris	593207
+Chironomus larval form semireductus	146802
+Microchironomus tener	1754721
+Cyrillia linearis	1389226
+Limnephilus lunatus	160263
+Oecetis testacea	593207
+Molanna albicans	205486
+Chironomus sororius	146802
+Sialis lutaria	593188
+Phryganea bipunctata	593202
+Setodes	203922
+Sialis	593188
+Capitella giardi	129877
+Molanna	205486
+Molanna angustata	205486
+Molanna albicans	205486
 
