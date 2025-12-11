@@ -10,6 +10,7 @@ import re
 from collections import namedtuple
 
 import dict2xml
+import shark_metadata.config_lookup
 import yaml
 from shark_metadata import config_lookup
 
@@ -147,7 +148,10 @@ class DwcaGeneratorConfig:
 
             dir_path = pathlib.Path()
             if "directory" in dwca_keys:
-                dir_path /= dwca_keys["directory"]
+                directory = dwca_keys["directory"]
+                if directory == "SHARK_METADATA":
+                    directory = shark_metadata.config_lookup.get_config_directory()
+                dir_path /= directory
 
             if "files" in dwca_keys:
                 for config_file in dwca_keys["files"]:

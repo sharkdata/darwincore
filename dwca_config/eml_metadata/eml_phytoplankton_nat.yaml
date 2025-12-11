@@ -15,7 +15,7 @@ additionalMetadata:
         SHARK - National marine environmental monitoring of Phytoplankton in Sweden since 1983.
 
 dataset: 
-  title: LOOKUP-title-nat-phytoplankton
+  title: LOOKUP-title-NAT-phytoplankton
   abstract:
     para:
       - LOOKUP-abstract-initiated_by_nv_and_financed_by_hav LOOKUP-abstract-monitored_by_su_smhi_gu_uu

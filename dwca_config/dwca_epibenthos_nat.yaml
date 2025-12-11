@@ -80,7 +80,7 @@ transform:
 
 metadataSourceFiles:
     directory:
-        ../metadata/dcat_ap_se
+        SHARK_METADATA
     files:
         - titles.yaml
         - purpose.yaml

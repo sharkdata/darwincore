@@ -108,6 +108,17 @@ platformdirs==4.3.6 \
 pluggy==1.5.0 \
     --hash=sha256:2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1 \
     --hash=sha256:44e1ad92c8ca002de6377e165f3e0f1be63266ab4d554740532335b9d75ea669
+polars==1.36.1 \
+    --hash=sha256:12c7616a2305559144711ab73eaa18814f7aa898c522e7645014b68f1432d54c \
+    --hash=sha256:853c1bbb237add6a5f6d133c15094a9b727d66dd6a4eb91dbb07cdb056b2b8ef
+polars-runtime-32==1.36.1 \
+    --hash=sha256:201c2cfd80ceb5d5cd7b63085b5fd08d6ae6554f922bcb941035e39638528a09 \
+    --hash=sha256:327b621ca82594f277751f7e23d4b939ebd1be18d54b4cdf7a2f8406cecc18b2 \
+    --hash=sha256:809e73857be71250141225ddd5d2b30c97e6340aeaa0d445f930e01bef6888dc \
+    --hash=sha256:899b9ad2e47ceb31eb157f27a09dbc2047efbf4969a923a6b1ba7f0412c3e64c \
+    --hash=sha256:ab0d1f23084afee2b97de8c37aa3e02ec3569749ae39571bd89e7a8b11ae9e83 \
+    --hash=sha256:cc17101f28c9a169ff8b5b8d4977a3683cd403621841623825525f440b564cf0 \
+    --hash=sha256:d9d077bb9df711bc635a86540df48242bb91975b353e53ef261c6fae6cb0948f
 pre-commit==4.1.0 \
     --hash=sha256:ae3f018575a588e30dfddfab9a05448bfbd6b73d78709617b5a2b853549716d4 \
     --hash=sha256:d29e7cb346295bcc1cc75fc3e92e343495e3ea0196c9ec6ba53f49f10ab6ae7b
@@ -179,7 +190,7 @@ ruff==0.11.0 \
     --hash=sha256:dc67e32bc3b29557513eb7eeabb23efdb25753684b913bebb8a0c62495095acb \
     --hash=sha256:e4fd5ff5de5f83e0458a138e8a869c7c5e907541aec32b707f57cf9a5e124445 \
     --hash=sha256:e55c620690a4a7ee6f1cccb256ec2157dc597d109400ae75bbf944fc9d6462e2
-shark-metadata @ git+https://github.com/sharkdata/shark-metadata@1ea034c3b4c694525ea0b5d9a19004be0b313a87
+shark-metadata @ git+https://github.com/sharkdata/shark-metadata@058dabe3b78f8e8ee26ced4a2f2a855913552840
 urllib3==2.3.0 \
     --hash=sha256:1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df \
     --hash=sha256:f8c5449b3cf0861679ce7e0503c7b44b5ec981bec0d1d3795a07f1ba96f0204d
