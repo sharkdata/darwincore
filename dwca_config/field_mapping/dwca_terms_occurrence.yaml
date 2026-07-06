@@ -30,7 +30,6 @@ dwcaOccurrenceColumns:
     - family
     - genus
     - basisOfRecord
-    - recordedBy
     - occurrenceRemarks
     - identificationVerificationStatus
     - identifiedBy
@@ -112,13 +111,13 @@ dwcaOccurrenceContent:
               text: MaterialSample
           basisOfRecord_IFCB:
               text: MachineObservation
-          recordedBy:
+          identifiedBy:
               sourceKey: taxonomist
           occurrenceRemarks:
               sourceKey:
           identificationVerificationStatus:
               sourceKey: image_verification_status
-          identifiedBy:
+          identifiedBy_IFCB:
               sourceKey: image_verified_by
           identificationReferences:
               sourceKey: classification_program_image

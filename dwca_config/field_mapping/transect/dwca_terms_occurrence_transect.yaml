@@ -30,7 +30,7 @@ dwcaOccurrenceColumns:
     - family
     - genus
     - basisOfRecord
-    - recordedBy
+    - identifiedBy
     - occurrenceRemarks
     - dynamicProperties
 
@@ -99,7 +99,7 @@ dwcaOccurrenceContent:
               sourceKey: worms_genus
           basisOfRecord:
               text: MaterialSample
-          recordedBy:
+          identifiedBy:
               sourceKey: taxonomist
           occurrenceRemarks:
               sourceKey:
