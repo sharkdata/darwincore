@@ -60,6 +60,7 @@ translate:
     files:
         - translate.txt
         - translate_seal.txt
+        - translate_quality_flag_sdn.txt
 
 filters:
     directory:

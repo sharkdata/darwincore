@@ -315,6 +315,46 @@ class DwcaFormatStandard(object):
                                         emof_dict["measurementUnitID"] = unit_id
                                         emof_dict["measurementValueID"] = value_id
 
+                                        mapping_platform = {
+                                            "77SE": "http://vocab.nerc.ac.uk/collection/C17/current/77SE/",
+                                            "77AR": "http://vocab.nerc.ac.uk/collection/C17/current/77AR/",
+                                            "34AR": "http://vocab.nerc.ac.uk/collection/C17/current/34AR/",
+                                            "77KB": "http://vocab.nerc.ac.uk/collection/C17/current/77KB/",
+                                            "77KC": "http://vocab.nerc.ac.uk/collection/C17/current/77KC/",
+                                            "77NE": "http://vocab.nerc.ac.uk/collection/C17/current/77NE/",
+                                            "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
+                                            "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
+                                            "77UR": "http://vocab.nerc.ac.uk/collection/C17/current/77UR/",
+                                            "77FY": "http://vocab.nerc.ac.uk/collection/C17/current/77FY/",
+                                            "77SU": "http://vocab.nerc.ac.uk/collection/C17/current/77SU/",
+                                            "77LT": "http://vocab.nerc.ac.uk/collection/C17/current/77LT/",
+                                            "77LA": "http://vocab.nerc.ac.uk/collection/C17/current/77LA/",
+                                            "77K5": "http://vocab.nerc.ac.uk/collection/C17/current/77K5/",
+                                            "77TH": "http://vocab.nerc.ac.uk/collection/C17/current/77TH/",
+                                            "77NC": "http://vocab.nerc.ac.uk/collection/C17/current/77NC/",
+                                            "77K4": "http://vocab.nerc.ac.uk/collection/C17/current/77K4/",
+                                            "77KA": "http://vocab.nerc.ac.uk/collection/C17/current/77KA/",
+                                            "77LY": "http://vocab.nerc.ac.uk/collection/C17/current/77LY/",
+                                            "77VA": "http://vocab.nerc.ac.uk/collection/C17/current/77VA/",
+                                            "77SK": "http://vocab.nerc.ac.uk/collection/C17/current/77SK/",
+                                            "77SH": "http://vocab.nerc.ac.uk/collection/C17/current/77SH/",
+                                            "77XV": "http://vocab.nerc.ac.uk/collection/C17/current/77XV/",
+                                            "77ST": "http://vocab.nerc.ac.uk/collection/C17/current/77ST/",
+                                            "77VS": "http://vocab.nerc.ac.uk/collection/C17/current/77VS/",
+                                            "77WX": "http://vocab.nerc.ac.uk/collection/C17/current/77WX/",
+                                            "774D": "http://vocab.nerc.ac.uk/collection/C17/current/774D/",
+                                        }
+
+                                        mapping_quality_flag_sdn = {
+                                            "1": "http://vocab.nerc.ac.uk/collection/L20/current/1/",
+                                            "3": "http://vocab.nerc.ac.uk/collection/L20/current/3/",
+                                            "4": "http://vocab.nerc.ac.uk/collection/L20/current/4/",
+                                            "Q": "http://vocab.nerc.ac.uk/collection/L20/current/Q/",
+                                            "7": "http://vocab.nerc.ac.uk/collection/L20/current/7/",
+                                            "8": "http://vocab.nerc.ac.uk/collection/L20/current/8/",
+                                            "9": "http://vocab.nerc.ac.uk/collection/L20/current/9/",
+                                        }
+                                    
                                         if (
                                             param == "Sampling laboratory name"
                                             and value
@@ -416,38 +456,9 @@ class DwcaFormatStandard(object):
                                             )
 
                                         elif param == "Sampling platform":
-                                            mapping = {
-                                                "77SE": "http://vocab.nerc.ac.uk/collection/C17/current/77SE/",
-                                                "77AR": "http://vocab.nerc.ac.uk/collection/C17/current/77AR/",
-                                                "34AR": "http://vocab.nerc.ac.uk/collection/C17/current/34AR/",
-                                                "77KB": "http://vocab.nerc.ac.uk/collection/C17/current/77KB/",
-                                                "77KC": "http://vocab.nerc.ac.uk/collection/C17/current/77KC/",
-                                                "77NE": "http://vocab.nerc.ac.uk/collection/C17/current/77NE/",
-                                                "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
-                                                "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
-                                                "77UR": "http://vocab.nerc.ac.uk/collection/C17/current/77UR/",
-                                                "77FY": "http://vocab.nerc.ac.uk/collection/C17/current/77FY/",
-                                                "77SU": "http://vocab.nerc.ac.uk/collection/C17/current/77SU/",
-                                                "77LT": "http://vocab.nerc.ac.uk/collection/C17/current/77LT/",
-                                                "77LA": "http://vocab.nerc.ac.uk/collection/C17/current/77LA/",
-                                                "77K5": "http://vocab.nerc.ac.uk/collection/C17/current/77K5/",
-                                                "77TH": "http://vocab.nerc.ac.uk/collection/C17/current/77TH/",
-                                                "77NC": "http://vocab.nerc.ac.uk/collection/C17/current/77NC/",
-                                                "77K4": "http://vocab.nerc.ac.uk/collection/C17/current/77K4/",
-                                                "77KA": "http://vocab.nerc.ac.uk/collection/C17/current/77KA/",
-                                                "77LY": "http://vocab.nerc.ac.uk/collection/C17/current/77LY/",
-                                                "77VA": "http://vocab.nerc.ac.uk/collection/C17/current/77VA/",
-                                                "77SK": "http://vocab.nerc.ac.uk/collection/C17/current/77SK/",
-                                                "77SH": "http://vocab.nerc.ac.uk/collection/C17/current/77SH/",
-                                                "77XV": "http://vocab.nerc.ac.uk/collection/C17/current/77XV/",
-                                                "77ST": "http://vocab.nerc.ac.uk/collection/C17/current/77ST/",
-                                                "77VS": "http://vocab.nerc.ac.uk/collection/C17/current/77VS/",
-                                                "77WX": "http://vocab.nerc.ac.uk/collection/C17/current/77WX/",
-                                                "774D": "http://vocab.nerc.ac.uk/collection/C17/current/774D/",
-                                            }
     
-                                            if value in mapping:
-                                                emof_dict["measurementValueID"] = mapping[value]
+                                            if value in mapping_platform:
+                                                emof_dict["measurementValueID"] = mapping_platform[value]
 
                                         elif (
                                             param
@@ -480,20 +491,27 @@ class DwcaFormatStandard(object):
                                                 "https://vocab.nerc.ac.uk/collection/L06/current/62/"
                                             )
 
-                                        elif param == "Quality flag" and value in [
-                                            "Blank",
-                                            "E,",
-                                            "S",
-                                            "B",
-                                            "<",
-                                            ">",
-                                            "R",
-                                            "M",
-                                            "Z",
-                                        ]:
-                                            emof_dict["measurementValueID"] = (
-                                                "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
-                                            )
+                                        elif param == "Quality flag":
+
+                                            if value in [
+                                                "Blank",
+                                                "E,",
+                                                "S",
+                                                "B",
+                                                "<",
+                                                ">",
+                                                "R",
+                                                "M",
+                                                "Z",
+                                            ]:
+                                                emof_dict["measurementValueID"] = (
+                                                    "http://vocab.nerc.ac.uk/collection/L27/current/SMHI_QC/"
+                                                )
+                                            elif value in mapping_quality_flag_sdn:
+                                                emof_dict["measurementTypeID"] = (
+                                                    "http://vocab.nerc.ac.uk/collection/L20/current/"
+                                                )
+                                                emof_dict["measurementValueID"] = mapping_quality_flag_sdn[value]
 
                                         if emof_dict.get("measurementType", ""):
                                             self.dwca_measurementorfact.append(

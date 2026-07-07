@@ -1,0 +1,12 @@
+source_field	dwc_field	from_value	to_value	comments
+
+#quality_flag			1	cannot be used for biology data since no qc is preformed by default
+#quality_flag		Blank	1	cannot be used for biology data since no qc is preformed by default
+quality_flag		E	1	
+quality_flag		S	3	
+quality_flag		B	4	
+quality_flag		<	Q	
+quality_flag		>	7	
+quality_flag		R	8	
+quality_flag		M	9	
+#quality_flag		Z		zero by definition (deprecated since 2015), not used in biology data
