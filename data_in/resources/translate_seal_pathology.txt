@@ -38,3 +38,4 @@ claw_lesions_y_n		N	No
 regional_skin_changes_y_n		Y	Yes
 regional_skin_changes_y_n		N	No
 age_years		ej		
+age_years		0	≤1	
