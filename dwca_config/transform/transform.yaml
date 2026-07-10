@@ -111,6 +111,19 @@
     measurementUnit: "Milligrams per litre"
   then:
     measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMGL/"
+- if:
+    measurementUnit: "Milligrams per kilogram"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UMKG/"
+- if:
+    measurementUnit: "Micrograms per kilogram"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUKG/"
+- if:
+    measurementUnit: "Cells per 100 grams"
+  then:
+    measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/NBHG/"
+
 
 
 # Measurement Type ID

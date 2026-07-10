@@ -159,7 +159,9 @@ dwcaEventContent:
           geodeticDatum:
               text: EPSG:4326 #WGS84
           coordinateUncertaintyInMeters:
-              sourceKey: coordinate_uncertainty_m
+              sourceKeyList: 
+                  - coordinate_uncertainty_m
+                  - coord_uncert_m
           coordinatePrecision:
               sourceKey:
           dynamicProperties:

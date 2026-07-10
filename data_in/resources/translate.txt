@@ -363,6 +363,21 @@ unit		g/analysed sample fraction	Grams per analysed sample fraction
 unit		index/sample	Not applicable
 unit		mg/kg dried sediment	Milligrams per kilo dried sediment
 unit		Rock Color Chart	Dimensionless
+unit		mg/kg	Milligrams per kilogram
+unit		ug/kg	Micrograms per kilogram
+unit		cells/100 g	Cells per 100 grams
+
+unit		ug AZA eq/kg	Micrograms of azaspiracid equivalents per kilogram
+unit		ug OA eq/kg	Micrograms of okadaic acid equivalents per kilogram
+unit		ug PTX eq/kg	Micrograms of pectenotoxin equivalents per kilogram
+unit		ug STXdiHCL eq/kg	Micrograms of STXdiHCL equivalents per kilogram
+unit		mg YTX eq/kg	Milligrams of yessotoxin equivalents per kilogram
+
+unit		ug AZA eq/L	Micrograms of azaspiracid equivalents per litre
+unit		ug OA eq/L	Micrograms of okadaic acid equivalents per litre
+unit		ug PTX eq/L	Micrograms of pectenotoxin equivalents per litre
+unit		ug STXdiHCL eq/L	Micrograms of STXdiHCL equivalents per litre
+unit		mg YTX eq/L	Milligrams of yessotoxin equivalents per litre
 
 
 parameter		# counted	Count

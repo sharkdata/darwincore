@@ -334,7 +334,16 @@ dwcaEmofContent:
         measurementUnit: Not applicable
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: platform_code
-
+      - measurementType: Swedish Food Agency aquaculture production area ID
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: prod_area_id
+      - measurementType: Swedish Food Agency aquaculture production area mapping number
+        measurementTypeID:
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: prod_area_mapping_nr
 
   - eventType: sample
     dwcTerms:

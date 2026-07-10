@@ -343,6 +343,7 @@ class DwcaFormatStandard(object):
                                             "77VS": "http://vocab.nerc.ac.uk/collection/C17/current/77VS/",
                                             "77WX": "http://vocab.nerc.ac.uk/collection/C17/current/77WX/",
                                             "774D": "http://vocab.nerc.ac.uk/collection/C17/current/774D/",
+                                            "ZZ99": "http://vocab.nerc.ac.uk/collection/C17/current/ZZ99/"
                                         }
 
                                         mapping_quality_flag_sdn = {
@@ -354,7 +355,7 @@ class DwcaFormatStandard(object):
                                             "8": "http://vocab.nerc.ac.uk/collection/L20/current/8/",
                                             "9": "http://vocab.nerc.ac.uk/collection/L20/current/9/",
                                         }
-                                    
+
                                         if (
                                             param == "Sampling laboratory name"
                                             and value
