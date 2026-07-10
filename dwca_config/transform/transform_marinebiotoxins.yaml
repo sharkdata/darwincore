@@ -1,0 +1,119 @@
+- if:
+    measurementType: "Azaspiracid-1"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004220/"
+
+- if:
+    measurementType: "Azaspiracid-2"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004030/"
+
+- if:
+    measurementType: "Azaspiracid-3"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004031/"
+
+- if:
+    measurementType: "Domoic acid"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004234/"
+
+- if:
+    measurementType: "Domoic acid screening positive"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004234/"
+
+- if:
+    measurementType: "Domoic acid screening value"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004234/"
+
+- if:
+    measurementType: "Dinophysistoxin-1"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004013/"
+
+- if:
+    measurementType: "Dinophysistoxin-2"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004011/"
+
+- if:
+    measurementType: "Pectenotoxin-1"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004222/"
+
+- if:
+    measurementType: "Pectenotoxin-2"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004033/"
+
+- if:
+    measurementType: "45-Hydroxyhomoyessotoxin"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004037/"
+
+- if:
+    measurementType: "45-Hydroxyyessotoxin"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004038/"
+
+- if:
+    measurementType: "Carboxyyessotoxin"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004035/"
+
+- if:
+    measurementType: "Homoyessotoxin"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004036/"
+
+- if:
+    measurementType: "Yessotoxin"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004216/"
+
+- if:
+    measurementType: "YTX total"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004216/"
+
+- if:
+    measurementType: "Microcystin-LA"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004224/"
+
+- if:
+    measurementType: "Microcystin-LF"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004046/"
+
+- if:
+    measurementType: "Microcystin-LR"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004128/"
+
+- if:
+    measurementType: "Microcystin-LW"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004206/"
+
+- if:
+    measurementType: "Microcystin-LY"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004047/"
+
+- if:
+    measurementType: "Microcystin-RR"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004223/"
+
+- if:
+    measurementType: "Microcystin-YR"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS003969/"
+
+- if:
+    measurementType: "Nodularin-R"
+  then:
+    measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004059/"
