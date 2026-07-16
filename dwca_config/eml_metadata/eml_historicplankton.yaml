@@ -1,0 +1,37 @@
+# A part of the DarwinCore-Archive, DwC-A, generator.
+# GitHub: https://github.com/sharkdata/darwincore
+
+additionalMetadata:
+    metadata:
+        gbif:
+            citation: Swedish Meteorological and Hydrological Institute (2024).
+                TITLE
+
+dataset:
+    title: TITLE
+
+    abstract:
+        para:
+            - Text
+            - Text
+
+
+    methods:
+        methodStep:
+            description:
+                para:
+                    - Text
+
+        sampling:
+            description: Text
+
+    coverage:
+        geographicCoverage:
+            geographicDescription: "Data are collected within the following marine ecoregions: http://marineregions.org/mrgid/2401, http://marineregions.org/mrgid/2374, http://marineregions.org/mrgid/2379, http://marineregions.org/mrgid/2350"
+
+
+    keywordSet:
+        keywords:
+            keyword:
+                - Samplingevent
+        keywordThesaurus: "GBIF Dataset Type Vocabulary: http://rs.gbif.org/vocabulary/gbif/dataset_type.xml"
