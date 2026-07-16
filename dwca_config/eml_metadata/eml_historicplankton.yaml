@@ -5,10 +5,10 @@ additionalMetadata:
     metadata:
         gbif:
             citation: Swedish Meteorological and Hydrological Institute (2024).
-                TITLE
+                SHARK - Historic Plankton Observations in Northern European Waters 1893-1902
 
 dataset:
-    title: TITLE
+    title: SHARK - Historic Plankton Observations in Northern European Waters 1893-1902
 
     abstract:
         para:
