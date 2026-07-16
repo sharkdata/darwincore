@@ -59,6 +59,7 @@ translate:
     files:
         - translate.txt
         - translate_planktonimaging_ifcb.txt
+        - translate_quality_flag_sdn.txt
 
 filters:
     directory:
