@@ -113,7 +113,7 @@ dwcaEventContent:
           year:
               sourceKey: visit_year
           month:
-              sourceKey:
+              sourceKey: visit_month
           day:
               sourceKey:
           verbatimEventDate:
@@ -127,7 +127,7 @@ dwcaEventContent:
           eventRemarks:
               sourceKey:
           locationID:
-              sourceKey:
+              sourceKey: site_id
           waterBody:
               sourceKey: location_sea_basin
           country:
