@@ -117,3 +117,202 @@
     measurementType: "Nodularin-R"
   then:
     measurementTypeID: "https://vocab.nerc.ac.uk/collection/S27/current/CS004059/"
+
+
+- if:
+    measurementType: "Azaspiracid-1"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg AZA eq/kg"
+
+- if:
+    measurementType: "Azaspiracid-2"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg AZA eq/kg"
+
+- if:
+    measurementType: "Azaspiracid-3"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg AZA eq/kg"
+
+- if:
+    measurementType: "AZA total"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg AZA eq/kg"
+
+- if:
+    measurementType: "DST total"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg OA eq/kg"
+
+- if:
+    measurementType: "Dinophysistoxin-1"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg OA eq/kg"
+
+- if:
+    measurementType: "Dinophysistoxin-2"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg OA eq/kg"
+
+- if:
+    measurementType: "Dinophysistoxin-3"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg OA eq/kg"
+
+- if:
+    measurementType: "DTX2 acyl"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg OA eq/kg"
+
+- if:
+    measurementType: "Okadaic acid acyl"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg OA eq/kg"
+
+- if:
+    measurementType: "Okadaic acid"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg OA eq/kg"
+
+- if:
+    measurementType: "Pectenotoxin-1"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg PTX eq/kg"
+
+- if:
+    measurementType: "Pectenotoxin-2"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg PTX eq/kg"
+
+- if:
+    measurementType: "PTX total"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg PTX eq/kg"
+
+- if:
+    measurementType: "Saxitoxin C1 and C2"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Saxitoxin C3 and C4"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Decarbamoylgonyautoxin-2 and -3"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Decarbamoylneosaxitoxin"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Decarbamoylsaxitoxin"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Gonyautoxin-1 and -4"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Gonyautoxin-2 and -3"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Gonyautoxin-5"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Gonyautoxin-6"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Neosaxitoxin"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "PST total"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "Saxitoxin"
+    measurementUnit: "ug eq/kg"
+  then:
+    measurementUnit: "µg STXdiHCL eq/kg"
+
+- if:
+    measurementType: "45-Hydroxycarboxyyessotoxin"
+    measurementUnit: "mg eq/kg"
+  then:
+    measurementUnit: "mg YTX eq/kg"
+
+- if:
+    measurementType: "45-Hydroxyhomoyessotoxin"
+    measurementUnit: "mg eq/kg"
+  then:
+    measurementUnit: "mg YTX eq/kg"
+
+- if:
+    measurementType: "45-Hydroxyyessotoxin"
+    measurementUnit: "mg eq/kg"
+  then:
+    measurementUnit: "mg YTX eq/kg"
+
+- if:
+    measurementType: "Carboxyyessotoxin"
+    measurementUnit: "mg eq/kg"
+  then:
+    measurementUnit: "mg YTX eq/kg"
+
+- if:
+    measurementType: "Homoyessotoxin"
+    measurementUnit: "mg eq/kg"
+  then:
+    measurementUnit: "mg YTX eq/kg"
+
+- if:
+    measurementType: "Yessotoxin"
+    measurementUnit: "mg eq/kg"
+  then:
+    measurementUnit: "mg YTX eq/kg"
+
+- if:
+    measurementType: "YTX total"
+    measurementUnit: "mg eq/kg"
+  then:
+    measurementUnit: "mg YTX eq/kg"
