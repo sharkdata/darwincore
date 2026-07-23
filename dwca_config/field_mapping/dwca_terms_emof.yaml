@@ -795,3 +795,49 @@ dwcaEmofContent:
         measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
         sourceKey: classifier_used
 
+      - measurementType: Water temperature
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/TEMPPR01/"
+        measurementUnit: Degrees Celsius
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UPAA/"
+        sourceKey: historic_plankton_temperature
+      - measurementType: Salinity
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/ODSDM021/"
+        measurementUnit: "Dimensionless"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+        sourceKey: historic_plankton_salinity
+      - measurementType: Oxygen content
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/DOXY/"
+        measurementUnit: 
+        measurementUnitID:
+        sourceKey: historic_plankton_oxygen_content
+      - measurementType: Carbon dioxide content
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/PCO2/"
+        measurementUnit: 
+        measurementUnitID:
+        sourceKey: historic_plankton_carbon_dioxide_content
+      - measurementType: Nitrogen content
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P02/current/TDNT/"
+        measurementUnit: 
+        measurementUnitID:
+        sourceKey: historic_plankton_nitrogen_content
+      - measurementType: Areometer density
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/S04/current/S041207/"
+        measurementUnit: "Dimensionless"
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/UUUU/"
+        sourceKey: historic_plankton_areom_density
+      - measurementType: Wind direction
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/EWDAZZ01/"
+        measurementUnit: 
+        measurementUnitID:
+        sourceKey: historic_plankton_wind
+      - measurementType: Tide
+        measurementTypeID: "http://vocab.nerc.ac.uk/collection/S29/current/PE001306/"
+        measurementUnit: 
+        measurementUnitID:
+        sourceKey: historic_plankton_tide
+      - measurementType: Reported scientific name authorship
+        measurementTypeID: 
+        measurementUnit: Not applicable
+        measurementUnitID: "http://vocab.nerc.ac.uk/collection/P06/current/XXXX/"
+        sourceKey: reported_authority
+

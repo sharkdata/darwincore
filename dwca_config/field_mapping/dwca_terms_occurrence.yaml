@@ -111,6 +111,8 @@ dwcaOccurrenceContent:
               text: MaterialSample
           basisOfRecord_IFCB:
               text: MachineObservation
+          basisOfRecord_Cleve:
+              text: MaterialCitation
           identifiedBy:
               sourceKey: taxonomist
           occurrenceRemarks:

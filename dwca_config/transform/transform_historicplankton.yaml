@@ -1,0 +1,54 @@
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "a"
+  then:
+    measurementValue: "Common (c)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "c"
+  then:
+    measurementValue: "Common (c)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "cc"
+  then:
+    measurementValue: "Very common (cc)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "+"
+  then:
+    measurementValue: "Neither rare nor common (+)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "r"
+  then:
+    measurementValue: "Rare (r)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "rr"
+  then:
+    measurementValue: "Very rare (rr)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "ccc"
+  then:
+    measurementValue: "The principal mass (ccc)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "*)ccc"
+  then:
+    measurementValue: "The principal mass, *2/3 of the bulk of the plankton (ccc)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"
+- if:
+    measurementType: "Abundance class"
+    measurementValue: "?"
+  then:
+    measurementValue: "Too sparse for any reliable conclusions (?)"
+    measurementTypeID: "http://vocab.nerc.ac.uk/collection/P01/current/SDBIOL06/"

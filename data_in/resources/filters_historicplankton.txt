@@ -1,1 +1,4 @@
 source_field	include_value	exclude_value	filter_group_id	comments
+
+parameter		Abundance class group		
+parameter		Plankton type according to P. T. Cleve		

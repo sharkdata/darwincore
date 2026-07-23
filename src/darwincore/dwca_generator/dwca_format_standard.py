@@ -82,13 +82,24 @@ class DwcaFormatStandard(object):
                     for event_content in event_content_list:
                         if dwca_node_name != event_content.get("eventType", ""):
                             continue
+
+                        # Create URL for StnReg.
+                        site_id = source_row.get("sample_location_id", "")
+
+                        if site_id and not site_id.startswith(
+                            "https://stationsregister.miljodatasamverkan.se?id="
+                        ):
+                            source_row["site_id"] = (
+                                f"https://stationsregister.miljodatasamverkan.se?id={site_id}"
+                            )
+
                         # Add content.
                         self.add_content(event_content, source_row, event_dict)
 
                         # Check if sampleSizeValue is empty and if so make sampleSizeUnit
                         # empty too
                     if not event_dict.get("sampleSizeValue"):
-                        event_dict["sampleSizeUnit"] = ""
+                        event_dict["sampleSizeUnit"] = ""                    
 
                         # Append event row content.
                     self.dwca_event.append(event_dict.copy())

@@ -38,10 +38,14 @@ dwcaKeys:
 fieldMapping:
     directory:
         dwca_config/field_mapping
+
     files:
-        - dwca_terms_event.yaml
-        - dwca_terms_occurrence.yaml
-        - dwca_terms_emof.yaml
+        -   - dwca_terms_event.yaml
+            - _Cleve
+        -   - dwca_terms_occurrence.yaml
+            - _Cleve
+        -   - dwca_terms_emof.yaml
+            - _Cleve
 
 taxaWorms:
     directory:
@@ -69,6 +73,7 @@ transform:
         dwca_config/transform
     files:
         - transform.yaml
+        - transform_historicplankton.yaml
 
 metadataSourceFiles:
     directory:

@@ -76,9 +76,10 @@ class DwcaDataSharkStandard:
             logger.error(" - EXCEPTION: failed to read ZIP file: " + str(e))
             return
 
-        if not status_prod:
-            logger.info(" - Package NOT status PROD, skipped: " + dataset_filepath)
-            return
+# BYPASSED BY MY 2026-07-08 since delivery_notes were partly missing from ZIPs
+#        if not status_prod:
+#            logger.info(" - Package NOT status PROD, skipped: " + dataset_filepath)
+#            return
 
         try:
             counter_rows = 0
