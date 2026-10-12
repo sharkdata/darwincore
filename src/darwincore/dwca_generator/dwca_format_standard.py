@@ -12,6 +12,8 @@ import darwincore
 from darwincore.dwca_generator import dwca_meta_xml, dwca_utils
 from darwincore.dwca_generator.dwca_transform_data import DwcaTransformData
 
+logger = logging.getLogger("dwca_generator")
+
 
 class DwcaFormatStandard(object):
     """ """
@@ -99,7 +101,7 @@ class DwcaFormatStandard(object):
                         # Check if sampleSizeValue is empty and if so make sampleSizeUnit
                         # empty too
                     if not event_dict.get("sampleSizeValue"):
-                        event_dict["sampleSizeUnit"] = ""                    
+                        event_dict["sampleSizeUnit"] = ""
 
                         # Append event row content.
                     self.dwca_event.append(event_dict.copy())
@@ -212,7 +214,6 @@ class DwcaFormatStandard(object):
 
     def create_dwca_measurementorfact(self):
         """ """
-        logger = logging.getLogger("dwca_generator")
         # For checking for duplicates.
         used_mof_occurrence_key_list = set()
         duplicate_row_number = 0
@@ -279,9 +280,7 @@ class DwcaFormatStandard(object):
                                 unit == "ind/analysed sample fraction"
                                 and measurement_method != "Image analysis"
                             ):
-                                emof_dict["measurementUnit"] = (
-                                    "Dimensionless"
-                                )
+                                emof_dict["measurementUnit"] = "Dimensionless"
 
                             self.dwca_measurementorfact.append(emof_dict.copy())
 
@@ -334,7 +333,6 @@ class DwcaFormatStandard(object):
                                             "77KC": "http://vocab.nerc.ac.uk/collection/C17/current/77KC/",
                                             "77NE": "http://vocab.nerc.ac.uk/collection/C17/current/77NE/",
                                             "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
-                                            "77SN": "http://vocab.nerc.ac.uk/collection/C17/current/77SN/",
                                             "77UR": "http://vocab.nerc.ac.uk/collection/C17/current/77UR/",
                                             "77FY": "http://vocab.nerc.ac.uk/collection/C17/current/77FY/",
                                             "77SU": "http://vocab.nerc.ac.uk/collection/C17/current/77SU/",
@@ -354,7 +352,7 @@ class DwcaFormatStandard(object):
                                             "77VS": "http://vocab.nerc.ac.uk/collection/C17/current/77VS/",
                                             "77WX": "http://vocab.nerc.ac.uk/collection/C17/current/77WX/",
                                             "774D": "http://vocab.nerc.ac.uk/collection/C17/current/774D/",
-                                            "ZZ99": "http://vocab.nerc.ac.uk/collection/C17/current/ZZ99/"
+                                            "ZZ99": "http://vocab.nerc.ac.uk/collection/C17/current/ZZ99/",
                                         }
 
                                         mapping_quality_flag_sdn = {
@@ -468,9 +466,10 @@ class DwcaFormatStandard(object):
                                             )
 
                                         elif param == "Sampling platform":
-    
                                             if value in mapping_platform:
-                                                emof_dict["measurementValueID"] = mapping_platform[value]
+                                                emof_dict["measurementValueID"] = (
+                                                    mapping_platform[value]
+                                                )
 
                                         elif (
                                             param
@@ -504,7 +503,6 @@ class DwcaFormatStandard(object):
                                             )
 
                                         elif param == "Quality flag":
-
                                             if value in [
                                                 "Blank",
                                                 "E,",
@@ -523,7 +521,9 @@ class DwcaFormatStandard(object):
                                                 emof_dict["measurementTypeID"] = (
                                                     "http://vocab.nerc.ac.uk/collection/L20/current/"
                                                 )
-                                                emof_dict["measurementValueID"] = mapping_quality_flag_sdn[value]
+                                                emof_dict["measurementValueID"] = (
+                                                    mapping_quality_flag_sdn[value]
+                                                )
 
                                         if emof_dict.get("measurementType", ""):
                                             self.dwca_measurementorfact.append(

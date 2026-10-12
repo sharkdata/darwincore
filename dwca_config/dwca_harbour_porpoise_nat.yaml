@@ -13,6 +13,7 @@ dwcaTarget:
 sourceFiles:
     directory: data_in/datasets
     globSearch: SHARK_HarbourPorpoise_*_version_*.zip
+    sharkDatatype: Harbour Porpoise
     # files:
     #     - SHARK_ringedseal_TODO.zip
 

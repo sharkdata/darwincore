@@ -13,6 +13,7 @@ dwcaTarget:
 sourceFiles:
     directory: data_in/datasets
     globSearch: SHARK_Ringedseal_*_version_*.zip
+    sharkDatatype: Ringed seal
     # files:
     #     - SHARK_ringedseal_TODO.zip
 

@@ -18,6 +18,8 @@ sourceFiles:
         data_in/datasets
     globSearch:
         SHARK_Bacterioplankton_*_version_*.zip
+    sharkDatatype:
+        Bacterioplankton
     # files:
     #     - SHARK_Bacterioplankton_ABU_2016_UMSC_Bactabund_version_2020-10-27.zip
 

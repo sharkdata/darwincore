@@ -12,6 +12,7 @@ import dict2xml
 import yaml
 
 from darwincore.dwca_generator.dwca_utils import config_with_suffix
+from darwincore.dwca_generator.shark_fetch import FetchOptions, fetch_source_files
 
 FileWithPrefix = namedtuple("FileWithPrefix", ("file", "prefix"))
 
@@ -19,10 +20,11 @@ FileWithPrefix = namedtuple("FileWithPrefix", ("file", "prefix"))
 class DwcaGeneratorConfig:
     """ """
 
-    def __init__(self, config_file):
+    def __init__(self, config_file, fetch_options: FetchOptions | None = None):
         """ """
         self.config_file = config_file
         self.clear()
+        self._fetch_options = fetch_options
 
     def clear(self):
         """ """
@@ -111,6 +113,11 @@ class DwcaGeneratorConfig:
 
     def load_source_files(self):
         """ """
+        if self._fetch_options is not None:
+            return fetch_source_files(
+                self._fetch_options, self.dwca_config.get("sourceFiles", {})
+            )
+
         source_file_list = []
         file_path = pathlib.Path()
         if "sourceFiles" in self.dwca_config:
