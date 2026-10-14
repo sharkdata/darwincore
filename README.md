@@ -39,7 +39,7 @@ $ venv\Scripts\activate
 
 When the environment is activated, you can run the scripts using python:
 ```bash
-(darwincore) $ python dwca_generator_cli.py
+(darwincore) $ dwca-generator-cli
 ```
 
 ## Usage
@@ -52,10 +52,32 @@ $ uv run dwca-generator-main
 ```
 
 ### darwincore-generator-cli
-Cli to choose which configuration to run.
+Cli to choose which configuration to run. Without arguments it asks which configuration
+to run and whether to fetch the datasets from SHARK instead of using `data_in/datasets`.
 ```bash
 $ uv run dwca-generator-cli
 ```
+
+Run a specific configuration (row number as listed by the interactive mode, 0 runs all):
+```bash
+$ uv run dwca-generator-cli --row 3
+```
+
+#### Fetching datasets from SHARK
+The `fetch` command downloads the datasets from the SHARK API instead of reading them from
+`data_in/datasets`. The datasets are selected by `sharkDatatype` and `globSearch` under
+`sourceFiles` in each configuration. Configurations without `sharkDatatype` are skipped.
+```bash
+$ uv run dwca-generator-cli fetch --row 3
+$ uv run dwca-generator-cli fetch --row 3 --from 2025-01-01 --to 2025-06-30
+```
+
+`--from` and `--to` are optional and filter on the publication date of the dataset version,
+not on the sampling date.
+
+Downloaded datasets are stored in `data_in/tmp_datasets` and reused in later runs. When a
+newer version of a dataset is downloaded, the older version is moved to
+`data_in/tmp_datasets/old_datasets`.
 
 ### put-metadatafile-to-yamr
 Post yame json metadata files to existing metadata record in yamr.

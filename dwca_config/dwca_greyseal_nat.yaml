@@ -18,6 +18,8 @@ sourceFiles:
         data_in/datasets
     globSearch:
         SHARK_Greyseal_*_version_*.zip
+    sharkDatatype:
+        Grey seal
     # files:
     #     - SHARK_greyseal_TODO.zip
 

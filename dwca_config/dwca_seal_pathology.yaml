@@ -18,6 +18,8 @@ sourceFiles:
         data_in/datasets
     globSearch:
         SHARK_SealPathology_*_version_*.zip
+    sharkDatatype:
+        Seal pathology
     # files:
     #     - SHARK_Zooplankton_2016_DEEP_version_2020-10-27.zip
 

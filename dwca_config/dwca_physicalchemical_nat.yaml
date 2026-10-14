@@ -18,6 +18,8 @@ sourceFiles:
         data_in/datasets
     globSearch:
         SHARK_physicalchemical_*_version_*.zip
+    sharkDatatype:
+        Physical and Chemical
 
 # emlDefinitions:
 #     directory:

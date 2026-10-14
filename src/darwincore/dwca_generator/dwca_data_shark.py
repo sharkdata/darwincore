@@ -12,6 +12,8 @@ from os import PathLike
 
 from darwincore.dwca_generator import dwca_utils
 
+logger = logging.getLogger("dwca_generator")
+
 _delivery_note_pattern = re.compile(r"^processed_data[/\\]delivery_note\.txt$")
 
 
@@ -41,8 +43,6 @@ class DwcaDataSharkStandard:
 
     def add_shark_dataset(self, dataset_filepath):
         """Add data from SHARK zipped files."""
-        logger = logging.getLogger("dwca_generator")
-
         logger.info("")
         if isinstance(dataset_filepath, (str, PathLike)):
             logger.info("Adding dataset: " + dataset_filepath)
@@ -70,16 +70,16 @@ class DwcaDataSharkStandard:
                                 if (key.lower() == "status") and (
                                     value.lower() == "prod" or value.lower() == "test"
                                 ):
-                                    status_prod = True
+                                    status_prod = True  # noqa: F841 (unused-variable)
         except Exception as e:
             logger.warning(" - EXCEPTION: failed to read ZIP file: " + str(e))
             logger.error(" - EXCEPTION: failed to read ZIP file: " + str(e))
             return
 
-# BYPASSED BY MY 2026-07-08 since delivery_notes were partly missing from ZIPs
-#        if not status_prod:
-#            logger.info(" - Package NOT status PROD, skipped: " + dataset_filepath)
-#            return
+        # BYPASSED BY MY 2026-07-08 since delivery_notes were partly missing from ZIPs
+        # if not status_prod:
+        #     logger.info(" - Package NOT status PROD, skipped: " + dataset_filepath)
+        #     return
 
         try:
             counter_rows = 0
@@ -235,7 +235,7 @@ class DwcaDataSharkStandard:
     def cleanup_data(self):
         """ """
         for row_dict in self.row_list:
-            delivery_datatype = water_depth_m = row_dict.get("delivery_datatype", "")
+            delivery_datatype = row_dict.get("delivery_datatype", "")
             delivery_datatype = delivery_datatype.lower()
 
             row_dict["dwc_dataset_name"] = self.dwca_gen_config.eml_definitions[

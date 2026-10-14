@@ -1,5 +1,6 @@
 
 **/*.zip
+**/*.part
 **/*.xlsx
 **/.svn
 .project

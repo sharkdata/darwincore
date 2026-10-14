@@ -5,7 +5,7 @@
 # License: MIT License (see LICENSE.txt or http://opensource.org/licenses/mit).
 
 import logging
-import pathlib
+from pathlib import Path
 
 from darwincore.dwca_generator.dwca_data_shark import DwcaDataSharkStandard
 from darwincore.dwca_generator.dwca_filters import DwcaFilters
@@ -17,6 +17,9 @@ from darwincore.dwca_generator.dwca_translate import DwcaTranslate
 from darwincore.dwca_generator.metadata_content_auto import MetadataContentAuto
 from darwincore.dwca_generator.metadata_dwca_eml import MetadataDwcaEml
 from darwincore.dwca_generator.metadata_smhi_yame import MetadataSmhiYame
+from darwincore.dwca_generator.shark_fetch import FetchOptions
+
+logger = logging.getLogger("dwca_generator")
 
 
 class DwcaGenerator:
@@ -25,22 +28,25 @@ class DwcaGenerator:
     def __init__(self):
         """ """
 
-    def generate_dwca(self, config_file):
+    def generate_dwca(self, config_file: Path, fetch_options: FetchOptions | None = None):
         """ """
         # Config and EML content.
-        dwca_gen_config = DwcaGeneratorConfig(config_file)
+        dwca_gen_config = DwcaGeneratorConfig(config_file, fetch_options)
         dwca_gen_config.load_config()
 
         # Setup logging.
         log_file_name = dwca_gen_config.dwca_target
         log_file_name = log_file_name.replace(".zip", "_LOG.txt")
         self.setup_logging(log_file_name)
-        logger = logging.getLogger("dwca_generator")
+
+        if not dwca_gen_config.source_files:
+            logger.info(f"No source files, skipping: {config_file.name}")
+            return
 
         logger.info("")
         logger.info("")
         logger.info("")
-        logger.info("=== Processing: " + config_file)
+        logger.info(f"=== Processing: {config_file.name}")
 
         # Prepare EML content.
         eml = False
@@ -125,7 +131,7 @@ class DwcaGenerator:
                 logger.warning("   - " + taxa)
 
         logger.info("")
-        logger.info("=== Finished: " + config_file)
+        logger.info(f"=== Finished: {config_file.name}")
 
         # Logger test:
         # logger.debug("debug")
@@ -135,42 +141,39 @@ class DwcaGenerator:
         # logger.critical("critical")
 
     def setup_logging(self, log_file_name):
-        """ """
-        # Remove old logfile, if exists.
-        logfile_path = pathlib.Path(log_file_name)
-        if logfile_path.exists():
-            logfile_path.unlink()
-        # New logfile, and console logging.
-        logger = logging.getLogger("dwca_generator")
+        """Log to a new file, replacing the log file of any previous config."""
         logger.setLevel(logging.DEBUG)
-        # Remove old handlers.
-        while logger.hasHandlers():
-            logger.removeHandler(logger.handlers[0])
-        # To file named similar to produced zip file.
-        file_handler = logging.FileHandler(log_file_name)
-        file_handler.setLevel(logging.DEBUG)
-        # Console logging.
-        console_handler = logging.StreamHandler()
-        console_handler.setLevel(logging.DEBUG)
-        # Create formatter and add to the handlers.
-        formatter = logging.Formatter("%(asctime)s %(levelname)s : %(message)s")
-        file_handler.setFormatter(formatter)
-        formatter = logging.Formatter("%(message)s")
-        console_handler.setFormatter(formatter)
-
-        # Add filter to console to avoid huge error lists.
-        class ConsoleFilter(logging.Filter):
-            def filter(self, record):
-                return record.levelno in [logging.INFO, logging.WARNING]
-                # return record.levelno in [logging.DEBUG, logging.INFO, logging.WARNING]
-
-        console_handler.addFilter(ConsoleFilter())
-        # Add handlers to the loggers.
+        for handler in list(logger.handlers):
+            if isinstance(handler, logging.FileHandler):
+                logger.removeHandler(handler)
+                handler.close()
+        # Mode "w" overwrites any old log file with the same name.
+        file_handler = logging.FileHandler(log_file_name, mode="w")
+        file_handler.setFormatter(
+            logging.Formatter("%(asctime)s %(levelname)s : %(message)s")
+        )
         logger.addHandler(file_handler)
-        logger.addHandler(console_handler)
+
+
+# Add filter to console to avoid huge error lists.
+class ConsoleFilter(logging.Filter):
+    def filter(self, record):
+        return record.levelno in [logging.INFO, logging.WARNING]
+        # return record.levelno in [logging.DEBUG, logging.INFO, logging.WARNING]
+
+
+def setup_console_logging():
+    """Set up console logging. Call once at program start."""
+    logger.setLevel(logging.DEBUG)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_handler.setFormatter(logging.Formatter("%(message)s"))
+    console_handler.addFilter(ConsoleFilter())
+    logger.addHandler(console_handler)
 
 
 def main():
+    setup_console_logging()
     # Test configs.
     config_files = [
         "dwca_config/dwca_bacterioplankton_nat.yaml",
@@ -192,7 +195,7 @@ def main():
     ]
     generator = DwcaGenerator()
     for config_file in config_files:
-        generator.generate_dwca(config_file)
+        generator.generate_dwca(Path(config_file))
 
     print("=== Finished. ===")
 

@@ -19,6 +19,8 @@ sourceFiles:
         data_in/datasets
     globSearch:
         SHARK_Harbourseal_*_version_*.zip
+    sharkDatatype:
+        Harbour seal
     # files:
     #     - SHARK_Harbourseal_TODO.zip
 

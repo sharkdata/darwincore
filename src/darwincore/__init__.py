@@ -4,3 +4,4 @@ PROJECT_ROOT = Path(__file__).parent.parent.parent
 DATA_IN_PATH = PROJECT_ROOT / "data_in"
 DATA_OUT_PATH = PROJECT_ROOT / "data_out"
 DWCA_CONFIG_PATH = PROJECT_ROOT / "dwca_config"
+TMP_DATASETS_DIR = DATA_IN_PATH / "tmp_datasets"
